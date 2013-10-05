@@ -1,5 +1,5 @@
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;
-.super Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
+.super Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 .source "KeyguardSelectorView.java"
 
 
@@ -27,54 +27,65 @@
     .line 134
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;-><init>()V
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method public onDevicePolicyManagerStateChanged()V
     .locals 1
 
     .prologue
     .line 138
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
-    #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$400(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->updateTargets()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$1000(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method getContext()Landroid/content/Context;
-    .locals 1
+.method public onRefreshBatteryInfo(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$BatteryStatus;)V
+    .locals 2
+    .parameter "status"
 
     .prologue
     .line 148
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
-    #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$900(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$BatteryStatus;->isCharged()Z
 
-    move-result-object v0
+    move-result v1
 
-    return-object v0
+    iput-boolean v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mBatteryCharged:Z
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
+
+    invoke-virtual {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$BatteryStatus;->isBatteryLow()Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mBatteryIsLow:Z
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
+
+    #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->updateTargets()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$1000(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)V
+
+    return-void
 .end method
 
-.method getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
+.method public onSimStateChanged(Lcom/android/internal/telephony/IccCardConstants$State;)V
     .locals 1
 
     .prologue
     .line 143
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
-    #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$800(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)Lcom/android/internal/widget/LockPatternUtils;
+    #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->updateTargets()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->access$1000(Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

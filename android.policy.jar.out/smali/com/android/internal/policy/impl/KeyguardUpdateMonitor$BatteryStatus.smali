@@ -33,8 +33,7 @@
     .parameter "health"
 
     .prologue
-    .line 249
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 250
     iput p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;->status:I
@@ -61,7 +60,7 @@
     .line 281
     iget v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;->level:I
 
-    const/16 v1, 0x14
+    const/16 v1, 0x10
 
     if-ge v0, v1, :cond_0
 

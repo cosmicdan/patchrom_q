@@ -8,8 +8,7 @@
     .locals 0
 
     .prologue
-    .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -64,7 +63,16 @@
     .parameter "spn"
 
     .prologue
-    .line 47
+    return-void
+.end method
+
+.method onRefreshCarrierInfoGemini(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
+    .locals 0
+    .parameter "plmn"
+    .parameter "spn"
+    .parameter "simId"
+
+    .prologue
     return-void
 .end method
 
@@ -82,7 +90,15 @@
     .parameter "simState"
 
     .prologue
-    .line 90
+    return-void
+.end method
+
+.method onSimStateChangedGemini(Lcom/android/internal/telephony/IccCardConstants$State;I)V
+    .locals 0
+    .parameter "simState"
+    .parameter "simId"
+
+    .prologue
     return-void
 .end method
 

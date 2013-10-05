@@ -76,7 +76,7 @@
 .end method
 
 .method onPhoneStateChanged(I)V
-    .locals 2
+    .locals 3
     .parameter "phoneState"
 
     .prologue
@@ -107,7 +107,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 284
+    const-string v0, "KeyguardViewMediator"
+
+    const-string v2, "screen is off and call ended, let\'s make sure the keyguard is showing"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$1;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardViewMediator;->doKeyguardLocked()V
@@ -132,12 +137,33 @@
 .end method
 
 .method public onSimStateChanged(Lcom/android/internal/telephony/IccCardConstants$State;)V
-    .locals 2
+    .locals 3
     .parameter "simState"
 
     .prologue
-    .line 303
-    sget-object v0, Lcom/android/internal/policy/impl/KeyguardViewMediator$4;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
+    const-string v0, "KeyguardViewMediator"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onSimStateChanged: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v0, Lcom/android/internal/policy/impl/KeyguardViewMediator$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
 
@@ -179,7 +205,12 @@
 
     if-nez v0, :cond_1
 
-    .line 314
+    const-string v0, "KeyguardViewMediator"
+
+    const-string v1, "ICC_ABSENT isn\'t showing, we need to show the keyguard since the device isn\'t provisioned yet."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$1;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardViewMediator;->doKeyguardLocked()V
@@ -227,7 +258,12 @@
 
     if-nez v0, :cond_2
 
-    .line 327
+    const-string v0, "KeyguardViewMediator"
+
+    const-string v1, "INTENT_VALUE_ICC_LOCKED and keygaurd isn\'t showing; need to show keyguard so user can enter sim pin"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$1;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardViewMediator;->doKeyguardLocked()V
@@ -274,7 +310,12 @@
 
     if-nez v0, :cond_3
 
-    .line 338
+    const-string v0, "KeyguardViewMediator"
+
+    const-string v1, "PERM_DISABLED and keygaurd isn\'t showing."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$1;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardViewMediator;->doKeyguardLocked()V
@@ -298,6 +339,12 @@
     .line 342
     :cond_3
     :try_start_5
+    const-string v0, "KeyguardViewMediator"
+
+    const-string v1, "PERM_DISABLED, resetStateLocked toshow permanently disabled message in lockscreen."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator$1;->this$0:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardViewMediator;->resetStateLocked()V
@@ -331,7 +378,7 @@
     :cond_4
     monitor-exit p0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :catchall_3
     move-exception v0
@@ -342,7 +389,8 @@
 
     throw v0
 
-    .line 303
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
