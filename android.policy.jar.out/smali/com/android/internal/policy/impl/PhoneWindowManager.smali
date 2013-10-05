@@ -7869,11 +7869,11 @@
 
     if-nez v4, :cond_0
 
-    new-instance v6, Lcom/android/internal/policy/impl/MiuiKeyguardViewMediator;
+    new-instance v4, Lcom/android/internal/policy/impl/MiuiKeyguardViewMediator;
 
-    invoke-direct {v6, p1, p0}, Lcom/android/internal/policy/impl/MiuiKeyguardViewMediator;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+    invoke-direct {v4, p1, p0}, Lcom/android/internal/policy/impl/MiuiKeyguardViewMediator;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
-    iput-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+    iput-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     :cond_0
     new-instance v4, Lcom/android/internal/policy/impl/PhoneWindowManager$PolicyHandler;
