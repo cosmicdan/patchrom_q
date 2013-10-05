@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothAudioGateway;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 226
     iput-object p1, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
@@ -34,13 +38,16 @@
 .method public run()V
     .locals 3
 
+    .prologue
     const/4 v2, -0x1
 
+    .line 228
     const-string v0, "Audiogateway listening thread starting"
 
     #calls: Landroid/bluetooth/BluetoothAudioGateway;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothAudioGateway;->access$000(Ljava/lang/String;)V
 
+    .line 229
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
@@ -52,16 +59,19 @@
 
     if-nez v0, :cond_1
 
+    .line 230
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #setter for: Landroid/bluetooth/BluetoothAudioGateway;->mConnectingHeadsetRfcommChannel:I
     invoke-static {v0, v2}, Landroid/bluetooth/BluetoothAudioGateway;->access$202(Landroid/bluetooth/BluetoothAudioGateway;I)I
 
+    .line 231
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #setter for: Landroid/bluetooth/BluetoothAudioGateway;->mConnectingHandsfreeRfcommChannel:I
     invoke-static {v0, v2}, Landroid/bluetooth/BluetoothAudioGateway;->access$302(Landroid/bluetooth/BluetoothAudioGateway;I)I
 
+    .line 232
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #calls: Landroid/bluetooth/BluetoothAudioGateway;->waitForHandsfreeIndicationNative()Z
@@ -71,11 +81,13 @@
 
     if-nez v0, :cond_0
 
+    .line 233
     const-string/jumbo v0, "select thread was interrupted (2), exiting"
 
     #calls: Landroid/bluetooth/BluetoothAudioGateway;->logInfo(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothAudioGateway;->access$500(Ljava/lang/String;)V
 
+    .line 234
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     const/4 v1, 0x1
@@ -85,11 +97,13 @@
 
     goto :goto_0
 
+    .line 237
     :cond_1
     const-string v0, "Connect Thread finished"
 
     #calls: Landroid/bluetooth/BluetoothAudioGateway;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothAudioGateway;->access$000(Ljava/lang/String;)V
 
+    .line 238
     return-void
 .end method

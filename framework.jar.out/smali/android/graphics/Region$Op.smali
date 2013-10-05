@@ -47,6 +47,7 @@
 .method static constructor <clinit>()V
     .locals 9
 
+    .prologue
     const/4 v8, 0x4
 
     const/4 v7, 0x3
@@ -57,6 +58,7 @@
 
     const/4 v4, 0x0
 
+    .line 30
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "DIFFERENCE"
@@ -65,6 +67,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
+    .line 31
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "INTERSECT"
@@ -73,6 +76,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->INTERSECT:Landroid/graphics/Region$Op;
 
+    .line 32
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "UNION"
@@ -81,6 +85,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
 
+    .line 33
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "XOR"
@@ -89,6 +94,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->XOR:Landroid/graphics/Region$Op;
 
+    .line 34
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "REVERSE_DIFFERENCE"
@@ -97,6 +103,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->REVERSE_DIFFERENCE:Landroid/graphics/Region$Op;
 
+    .line 35
     new-instance v0, Landroid/graphics/Region$Op;
 
     const-string v1, "REPLACE"
@@ -109,6 +116,7 @@
 
     sput-object v0, Landroid/graphics/Region$Op;->REPLACE:Landroid/graphics/Region$Op;
 
+    .line 29
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/graphics/Region$Op;
@@ -146,22 +154,32 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "nativeInt"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 38
     iput p3, p0, Landroid/graphics/Region$Op;->nativeInt:I
 
+    .line 39
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Region$Op;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 29
     const-class v0, Landroid/graphics/Region$Op;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -176,6 +194,8 @@
 .method public static values()[Landroid/graphics/Region$Op;
     .locals 1
 
+    .prologue
+    .line 29
     sget-object v0, Landroid/graphics/Region$Op;->$VALUES:[Landroid/graphics/Region$Op;
 
     invoke-virtual {v0}, [Landroid/graphics/Region$Op;->clone()Ljava/lang/Object;

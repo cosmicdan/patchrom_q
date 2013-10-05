@@ -28,7 +28,10 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 2868
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2869
     return-void
 .end method

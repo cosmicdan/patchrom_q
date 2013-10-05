@@ -37,12 +37,14 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 135
     new-instance v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     const-string v1, "NONE"
@@ -67,6 +69,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
+    .line 134
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
@@ -90,12 +93,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 134
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +110,10 @@
 
 .method public static fromInt(I)Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
     .locals 3
+    .parameter "value"
 
+    .prologue
+    .line 138
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->NONE:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->ordinal()I
@@ -112,11 +122,14 @@
 
     if-ne p0, v0, :cond_0
 
+    .line 139
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->NONE:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
+    .line 143
     :goto_0
     return-object v0
 
+    .line 140
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->CHANGED:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
@@ -126,10 +139,12 @@
 
     if-ne p0, v0, :cond_1
 
+    .line 141
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->CHANGED:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     goto :goto_0
 
+    .line 142
     :cond_1
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
@@ -139,10 +154,12 @@
 
     if-ne p0, v0, :cond_2
 
+    .line 143
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->RESET:Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     goto :goto_0
 
+    .line 145
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -171,7 +188,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 134
     const-class v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -186,6 +206,8 @@
 .method public static values()[Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
     .locals 1
 
+    .prologue
+    .line 134
     sget-object v0, Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->$VALUES:[Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/DataConnectionAc$LinkPropertyChangeAction;->clone()Ljava/lang/Object;

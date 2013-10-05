@@ -100,51 +100,64 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;I)V
     .locals 2
+    .parameter "context"
+    .parameter "userId"
 
+    .prologue
+    .line 181
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 165
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->credentialsPermissionNotificationIds:Ljava/util/HashMap;
 
+    .line 168
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->signinRequiredNotificationIds:Ljava/util/HashMap;
 
+    .line 170
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
+    .line 172
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->accountCache:Ljava/util/HashMap;
 
+    .line 175
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userDataCache:Ljava/util/HashMap;
 
+    .line 178
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->authTokenCache:Ljava/util/HashMap;
 
+    .line 182
     iput p2, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userId:I
 
+    .line 183
     iget-object v1, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 184
     :try_start_0
     new-instance v0, Landroid/accounts/AccountManagerService$DatabaseHelper;
 
@@ -152,10 +165,13 @@
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->openHelper:Landroid/accounts/AccountManagerService$DatabaseHelper;
 
+    .line 185
     monitor-exit v1
 
+    .line 186
     return-void
 
+    .line 185
     :catchall_0
     move-exception v0
 
@@ -168,7 +184,10 @@
 
 .method static synthetic access$1300(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/util/HashMap;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->signinRequiredNotificationIds:Ljava/util/HashMap;
 
     return-object v0
@@ -176,7 +195,10 @@
 
 .method static synthetic access$200(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
     return-object v0
@@ -184,7 +206,10 @@
 
 .method static synthetic access$300(Landroid/accounts/AccountManagerService$UserAccounts;)Landroid/accounts/AccountManagerService$DatabaseHelper;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->openHelper:Landroid/accounts/AccountManagerService$DatabaseHelper;
 
     return-object v0
@@ -192,7 +217,10 @@
 
 .method static synthetic access$400(Landroid/accounts/AccountManagerService$UserAccounts;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userId:I
 
     return v0
@@ -200,7 +228,10 @@
 
 .method static synthetic access$500(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/util/HashMap;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->accountCache:Ljava/util/HashMap;
 
     return-object v0
@@ -208,7 +239,10 @@
 
 .method static synthetic access$600(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/util/HashMap;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userDataCache:Ljava/util/HashMap;
 
     return-object v0
@@ -216,7 +250,10 @@
 
 .method static synthetic access$700(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/util/HashMap;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->authTokenCache:Ljava/util/HashMap;
 
     return-object v0
@@ -224,7 +261,10 @@
 
 .method static synthetic access$800(Landroid/accounts/AccountManagerService$UserAccounts;)Ljava/util/HashMap;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->credentialsPermissionNotificationIds:Ljava/util/HashMap;
 
     return-object v0

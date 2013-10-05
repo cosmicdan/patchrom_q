@@ -34,7 +34,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebViewCore;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 503
     iput-object p1, p0, Landroid/webkit/WebViewCore$3;->this$0:Landroid/webkit/WebViewCore;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,9 +49,13 @@
 # virtual methods
 .method public bridge synthetic onReceiveValue(Ljava/lang/Object;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 503
     check-cast p1, [Ljava/lang/String;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/webkit/WebViewCore$3;->onReceiveValue([Ljava/lang/String;)V
 
     return-void
@@ -56,12 +63,16 @@
 
 .method public onReceiveValue([Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 506
     iget-object v0, p0, Landroid/webkit/WebViewCore$3;->this$0:Landroid/webkit/WebViewCore;
 
     const/16 v1, 0xb5
 
     invoke-virtual {v0, v1, p1}, Landroid/webkit/WebViewCore;->sendMessage(ILjava/lang/Object;)V
 
+    .line 507
     return-void
 .end method

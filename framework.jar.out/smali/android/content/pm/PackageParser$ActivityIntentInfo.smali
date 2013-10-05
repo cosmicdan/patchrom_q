@@ -21,11 +21,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageParser$Activity;)V
     .locals 0
+    .parameter "_activity"
 
+    .prologue
+    .line 3800
     invoke-direct {p0}, Landroid/content/pm/PackageParser$IntentInfo;-><init>()V
 
+    .line 3801
     iput-object p1, p0, Landroid/content/pm/PackageParser$ActivityIntentInfo;->activity:Landroid/content/pm/PackageParser$Activity;
 
+    .line 3802
     return-void
 .end method
 
@@ -34,6 +39,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 3805
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

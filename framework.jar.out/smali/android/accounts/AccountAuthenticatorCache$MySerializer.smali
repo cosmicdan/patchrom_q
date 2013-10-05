@@ -31,6 +31,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 80
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +40,10 @@
 
 .method synthetic constructor <init>(Landroid/accounts/AccountAuthenticatorCache$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 80
     invoke-direct {p0}, Landroid/accounts/AccountAuthenticatorCache$MySerializer;-><init>()V
 
     return-void
@@ -48,6 +53,7 @@
 # virtual methods
 .method public createFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/accounts/AuthenticatorDescription;
     .locals 2
+    .parameter "parser"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -55,6 +61,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 88
     const/4 v0, 0x0
 
     const-string/jumbo v1, "type"
@@ -72,6 +80,7 @@
 
 .method public bridge synthetic createFromXml(Lorg/xmlpull/v1/XmlPullParser;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -79,6 +88,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 80
     invoke-virtual {p0, p1}, Landroid/accounts/AccountAuthenticatorCache$MySerializer;->createFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/accounts/AuthenticatorDescription;
 
     move-result-object v0
@@ -88,12 +99,16 @@
 
 .method public writeAsXml(Landroid/accounts/AuthenticatorDescription;Lorg/xmlpull/v1/XmlSerializer;)V
     .locals 3
+    .parameter "item"
+    .parameter "out"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 83
     const/4 v0, 0x0
 
     const-string/jumbo v1, "type"
@@ -102,19 +117,25 @@
 
     invoke-interface {p2, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
+    .line 84
     return-void
 .end method
 
 .method public bridge synthetic writeAsXml(Ljava/lang/Object;Lorg/xmlpull/v1/XmlSerializer;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 80
     check-cast p1, Landroid/accounts/AuthenticatorDescription;
 
+    .end local p1
     invoke-virtual {p0, p1, p2}, Landroid/accounts/AccountAuthenticatorCache$MySerializer;->writeAsXml(Landroid/accounts/AuthenticatorDescription;Lorg/xmlpull/v1/XmlSerializer;)V
 
     return-void

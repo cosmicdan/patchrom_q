@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 295
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 298
     const-string v0, "KeyguardViewStateManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,6 +71,7 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 299
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
@@ -75,6 +81,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 300
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
@@ -84,6 +91,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->hideOutlinesAndSidePages()V
 
+    .line 302
     :cond_0
     return-void
 .end method

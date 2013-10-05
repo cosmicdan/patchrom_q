@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 652
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,46 +42,65 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/CharSequence;
     .locals 6
+    .parameter "p"
 
+    .prologue
+    .line 658
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 660
+    .local v0, kind:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 661
+    .local v2, string:Ljava/lang/String;
     if-nez v2, :cond_1
 
+    .line 662
     const/4 v2, 0x0
 
+    .line 779
+    .end local v2           #string:Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v2
 
+    .line 665
+    .restart local v2       #string:Ljava/lang/String;
     :cond_1
     const/4 v3, 0x1
 
     if-eq v0, v3, :cond_0
 
+    .line 669
     new-instance v1, Landroid/text/SpannableString;
 
     invoke-direct {v1, v2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
+    .line 672
+    .local v1, sp:Landroid/text/SpannableString;
     :goto_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 674
     if-nez v0, :cond_2
 
     move-object v2, v1
 
+    .line 779
     goto :goto_0
 
+    .line 677
     :cond_2
     packed-switch v0, :pswitch_data_0
 
+    .line 775
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -104,6 +125,7 @@
 
     throw v3
 
+    .line 679
     :pswitch_0
     new-instance v3, Landroid/text/style/AlignmentSpan$Standard;
 
@@ -114,6 +136,7 @@
 
     goto :goto_1
 
+    .line 683
     :pswitch_1
     new-instance v3, Landroid/text/style/ForegroundColorSpan;
 
@@ -124,6 +147,7 @@
 
     goto :goto_1
 
+    .line 687
     :pswitch_2
     new-instance v3, Landroid/text/style/RelativeSizeSpan;
 
@@ -134,6 +158,7 @@
 
     goto :goto_1
 
+    .line 691
     :pswitch_3
     new-instance v3, Landroid/text/style/ScaleXSpan;
 
@@ -144,6 +169,7 @@
 
     goto :goto_1
 
+    .line 695
     :pswitch_4
     new-instance v3, Landroid/text/style/StrikethroughSpan;
 
@@ -154,6 +180,7 @@
 
     goto :goto_1
 
+    .line 699
     :pswitch_5
     new-instance v3, Landroid/text/style/UnderlineSpan;
 
@@ -164,6 +191,7 @@
 
     goto :goto_1
 
+    .line 703
     :pswitch_6
     new-instance v3, Landroid/text/style/StyleSpan;
 
@@ -174,6 +202,7 @@
 
     goto :goto_1
 
+    .line 707
     :pswitch_7
     new-instance v3, Landroid/text/style/BulletSpan;
 
@@ -184,6 +213,7 @@
 
     goto :goto_1
 
+    .line 711
     :pswitch_8
     new-instance v3, Landroid/text/style/QuoteSpan;
 
@@ -194,6 +224,7 @@
 
     goto :goto_1
 
+    .line 715
     :pswitch_9
     new-instance v3, Landroid/text/style/LeadingMarginSpan$Standard;
 
@@ -204,6 +235,7 @@
 
     goto :goto_1
 
+    .line 719
     :pswitch_a
     new-instance v3, Landroid/text/style/URLSpan;
 
@@ -214,6 +246,7 @@
 
     goto/16 :goto_1
 
+    .line 723
     :pswitch_b
     new-instance v3, Landroid/text/style/BackgroundColorSpan;
 
@@ -224,6 +257,7 @@
 
     goto/16 :goto_1
 
+    .line 727
     :pswitch_c
     new-instance v3, Landroid/text/style/TypefaceSpan;
 
@@ -234,6 +268,7 @@
 
     goto/16 :goto_1
 
+    .line 731
     :pswitch_d
     new-instance v3, Landroid/text/style/SuperscriptSpan;
 
@@ -244,6 +279,7 @@
 
     goto/16 :goto_1
 
+    .line 735
     :pswitch_e
     new-instance v3, Landroid/text/style/SubscriptSpan;
 
@@ -254,6 +290,7 @@
 
     goto/16 :goto_1
 
+    .line 739
     :pswitch_f
     new-instance v3, Landroid/text/style/AbsoluteSizeSpan;
 
@@ -264,6 +301,7 @@
 
     goto/16 :goto_1
 
+    .line 743
     :pswitch_10
     new-instance v3, Landroid/text/style/TextAppearanceSpan;
 
@@ -274,6 +312,7 @@
 
     goto/16 :goto_1
 
+    .line 747
     :pswitch_11
     new-instance v3, Landroid/text/Annotation;
 
@@ -284,6 +323,7 @@
 
     goto/16 :goto_1
 
+    .line 751
     :pswitch_12
     new-instance v3, Landroid/text/style/SuggestionSpan;
 
@@ -294,6 +334,7 @@
 
     goto/16 :goto_1
 
+    .line 755
     :pswitch_13
     new-instance v3, Landroid/text/style/SpellCheckSpan;
 
@@ -304,6 +345,7 @@
 
     goto/16 :goto_1
 
+    .line 759
     :pswitch_14
     new-instance v3, Landroid/text/style/SuggestionRangeSpan;
 
@@ -314,6 +356,7 @@
 
     goto/16 :goto_1
 
+    .line 763
     :pswitch_15
     new-instance v3, Landroid/text/style/EasyEditSpan;
 
@@ -324,6 +367,7 @@
 
     goto/16 :goto_1
 
+    .line 767
     :pswitch_16
     new-instance v3, Landroid/text/style/LocaleSpan;
 
@@ -334,6 +378,7 @@
 
     goto/16 :goto_1
 
+    .line 771
     :pswitch_17
     new-instance v3, Landroid/text/style/BackgroundImageSpan;
 
@@ -344,6 +389,7 @@
 
     goto/16 :goto_1
 
+    .line 677
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -375,7 +421,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 652
     invoke-virtual {p0, p1}, Landroid/text/TextUtils$1;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -385,7 +434,10 @@
 
 .method public newArray(I)[Ljava/lang/CharSequence;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 784
     new-array v0, p1, [Ljava/lang/CharSequence;
 
     return-object v0
@@ -393,7 +445,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 652
     invoke-virtual {p0, p1}, Landroid/text/TextUtils$1;->newArray(I)[Ljava/lang/CharSequence;
 
     move-result-object v0

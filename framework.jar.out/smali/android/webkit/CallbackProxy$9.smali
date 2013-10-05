@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 752
     iput-object p1, p0, Landroid/webkit/CallbackProxy$9;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$9;->val$res:Landroid/webkit/JsResult;
@@ -40,10 +44,14 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
+    .parameter "dialog"
 
+    .prologue
+    .line 756
     iget-object v0, p0, Landroid/webkit/CallbackProxy$9;->val$res:Landroid/webkit/JsResult;
 
     invoke-virtual {v0}, Landroid/webkit/JsResult;->cancel()V
 
+    .line 757
     return-void
 .end method

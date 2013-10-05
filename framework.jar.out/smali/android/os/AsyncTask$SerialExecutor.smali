@@ -36,8 +36,11 @@
 .method private constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 222
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 223
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
@@ -49,7 +52,10 @@
 
 .method synthetic constructor <init>(Landroid/os/AsyncTask$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 222
     invoke-direct {p0}, Landroid/os/AsyncTask$SerialExecutor;-><init>()V
 
     return-void
@@ -59,7 +65,10 @@
 # virtual methods
 .method public declared-synchronized execute(Ljava/lang/Runnable;)V
     .locals 2
+    .parameter "r"
 
+    .prologue
+    .line 227
     monitor-enter p0
 
     :try_start_0
@@ -71,19 +80,23 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
 
+    .line 236
     iget-object v0, p0, Landroid/os/AsyncTask$SerialExecutor;->mActive:Ljava/lang/Runnable;
 
     if-nez v0, :cond_0
 
+    .line 237
     invoke-virtual {p0}, Landroid/os/AsyncTask$SerialExecutor;->scheduleNext()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 239
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 227
     :catchall_0
     move-exception v0
 
@@ -95,6 +108,8 @@
 .method protected declared-synchronized scheduleNext()V
     .locals 2
 
+    .prologue
+    .line 242
     monitor-enter p0
 
     :try_start_0
@@ -110,6 +125,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 243
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Landroid/os/AsyncTask$SerialExecutor;->mActive:Ljava/lang/Runnable;
@@ -118,11 +134,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 245
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 242
     :catchall_0
     move-exception v0
 

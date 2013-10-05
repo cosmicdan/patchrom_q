@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 86
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,15 +36,20 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .parameter "msg"
 
+    .prologue
+    .line 89
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 125
     :cond_0
     :goto_0
     return-void
 
+    .line 91
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -63,6 +71,7 @@
 
     goto :goto_0
 
+    .line 95
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -86,6 +95,7 @@
 
     goto :goto_0
 
+    .line 99
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -107,6 +117,7 @@
 
     goto :goto_0
 
+    .line 103
     :pswitch_3
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -119,6 +130,7 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 104
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mMetadata:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;
@@ -133,6 +145,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 105
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mMetadata:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;
@@ -147,6 +160,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
+    .line 107
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -162,6 +176,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
     invoke-static {v1, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;->access$502(Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
+    .line 108
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mAlbumArt:Landroid/widget/ImageView;
@@ -185,15 +200,18 @@
 
     goto :goto_0
 
+    .line 113
     :pswitch_4
     iget v0, p1, Landroid/os/Message;->arg2:I
 
     if-eqz v0, :cond_2
 
+    .line 115
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->onListenerDetached()V
 
+    .line 120
     :goto_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -202,6 +220,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mClientGeneration:I
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->access$002(Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;I)I
 
+    .line 121
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -213,6 +232,7 @@
 
     goto/16 :goto_0
 
+    .line 117
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
@@ -221,6 +241,7 @@
 
     goto :goto_1
 
+    .line 89
     nop
 
     :pswitch_data_0

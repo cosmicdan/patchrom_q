@@ -21,6 +21,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,13 +32,16 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 4
+    .parameter "input"
 
+    .prologue
     const/high16 v1, 0x3f00
 
     const/4 v3, 0x0
 
     const/high16 v2, 0x3f80
 
+    .line 61
     div-float/2addr p1, v1
 
     cmpg-float v0, p1, v2

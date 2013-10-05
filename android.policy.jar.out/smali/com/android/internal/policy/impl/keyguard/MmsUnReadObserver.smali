@@ -25,16 +25,19 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 29
     sget-object v0, Landroid/provider/Telephony$Threads;->CONTENT_URI:Landroid/net/Uri;
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->MMS_URI:Landroid/net/Uri;
 
+    .line 31
     const-string v0, "content://mms/inbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,6 +46,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->MMS_QUERY_URI:Landroid/net/Uri;
 
+    .line 33
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "date"
@@ -55,10 +59,12 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->MMS_STATUS_PROJECTION:[Ljava/lang/String;
 
+    .line 41
     sget-object v0, Landroid/provider/Telephony$Sms;->CONTENT_URI:Landroid/net/Uri;
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->SMS_QUERY_URI:Landroid/net/Uri;
 
+    .line 43
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "date"
@@ -76,15 +82,23 @@
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
     .locals 0
+    .parameter "handler"
+    .parameter "newEventView"
+    .parameter "createTime"
 
+    .prologue
+    .line 53
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/keyguard/UnReadObserver;-><init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
 
+    .line 54
     return-void
 .end method
 
 .method static synthetic access$000()Landroid/net/Uri;
     .locals 1
 
+    .prologue
+    .line 25
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->MMS_QUERY_URI:Landroid/net/Uri;
 
     return-object v0
@@ -93,6 +107,8 @@
 .method static synthetic access$100()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 25
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->MMS_STATUS_PROJECTION:[Ljava/lang/String;
 
     return-object v0
@@ -101,6 +117,8 @@
 .method static synthetic access$200()Landroid/net/Uri;
     .locals 1
 
+    .prologue
+    .line 25
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->SMS_QUERY_URI:Landroid/net/Uri;
 
     return-object v0
@@ -109,6 +127,8 @@
 .method static synthetic access$300()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 25
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;->SMS_STATUS_PROJECTION:[Ljava/lang/String;
 
     return-object v0
@@ -119,8 +139,10 @@
 .method public refreshUnReadNumber()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 57
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver$1;-><init>(Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver;)V
@@ -143,5 +165,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MmsUnReadObserver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 95
     return-void
 .end method

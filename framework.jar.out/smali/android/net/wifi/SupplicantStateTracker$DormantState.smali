@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/SupplicantStateTracker;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 364
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$DormantState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -34,6 +37,8 @@
 .method public enter()V
     .locals 2
 
+    .prologue
+    .line 368
     iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$DormantState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     #getter for: Landroid/net/wifi/SupplicantStateTracker;->mNetworksDisabledDuringConnect:Z
@@ -43,6 +48,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 369
     iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$DormantState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     #getter for: Landroid/net/wifi/SupplicantStateTracker;->mWifiConfigStore:Landroid/net/wifi/WifiConfigStore;
@@ -52,6 +58,7 @@
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiConfigStore;->enableAllNetworks()V
 
+    .line 370
     iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$DormantState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     const/4 v1, 0x0
@@ -59,6 +66,7 @@
     #setter for: Landroid/net/wifi/SupplicantStateTracker;->mNetworksDisabledDuringConnect:Z
     invoke-static {v0, v1}, Landroid/net/wifi/SupplicantStateTracker;->access$602(Landroid/net/wifi/SupplicantStateTracker;Z)Z
 
+    .line 372
     :cond_0
     return-void
 .end method

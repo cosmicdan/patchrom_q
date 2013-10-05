@@ -12,31 +12,42 @@
 # direct methods
 .method private constructor <init>(I)V
     .locals 1
+    .parameter "lbm"
 
+    .prologue
+    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 49
     iput p1, p0, Landroid/graphics/LargeBitmap;->mNativeLargeBitmap:I
 
+    .line 50
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/graphics/LargeBitmap;->mRecycled:Z
 
+    .line 51
     return-void
 .end method
 
 .method private checkRecycled(Ljava/lang/String;)V
     .locals 1
+    .parameter "errorMessage"
 
+    .prologue
+    .line 113
     iget-boolean v0, p0, Landroid/graphics/LargeBitmap;->mRecycled:Z
 
     if-eqz v0, :cond_0
 
+    .line 114
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 116
     :cond_0
     return-void
 .end method
@@ -57,11 +68,16 @@
 # virtual methods
 .method public decodeRegion(Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 6
+    .parameter "rect"
+    .parameter "options"
 
+    .prologue
+    .line 63
     const-string v0, "decodeRegion called on recycled large bitmap"
 
     invoke-direct {p0, v0}, Landroid/graphics/LargeBitmap;->checkRecycled(Ljava/lang/String;)V
 
+    .line 64
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     if-ltz v0, :cond_0
@@ -86,6 +102,7 @@
 
     if-le v0, v1, :cond_1
 
+    .line 65
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -95,6 +112,7 @@
 
     throw v0
 
+    .line 66
     :cond_1
     iget v0, p0, Landroid/graphics/LargeBitmap;->mNativeLargeBitmap:I
 
@@ -126,18 +144,24 @@
 .method protected finalize()V
     .locals 0
 
+    .prologue
+    .line 119
     invoke-virtual {p0}, Landroid/graphics/LargeBitmap;->recycle()V
 
+    .line 120
     return-void
 .end method
 
 .method public getHeight()I
     .locals 1
 
+    .prologue
+    .line 78
     const-string v0, "getHeight called on recycled large bitmap"
 
     invoke-direct {p0, v0}, Landroid/graphics/LargeBitmap;->checkRecycled(Ljava/lang/String;)V
 
+    .line 79
     iget v0, p0, Landroid/graphics/LargeBitmap;->mNativeLargeBitmap:I
 
     invoke-static {v0}, Landroid/graphics/LargeBitmap;->nativeGetHeight(I)I
@@ -150,10 +174,13 @@
 .method public getWidth()I
     .locals 1
 
+    .prologue
+    .line 72
     const-string v0, "getWidth called on recycled large bitmap"
 
     invoke-direct {p0, v0}, Landroid/graphics/LargeBitmap;->checkRecycled(Ljava/lang/String;)V
 
+    .line 73
     iget v0, p0, Landroid/graphics/LargeBitmap;->mNativeLargeBitmap:I
 
     invoke-static {v0}, Landroid/graphics/LargeBitmap;->nativeGetWidth(I)I
@@ -166,6 +193,8 @@
 .method public final isRecycled()Z
     .locals 1
 
+    .prologue
+    .line 105
     iget-boolean v0, p0, Landroid/graphics/LargeBitmap;->mRecycled:Z
 
     return v0
@@ -174,18 +203,23 @@
 .method public recycle()V
     .locals 1
 
+    .prologue
+    .line 92
     iget-boolean v0, p0, Landroid/graphics/LargeBitmap;->mRecycled:Z
 
     if-nez v0, :cond_0
 
+    .line 93
     iget v0, p0, Landroid/graphics/LargeBitmap;->mNativeLargeBitmap:I
 
     invoke-static {v0}, Landroid/graphics/LargeBitmap;->nativeClean(I)V
 
+    .line 94
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/LargeBitmap;->mRecycled:Z
 
+    .line 96
     :cond_0
     return-void
 .end method

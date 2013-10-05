@@ -30,7 +30,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;Landroid/widget/ListView;Landroid/view/View;Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 431
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     iput-object p2, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$list:Landroid/widget/ListView;
@@ -48,7 +54,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
+    .parameter "v"
 
+    .prologue
+    .line 433
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$list:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$fview:Landroid/view/View;
@@ -61,5 +70,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
 
+    .line 434
     return-void
 .end method

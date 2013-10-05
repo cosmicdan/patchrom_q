@@ -23,6 +23,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,12 +32,15 @@
 
 .method public constructor <init>(Ljava/io/BufferedReader;)V
     .locals 0
+    .parameter "input"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 46
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +50,10 @@
 # virtual methods
 .method public get(I)Landroid/util/EventLogTags$Description;
     .locals 1
+    .parameter "tag"
 
+    .prologue
+    .line 50
     const/4 v0, 0x0
 
     return-object v0
@@ -53,7 +61,10 @@
 
 .method public get(Ljava/lang/String;)Landroid/util/EventLogTags$Description;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 48
     const/4 v0, 0x0
 
     return-object v0

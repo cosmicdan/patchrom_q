@@ -31,12 +31,14 @@
 .method private constructor <init>()V
     .locals 9
 
+    .prologue
     const-wide/16 v3, 0x0
 
     const/4 v1, 0x0
 
     const/4 v7, 0x0
 
+    .line 76
     move-object v0, p0
 
     move-object v2, v1
@@ -47,16 +49,27 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/media/videoeditor/EffectColor;-><init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;JJII)V
 
+    .line 77
     return-void
 .end method
 
 .method public constructor <init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;JJII)V
     .locals 3
+    .parameter "mediaItem"
+    .parameter "effectId"
+    .parameter "startTimeMs"
+    .parameter "durationMs"
+    .parameter "type"
+    .parameter "color"
 
+    .prologue
+    .line 95
     invoke-direct/range {p0 .. p6}, Landroid/media/videoeditor/Effect;-><init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;JJ)V
 
+    .line 96
     packed-switch p7, :pswitch_data_0
 
+    .line 119
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -81,9 +94,11 @@
 
     throw v0
 
+    .line 99
     :pswitch_0
     sparse-switch p8, :sswitch_data_0
 
+    .line 107
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,14 +123,18 @@
 
     throw v0
 
+    .line 103
     :sswitch_0
     iput p8, p0, Landroid/media/videoeditor/EffectColor;->mColor:I
 
+    .line 122
     :goto_0
     iput p7, p0, Landroid/media/videoeditor/EffectColor;->mType:I
 
+    .line 123
     return-void
 
+    .line 114
     :pswitch_1
     const/4 v0, -0x1
 
@@ -123,6 +142,7 @@
 
     goto :goto_0
 
+    .line 96
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -132,6 +152,7 @@
         :pswitch_1
     .end packed-switch
 
+    .line 99
     :sswitch_data_0
     .sparse-switch
         0xff00 -> :sswitch_0
@@ -145,6 +166,8 @@
 .method public getColor()I
     .locals 1
 
+    .prologue
+    .line 140
     iget v0, p0, Landroid/media/videoeditor/EffectColor;->mColor:I
 
     return v0
@@ -153,6 +176,8 @@
 .method public getType()I
     .locals 1
 
+    .prologue
+    .line 131
     iget v0, p0, Landroid/media/videoeditor/EffectColor;->mType:I
 
     return v0

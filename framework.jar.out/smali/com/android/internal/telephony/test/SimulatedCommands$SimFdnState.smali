@@ -39,6 +39,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .prologue
     const/4 v5, 0x3
 
     const/4 v4, 0x2
@@ -47,6 +48,7 @@
 
     const/4 v2, 0x0
 
+    .line 52
     new-instance v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     const-string v1, "NONE"
@@ -55,6 +57,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->NONE:Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
+    .line 53
     new-instance v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     const-string v1, "REQUIRE_PIN2"
@@ -63,6 +66,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->REQUIRE_PIN2:Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
+    .line 54
     new-instance v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     const-string v1, "REQUIRE_PUK2"
@@ -71,6 +75,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->REQUIRE_PUK2:Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
+    .line 55
     new-instance v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     const-string v1, "SIM_PERM_LOCKED"
@@ -79,6 +84,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->SIM_PERM_LOCKED:Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
+    .line 51
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
@@ -106,12 +112,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 51
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -119,7 +129,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 51
     const-class v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -134,6 +147,8 @@
 .method public static values()[Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
     .locals 1
 
+    .prologue
+    .line 51
     sget-object v0, Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->$VALUES:[Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/test/SimulatedCommands$SimFdnState;->clone()Ljava/lang/Object;

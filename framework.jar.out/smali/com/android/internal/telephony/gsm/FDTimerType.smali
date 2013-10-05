@@ -32,6 +32,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .prologue
     const/4 v6, 0x4
 
     const/4 v5, 0x3
@@ -42,6 +43,7 @@
 
     const/4 v2, 0x0
 
+    .line 43
     new-instance v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     const-string v1, "ScreenOffLegacyFD"
@@ -50,6 +52,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOffLegacyFD:Lcom/android/internal/telephony/gsm/FDTimerType;
 
+    .line 44
     new-instance v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     const-string v1, "ScreenOnLegacyFD"
@@ -58,6 +61,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOnLegacyFD:Lcom/android/internal/telephony/gsm/FDTimerType;
 
+    .line 45
     new-instance v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     const-string v1, "ScreenOffR8FD"
@@ -66,6 +70,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOffR8FD:Lcom/android/internal/telephony/gsm/FDTimerType;
 
+    .line 46
     new-instance v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     const-string v1, "ScreenOnR8FD"
@@ -74,6 +79,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOnR8FD:Lcom/android/internal/telephony/gsm/FDTimerType;
 
+    .line 47
     new-instance v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     const-string v1, "SupportedTimerTypes"
@@ -82,6 +88,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->SupportedTimerTypes:Lcom/android/internal/telephony/gsm/FDTimerType;
 
+    .line 42
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/telephony/gsm/FDTimerType;
@@ -113,12 +120,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 42
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -126,7 +137,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/gsm/FDTimerType;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 42
     const-class v0, Lcom/android/internal/telephony/gsm/FDTimerType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,6 +155,8 @@
 .method public static values()[Lcom/android/internal/telephony/gsm/FDTimerType;
     .locals 1
 
+    .prologue
+    .line 42
     sget-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->$VALUES:[Lcom/android/internal/telephony/gsm/FDTimerType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/gsm/FDTimerType;->clone()Ljava/lang/Object;

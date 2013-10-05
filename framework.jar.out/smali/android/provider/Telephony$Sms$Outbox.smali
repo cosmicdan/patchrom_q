@@ -28,6 +28,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 600
     const-string v0, "content://sms/outbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -42,6 +44,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 596
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +53,16 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZJ)Landroid/net/Uri;
     .locals 10
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
+    .parameter "deliveryReport"
+    .parameter "threadId"
 
+    .prologue
+    .line 622
     sget-object v1, Landroid/provider/Telephony$Sms$Outbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -77,7 +90,17 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZJI)Landroid/net/Uri;
     .locals 11
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
+    .parameter "deliveryReport"
+    .parameter "threadId"
+    .parameter "simId"
 
+    .prologue
+    .line 642
     sget-object v1, Landroid/provider/Telephony$Sms$Outbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1

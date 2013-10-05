@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Landroid/server/search/SearchEngineManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 108
     iput-object p1, p0, Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver;->this$0:Landroid/server/search/SearchEngineManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Landroid/server/search/SearchEngineManagerService;Landroid/server/search/SearchEngineManagerService$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 108
     invoke-direct {p0, p1}, Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver;-><init>(Landroid/server/search/SearchEngineManagerService;)V
 
     return-void
@@ -41,12 +48,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 111
     new-instance v0, Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver$1;
 
     invoke-direct {v0, p0}, Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver$1;-><init>(Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver;)V
 
     invoke-virtual {v0}, Landroid/server/search/SearchEngineManagerService$BootCompletedReceiver$1;->start()V
 
+    .line 121
     return-void
 .end method

@@ -45,7 +45,10 @@
 # direct methods
 .method private constructor <init>(Landroid/media/MediaRecorder;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 153
     iput-object p1, p0, Landroid/media/MediaRecorder$AudioSource;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

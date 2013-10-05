@@ -35,6 +35,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 685
     const-string v0, "content://com.android.calendar/calendars"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,6 +45,7 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Calendars;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 712
     const/16 v0, 0x18
 
     new-array v0, v0, [Ljava/lang/String;
@@ -199,6 +202,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 679
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

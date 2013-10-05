@@ -45,10 +45,12 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 6721
     const-string v0, "content://settings/bookmarks"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -57,6 +59,7 @@
 
     sput-object v0, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 6774
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "intent"
@@ -65,6 +68,7 @@
 
     sput-object v0, Landroid/provider/Settings$Bookmarks;->sIntentProjection:[Ljava/lang/String;
 
+    .line 6775
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -85,6 +89,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 6714
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -92,11 +98,20 @@
 
 .method public static add(Landroid/content/ContentResolver;Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;CI)Landroid/net/Uri;
     .locals 6
+    .parameter "cr"
+    .parameter "intent"
+    .parameter "title"
+    .parameter "folder"
+    .parameter "shortcut"
+    .parameter "ordering"
 
+    .prologue
     const/4 v5, 0x0
 
+    .line 6838
     if-eqz p4, :cond_0
 
+    .line 6839
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v2, "shortcut=?"
@@ -113,17 +128,21 @@
 
     invoke-virtual {p0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 6843
     :cond_0
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
+    .line 6844
+    .local v0, values:Landroid/content/ContentValues;
     if-eqz p2, :cond_1
 
     const-string/jumbo v1, "title"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 6845
     :cond_1
     if-eqz p3, :cond_2
 
@@ -131,6 +150,7 @@
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 6846
     :cond_2
     const-string v1, "intent"
 
@@ -140,6 +160,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 6847
     if-eqz p4, :cond_3
 
     const-string/jumbo v1, "shortcut"
@@ -150,6 +171,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 6848
     :cond_3
     const-string/jumbo v1, "ordering"
 
@@ -159,6 +181,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 6849
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v1, v0}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -170,11 +193,17 @@
 
 .method public static getIntentForShortcut(Landroid/content/ContentResolver;C)Landroid/content/Intent;
     .locals 10
+    .parameter "cr"
+    .parameter "shortcut"
 
+    .prologue
     const/4 v5, 0x0
 
+    .line 6790
     const/4 v8, 0x0
 
+    .line 6792
+    .local v8, intent:Landroid/content/Intent;
     sget-object v1, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Landroid/provider/Settings$Bookmarks;->sIntentProjection:[Ljava/lang/String;
@@ -199,6 +228,8 @@
 
     move-result-object v6
 
+    .line 6797
+    .local v6, c:Landroid/database/Cursor;
     :goto_0
     if-nez v8, :cond_1
 
@@ -211,6 +242,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 6799
     :try_start_1
     const-string v0, "intent"
 
@@ -222,6 +254,8 @@
 
     move-result-object v9
 
+    .line 6800
+    .local v9, intentURI:Ljava/lang/String;
     const/4 v0, 0x0
 
     invoke-static {v9, v0}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
@@ -234,9 +268,13 @@
 
     goto :goto_0
 
+    .line 6803
+    .end local v9           #intentURI:Ljava/lang/String;
     :catch_0
     move-exception v7
 
+    .line 6805
+    .local v7, e:Ljava/lang/IllegalArgumentException;
     :try_start_2
     const-string v0, "Bookmarks"
 
@@ -248,6 +286,8 @@
 
     goto :goto_0
 
+    .line 6809
+    .end local v7           #e:Ljava/lang/IllegalArgumentException;
     :catchall_0
     move-exception v0
 
@@ -263,9 +303,11 @@
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    .line 6812
     :cond_2
     return-object v8
 
+    .line 6801
     :catch_1
     move-exception v0
 
@@ -274,33 +316,46 @@
 
 .method public static getLabelForFolder(Landroid/content/res/Resources;Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 0
+    .parameter "r"
+    .parameter "folder"
 
+    .prologue
+    .line 6864
     return-object p1
 .end method
 
 .method public static getTitle(Landroid/content/Context;Landroid/database/Cursor;)Ljava/lang/CharSequence;
     .locals 11
+    .parameter "context"
+    .parameter "cursor"
 
+    .prologue
     const/4 v10, 0x0
 
     const/4 v9, -0x1
 
+    .line 6879
     const-string/jumbo v8, "title"
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v7
 
+    .line 6880
+    .local v7, titleColumn:I
     const-string v8, "intent"
 
     invoke-interface {p1, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v3
 
+    .line 6881
+    .local v3, intentColumn:I
     if-eq v7, v9, :cond_0
 
     if-ne v3, v9, :cond_1
 
+    .line 6882
     :cond_0
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
@@ -310,35 +365,46 @@
 
     throw v8
 
+    .line 6886
     :cond_1
     invoke-interface {p1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
+    .line 6887
+    .local v6, title:Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
     if-nez v8, :cond_2
 
+    .line 6905
+    .end local v6           #title:Ljava/lang/String;
     :goto_0
     return-object v6
 
+    .line 6891
+    .restart local v6       #title:Ljava/lang/String;
     :cond_2
     invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 6892
+    .local v4, intentUri:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
     if-eqz v8, :cond_3
 
+    .line 6893
     const-string v6, ""
 
     goto :goto_0
 
+    .line 6898
     :cond_3
     const/4 v8, 0x0
 
@@ -349,14 +415,20 @@
 
     move-result-object v2
 
+    .line 6903
+    .local v2, intent:Landroid/content/Intent;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
+    .line 6904
+    .local v5, packageManager:Landroid/content/pm/PackageManager;
     invoke-virtual {v5, v2, v10}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v1
 
+    .line 6905
+    .local v1, info:Landroid/content/pm/ResolveInfo;
     if-eqz v1, :cond_4
 
     invoke-virtual {v1, v5}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -368,13 +440,24 @@
 
     goto :goto_0
 
+    .line 6899
+    .end local v1           #info:Landroid/content/pm/ResolveInfo;
+    .end local v2           #intent:Landroid/content/Intent;
+    .end local v5           #packageManager:Landroid/content/pm/PackageManager;
     :catch_0
     move-exception v0
 
+    .line 6900
+    .local v0, e:Ljava/net/URISyntaxException;
     const-string v6, ""
 
     goto :goto_0
 
+    .line 6905
+    .end local v0           #e:Ljava/net/URISyntaxException;
+    .restart local v1       #info:Landroid/content/pm/ResolveInfo;
+    .restart local v2       #intent:Landroid/content/Intent;
+    .restart local v5       #packageManager:Landroid/content/pm/PackageManager;
     :cond_4
     const-string v8, ""
 

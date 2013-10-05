@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 687
     iput-object p1, p0, Landroid/webkit/CallbackProxy$8;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$8;->val$res:Landroid/webkit/JsPromptResult;
@@ -44,7 +49,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
+    .parameter "dialog"
+    .parameter "whichButton"
 
+    .prologue
+    .line 691
     iget-object v0, p0, Landroid/webkit/CallbackProxy$8;->val$res:Landroid/webkit/JsPromptResult;
 
     iget-object v1, p0, Landroid/webkit/CallbackProxy$8;->val$v:Landroid/widget/EditText;
@@ -59,5 +68,6 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/JsPromptResult;->confirm(Ljava/lang/String;)V
 
+    .line 693
     return-void
 .end method

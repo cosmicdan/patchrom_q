@@ -28,17 +28,25 @@
 # direct methods
 .method public constructor <init>(Landroid/drm/DrmUtils$OnDrmScanCompletedListener;I)V
     .locals 1
+    .parameter "callback"
+    .parameter "scanCount"
 
+    .prologue
+    .line 333
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 334
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScannedCount:I
 
+    .line 335
     iput p2, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScanCount:I
 
+    .line 336
     iput-object p1, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mClient:Landroid/drm/DrmUtils$OnDrmScanCompletedListener;
 
+    .line 337
     return-void
 .end method
 
@@ -46,29 +54,37 @@
 # virtual methods
 .method public onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 3
+    .parameter "path"
+    .parameter "uri"
 
+    .prologue
+    .line 340
     iget v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScannedCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScannedCount:I
 
+    .line 341
     iget-object v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mClient:Landroid/drm/DrmUtils$OnDrmScanCompletedListener;
 
     invoke-interface {v0, p1, p2}, Landroid/drm/DrmUtils$OnDrmScanCompletedListener;->onScanCompletedOne(Ljava/lang/String;Landroid/net/Uri;)V
 
+    .line 342
     iget v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScannedCount:I
 
     iget v1, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScanCount:I
 
     if-lt v0, v1, :cond_0
 
+    .line 343
     iget-object v0, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mClient:Landroid/drm/DrmUtils$OnDrmScanCompletedListener;
 
     iget v1, p0, Landroid/drm/DrmUtils$DrmScanCompletedProxy;->mScannedCount:I
 
     invoke-interface {v0, v1}, Landroid/drm/DrmUtils$OnDrmScanCompletedListener;->onScanCompletedAll(I)V
 
+    .line 345
     :cond_0
     const-string v0, "DrmUtils"
 
@@ -102,6 +118,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 346
     const-string v0, "DrmUtils"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,5 +155,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 347
     return-void
 .end method

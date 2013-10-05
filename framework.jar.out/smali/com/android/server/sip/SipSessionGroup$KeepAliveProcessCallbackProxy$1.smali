@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;Z)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1813
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$1;->this$0:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;
 
     iput-boolean p2, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$1;->val$portChanged:Z
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 1816
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$1;->this$0:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;
 
@@ -55,12 +61,16 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1820
     :goto_0
     return-void
 
+    .line 1817
     :catch_0
     move-exception v0
 
+    .line 1818
+    .local v0, t:Ljava/lang/Throwable;
     const-string v1, "SipSession"
 
     const-string/jumbo v2, "onResponse"

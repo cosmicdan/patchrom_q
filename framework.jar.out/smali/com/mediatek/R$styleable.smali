@@ -110,10 +110,12 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 673
     const/16 v0, 0xf
 
     new-array v0, v0, [I
@@ -122,6 +124,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->BladeView:[I
 
+    .line 911
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -130,6 +133,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->BookmarkView:[I
 
+    .line 1073
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -138,6 +142,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->GlowPadView:[I
 
+    .line 1275
     new-array v0, v3, [I
 
     const v1, 0x2010011
@@ -146,6 +151,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->MTKAppWidgetProviderInfo:[I
 
+    .line 1304
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -154,6 +160,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->MTKManifest:[I
 
+    .line 1341
     new-array v0, v3, [I
 
     const v1, 0x2010026
@@ -164,6 +171,7 @@
 
     return-void
 
+    .line 673
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x1t 0x2t
@@ -183,6 +191,7 @@
         0xet 0x0t 0x1t 0x2t
     .end array-data
 
+    .line 911
     :array_1
     .array-data 0x4
         0x12t 0x0t 0x1t 0x2t
@@ -195,6 +204,7 @@
         0x19t 0x0t 0x1t 0x2t
     .end array-data
 
+    .line 1073
     :array_2
     .array-data 0x4
         0xaft 0x0t 0x1t 0x1t
@@ -213,6 +223,7 @@
         0x27t 0x0t 0x1t 0x2t
     .end array-data
 
+    .line 1304
     :array_3
     .array-data 0x4
         0xft 0x0t 0x1t 0x2t
@@ -223,6 +234,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 633
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -38,25 +38,34 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 3
+    .parameter "infoType"
+    .parameter "mimeType"
 
+    .prologue
+    .line 67
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 59
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
+    .line 68
     iput p1, p0, Landroid/drm/DrmInfoRequest;->mInfoType:I
 
+    .line 69
     iput-object p2, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
+    .line 70
     invoke-virtual {p0}, Landroid/drm/DrmInfoRequest;->isValid()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
+    .line 71
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -91,31 +100,43 @@
 
     move-result-object v0
 
+    .line 73
+    .local v0, msg:Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
+    .line 75
+    .end local v0           #msg:Ljava/lang/String;
     :cond_0
     return-void
 .end method
 
 .method static isValidType(I)Z
     .locals 1
+    .parameter "infoType"
 
+    .prologue
+    .line 150
     const/4 v0, 0x0
 
+    .line 152
+    .local v0, isValid:Z
     sparse-switch p0, :sswitch_data_0
 
+    .line 172
     :goto_0
     return v0
 
+    .line 169
     :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 152
     nop
 
     :sswitch_data_0
@@ -141,7 +162,10 @@
 # virtual methods
 .method public get(Ljava/lang/String;)Ljava/lang/Object;
     .locals 1
+    .parameter "key"
 
+    .prologue
+    .line 114
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -154,6 +178,8 @@
 .method public getInfoType()I
     .locals 1
 
+    .prologue
+    .line 92
     iget v0, p0, Landroid/drm/DrmInfoRequest;->mInfoType:I
 
     return v0
@@ -162,6 +188,8 @@
 .method public getMimeType()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 83
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
     return-object v0
@@ -170,6 +198,8 @@
 .method isValid()Z
     .locals 2
 
+    .prologue
+    .line 145
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -219,6 +249,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 134
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -244,6 +276,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 124
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -259,10 +293,15 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
+    .parameter "key"
+    .parameter "value"
 
+    .prologue
+    .line 102
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 103
     return-void
 .end method

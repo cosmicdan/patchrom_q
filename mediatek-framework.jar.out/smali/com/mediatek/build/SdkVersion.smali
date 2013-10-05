@@ -11,14 +11,19 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 49
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 51
     return-void
 .end method
 
 .method public static getAppVersion()I
     .locals 1
 
+    .prologue
+    .line 66
     const/4 v0, 0x1
 
     return v0
@@ -27,6 +32,8 @@
 .method public static getPlatformVersion()I
     .locals 1
 
+    .prologue
+    .line 74
     const-string v0, "ro.mediatek.version.sdk"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -47,6 +54,8 @@
 .method public static isCompatible()Z
     .locals 2
 
+    .prologue
+    .line 58
     invoke-static {}, Lcom/mediatek/build/SdkVersion;->getAppVersion()I
 
     move-result v0

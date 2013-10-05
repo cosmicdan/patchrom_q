@@ -126,14 +126,20 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 67
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6714
     return-void
 .end method
 
 .method public static getGTalkDeviceId(J)Ljava/lang/String;
     .locals 2
+    .parameter "androidId"
 
+    .prologue
+    .line 6919
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -34,6 +34,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .prologue
     const/4 v5, 0x3
 
     const/4 v4, 0x2
@@ -42,6 +43,7 @@
 
     const/4 v2, 0x0
 
+    .line 23
     new-instance v0, Lcom/android/internal/telephony/cat/TextAlignment;
 
     const-string v1, "LEFT"
@@ -50,6 +52,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/TextAlignment;->LEFT:Lcom/android/internal/telephony/cat/TextAlignment;
 
+    .line 24
     new-instance v0, Lcom/android/internal/telephony/cat/TextAlignment;
 
     const-string v1, "CENTER"
@@ -58,6 +61,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/TextAlignment;->CENTER:Lcom/android/internal/telephony/cat/TextAlignment;
 
+    .line 25
     new-instance v0, Lcom/android/internal/telephony/cat/TextAlignment;
 
     const-string v1, "RIGHT"
@@ -66,6 +70,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/TextAlignment;->RIGHT:Lcom/android/internal/telephony/cat/TextAlignment;
 
+    .line 27
     new-instance v0, Lcom/android/internal/telephony/cat/TextAlignment;
 
     const-string v1, "DEFAULT"
@@ -74,6 +79,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/TextAlignment;->DEFAULT:Lcom/android/internal/telephony/cat/TextAlignment;
 
+    .line 22
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/TextAlignment;
@@ -101,47 +107,68 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "value"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 31
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 32
     iput p3, p0, Lcom/android/internal/telephony/cat/TextAlignment;->mValue:I
 
+    .line 33
     return-void
 .end method
 
 .method public static fromInt(I)Lcom/android/internal/telephony/cat/TextAlignment;
     .locals 5
+    .parameter "value"
 
+    .prologue
+    .line 43
     invoke-static {}, Lcom/android/internal/telephony/cat/TextAlignment;->values()[Lcom/android/internal/telephony/cat/TextAlignment;
 
     move-result-object v0
 
+    .local v0, arr$:[Lcom/android/internal/telephony/cat/TextAlignment;
     array-length v3, v0
 
+    .local v3, len$:I
     const/4 v2, 0x0
 
+    .local v2, i$:I
     :goto_0
     if-ge v2, v3, :cond_1
 
     aget-object v1, v0, v2
 
+    .line 44
+    .local v1, e:Lcom/android/internal/telephony/cat/TextAlignment;
     iget v4, v1, Lcom/android/internal/telephony/cat/TextAlignment;->mValue:I
 
     if-ne v4, p0, :cond_0
 
+    .line 48
+    .end local v1           #e:Lcom/android/internal/telephony/cat/TextAlignment;
     :goto_1
     return-object v1
 
+    .line 43
+    .restart local v1       #e:Lcom/android/internal/telephony/cat/TextAlignment;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 48
+    .end local v1           #e:Lcom/android/internal/telephony/cat/TextAlignment;
     :cond_1
     const/4 v1, 0x0
 
@@ -150,7 +177,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/cat/TextAlignment;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 22
     const-class v0, Lcom/android/internal/telephony/cat/TextAlignment;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,6 +195,8 @@
 .method public static values()[Lcom/android/internal/telephony/cat/TextAlignment;
     .locals 1
 
+    .prologue
+    .line 22
     sget-object v0, Lcom/android/internal/telephony/cat/TextAlignment;->$VALUES:[Lcom/android/internal/telephony/cat/TextAlignment;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/TextAlignment;->clone()Ljava/lang/Object;

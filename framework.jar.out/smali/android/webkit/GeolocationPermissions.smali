@@ -15,6 +15,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 138
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,6 +25,8 @@
 .method public static getInstance()Landroid/webkit/GeolocationPermissions;
     .locals 1
 
+    .prologue
+    .line 69
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -38,24 +42,34 @@
 # virtual methods
 .method public allow(Ljava/lang/String;)V
     .locals 0
+    .parameter "origin"
 
+    .prologue
+    .line 121
     return-void
 .end method
 
 .method public clear(Ljava/lang/String;)V
     .locals 0
+    .parameter "origin"
 
+    .prologue
+    .line 112
     return-void
 .end method
 
 .method public clearAll()V
     .locals 0
 
+    .prologue
+    .line 128
     return-void
 .end method
 
 .method public getAllowed(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter "origin"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,11 +81,15 @@
         }
     .end annotation
 
+    .prologue
+    .line 103
+    .local p2, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Boolean;>;"
     return-void
 .end method
 
 .method public getOrigins(Landroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,5 +102,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 88
+    .local p1, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/util/Set<Ljava/lang/String;>;>;"
     return-void
 .end method

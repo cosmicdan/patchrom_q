@@ -29,7 +29,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 373
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$PendingEvent;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +42,11 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 373
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$PendingEvent;-><init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
 
     return-void

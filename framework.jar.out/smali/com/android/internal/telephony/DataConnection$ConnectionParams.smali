@@ -25,12 +25,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/telephony/ApnSetting;Landroid/os/Message;)V
     .locals 0
+    .parameter "apn"
+    .parameter "onCompletedMsg"
 
+    .prologue
+    .line 82
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 83
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
+    .line 84
     iput-object p2, p0, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->onCompletedMsg:Landroid/os/Message;
 
+    .line 85
     return-void
 .end method

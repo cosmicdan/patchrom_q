@@ -33,6 +33,8 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .prologue
+    .line 54
     const-string v0, "(?:(http|https|file)\\:\\/\\/)?(?:([-A-Za-z0-9$_.+!*\'(),;?&=]+(?:\\:[-A-Za-z0-9$_.+!*\'(),;?&=]+)?)@)?([a-zA-Z0-9\u00a0-\ud7ff\uf900-\ufdcf\ufdf0-\uffef%_-][a-zA-Z0-9\u00a0-\ud7ff\uf900-\ufdcf\ufdf0-\uffef%_\\.-]*|\\[[0-9a-fA-F:\\.]+\\])?(?:\\:([0-9]*))?(\\/?[^#]*)?.*"
 
     const/4 v1, 0x2
@@ -48,63 +50,79 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 7
+    .parameter "address"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/ParseException;
         }
     .end annotation
 
+    .prologue
     const/16 v6, 0x1bb
 
     const/4 v5, -0x1
 
+    .line 63
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 64
     if-nez p1, :cond_0
 
+    .line 65
     new-instance v3, Ljava/lang/NullPointerException;
 
     invoke-direct {v3}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v3
 
+    .line 70
     :cond_0
     const-string v3, ""
 
     iput-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
+    .line 71
     const-string v3, ""
 
     iput-object v3, p0, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
 
+    .line 72
     iput v5, p0, Landroid/net/WebAddress;->mPort:I
 
+    .line 73
     const-string v3, "/"
 
     iput-object v3, p0, Landroid/net/WebAddress;->mPath:Ljava/lang/String;
 
+    .line 74
     const-string v3, ""
 
     iput-object v3, p0, Landroid/net/WebAddress;->mAuthInfo:Ljava/lang/String;
 
+    .line 76
     sget-object v3, Landroid/net/WebAddress;->sAddressPattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
+    .line 78
+    .local v1, m:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v3
 
     if-eqz v3, :cond_9
 
+    .line 79
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 80
+    .local v2, t:Ljava/lang/String;
     if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -113,6 +131,7 @@
 
     iput-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
+    .line 81
     :cond_1
     const/4 v3, 0x2
 
@@ -120,10 +139,12 @@
 
     move-result-object v2
 
+    .line 82
     if-eqz v2, :cond_2
 
     iput-object v2, p0, Landroid/net/WebAddress;->mAuthInfo:Ljava/lang/String;
 
+    .line 83
     :cond_2
     const/4 v3, 0x3
 
@@ -131,10 +152,12 @@
 
     move-result-object v2
 
+    .line 84
     if-eqz v2, :cond_3
 
     iput-object v2, p0, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
 
+    .line 85
     :cond_3
     const/4 v3, 0x4
 
@@ -142,6 +165,7 @@
 
     move-result-object v2
 
+    .line 86
     if-eqz v2, :cond_4
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -150,6 +174,7 @@
 
     if-lez v3, :cond_4
 
+    .line 89
     :try_start_0
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -159,6 +184,7 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 94
     :cond_4
     const/4 v3, 0x5
 
@@ -166,6 +192,7 @@
 
     move-result-object v2
 
+    .line 95
     if-eqz v2, :cond_5
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -174,6 +201,7 @@
 
     if-lez v3, :cond_5
 
+    .line 98
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
@@ -184,8 +212,10 @@
 
     if-ne v3, v4, :cond_8
 
+    .line 99
     iput-object v2, p0, Landroid/net/WebAddress;->mPath:Ljava/lang/String;
 
+    .line 112
     :cond_5
     :goto_0
     iget v3, p0, Landroid/net/WebAddress;->mPort:I
@@ -202,10 +232,12 @@
 
     if-eqz v3, :cond_a
 
+    .line 113
     const-string v3, "https"
 
     iput-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
+    .line 120
     :cond_6
     :goto_1
     iget-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
@@ -222,12 +254,16 @@
 
     iput-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
+    .line 121
     :cond_7
     return-void
 
+    .line 90
     :catch_0
     move-exception v0
 
+    .line 91
+    .local v0, ex:Ljava/lang/NumberFormatException;
     new-instance v3, Landroid/net/ParseException;
 
     const-string v4, "Bad port"
@@ -236,6 +272,8 @@
 
     throw v3
 
+    .line 101
+    .end local v0           #ex:Ljava/lang/NumberFormatException;
     :cond_8
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -259,6 +297,8 @@
 
     goto :goto_0
 
+    .line 107
+    .end local v2           #t:Ljava/lang/String;
     :cond_9
     new-instance v3, Landroid/net/ParseException;
 
@@ -268,11 +308,14 @@
 
     throw v3
 
+    .line 114
+    .restart local v2       #t:Ljava/lang/String;
     :cond_a
     iget v3, p0, Landroid/net/WebAddress;->mPort:I
 
     if-ne v3, v5, :cond_6
 
+    .line 115
     iget-object v3, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
     const-string v4, "https"
@@ -283,10 +326,12 @@
 
     if-eqz v3, :cond_b
 
+    .line 116
     iput v6, p0, Landroid/net/WebAddress;->mPort:I
 
     goto :goto_1
 
+    .line 118
     :cond_b
     const/16 v3, 0x50
 
@@ -300,6 +345,8 @@
 .method public getAuthInfo()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 175
     iget-object v0, p0, Landroid/net/WebAddress;->mAuthInfo:Ljava/lang/String;
 
     return-object v0
@@ -308,6 +355,8 @@
 .method public getHost()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 151
     iget-object v0, p0, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
 
     return-object v0
@@ -316,6 +365,8 @@
 .method public getPath()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 167
     iget-object v0, p0, Landroid/net/WebAddress;->mPath:Ljava/lang/String;
 
     return-object v0
@@ -324,6 +375,8 @@
 .method public getPort()I
     .locals 1
 
+    .prologue
+    .line 159
     iget v0, p0, Landroid/net/WebAddress;->mPort:I
 
     return v0
@@ -332,6 +385,8 @@
 .method public getScheme()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 143
     iget-object v0, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
     return-object v0
@@ -339,49 +394,73 @@
 
 .method public setAuthInfo(Ljava/lang/String;)V
     .locals 0
+    .parameter "authInfo"
 
+    .prologue
+    .line 171
     iput-object p1, p0, Landroid/net/WebAddress;->mAuthInfo:Ljava/lang/String;
 
+    .line 172
     return-void
 .end method
 
 .method public setHost(Ljava/lang/String;)V
     .locals 0
+    .parameter "host"
 
+    .prologue
+    .line 147
     iput-object p1, p0, Landroid/net/WebAddress;->mHost:Ljava/lang/String;
 
+    .line 148
     return-void
 .end method
 
 .method public setPath(Ljava/lang/String;)V
     .locals 0
+    .parameter "path"
 
+    .prologue
+    .line 163
     iput-object p1, p0, Landroid/net/WebAddress;->mPath:Ljava/lang/String;
 
+    .line 164
     return-void
 .end method
 
 .method public setPort(I)V
     .locals 0
+    .parameter "port"
 
+    .prologue
+    .line 155
     iput p1, p0, Landroid/net/WebAddress;->mPort:I
 
+    .line 156
     return-void
 .end method
 
 .method public setScheme(Ljava/lang/String;)V
     .locals 0
+    .parameter "scheme"
 
+    .prologue
+    .line 139
     iput-object p1, p0, Landroid/net/WebAddress;->mScheme:Ljava/lang/String;
 
+    .line 140
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 125
     const-string v1, ""
 
+    .line 126
+    .local v1, port:Ljava/lang/String;
     iget v2, p0, Landroid/net/WebAddress;->mPort:I
 
     const/16 v3, 0x1bb
@@ -415,6 +494,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 128
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -440,9 +520,12 @@
 
     move-result-object v1
 
+    .line 130
     :cond_2
     const-string v0, ""
 
+    .line 131
+    .local v0, authInfo:Ljava/lang/String;
     iget-object v2, p0, Landroid/net/WebAddress;->mAuthInfo:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -451,6 +534,7 @@
 
     if-lez v2, :cond_3
 
+    .line 132
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -471,6 +555,7 @@
 
     move-result-object v0
 
+    .line 135
     :cond_3
     new-instance v2, Ljava/lang/StringBuilder;
 

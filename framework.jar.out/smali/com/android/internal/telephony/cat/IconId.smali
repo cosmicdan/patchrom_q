@@ -13,6 +13,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 97
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ValueObject;-><init>()V
 
     return-void
@@ -23,6 +25,8 @@
 .method getTag()Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
     .locals 1
 
+    .prologue
+    .line 102
     sget-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->ICON_ID:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     return-object v0

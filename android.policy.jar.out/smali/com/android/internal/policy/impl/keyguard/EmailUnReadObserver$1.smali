@@ -32,7 +32,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 109
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->this$0:Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -44,7 +47,10 @@
 # virtual methods
 .method public varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
     .locals 10
+    .parameter "params"
 
+    .prologue
+    .line 112
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->this$0:Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->mNewEventView:Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;
@@ -92,10 +98,15 @@
 
     move-result-object v7
 
+    .line 118
+    .local v7, cursor:Landroid/database/Cursor;
     const/4 v6, 0x0
 
+    .line 119
+    .local v6, count:I
     if-eqz v7, :cond_0
 
+    .line 121
     :try_start_0
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -103,8 +114,10 @@
 
     move-result v6
 
+    .line 123
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
+    .line 126
     :cond_0
     const-string v0, "EmailUnReadObserver"
 
@@ -128,12 +141,14 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 127
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     return-object v0
 
+    .line 123
     :catchall_0
     move-exception v0
 
@@ -144,9 +159,13 @@
 
 .method public bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 109
     check-cast p1, [Ljava/lang/Void;
 
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -156,7 +175,10 @@
 
 .method public onPostExecute(Ljava/lang/Integer;)V
     .locals 2
+    .parameter "result"
 
+    .prologue
+    .line 132
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->this$0:Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -165,14 +187,19 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->upateNewEventNumber(I)V
 
+    .line 133
     return-void
 .end method
 
 .method public bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 109
     check-cast p1, Ljava/lang/Integer;
 
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->onPostExecute(Ljava/lang/Integer;)V
 
     return-void

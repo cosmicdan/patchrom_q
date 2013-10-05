@@ -51,6 +51,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -61,6 +62,7 @@
 
     const/4 v3, 0x0
 
+    .line 141
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "Normal"
@@ -69,6 +71,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->Normal:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 142
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "NetworkLocked"
@@ -77,6 +80,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->NetworkLocked:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 143
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimMissing"
@@ -85,6 +89,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimMissing:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 144
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimMissingLocked"
@@ -93,6 +98,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimMissingLocked:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 145
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimPukLocked"
@@ -101,6 +107,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimPukLocked:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 146
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimLocked"
@@ -111,6 +118,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimLocked:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 147
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimPermDisabled"
@@ -121,6 +129,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimPermDisabled:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 148
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimNotReady"
@@ -131,6 +140,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimNotReady:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 151
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "SimUnknown"
@@ -141,6 +151,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->SimUnknown:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 152
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     const-string v1, "NetworkSearching"
@@ -151,6 +162,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->NetworkSearching:Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
+    .line 140
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
@@ -212,12 +224,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 140
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -225,7 +241,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 140
     const-class v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -240,6 +259,8 @@
 .method public static values()[Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
     .locals 1
 
+    .prologue
+    .line 140
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->$VALUES:[Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;
 
     invoke-virtual {v0}, [Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText$StatusMode;->clone()Ljava/lang/Object;

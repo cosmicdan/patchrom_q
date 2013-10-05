@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebViewClassic$InvokeListBox;Landroid/webkit/WebViewClassic$InvokeListBox$MyArrayListAdapter;Landroid/widget/ListView;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 8897
     iput-object p1, p0, Landroid/webkit/WebViewClassic$InvokeListBox$1;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iput-object p2, p0, Landroid/webkit/WebViewClassic$InvokeListBox$1;->val$adapter:Landroid/webkit/WebViewClassic$InvokeListBox$MyArrayListAdapter;
@@ -44,7 +49,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 5
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 8900
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$1;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -72,5 +81,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/webkit/WebViewCore;->sendMessage(IIILjava/lang/Object;)V
 
+    .line 8904
     return-void
 .end method

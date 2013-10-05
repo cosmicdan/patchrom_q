@@ -13,10 +13,12 @@
 .method private constructor <init>()V
     .locals 9
 
+    .prologue
     const-wide/16 v5, 0x0
 
     const/4 v1, 0x0
 
+    .line 39
     move-object v0, p0
 
     move-object v2, v1
@@ -29,12 +31,21 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/media/videoeditor/EffectKenBurns;-><init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;Landroid/graphics/Rect;Landroid/graphics/Rect;JJ)V
 
+    .line 40
     return-void
 .end method
 
 .method public constructor <init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;Landroid/graphics/Rect;Landroid/graphics/Rect;JJ)V
     .locals 7
+    .parameter "mediaItem"
+    .parameter "effectId"
+    .parameter "startRect"
+    .parameter "endRect"
+    .parameter "startTimeMs"
+    .parameter "durationMs"
 
+    .prologue
+    .line 54
     move-object v0, p0
 
     move-object v1, p1
@@ -47,6 +58,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/media/videoeditor/Effect;-><init>(Landroid/media/videoeditor/MediaItem;Ljava/lang/String;JJ)V
 
+    .line 56
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result v0
@@ -59,6 +71,7 @@
 
     if-gtz v0, :cond_1
 
+    .line 57
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -68,6 +81,7 @@
 
     throw v0
 
+    .line 59
     :cond_1
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
@@ -81,6 +95,7 @@
 
     if-gtz v0, :cond_3
 
+    .line 60
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -90,11 +105,14 @@
 
     throw v0
 
+    .line 63
     :cond_3
     iput-object p3, p0, Landroid/media/videoeditor/EffectKenBurns;->mStartRect:Landroid/graphics/Rect;
 
+    .line 64
     iput-object p4, p0, Landroid/media/videoeditor/EffectKenBurns;->mEndRect:Landroid/graphics/Rect;
 
+    .line 65
     return-void
 .end method
 
@@ -103,6 +121,8 @@
 .method public getEndRect()Landroid/graphics/Rect;
     .locals 1
 
+    .prologue
+    .line 84
     iget-object v0, p0, Landroid/media/videoeditor/EffectKenBurns;->mEndRect:Landroid/graphics/Rect;
 
     return-object v0
@@ -110,7 +130,11 @@
 
 .method getKenBurnsSettings(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
     .locals 1
+    .parameter "start"
+    .parameter "end"
 
+    .prologue
+    .line 96
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getStartRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -119,6 +143,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
+    .line 97
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getStartRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -127,6 +152,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
+    .line 98
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getStartRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -135,6 +161,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->right:I
 
+    .line 99
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getStartRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -143,6 +170,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
+    .line 100
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getEndRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -151,6 +179,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->left:I
 
+    .line 101
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getEndRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -159,6 +188,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->top:I
 
+    .line 102
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getEndRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -167,6 +197,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->right:I
 
+    .line 103
     invoke-virtual {p0}, Landroid/media/videoeditor/EffectKenBurns;->getEndRect()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -175,12 +206,15 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
+    .line 104
     return-void
 .end method
 
 .method public getStartRect()Landroid/graphics/Rect;
     .locals 1
 
+    .prologue
+    .line 74
     iget-object v0, p0, Landroid/media/videoeditor/EffectKenBurns;->mStartRect:Landroid/graphics/Rect;
 
     return-object v0

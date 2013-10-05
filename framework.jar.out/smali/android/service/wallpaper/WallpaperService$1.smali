@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/service/wallpaper/WallpaperService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 135
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 138
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 139
+    .local v0, action:Ljava/lang/String;
     iget-object v4, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
@@ -49,8 +58,12 @@
 
     move-result v3
 
+    .line 140
+    .local v3, size:I
     const/4 v2, 0x0
 
+    .line 141
+    .local v2, isScreenOn:Z
     const-string v4, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -59,15 +72,19 @@
 
     if-eqz v4, :cond_1
 
+    .line 142
     const/4 v2, 0x1
 
+    .line 148
     :cond_0
     :goto_0
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_1
     if-ge v1, v3, :cond_3
 
+    .line 149
     iget-object v4, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
@@ -83,10 +100,13 @@
 
     invoke-virtual {v4, v2}, Landroid/service/wallpaper/WallpaperService$Engine;->doScreenOnOff(Z)V
 
+    .line 148
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 143
+    .end local v1           #i:I
     :cond_1
     const-string v4, "android.intent.action.SCREEN_OFF"
 
@@ -96,10 +116,12 @@
 
     if-eqz v4, :cond_2
 
+    .line 144
     const/4 v2, 0x0
 
     goto :goto_0
 
+    .line 145
     :cond_2
     const-string v4, "android.intent.action.ACTION_PREBOOT_IPO"
 
@@ -118,10 +140,13 @@
 
     if-eqz v4, :cond_0
 
+    .line 146
     const/4 v2, 0x1
 
     goto :goto_0
 
+    .line 151
+    .restart local v1       #i:I
     :cond_3
     return-void
 .end method

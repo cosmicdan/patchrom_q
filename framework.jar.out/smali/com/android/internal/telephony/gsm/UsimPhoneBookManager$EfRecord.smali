@@ -33,17 +33,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;)V
     .locals 1
+    .parameter
 
+    .prologue
     const/4 v0, -0x1
 
+    .line 2848
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager$EfRecord;->this$0:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2855
     iput-byte v0, p0, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager$EfRecord;->mSfi:B
 
+    .line 2856
     iput v0, p0, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager$EfRecord;->mType2Record:I
 
+    .line 2849
     return-void
 .end method
 
@@ -52,6 +58,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 2859
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

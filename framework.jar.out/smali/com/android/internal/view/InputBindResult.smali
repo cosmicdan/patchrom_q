@@ -33,6 +33,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 78
     new-instance v0, Lcom/android/internal/view/InputBindResult$1;
 
     invoke-direct {v0}, Lcom/android/internal/view/InputBindResult$1;-><init>()V
@@ -44,9 +46,13 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .parameter "source"
 
+    .prologue
+    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 52
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -57,32 +63,44 @@
 
     iput-object v0, p0, Lcom/android/internal/view/InputBindResult;->method:Lcom/android/internal/view/IInputMethodSession;
 
+    .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/view/InputBindResult;->id:Ljava/lang/String;
 
+    .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/view/InputBindResult;->sequence:I
 
+    .line 55
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/internal/view/IInputMethodSession;Ljava/lang/String;I)V
     .locals 0
+    .parameter "_method"
+    .parameter "_id"
+    .parameter "_sequence"
 
+    .prologue
+    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     iput-object p1, p0, Lcom/android/internal/view/InputBindResult;->method:Lcom/android/internal/view/IInputMethodSession;
 
+    .line 47
     iput-object p2, p0, Lcom/android/internal/view/InputBindResult;->id:Ljava/lang/String;
 
+    .line 48
     iput p3, p0, Lcom/android/internal/view/InputBindResult;->sequence:I
 
+    .line 49
     return-void
 .end method
 
@@ -91,6 +109,8 @@
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 89
     const/4 v0, 0x0
 
     return v0
@@ -99,6 +119,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 59
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -154,18 +176,25 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .parameter "dest"
+    .parameter "flags"
 
+    .prologue
+    .line 70
     iget-object v0, p0, Lcom/android/internal/view/InputBindResult;->method:Lcom/android/internal/view/IInputMethodSession;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongInterface(Landroid/os/IInterface;)V
 
+    .line 71
     iget-object v0, p0, Lcom/android/internal/view/InputBindResult;->id:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 72
     iget v0, p0, Lcom/android/internal/view/InputBindResult;->sequence:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 73
     return-void
 .end method

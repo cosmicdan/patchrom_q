@@ -23,7 +23,12 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioManager$FocusEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioManager;)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter
 
+    .prologue
+    .line 1959
     iput-object p1, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$FocusEventHandlerDelegate;
 
     iput-object p3, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;->val$this$0:Landroid/media/AudioManager;
@@ -37,9 +42,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
+    .parameter "msg"
 
+    .prologue
+    .line 1962
     const/4 v0, 0x0
 
+    .line 1963
+    .local v0, listener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
     iget-object v1, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$FocusEventHandlerDelegate;
 
     iget-object v1, v1, Landroid/media/AudioManager$FocusEventHandlerDelegate;->this$0:Landroid/media/AudioManager;
@@ -51,6 +61,7 @@
 
     monitor-enter v2
 
+    .line 1964
     :try_start_0
     iget-object v1, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;->this$1:Landroid/media/AudioManager$FocusEventHandlerDelegate;
 
@@ -65,19 +76,24 @@
 
     move-result-object v0
 
+    .line 1965
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1966
     if-eqz v0, :cond_0
 
+    .line 1967
     iget v1, p1, Landroid/os/Message;->what:I
 
     invoke-interface {v0, v1}, Landroid/media/AudioManager$OnAudioFocusChangeListener;->onAudioFocusChange(I)V
 
+    .line 1969
     :cond_0
     return-void
 
+    .line 1965
     :catchall_0
     move-exception v1
 

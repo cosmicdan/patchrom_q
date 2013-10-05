@@ -7,8 +7,10 @@
 .method private constructor <init>()V
     .locals 7
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 33
     const-wide/16 v4, 0x0
 
     const/4 v6, 0x0
@@ -21,14 +23,23 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/media/videoeditor/TransitionFadeBlack;-><init>(Ljava/lang/String;Landroid/media/videoeditor/MediaItem;Landroid/media/videoeditor/MediaItem;JI)V
 
+    .line 34
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/media/videoeditor/MediaItem;Landroid/media/videoeditor/MediaItem;JI)V
     .locals 0
+    .parameter "transitionId"
+    .parameter "afterMediaItem"
+    .parameter "beforeMediaItem"
+    .parameter "durationMs"
+    .parameter "behavior"
 
+    .prologue
+    .line 52
     invoke-direct/range {p0 .. p6}, Landroid/media/videoeditor/Transition;-><init>(Ljava/lang/String;Landroid/media/videoeditor/MediaItem;Landroid/media/videoeditor/MediaItem;JI)V
 
+    .line 53
     return-void
 .end method
 
@@ -37,7 +48,10 @@
 .method generate()V
     .locals 0
 
+    .prologue
+    .line 60
     invoke-super {p0}, Landroid/media/videoeditor/Transition;->generate()V
 
+    .line 61
     return-void
 .end method

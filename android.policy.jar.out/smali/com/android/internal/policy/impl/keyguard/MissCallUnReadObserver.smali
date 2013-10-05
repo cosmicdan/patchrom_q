@@ -19,6 +19,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .prologue
     const/4 v5, 0x2
 
     const/4 v4, 0x1
@@ -27,10 +28,12 @@
 
     const/4 v2, 0x0
 
+    .line 15
     sget-object v0, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver;->MISS_CALL_URI:Landroid/net/Uri;
 
+    .line 16
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "_id"
@@ -47,6 +50,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver;->MISS_CALL_PROJECTION:[Ljava/lang/String;
 
+    .line 19
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "1"
@@ -72,15 +76,23 @@
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
     .locals 0
+    .parameter "handler"
+    .parameter "newEventView"
+    .parameter "createTime"
 
+    .prologue
+    .line 22
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/keyguard/UnReadObserver;-><init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
 
+    .line 23
     return-void
 .end method
 
 .method static synthetic access$000()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 11
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver;->MISS_CALL_PROJECTION:[Ljava/lang/String;
 
     return-object v0
@@ -89,6 +101,8 @@
 .method static synthetic access$100()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 11
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver;->MISS_CALL_SELECTION_ARGS:[Ljava/lang/String;
 
     return-object v0
@@ -99,8 +113,10 @@
 .method public refreshUnReadNumber()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 26
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver$1;-><init>(Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver;)V
@@ -123,5 +139,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MissCallUnReadObserver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 49
     return-void
 .end method

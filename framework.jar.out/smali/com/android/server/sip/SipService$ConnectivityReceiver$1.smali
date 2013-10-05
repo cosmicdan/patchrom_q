@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/sip/SipService$ConnectivityReceiver;Landroid/net/NetworkInfo;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1087
     iput-object p1, p0, Lcom/android/server/sip/SipService$ConnectivityReceiver$1;->this$1:Lcom/android/server/sip/SipService$ConnectivityReceiver;
 
     iput-object p2, p0, Lcom/android/server/sip/SipService$ConnectivityReceiver$1;->val$info:Landroid/net/NetworkInfo;
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 1089
     iget-object v0, p0, Lcom/android/server/sip/SipService$ConnectivityReceiver$1;->this$1:Lcom/android/server/sip/SipService$ConnectivityReceiver;
 
     iget-object v0, v0, Lcom/android/server/sip/SipService$ConnectivityReceiver;->this$0:Lcom/android/server/sip/SipService;
@@ -50,5 +56,6 @@
     #calls: Lcom/android/server/sip/SipService;->onConnectivityChanged(Landroid/net/NetworkInfo;)V
     invoke-static {v0, v1}, Lcom/android/server/sip/SipService;->access$1700(Lcom/android/server/sip/SipService;Landroid/net/NetworkInfo;)V
 
+    .line 1090
     return-void
 .end method

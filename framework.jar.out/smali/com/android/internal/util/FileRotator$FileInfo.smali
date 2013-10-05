@@ -25,9 +25,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .parameter "prefix"
 
+    .prologue
+    .line 403
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 404
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -36,6 +40,7 @@
 
     iput-object v0, p0, Lcom/android/internal/util/FileRotator$FileInfo;->prefix:Ljava/lang/String;
 
+    .line 405
     return-void
 .end method
 
@@ -44,10 +49,14 @@
 .method public build()Ljava/lang/String;
     .locals 5
 
+    .prologue
+    .line 443
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 444
+    .local v0, name:Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/internal/util/FileRotator$FileInfo;->prefix:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -70,6 +79,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 445
     iget-wide v1, p0, Lcom/android/internal/util/FileRotator$FileInfo;->endMillis:J
 
     const-wide v3, 0x7fffffffffffffffL
@@ -78,10 +88,12 @@
 
     if-eqz v1, :cond_0
 
+    .line 446
     iget-wide v1, p0, Lcom/android/internal/util/FileRotator$FileInfo;->endMillis:J
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    .line 448
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -93,6 +105,8 @@
 .method public isActive()Z
     .locals 4
 
+    .prologue
+    .line 455
     iget-wide v0, p0, Lcom/android/internal/util/FileRotator$FileInfo;->endMillis:J
 
     const-wide v2, 0x7fffffffffffffffL
@@ -114,39 +128,49 @@
 
 .method public parse(Ljava/lang/String;)Z
     .locals 8
+    .parameter "name"
 
+    .prologue
     const/4 v4, 0x1
 
     const/4 v7, -0x1
 
     const/4 v3, 0x0
 
+    .line 413
     const-wide/16 v5, -0x1
 
     iput-wide v5, p0, Lcom/android/internal/util/FileRotator$FileInfo;->endMillis:J
 
     iput-wide v5, p0, Lcom/android/internal/util/FileRotator$FileInfo;->startMillis:J
 
+    .line 415
     const/16 v5, 0x2e
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
+    .line 416
+    .local v1, dotIndex:I
     const/16 v5, 0x2d
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
 
+    .line 419
+    .local v0, dashIndex:I
     if-eq v1, v7, :cond_0
 
     if-ne v0, v7, :cond_1
 
+    .line 435
     :cond_0
     :goto_0
     return v3
 
+    .line 422
     :cond_1
     iget-object v5, p0, Lcom/android/internal/util/FileRotator$FileInfo;->prefix:Ljava/lang/String;
 
@@ -160,6 +184,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 425
     add-int/lit8 v5, v1, 0x1
 
     :try_start_0
@@ -173,6 +198,7 @@
 
     iput-wide v5, p0, Lcom/android/internal/util/FileRotator$FileInfo;->startMillis:J
 
+    .line 427
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -181,6 +207,7 @@
 
     if-ne v5, v4, :cond_2
 
+    .line 428
     const-wide v5, 0x7fffffffffffffffL
 
     iput-wide v5, p0, Lcom/android/internal/util/FileRotator$FileInfo;->endMillis:J
@@ -188,8 +215,10 @@
     :goto_1
     move v3, v4
 
+    .line 433
     goto :goto_0
 
+    .line 430
     :cond_2
     add-int/lit8 v5, v0, 0x1
 
@@ -207,8 +236,11 @@
 
     goto :goto_1
 
+    .line 434
     :catch_0
     move-exception v2
 
+    .line 435
+    .local v2, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method

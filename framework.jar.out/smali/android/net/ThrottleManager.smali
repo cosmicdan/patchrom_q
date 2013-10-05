@@ -57,18 +57,26 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 201
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 202
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/IThrottleManager;)V
     .locals 2
+    .parameter "service"
 
+    .prologue
+    .line 207
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 208
     if-nez p1, :cond_0
 
+    .line 209
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "ThrottleManager() cannot be constructed with null service"
@@ -77,9 +85,11 @@
 
     throw v0
 
+    .line 212
     :cond_0
     iput-object p1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
+    .line 213
     return-void
 .end method
 
@@ -87,7 +97,13 @@
 # virtual methods
 .method public getByteCount(Ljava/lang/String;III)J
     .locals 3
+    .parameter "iface"
+    .parameter "direction"
+    .parameter "period"
+    .parameter "ago"
 
+    .prologue
+    .line 150
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -97,12 +113,16 @@
 
     move-result-wide v1
 
+    .line 152
     :goto_0
     return-wide v1
 
+    .line 151
     :catch_0
     move-exception v0
 
+    .line 152
+    .local v0, e:Landroid/os/RemoteException;
     const-wide/16 v1, -0x1
 
     goto :goto_0
@@ -110,7 +130,11 @@
 
 .method public getCliffLevel(Ljava/lang/String;I)I
     .locals 2
+    .parameter "iface"
+    .parameter "cliff"
 
+    .prologue
+    .line 176
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -120,12 +144,16 @@
 
     move-result v1
 
+    .line 178
     :goto_0
     return v1
 
+    .line 177
     :catch_0
     move-exception v0
 
+    .line 178
+    .local v0, e:Landroid/os/RemoteException;
     const/4 v1, -0x1
 
     goto :goto_0
@@ -133,7 +161,11 @@
 
 .method public getCliffThreshold(Ljava/lang/String;I)J
     .locals 3
+    .parameter "iface"
+    .parameter "cliff"
 
+    .prologue
+    .line 163
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -143,12 +175,16 @@
 
     move-result-wide v1
 
+    .line 165
     :goto_0
     return-wide v1
 
+    .line 164
     :catch_0
     move-exception v0
 
+    .line 165
+    .local v0, e:Landroid/os/RemoteException;
     const-wide/16 v1, -0x1
 
     goto :goto_0
@@ -157,6 +193,8 @@
 .method public getHelpUri()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 188
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -166,12 +204,16 @@
 
     move-result-object v1
 
+    .line 190
     :goto_0
     return-object v1
 
+    .line 189
     :catch_0
     move-exception v0
 
+    .line 190
+    .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
     goto :goto_0
@@ -179,7 +221,10 @@
 
 .method public getPeriodStartTime(Ljava/lang/String;)J
     .locals 3
+    .parameter "iface"
 
+    .prologue
+    .line 134
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -189,12 +234,16 @@
 
     move-result-wide v1
 
+    .line 136
     :goto_0
     return-wide v1
 
+    .line 135
     :catch_0
     move-exception v0
 
+    .line 136
+    .local v0, e:Landroid/os/RemoteException;
     const-wide/16 v1, -0x1
 
     goto :goto_0
@@ -202,7 +251,10 @@
 
 .method public getResetTime(Ljava/lang/String;)J
     .locals 3
+    .parameter "iface"
 
+    .prologue
+    .line 121
     :try_start_0
     iget-object v1, p0, Landroid/net/ThrottleManager;->mService:Landroid/net/IThrottleManager;
 
@@ -212,12 +264,16 @@
 
     move-result-wide v1
 
+    .line 123
     :goto_0
     return-wide v1
 
+    .line 122
     :catch_0
     move-exception v0
 
+    .line 123
+    .local v0, e:Landroid/os/RemoteException;
     const-wide/16 v1, -0x1
 
     goto :goto_0

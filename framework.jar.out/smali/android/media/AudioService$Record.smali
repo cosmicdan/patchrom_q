@@ -26,6 +26,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 6368
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +35,10 @@
 
 .method synthetic constructor <init>(Landroid/media/AudioService$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 6368
     invoke-direct {p0}, Landroid/media/AudioService$Record;-><init>()V
 
     return-void

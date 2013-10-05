@@ -24,6 +24,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 183
     invoke-static {}, Lcom/android/internal/telephony/gemini/GeminiDataSubUtil$b;->values()[Lcom/android/internal/telephony/gemini/GeminiDataSubUtil$b;
 
     move-result-object v0
@@ -97,6 +99,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_6
 
+    .line 167
     :goto_3
     invoke-static {}, Lcom/android/internal/telephony/gemini/GeminiDataSubUtil$a;->values()[Lcom/android/internal/telephony/gemini/GeminiDataSubUtil$a;
 
@@ -236,6 +239,7 @@
 
     goto :goto_4
 
+    .line 183
     :catch_6
     move-exception v0
 

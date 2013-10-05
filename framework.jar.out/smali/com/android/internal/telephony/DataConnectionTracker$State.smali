@@ -45,6 +45,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -55,6 +56,7 @@
 
     const/4 v3, 0x0
 
+    .line 122
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "IDLE"
@@ -63,6 +65,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->IDLE:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 123
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "INITING"
@@ -71,6 +74,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->INITING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 124
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "CONNECTING"
@@ -79,6 +83,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 125
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "SCANNING"
@@ -87,6 +92,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->SCANNING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 126
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "CONNECTED"
@@ -95,6 +101,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTED:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 127
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "DISCONNECTING"
@@ -105,6 +112,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->DISCONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 128
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     const-string v1, "FAILED"
@@ -115,6 +123,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->FAILED:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
+    .line 121
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/internal/telephony/DataConnectionTracker$State;
@@ -158,12 +167,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 121
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -171,7 +184,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/DataConnectionTracker$State;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 121
     const-class v0, Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -186,6 +202,8 @@
 .method public static values()[Lcom/android/internal/telephony/DataConnectionTracker$State;
     .locals 1
 
+    .prologue
+    .line 121
     sget-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->$VALUES:[Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/DataConnectionTracker$State;->clone()Ljava/lang/Object;

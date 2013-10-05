@@ -24,6 +24,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 681
     invoke-static {}, Lcom/android/internal/telephony/DctConstants$State;->values()[Lcom/android/internal/telephony/DctConstants$State;
 
     move-result-object v0
@@ -145,6 +147,7 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_4
 
+    .line 386
     :goto_6
     invoke-static {}, Lcom/android/internal/telephony/DctConstants$Activity;->values()[Lcom/android/internal/telephony/DctConstants$Activity;
 
@@ -242,6 +245,7 @@
 
     goto :goto_7
 
+    .line 681
     :catch_4
     move-exception v0
 

@@ -41,6 +41,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
+    .prologue
     const/4 v6, 0x4
 
     const/4 v5, 0x3
@@ -51,6 +52,7 @@
 
     const/4 v2, 0x0
 
+    .line 114
     new-instance v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     const-string v1, "NOT_EXIST_IN_SIM"
@@ -59,6 +61,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->NOT_EXIST_IN_SIM:Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
+    .line 115
     new-instance v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     const-string v1, "NOT_EXIST_IN_USIM"
@@ -67,6 +70,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->NOT_EXIST_IN_USIM:Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
+    .line 116
     new-instance v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     const-string v1, "ACTIVATED"
@@ -75,6 +79,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->ACTIVATED:Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
+    .line 117
     new-instance v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     const-string v1, "INACTIVATED"
@@ -83,6 +88,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->INACTIVATED:Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
+    .line 118
     new-instance v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     const-string v1, "UNKNOWN"
@@ -91,6 +97,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->UNKNOWN:Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
+    .line 113
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/telephony/Phone$IccServiceStatus;
@@ -122,12 +129,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 113
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -135,7 +146,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/Phone$IccServiceStatus;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 113
     const-class v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -150,6 +164,8 @@
 .method public static values()[Lcom/android/internal/telephony/Phone$IccServiceStatus;
     .locals 1
 
+    .prologue
+    .line 113
     sget-object v0, Lcom/android/internal/telephony/Phone$IccServiceStatus;->$VALUES:[Lcom/android/internal/telephony/Phone$IccServiceStatus;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/Phone$IccServiceStatus;->clone()Ljava/lang/Object;

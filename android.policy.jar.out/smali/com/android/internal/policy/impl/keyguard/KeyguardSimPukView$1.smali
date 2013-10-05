@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 122
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +39,19 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
+    .parameter "v"
 
+    .prologue
+    .line 125
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->doHapticKeyClick()V
 
+    .line 126
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->verifyPasswordAndUnlock()V
 
+    .line 127
     return-void
 .end method

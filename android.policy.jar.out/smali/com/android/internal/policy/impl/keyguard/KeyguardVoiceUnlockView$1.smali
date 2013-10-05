@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 164
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public onKeyguardVisibilityChanged(Z)V
     .locals 5
+    .parameter "showing"
 
+    .prologue
+    .line 188
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -63,8 +69,11 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->log(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;Ljava/lang/String;)V
 
+    .line 189
     const/4 v1, 0x0
 
+    .line 190
+    .local v1, wasShowing:Z
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mIsShowingLock:Ljava/lang/Object;
@@ -74,6 +83,7 @@
 
     monitor-enter v3
 
+    .line 191
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
@@ -82,15 +92,18 @@
 
     move-result v1
 
+    .line 192
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mIsShowing:Z
     invoke-static {v2, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->access$302(Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;Z)Z
 
+    .line 193
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 194
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mContext:Landroid/content/Context;
@@ -106,6 +119,8 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
+    .line 196
+    .local v0, powerManager:Landroid/os/PowerManager;
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -115,10 +130,12 @@
 
     if-eqz v2, :cond_0
 
+    .line 197
     if-nez p1, :cond_1
 
     if-eqz v1, :cond_1
 
+    .line 198
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -128,10 +145,13 @@
 
     invoke-interface {v2}, Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;->stop()Z
 
+    .line 203
     :cond_0
     :goto_0
     return-void
 
+    .line 193
+    .end local v0           #powerManager:Landroid/os/PowerManager;
     :catchall_0
     move-exception v2
 
@@ -142,6 +162,8 @@
 
     throw v2
 
+    .line 199
+    .restart local v0       #powerManager:Landroid/os/PowerManager;
     :cond_1
     if-eqz p1, :cond_0
 
@@ -153,6 +175,7 @@
 
     if-nez v1, :cond_0
 
+    .line 200
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->maybeStartBiometricUnlock()V
@@ -163,7 +186,10 @@
 
 .method public onPhoneStateChanged(I)V
     .locals 3
+    .parameter "phoneState"
 
+    .prologue
+    .line 168
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -193,10 +219,12 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;Ljava/lang/String;)V
 
+    .line 169
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
+    .line 170
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -206,6 +234,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 171
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -215,13 +244,17 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;->stopAndShowBackup()V
 
+    .line 174
     :cond_0
     return-void
 .end method
 
 .method public onUserSwitched(I)V
     .locals 3
+    .parameter "userId"
 
+    .prologue
+    .line 178
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -251,6 +284,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;Ljava/lang/String;)V
 
+    .line 179
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -260,6 +294,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 180
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -269,6 +304,7 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;->stop()Z
 
+    .line 184
     :cond_0
     return-void
 .end method

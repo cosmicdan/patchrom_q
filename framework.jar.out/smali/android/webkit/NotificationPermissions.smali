@@ -15,14 +15,19 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 15
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 22
     return-void
 .end method
 
 .method public static getInstance()Landroid/webkit/NotificationPermissions;
     .locals 1
 
+    .prologue
+    .line 41
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -39,5 +44,7 @@
 .method public clearAll()V
     .locals 0
 
+    .prologue
+    .line 49
     return-void
 .end method

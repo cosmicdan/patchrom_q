@@ -31,6 +31,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 60
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
@@ -66,7 +68,9 @@
 
 .method public constructor <init>(Lcom/android/internal/telephony/PhoneBase;)V
     .locals 11
+    .parameter "p"
 
+    .prologue
     const/4 v10, 0x3
 
     const/4 v9, 0x2
@@ -77,18 +81,24 @@
 
     const-wide/high16 v5, 0x4024
 
+    .line 74
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 64
     const-string v1, "FDTimer"
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/FDTimer;->LOG_TAG:Ljava/lang/String;
 
+    .line 75
     const/4 v1, 0x4
 
     new-array v0, v1, [Ljava/lang/String;
 
+    .line 76
+    .local v0, timerStr:[Ljava/lang/String;
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/FDTimer;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
+    .line 78
     const-string/jumbo v1, "persist.radio.fd.off.counter"
 
     const-string v2, "5"
@@ -99,6 +109,7 @@
 
     aput-object v1, v0, v7
 
+    .line 79
     sget-object v1, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     sget-object v2, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOffLegacyFD:Lcom/android/internal/telephony/gsm/FDTimerType;
@@ -123,6 +134,7 @@
 
     aput-object v3, v1, v2
 
+    .line 80
     const-string/jumbo v1, "persist.radio.fd.counter"
 
     const-string v2, "15"
@@ -133,6 +145,7 @@
 
     aput-object v1, v0, v8
 
+    .line 81
     sget-object v1, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     sget-object v2, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOnLegacyFD:Lcom/android/internal/telephony/gsm/FDTimerType;
@@ -157,6 +170,7 @@
 
     aput-object v3, v1, v2
 
+    .line 82
     const-string/jumbo v1, "persist.radio.fd.off.r8.counter"
 
     const-string v2, "5"
@@ -167,6 +181,7 @@
 
     aput-object v1, v0, v9
 
+    .line 83
     sget-object v1, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     sget-object v2, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOffR8FD:Lcom/android/internal/telephony/gsm/FDTimerType;
@@ -191,6 +206,7 @@
 
     aput-object v3, v1, v2
 
+    .line 84
     const-string/jumbo v1, "persist.radio.fd.r8.counter"
 
     const-string v2, "15"
@@ -201,6 +217,7 @@
 
     aput-object v1, v0, v10
 
+    .line 85
     sget-object v1, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     sget-object v2, Lcom/android/internal/telephony/gsm/FDTimerType;->ScreenOnR8FD:Lcom/android/internal/telephony/gsm/FDTimerType;
@@ -225,6 +242,7 @@
 
     aput-object v3, v1, v2
 
+    .line 86
     const-string v1, "FDTimer"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -293,6 +311,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 87
     return-void
 .end method
 
@@ -301,6 +320,8 @@
 .method public getDefaultTimerValue()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 107
     const/4 v0, 0x0
 
     return-object v0
@@ -309,6 +330,8 @@
 .method public getFDTimerValue()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 111
     sget-object v0, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     return-object v0
@@ -317,6 +340,8 @@
 .method public getNumberOfSupportedTypes()I
     .locals 1
 
+    .prologue
+    .line 89
     sget-object v0, Lcom/android/internal/telephony/gsm/FDTimerType;->SupportedTimerTypes:Lcom/android/internal/telephony/gsm/FDTimerType;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/FDTimerType;->ordinal()I
@@ -328,13 +353,17 @@
 
 .method public setFDTimerValue([Ljava/lang/String;Landroid/os/Message;)I
     .locals 10
+    .parameter "newTimerValue"
+    .parameter "onComplete"
 
+    .prologue
     const/4 v4, 0x0
 
     const/4 v9, 0x0
 
     const/4 v3, 0x1
 
+    .line 92
     const-string/jumbo v5, "ril.fd.mode"
 
     const-string v6, "0"
@@ -347,6 +376,8 @@
 
     move-result v1
 
+    .line 93
+    .local v1, FD_MD_Enable_Mode:I
     const-string v5, "gsm.3gswitch"
 
     invoke-static {v5, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -359,6 +390,8 @@
 
     move v0, v3
 
+    .line 94
+    .local v0, FDSimID:I
     :goto_0
     if-ne v1, v3, :cond_2
 
@@ -370,28 +403,38 @@
 
     if-ne v3, v0, :cond_2
 
+    .line 95
     const/4 v2, 0x0
 
+    .local v2, i:I
     :goto_1
     array-length v3, p1
 
     if-ge v2, v3, :cond_1
 
+    .line 96
     sget-object v3, Lcom/android/internal/telephony/gsm/FDTimer;->timerValue:[Ljava/lang/String;
 
     aget-object v5, p1, v2
 
     aput-object v5, v3, v2
 
+    .line 95
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .end local v0           #FDSimID:I
+    .end local v2           #i:I
     :cond_0
     move v0, v4
 
+    .line 93
     goto :goto_0
 
+    .line 99
+    .restart local v0       #FDSimID:I
+    .restart local v2       #i:I
     :cond_1
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/FDTimer;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -425,6 +468,7 @@
 
     invoke-interface {v3, v5, v6, v7, v9}, Lcom/android/internal/telephony/CommandsInterface;->setFDMode(IIILandroid/os/Message;)V
 
+    .line 100
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/FDTimer;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -457,6 +501,7 @@
 
     invoke-interface {v3, v5, v6, v7, v9}, Lcom/android/internal/telephony/CommandsInterface;->setFDMode(IIILandroid/os/Message;)V
 
+    .line 101
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/FDTimer;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -489,6 +534,7 @@
 
     invoke-interface {v3, v5, v6, v7, v9}, Lcom/android/internal/telephony/CommandsInterface;->setFDMode(IIILandroid/os/Message;)V
 
+    .line 102
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/FDTimer;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -521,6 +567,8 @@
 
     invoke-interface {v3, v5, v6, v7, p2}, Lcom/android/internal/telephony/CommandsInterface;->setFDMode(IIILandroid/os/Message;)V
 
+    .line 104
+    .end local v2           #i:I
     :cond_2
     return v4
 .end method

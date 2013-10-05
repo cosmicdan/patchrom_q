@@ -14,14 +14,18 @@
 .method public constructor <init>()V
     .locals 2
 
+    .prologue
+    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 52
     const-string v0, "FWKEXT"
 
     const-string v1, "FwkExt Contrustor !"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 53
     return-void
 .end method
 
@@ -30,12 +34,15 @@
 .method public getCurrentOPIndex()I
     .locals 2
 
+    .prologue
+    .line 56
     const-string v0, "FWKEXT"
 
     const-string v1, "Enter GetCurrentOP"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -44,6 +51,8 @@
 .method public getCurrentOPName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 61
     const-string v0, "Default"
 
     return-object v0

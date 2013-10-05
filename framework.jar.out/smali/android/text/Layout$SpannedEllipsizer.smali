@@ -24,13 +24,19 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 0
+    .parameter "display"
 
+    .prologue
+    .line 1824
     invoke-direct {p0, p1}, Landroid/text/Layout$Ellipsizer;-><init>(Ljava/lang/CharSequence;)V
 
+    .line 1825
     check-cast p1, Landroid/text/Spanned;
 
+    .end local p1
     iput-object p1, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
+    .line 1826
     return-void
 .end method
 
@@ -38,7 +44,10 @@
 # virtual methods
 .method public getSpanEnd(Ljava/lang/Object;)I
     .locals 1
+    .parameter "tag"
 
+    .prologue
+    .line 1837
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
@@ -50,7 +59,10 @@
 
 .method public getSpanFlags(Ljava/lang/Object;)I
     .locals 1
+    .parameter "tag"
 
+    .prologue
+    .line 1841
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
@@ -62,7 +74,10 @@
 
 .method public getSpanStart(Ljava/lang/Object;)I
     .locals 1
+    .parameter "tag"
 
+    .prologue
+    .line 1833
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
@@ -74,6 +89,9 @@
 
 .method public getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
     .locals 1
+    .parameter "start"
+    .parameter "end"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -84,6 +102,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 1829
+    .local p3, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
@@ -95,7 +116,12 @@
 
 .method public nextSpanTransition(IILjava/lang/Class;)I
     .locals 1
+    .parameter "start"
+    .parameter "limit"
+    .parameter "type"
 
+    .prologue
+    .line 1846
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/text/Spanned;->nextSpanTransition(IILjava/lang/Class;)I
@@ -107,15 +133,22 @@
 
 .method public subSequence(II)Ljava/lang/CharSequence;
     .locals 7
+    .parameter "start"
+    .parameter "end"
 
+    .prologue
     const/4 v5, 0x0
 
+    .line 1851
     sub-int v0, p2, p1
 
     new-array v6, v0, [C
 
+    .line 1852
+    .local v6, s:[C
     invoke-virtual {p0, p1, p2, v6, v5}, Landroid/text/Layout$SpannedEllipsizer;->getChars(II[CI)V
 
+    .line 1854
     new-instance v4, Landroid/text/SpannableString;
 
     new-instance v0, Ljava/lang/String;
@@ -124,6 +157,8 @@
 
     invoke-direct {v4, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
+    .line 1855
+    .local v4, ss:Landroid/text/SpannableString;
     iget-object v0, p0, Landroid/text/Layout$SpannedEllipsizer;->mSpanned:Landroid/text/Spanned;
 
     const-class v3, Ljava/lang/Object;
@@ -134,5 +169,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/text/TextUtils;->copySpansFrom(Landroid/text/Spanned;IILjava/lang/Class;Landroid/text/Spannable;I)V
 
+    .line 1856
     return-object v4
 .end method

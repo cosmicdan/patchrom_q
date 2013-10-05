@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothProxy;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 76
     iput-object p1, p0, Landroid/bluetooth/BluetoothProxy$1;->this$0:Landroid/bluetooth/BluetoothProxy;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,11 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 2
+    .parameter "className"
+    .parameter "service"
 
+    .prologue
+    .line 80
     iget-object v0, p0, Landroid/bluetooth/BluetoothProxy$1;->this$0:Landroid/bluetooth/BluetoothProxy;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothOpp$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothOpp;
@@ -45,17 +52,22 @@
 
     iput-object v1, v0, Landroid/bluetooth/BluetoothProxy;->mService:Landroid/bluetooth/IBluetoothOpp;
 
+    .line 81
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 2
+    .parameter "className"
 
+    .prologue
+    .line 84
     iget-object v0, p0, Landroid/bluetooth/BluetoothProxy$1;->this$0:Landroid/bluetooth/BluetoothProxy;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/bluetooth/BluetoothProxy;->mService:Landroid/bluetooth/IBluetoothOpp;
 
+    .line 85
     return-void
 .end method

@@ -21,11 +21,17 @@
 # direct methods
 .method constructor <init>(Landroid/os/Looper;Landroid/net/UsbDataStateTracker;)V
     .locals 0
+    .parameter "looper"
+    .parameter "udst"
 
+    .prologue
+    .line 149
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
+    .line 150
     iput-object p2, p0, Landroid/net/UsbDataStateTracker$UdstHandler;->mUdst:Landroid/net/UsbDataStateTracker;
 
+    .line 151
     return-void
 .end method
 
@@ -33,11 +39,15 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .parameter "msg"
 
+    .prologue
+    .line 155
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
+    .line 173
     const-string v0, "UsbDataStateTracker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -60,20 +70,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 177
     :goto_0
     return-void
 
+    .line 157
     :sswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     if-nez v0, :cond_0
 
+    .line 159
     const-string v0, "UsbDataStateTracker"
 
     const-string v1, "UdstHandler connected"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 161
     iget-object v1, p0, Landroid/net/UsbDataStateTracker$UdstHandler;->mUdst:Landroid/net/UsbDataStateTracker;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -85,6 +99,7 @@
 
     goto :goto_0
 
+    .line 164
     :cond_0
     const-string v0, "UsbDataStateTracker"
 
@@ -112,6 +127,7 @@
 
     goto :goto_0
 
+    .line 169
     :sswitch_1
     const-string v0, "UsbDataStateTracker"
 
@@ -119,6 +135,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 170
     iget-object v0, p0, Landroid/net/UsbDataStateTracker$UdstHandler;->mUdst:Landroid/net/UsbDataStateTracker;
 
     const/4 v1, 0x0
@@ -128,6 +145,7 @@
 
     goto :goto_0
 
+    .line 155
     :sswitch_data_0
     .sparse-switch
         0x11000 -> :sswitch_0

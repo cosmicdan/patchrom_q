@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 167
     iput-object p1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin$2;->this$1:Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +40,14 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 169
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin$2;->this$1:Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/SimUnlockScreen$CheckSimPin;->onSimLockChangedResponse(Z)V
 
+    .line 170
     return-void
 .end method

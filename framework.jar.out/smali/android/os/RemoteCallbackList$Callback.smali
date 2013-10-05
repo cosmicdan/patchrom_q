@@ -34,6 +34,9 @@
 # direct methods
 .method constructor <init>(Landroid/os/RemoteCallbackList;Landroid/os/IInterface;Ljava/lang/Object;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "cookie"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -42,14 +45,21 @@
         }
     .end annotation
 
+    .prologue
+    .line 60
+    .local p0, this:Landroid/os/RemoteCallbackList$Callback;,"Landroid/os/RemoteCallbackList<TE;>.Callback;"
+    .local p2, callback:Landroid/os/IInterface;,"TE;"
     iput-object p1, p0, Landroid/os/RemoteCallbackList$Callback;->this$0:Landroid/os/RemoteCallbackList;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 61
     iput-object p2, p0, Landroid/os/RemoteCallbackList$Callback;->mCallback:Landroid/os/IInterface;
 
+    .line 62
     iput-object p3, p0, Landroid/os/RemoteCallbackList$Callback;->mCookie:Ljava/lang/Object;
 
+    .line 63
     return-void
 .end method
 
@@ -58,12 +68,16 @@
 .method public binderDied()V
     .locals 3
 
+    .prologue
+    .line 66
+    .local p0, this:Landroid/os/RemoteCallbackList$Callback;,"Landroid/os/RemoteCallbackList<TE;>.Callback;"
     iget-object v0, p0, Landroid/os/RemoteCallbackList$Callback;->this$0:Landroid/os/RemoteCallbackList;
 
     iget-object v1, v0, Landroid/os/RemoteCallbackList;->mCallbacks:Ljava/util/HashMap;
 
     monitor-enter v1
 
+    .line 67
     :try_start_0
     iget-object v0, p0, Landroid/os/RemoteCallbackList$Callback;->this$0:Landroid/os/RemoteCallbackList;
 
@@ -77,10 +91,12 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 68
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 69
     iget-object v0, p0, Landroid/os/RemoteCallbackList$Callback;->this$0:Landroid/os/RemoteCallbackList;
 
     iget-object v1, p0, Landroid/os/RemoteCallbackList$Callback;->mCallback:Landroid/os/IInterface;
@@ -89,8 +105,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/RemoteCallbackList;->onCallbackDied(Landroid/os/IInterface;Ljava/lang/Object;)V
 
+    .line 70
     return-void
 
+    .line 68
     :catchall_0
     move-exception v0
 

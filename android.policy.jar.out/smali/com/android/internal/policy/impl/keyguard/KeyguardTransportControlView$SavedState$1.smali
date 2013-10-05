@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 406
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +42,10 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
     .locals 2
+    .parameter "in"
 
+    .prologue
+    .line 408
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
 
     const/4 v1, 0x0
@@ -52,7 +57,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 406
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
 
     move-result-object v0
@@ -62,7 +70,10 @@
 
 .method public newArray(I)[Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 412
     new-array v0, p1, [Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
 
     return-object v0
@@ -70,7 +81,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 406
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState$1;->newArray(I)[Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$SavedState;
 
     move-result-object v0

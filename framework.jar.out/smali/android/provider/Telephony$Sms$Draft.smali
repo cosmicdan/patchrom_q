@@ -28,6 +28,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 533
     const-string v0, "content://sms/draft"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -42,6 +44,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 529
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +53,14 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)Landroid/net/Uri;
     .locals 8
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
 
+    .prologue
+    .line 553
     sget-object v1, Landroid/provider/Telephony$Sms$Draft;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -75,7 +86,15 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;I)Landroid/net/Uri;
     .locals 11
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
+    .parameter "simId"
 
+    .prologue
+    .line 571
     sget-object v1, Landroid/provider/Telephony$Sms$Draft;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -105,21 +124,29 @@
 
 .method public static saveMessage(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;)Z
     .locals 6
+    .parameter "resolver"
+    .parameter "uri"
+    .parameter "body"
 
+    .prologue
     const/4 v5, 0x0
 
     const/4 v1, 0x1
 
+    .line 586
     new-instance v0, Landroid/content/ContentValues;
 
     const/4 v2, 0x2
 
     invoke-direct {v0, v2}, Landroid/content/ContentValues;-><init>(I)V
 
+    .line 587
+    .local v0, values:Landroid/content/ContentValues;
     const-string v2, "body"
 
     invoke-virtual {v0, v2, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 588
     const-string v2, "date"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -132,6 +159,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
+    .line 589
     invoke-virtual {p0, p1, v0, v5, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v2

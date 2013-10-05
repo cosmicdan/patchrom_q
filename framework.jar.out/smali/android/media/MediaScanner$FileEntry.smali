@@ -29,21 +29,33 @@
 # direct methods
 .method constructor <init>(JLjava/lang/String;JI)V
     .locals 1
+    .parameter "rowId"
+    .parameter "path"
+    .parameter "lastModified"
+    .parameter "format"
 
+    .prologue
+    .line 370
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 371
     iput-wide p1, p0, Landroid/media/MediaScanner$FileEntry;->mRowId:J
 
+    .line 372
     iput-object p3, p0, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
 
+    .line 373
     iput-wide p4, p0, Landroid/media/MediaScanner$FileEntry;->mLastModified:J
 
+    .line 374
     iput p6, p0, Landroid/media/MediaScanner$FileEntry;->mFormat:I
 
+    .line 375
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/media/MediaScanner$FileEntry;->mLastModifiedChanged:Z
 
+    .line 376
     return-void
 .end method
 
@@ -52,6 +64,8 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -17,11 +17,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .parameter "context"
 
+    .prologue
+    .line 63
     const-class v0, Landroid/bluetooth/BluetoothOpp$Server;
 
     invoke-direct {p0, p1, v0}, Landroid/bluetooth/BluetoothProxy;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
+    .line 64
     return-void
 .end method
 
@@ -30,6 +34,8 @@
 .method public bridge synthetic close()V
     .locals 0
 
+    .prologue
+    .line 59
     invoke-super {p0}, Landroid/bluetooth/BluetoothProxy;->close()V
 
     return-void
@@ -37,7 +43,10 @@
 
 .method public bridge synthetic connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 59
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->connect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -47,7 +56,10 @@
 
 .method public bridge synthetic disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 59
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -58,6 +70,8 @@
 .method public bridge synthetic getConnectedDevices()Ljava/util/Set;
     .locals 1
 
+    .prologue
+    .line 59
     invoke-super {p0}, Landroid/bluetooth/BluetoothProxy;->getConnectedDevices()Ljava/util/Set;
 
     move-result-object v0
@@ -67,7 +81,10 @@
 
 .method public bridge synthetic getState(Landroid/bluetooth/BluetoothDevice;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 59
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->getState(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0

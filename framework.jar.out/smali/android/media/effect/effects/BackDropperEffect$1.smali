@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/media/effect/effects/BackDropperEffect;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 74
     iput-object p1, p0, Landroid/media/effect/effects/BackDropperEffect$1;->this$0:Landroid/media/effect/effects/BackDropperEffect;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onLearningDone(Landroid/filterpacks/videoproc/BackDropperFilter;)V
     .locals 3
+    .parameter "filter"
 
+    .prologue
+    .line 76
     iget-object v0, p0, Landroid/media/effect/effects/BackDropperEffect$1;->this$0:Landroid/media/effect/effects/BackDropperEffect;
 
     #getter for: Landroid/media/effect/effects/BackDropperEffect;->mEffectListener:Landroid/media/effect/EffectUpdateListener;
@@ -46,6 +52,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 77
     iget-object v0, p0, Landroid/media/effect/effects/BackDropperEffect$1;->this$0:Landroid/media/effect/effects/BackDropperEffect;
 
     #getter for: Landroid/media/effect/effects/BackDropperEffect;->mEffectListener:Landroid/media/effect/EffectUpdateListener;
@@ -59,6 +66,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/media/effect/EffectUpdateListener;->onEffectUpdated(Landroid/media/effect/Effect;Ljava/lang/Object;)V
 
+    .line 79
     :cond_0
     return-void
 .end method

@@ -63,8 +63,11 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 136
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 137
     return-void
 .end method
 
@@ -73,6 +76,8 @@
 .method getHandle()I
     .locals 1
 
+    .prologue
+    .line 198
     iget v0, p0, Landroid/hardware/Sensor;->mHandle:I
 
     return v0
@@ -81,6 +86,8 @@
 .method public getMaximumRange()F
     .locals 1
 
+    .prologue
+    .line 171
     iget v0, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
     return v0
@@ -89,6 +96,8 @@
 .method public getMinDelay()I
     .locals 1
 
+    .prologue
+    .line 194
     iget v0, p0, Landroid/hardware/Sensor;->mMinDelay:I
 
     return v0
@@ -97,6 +106,8 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 143
     iget-object v0, p0, Landroid/hardware/Sensor;->mName:Ljava/lang/String;
 
     return-object v0
@@ -105,6 +116,8 @@
 .method public getPower()F
     .locals 1
 
+    .prologue
+    .line 185
     iget v0, p0, Landroid/hardware/Sensor;->mPower:F
 
     return v0
@@ -113,6 +126,8 @@
 .method public getResolution()F
     .locals 1
 
+    .prologue
+    .line 178
     iget v0, p0, Landroid/hardware/Sensor;->mResolution:F
 
     return v0
@@ -121,6 +136,8 @@
 .method public getType()I
     .locals 1
 
+    .prologue
+    .line 157
     iget v0, p0, Landroid/hardware/Sensor;->mType:I
 
     return v0
@@ -129,6 +146,8 @@
 .method public getVendor()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 150
     iget-object v0, p0, Landroid/hardware/Sensor;->mVendor:Ljava/lang/String;
 
     return-object v0
@@ -137,6 +156,8 @@
 .method public getVersion()I
     .locals 1
 
+    .prologue
+    .line 164
     iget v0, p0, Landroid/hardware/Sensor;->mVersion:I
 
     return v0
@@ -144,17 +165,25 @@
 
 .method setRange(FF)V
     .locals 0
+    .parameter "max"
+    .parameter "res"
 
+    .prologue
+    .line 202
     iput p1, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
+    .line 203
     iput p2, p0, Landroid/hardware/Sensor;->mResolution:F
 
+    .line 204
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 208
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

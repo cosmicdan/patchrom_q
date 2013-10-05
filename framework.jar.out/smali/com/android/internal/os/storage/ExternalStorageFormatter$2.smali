@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/os/storage/ExternalStorageFormatter;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 87
     iput-object p1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$2;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,6 +36,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 0
+    .parameter "msg"
 
+    .prologue
+    .line 90
     return-void
 .end method

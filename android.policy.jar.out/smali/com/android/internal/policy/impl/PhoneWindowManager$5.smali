@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1008
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,23 +36,31 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 1010
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1012
+    .local v0, action:Ljava/lang/String;
     const-string v1, "WindowManager"
 
     const-string v2, "mCellonScreenShotReceiver -- onReceive -- entry"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1014
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mCellonLock:Ljava/lang/Object;
 
     monitor-enter v2
 
+    .line 1015
     :try_start_0
     const-string v1, "com.cellon.action.ACTION_SCREEN_SHOT"
 
@@ -59,6 +70,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 1016
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -76,11 +88,14 @@
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 1019
     :cond_0
     monitor-exit v2
 
+    .line 1020
     return-void
 
+    .line 1019
     :catchall_0
     move-exception v1
 

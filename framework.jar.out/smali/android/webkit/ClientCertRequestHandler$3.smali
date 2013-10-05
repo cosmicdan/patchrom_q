@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/ClientCertRequestHandler;[B[[B)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 93
     iput-object p1, p0, Landroid/webkit/ClientCertRequestHandler$3;->this$0:Landroid/webkit/ClientCertRequestHandler;
 
     iput-object p2, p0, Landroid/webkit/ClientCertRequestHandler$3;->val$key:[B
@@ -45,6 +50,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 95
     iget-object v0, p0, Landroid/webkit/ClientCertRequestHandler$3;->this$0:Landroid/webkit/ClientCertRequestHandler;
 
     #getter for: Landroid/webkit/ClientCertRequestHandler;->mBrowserFrame:Landroid/webkit/BrowserFrame;
@@ -65,5 +72,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/BrowserFrame;->nativeSslClientCert(I[B[[B)V
 
+    .line 96
     return-void
 .end method

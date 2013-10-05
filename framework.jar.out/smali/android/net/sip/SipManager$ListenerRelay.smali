@@ -23,27 +23,39 @@
 # direct methods
 .method public constructor <init>(Landroid/net/sip/SipRegistrationListener;Ljava/lang/String;)V
     .locals 0
+    .parameter "listener"
+    .parameter "uri"
 
+    .prologue
+    .line 582
     invoke-direct {p0}, Landroid/net/sip/SipSessionAdapter;-><init>()V
 
+    .line 583
     iput-object p1, p0, Landroid/net/sip/SipManager$ListenerRelay;->mListener:Landroid/net/sip/SipRegistrationListener;
 
+    .line 584
     iput-object p2, p0, Landroid/net/sip/SipManager$ListenerRelay;->mUri:Ljava/lang/String;
 
+    .line 585
     return-void
 .end method
 
 .method private getUri(Landroid/net/sip/ISipSession;)Ljava/lang/String;
     .locals 4
+    .parameter "session"
 
+    .prologue
+    .line 589
     if-nez p1, :cond_0
 
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager$ListenerRelay;->mUri:Ljava/lang/String;
 
+    .line 595
     :goto_0
     return-object v1
 
+    .line 589
     :cond_0
     invoke-interface {p1}, Landroid/net/sip/ISipSession;->getLocalProfile()Landroid/net/sip/SipProfile;
 
@@ -57,9 +69,12 @@
 
     goto :goto_0
 
+    .line 592
     :catch_0
     move-exception v0
 
+    .line 594
+    .local v0, e:Ljava/lang/Throwable;
     const-string v1, "SipManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -82,6 +97,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 595
     const/4 v1, 0x0
 
     goto :goto_0
@@ -91,7 +107,10 @@
 # virtual methods
 .method public onRegistering(Landroid/net/sip/ISipSession;)V
     .locals 2
+    .parameter "session"
 
+    .prologue
+    .line 601
     iget-object v0, p0, Landroid/net/sip/SipManager$ListenerRelay;->mListener:Landroid/net/sip/SipRegistrationListener;
 
     invoke-direct {p0, p1}, Landroid/net/sip/SipManager$ListenerRelay;->getUri(Landroid/net/sip/ISipSession;)Ljava/lang/String;
@@ -100,14 +119,21 @@
 
     invoke-interface {v0, v1}, Landroid/net/sip/SipRegistrationListener;->onRegistering(Ljava/lang/String;)V
 
+    .line 602
     return-void
 .end method
 
 .method public onRegistrationDone(Landroid/net/sip/ISipSession;I)V
     .locals 4
+    .parameter "session"
+    .parameter "duration"
 
+    .prologue
+    .line 606
     int-to-long v0, p2
 
+    .line 607
+    .local v0, expiryTime:J
     if-lez p2, :cond_0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -116,6 +142,7 @@
 
     add-long/2addr v0, v2
 
+    .line 608
     :cond_0
     iget-object v2, p0, Landroid/net/sip/SipManager$ListenerRelay;->mListener:Landroid/net/sip/SipRegistrationListener;
 
@@ -125,12 +152,18 @@
 
     invoke-interface {v2, v3, v0, v1}, Landroid/net/sip/SipRegistrationListener;->onRegistrationDone(Ljava/lang/String;J)V
 
+    .line 609
     return-void
 .end method
 
 .method public onRegistrationFailed(Landroid/net/sip/ISipSession;ILjava/lang/String;)V
     .locals 2
+    .parameter "session"
+    .parameter "errorCode"
+    .parameter "message"
 
+    .prologue
+    .line 614
     iget-object v0, p0, Landroid/net/sip/SipManager$ListenerRelay;->mListener:Landroid/net/sip/SipRegistrationListener;
 
     invoke-direct {p0, p1}, Landroid/net/sip/SipManager$ListenerRelay;->getUri(Landroid/net/sip/ISipSession;)Ljava/lang/String;
@@ -139,12 +172,16 @@
 
     invoke-interface {v0, v1, p2, p3}, Landroid/net/sip/SipRegistrationListener;->onRegistrationFailed(Ljava/lang/String;ILjava/lang/String;)V
 
+    .line 615
     return-void
 .end method
 
 .method public onRegistrationTimeout(Landroid/net/sip/ISipSession;)V
     .locals 4
+    .parameter "session"
 
+    .prologue
+    .line 619
     iget-object v0, p0, Landroid/net/sip/SipManager$ListenerRelay;->mListener:Landroid/net/sip/SipRegistrationListener;
 
     invoke-direct {p0, p1}, Landroid/net/sip/SipManager$ListenerRelay;->getUri(Landroid/net/sip/ISipSession;)Ljava/lang/String;
@@ -157,5 +194,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/net/sip/SipRegistrationListener;->onRegistrationFailed(Ljava/lang/String;ILjava/lang/String;)V
 
+    .line 621
     return-void
 .end method

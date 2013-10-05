@@ -38,8 +38,11 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 537
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 566
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V

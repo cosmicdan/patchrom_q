@@ -17,11 +17,15 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .parameter "value"
 
+    .prologue
+    .line 2081
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p1, v0}, Landroid/net/Uri$Part;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri$1;)V
 
+    .line 2082
     return-void
 .end method
 
@@ -30,6 +34,8 @@
 .method isEmpty()Z
     .locals 1
 
+    .prologue
+    .line 2086
     const/4 v0, 0x1
 
     return v0

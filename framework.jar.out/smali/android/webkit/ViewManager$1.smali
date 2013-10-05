@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/ViewManager;Landroid/view/SurfaceView;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 211
     iput-object p1, p0, Landroid/webkit/ViewManager$1;->this$0:Landroid/webkit/ViewManager;
 
     iput-object p2, p0, Landroid/webkit/ViewManager$1;->val$sView:Landroid/view/SurfaceView;
@@ -41,11 +45,14 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 213
     iget-object v0, p0, Landroid/webkit/ViewManager$1;->val$sView:Landroid/view/SurfaceView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceView;->setVisibility(I)V
 
+    .line 214
     return-void
 .end method

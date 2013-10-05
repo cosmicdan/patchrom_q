@@ -27,17 +27,27 @@
 # direct methods
 .method public constructor <init>(Landroid/webkit/WebViewClassic$InvokeListBox;JLandroid/widget/ListView;Landroid/widget/Adapter;)V
     .locals 0
+    .parameter
+    .parameter "id"
+    .parameter "l"
+    .parameter "a"
 
+    .prologue
+    .line 8852
     iput-object p1, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
+    .line 8853
     iput-wide p2, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mCheckedId:J
 
+    .line 8854
     iput-object p4, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mListView:Landroid/widget/ListView;
 
+    .line 8855
     iput-object p5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mAdapter:Landroid/widget/Adapter;
 
+    .line 8856
     return-void
 .end method
 
@@ -46,39 +56,51 @@
 .method public onChanged()V
     .locals 9
 
+    .prologue
+    .line 8862
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v5}, Landroid/widget/ListView;->getCheckedItemPosition()I
 
     move-result v4
 
+    .line 8863
+    .local v4, position:I
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mAdapter:Landroid/widget/Adapter;
 
     invoke-interface {v5, v4}, Landroid/widget/Adapter;->getItemId(I)J
 
     move-result-wide v2
 
+    .line 8864
+    .local v2, id:J
     iget-wide v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mCheckedId:J
 
     cmp-long v5, v5, v2
 
     if-eqz v5, :cond_0
 
+    .line 8867
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v5}, Landroid/widget/ListView;->clearChoices()V
 
+    .line 8870
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mAdapter:Landroid/widget/Adapter;
 
     invoke-interface {v5}, Landroid/widget/Adapter;->getCount()I
 
     move-result v0
 
+    .line 8871
+    .local v0, count:I
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 8872
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mAdapter:Landroid/widget/Adapter;
 
     invoke-interface {v5, v1}, Landroid/widget/Adapter;->getItemId(I)J
@@ -91,15 +113,22 @@
 
     if-nez v5, :cond_1
 
+    .line 8873
     iget-object v5, p0, Landroid/webkit/WebViewClassic$InvokeListBox$SingleDataSetObserver;->mListView:Landroid/widget/ListView;
 
     const/4 v6, 0x1
 
     invoke-virtual {v5, v1, v6}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
+    .line 8878
+    .end local v0           #count:I
+    .end local v1           #i:I
     :cond_0
     return-void
 
+    .line 8871
+    .restart local v0       #count:I
+    .restart local v1       #i:I
     :cond_1
     add-int/lit8 v1, v1, 0x1
 

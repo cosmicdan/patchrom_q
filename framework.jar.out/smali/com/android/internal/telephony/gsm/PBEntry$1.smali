@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 95
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +42,10 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/gsm/PBEntry;
     .locals 1
+    .parameter "source"
 
+    .prologue
+    .line 97
     invoke-static {p1}, Lcom/android/internal/telephony/gsm/PBEntry;->reateFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/gsm/PBEntry;
 
     move-result-object v0
@@ -50,7 +55,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 95
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/PBEntry$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/gsm/PBEntry;
 
     move-result-object v0
@@ -60,7 +68,10 @@
 
 .method public newArray(I)[Lcom/android/internal/telephony/gsm/PBEntry;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 101
     new-array v0, p1, [Lcom/android/internal/telephony/gsm/PBEntry;
 
     return-object v0
@@ -68,7 +79,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 95
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/PBEntry$1;->newArray(I)[Lcom/android/internal/telephony/gsm/PBEntry;
 
     move-result-object v0

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/preference/MultiSelectListPreference;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 170
     iput-object p1, p0, Landroid/preference/MultiSelectListPreference$1;->this$0:Landroid/preference/MultiSelectListPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,9 +39,15 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;IZ)V
     .locals 3
+    .parameter "dialog"
+    .parameter "which"
+    .parameter "isChecked"
 
+    .prologue
+    .line 172
     if-eqz p3, :cond_0
 
+    .line 173
     iget-object v0, p0, Landroid/preference/MultiSelectListPreference$1;->this$0:Landroid/preference/MultiSelectListPreference;
 
     iget-object v1, p0, Landroid/preference/MultiSelectListPreference$1;->this$0:Landroid/preference/MultiSelectListPreference;
@@ -67,9 +76,11 @@
 
     invoke-static {v0, v1}, Landroid/preference/MultiSelectListPreference;->access$076(Landroid/preference/MultiSelectListPreference;I)Z
 
+    .line 177
     :goto_0
     return-void
 
+    .line 175
     :cond_0
     iget-object v0, p0, Landroid/preference/MultiSelectListPreference$1;->this$0:Landroid/preference/MultiSelectListPreference;
 

@@ -28,23 +28,31 @@
 # direct methods
 .method constructor <init>(Landroid/graphics/drawable/ColorDrawable$ColorState;)V
     .locals 1
+    .parameter "state"
 
+    .prologue
+    .line 183
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
+    .line 184
     if-eqz p1, :cond_0
 
+    .line 185
     iget v0, p1, Landroid/graphics/drawable/ColorDrawable$ColorState;->mBaseColor:I
 
     iput v0, p0, Landroid/graphics/drawable/ColorDrawable$ColorState;->mBaseColor:I
 
+    .line 186
     iget v0, p1, Landroid/graphics/drawable/ColorDrawable$ColorState;->mUseColor:I
 
     iput v0, p0, Landroid/graphics/drawable/ColorDrawable$ColorState;->mUseColor:I
 
+    .line 187
     iget v0, p1, Landroid/graphics/drawable/ColorDrawable$ColorState;->mChangingConfigurations:I
 
     iput v0, p0, Landroid/graphics/drawable/ColorDrawable$ColorState;->mChangingConfigurations:I
 
+    .line 189
     :cond_0
     return-void
 .end method
@@ -54,6 +62,8 @@
 .method public getChangingConfigurations()I
     .locals 1
 
+    .prologue
+    .line 203
     iget v0, p0, Landroid/graphics/drawable/ColorDrawable$ColorState;->mChangingConfigurations:I
 
     return v0
@@ -62,6 +72,8 @@
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
 
+    .prologue
+    .line 193
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
     const/4 v1, 0x0
@@ -73,7 +85,10 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 2
+    .parameter "res"
 
+    .prologue
+    .line 198
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
     const/4 v1, 0x0

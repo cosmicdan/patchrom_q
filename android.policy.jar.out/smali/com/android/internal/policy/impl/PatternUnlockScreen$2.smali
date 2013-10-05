@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PatternUnlockScreen;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 92
     iput-object p1, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .parameter "v"
 
+    .prologue
+    .line 94
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/PatternUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/PatternUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -48,5 +54,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->forgotPattern(Z)V
 
+    .line 95
     return-void
 .end method

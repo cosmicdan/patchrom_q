@@ -20,22 +20,29 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 55
     const-string v0, "ipto3d"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 56
     const-string v0, "ipto3djni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 57
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 68
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 69
     return-void
 .end method
 
@@ -44,7 +51,10 @@
 
 .method public static execute(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 3
+    .parameter "bitmap"
 
+    .prologue
+    .line 82
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -66,7 +76,12 @@
 
 .method public static execute(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 1
+    .parameter "bitmap"
+    .parameter "outputWidth"
+    .parameter "outputHeight"
 
+    .prologue
+    .line 107
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Lcom/mediatek/stereo3d/Stereo3DConversion;->execute(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
@@ -78,25 +93,36 @@
 
 .method public static execute(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
     .locals 10
+    .parameter "bitmap"
+    .parameter "outputWidth"
+    .parameter "outputHeight"
+    .parameter "isMutable"
 
+    .prologue
     const/16 v7, 0x800
 
+    .line 122
     const-string v5, "Stereo3DConversion"
 
     const-string v6, "perform2DTo3DConversion"
 
     invoke-static {v5, v6}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 126
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
 
     mul-int/lit8 v2, v5, 0x2
 
+    .line 127
+    .local v2, defaultOutputWidth:I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
+    .line 129
+    .local v1, defaultOutputHeight:I
     if-eqz p0, :cond_0
 
     if-gt p1, v7, :cond_0
@@ -107,6 +133,7 @@
 
     if-le v1, v7, :cond_1
 
+    .line 132
     :cond_0
     const-string v5, "Stereo3DConversion"
 
@@ -140,24 +167,34 @@
 
     invoke-static {v5, v6}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 133
     const/4 v0, 0x0
 
+    .line 156
     :goto_0
     return-object v0
 
+    .line 136
     :cond_1
     invoke-static {p0}, Lcom/mediatek/stereo3d/Stereo3DConversion;->generateSmallImage(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
+    .line 138
+    .local v4, smallImage:Landroid/graphics/Bitmap;
     const/4 v0, 0x0
 
+    .line 140
+    .local v0, convertedBitmap:Landroid/graphics/Bitmap;
     const/4 v3, -0x1
 
+    .line 142
+    .local v3, result:I
     const-class v6, Lcom/mediatek/stereo3d/Stereo3DConversion;
 
     monitor-enter v6
 
+    .line 143
     :try_start_0
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -179,23 +216,29 @@
 
     move-result v3
 
+    .line 146
     if-nez v3, :cond_2
 
+    .line 147
     invoke-static {p0, v4, p1, p2, p3}, Lcom/mediatek/stereo3d/Stereo3DConversion;->process3DConversion(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
+    .line 151
     :cond_2
     invoke-static {}, Lcom/mediatek/stereo3d/Stereo3DConversion;->close3DConversion()I
 
+    .line 152
     monitor-exit v6
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 154
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0
 
+    .line 152
     :catchall_0
     move-exception v5
 
@@ -209,7 +252,11 @@
 
 .method public static execute(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
     .locals 2
+    .parameter "bitmap"
+    .parameter "isMutable"
 
+    .prologue
+    .line 94
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -229,17 +276,24 @@
 
 .method private static generateSmallImage(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 8
+    .parameter "oldBitmap"
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 168
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
+    .line 169
+    .local v3, width:I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
+    .line 171
+    .local v4, height:I
     const-string v0, "Stereo3DConversion"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -272,8 +326,11 @@
 
     invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 173
     const v7, 0x3daaa8eb
 
+    .line 175
+    .local v7, scale:F
     const-string v0, "Stereo3DConversion"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -296,12 +353,16 @@
 
     invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 177
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
+    .line 178
+    .local v5, matrix:Landroid/graphics/Matrix;
     invoke-virtual {v5, v7, v7}, Landroid/graphics/Matrix;->postScale(FF)Z
 
+    .line 180
     const/4 v6, 0x1
 
     move-object v0, p0

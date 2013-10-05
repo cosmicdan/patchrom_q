@@ -25,6 +25,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 19
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,13 +34,17 @@
 
 .method public static getBitsPerPixel(I)I
     .locals 2
+    .parameter "format"
 
+    .prologue
     const/16 v1, 0xc
 
     const/16 v0, 0x10
 
+    .line 121
     sparse-switch p0, :sswitch_data_0
 
+    .line 135
     const/4 v0, -0x1
 
     :goto_0
@@ -48,13 +54,16 @@
     :sswitch_1
     move v0, v1
 
+    .line 129
     goto :goto_0
 
     :sswitch_2
     move v0, v1
 
+    .line 131
     goto :goto_0
 
+    .line 121
     nop
 
     :sswitch_data_0

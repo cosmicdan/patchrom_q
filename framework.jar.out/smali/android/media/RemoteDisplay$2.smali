@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/media/RemoteDisplay;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 138
     iput-object p1, p0, Landroid/media/RemoteDisplay$2;->this$0:Landroid/media/RemoteDisplay;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 141
     iget-object v0, p0, Landroid/media/RemoteDisplay$2;->this$0:Landroid/media/RemoteDisplay;
 
     #getter for: Landroid/media/RemoteDisplay;->mListener:Landroid/media/RemoteDisplay$Listener;
@@ -46,5 +51,6 @@
 
     invoke-interface {v0}, Landroid/media/RemoteDisplay$Listener;->onDisplayDisconnected()V
 
+    .line 142
     return-void
 .end method

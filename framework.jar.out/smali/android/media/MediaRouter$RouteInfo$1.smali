@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/media/MediaRouter$RouteInfo;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1242
     iput-object p1, p0, Landroid/media/MediaRouter$RouteInfo$1;->this$0:Landroid/media/MediaRouter$RouteInfo;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeObserver$Stub;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public dispatchRemoteVolumeUpdate(II)V
     .locals 2
+    .parameter "direction"
+    .parameter "value"
 
+    .prologue
+    .line 1244
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mHandler:Landroid/os/Handler;
@@ -44,5 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 1256
     return-void
 .end method

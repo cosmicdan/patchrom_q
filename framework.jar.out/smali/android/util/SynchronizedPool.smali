@@ -35,6 +35,7 @@
 # direct methods
 .method public constructor <init>(Landroid/util/Pool;)V
     .locals 0
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,17 +44,26 @@
         }
     .end annotation
 
+    .prologue
+    .line 27
+    .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
+    .local p1, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 28
     iput-object p1, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;
 
+    .line 29
     iput-object p0, p0, Landroid/util/SynchronizedPool;->mLock:Ljava/lang/Object;
 
+    .line 30
     return-void
 .end method
 
 .method public constructor <init>(Landroid/util/Pool;Ljava/lang/Object;)V
     .locals 0
+    .parameter
+    .parameter "lock"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,12 +74,19 @@
         }
     .end annotation
 
+    .prologue
+    .line 32
+    .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
+    .local p1, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     iput-object p1, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;
 
+    .line 34
     iput-object p2, p0, Landroid/util/SynchronizedPool;->mLock:Ljava/lang/Object;
 
+    .line 35
     return-void
 .end method
 
@@ -83,10 +100,14 @@
         }
     .end annotation
 
+    .prologue
+    .line 38
+    .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
     iget-object v1, p0, Landroid/util/SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 39
     :try_start_0
     iget-object v0, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;
 
@@ -98,6 +119,7 @@
 
     return-object v0
 
+    .line 40
     :catchall_0
     move-exception v0
 
@@ -110,25 +132,34 @@
 
 .method public release(Landroid/util/Poolable;)V
     .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
 
+    .prologue
+    .line 44
+    .local p0, this:Landroid/util/SynchronizedPool;,"Landroid/util/SynchronizedPool<TT;>;"
+    .local p1, element:Landroid/util/Poolable;,"TT;"
     iget-object v1, p0, Landroid/util/SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 45
     :try_start_0
     iget-object v0, p0, Landroid/util/SynchronizedPool;->mPool:Landroid/util/Pool;
 
     invoke-interface {v0, p1}, Landroid/util/Pool;->release(Landroid/util/Poolable;)V
 
+    .line 46
     monitor-exit v1
 
+    .line 47
     return-void
 
+    .line 46
     :catchall_0
     move-exception v0
 

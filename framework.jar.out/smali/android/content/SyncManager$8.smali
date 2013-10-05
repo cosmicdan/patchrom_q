@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/content/SyncManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 352
     iput-object p1, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,13 @@
 # virtual methods
 .method public onSyncRequest(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;)V
     .locals 8
+    .parameter "account"
+    .parameter "userId"
+    .parameter "authority"
+    .parameter "extras"
 
+    .prologue
+    .line 355
     iget-object v0, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
     const-wide/16 v5, 0x0
@@ -53,5 +62,6 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
 
+    .line 356
     return-void
 .end method

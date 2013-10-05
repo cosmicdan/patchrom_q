@@ -23,17 +23,26 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/graphics/Picture;Landroid/webkit/WebView;)V
     .locals 1
+    .parameter "context"
+    .parameter "picture"
+    .parameter "parent"
 
+    .prologue
+    .line 9310
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
+    .line 9311
     iput-object p2, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mPicture:Landroid/graphics/Picture;
 
+    .line 9312
     iput-object p3, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mWebView:Landroid/webkit/WebView;
 
+    .line 9313
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/webkit/WebViewClassic$PictureWrapperView;->setWillNotDraw(Z)V
 
+    .line 9314
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v0}, Landroid/graphics/Picture;->getWidth()I
@@ -42,6 +51,7 @@
 
     invoke-virtual {p0, v0}, Landroid/webkit/WebViewClassic$PictureWrapperView;->setRight(I)V
 
+    .line 9315
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {v0}, Landroid/graphics/Picture;->getHeight()I
@@ -50,6 +60,7 @@
 
     invoke-virtual {p0, v0}, Landroid/webkit/WebViewClassic$PictureWrapperView;->setBottom(I)V
 
+    .line 9316
     return-void
 .end method
 
@@ -57,17 +68,24 @@
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 1
+    .parameter "canvas"
 
+    .prologue
+    .line 9320
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawPicture(Landroid/graphics/Picture;)V
 
+    .line 9321
     return-void
 .end method
 
 .method public post(Ljava/lang/Runnable;)Z
     .locals 1
+    .parameter "action"
 
+    .prologue
+    .line 9325
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PictureWrapperView;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->post(Ljava/lang/Runnable;)Z

@@ -27,7 +27,18 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLandroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1358
     iput-object p1, p0, Landroid/accounts/AccountManagerService$7;->this$0:Landroid/accounts/AccountManagerService;
 
     iput-object p7, p0, Landroid/accounts/AccountManagerService$7;->val$account:Landroid/accounts/Account;
@@ -51,6 +62,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 1360
     iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$7;->val$account:Landroid/accounts/Account;
@@ -61,12 +74,16 @@
 
     invoke-interface {v0, p0, v1, v2, v3}, Landroid/accounts/IAccountAuthenticator;->updateCredentials(Landroid/accounts/IAccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
+    .line 1361
     return-void
 .end method
 
 .method protected toDebugString(J)Ljava/lang/String;
     .locals 2
+    .parameter "now"
 
+    .prologue
+    .line 1363
     iget-object v0, p0, Landroid/accounts/AccountManagerService$7;->val$loginOptions:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
@@ -75,6 +92,7 @@
 
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
+    .line 1364
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 

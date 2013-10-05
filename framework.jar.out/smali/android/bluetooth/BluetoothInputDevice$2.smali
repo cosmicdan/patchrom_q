@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothInputDevice;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 216
     iput-object p1, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 219
     const-string v0, "android.bluetooth.input.profile.action.ACTION_BIND_SERVICE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -46,18 +53,21 @@
 
     if-eqz v0, :cond_0
 
+    .line 220
     const-string v0, "BluetoothInputDevice"
 
     const-string/jumbo v1, "receiver receives ACTION_BIND_SERVICE intent"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 221
     const-string v0, "BluetoothInputDevice"
 
     const-string v1, "Bind to Bluetooth HID Service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 222
     iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
     #getter for: Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
@@ -90,12 +100,14 @@
 
     if-nez v0, :cond_0
 
+    .line 224
     const-string v0, "BluetoothInputDevice"
 
     const-string v1, "Could not bind to Bluetooth HID Service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 227
     :cond_0
     return-void
 .end method

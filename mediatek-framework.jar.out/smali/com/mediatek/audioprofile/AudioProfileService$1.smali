@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/mediatek/audioprofile/AudioProfileService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 182
     iput-object p1, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     invoke-direct {p0}, Lcom/mediatek/common/audioprofile/AudioProfileListener;-><init>()V
@@ -33,9 +36,12 @@
 # virtual methods
 .method public onRingerModeChanged(I)V
     .locals 7
+    .parameter "newRingerMode"
 
+    .prologue
     const/4 v6, 0x0
 
+    .line 185
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mAudioManager:Landroid/media/AudioManager;
@@ -47,8 +53,11 @@
 
     move-result v1
 
+    .line 186
+    .local v1, ringerMode:I
     if-eq v1, p1, :cond_0
 
+    .line 187
     const-string v3, "AudioProfileService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -81,6 +90,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 190
     :cond_0
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
@@ -91,6 +101,7 @@
 
     if-ne v1, v3, :cond_2
 
+    .line 191
     const-string v3, "AudioProfileService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -113,16 +124,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 239
     :cond_1
     :goto_0
     return-void
 
+    .line 193
     :cond_2
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #setter for: Lcom/mediatek/audioprofile/AudioProfileService;->mRingerMode:I
     invoke-static {v3, v1}, Lcom/mediatek/audioprofile/AudioProfileService;->access$102(Lcom/mediatek/audioprofile/AudioProfileService;I)I
 
+    .line 196
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mExt:Lcom/mediatek/common/audioprofile/IAudioProfileExtension;
@@ -136,6 +150,7 @@
 
     if-nez v3, :cond_1
 
+    .line 200
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mActiveProfileKey:Ljava/lang/String;
@@ -147,6 +162,8 @@
 
     move-result-object v0
 
+    .line 201
+    .local v0, activeScenario:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
     const-string v3, "AudioProfileService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -169,8 +186,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 204
     packed-switch v1, :pswitch_data_0
 
+    .line 235
     const-string v3, "AudioProfileService"
 
     const-string v4, "undefined RingerMode!"
@@ -179,6 +198,7 @@
 
     goto :goto_0
 
+    .line 208
     :pswitch_0
     sget-object v3, Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;->SILENT:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
 
@@ -188,12 +208,14 @@
 
     if-nez v3, :cond_1
 
+    .line 209
     const-string v3, "AudioProfileService"
 
     const-string v4, "RingerMode change to SILENT, change profile to silent"
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 210
     iget-object v4, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
@@ -219,6 +241,7 @@
 
     goto :goto_0
 
+    .line 217
     :pswitch_1
     sget-object v3, Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;->MEETING:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
 
@@ -228,12 +251,14 @@
 
     if-nez v3, :cond_1
 
+    .line 218
     const-string v3, "AudioProfileService"
 
     const-string v4, "RingerMode change to VIBRATE, change profile to meeting!"
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 219
     iget-object v4, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
@@ -259,6 +284,7 @@
 
     goto/16 :goto_0
 
+    .line 226
     :pswitch_2
     sget-object v3, Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;->SILENT:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
 
@@ -276,6 +302,7 @@
 
     if-eqz v3, :cond_1
 
+    .line 227
     :cond_3
     const-string v3, "AudioProfileService"
 
@@ -283,6 +310,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 228
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mAudioManager:Landroid/media/AudioManager;
@@ -296,6 +324,8 @@
 
     move-result v2
 
+    .line 229
+    .local v2, systemVolume:I
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     iget-object v4, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
@@ -307,6 +337,7 @@
 
     invoke-virtual {v3, v4, v2}, Lcom/mediatek/audioprofile/AudioProfileService;->syncRingerVolumeToProfile(Ljava/lang/String;I)V
 
+    .line 230
     iget-object v3, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     iget-object v4, p0, Lcom/mediatek/audioprofile/AudioProfileService$1;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
@@ -320,6 +351,7 @@
 
     goto/16 :goto_0
 
+    .line 204
     nop
 
     :pswitch_data_0

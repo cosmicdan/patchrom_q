@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 101
     invoke-direct {p0}, Lorg/apache/harmony/luni/internal/util/TimezoneGetter;-><init>()V
 
     return-void
@@ -28,12 +30,16 @@
 .method public getId()Ljava/lang/String;
     .locals 5
 
+    .prologue
+    .line 104
     const-string/jumbo v2, "persist.sys.timezone"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 105
+    .local v1, zoneinfo:Ljava/lang/String;
     const-string v2, "AndroidRuntime"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -56,6 +62,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 106
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -64,6 +71,7 @@
 
     if-nez v2, :cond_1
 
+    .line 107
     :cond_0
     const-string/jumbo v2, "persist.sys.defaulttimezone"
 
@@ -71,6 +79,8 @@
 
     move-result-object v0
 
+    .line 108
+    .local v0, zonedefaultinfo:Ljava/lang/String;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -79,10 +89,12 @@
 
     if-lez v2, :cond_1
 
+    .line 109
     const-string/jumbo v2, "persist.sys.timezone"
 
     invoke-static {v2, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 110
     const-string v2, "AndroidRuntime"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -105,6 +117,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 113
+    .end local v0           #zonedefaultinfo:Ljava/lang/String;
     :cond_1
     const-string v2, "AndroidRuntime"
 
@@ -134,6 +148,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 114
     const-string/jumbo v2, "persist.sys.timezone"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;

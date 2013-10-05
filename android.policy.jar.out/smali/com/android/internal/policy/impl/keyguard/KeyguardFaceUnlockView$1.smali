@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 136
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
+    .parameter "v"
 
+    .prologue
+    .line 139
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
@@ -46,5 +52,6 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;->stopAndShowBackup()V
 
+    .line 140
     return-void
 .end method

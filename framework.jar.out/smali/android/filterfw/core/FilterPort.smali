@@ -26,23 +26,33 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/core/Filter;Ljava/lang/String;)V
     .locals 2
+    .parameter "filter"
+    .parameter "name"
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsBlocking:Z
 
+    .line 33
     iput-boolean v1, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
+    .line 34
     iput-boolean v1, p0, Landroid/filterfw/core/FilterPort;->mChecksType:Z
 
+    .line 39
     iput-object p2, p0, Landroid/filterfw/core/FilterPort;->mName:Ljava/lang/String;
 
+    .line 40
     iput-object p1, p0, Landroid/filterfw/core/FilterPort;->mFilter:Landroid/filterfw/core/Filter;
 
+    .line 41
     const-string v0, "FilterPort"
 
     const/4 v1, 0x2
@@ -53,6 +63,7 @@
 
     iput-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mLogVerbose:Z
 
+    .line 42
     return-void
 .end method
 
@@ -61,12 +72,15 @@
 .method protected assertPortIsOpen()V
     .locals 3
 
+    .prologue
+    .line 113
     invoke-virtual {p0}, Landroid/filterfw/core/FilterPort;->isOpen()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 114
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -97,13 +111,18 @@
 
     throw v0
 
+    .line 116
     :cond_0
     return-void
 .end method
 
 .method protected checkFrameManager(Landroid/filterfw/core/Frame;Landroid/filterfw/core/FilterContext;)V
     .locals 3
+    .parameter "frame"
+    .parameter "context"
 
+    .prologue
+    .line 128
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v0
@@ -120,6 +139,7 @@
 
     if-eq v0, v1, :cond_0
 
+    .line 130
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -150,13 +170,18 @@
 
     throw v0
 
+    .line 132
     :cond_0
     return-void
 .end method
 
 .method protected checkFrameType(Landroid/filterfw/core/Frame;Z)V
     .locals 3
+    .parameter "frame"
+    .parameter "forceCheck"
 
+    .prologue
+    .line 119
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mChecksType:Z
 
     if-nez v0, :cond_0
@@ -180,6 +205,7 @@
 
     if-nez v0, :cond_1
 
+    .line 122
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -236,6 +262,7 @@
 
     throw v0
 
+    .line 125
     :cond_1
     return-void
 .end method
@@ -246,10 +273,13 @@
 .method public close()V
     .locals 3
 
+    .prologue
+    .line 80
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
     if-eqz v0, :cond_0
 
+    .line 81
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -276,11 +306,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 83
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
+    .line 84
     return-void
 .end method
 
@@ -290,6 +322,8 @@
 .method public getFilter()Landroid/filterfw/core/Filter;
     .locals 1
 
+    .prologue
+    .line 57
     iget-object v0, p0, Landroid/filterfw/core/FilterPort;->mFilter:Landroid/filterfw/core/Filter;
 
     return-object v0
@@ -298,6 +332,8 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 61
     iget-object v0, p0, Landroid/filterfw/core/FilterPort;->mName:Ljava/lang/String;
 
     return-object v0
@@ -306,6 +342,8 @@
 .method public getPortFormat()Landroid/filterfw/core/FrameFormat;
     .locals 1
 
+    .prologue
+    .line 49
     iget-object v0, p0, Landroid/filterfw/core/FilterPort;->mPortFormat:Landroid/filterfw/core/FrameFormat;
 
     return-object v0
@@ -317,6 +355,8 @@
 .method public isAttached()Z
     .locals 1
 
+    .prologue
+    .line 45
     iget-object v0, p0, Landroid/filterfw/core/FilterPort;->mFilter:Landroid/filterfw/core/Filter;
 
     if-eqz v0, :cond_0
@@ -335,6 +375,8 @@
 .method public isBlocking()Z
     .locals 1
 
+    .prologue
+    .line 91
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsBlocking:Z
 
     return v0
@@ -343,6 +385,8 @@
 .method public isOpen()Z
     .locals 1
 
+    .prologue
+    .line 87
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
     return v0
@@ -354,10 +398,13 @@
 .method public open()V
     .locals 3
 
+    .prologue
+    .line 73
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
     if-nez v0, :cond_0
 
+    .line 74
     iget-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -384,11 +431,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 76
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterfw/core/FilterPort;->mIsOpen:Z
 
+    .line 77
     return-void
 .end method
 
@@ -400,17 +449,25 @@
 
 .method public setBlocking(Z)V
     .locals 0
+    .parameter "blocking"
 
+    .prologue
+    .line 65
     iput-boolean p1, p0, Landroid/filterfw/core/FilterPort;->mIsBlocking:Z
 
+    .line 66
     return-void
 .end method
 
 .method public setChecksType(Z)V
     .locals 0
+    .parameter "checksType"
 
+    .prologue
+    .line 69
     iput-boolean p1, p0, Landroid/filterfw/core/FilterPort;->mChecksType:Z
 
+    .line 70
     return-void
 .end method
 
@@ -419,15 +476,21 @@
 
 .method public setPortFormat(Landroid/filterfw/core/FrameFormat;)V
     .locals 0
+    .parameter "format"
 
+    .prologue
+    .line 53
     iput-object p1, p0, Landroid/filterfw/core/FilterPort;->mPortFormat:Landroid/filterfw/core/FrameFormat;
 
+    .line 54
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 109
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

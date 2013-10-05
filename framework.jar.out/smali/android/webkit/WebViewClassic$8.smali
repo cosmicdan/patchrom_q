@@ -32,7 +32,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebViewClassic;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2557
     iput-object p1, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -44,7 +47,10 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
     .locals 2
+    .parameter "params"
 
+    .prologue
+    .line 2562
     const/4 v1, 0x0
 
     :try_start_0
@@ -56,12 +62,16 @@
 
     move-result-object v1
 
+    .line 2564
     :goto_0
     return-object v1
 
+    .line 2563
     :catch_0
     move-exception v0
 
+    .line 2564
+    .local v0, e:Ljava/io/IOException;
     const/4 v1, 0x0
 
     goto :goto_0
@@ -69,9 +79,13 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 2557
     check-cast p1, [Ljava/io/InputStream;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$8;->doInBackground([Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
 
     move-result-object v0
@@ -81,18 +95,24 @@
 
 .method protected onPostExecute(Landroid/webkit/WebViewCore$DrawData;)V
     .locals 5
+    .parameter "draw"
 
+    .prologue
+    .line 2570
     if-nez p1, :cond_0
 
+    .line 2571
     const-string/jumbo v2, "webview"
 
     const-string v3, "Failed to load view state!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2581
     :goto_0
     return-void
 
+    .line 2574
     :cond_0
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -100,6 +120,8 @@
 
     move-result v1
 
+    .line 2575
+    .local v1, viewWidth:I
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getViewHeightWithTitle()I
@@ -114,12 +136,15 @@
 
     sub-int v0, v2, v3
 
+    .line 2576
+    .local v0, viewHeight:I
     new-instance v2, Landroid/graphics/Point;
 
     invoke-direct {v2, v1, v0}, Landroid/graphics/Point;-><init>(II)V
 
     iput-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewSize:Landroid/graphics/Point;
 
+    .line 2577
     iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
@@ -130,11 +155,13 @@
 
     iput v3, v2, Landroid/webkit/WebViewCore$ViewState;->mDefaultScale:F
 
+    .line 2578
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
     invoke-static {v2, p1}, Landroid/webkit/WebViewClassic;->access$2202(Landroid/webkit/WebViewClassic;Landroid/webkit/WebViewCore$DrawData;)Landroid/webkit/WebViewCore$DrawData;
 
+    .line 2579
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
@@ -148,6 +175,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/webkit/WebViewClassic;->setNewPicture(Landroid/webkit/WebViewCore$DrawData;Z)V
 
+    .line 2580
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
@@ -164,9 +192,13 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 2557
     check-cast p1, Landroid/webkit/WebViewCore$DrawData;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$8;->onPostExecute(Landroid/webkit/WebViewCore$DrawData;)V
 
     return-void

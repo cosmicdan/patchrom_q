@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 212
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,9 +36,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
+    .parameter "animator"
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 214
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mNewTargetResources:I
@@ -45,6 +51,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 215
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
@@ -57,21 +64,25 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->internalSetTargetResources(I)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$600(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;I)V
 
+    .line 216
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mNewTargetResources:I
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$502(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;I)I
 
+    .line 217
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->hideTargets(ZZ)V
     invoke-static {v0, v2, v2}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$700(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;ZZ)V
 
+    .line 219
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mAnimatingTargets:Z
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$802(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;Z)Z
 
+    .line 220
     return-void
 .end method

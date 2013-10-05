@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -14,28 +16,35 @@
 
 .method public static create(Ljava/lang/String;)Landroid/media/videoeditor/VideoEditor;
     .locals 4
+    .parameter "projectPath"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 49
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 50
+    .local v0, dir:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
+    .line 51
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
+    .line 52
     new-instance v1, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -60,6 +69,7 @@
 
     throw v1
 
+    .line 59
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -73,6 +83,7 @@
 
     if-nez v1, :cond_1
 
+    .line 60
     new-instance v1, Ljava/io/FileNotFoundException;
 
     const-string v2, "Cannot create file .nomedia"
@@ -81,6 +92,7 @@
 
     throw v1
 
+    .line 65
     :cond_1
     new-instance v1, Landroid/media/videoeditor/VideoEditorImpl;
 
@@ -91,22 +103,30 @@
 
 .method public static load(Ljava/lang/String;Z)Landroid/media/videoeditor/VideoEditor;
     .locals 2
+    .parameter "projectPath"
+    .parameter "generatePreview"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 89
     new-instance v0, Landroid/media/videoeditor/VideoEditorImpl;
 
     invoke-direct {v0, p0}, Landroid/media/videoeditor/VideoEditorImpl;-><init>(Ljava/lang/String;)V
 
+    .line 90
+    .local v0, videoEditor:Landroid/media/videoeditor/VideoEditor;
     if-eqz p1, :cond_0
 
+    .line 91
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Landroid/media/videoeditor/VideoEditor;->generatePreview(Landroid/media/videoeditor/VideoEditor$MediaProcessingProgressListener;)V
 
+    .line 93
     :cond_0
     return-object v0
 .end method

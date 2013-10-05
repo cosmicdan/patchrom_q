@@ -115,42 +115,56 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
+    .parameter "context"
 
+    .prologue
+    .line 127
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 55
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
+    .line 128
     iput-object p1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->mContext:Landroid/content/Context;
 
+    .line 129
     const-string v1, "mtk-agps"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 130
+    .local v0, b:Landroid/os/IBinder;
     invoke-static {v0}, Lcom/mediatek/common/agps/IMtkAgpsManager$Stub;->asInterface(Landroid/os/IBinder;)Lcom/mediatek/common/agps/IMtkAgpsManager;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
+    .line 131
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
     if-nez v1, :cond_0
 
+    .line 132
     const-string v1, "ERR: getService() sService is still null.."
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 133
     :cond_0
     return-void
 .end method
 
 .method private log(Ljava/lang/String;)V
     .locals 3
+    .parameter "info"
 
+    .prologue
+    .line 416
     const-string v0, "MtkAgps"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -179,12 +193,16 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 417
     return-void
 .end method
 
 .method private loge(Ljava/lang/String;)V
     .locals 3
+    .parameter "info"
 
+    .prologue
+    .line 420
     const-string v0, "MtkAgps"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -213,6 +231,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 421
     return-void
 .end method
 
@@ -221,10 +240,13 @@
 .method public disable()V
     .locals 3
 
+    .prologue
+    .line 144
     const-string v1, "disable"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 146
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -232,12 +254,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 150
     :goto_0
     return-void
 
+    .line 147
     :catch_0
     move-exception v0
 
+    .line 148
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -264,10 +290,13 @@
 .method public enable()V
     .locals 3
 
+    .prologue
+    .line 136
     const-string v1, "enable"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 138
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -275,12 +304,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 142
     :goto_0
     return-void
 
+    .line 139
     :catch_0
     move-exception v0
 
+    .line 140
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -306,7 +339,11 @@
 
 .method public extraCommand(Ljava/lang/String;Landroid/os/Bundle;)I
     .locals 3
+    .parameter "command"
+    .parameter "extra"
 
+    .prologue
+    .line 303
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -337,6 +374,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 305
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -346,12 +384,16 @@
 
     move-result v1
 
+    .line 309
     :goto_0
     return v1
 
+    .line 306
     :catch_0
     move-exception v0
 
+    .line 307
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -372,6 +414,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 309
     const/4 v1, 0x0
 
     goto :goto_0
@@ -380,10 +423,13 @@
 .method public getCdmaProfile()Lcom/mediatek/common/agps/MtkAgpsCdmaProfile;
     .locals 3
 
+    .prologue
+    .line 404
     const-string v1, "getCdmaProfile"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 406
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -393,12 +439,16 @@
 
     move-result-object v1
 
+    .line 410
     :goto_0
     return-object v1
 
+    .line 407
     :catch_0
     move-exception v0
 
+    .line 408
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -419,6 +469,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 410
     const/4 v1, 0x0
 
     goto :goto_0
@@ -427,10 +478,13 @@
 .method public getConfig()Lcom/mediatek/common/agps/MtkAgpsConfig;
     .locals 3
 
+    .prologue
+    .line 186
     const-string v1, "getConfig"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 188
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -440,12 +494,16 @@
 
     move-result-object v1
 
+    .line 192
     :goto_0
     return-object v1
 
+    .line 189
     :catch_0
     move-exception v0
 
+    .line 190
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -466,6 +524,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 192
     const/4 v1, 0x0
 
     goto :goto_0
@@ -474,10 +533,13 @@
 .method public getCpStatus()Z
     .locals 3
 
+    .prologue
+    .line 284
     const-string v1, "getCpStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 286
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -487,12 +549,16 @@
 
     move-result v1
 
+    .line 290
     :goto_0
     return v1
 
+    .line 287
     :catch_0
     move-exception v0
 
+    .line 288
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -513,6 +579,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 290
     const/4 v1, 0x0
 
     goto :goto_0
@@ -521,10 +588,13 @@
 .method public getMode()I
     .locals 3
 
+    .prologue
+    .line 223
     const-string v1, "getMode"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 225
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -534,12 +604,16 @@
 
     move-result v1
 
+    .line 229
     :goto_0
     return v1
 
+    .line 226
     :catch_0
     move-exception v0
 
+    .line 227
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -560,6 +634,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 229
     const/4 v1, 0x0
 
     goto :goto_0
@@ -568,10 +643,13 @@
 .method public getNiStatus()Z
     .locals 3
 
+    .prologue
+    .line 266
     const-string v1, "getNiStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 268
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -581,12 +659,16 @@
 
     move-result v1
 
+    .line 272
     :goto_0
     return v1
 
+    .line 269
     :catch_0
     move-exception v0
 
+    .line 270
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -607,6 +689,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 272
     const/4 v1, 0x0
 
     goto :goto_0
@@ -615,10 +698,13 @@
 .method public getProfile()Lcom/mediatek/common/agps/MtkAgpsProfile;
     .locals 3
 
+    .prologue
+    .line 204
     const-string v1, "getProfile"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 206
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -628,12 +714,16 @@
 
     move-result-object v1
 
+    .line 210
     :goto_0
     return-object v1
 
+    .line 207
     :catch_0
     move-exception v0
 
+    .line 208
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -654,6 +744,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 210
     const/4 v1, 0x0
 
     goto :goto_0
@@ -662,10 +753,13 @@
 .method public getRoamingStatus()Z
     .locals 3
 
+    .prologue
+    .line 293
     const-string v1, "getRoamingStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 295
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -675,12 +769,16 @@
 
     move-result v1
 
+    .line 299
     :goto_0
     return v1
 
+    .line 296
     :catch_0
     move-exception v0
 
+    .line 297
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -701,6 +799,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 299
     const/4 v1, 0x0
 
     goto :goto_0
@@ -709,10 +808,13 @@
 .method public getSI3PartyMsisdn()[Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 376
     const-string v1, "getSI3PartyMsisdn"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 378
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -722,12 +824,16 @@
 
     move-result-object v1
 
+    .line 382
     :goto_0
     return-object v1
 
+    .line 379
     :catch_0
     move-exception v0
 
+    .line 380
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -748,6 +854,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 382
     const/4 v1, 0x0
 
     goto :goto_0
@@ -756,10 +863,13 @@
 .method public getSILRMsisdn()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 385
     const-string v1, "getSILRMsisdn"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 387
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -769,12 +879,16 @@
 
     move-result-object v1
 
+    .line 391
     :goto_0
     return-object v1
 
+    .line 388
     :catch_0
     move-exception v0
 
+    .line 389
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -795,6 +909,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 391
     const/4 v1, 0x0
 
     goto :goto_0
@@ -803,10 +918,13 @@
 .method public getStatus()Z
     .locals 3
 
+    .prologue
+    .line 152
     const-string v1, "getStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 154
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -816,12 +934,16 @@
 
     move-result v1
 
+    .line 158
     :goto_0
     return v1
 
+    .line 155
     :catch_0
     move-exception v0
 
+    .line 156
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -842,6 +964,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 158
     const/4 v1, 0x0
 
     goto :goto_0
@@ -850,10 +973,13 @@
 .method public getUpStatus()Z
     .locals 3
 
+    .prologue
+    .line 275
     const-string v1, "getUpStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 277
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -863,12 +989,16 @@
 
     move-result v1
 
+    .line 281
     :goto_0
     return v1
 
+    .line 278
     :catch_0
     move-exception v0
 
+    .line 279
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -889,6 +1019,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 281
     const/4 v1, 0x0
 
     goto :goto_0
@@ -896,7 +1027,11 @@
 
 .method public niUserResponse(II)V
     .locals 3
+    .parameter "sessionId"
+    .parameter "response"
 
+    .prologue
+    .line 313
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -927,6 +1062,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 315
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -934,12 +1070,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 319
     :goto_0
     return-void
 
+    .line 316
     :catch_0
     move-exception v0
 
+    .line 317
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -965,11 +1105,15 @@
 
 .method public setCdmaProfile(Lcom/mediatek/common/agps/MtkAgpsCdmaProfile;)V
     .locals 3
+    .parameter "p"
 
+    .prologue
+    .line 396
     const-string v1, "setCdmaProfile"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 398
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -977,12 +1121,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 402
     :goto_0
     return-void
 
+    .line 399
     :catch_0
     move-exception v0
 
+    .line 400
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1008,15 +1156,20 @@
 
 .method public setConfig(Lcom/mediatek/common/agps/MtkAgpsConfig;)V
     .locals 5
+    .parameter "config"
 
+    .prologue
+    .line 162
     const-string v3, "setConfig"
 
     invoke-direct {p0, v3}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 163
     iget-object v3, p1, Lcom/mediatek/common/agps/MtkAgpsConfig;->targetAreaList:[Landroid/os/Parcelable;
 
     if-eqz v3, :cond_2
 
+    .line 164
     iget-object v3, p1, Lcom/mediatek/common/agps/MtkAgpsConfig;->targetAreaList:[Landroid/os/Parcelable;
 
     array-length v3, v3
@@ -1025,6 +1178,7 @@
 
     if-le v3, v4, :cond_0
 
+    .line 165
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1049,12 +1203,15 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->loge(Ljava/lang/String;)V
 
+    .line 184
     :goto_0
     return-void
 
+    .line 170
     :cond_0
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_1
     iget-object v3, p1, Lcom/mediatek/common/agps/MtkAgpsConfig;->targetAreaList:[Landroid/os/Parcelable;
 
@@ -1062,12 +1219,16 @@
 
     if-ge v1, v3, :cond_2
 
+    .line 171
     iget-object v3, p1, Lcom/mediatek/common/agps/MtkAgpsConfig;->targetAreaList:[Landroid/os/Parcelable;
 
     aget-object v2, v3, v1
 
+    .line 172
+    .local v2, p:Landroid/os/Parcelable;
     if-nez v2, :cond_1
 
+    .line 173
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1096,11 +1257,15 @@
 
     goto :goto_0
 
+    .line 170
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 180
+    .end local v1           #i:I
+    .end local v2           #p:Landroid/os/Parcelable;
     :cond_2
     :try_start_0
     iget-object v3, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
@@ -1111,9 +1276,12 @@
 
     goto :goto_0
 
+    .line 181
     :catch_0
     move-exception v0
 
+    .line 182
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1139,7 +1307,10 @@
 
 .method public setCpEnable(Z)V
     .locals 3
+    .parameter "enable"
 
+    .prologue
+    .line 249
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1160,6 +1331,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 251
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1167,12 +1339,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 255
     :goto_0
     return-void
 
+    .line 252
     :catch_0
     move-exception v0
 
+    .line 253
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1198,7 +1374,10 @@
 
 .method public setMode(I)V
     .locals 3
+    .parameter "mode"
 
+    .prologue
+    .line 215
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1219,6 +1398,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 217
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1226,12 +1406,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 221
     :goto_0
     return-void
 
+    .line 218
     :catch_0
     move-exception v0
 
+    .line 219
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1257,7 +1441,10 @@
 
 .method public setNiEnable(Z)V
     .locals 3
+    .parameter "enable"
 
+    .prologue
+    .line 233
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1278,6 +1465,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 235
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1285,12 +1473,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 239
     :goto_0
     return-void
 
+    .line 236
     :catch_0
     move-exception v0
 
+    .line 237
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1316,11 +1508,15 @@
 
 .method public setProfile(Lcom/mediatek/common/agps/MtkAgpsProfile;)V
     .locals 3
+    .parameter "profile"
 
+    .prologue
+    .line 196
     const-string v1, "setProfile"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 198
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1328,12 +1524,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 202
     :goto_0
     return-void
 
+    .line 199
     :catch_0
     move-exception v0
 
+    .line 200
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1359,7 +1559,10 @@
 
 .method public setRoamingEnable(Z)V
     .locals 3
+    .parameter "enable"
 
+    .prologue
+    .line 257
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1380,6 +1583,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 259
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1387,12 +1591,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 263
     :goto_0
     return-void
 
+    .line 260
     :catch_0
     move-exception v0
 
+    .line 261
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1418,7 +1626,10 @@
 
 .method public setSI3PartyMsisdn([Ljava/lang/String;)V
     .locals 3
+    .parameter "msisdnList"
 
+    .prologue
+    .line 359
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1439,6 +1650,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 361
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1446,12 +1658,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 365
     :goto_0
     return-void
 
+    .line 362
     :catch_0
     move-exception v0
 
+    .line 363
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1477,7 +1693,10 @@
 
 .method public setSILRMsisdn(Ljava/lang/String;)V
     .locals 3
+    .parameter "msisdn"
 
+    .prologue
+    .line 367
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1498,6 +1717,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 369
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1505,12 +1725,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 373
     :goto_0
     return-void
 
+    .line 370
     :catch_0
     move-exception v0
 
+    .line 371
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1536,7 +1760,10 @@
 
 .method public setUpEnable(Z)V
     .locals 3
+    .parameter "enable"
 
+    .prologue
+    .line 241
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1557,6 +1784,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 243
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1564,12 +1792,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 247
     :goto_0
     return-void
 
+    .line 244
     :catch_0
     move-exception v0
 
+    .line 245
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1596,10 +1828,13 @@
 .method public startSIAreaEvent()V
     .locals 3
 
+    .prologue
+    .line 340
     const-string v1, "startSIAreaEvent"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 342
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1607,12 +1842,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 346
     :goto_0
     return-void
 
+    .line 343
     :catch_0
     move-exception v0
 
+    .line 344
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1639,10 +1878,13 @@
 .method public startSILR()V
     .locals 3
 
+    .prologue
+    .line 324
     const-string v1, "startSILR"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 326
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1650,12 +1892,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 330
     :goto_0
     return-void
 
+    .line 327
     :catch_0
     move-exception v0
 
+    .line 328
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1682,10 +1928,13 @@
 .method public startSIPeiodic()V
     .locals 3
 
+    .prologue
+    .line 332
     const-string v1, "startSIPeiodic"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 334
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1693,12 +1942,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 338
     :goto_0
     return-void
 
+    .line 335
     :catch_0
     move-exception v0
 
+    .line 336
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1725,10 +1978,13 @@
 .method public stopTriggeredSession()V
     .locals 3
 
+    .prologue
+    .line 349
     const-string v1, "stopTriggeredSession"
 
     invoke-direct {p0, v1}, Lcom/mediatek/agps/MtkAgpsManagerImpl;->log(Ljava/lang/String;)V
 
+    .line 351
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/agps/MtkAgpsManagerImpl;->sService:Lcom/mediatek/common/agps/IMtkAgpsManager;
 
@@ -1736,12 +1992,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 355
     :goto_0
     return-void
 
+    .line 352
     :catch_0
     move-exception v0
 
+    .line 353
+    .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

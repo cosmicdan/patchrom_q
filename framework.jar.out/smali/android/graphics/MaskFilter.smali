@@ -11,6 +11,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,9 +31,12 @@
         }
     .end annotation
 
+    .prologue
+    .line 27
     iget v0, p0, Landroid/graphics/MaskFilter;->native_instance:I
 
     invoke-static {v0}, Landroid/graphics/MaskFilter;->nativeDestructor(I)V
 
+    .line 28
     return-void
 .end method

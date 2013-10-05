@@ -25,14 +25,23 @@
 # direct methods
 .method constructor <init>(Landroid/content/ContentService$ObserverNode;Landroid/database/IContentObserver;Z)V
     .locals 0
+    .parameter "node"
+    .parameter "observer"
+    .parameter "selfChange"
 
+    .prologue
+    .line 293
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 294
     iput-object p1, p0, Landroid/content/ContentService$ObserverCall;->mNode:Landroid/content/ContentService$ObserverNode;
 
+    .line 295
     iput-object p2, p0, Landroid/content/ContentService$ObserverCall;->mObserver:Landroid/database/IContentObserver;
 
+    .line 296
     iput-boolean p3, p0, Landroid/content/ContentService$ObserverCall;->mSelfChange:Z
 
+    .line 297
     return-void
 .end method

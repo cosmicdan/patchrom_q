@@ -21,7 +21,10 @@
 # direct methods
 .method public constructor <init>(Landroid/os/BatteryStats$Uid$Pkg;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 385
     iput-object p1, p0, Landroid/os/BatteryStats$Uid$Pkg$Serv;->this$0:Landroid/os/BatteryStats$Uid$Pkg;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

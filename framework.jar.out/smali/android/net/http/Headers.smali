@@ -190,6 +190,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 128
     const/16 v0, 0x13
 
     new-array v0, v0, [Ljava/lang/String;
@@ -316,10 +318,13 @@
 .method public constructor <init>()V
     .locals 3
 
+    .prologue
     const/4 v2, 0x4
 
+    .line 154
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 125
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -328,42 +333,53 @@
 
     iput-object v0, p0, Landroid/net/http/Headers;->cookies:Ljava/util/ArrayList;
 
+    .line 127
     const/16 v0, 0x13
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
+    .line 151
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/net/http/Headers;->mExtraHeaderNames:Ljava/util/ArrayList;
 
+    .line 152
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/net/http/Headers;->mExtraHeaderValues:Ljava/util/ArrayList;
 
+    .line 155
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/net/http/Headers;->transferEncoding:J
 
+    .line 156
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/net/http/Headers;->contentLength:J
 
+    .line 157
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/http/Headers;->connectionType:I
 
+    .line 158
     return-void
 .end method
 
 .method private setConnectionType(Lorg/apache/http/util/CharArrayBuffer;I)V
     .locals 1
+    .parameter "buffer"
+    .parameter "pos"
 
+    .prologue
+    .line 462
     const-string v0, "Close"
 
     invoke-static {p1, p2, v0}, Landroid/net/http/CharArrayBuffers;->containsIgnoreCaseTrimmed(Lorg/apache/http/util/CharArrayBuffer;ILjava/lang/String;)Z
@@ -372,14 +388,17 @@
 
     if-eqz v0, :cond_1
 
+    .line 464
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/net/http/Headers;->connectionType:I
 
+    .line 469
     :cond_0
     :goto_0
     return-void
 
+    .line 465
     :cond_1
     const-string v0, "Keep-Alive"
 
@@ -389,6 +408,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 467
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/net/http/Headers;->connectionType:I
@@ -401,6 +421,8 @@
 .method public getAcceptRanges()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 348
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xa
@@ -413,6 +435,8 @@
 .method public getCacheControl()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 356
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xc
@@ -425,6 +449,8 @@
 .method public getConnectionType()I
     .locals 1
 
+    .prologue
+    .line 320
     iget v0, p0, Landroid/net/http/Headers;->connectionType:I
 
     return v0
@@ -433,6 +459,8 @@
 .method public getContentDisposition()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 344
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x9
@@ -445,6 +473,8 @@
 .method public getContentEncoding()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 328
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x3
@@ -457,6 +487,8 @@
 .method public getContentLength()J
     .locals 2
 
+    .prologue
+    .line 316
     iget-wide v0, p0, Landroid/net/http/Headers;->contentLength:J
 
     return-wide v0
@@ -465,6 +497,8 @@
 .method public getContentType()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 324
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x2
@@ -477,6 +511,8 @@
 .method public getEtag()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 364
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xe
@@ -489,6 +525,8 @@
 .method public getExpires()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 352
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xb
@@ -500,31 +538,42 @@
 
 .method public getHeaders(Landroid/net/http/Headers$HeaderCallback;)V
     .locals 5
+    .parameter "hcb"
 
+    .prologue
+    .line 443
     const/4 v2, 0x0
 
+    .local v2, i:I
     :goto_0
     const/16 v3, 0x13
 
     if-ge v2, v3, :cond_1
 
+    .line 444
     iget-object v3, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     aget-object v1, v3, v2
 
+    .line 445
+    .local v1, h:Ljava/lang/String;
     if-eqz v1, :cond_0
 
+    .line 446
     sget-object v3, Landroid/net/http/Headers;->sHeaderNames:[Ljava/lang/String;
 
     aget-object v3, v3, v2
 
     invoke-interface {p1, v3, v1}, Landroid/net/http/Headers$HeaderCallback;->header(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 443
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 449
+    .end local v1           #h:Ljava/lang/String;
     :cond_1
     iget-object v3, p0, Landroid/net/http/Headers;->mExtraHeaderNames:Ljava/util/ArrayList;
 
@@ -532,11 +581,14 @@
 
     move-result v0
 
+    .line 450
+    .local v0, extraLen:I
     const/4 v2, 0x0
 
     :goto_1
     if-ge v2, v0, :cond_2
 
+    .line 455
     iget-object v3, p0, Landroid/net/http/Headers;->mExtraHeaderNames:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -555,10 +607,12 @@
 
     invoke-interface {p1, v3, v4}, Landroid/net/http/Headers$HeaderCallback;->header(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 450
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 459
     :cond_2
     return-void
 .end method
@@ -566,6 +620,8 @@
 .method public getLastModified()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 360
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xd
@@ -578,6 +634,8 @@
 .method public getLocation()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 332
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x5
@@ -590,6 +648,8 @@
 .method public getPragma()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 372
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x10
@@ -602,6 +662,8 @@
 .method public getProxyAuthenticate()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 340
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x8
@@ -614,6 +676,8 @@
 .method public getRefresh()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 376
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x11
@@ -635,6 +699,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 368
     iget-object v0, p0, Landroid/net/http/Headers;->cookies:Ljava/util/ArrayList;
 
     return-object v0
@@ -643,6 +709,8 @@
 .method public getTransferEncoding()J
     .locals 2
 
+    .prologue
+    .line 312
     iget-wide v0, p0, Landroid/net/http/Headers;->transferEncoding:J
 
     return-wide v0
@@ -651,6 +719,8 @@
 .method public getWwwAuthenticate()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 336
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x7
@@ -663,6 +733,8 @@
 .method public getXPermittedCrossDomainPolicies()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 380
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x12
@@ -674,40 +746,51 @@
 
 .method public parseHeader(Lorg/apache/http/util/CharArrayBuffer;)V
     .locals 11
+    .parameter "buffer"
 
+    .prologue
     const-wide/16 v9, -0x1
 
     const/4 v6, 0x0
 
     const/16 v8, 0xc
 
+    .line 161
     const/16 v5, 0x3a
 
     invoke-static {p1, v5}, Landroid/net/http/CharArrayBuffers;->setLowercaseIndexOf(Lorg/apache/http/util/CharArrayBuffer;I)I
 
     move-result v3
 
+    .line 162
+    .local v3, pos:I
     const/4 v5, -0x1
 
     if-ne v3, v5, :cond_1
 
+    .line 309
     :cond_0
     :goto_0
     return-void
 
+    .line 165
     :cond_1
     invoke-virtual {p1, v6, v3}, Lorg/apache/http/util/CharArrayBuffer;->substringTrimmed(II)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 166
+    .local v2, name:Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v5
 
     if-eqz v5, :cond_0
 
+    .line 169
     add-int/lit8 v3, v3, 0x1
 
+    .line 171
     invoke-virtual {p1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
     move-result v5
@@ -716,22 +799,27 @@
 
     move-result-object v4
 
+    .line 176
+    .local v4, val:Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v5
 
     sparse-switch v5, :sswitch_data_0
 
+    .line 306
     iget-object v5, p0, Landroid/net/http/Headers;->mExtraHeaderNames:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 307
     iget-object v5, p0, Landroid/net/http/Headers;->mExtraHeaderValues:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 178
     :sswitch_0
     const-string/jumbo v5, "transfer-encoding"
 
@@ -741,10 +829,12 @@
 
     if-eqz v5, :cond_0
 
+    .line 179
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     aput-object v4, v5, v6
 
+    .line 180
     sget-object v5, Lorg/apache/http/message/BasicHeaderValueParser;->DEFAULT:Lorg/apache/http/message/BasicHeaderValueParser;
 
     new-instance v6, Lorg/apache/http/message/ParserCursor;
@@ -759,8 +849,12 @@
 
     move-result-object v0
 
+    .line 185
+    .local v0, encodings:[Lorg/apache/http/HeaderElement;
     array-length v1, v0
 
+    .line 186
+    .local v1, len:I
     const-string v5, "identity"
 
     invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -769,10 +863,12 @@
 
     if-eqz v5, :cond_2
 
+    .line 187
     iput-wide v9, p0, Landroid/net/http/Headers;->transferEncoding:J
 
     goto :goto_0
 
+    .line 188
     :cond_2
     if-lez v1, :cond_3
 
@@ -792,17 +888,22 @@
 
     if-eqz v5, :cond_3
 
+    .line 191
     const-wide/16 v5, -0x2
 
     iput-wide v5, p0, Landroid/net/http/Headers;->transferEncoding:J
 
     goto :goto_0
 
+    .line 193
     :cond_3
     iput-wide v9, p0, Landroid/net/http/Headers;->transferEncoding:J
 
     goto :goto_0
 
+    .line 198
+    .end local v0           #encodings:[Lorg/apache/http/HeaderElement;
+    .end local v1           #len:I
     :sswitch_1
     const-string v5, "content-length"
 
@@ -812,12 +913,14 @@
 
     if-eqz v5, :cond_0
 
+    .line 199
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x1
 
     aput-object v4, v5, v6
 
+    .line 201
     :try_start_0
     invoke-static {v4}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -829,11 +932,13 @@
 
     goto :goto_0
 
+    .line 202
     :catch_0
     move-exception v5
 
     goto :goto_0
 
+    .line 211
     :sswitch_2
     const-string v5, "content-type"
 
@@ -843,6 +948,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 212
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x2
@@ -851,6 +957,7 @@
 
     goto/16 :goto_0
 
+    .line 216
     :sswitch_3
     const-string v5, "content-encoding"
 
@@ -860,6 +967,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 217
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x3
@@ -868,6 +976,7 @@
 
     goto/16 :goto_0
 
+    .line 221
     :sswitch_4
     const-string v5, "connection"
 
@@ -877,16 +986,19 @@
 
     if-eqz v5, :cond_0
 
+    .line 222
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x4
 
     aput-object v4, v5, v6
 
+    .line 223
     invoke-direct {p0, p1, v3}, Landroid/net/http/Headers;->setConnectionType(Lorg/apache/http/util/CharArrayBuffer;I)V
 
     goto/16 :goto_0
 
+    .line 227
     :sswitch_5
     const-string v5, "location"
 
@@ -896,6 +1008,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 228
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x5
@@ -904,6 +1017,7 @@
 
     goto/16 :goto_0
 
+    .line 232
     :sswitch_6
     const-string/jumbo v5, "proxy-connection"
 
@@ -913,16 +1027,19 @@
 
     if-eqz v5, :cond_0
 
+    .line 233
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x6
 
     aput-object v4, v5, v6
 
+    .line 234
     invoke-direct {p0, p1, v3}, Landroid/net/http/Headers;->setConnectionType(Lorg/apache/http/util/CharArrayBuffer;I)V
 
     goto/16 :goto_0
 
+    .line 238
     :sswitch_7
     const-string/jumbo v5, "www-authenticate"
 
@@ -932,6 +1049,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 239
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v6, 0x7
@@ -940,6 +1058,7 @@
 
     goto/16 :goto_0
 
+    .line 243
     :sswitch_8
     const-string/jumbo v5, "proxy-authenticate"
 
@@ -949,6 +1068,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 244
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0x8
@@ -957,6 +1077,7 @@
 
     goto/16 :goto_0
 
+    .line 248
     :sswitch_9
     const-string v5, "content-disposition"
 
@@ -966,6 +1087,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 249
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0x9
@@ -974,6 +1096,7 @@
 
     goto/16 :goto_0
 
+    .line 253
     :sswitch_a
     const-string v5, "accept-ranges"
 
@@ -983,6 +1106,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 254
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0xa
@@ -991,6 +1115,7 @@
 
     goto/16 :goto_0
 
+    .line 258
     :sswitch_b
     const-string v5, "expires"
 
@@ -1000,6 +1125,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 259
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0xb
@@ -1008,6 +1134,7 @@
 
     goto/16 :goto_0
 
+    .line 263
     :sswitch_c
     const-string v5, "cache-control"
 
@@ -1017,6 +1144,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 266
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     aget-object v5, v5, v8
@@ -1033,6 +1161,7 @@
 
     if-lez v5, :cond_4
 
+    .line 268
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1063,6 +1192,7 @@
 
     goto/16 :goto_0
 
+    .line 270
     :cond_4
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
@@ -1070,6 +1200,7 @@
 
     goto/16 :goto_0
 
+    .line 275
     :sswitch_d
     const-string v5, "last-modified"
 
@@ -1079,6 +1210,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 276
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0xd
@@ -1087,6 +1219,7 @@
 
     goto/16 :goto_0
 
+    .line 280
     :sswitch_e
     const-string v5, "etag"
 
@@ -1096,6 +1229,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 281
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0xe
@@ -1104,6 +1238,7 @@
 
     goto/16 :goto_0
 
+    .line 285
     :sswitch_f
     const-string/jumbo v5, "set-cookie"
 
@@ -1113,18 +1248,21 @@
 
     if-eqz v5, :cond_0
 
+    .line 286
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0xf
 
     aput-object v4, v5, v6
 
+    .line 287
     iget-object v5, p0, Landroid/net/http/Headers;->cookies:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
+    .line 291
     :sswitch_10
     const-string/jumbo v5, "pragma"
 
@@ -1134,6 +1272,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 292
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0x10
@@ -1142,6 +1281,7 @@
 
     goto/16 :goto_0
 
+    .line 296
     :sswitch_11
     const-string/jumbo v5, "refresh"
 
@@ -1151,6 +1291,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 297
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0x11
@@ -1159,6 +1300,7 @@
 
     goto/16 :goto_0
 
+    .line 301
     :sswitch_12
     const-string/jumbo v5, "x-permitted-cross-domain-policies"
 
@@ -1168,6 +1310,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 302
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v6, 0x12
@@ -1176,6 +1319,7 @@
 
     goto/16 :goto_0
 
+    .line 176
     :sswitch_data_0
     .sparse-switch
         -0x5034229e -> :sswitch_12
@@ -1202,152 +1346,204 @@
 
 .method public setAcceptRanges(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 412
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xa
 
     aput-object p1, v0, v1
 
+    .line 413
     return-void
 .end method
 
 .method public setCacheControl(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 420
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xc
 
     aput-object p1, v0, v1
 
+    .line 421
     return-void
 .end method
 
 .method public setContentDisposition(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 408
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x9
 
     aput-object p1, v0, v1
 
+    .line 409
     return-void
 .end method
 
 .method public setContentEncoding(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 392
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x3
 
     aput-object p1, v0, v1
 
+    .line 393
     return-void
 .end method
 
 .method public setContentLength(J)V
     .locals 0
+    .parameter "value"
 
+    .prologue
+    .line 384
     iput-wide p1, p0, Landroid/net/http/Headers;->contentLength:J
 
+    .line 385
     return-void
 .end method
 
 .method public setContentType(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 388
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x2
 
     aput-object p1, v0, v1
 
+    .line 389
     return-void
 .end method
 
 .method public setEtag(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 428
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xe
 
     aput-object p1, v0, v1
 
+    .line 429
     return-void
 .end method
 
 .method public setExpires(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 416
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xb
 
     aput-object p1, v0, v1
 
+    .line 417
     return-void
 .end method
 
 .method public setLastModified(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 424
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0xd
 
     aput-object p1, v0, v1
 
+    .line 425
     return-void
 .end method
 
 .method public setLocation(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 396
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x5
 
     aput-object p1, v0, v1
 
+    .line 397
     return-void
 .end method
 
 .method public setProxyAuthenticate(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 404
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x8
 
     aput-object p1, v0, v1
 
+    .line 405
     return-void
 .end method
 
 .method public setWwwAuthenticate(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 400
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/4 v1, 0x7
 
     aput-object p1, v0, v1
 
+    .line 401
     return-void
 .end method
 
 .method public setXPermittedCrossDomainPolicies(Ljava/lang/String;)V
     .locals 2
+    .parameter "value"
 
+    .prologue
+    .line 432
     iget-object v0, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     const/16 v1, 0x12
 
     aput-object p1, v0, v1
 
+    .line 433
     return-void
 .end method

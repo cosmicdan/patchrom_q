@@ -34,8 +34,11 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 73
     return-void
 .end method
 
@@ -43,9 +46,13 @@
 # virtual methods
 .method public setCardState(I)V
     .locals 3
+    .parameter "state"
 
+    .prologue
+    .line 103
     packed-switch p1, :pswitch_data_0
 
+    .line 114
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -70,14 +77,17 @@
 
     throw v0
 
+    .line 105
     :pswitch_0
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$CardState;->CARDSTATE_ABSENT:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccCardStatus;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
+    .line 116
     :goto_0
     return-void
 
+    .line 108
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$CardState;->CARDSTATE_PRESENT:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
@@ -85,6 +95,7 @@
 
     goto :goto_0
 
+    .line 111
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$CardState;->CARDSTATE_ERROR:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
@@ -92,6 +103,7 @@
 
     goto :goto_0
 
+    .line 103
     nop
 
     :pswitch_data_0
@@ -104,9 +116,13 @@
 
 .method public setUniversalPinState(I)V
     .locals 3
+    .parameter "state"
 
+    .prologue
+    .line 119
     packed-switch p1, :pswitch_data_0
 
+    .line 139
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,14 +147,17 @@
 
     throw v0
 
+    .line 121
     :pswitch_0
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccCardStatus;->mUniversalPinState:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
+    .line 141
     :goto_0
     return-void
 
+    .line 124
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_ENABLED_NOT_VERIFIED:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
@@ -146,6 +165,7 @@
 
     goto :goto_0
 
+    .line 127
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_ENABLED_VERIFIED:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
@@ -153,6 +173,7 @@
 
     goto :goto_0
 
+    .line 130
     :pswitch_3
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_DISABLED:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
@@ -160,6 +181,7 @@
 
     goto :goto_0
 
+    .line 133
     :pswitch_4
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_ENABLED_BLOCKED:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
@@ -167,6 +189,7 @@
 
     goto :goto_0
 
+    .line 136
     :pswitch_5
     sget-object v0, Lcom/android/internal/telephony/IccCardStatus$PinState;->PINSTATE_ENABLED_PERM_BLOCKED:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
@@ -174,6 +197,7 @@
 
     goto :goto_0
 
+    .line 119
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -188,12 +212,16 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
+    .prologue
     const/16 v4, 0x8
 
+    .line 147
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 148
+    .local v1, sb:Ljava/lang/StringBuilder;
     const-string v2, "IccCardState {"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -242,6 +270,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 152
     iget v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mGsmUmtsSubscriptionAppIndex:I
 
     if-ltz v2, :cond_1
@@ -250,19 +279,24 @@
 
     if-ge v2, v4, :cond_1
 
+    .line 154
     iget-object v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mApplications:[Lcom/android/internal/telephony/IccCardApplicationStatus;
 
     iget v3, p0, Lcom/android/internal/telephony/IccCardStatus;->mGsmUmtsSubscriptionAppIndex:I
 
     aget-object v0, v2, v3
 
+    .line 155
+    .local v0, app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     if-nez v0, :cond_0
 
     const-string/jumbo v0, "null"
 
+    .end local v0           #app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     :cond_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 158
     :cond_1
     const-string v2, ",cmda_id="
 
@@ -274,6 +308,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 159
     iget v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mCdmaSubscriptionAppIndex:I
 
     if-ltz v2, :cond_3
@@ -282,19 +317,24 @@
 
     if-ge v2, v4, :cond_3
 
+    .line 161
     iget-object v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mApplications:[Lcom/android/internal/telephony/IccCardApplicationStatus;
 
     iget v3, p0, Lcom/android/internal/telephony/IccCardStatus;->mCdmaSubscriptionAppIndex:I
 
     aget-object v0, v2, v3
 
+    .line 162
+    .restart local v0       #app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     if-nez v0, :cond_2
 
     const-string/jumbo v0, "null"
 
+    .end local v0           #app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     :cond_2
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 165
     :cond_3
     const-string v2, ",ims_id="
 
@@ -306,6 +346,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 166
     iget v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mImsSubscriptionAppIndex:I
 
     if-ltz v2, :cond_5
@@ -314,24 +355,30 @@
 
     if-ge v2, v4, :cond_5
 
+    .line 168
     iget-object v2, p0, Lcom/android/internal/telephony/IccCardStatus;->mApplications:[Lcom/android/internal/telephony/IccCardApplicationStatus;
 
     iget v3, p0, Lcom/android/internal/telephony/IccCardStatus;->mImsSubscriptionAppIndex:I
 
     aget-object v0, v2, v3
 
+    .line 169
+    .restart local v0       #app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     if-nez v0, :cond_4
 
     const-string/jumbo v0, "null"
 
+    .end local v0           #app:Lcom/android/internal/telephony/IccCardApplicationStatus;
     :cond_4
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 172
     :cond_5
     const-string/jumbo v2, "}"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 174
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2

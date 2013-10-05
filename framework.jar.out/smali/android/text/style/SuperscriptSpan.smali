@@ -10,16 +10,23 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 25
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
+    .line 26
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .parameter "src"
 
+    .prologue
+    .line 28
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
+    .line 29
     return-void
 .end method
 
@@ -28,6 +35,8 @@
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 36
     const/4 v0, 0x0
 
     return v0
@@ -36,6 +45,8 @@
 .method public getSpanTypeId()I
     .locals 1
 
+    .prologue
+    .line 32
     const/16 v0, 0xe
 
     return v0
@@ -43,7 +54,10 @@
 
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 3
+    .parameter "tp"
 
+    .prologue
+    .line 44
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -60,12 +74,16 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
+    .line 45
     return-void
 .end method
 
 .method public updateMeasureState(Landroid/text/TextPaint;)V
     .locals 3
+    .parameter "tp"
 
+    .prologue
+    .line 49
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -82,11 +100,16 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
+    .line 50
     return-void
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
+    .parameter "dest"
+    .parameter "flags"
 
+    .prologue
+    .line 40
     return-void
 .end method

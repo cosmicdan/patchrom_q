@@ -23,7 +23,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 113
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,17 +38,23 @@
 # virtual methods
 .method onKeyguardVisibilityChanged(Z)V
     .locals 2
+    .parameter "showing"
 
+    .prologue
+    .line 116
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
     if-ne v0, p1, :cond_0
 
+    .line 120
     :goto_0
     return-void
 
+    .line 118
     :cond_0
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
+    .line 119
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z

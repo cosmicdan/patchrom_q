@@ -33,9 +33,14 @@
 # direct methods
 .method public constructor <init>(Landroid/emoji/EmojiFactory;)V
     .locals 3
+    .parameter
 
+    .prologue
+    .line 39
+    .local p0, this:Landroid/emoji/EmojiFactory$CustomLinkedHashMap;,"Landroid/emoji/EmojiFactory$CustomLinkedHashMap<TK;TV;>;"
     iput-object p1, p0, Landroid/emoji/EmojiFactory$CustomLinkedHashMap;->this$0:Landroid/emoji/EmojiFactory;
 
+    .line 42
     const/16 v0, 0x10
 
     const/high16 v1, 0x3f40
@@ -44,6 +49,7 @@
 
     invoke-direct {p0, v0, v1, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
+    .line 43
     return-void
 .end method
 
@@ -51,6 +57,7 @@
 # virtual methods
 .method protected removeEldestEntry(Ljava/util/Map$Entry;)Z
     .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,6 +66,10 @@
         }
     .end annotation
 
+    .prologue
+    .line 52
+    .local p0, this:Landroid/emoji/EmojiFactory$CustomLinkedHashMap;,"Landroid/emoji/EmojiFactory$CustomLinkedHashMap<TK;TV;>;"
+    .local p1, eldest:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     invoke-virtual {p0}, Landroid/emoji/EmojiFactory$CustomLinkedHashMap;->size()I
 
     move-result v0

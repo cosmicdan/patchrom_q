@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/server/BluetoothProfileManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 91
     iput-object p1, p0, Landroid/server/BluetoothProfileManagerService$1;->this$0:Landroid/server/BluetoothProfileManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,13 +36,19 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/16 v6, 0xe
 
+    .line 94
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 95
+    .local v0, action:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -61,6 +70,7 @@
     #calls: Landroid/server/BluetoothProfileManagerService;->log(Ljava/lang/String;)V
     invoke-static {v4}, Landroid/server/BluetoothProfileManagerService;->access$000(Ljava/lang/String;)V
 
+    .line 96
     const-string v4, "android.bluetooth.device.extra.DEVICE"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -69,6 +79,8 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
+    .line 97
+    .local v1, device:Landroid/bluetooth/BluetoothDevice;
     const-string v4, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -77,6 +89,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 98
     const-string v4, "android.bluetooth.adapter.extra.STATE"
 
     const/high16 v5, -0x8000
@@ -85,12 +98,18 @@
 
     move-result v3
 
+    .line 99
+    .local v3, state:I
     packed-switch v3, :pswitch_data_0
 
+    .line 122
+    .end local v3           #state:I
     :cond_0
     :goto_0
     return-void
 
+    .line 101
+    .restart local v3       #state:I
     :pswitch_0
     iget-object v4, p0, Landroid/server/BluetoothProfileManagerService$1;->this$0:Landroid/server/BluetoothProfileManagerService;
 
@@ -99,6 +118,7 @@
 
     goto :goto_0
 
+    .line 104
     :pswitch_1
     iget-object v4, p0, Landroid/server/BluetoothProfileManagerService$1;->this$0:Landroid/server/BluetoothProfileManagerService;
 
@@ -107,6 +127,8 @@
 
     goto :goto_0
 
+    .line 110
+    .end local v3           #state:I
     :cond_1
     const-string v4, "android.bluetooth.profilemanager.action.PROFILE_CHANGED"
 
@@ -116,6 +138,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 111
     const-string v4, "android.bluetooth.profilemanager.extra.PROFILE"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -124,12 +147,16 @@
 
     check-cast v2, Landroid/bluetooth/BluetoothProfileManager$Profile;
 
+    .line 112
+    .local v2, profile:Landroid/bluetooth/BluetoothProfileManager$Profile;
     const-string v4, "android.bluetooth.profilemanager.extra.EXTRA_NEW_STATE"
 
     invoke-virtual {p2, v4, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
+    .line 114
+    .restart local v3       #state:I
     iget-object v4, p0, Landroid/server/BluetoothProfileManagerService$1;->this$0:Landroid/server/BluetoothProfileManagerService;
 
     #calls: Landroid/server/BluetoothProfileManagerService;->onProfileStateUpdate(Landroid/bluetooth/BluetoothProfileManager$Profile;I)V
@@ -137,6 +164,9 @@
 
     goto :goto_0
 
+    .line 115
+    .end local v2           #profile:Landroid/bluetooth/BluetoothProfileManager$Profile;
+    .end local v3           #state:I
     :cond_2
     const-string v4, "android.bluetooth.profilemanager.action.STATE_CHANGED"
 
@@ -146,6 +176,7 @@
 
     if-eqz v4, :cond_0
 
+    .line 116
     const-string v4, "android.bluetooth.profilemanager.extra.PROFILE"
 
     invoke-virtual {p2, v4}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -154,12 +185,16 @@
 
     check-cast v2, Landroid/bluetooth/BluetoothProfileManager$Profile;
 
+    .line 117
+    .restart local v2       #profile:Landroid/bluetooth/BluetoothProfileManager$Profile;
     const-string v4, "android.bluetooth.profilemanager.extra.EXTRA_NEW_STATE"
 
     invoke-virtual {p2, v4, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
+    .line 119
+    .restart local v3       #state:I
     iget-object v4, p0, Landroid/server/BluetoothProfileManagerService$1;->this$0:Landroid/server/BluetoothProfileManagerService;
 
     #calls: Landroid/server/BluetoothProfileManagerService;->updateProfileState(Landroid/bluetooth/BluetoothProfileManager$Profile;I)V
@@ -167,6 +202,7 @@
 
     goto :goto_0
 
+    .line 99
     :pswitch_data_0
     .packed-switch 0xc
         :pswitch_0

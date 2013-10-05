@@ -41,12 +41,14 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .prologue
     const/4 v5, 0x2
 
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
+    .line 86
     new-instance v0, Landroid/webkit/WebSettings$ZoomDensity;
 
     const-string v1, "FAR"
@@ -57,6 +59,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$ZoomDensity;->FAR:Landroid/webkit/WebSettings$ZoomDensity;
 
+    .line 87
     new-instance v0, Landroid/webkit/WebSettings$ZoomDensity;
 
     const-string v1, "MEDIUM"
@@ -67,6 +70,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$ZoomDensity;->MEDIUM:Landroid/webkit/WebSettings$ZoomDensity;
 
+    .line 88
     new-instance v0, Landroid/webkit/WebSettings$ZoomDensity;
 
     const-string v1, "CLOSE"
@@ -77,6 +81,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$ZoomDensity;->CLOSE:Landroid/webkit/WebSettings$ZoomDensity;
 
+    .line 85
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/webkit/WebSettings$ZoomDensity;
@@ -100,22 +105,32 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "size"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 89
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 90
     iput p3, p0, Landroid/webkit/WebSettings$ZoomDensity;->value:I
 
+    .line 91
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/webkit/WebSettings$ZoomDensity;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 85
     const-class v0, Landroid/webkit/WebSettings$ZoomDensity;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -130,6 +145,8 @@
 .method public static values()[Landroid/webkit/WebSettings$ZoomDensity;
     .locals 1
 
+    .prologue
+    .line 85
     sget-object v0, Landroid/webkit/WebSettings$ZoomDensity;->$VALUES:[Landroid/webkit/WebSettings$ZoomDensity;
 
     invoke-virtual {v0}, [Landroid/webkit/WebSettings$ZoomDensity;->clone()Ljava/lang/Object;

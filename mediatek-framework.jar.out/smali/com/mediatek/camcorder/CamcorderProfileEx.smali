@@ -22,6 +22,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 76
     const-string v0, "QUALITY_TIME_LAPSE_LIST_START"
 
     invoke-static {v0}, Lcom/mediatek/camcorder/CamcorderProfileEx;->getQualityNum(Ljava/lang/String;)I
@@ -30,6 +32,7 @@
 
     sput v0, Lcom/mediatek/camcorder/CamcorderProfileEx;->QUALITY_TIME_LAPSE_LIST_START:I
 
+    .line 77
     const-string v0, "QUALITY_LIST_START"
 
     invoke-static {v0}, Lcom/mediatek/camcorder/CamcorderProfileEx;->getQualityNum(Ljava/lang/String;)I
@@ -38,18 +41,22 @@
 
     sput v0, Lcom/mediatek/camcorder/CamcorderProfileEx;->QUALITY_LIST_START:I
 
+    .line 78
     sget v0, Lcom/mediatek/camcorder/CamcorderProfileEx;->QUALITY_TIME_LAPSE_LIST_START:I
 
     add-int/lit8 v0, v0, 0x12
 
     sput v0, Lcom/mediatek/camcorder/CamcorderProfileEx;->QUALITY_MTK_TIME_LAPSE_LIST_END:I
 
+    .line 79
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,38 +64,52 @@
 
 .method public static getProfile(I)Landroid/media/CamcorderProfile;
     .locals 4
+    .parameter "quality"
 
+    .prologue
+    .line 109
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v2
 
+    .line 110
+    .local v2, numberOfCameras:I
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
+    .line 111
+    .local v0, cameraInfo:Landroid/hardware/Camera$CameraInfo;
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_1
 
+    .line 112
     invoke-static {v1, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
+    .line 113
     iget v3, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     if-nez v3, :cond_0
 
+    .line 114
     invoke-static {v1, p0}, Lcom/mediatek/camcorder/CamcorderProfileEx;->getProfile(II)Landroid/media/CamcorderProfile;
 
     move-result-object v3
 
+    .line 117
     :goto_1
     return-object v3
 
+    .line 111
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 117
     :cond_1
     const/4 v3, 0x0
 
@@ -97,7 +118,11 @@
 
 .method public static getProfile(II)Landroid/media/CamcorderProfile;
     .locals 3
+    .parameter "cameraId"
+    .parameter "quality"
 
+    .prologue
+    .line 128
     sget v1, Lcom/mediatek/camcorder/CamcorderProfileEx;->QUALITY_LIST_START:I
 
     if-lt p1, v1, :cond_0
@@ -115,6 +140,7 @@
 
     if-le p1, v1, :cond_2
 
+    .line 132
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -134,12 +160,16 @@
 
     move-result-object v0
 
+    .line 133
+    .local v0, errMessage:Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
+    .line 135
+    .end local v0           #errMessage:Ljava/lang/String;
     :cond_2
     invoke-static {p0, p1}, Lcom/mediatek/camcorder/CamcorderProfileEx;->native_get_camcorder_profile(II)Landroid/media/CamcorderProfile;
 
@@ -150,9 +180,14 @@
 
 .method private static getQualityNum(Ljava/lang/String;)I
     .locals 5
+    .parameter "qualityName"
 
+    .prologue
+    .line 85
     const/4 v2, 0x0
 
+    .line 87
+    .local v2, qualityValue:I
     :try_start_0
     const-class v3, Landroid/media/CamcorderProfile;
 
@@ -160,10 +195,13 @@
 
     move-result-object v1
 
+    .line 88
+    .local v1, f:Ljava/lang/reflect/Field;
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
+    .line 89
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
@@ -175,12 +213,17 @@
 
     move-result v2
 
+    .line 99
+    .end local v1           #f:Ljava/lang/reflect/Field;
     :goto_0
     return v2
 
+    .line 90
     :catch_0
     move-exception v0
 
+    .line 91
+    .local v0, e:Ljava/lang/SecurityException;
     const-string v3, "CamcorderProfileEx"
 
     const-string v4, "getQualityNum error"
@@ -189,9 +232,13 @@
 
     goto :goto_0
 
+    .line 92
+    .end local v0           #e:Ljava/lang/SecurityException;
     :catch_1
     move-exception v0
 
+    .line 93
+    .local v0, e:Ljava/lang/NoSuchFieldException;
     const-string v3, "CamcorderProfileEx"
 
     const-string v4, "getQualityNum error"
@@ -200,9 +247,13 @@
 
     goto :goto_0
 
+    .line 94
+    .end local v0           #e:Ljava/lang/NoSuchFieldException;
     :catch_2
     move-exception v0
 
+    .line 95
+    .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v3, "CamcorderProfileEx"
 
     const-string v4, "getQualityNum error"
@@ -211,9 +262,13 @@
 
     goto :goto_0
 
+    .line 96
+    .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_3
     move-exception v0
 
+    .line 97
+    .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v3, "CamcorderProfileEx"
 
     const-string v4, "getQualityNum error"
@@ -225,9 +280,13 @@
 
 .method private static final native_get_camcorder_profile(II)Landroid/media/CamcorderProfile;
     .locals 8
+    .parameter "cameraId"
+    .parameter "quality"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 142
     :try_start_0
     const-class v2, Landroid/media/CamcorderProfile;
 
@@ -253,10 +312,13 @@
 
     move-result-object v1
 
+    .line 143
+    .local v1, m:Ljava/lang/reflect/Method;
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
+    .line 144
     const/4 v2, 0x0
 
     const/4 v4, 0x2
@@ -291,26 +353,36 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_4
 
+    .line 156
+    .end local v1           #m:Ljava/lang/reflect/Method;
     :goto_0
     return-object v2
 
+    .line 145
     :catch_0
     move-exception v0
 
+    .line 146
+    .local v0, e:Ljava/lang/SecurityException;
     const-string v2, "CamcorderProfileEx"
 
     const-string v4, "native_get_camcorder_profile error"
 
     invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .end local v0           #e:Ljava/lang/SecurityException;
     :goto_1
     move-object v2, v3
 
+    .line 156
     goto :goto_0
 
+    .line 147
     :catch_1
     move-exception v0
 
+    .line 148
+    .local v0, e:Ljava/lang/NoSuchMethodException;
     const-string v2, "CamcorderProfileEx"
 
     const-string v4, "native_get_camcorder_profile error"
@@ -319,9 +391,13 @@
 
     goto :goto_1
 
+    .line 149
+    .end local v0           #e:Ljava/lang/NoSuchMethodException;
     :catch_2
     move-exception v0
 
+    .line 150
+    .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v2, "CamcorderProfileEx"
 
     const-string v4, "native_get_camcorder_profile error"
@@ -330,9 +406,13 @@
 
     goto :goto_1
 
+    .line 151
+    .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_3
     move-exception v0
 
+    .line 152
+    .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v2, "CamcorderProfileEx"
 
     const-string v4, "native_get_camcorder_profile error"
@@ -341,9 +421,13 @@
 
     goto :goto_1
 
+    .line 153
+    .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_4
     move-exception v0
 
+    .line 154
+    .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     const-string v2, "CamcorderProfileEx"
 
     const-string v4, "native_get_camcorder_profile error"

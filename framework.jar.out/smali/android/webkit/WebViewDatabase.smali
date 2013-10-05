@@ -11,14 +11,20 @@
 .method protected constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 40
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 41
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;
     .locals 1
+    .parameter "context"
 
+    .prologue
+    .line 44
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -35,6 +41,8 @@
 .method public clearFormData()V
     .locals 1
 
+    .prologue
+    .line 109
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -45,6 +53,8 @@
 .method public clearHttpAuthUsernamePassword()V
     .locals 1
 
+    .prologue
+    .line 90
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -55,6 +65,8 @@
 .method public clearUsernamePassword()V
     .locals 1
 
+    .prologue
+    .line 67
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -65,6 +77,8 @@
 .method public hasFormData()Z
     .locals 1
 
+    .prologue
+    .line 100
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -75,6 +89,8 @@
 .method public hasHttpAuthUsernamePassword()Z
     .locals 1
 
+    .prologue
+    .line 79
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -85,6 +101,8 @@
 .method public hasUsernamePassword()Z
     .locals 1
 
+    .prologue
+    .line 56
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V

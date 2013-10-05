@@ -34,6 +34,8 @@
 # direct methods
 .method public constructor <init>(Landroid/view/textservice/TextInfo;Ljava/util/ArrayList;)V
     .locals 1
+    .parameter "ti"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,17 +47,24 @@
         }
     .end annotation
 
+    .prologue
+    .line 358
+    .local p2, items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 359
     iput-object p1, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceTextInfoParams;->mOriginalTextInfo:Landroid/view/textservice/TextInfo;
 
+    .line 360
     iput-object p2, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceTextInfoParams;->mItems:Ljava/util/ArrayList;
 
+    .line 361
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     iput v0, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceTextInfoParams;->mSize:I
 
+    .line 362
     return-void
 .end method

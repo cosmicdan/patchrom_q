@@ -20,31 +20,41 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 3
+    .parameter "name"
 
+    .prologue
     const/16 v2, 0xc8
 
+    .line 40
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     iput v2, p0, Landroid/filterfw/core/StopWatch;->STOP_WATCH_LOGGING_PERIOD:I
 
+    .line 33
     const-string v0, "MFF"
 
     iput-object v0, p0, Landroid/filterfw/core/StopWatch;->TAG:Ljava/lang/String;
 
+    .line 41
     iput-object p1, p0, Landroid/filterfw/core/StopWatch;->mName:Ljava/lang/String;
 
+    .line 42
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
 
+    .line 43
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/filterfw/core/StopWatch;->mTotalTime:J
 
+    .line 44
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/filterfw/core/StopWatch;->mNumCalls:I
 
+    .line 46
     const-string v0, "debug.swm.period"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -53,6 +63,7 @@
 
     iput v0, p0, Landroid/filterfw/core/StopWatch;->STOP_WATCH_LOGGING_PERIOD:I
 
+    .line 47
     iget-object v0, p0, Landroid/filterfw/core/StopWatch;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -77,6 +88,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 48
     return-void
 .end method
 
@@ -85,6 +97,8 @@
 .method public start()V
     .locals 4
 
+    .prologue
+    .line 51
     iget-wide v0, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
 
     const-wide/16 v2, -0x1
@@ -93,6 +107,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 52
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Calling start with StopWatch already running"
@@ -101,6 +116,7 @@
 
     throw v0
 
+    .line 55
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -108,22 +124,26 @@
 
     iput-wide v0, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
 
+    .line 56
     return-void
 .end method
 
 .method public stop()V
     .locals 9
 
+    .prologue
     const-wide/16 v6, -0x1
 
     const/4 v8, 0x0
 
+    .line 59
     iget-wide v2, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
 
     cmp-long v2, v2, v6
 
     if-nez v2, :cond_0
 
+    .line 60
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Calling stop with StopWatch already stopped"
@@ -132,13 +152,17 @@
 
     throw v2
 
+    .line 63
     :cond_0
     invoke-virtual {p0}, Landroid/filterfw/core/StopWatch;->wait3DReady()V
 
+    .line 65
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
+    .line 66
+    .local v0, stopTime:J
     iget-wide v2, p0, Landroid/filterfw/core/StopWatch;->mTotalTime:J
 
     iget-wide v4, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
@@ -149,14 +173,17 @@
 
     iput-wide v2, p0, Landroid/filterfw/core/StopWatch;->mTotalTime:J
 
+    .line 67
     iget v2, p0, Landroid/filterfw/core/StopWatch;->mNumCalls:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Landroid/filterfw/core/StopWatch;->mNumCalls:I
 
+    .line 68
     iput-wide v6, p0, Landroid/filterfw/core/StopWatch;->mStartTime:J
 
+    .line 69
     iget v2, p0, Landroid/filterfw/core/StopWatch;->mNumCalls:I
 
     iget v3, p0, Landroid/filterfw/core/StopWatch;->STOP_WATCH_LOGGING_PERIOD:I
@@ -165,6 +192,7 @@
 
     if-nez v2, :cond_1
 
+    .line 70
     iget-object v2, p0, Landroid/filterfw/core/StopWatch;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -229,12 +257,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 72
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Landroid/filterfw/core/StopWatch;->mTotalTime:J
 
+    .line 73
     iput v8, p0, Landroid/filterfw/core/StopWatch;->mNumCalls:I
 
+    .line 75
     :cond_1
     return-void
 .end method
@@ -242,18 +273,26 @@
 .method public wait3DReady()V
     .locals 7
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 79
     const/4 v2, 0x1
 
+    .line 80
+    .local v2, w:I
     const/4 v3, 0x1
 
+    .line 81
+    .local v3, h:I
     const/4 v1, 0x4
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
+    .line 82
+    .local v6, buffer:Ljava/nio/ByteBuffer;
     const/16 v4, 0x1908
 
     const/16 v5, 0x1401
@@ -262,5 +301,6 @@
 
     invoke-static/range {v0 .. v6}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
+    .line 83
     return-void
 .end method

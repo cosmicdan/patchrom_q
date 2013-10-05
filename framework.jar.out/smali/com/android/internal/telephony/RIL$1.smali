@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/RIL;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 373
     iput-object p1, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 376
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -46,12 +53,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 377
     const-string v0, "RILJ"
 
     const-string v1, "RIL received ACTION_SCREEN_ON"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 378
     iget-object v0, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     const/4 v1, 0x1
@@ -59,9 +68,11 @@
     #calls: Lcom/android/internal/telephony/RIL;->sendScreenState(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/telephony/RIL;->access$000(Lcom/android/internal/telephony/RIL;Z)V
 
+    .line 385
     :goto_0
     return-void
 
+    .line 379
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -75,12 +86,14 @@
 
     if-eqz v0, :cond_1
 
+    .line 380
     const-string v0, "RILJ"
 
     const-string v1, "RIL received ACTION_SCREEN_OFF"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 381
     iget-object v0, p0, Lcom/android/internal/telephony/RIL$1;->this$0:Lcom/android/internal/telephony/RIL;
 
     const/4 v1, 0x0
@@ -90,6 +103,7 @@
 
     goto :goto_0
 
+    .line 383
     :cond_1
     const-string v0, "RILJ"
 

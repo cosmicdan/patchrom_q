@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/PlatLogoActivity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 109
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 4
+    .parameter "v"
 
+    .prologue
+    .line 113
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
@@ -62,18 +68,23 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 122
     :goto_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-virtual {v1}, Lcom/android/internal/app/PlatLogoActivity;->finish()V
 
+    .line 123
     const/4 v1, 0x1
 
     return v1
 
+    .line 119
     :catch_0
     move-exception v0
 
+    .line 120
+    .local v0, ex:Landroid/content/ActivityNotFoundException;
     const-string v1, "PlatLogoActivity"
 
     const-string v2, "Couldn\'t find a bag of beans."

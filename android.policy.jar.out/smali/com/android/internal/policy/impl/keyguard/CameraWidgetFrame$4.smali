@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 91
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 94
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
@@ -46,9 +51,11 @@
 
     if-nez v0, :cond_0
 
+    .line 98
     :goto_0
     return-void
 
+    .line 96
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
@@ -59,6 +66,7 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onCameraLaunchedUnsuccessfully()V
 
+    .line 97
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V

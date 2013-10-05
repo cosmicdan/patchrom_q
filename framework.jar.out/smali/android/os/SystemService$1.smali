@@ -21,6 +21,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 52
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,12 +33,15 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 55
     invoke-static {}, Landroid/os/SystemService;->access$100()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
+    .line 56
     :try_start_0
     invoke-static {}, Landroid/os/SystemService;->access$100()Ljava/lang/Object;
 
@@ -44,10 +49,13 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 57
     monitor-exit v1
 
+    .line 58
     return-void
 
+    .line 57
     :catchall_0
     move-exception v0
 

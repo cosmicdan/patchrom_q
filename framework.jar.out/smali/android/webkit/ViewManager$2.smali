@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/ViewManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 264
     iput-object p1, p0, Landroid/webkit/ViewManager$2;->this$0:Landroid/webkit/ViewManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 266
     iget-object v0, p0, Landroid/webkit/ViewManager$2;->this$0:Landroid/webkit/ViewManager;
 
     const/4 v1, 0x0
@@ -44,5 +49,6 @@
     #setter for: Landroid/webkit/ViewManager;->mReadyToDraw:Z
     invoke-static {v0, v1}, Landroid/webkit/ViewManager;->access$402(Landroid/webkit/ViewManager;Z)Z
 
+    .line 267
     return-void
 .end method

@@ -25,7 +25,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/RecentApplicationsDialog;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 58
     iput-object p1, p0, Lcom/android/internal/policy/impl/RecentApplicationsDialog$RecentTag;->this$0:Lcom/android/internal/policy/impl/RecentApplicationsDialog;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

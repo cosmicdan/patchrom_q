@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/drm/DrmManagerClient;Ljava/lang/String;Landroid/content/Context;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1651
     iput-object p1, p0, Landroid/drm/DrmManagerClient$3;->this$0:Landroid/drm/DrmManagerClient;
 
     iput-object p2, p0, Landroid/drm/DrmManagerClient$3;->val$rightsIssuerFinal:Ljava/lang/String;
@@ -44,7 +49,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 1653
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -57,9 +66,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
+    .line 1655
+    .local v0, it:Landroid/content/Intent;
     iget-object v1, p0, Landroid/drm/DrmManagerClient$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
+    .line 1656
     return-void
 .end method

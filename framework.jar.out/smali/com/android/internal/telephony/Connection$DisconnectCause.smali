@@ -143,6 +143,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -153,6 +154,7 @@
 
     const/4 v3, 0x0
 
+    .line 32
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NOT_DISCONNECTED"
@@ -161,6 +163,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NOT_DISCONNECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 33
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INCOMING_MISSED"
@@ -169,6 +172,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 34
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NORMAL"
@@ -177,6 +181,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NORMAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 35
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "LOCAL"
@@ -185,6 +190,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 36
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "BUSY"
@@ -193,6 +199,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BUSY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 37
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CONGESTION"
@@ -203,6 +210,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CONGESTION:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 38
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "MMI"
@@ -213,6 +221,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->MMI:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 39
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INVALID_NUMBER"
@@ -223,6 +232,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 40
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NUMBER_UNREACHABLE"
@@ -233,6 +243,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NUMBER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 41
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "SERVER_UNREACHABLE"
@@ -243,6 +254,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 42
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INVALID_CREDENTIALS"
@@ -253,6 +265,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_CREDENTIALS:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 43
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "OUT_OF_NETWORK"
@@ -263,6 +276,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->OUT_OF_NETWORK:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 44
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "SERVER_ERROR"
@@ -273,6 +287,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_ERROR:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 45
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "TIMED_OUT"
@@ -283,6 +298,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->TIMED_OUT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 46
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "LOST_SIGNAL"
@@ -293,6 +309,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOST_SIGNAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 47
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "LIMIT_EXCEEDED"
@@ -303,6 +320,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LIMIT_EXCEEDED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 48
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INCOMING_REJECTED"
@@ -313,6 +331,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 49
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "POWER_OFF"
@@ -323,6 +342,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->POWER_OFF:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 50
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "OUT_OF_SERVICE"
@@ -333,6 +353,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->OUT_OF_SERVICE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 51
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "ICC_ERROR"
@@ -343,6 +364,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->ICC_ERROR:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 52
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CALL_BARRED"
@@ -353,6 +375,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CALL_BARRED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 53
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "FDN_BLOCKED"
@@ -363,6 +386,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->FDN_BLOCKED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 54
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED"
@@ -373,6 +397,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 55
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED_NORMAL"
@@ -383,6 +408,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED_NORMAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 56
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED_EMERGENCY"
@@ -393,6 +419,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED_EMERGENCY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 57
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "UNOBTAINABLE_NUMBER"
@@ -403,6 +430,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->UNOBTAINABLE_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 59
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NO_ROUTE_TO_DESTINATION"
@@ -413,6 +441,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NO_ROUTE_TO_DESTINATION:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 60
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NO_USER_RESPONDING"
@@ -423,6 +452,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NO_USER_RESPONDING:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 61
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "USER_ALERTING_NO_ANSWER"
@@ -433,6 +463,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->USER_ALERTING_NO_ANSWER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 62
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CALL_REJECTED"
@@ -443,6 +474,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CALL_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 63
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INVALID_NUMBER_FORMAT"
@@ -453,6 +485,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER_FORMAT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 64
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "FACILITY_REJECTED"
@@ -463,6 +496,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->FACILITY_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 65
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NORMAL_UNSPECIFIED"
@@ -473,6 +507,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NORMAL_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 66
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "NO_CIRCUIT_AVAIL"
@@ -483,6 +518,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NO_CIRCUIT_AVAIL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 67
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "SWITCHING_CONGESTION"
@@ -493,6 +529,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SWITCHING_CONGESTION:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 68
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "RESOURCE_UNAVAILABLE"
@@ -503,6 +540,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->RESOURCE_UNAVAILABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 69
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "BEARER_NOT_AUTHORIZED"
@@ -513,6 +551,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BEARER_NOT_AUTHORIZED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 70
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "BEARER_NOT_AVAIL"
@@ -523,6 +562,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BEARER_NOT_AVAIL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 71
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "SERVICE_NOT_AVAILABLE"
@@ -533,6 +573,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVICE_NOT_AVAILABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 72
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "BEARER_NOT_IMPLEMENT"
@@ -543,6 +584,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BEARER_NOT_IMPLEMENT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 73
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "FACILITY_NOT_IMPLEMENT"
@@ -553,6 +595,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->FACILITY_NOT_IMPLEMENT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 74
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "RESTRICTED_BEARER_AVAILABLE"
@@ -563,6 +606,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->RESTRICTED_BEARER_AVAILABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 75
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "OPTION_NOT_AVAILABLE"
@@ -573,6 +617,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->OPTION_NOT_AVAILABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 76
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "INCOMPATIBLE_DESTINATION"
@@ -583,6 +628,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMPATIBLE_DESTINATION:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 77
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CM_MM_RR_CONNECTION_RELEASE"
@@ -593,6 +639,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CM_MM_RR_CONNECTION_RELEASE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 79
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_LOCKED_UNTIL_POWER_CYCLE"
@@ -603,6 +650,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_LOCKED_UNTIL_POWER_CYCLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 80
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_DROP"
@@ -613,6 +661,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_DROP:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 81
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_INTERCEPT"
@@ -623,6 +672,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_INTERCEPT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 82
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_REORDER"
@@ -633,6 +683,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_REORDER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 83
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_SO_REJECT"
@@ -643,6 +694,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_SO_REJECT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 84
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_RETRY_ORDER"
@@ -653,6 +705,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_RETRY_ORDER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 85
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_ACCESS_FAILURE"
@@ -663,6 +716,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_ACCESS_FAILURE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 86
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_PREEMPTED"
@@ -673,6 +727,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_PREEMPTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 87
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_NOT_EMERGENCY"
@@ -683,6 +738,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_NOT_EMERGENCY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 88
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "CDMA_ACCESS_BLOCKED"
@@ -693,6 +749,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->CDMA_ACCESS_BLOCKED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 89
     new-instance v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     const-string v1, "ERROR_UNSPECIFIED"
@@ -703,6 +760,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+    .line 31
     const/16 v0, 0x38
 
     new-array v0, v0, [Lcom/android/internal/telephony/Connection$DisconnectCause;
@@ -1040,12 +1098,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 31
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -1053,7 +1115,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/Connection$DisconnectCause;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 31
     const-class v0, Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1068,6 +1133,8 @@
 .method public static values()[Lcom/android/internal/telephony/Connection$DisconnectCause;
     .locals 1
 
+    .prologue
+    .line 31
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->$VALUES:[Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/Connection$DisconnectCause;->clone()Ljava/lang/Object;

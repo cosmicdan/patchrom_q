@@ -24,8 +24,11 @@
 .method protected constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 302
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 303
     return-void
 .end method
 
@@ -34,6 +37,8 @@
 .method public getAllocation()Landroid/renderscript/Allocation;
     .locals 1
 
+    .prologue
+    .line 314
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -42,6 +47,8 @@
 .method public getElement()Landroid/renderscript/Element;
     .locals 1
 
+    .prologue
+    .line 306
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     return-object v0
@@ -50,6 +57,8 @@
 .method public getType()Landroid/renderscript/Type;
     .locals 1
 
+    .prologue
+    .line 310
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
@@ -61,7 +70,11 @@
 
 .method protected init(Landroid/renderscript/RenderScript;I)V
     .locals 2
+    .parameter "rs"
+    .parameter "dimx"
 
+    .prologue
+    .line 295
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     const/4 v1, 0x1
@@ -72,12 +85,18 @@
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
+    .line 296
     return-void
 .end method
 
 .method protected init(Landroid/renderscript/RenderScript;II)V
     .locals 2
+    .parameter "rs"
+    .parameter "dimx"
+    .parameter "usages"
 
+    .prologue
+    .line 299
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     or-int/lit8 v1, p3, 0x1
@@ -88,11 +107,14 @@
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
+    .line 300
     return-void
 .end method
 
 .method public updateAllocation()V
     .locals 0
 
+    .prologue
+    .line 319
     return-void
 .end method

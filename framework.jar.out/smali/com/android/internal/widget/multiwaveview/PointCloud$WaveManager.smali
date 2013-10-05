@@ -27,19 +27,25 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/widget/multiwaveview/PointCloud;)V
     .locals 1
+    .parameter
 
+    .prologue
+    .line 46
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->this$0:Lcom/android/internal/widget/multiwaveview/PointCloud;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     const/high16 v0, 0x4248
 
     iput v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->radius:F
 
+    .line 48
     const/high16 v0, 0x4348
 
     iput v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->width:F
 
+    .line 49
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->alpha:F
@@ -49,7 +55,10 @@
 
 .method static synthetic access$400(Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;)F
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 46
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->radius:F
 
     return v0
@@ -57,7 +66,10 @@
 
 .method static synthetic access$500(Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;)F
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 46
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->width:F
 
     return v0
@@ -65,7 +77,10 @@
 
 .method static synthetic access$600(Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;)F
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 46
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->alpha:F
 
     return v0
@@ -76,6 +91,8 @@
 .method public getAlpha()F
     .locals 1
 
+    .prologue
+    .line 63
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->alpha:F
 
     return v0
@@ -84,6 +101,8 @@
 .method public getRadius()F
     .locals 1
 
+    .prologue
+    .line 55
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->radius:F
 
     return v0
@@ -91,16 +110,24 @@
 
 .method public setAlpha(F)V
     .locals 0
+    .parameter "a"
 
+    .prologue
+    .line 59
     iput p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->alpha:F
 
+    .line 60
     return-void
 .end method
 
 .method public setRadius(F)V
     .locals 0
+    .parameter "r"
 
+    .prologue
+    .line 51
     iput p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->radius:F
 
+    .line 52
     return-void
 .end method

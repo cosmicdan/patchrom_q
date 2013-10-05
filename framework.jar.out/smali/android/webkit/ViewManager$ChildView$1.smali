@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/ViewManager$ChildView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 62
     iput-object p1, p0, Landroid/webkit/ViewManager$ChildView$1;->this$1:Landroid/webkit/ViewManager$ChildView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 68
     iget-object v0, p0, Landroid/webkit/ViewManager$ChildView$1;->this$1:Landroid/webkit/ViewManager$ChildView;
 
     iget-object v0, v0, Landroid/webkit/ViewManager$ChildView;->this$0:Landroid/webkit/ViewManager;
@@ -46,6 +51,7 @@
     #calls: Landroid/webkit/ViewManager;->requestLayout(Landroid/webkit/ViewManager$ChildView;)V
     invoke-static {v0, v1}, Landroid/webkit/ViewManager;->access$000(Landroid/webkit/ViewManager;Landroid/webkit/ViewManager$ChildView;)V
 
+    .line 70
     iget-object v0, p0, Landroid/webkit/ViewManager$ChildView$1;->this$1:Landroid/webkit/ViewManager$ChildView;
 
     iget-object v0, v0, Landroid/webkit/ViewManager$ChildView;->mView:Landroid/view/View;
@@ -56,11 +62,13 @@
 
     if-nez v0, :cond_0
 
+    .line 71
     iget-object v0, p0, Landroid/webkit/ViewManager$ChildView$1;->this$1:Landroid/webkit/ViewManager$ChildView;
 
     #calls: Landroid/webkit/ViewManager$ChildView;->attachViewOnUIThread()V
     invoke-static {v0}, Landroid/webkit/ViewManager$ChildView;->access$100(Landroid/webkit/ViewManager$ChildView;)V
 
+    .line 73
     :cond_0
     return-void
 .end method

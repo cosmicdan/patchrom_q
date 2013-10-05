@@ -17,20 +17,28 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 37
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 38
     return-void
 .end method
 
 .method public constructor <init>(Landroid/hardware/usb/UsbDevice;)V
     .locals 0
+    .parameter "device"
 
+    .prologue
+    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     iput-object p1, p0, Landroid/mtp/MtpDevice;->mDevice:Landroid/hardware/usb/UsbDevice;
 
+    .line 47
     return-void
 .end method
 
@@ -78,14 +86,20 @@
 .method public close()V
     .locals 0
 
+    .prologue
+    .line 72
     invoke-direct {p0}, Landroid/mtp/MtpDevice;->native_close()V
 
+    .line 73
     return-void
 .end method
 
 .method public deleteObject(I)Z
     .locals 1
+    .parameter "objectHandle"
 
+    .prologue
+    .line 201
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_delete_object(I)Z
 
     move-result v0
@@ -101,15 +115,20 @@
         }
     .end annotation
 
+    .prologue
+    .line 78
     :try_start_0
     invoke-direct {p0}, Landroid/mtp/MtpDevice;->native_close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 80
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 82
     return-void
 
+    .line 80
     :catchall_0
     move-exception v0
 
@@ -121,6 +140,8 @@
 .method public getDeviceId()I
     .locals 1
 
+    .prologue
+    .line 103
     iget-object v0, p0, Landroid/mtp/MtpDevice;->mDevice:Landroid/hardware/usb/UsbDevice;
 
     invoke-virtual {v0}, Landroid/hardware/usb/UsbDevice;->getDeviceId()I
@@ -133,6 +154,8 @@
 .method public getDeviceInfo()Landroid/mtp/MtpDeviceInfo;
     .locals 1
 
+    .prologue
+    .line 117
     invoke-direct {p0}, Landroid/mtp/MtpDevice;->native_get_device_info()Landroid/mtp/MtpDeviceInfo;
 
     move-result-object v0
@@ -143,6 +166,8 @@
 .method public getDeviceName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 92
     iget-object v0, p0, Landroid/mtp/MtpDevice;->mDevice:Landroid/hardware/usb/UsbDevice;
 
     invoke-virtual {v0}, Landroid/hardware/usb/UsbDevice;->getDeviceName()Ljava/lang/String;
@@ -154,7 +179,11 @@
 
 .method public getObject(II)[B
     .locals 1
+    .parameter "objectHandle"
+    .parameter "objectSize"
 
+    .prologue
+    .line 155
     invoke-direct {p0, p1, p2}, Landroid/mtp/MtpDevice;->native_get_object(II)[B
 
     move-result-object v0
@@ -164,7 +193,12 @@
 
 .method public getObjectHandles(III)[I
     .locals 1
+    .parameter "storageId"
+    .parameter "format"
+    .parameter "objectHandle"
 
+    .prologue
+    .line 141
     invoke-direct {p0, p1, p2, p3}, Landroid/mtp/MtpDevice;->native_get_object_handles(III)[I
 
     move-result-object v0
@@ -174,7 +208,10 @@
 
 .method public getObjectInfo(I)Landroid/mtp/MtpObjectInfo;
     .locals 1
+    .parameter "objectHandle"
 
+    .prologue
+    .line 189
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_get_object_info(I)Landroid/mtp/MtpObjectInfo;
 
     move-result-object v0
@@ -184,7 +221,10 @@
 
 .method public getParent(I)J
     .locals 2
+    .parameter "objectHandle"
 
+    .prologue
+    .line 211
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_get_parent(I)J
 
     move-result-wide v0
@@ -194,7 +234,10 @@
 
 .method public getStorageId(I)J
     .locals 2
+    .parameter "objectHandle"
 
+    .prologue
+    .line 221
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_get_storage_id(I)J
 
     move-result-wide v0
@@ -205,6 +248,8 @@
 .method public getStorageIds()[I
     .locals 1
 
+    .prologue
+    .line 127
     invoke-direct {p0}, Landroid/mtp/MtpDevice;->native_get_storage_ids()[I
 
     move-result-object v0
@@ -214,7 +259,10 @@
 
 .method public getStorageInfo(I)Landroid/mtp/MtpStorageInfo;
     .locals 1
+    .parameter "storageId"
 
+    .prologue
+    .line 179
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_get_storage_info(I)Landroid/mtp/MtpStorageInfo;
 
     move-result-object v0
@@ -224,7 +272,10 @@
 
 .method public getThumbnail(I)[B
     .locals 1
+    .parameter "objectHandle"
 
+    .prologue
+    .line 169
     invoke-direct {p0, p1}, Landroid/mtp/MtpDevice;->native_get_thumbnail(I)[B
 
     move-result-object v0
@@ -234,7 +285,11 @@
 
 .method public importFile(ILjava/lang/String;)Z
     .locals 1
+    .parameter "objectHandle"
+    .parameter "destPath"
 
+    .prologue
+    .line 236
     invoke-direct {p0, p1, p2}, Landroid/mtp/MtpDevice;->native_import_file(ILjava/lang/String;)Z
 
     move-result v0
@@ -244,7 +299,10 @@
 
 .method public open(Landroid/hardware/usb/UsbDeviceConnection;)Z
     .locals 3
+    .parameter "connection"
 
+    .prologue
+    .line 59
     iget-object v1, p0, Landroid/mtp/MtpDevice;->mDevice:Landroid/hardware/usb/UsbDevice;
 
     invoke-virtual {v1}, Landroid/hardware/usb/UsbDevice;->getDeviceName()Ljava/lang/String;
@@ -259,10 +317,14 @@
 
     move-result v0
 
+    .line 60
+    .local v0, result:Z
     if-nez v0, :cond_0
 
+    .line 61
     invoke-virtual {p1}, Landroid/hardware/usb/UsbDeviceConnection;->close()V
 
+    .line 63
     :cond_0
     return v0
 .end method
@@ -270,6 +332,8 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 108
     iget-object v0, p0, Landroid/mtp/MtpDevice;->mDevice:Landroid/hardware/usb/UsbDevice;
 
     invoke-virtual {v0}, Landroid/hardware/usb/UsbDevice;->getDeviceName()Ljava/lang/String;

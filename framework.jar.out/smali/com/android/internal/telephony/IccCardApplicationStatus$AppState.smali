@@ -43,6 +43,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -53,6 +54,7 @@
 
     const/4 v3, 0x0
 
+    .line 38
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_UNKNOWN"
@@ -61,6 +63,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 39
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_DETECTED"
@@ -69,6 +72,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_DETECTED:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 40
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_PIN"
@@ -77,6 +81,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_PIN:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 41
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_PUK"
@@ -85,6 +90,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_PUK:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 42
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_SUBSCRIPTION_PERSO"
@@ -93,6 +99,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 43
     new-instance v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     const-string v1, "APPSTATE_READY"
@@ -103,6 +110,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_READY:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
+    .line 37
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
@@ -140,12 +148,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -153,7 +165,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 37
     const-class v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -168,6 +183,8 @@
 .method public static values()[Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
     .locals 1
 
+    .prologue
+    .line 37
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->$VALUES:[Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->clone()Ljava/lang/Object;
@@ -184,6 +201,8 @@
 .method isAppNotReady()Z
     .locals 1
 
+    .prologue
+    .line 62
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     if-eq p0, v0, :cond_0
@@ -207,6 +226,8 @@
 .method isAppReady()Z
     .locals 1
 
+    .prologue
+    .line 58
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_READY:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     if-ne p0, v0, :cond_0
@@ -225,6 +246,8 @@
 .method isPinRequired()Z
     .locals 1
 
+    .prologue
+    .line 46
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_PIN:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     if-ne p0, v0, :cond_0
@@ -243,6 +266,8 @@
 .method isPukRequired()Z
     .locals 1
 
+    .prologue
+    .line 50
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_PUK:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     if-ne p0, v0, :cond_0
@@ -261,6 +286,8 @@
 .method isSubscriptionPersoEnabled()Z
     .locals 1
 
+    .prologue
+    .line 54
     sget-object v0, Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplicationStatus$AppState;
 
     if-ne p0, v0, :cond_0

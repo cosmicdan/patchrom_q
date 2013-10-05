@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebStorageClassic;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 98
     iput-object p1, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,21 +36,28 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 13
+    .parameter "msg"
 
+    .prologue
     const/4 v12, 0x0
 
+    .line 101
     iget v10, p1, Landroid/os/Message;->what:I
 
     packed-switch v10, :pswitch_data_0
 
+    .line 161
     :goto_0
     return-void
 
+    .line 103
     :pswitch_0
     iget-object v9, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v9, Landroid/webkit/WebStorage$Origin;
 
+    .line 104
+    .local v9, website:Landroid/webkit/WebStorage$Origin;
     invoke-virtual {v9}, Landroid/webkit/WebStorage$Origin;->getOrigin()Ljava/lang/String;
 
     move-result-object v10
@@ -61,11 +71,15 @@
 
     goto :goto_0
 
+    .line 109
+    .end local v9           #website:Landroid/webkit/WebStorage$Origin;
     :pswitch_1
     iget-object v9, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v9, Landroid/webkit/WebStorage$Origin;
 
+    .line 110
+    .restart local v9       #website:Landroid/webkit/WebStorage$Origin;
     invoke-virtual {v9}, Landroid/webkit/WebStorage$Origin;->getOrigin()Ljava/lang/String;
 
     move-result-object v10
@@ -75,22 +89,28 @@
 
     goto :goto_0
 
+    .line 114
+    .end local v9           #website:Landroid/webkit/WebStorage$Origin;
     :pswitch_2
     #calls: Landroid/webkit/WebStorageClassic;->nativeDeleteAllData()V
     invoke-static {}, Landroid/webkit/WebStorageClassic;->access$200()V
 
     goto :goto_0
 
+    .line 118
     :pswitch_3
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     #calls: Landroid/webkit/WebStorageClassic;->syncValues()V
     invoke-static {v10}, Landroid/webkit/WebStorageClassic;->access$300(Landroid/webkit/WebStorageClassic;)V
 
+    .line 119
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/webkit/ValueCallback;
 
+    .line 120
+    .local v0, callback:Landroid/webkit/ValueCallback;
     new-instance v2, Ljava/util/HashMap;
 
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
@@ -102,18 +122,24 @@
 
     invoke-direct {v2, v10}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
+    .line 121
+    .local v2, origins:Ljava/util/Map;
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
+    .line 122
+    .local v8, values:Ljava/util/Map;
     const-string v10, "callback"
 
     invoke-interface {v8, v10, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 123
     const-string/jumbo v10, "origins"
 
     invoke-interface {v8, v10, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 124
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     const/4 v11, 0x0
@@ -127,16 +153,23 @@
 
     goto :goto_0
 
+    .line 128
+    .end local v0           #callback:Landroid/webkit/ValueCallback;
+    .end local v2           #origins:Ljava/util/Map;
+    .end local v8           #values:Ljava/util/Map;
     :pswitch_4
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     #calls: Landroid/webkit/WebStorageClassic;->syncValues()V
     invoke-static {v10}, Landroid/webkit/WebStorageClassic;->access$300(Landroid/webkit/WebStorageClassic;)V
 
+    .line 129
     iget-object v8, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v8, Ljava/util/Map;
 
+    .line 130
+    .restart local v8       #values:Ljava/util/Map;
     const-string/jumbo v10, "origin"
 
     invoke-interface {v8, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -145,6 +178,8 @@
 
     check-cast v1, Ljava/lang/String;
 
+    .line 131
+    .local v1, origin:Ljava/lang/String;
     const-string v10, "callback"
 
     invoke-interface {v8, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -153,6 +188,8 @@
 
     check-cast v0, Landroid/webkit/ValueCallback;
 
+    .line 132
+    .restart local v0       #callback:Landroid/webkit/ValueCallback;
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     #getter for: Landroid/webkit/WebStorageClassic;->mOrigins:Ljava/util/Map;
@@ -166,20 +203,28 @@
 
     check-cast v9, Landroid/webkit/WebStorage$Origin;
 
+    .line 133
+    .restart local v9       #website:Landroid/webkit/WebStorage$Origin;
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
+    .line 134
+    .local v5, retValues:Ljava/util/Map;
     const-string v10, "callback"
 
     invoke-interface {v5, v10, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 135
     if-eqz v9, :cond_0
 
+    .line 136
     invoke-virtual {v9}, Landroid/webkit/WebStorage$Origin;->getUsage()J
 
     move-result-wide v6
 
+    .line 137
+    .local v6, usage:J
     const-string/jumbo v10, "usage"
 
     new-instance v11, Ljava/lang/Long;
@@ -188,6 +233,8 @@
 
     invoke-interface {v5, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 139
+    .end local v6           #usage:J
     :cond_0
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
@@ -202,16 +249,25 @@
 
     goto/16 :goto_0
 
+    .line 143
+    .end local v0           #callback:Landroid/webkit/ValueCallback;
+    .end local v1           #origin:Ljava/lang/String;
+    .end local v5           #retValues:Ljava/util/Map;
+    .end local v8           #values:Ljava/util/Map;
+    .end local v9           #website:Landroid/webkit/WebStorage$Origin;
     :pswitch_5
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     #calls: Landroid/webkit/WebStorageClassic;->syncValues()V
     invoke-static {v10}, Landroid/webkit/WebStorageClassic;->access$300(Landroid/webkit/WebStorageClassic;)V
 
+    .line 144
     iget-object v8, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v8, Ljava/util/Map;
 
+    .line 145
+    .restart local v8       #values:Ljava/util/Map;
     const-string/jumbo v10, "origin"
 
     invoke-interface {v8, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -220,6 +276,8 @@
 
     check-cast v1, Ljava/lang/String;
 
+    .line 146
+    .restart local v1       #origin:Ljava/lang/String;
     const-string v10, "callback"
 
     invoke-interface {v8, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -228,6 +286,8 @@
 
     check-cast v0, Landroid/webkit/ValueCallback;
 
+    .line 147
+    .restart local v0       #callback:Landroid/webkit/ValueCallback;
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
     #getter for: Landroid/webkit/WebStorageClassic;->mOrigins:Ljava/util/Map;
@@ -241,20 +301,28 @@
 
     check-cast v9, Landroid/webkit/WebStorage$Origin;
 
+    .line 148
+    .restart local v9       #website:Landroid/webkit/WebStorage$Origin;
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
+    .line 149
+    .restart local v5       #retValues:Ljava/util/Map;
     const-string v10, "callback"
 
     invoke-interface {v5, v10, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 150
     if-eqz v9, :cond_1
 
+    .line 151
     invoke-virtual {v9}, Landroid/webkit/WebStorage$Origin;->getQuota()J
 
     move-result-wide v3
 
+    .line 152
+    .local v3, quota:J
     const-string/jumbo v10, "quota"
 
     new-instance v11, Ljava/lang/Long;
@@ -263,6 +331,8 @@
 
     invoke-interface {v5, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 154
+    .end local v3           #quota:J
     :cond_1
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
@@ -277,6 +347,12 @@
 
     goto/16 :goto_0
 
+    .line 158
+    .end local v0           #callback:Landroid/webkit/ValueCallback;
+    .end local v1           #origin:Ljava/lang/String;
+    .end local v5           #retValues:Ljava/util/Map;
+    .end local v8           #values:Ljava/util/Map;
+    .end local v9           #website:Landroid/webkit/WebStorage$Origin;
     :pswitch_6
     iget-object v10, p0, Landroid/webkit/WebStorageClassic$2;->this$0:Landroid/webkit/WebStorageClassic;
 
@@ -285,6 +361,7 @@
 
     goto/16 :goto_0
 
+    .line 101
     nop
 
     :pswitch_data_0

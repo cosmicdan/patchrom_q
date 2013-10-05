@@ -21,11 +21,17 @@
 # direct methods
 .method public constructor <init>(Landroid/appwidget/AppWidgetHost;Landroid/os/Looper;)V
     .locals 0
+    .parameter
+    .parameter "looper"
 
+    .prologue
+    .line 94
     iput-object p1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
+    .line 95
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
+    .line 96
     return-void
 .end method
 
@@ -33,14 +39,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .parameter "msg"
 
+    .prologue
+    .line 99
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 117
     :goto_0
     return-void
 
+    .line 101
     :pswitch_0
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -54,6 +65,7 @@
 
     goto :goto_0
 
+    .line 105
     :pswitch_1
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -67,6 +79,7 @@
 
     goto :goto_0
 
+    .line 109
     :pswitch_2
     iget-object v0, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -74,6 +87,7 @@
 
     goto :goto_0
 
+    .line 113
     :pswitch_3
     iget-object v0, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -85,6 +99,7 @@
 
     goto :goto_0
 
+    .line 99
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

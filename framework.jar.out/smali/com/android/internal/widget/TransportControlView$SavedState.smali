@@ -35,6 +35,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 395
     new-instance v0, Lcom/android/internal/widget/TransportControlView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/TransportControlView$SavedState$1;-><init>()V
@@ -46,9 +48,13 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .parameter "in"
 
+    .prologue
+    .line 385
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
+    .line 386
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -60,8 +66,10 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/internal/widget/TransportControlView$SavedState;->wasShowing:Z
 
+    .line 387
     return-void
 
+    .line 386
     :cond_0
     const/4 v0, 0x0
 
@@ -70,7 +78,11 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/internal/widget/TransportControlView$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 377
     invoke-direct {p0, p1}, Lcom/android/internal/widget/TransportControlView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -78,9 +90,13 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
+    .parameter "superState"
 
+    .prologue
+    .line 381
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
+    .line 382
     return-void
 .end method
 
@@ -88,9 +104,14 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .parameter "out"
+    .parameter "flags"
 
+    .prologue
+    .line 391
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 392
     iget-boolean v0, p0, Lcom/android/internal/widget/TransportControlView$SavedState;->wasShowing:Z
 
     if-eqz v0, :cond_0
@@ -100,8 +121,10 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 393
     return-void
 
+    .line 392
     :cond_0
     const/4 v0, 0x0
 

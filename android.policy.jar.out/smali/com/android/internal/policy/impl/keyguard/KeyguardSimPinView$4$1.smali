@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;Z)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 189
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iput-boolean p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->val$success:Z
@@ -41,8 +45,10 @@
 .method public run()V
     .locals 3
 
+    .prologue
     const/4 v2, 0x1
 
+    .line 191
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
@@ -54,6 +60,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 192
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
@@ -65,11 +72,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
+    .line 194
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->val$success:Z
 
     if-eqz v0, :cond_1
 
+    .line 197
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
@@ -84,6 +93,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked()V
 
+    .line 198
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
@@ -92,6 +102,7 @@
 
     invoke-interface {v0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
+    .line 204
     :goto_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
@@ -103,6 +114,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
+    .line 205
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
@@ -112,8 +124,10 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->mSimCheckInProgress:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->access$102(Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;Z)Z
 
+    .line 206
     return-void
 
+    .line 200
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
@@ -125,6 +139,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
+    .line 202
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;

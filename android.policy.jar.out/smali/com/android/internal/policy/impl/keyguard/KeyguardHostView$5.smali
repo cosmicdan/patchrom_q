@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 758
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$5;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +39,18 @@
 # virtual methods
 .method public dismiss(Z)V
     .locals 0
+    .parameter "securityVerified"
 
+    .prologue
+    .line 792
     return-void
 .end method
 
 .method public getFailedAttempts()I
     .locals 1
 
+    .prologue
+    .line 787
     const/4 v0, 0x0
 
     return v0
@@ -51,6 +59,8 @@
 .method public hasOnDismissAction()Z
     .locals 1
 
+    .prologue
+    .line 807
     const/4 v0, 0x0
 
     return v0
@@ -59,6 +69,8 @@
 .method public isVerifyUnlockOnly()Z
     .locals 1
 
+    .prologue
+    .line 782
     const/4 v0, 0x0
 
     return v0
@@ -67,41 +79,59 @@
 .method public reportFailedUnlockAttempt()V
     .locals 0
 
+    .prologue
+    .line 778
     return-void
 .end method
 
 .method public reportSuccessfulUnlockAttempt()V
     .locals 0
 
+    .prologue
+    .line 774
     return-void
 .end method
 
 .method public setOnDismissAction(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$OnDismissAction;)V
     .locals 0
+    .parameter "action"
 
+    .prologue
+    .line 770
     return-void
 .end method
 
 .method public showBackupSecurity()V
     .locals 0
 
+    .prologue
+    .line 766
     return-void
 .end method
 
 .method public updateClipChildren(Z)V
     .locals 0
+    .parameter "clipChildren"
 
+    .prologue
+    .line 802
     return-void
 .end method
 
 .method public updateKeyguardLayerVisibility(Z)V
     .locals 0
+    .parameter "visible"
 
+    .prologue
+    .line 797
     return-void
 .end method
 
 .method public userActivity(J)V
     .locals 0
+    .parameter "timeout"
 
+    .prologue
+    .line 762
     return-void
 .end method

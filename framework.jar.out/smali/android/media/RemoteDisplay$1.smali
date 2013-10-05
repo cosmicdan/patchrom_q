@@ -32,7 +32,14 @@
 # direct methods
 .method constructor <init>(Landroid/media/RemoteDisplay;Landroid/view/Surface;III)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 127
     iput-object p1, p0, Landroid/media/RemoteDisplay$1;->this$0:Landroid/media/RemoteDisplay;
 
     iput-object p2, p0, Landroid/media/RemoteDisplay$1;->val$surface:Landroid/view/Surface;
@@ -53,6 +60,8 @@
 .method public run()V
     .locals 5
 
+    .prologue
+    .line 130
     iget-object v0, p0, Landroid/media/RemoteDisplay$1;->this$0:Landroid/media/RemoteDisplay;
 
     #getter for: Landroid/media/RemoteDisplay;->mListener:Landroid/media/RemoteDisplay$Listener;
@@ -70,5 +79,6 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/media/RemoteDisplay$Listener;->onDisplayConnected(Landroid/view/Surface;III)V
 
+    .line 131
     return-void
 .end method

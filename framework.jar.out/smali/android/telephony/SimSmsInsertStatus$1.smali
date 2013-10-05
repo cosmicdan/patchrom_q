@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 79
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,17 +42,25 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/telephony/SimSmsInsertStatus;
     .locals 3
+    .parameter "source"
 
+    .prologue
+    .line 82
     const/4 v0, 0x0
 
+    .line 84
+    .local v0, index:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 85
+    .local v1, status:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 86
     new-instance v2, Landroid/telephony/SimSmsInsertStatus;
 
     invoke-direct {v2, v1, v0}, Landroid/telephony/SimSmsInsertStatus;-><init>(ILjava/lang/String;)V
@@ -60,7 +70,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 79
     invoke-virtual {p0, p1}, Landroid/telephony/SimSmsInsertStatus$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/SimSmsInsertStatus;
 
     move-result-object v0
@@ -70,7 +83,10 @@
 
 .method public newArray(I)[Landroid/telephony/SimSmsInsertStatus;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 90
     new-array v0, p1, [Landroid/telephony/SimSmsInsertStatus;
 
     return-object v0
@@ -78,7 +94,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 79
     invoke-virtual {p0, p1}, Landroid/telephony/SimSmsInsertStatus$1;->newArray(I)[Landroid/telephony/SimSmsInsertStatus;
 
     move-result-object v0

@@ -19,14 +19,20 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 39
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 40
     return-void
 .end method
 
 .method public static isRotationLockToggleSupported(Landroid/content/Context;)Z
     .locals 2
+    .parameter "context"
 
+    .prologue
+    .line 51
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -54,9 +60,12 @@
 
 .method public static isRotationLockToggleVisible(Landroid/content/Context;)Z
     .locals 4
+    .parameter "context"
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 58
     invoke-static {p0}, Lcom/android/internal/view/RotationPolicy;->isRotationLockToggleSupported(Landroid/content/Context;)Z
 
     move-result v1
@@ -85,9 +94,12 @@
 
 .method public static isRotationLocked(Landroid/content/Context;)Z
     .locals 4
+    .parameter "context"
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 68
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -110,21 +122,31 @@
 
 .method public static registerRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;)V
     .locals 1
+    .parameter "context"
+    .parameter "listener"
 
+    .prologue
+    .line 132
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
     invoke-static {p0, p1, v0}, Lcom/android/internal/view/RotationPolicy;->registerRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;I)V
 
+    .line 133
     return-void
 .end method
 
 .method public static registerRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;I)V
     .locals 4
+    .parameter "context"
+    .parameter "listener"
+    .parameter "userHandle"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 141
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -139,6 +161,7 @@
 
     invoke-virtual {v0, v1, v3, v2, p2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
+    .line 144
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -153,12 +176,17 @@
 
     invoke-virtual {v0, v1, v3, v2, p2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
+    .line 147
     return-void
 .end method
 
 .method public static setRotationLock(Landroid/content/Context;Z)V
     .locals 4
+    .parameter "context"
+    .parameter "enabled"
 
+    .prologue
+    .line 78
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -171,18 +199,24 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
+    .line 82
     new-instance v0, Lcom/android/internal/view/RotationPolicy$1;
 
     invoke-direct {v0, p1}, Lcom/android/internal/view/RotationPolicy$1;-><init>(Z)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
+    .line 97
     return-void
 .end method
 
 .method public static setRotationLockForAccessibility(Landroid/content/Context;Z)V
     .locals 4
+    .parameter "context"
+    .parameter "enabled"
 
+    .prologue
+    .line 106
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -198,14 +232,17 @@
 
     invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
+    .line 110
     new-instance v0, Lcom/android/internal/view/RotationPolicy$2;
 
     invoke-direct {v0, p1}, Lcom/android/internal/view/RotationPolicy$2;-><init>(Z)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
+    .line 125
     return-void
 
+    .line 106
     :cond_0
     const/4 v0, 0x0
 
@@ -214,7 +251,11 @@
 
 .method public static unregisterRotationPolicyListener(Landroid/content/Context;Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;)V
     .locals 2
+    .parameter "context"
+    .parameter "listener"
 
+    .prologue
+    .line 154
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -223,5 +264,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
+    .line 155
     return-void
 .end method

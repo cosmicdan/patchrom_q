@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Landroid/bluetooth/BluetoothAdapter;Landroid/os/Looper;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 1098
     iput-object p1, p0, Landroid/bluetooth/BluetoothAdapter$1;->this$0:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -33,9 +37,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
+    .parameter "msg"
 
+    .prologue
+    .line 1101
     iget v1, p1, Landroid/os/Message;->what:I
 
+    .line 1105
+    .local v1, handle:I
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothAdapter$1;->this$0:Landroid/bluetooth/BluetoothAdapter;
 
@@ -48,12 +57,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1107
     :goto_0
     return-void
 
+    .line 1106
     :catch_0
     move-exception v0
 
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "BluetoothAdapter"
 
     const-string v3, ""

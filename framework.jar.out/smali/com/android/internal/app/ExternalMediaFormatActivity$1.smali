@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ExternalMediaFormatActivity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 42
     iput-object p1, p0, Lcom/android/internal/app/ExternalMediaFormatActivity$1;->this$0:Lcom/android/internal/app/ExternalMediaFormatActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 45
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 46
+    .local v0, action:Ljava/lang/String;
     const-string v1, "ExternalMediaFormatActivity"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -60,6 +69,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 48
     const-string v1, "android.intent.action.MEDIA_REMOVED"
 
     if-eq v0, v1, :cond_0
@@ -76,11 +86,13 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 52
     :cond_0
     iget-object v1, p0, Lcom/android/internal/app/ExternalMediaFormatActivity$1;->this$0:Lcom/android/internal/app/ExternalMediaFormatActivity;
 
     invoke-virtual {v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->finish()V
 
+    .line 54
     :cond_1
     return-void
 .end method

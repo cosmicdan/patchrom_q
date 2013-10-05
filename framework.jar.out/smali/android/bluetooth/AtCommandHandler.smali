@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,6 +19,8 @@
 .method public handleActionCommand()Landroid/bluetooth/AtCommandResult;
     .locals 2
 
+    .prologue
+    .line 48
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -28,7 +32,10 @@
 
 .method public handleBasicCommand(Ljava/lang/String;)Landroid/bluetooth/AtCommandResult;
     .locals 2
+    .parameter "arg"
 
+    .prologue
+    .line 38
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -41,6 +48,8 @@
 .method public handleReadCommand()Landroid/bluetooth/AtCommandResult;
     .locals 2
 
+    .prologue
+    .line 58
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -52,7 +61,10 @@
 
 .method public handleSetCommand([Ljava/lang/Object;)Landroid/bluetooth/AtCommandResult;
     .locals 2
+    .parameter "args"
 
+    .prologue
+    .line 78
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -65,6 +77,8 @@
 .method public handleTestCommand()Landroid/bluetooth/AtCommandResult;
     .locals 2
 
+    .prologue
+    .line 91
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x0

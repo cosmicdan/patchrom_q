@@ -12,17 +12,27 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/cat/CommandDetails;Lcom/android/internal/telephony/cat/TextMessage;Lcom/android/internal/telephony/cat/Tone;Lcom/android/internal/telephony/cat/Duration;Z)V
     .locals 1
+    .parameter "cmdDet"
+    .parameter "textMsg"
+    .parameter "tone"
+    .parameter "duration"
+    .parameter "vibrate"
 
+    .prologue
+    .line 120
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/CommandParams;-><init>(Lcom/android/internal/telephony/cat/CommandDetails;)V
 
+    .line 121
     iput-object p2, p0, Lcom/android/internal/telephony/cat/PlayToneParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
 
+    .line 122
     new-instance v0, Lcom/android/internal/telephony/cat/ToneSettings;
 
     invoke-direct {v0, p4, p3, p5}, Lcom/android/internal/telephony/cat/ToneSettings;-><init>(Lcom/android/internal/telephony/cat/Duration;Lcom/android/internal/telephony/cat/Tone;Z)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/PlayToneParams;->settings:Lcom/android/internal/telephony/cat/ToneSettings;
 
+    .line 123
     return-void
 .end method
 
@@ -30,19 +40,25 @@
 # virtual methods
 .method setIcon(Landroid/graphics/Bitmap;)Z
     .locals 1
+    .parameter "icon"
 
+    .prologue
+    .line 126
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/telephony/cat/PlayToneParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
 
     if-eqz v0, :cond_0
 
+    .line 127
     iget-object v0, p0, Lcom/android/internal/telephony/cat/PlayToneParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
 
     iput-object p1, v0, Lcom/android/internal/telephony/cat/TextMessage;->icon:Landroid/graphics/Bitmap;
 
+    .line 128
     const/4 v0, 0x1
 
+    .line 130
     :goto_0
     return v0
 

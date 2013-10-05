@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,12 +18,20 @@
 # virtual methods
 .method onStorageStateChange(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .parameter "path"
+    .parameter "oldState"
+    .parameter "newState"
 
+    .prologue
+    .line 43
     return-void
 .end method
 
 .method onUsbMassStorageConnectionChanged(Z)V
     .locals 0
+    .parameter "connected"
 
+    .prologue
+    .line 31
     return-void
 .end method

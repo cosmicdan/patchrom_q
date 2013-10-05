@@ -21,11 +21,17 @@
 # direct methods
 .method public constructor <init>(Landroid/webkit/HTML5VideoFullScreen;Landroid/content/Context;)V
     .locals 0
+    .parameter
+    .parameter "context"
 
+    .prologue
+    .line 43
     iput-object p1, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
+    .line 44
     invoke-direct {p0, p2}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
 
+    .line 45
     return-void
 .end method
 
@@ -33,7 +39,11 @@
 # virtual methods
 .method protected onMeasure(II)V
     .locals 4
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
+    .prologue
+    .line 49
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I
@@ -45,6 +55,8 @@
 
     move-result v1
 
+    .line 50
+    .local v1, width:I
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoHeight:I
@@ -56,6 +68,8 @@
 
     move-result v0
 
+    .line 51
+    .local v0, height:I
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I
@@ -74,6 +88,7 @@
 
     if-lez v2, :cond_0
 
+    .line 52
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I
@@ -94,6 +109,7 @@
 
     if-le v2, v3, :cond_1
 
+    .line 53
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoHeight:I
@@ -112,12 +128,15 @@
 
     div-int v0, v2, v3
 
+    .line 58
     :cond_0
     :goto_0
     invoke-virtual {p0, v1, v0}, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->setMeasuredDimension(II)V
 
+    .line 59
     return-void
 
+    .line 54
     :cond_1
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
@@ -139,6 +158,7 @@
 
     if-ge v2, v3, :cond_0
 
+    .line 55
     iget-object v2, p0, Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I

@@ -43,7 +43,10 @@
 # direct methods
 .method public constructor <init>(Landroid/media/videoeditor/MediaArtistNativeHelper;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 317
     iput-object p1, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$FileType;->this$0:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

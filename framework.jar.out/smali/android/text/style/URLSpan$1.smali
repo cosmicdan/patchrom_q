@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/text/style/URLSpan;Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 84
     iput-object p1, p0, Landroid/text/style/URLSpan$1;->this$0:Landroid/text/style/URLSpan;
 
     iput-object p2, p0, Landroid/text/style/URLSpan$1;->val$context:Landroid/content/Context;
@@ -44,14 +49,20 @@
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 2
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 86
     iget-object v0, p0, Landroid/text/style/URLSpan$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/text/style/URLSpan$1;->val$intent:Landroid/content/Intent;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
+    .line 87
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
+    .line 88
     return-void
 .end method

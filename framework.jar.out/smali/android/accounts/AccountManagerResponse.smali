@@ -27,6 +27,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 69
     new-instance v0, Landroid/accounts/AccountManagerResponse$1;
 
     invoke-direct {v0}, Landroid/accounts/AccountManagerResponse$1;-><init>()V
@@ -38,19 +40,28 @@
 
 .method public constructor <init>(Landroid/accounts/IAccountManagerResponse;)V
     .locals 0
+    .parameter "response"
 
+    .prologue
+    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     iput-object p1, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
+    .line 34
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .parameter "parcel"
 
+    .prologue
+    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -61,6 +72,7 @@
 
     iput-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
+    .line 40
     return-void
 .end method
 
@@ -69,6 +81,8 @@
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 60
     const/4 v0, 0x0
 
     return v0
@@ -76,7 +90,11 @@
 
 .method public onError(ILjava/lang/String;)V
     .locals 1
+    .parameter "errorCode"
+    .parameter "errorMessage"
 
+    .prologue
+    .line 52
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
@@ -84,9 +102,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 56
     :goto_0
     return-void
 
+    .line 53
     :catch_0
     move-exception v0
 
@@ -95,7 +115,10 @@
 
 .method public onResult(Landroid/os/Bundle;)V
     .locals 1
+    .parameter "result"
 
+    .prologue
+    .line 44
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
@@ -103,9 +126,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 48
     :goto_0
     return-void
 
+    .line 45
     :catch_0
     move-exception v0
 
@@ -114,7 +139,11 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .parameter "dest"
+    .parameter "flags"
 
+    .prologue
+    .line 65
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     invoke-interface {v0}, Landroid/accounts/IAccountManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -123,5 +152,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 66
     return-void
 .end method

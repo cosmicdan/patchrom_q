@@ -24,7 +24,10 @@
 # direct methods
 .method private constructor <init>(Landroid/net/http/AndroidHttpClient;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 394
     iput-object p1, p0, Landroid/net/http/AndroidHttpClient$CurlLogger;->this$0:Landroid/net/http/AndroidHttpClient;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +37,11 @@
 
 .method synthetic constructor <init>(Landroid/net/http/AndroidHttpClient;Landroid/net/http/AndroidHttpClient$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 394
     invoke-direct {p0, p1}, Landroid/net/http/AndroidHttpClient$CurlLogger;-><init>(Landroid/net/http/AndroidHttpClient;)V
 
     return-void
@@ -44,6 +51,8 @@
 # virtual methods
 .method public process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
     .locals 2
+    .parameter "request"
+    .parameter "context"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/apache/http/HttpException;,
@@ -51,6 +60,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 397
     iget-object v1, p0, Landroid/net/http/AndroidHttpClient$CurlLogger;->this$0:Landroid/net/http/AndroidHttpClient;
 
     #getter for: Landroid/net/http/AndroidHttpClient;->curlConfiguration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
@@ -58,6 +69,8 @@
 
     move-result-object v0
 
+    .line 398
+    .local v0, configuration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
     if-eqz v0, :cond_0
 
     #calls: Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->isLoggable()Z
@@ -71,8 +84,10 @@
 
     if-eqz v1, :cond_0
 
+    .line 403
     check-cast p1, Lorg/apache/http/client/methods/HttpUriRequest;
 
+    .end local p1
     const/4 v1, 0x0
 
     #calls: Landroid/net/http/AndroidHttpClient;->toCurl(Lorg/apache/http/client/methods/HttpUriRequest;Z)Ljava/lang/String;
@@ -83,6 +98,7 @@
     #calls: Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->println(Ljava/lang/String;)V
     invoke-static {v0, v1}, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->access$600(Landroid/net/http/AndroidHttpClient$LoggingConfiguration;Ljava/lang/String;)V
 
+    .line 405
     :cond_0
     return-void
 .end method

@@ -32,19 +32,31 @@
 # direct methods
 .method public constructor <init>(Landroid/filterfw/io/TextGraphReader;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter "sourceFilter"
+    .parameter "sourcePort"
+    .parameter "targetFilter"
+    .parameter "targetName"
 
+    .prologue
+    .line 133
     iput-object p1, p0, Landroid/filterfw/io/TextGraphReader$ConnectCommand;->this$0:Landroid/filterfw/io/TextGraphReader;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 134
     iput-object p2, p0, Landroid/filterfw/io/TextGraphReader$ConnectCommand;->mSourceFilter:Ljava/lang/String;
 
+    .line 135
     iput-object p3, p0, Landroid/filterfw/io/TextGraphReader$ConnectCommand;->mSourcePort:Ljava/lang/String;
 
+    .line 136
     iput-object p4, p0, Landroid/filterfw/io/TextGraphReader$ConnectCommand;->mTargetFilter:Ljava/lang/String;
 
+    .line 137
     iput-object p5, p0, Landroid/filterfw/io/TextGraphReader$ConnectCommand;->mTargetName:Ljava/lang/String;
 
+    .line 138
     return-void
 .end method
 
@@ -52,7 +64,10 @@
 # virtual methods
 .method public execute(Landroid/filterfw/io/TextGraphReader;)V
     .locals 5
+    .parameter "reader"
 
+    .prologue
+    .line 142
     #getter for: Landroid/filterfw/io/TextGraphReader;->mCurrentGraph:Landroid/filterfw/core/FilterGraph;
     invoke-static {p1}, Landroid/filterfw/io/TextGraphReader;->access$200(Landroid/filterfw/io/TextGraphReader;)Landroid/filterfw/core/FilterGraph;
 
@@ -68,5 +83,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/filterfw/core/FilterGraph;->connect(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 143
     return-void
 .end method

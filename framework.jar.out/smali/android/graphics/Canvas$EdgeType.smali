@@ -39,10 +39,12 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 684
     new-instance v0, Landroid/graphics/Canvas$EdgeType;
 
     const-string v1, "BW"
@@ -51,6 +53,7 @@
 
     sput-object v0, Landroid/graphics/Canvas$EdgeType;->BW:Landroid/graphics/Canvas$EdgeType;
 
+    .line 685
     new-instance v0, Landroid/graphics/Canvas$EdgeType;
 
     const-string v1, "AA"
@@ -59,6 +62,7 @@
 
     sput-object v0, Landroid/graphics/Canvas$EdgeType;->AA:Landroid/graphics/Canvas$EdgeType;
 
+    .line 683
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/graphics/Canvas$EdgeType;
@@ -78,22 +82,32 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "nativeInt"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 687
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 688
     iput p3, p0, Landroid/graphics/Canvas$EdgeType;->nativeInt:I
 
+    .line 689
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 683
     const-class v0, Landroid/graphics/Canvas$EdgeType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -108,6 +122,8 @@
 .method public static values()[Landroid/graphics/Canvas$EdgeType;
     .locals 1
 
+    .prologue
+    .line 683
     sget-object v0, Landroid/graphics/Canvas$EdgeType;->$VALUES:[Landroid/graphics/Canvas$EdgeType;
 
     invoke-virtual {v0}, [Landroid/graphics/Canvas$EdgeType;->clone()Ljava/lang/Object;

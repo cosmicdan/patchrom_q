@@ -25,14 +25,23 @@
 # direct methods
 .method public constructor <init>(III)V
     .locals 0
+    .parameter "adj"
+    .parameter "count"
+    .parameter "time"
 
+    .prologue
+    .line 986
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 987
     iput p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$GoodLinkTarget;->RSSI_ADJ_DBM:I
 
+    .line 988
     iput p2, p0, Landroid/net/wifi/WifiWatchdogStateMachine$GoodLinkTarget;->SAMPLE_COUNT:I
 
+    .line 989
     iput p3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$GoodLinkTarget;->REDUCE_TIME_MS:I
 
+    .line 990
     return-void
 .end method

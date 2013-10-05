@@ -32,11 +32,15 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;)V
     .locals 1
+    .parameter
 
+    .prologue
+    .line 512
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->this$0:Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/IntRangeManager;-><init>()V
 
+    .line 513
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -50,7 +54,12 @@
 # virtual methods
 .method protected addRange(IIZ)V
     .locals 7
+    .parameter "startId"
+    .parameter "endId"
+    .parameter "selected"
 
+    .prologue
+    .line 532
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     new-instance v0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
@@ -69,12 +78,15 @@
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 534
     return-void
 .end method
 
 .method protected finishUpdate()Z
     .locals 3
 
+    .prologue
+    .line 542
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -83,11 +95,14 @@
 
     if-eqz v1, :cond_0
 
+    .line 543
     const/4 v1, 0x1
 
+    .line 547
     :goto_0
     return v1
 
+    .line 545
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
@@ -105,6 +120,8 @@
 
     check-cast v0, [Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
 
+    .line 547
+    .local v0, configs:[Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->this$0:Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;
 
     #calls: Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;->setCellBroadcastConfig([Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;)Z
@@ -118,9 +135,12 @@
 .method protected startUpdate()V
     .locals 1
 
+    .prologue
+    .line 522
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 523
     return-void
 .end method

@@ -51,6 +51,7 @@
 # direct methods
 .method constructor <init>(Landroid/util/PoolableManager;)V
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,23 +60,33 @@
         }
     .end annotation
 
+    .prologue
+    .line 47
+    .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
+    .local p1, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 48
     iput-object p1, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
 
+    .line 49
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/util/FinitePool;->mLimit:I
 
+    .line 50
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/util/FinitePool;->mInfinite:Z
 
+    .line 51
     return-void
 .end method
 
 .method constructor <init>(Landroid/util/PoolableManager;I)V
     .locals 2
+    .parameter
+    .parameter "limit"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,8 +95,13 @@
         }
     .end annotation
 
+    .prologue
+    .line 53
+    .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
+    .local p1, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 54
     if-gtz p2, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -96,15 +112,19 @@
 
     throw v0
 
+    .line 56
     :cond_0
     iput-object p1, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
 
+    .line 57
     iput p2, p0, Landroid/util/FinitePool;->mLimit:I
 
+    .line 58
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/util/FinitePool;->mInfinite:Z
 
+    .line 59
     return-void
 .end method
 
@@ -118,12 +138,18 @@
         }
     .end annotation
 
+    .prologue
+    .line 64
+    .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
     iget-object v1, p0, Landroid/util/FinitePool;->mRoot:Landroid/util/Poolable;
 
     if-eqz v1, :cond_1
 
+    .line 65
     iget-object v0, p0, Landroid/util/FinitePool;->mRoot:Landroid/util/Poolable;
 
+    .line 66
+    .local v0, element:Landroid/util/Poolable;,"TT;"
     invoke-interface {v0}, Landroid/util/Poolable;->getNextPoolable()Ljava/lang/Object;
 
     move-result-object v1
@@ -132,30 +158,38 @@
 
     iput-object v1, p0, Landroid/util/FinitePool;->mRoot:Landroid/util/Poolable;
 
+    .line 67
     iget v1, p0, Landroid/util/FinitePool;->mPoolCount:I
 
     add-int/lit8 v1, v1, -0x1
 
     iput v1, p0, Landroid/util/FinitePool;->mPoolCount:I
 
+    .line 72
     :goto_0
     if-eqz v0, :cond_0
 
+    .line 73
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Landroid/util/Poolable;->setNextPoolable(Ljava/lang/Object;)V
 
+    .line 74
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Landroid/util/Poolable;->setPooled(Z)V
 
+    .line 75
     iget-object v1, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
 
     invoke-interface {v1, v0}, Landroid/util/PoolableManager;->onAcquired(Landroid/util/Poolable;)V
 
+    .line 78
     :cond_0
     return-object v0
 
+    .line 69
+    .end local v0           #element:Landroid/util/Poolable;,"TT;"
     :cond_1
     iget-object v1, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
 
@@ -163,23 +197,30 @@
 
     move-result-object v0
 
+    .restart local v0       #element:Landroid/util/Poolable;,"TT;"
     goto :goto_0
 .end method
 
 .method public release(Landroid/util/Poolable;)V
     .locals 3
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
 
+    .prologue
+    .line 82
+    .local p0, this:Landroid/util/FinitePool;,"Landroid/util/FinitePool<TT;>;"
+    .local p1, element:Landroid/util/Poolable;,"TT;"
     invoke-interface {p1}, Landroid/util/Poolable;->isPooled()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
+    .line 83
     iget-boolean v0, p0, Landroid/util/FinitePool;->mInfinite:Z
 
     if-nez v0, :cond_0
@@ -190,6 +231,7 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 84
     :cond_0
     iget v0, p0, Landroid/util/FinitePool;->mPoolCount:I
 
@@ -197,24 +239,30 @@
 
     iput v0, p0, Landroid/util/FinitePool;->mPoolCount:I
 
+    .line 85
     iget-object v0, p0, Landroid/util/FinitePool;->mRoot:Landroid/util/Poolable;
 
     invoke-interface {p1, v0}, Landroid/util/Poolable;->setNextPoolable(Ljava/lang/Object;)V
 
+    .line 86
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Landroid/util/Poolable;->setPooled(Z)V
 
+    .line 87
     iput-object p1, p0, Landroid/util/FinitePool;->mRoot:Landroid/util/Poolable;
 
+    .line 89
     :cond_1
     iget-object v0, p0, Landroid/util/FinitePool;->mManager:Landroid/util/PoolableManager;
 
     invoke-interface {v0, p1}, Landroid/util/PoolableManager;->onReleased(Landroid/util/Poolable;)V
 
+    .line 93
     :goto_0
     return-void
 
+    .line 91
     :cond_2
     const-string v0, "FinitePool"
 

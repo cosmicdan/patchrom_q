@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 552
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$8;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 555
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$8;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
@@ -45,5 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    .line 556
     return-void
 .end method

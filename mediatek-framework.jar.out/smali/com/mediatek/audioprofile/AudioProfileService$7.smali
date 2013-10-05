@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/mediatek/audioprofile/AudioProfileService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 569
     iput-object p1, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,15 +36,21 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v6, 0x2
 
     const/4 v5, 0x0
 
+    .line 573
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 574
+    .local v0, action:Ljava/lang/String;
     const-string v2, "AudioProfileService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -64,6 +73,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 575
     const-string v2, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -72,17 +82,20 @@
 
     if-eqz v2, :cond_0
 
+    .line 580
     const-string v2, "AudioProfileService"
 
     const-string v3, "Persist profile settings to system when boot complete!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 581
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #calls: Lcom/mediatek/audioprofile/AudioProfileService;->persistValues(Z)V
     invoke-static {v2, v5}, Lcom/mediatek/audioprofile/AudioProfileService;->access$2000(Lcom/mediatek/audioprofile/AudioProfileService;Z)V
 
+    .line 584
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mActiveProfileKey:Ljava/lang/String;
@@ -94,6 +107,8 @@
 
     move-result-object v1
 
+    .line 585
+    .local v1, activeScenario:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mRingerMode:I
@@ -118,6 +133,7 @@
 
     if-nez v2, :cond_0
 
+    .line 587
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mAudioManager:Landroid/media/AudioManager;
@@ -127,6 +143,7 @@
 
     invoke-virtual {v2, v6, v5, v5}, Landroid/media/AudioManager;->setAudioProfileStreamVolume(III)V
 
+    .line 588
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
     #getter for: Lcom/mediatek/audioprofile/AudioProfileService;->mAudioManager:Landroid/media/AudioManager;
@@ -138,12 +155,15 @@
 
     invoke-virtual {v2, v3, v5, v5}, Landroid/media/AudioManager;->setAudioProfileStreamVolume(III)V
 
+    .line 589
     const-string v2, "AudioProfileService"
 
     const-string v3, "Persist system volume to be 0 if ringermode is normal and volume is 0 when boot complete!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 592
+    .end local v1           #activeScenario:Lcom/mediatek/audioprofile/AudioProfileManager$Scenario;
     :cond_0
     iget-object v2, p0, Lcom/mediatek/audioprofile/AudioProfileService$7;->this$0:Lcom/mediatek/audioprofile/AudioProfileService;
 
@@ -154,11 +174,13 @@
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
+    .line 593
     const-string v2, "AudioProfileService"
 
     const-string v3, "unregister mBootCompleteReceiver!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 594
     return-void
 .end method

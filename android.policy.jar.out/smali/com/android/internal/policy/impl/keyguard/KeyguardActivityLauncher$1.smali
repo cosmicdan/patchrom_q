@@ -32,7 +32,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/Handler;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 188
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$1;->val$intent:Landroid/content/Intent;
@@ -53,11 +60,14 @@
 .method public onDismiss()Z
     .locals 5
 
+    .prologue
+    .line 191
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->dismissKeyguardOnNextActivity()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;)V
 
+    .line 192
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$1;->val$intent:Landroid/content/Intent;
@@ -71,6 +81,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->startActivityForCurrentUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/Handler;Ljava/lang/Runnable;)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->access$100(Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/Handler;Ljava/lang/Runnable;)V
 
+    .line 193
     const/4 v0, 0x1
 
     return v0

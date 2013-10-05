@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/RIL;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 6146
     iput-object p1, p0, Lcom/android/internal/telephony/RIL$2;->this$0:Lcom/android/internal/telephony/RIL;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,11 +36,15 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .parameter "msg"
 
+    .prologue
+    .line 6149
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-nez v0, :cond_0
 
+    .line 6150
     iget-object v0, p0, Lcom/android/internal/telephony/RIL$2;->this$0:Lcom/android/internal/telephony/RIL;
 
     const-string v1, "get MSG_GET_DATA_CALL_LIST_DONE, notify data call list changed"
@@ -45,6 +52,7 @@
     #calls: Lcom/android/internal/telephony/RIL;->riljLog(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/internal/telephony/RIL;->access$900(Lcom/android/internal/telephony/RIL;Ljava/lang/String;)V
 
+    .line 6151
     iget-object v0, p0, Lcom/android/internal/telephony/RIL$2;->this$0:Lcom/android/internal/telephony/RIL;
 
     iget-object v1, v0, Lcom/android/internal/telephony/BaseCommands;->mDataNetworkStateRegistrants:Landroid/os/RegistrantList;
@@ -55,6 +63,7 @@
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
+    .line 6153
     :cond_0
     return-void
 .end method

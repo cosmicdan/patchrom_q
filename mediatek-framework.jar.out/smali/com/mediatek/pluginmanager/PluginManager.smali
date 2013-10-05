@@ -50,11 +50,21 @@
 # direct methods
 .method varargs constructor <init>(Landroid/content/Context;Ljava/lang/String;ZZLjava/lang/String;[Landroid/content/pm/Signature;)V
     .locals 2
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 222
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 223
     if-nez p1, :cond_0
 
+    .line 224
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "context cannot be null"
@@ -63,6 +73,7 @@
 
     throw v0
 
+    .line 226
     :cond_0
     if-eqz p2, :cond_1
 
@@ -72,6 +83,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 227
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -81,23 +93,30 @@
 
     throw v0
 
+    .line 230
     :cond_2
     iput-object p1, p0, Lcom/mediatek/pluginmanager/PluginManager;->b:Landroid/content/Context;
 
+    .line 231
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->d:Ljava/util/ArrayList;
 
+    .line 232
     iput-boolean p3, p0, Lcom/mediatek/pluginmanager/PluginManager;->f:Z
 
+    .line 233
     iput-boolean p4, p0, Lcom/mediatek/pluginmanager/PluginManager;->g:Z
 
+    .line 234
     iput-object p6, p0, Lcom/mediatek/pluginmanager/PluginManager;->a:[Landroid/content/pm/Signature;
 
+    .line 235
     iput-object p2, p0, Lcom/mediatek/pluginmanager/PluginManager;->c:Ljava/lang/String;
 
+    .line 236
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->b:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -106,6 +125,7 @@
 
     iput-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->e:Landroid/content/pm/PackageManager;
 
+    .line 237
     if-eqz p5, :cond_3
 
     invoke-virtual {p5}, Ljava/lang/String;->isEmpty()Z
@@ -114,20 +134,25 @@
 
     if-eqz v0, :cond_4
 
+    .line 238
     :cond_3
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->i:Z
 
+    .line 239
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->h:Lcom/mediatek/pluginmanager/a;
 
+    .line 245
     :goto_0
     invoke-virtual {p0}, Lcom/mediatek/pluginmanager/PluginManager;->refreshPlugin()I
 
+    .line 246
     return-void
 
+    .line 241
     :cond_4
     new-instance v0, Lcom/mediatek/pluginmanager/a;
 
@@ -135,6 +160,7 @@
 
     iput-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->h:Lcom/mediatek/pluginmanager/a;
 
+    .line 242
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->i:Z
@@ -144,21 +170,26 @@
 
 .method private a(Landroid/content/pm/ServiceInfo;)Ljava/lang/String;
     .locals 5
+    .parameter
 
+    .prologue
     const/4 v0, 0x0
 
     const/4 v4, -0x1
 
     const/high16 v3, -0x4080
 
+    .line 308
     iget-object v1, p1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
     if-nez v1, :cond_1
 
+    .line 330
     :cond_0
     :goto_0
     return-object v0
 
+    .line 312
     :cond_1
     iget-object v1, p1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
@@ -168,12 +199,15 @@
 
     move-result-object v1
 
+    .line 313
     if-eqz v1, :cond_2
 
     move-object v0, v1
 
+    .line 314
     goto :goto_0
 
+    .line 319
     :cond_2
     iget-object v1, p1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
@@ -183,16 +217,19 @@
 
     move-result v1
 
+    .line 320
     cmpl-float v2, v1, v3
 
     if-eqz v2, :cond_3
 
+    .line 321
     invoke-static {v1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
+    .line 326
     :cond_3
     iget-object v1, p1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
@@ -202,8 +239,10 @@
 
     move-result v1
 
+    .line 327
     if-eq v1, v4, :cond_0
 
+    .line 328
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
@@ -213,23 +252,30 @@
 
 .method private a(Landroid/content/pm/PackageInfo;)Z
     .locals 8
+    .parameter
 
+    .prologue
     const/4 v1, 0x0
 
     const/4 v0, 0x1
 
+    .line 250
     iget-boolean v2, p0, Lcom/mediatek/pluginmanager/PluginManager;->f:Z
 
     if-eqz v2, :cond_0
 
+    .line 251
     iget-object v3, p1, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
+    .line 252
     if-nez v3, :cond_1
 
+    .line 264
     :cond_0
     :goto_0
     return v0
 
+    .line 255
     :cond_1
     array-length v4, v3
 
@@ -240,6 +286,7 @@
 
     aget-object v5, v3, v2
 
+    .line 256
     const/4 v6, -0x1
 
     iget-object v7, p0, Lcom/mediatek/pluginmanager/PluginManager;->b:Landroid/content/Context;
@@ -250,6 +297,7 @@
 
     if-ne v6, v7, :cond_2
 
+    .line 257
     const-string v0, "PluginManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -292,8 +340,10 @@
 
     move v0, v1
 
+    .line 259
     goto :goto_0
 
+    .line 255
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
@@ -302,11 +352,14 @@
 
 .method private b(Landroid/content/pm/PackageInfo;)Z
     .locals 10
+    .parameter
 
+    .prologue
     const/4 v2, 0x1
 
     const/4 v1, 0x0
 
+    .line 271
     const-string v0, "ro.secure"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -319,6 +372,7 @@
 
     if-eqz v0, :cond_9
 
+    .line 275
     :cond_0
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->e:Landroid/content/pm/PackageManager;
 
@@ -328,6 +382,7 @@
 
     move-result v0
 
+    .line 276
     const-string v3, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -362,12 +417,14 @@
 
     invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 278
     const/4 v3, 0x5
 
     if-eq v0, v3, :cond_1
 
     if-nez v0, :cond_8
 
+    .line 280
     :cond_1
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->a:[Landroid/content/pm/Signature;
 
@@ -379,6 +436,7 @@
 
     if-nez v0, :cond_4
 
+    .line 281
     :cond_2
     const-string v0, "PluginManager"
 
@@ -410,15 +468,19 @@
 
     invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 304
     :cond_3
     :goto_0
     return v1
 
+    .line 285
     :cond_4
     iget-object v4, p1, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
+    .line 286
     if-nez v4, :cond_5
 
+    .line 287
     const-string v0, "PluginManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -451,6 +513,7 @@
 
     goto :goto_0
 
+    .line 291
     :cond_5
     array-length v5, v4
 
@@ -461,6 +524,7 @@
 
     aget-object v6, v4, v3
 
+    .line 292
     const-string v0, "PluginManager"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -489,6 +553,7 @@
 
     move v0, v1
 
+    .line 293
     :goto_2
     iget-object v7, p0, Lcom/mediatek/pluginmanager/PluginManager;->a:[Landroid/content/pm/Signature;
 
@@ -496,6 +561,7 @@
 
     if-ge v0, v7, :cond_7
 
+    .line 294
     const-string v7, "PluginManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -536,6 +602,7 @@
 
     invoke-static {v7, v8}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 295
     iget-object v7, p0, Lcom/mediatek/pluginmanager/PluginManager;->a:[Landroid/content/pm/Signature;
 
     aget-object v7, v7, v0
@@ -548,13 +615,16 @@
 
     move v1, v2
 
+    .line 296
     goto/16 :goto_0
 
+    .line 293
     :cond_6
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
+    .line 291
     :cond_7
     add-int/lit8 v0, v3, 0x1
 
@@ -565,25 +635,32 @@
     :cond_8
     move v1, v2
 
+    .line 302
     goto/16 :goto_0
 
     :cond_9
     move v1, v2
 
+    .line 304
     goto/16 :goto_0
 .end method
 
 .method private b(Landroid/content/pm/ServiceInfo;)Z
     .locals 4
+    .parameter
 
+    .prologue
+    .line 334
     iget-boolean v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->i:Z
 
     if-eqz v0, :cond_0
 
+    .line 335
     invoke-direct {p0, p1}, Lcom/mediatek/pluginmanager/PluginManager;->a(Landroid/content/pm/ServiceInfo;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 336
     const-string v1, "PluginManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -622,12 +699,14 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 337
     iget-object v1, p0, Lcom/mediatek/pluginmanager/PluginManager;->h:Lcom/mediatek/pluginmanager/a;
 
     invoke-virtual {v1, v0}, Lcom/mediatek/pluginmanager/a;->a(Ljava/lang/String;)Z
 
     move-result v0
 
+    .line 339
     :goto_0
     return v0
 
@@ -639,6 +718,10 @@
 
 .method public static varargs create(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
     .locals 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -655,8 +738,10 @@
         }
     .end annotation
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 154
     move-object v0, p0
 
     move-object v1, p1
@@ -676,6 +761,12 @@
 
 .method public static varargs create(Landroid/content/Context;Ljava/lang/String;ZZLjava/lang/String;[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
     .locals 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -693,6 +784,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 211
     new-instance v0, Lcom/mediatek/pluginmanager/PluginManager;
 
     move-object v1, p0
@@ -714,6 +807,11 @@
 
 .method public static varargs create(Landroid/content/Context;Ljava/lang/String;ZZ[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
     .locals 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -729,6 +827,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 189
     new-instance v0, Lcom/mediatek/pluginmanager/PluginManager;
 
     const-string v5, ""
@@ -750,6 +850,10 @@
 
 .method public static varargs create(Landroid/content/Context;Ljava/lang/String;Z[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
     .locals 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -765,6 +869,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 170
     new-instance v0, Lcom/mediatek/pluginmanager/PluginManager;
 
     const/4 v4, 0x0
@@ -786,6 +892,9 @@
 
 .method public static varargs create(Landroid/content/Context;Ljava/lang/String;[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
     .locals 1
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -801,8 +910,10 @@
         }
     .end annotation
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 137
     invoke-static {p0, p1, v0, v0, p2}, Lcom/mediatek/pluginmanager/PluginManager;->create(Landroid/content/Context;Ljava/lang/String;ZZ[Landroid/content/pm/Signature;)Lcom/mediatek/pluginmanager/PluginManager;
 
     move-result-object v0
@@ -812,14 +923,21 @@
 
 .method public static varargs createPluginObject(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Landroid/content/pm/Signature;)Ljava/lang/Object;
     .locals 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/mediatek/pluginmanager/Plugin$ObjectCreationException;
         }
     .end annotation
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 121
     new-instance v0, Lcom/mediatek/pluginmanager/PluginManager;
 
     move-object v1, p0
@@ -834,22 +952,26 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/mediatek/pluginmanager/PluginManager;-><init>(Landroid/content/Context;Ljava/lang/String;ZZLjava/lang/String;[Landroid/content/pm/Signature;)V
 
+    .line 122
     invoke-virtual {v0}, Lcom/mediatek/pluginmanager/PluginManager;->getPluginCount()I
 
     move-result v1
 
     if-eqz v1, :cond_0
 
+    .line 123
     invoke-virtual {v0, v3}, Lcom/mediatek/pluginmanager/PluginManager;->getPlugin(I)Lcom/mediatek/pluginmanager/Plugin;
 
     move-result-object v0
 
+    .line 124
     invoke-virtual {v0, p3}, Lcom/mediatek/pluginmanager/Plugin;->createObject(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 
+    .line 126
     :cond_0
     new-instance v0, Lcom/mediatek/pluginmanager/Plugin$ObjectCreationException;
 
@@ -884,12 +1006,18 @@
 
 .method public static varargs createPluginObject(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Landroid/content/pm/Signature;)Ljava/lang/Object;
     .locals 1
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/mediatek/pluginmanager/Plugin$ObjectCreationException;
         }
     .end annotation
 
+    .prologue
+    .line 103
     const-string v0, ""
 
     invoke-static {p0, p1, v0, p2, p3}, Lcom/mediatek/pluginmanager/PluginManager;->createPluginObject(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Landroid/content/pm/Signature;)Ljava/lang/Object;
@@ -901,12 +1029,17 @@
 
 .method public static varargs createPluginObject(Landroid/content/Context;Ljava/lang/String;[Landroid/content/pm/Signature;)Ljava/lang/Object;
     .locals 1
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/mediatek/pluginmanager/Plugin$ObjectCreationException;
         }
     .end annotation
 
+    .prologue
+    .line 86
     const-string v0, "class"
 
     invoke-static {p0, p1, v0, p2}, Lcom/mediatek/pluginmanager/PluginManager;->createPluginObject(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Landroid/content/pm/Signature;)Ljava/lang/Object;
@@ -920,7 +1053,10 @@
 # virtual methods
 .method public bridge synthetic getPlugin(I)Lcom/mediatek/common/pluginmanager/IPlugin;
     .locals 1
+    .parameter
 
+    .prologue
+    .line 58
     invoke-virtual {p0, p1}, Lcom/mediatek/pluginmanager/PluginManager;->getPlugin(I)Lcom/mediatek/pluginmanager/Plugin;
 
     move-result-object v0
@@ -930,6 +1066,7 @@
 
 .method public getPlugin(I)Lcom/mediatek/pluginmanager/Plugin;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -938,6 +1075,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 427
+    .line 428
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -946,12 +1086,15 @@
 
     check-cast v0, Lcom/mediatek/pluginmanager/Plugin;
 
+    .line 429
     return-object v0
 .end method
 
 .method public getPluginCount()I
     .locals 1
 
+    .prologue
+    .line 417
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -964,26 +1107,31 @@
 .method public refreshPlugin()I
     .locals 7
 
+    .prologue
     new-instance v0, Lcom/mediatek/common/jpe/NativeCheck;
 
     invoke-direct {v0}, Lcom/mediatek/common/jpe/NativeCheck;-><init>()V
 
     invoke-virtual {v0}, Lcom/mediatek/common/jpe/NativeCheck;->checkMtk()V
 
+    .line 349
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 352
     new-instance v0, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/mediatek/pluginmanager/PluginManager;->c:Ljava/lang/String;
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 353
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 354
     iget-object v2, p0, Lcom/mediatek/pluginmanager/PluginManager;->e:Landroid/content/pm/PackageManager;
 
     const/16 v3, 0x84
@@ -992,6 +1140,7 @@
 
     move-result-object v0
 
+    .line 356
     const-string v2, "PluginManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1016,6 +1165,7 @@
 
     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 357
     const-string v2, "PluginManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1038,6 +1188,7 @@
 
     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 358
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1056,10 +1207,13 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
+    .line 361
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
+    .line 362
     if-nez v3, :cond_1
 
+    .line 363
     const-string v0, "PluginManager"
 
     const-string v3, "Ignore bad plugin"
@@ -1068,6 +1222,7 @@
 
     goto :goto_0
 
+    .line 370
     :cond_1
     :try_start_0
     iget-object v4, p0, Lcom/mediatek/pluginmanager/PluginManager;->e:Landroid/content/pm/PackageManager;
@@ -1082,8 +1237,10 @@
 
     move-result-object v4
 
+    .line 376
     if-nez v4, :cond_2
 
+    .line 377
     const-string v0, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1116,9 +1273,11 @@
 
     goto :goto_0
 
+    .line 372
     :catch_0
     move-exception v0
 
+    .line 373
     const-string v0, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1145,6 +1304,7 @@
 
     goto :goto_0
 
+    .line 382
     :cond_2
     invoke-direct {p0, v3}, Lcom/mediatek/pluginmanager/PluginManager;->b(Landroid/content/pm/ServiceInfo;)Z
 
@@ -1152,6 +1312,7 @@
 
     if-nez v5, :cond_3
 
+    .line 383
     const-string v0, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1184,6 +1345,7 @@
 
     goto/16 :goto_0
 
+    .line 388
     :cond_3
     invoke-direct {p0, v4}, Lcom/mediatek/pluginmanager/PluginManager;->a(Landroid/content/pm/PackageInfo;)Z
 
@@ -1191,12 +1353,14 @@
 
     if-eqz v3, :cond_0
 
+    .line 393
     invoke-direct {p0, v4}, Lcom/mediatek/pluginmanager/PluginManager;->b(Landroid/content/pm/PackageInfo;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
+    .line 399
     :try_start_1
     new-instance v3, Lcom/mediatek/pluginmanager/Plugin;
 
@@ -1210,9 +1374,11 @@
 
     goto/16 :goto_0
 
+    .line 400
     :catch_1
     move-exception v0
 
+    .line 401
     const-string v3, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1235,6 +1401,7 @@
 
     invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 402
     const-string v3, "PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1263,9 +1430,11 @@
 
     goto/16 :goto_0
 
+    .line 406
     :cond_4
     iput-object v1, p0, Lcom/mediatek/pluginmanager/PluginManager;->d:Ljava/util/ArrayList;
 
+    .line 407
     iget-object v0, p0, Lcom/mediatek/pluginmanager/PluginManager;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

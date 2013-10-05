@@ -24,14 +24,20 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 410
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 471
     return-void
 .end method
 
 .method public static getContentUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
 
+    .prologue
+    .line 420
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -65,7 +71,11 @@
 
 .method public static final getContentUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
+    .parameter "rowId"
 
+    .prologue
+    .line 434
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -103,7 +113,10 @@
 
 .method public static getMtpObjectsUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
 
+    .prologue
+    .line 443
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -137,7 +150,11 @@
 
 .method public static final getMtpObjectsUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
+    .parameter "fileId"
 
+    .prologue
+    .line 453
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,7 +192,11 @@
 
 .method public static final getMtpReferencesUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
+    .parameter "fileId"
 
+    .prologue
+    .line 463
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

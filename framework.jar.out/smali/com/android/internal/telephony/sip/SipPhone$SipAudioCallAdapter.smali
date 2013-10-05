@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/telephony/sip/SipPhone;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 986
     iput-object p1, p0, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->this$0:Lcom/android/internal/telephony/sip/SipPhone;
 
     invoke-direct {p0}, Landroid/net/sip/SipAudioCall$Listener;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/telephony/sip/SipPhone;Lcom/android/internal/telephony/sip/SipPhone$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 986
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;-><init>(Lcom/android/internal/telephony/sip/SipPhone;)V
 
     return-void
@@ -41,17 +48,24 @@
 # virtual methods
 .method public onCallBusy(Landroid/net/sip/SipAudioCall;)V
     .locals 1
+    .parameter "call"
 
+    .prologue
+    .line 999
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BUSY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onCallEnded(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
+    .line 1000
     return-void
 .end method
 
 .method public onCallEnded(Landroid/net/sip/SipAudioCall;)V
     .locals 1
+    .parameter "call"
 
+    .prologue
+    .line 992
     invoke-virtual {p1}, Landroid/net/sip/SipAudioCall;->isInCall()Z
 
     move-result v0
@@ -63,8 +77,10 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onCallEnded(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
+    .line 995
     return-void
 
+    .line 992
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -76,9 +92,15 @@
 
 .method public onError(Landroid/net/sip/SipAudioCall;ILjava/lang/String;)V
     .locals 3
+    .parameter "call"
+    .parameter "errorCode"
+    .parameter "errorMessage"
 
+    .prologue
+    .line 1005
     packed-switch p2, :pswitch_data_0
 
+    .line 1034
     :pswitch_0
     const-string v0, "SipPhone"
 
@@ -116,13 +138,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1036
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onError(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
+    .line 1038
     :goto_0
     return-void
 
+    .line 1007
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -130,6 +155,7 @@
 
     goto :goto_0
 
+    .line 1010
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NUMBER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -137,6 +163,7 @@
 
     goto :goto_0
 
+    .line 1013
     :pswitch_3
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -144,6 +171,7 @@
 
     goto :goto_0
 
+    .line 1017
     :pswitch_4
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->TIMED_OUT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -151,6 +179,7 @@
 
     goto :goto_0
 
+    .line 1020
     :pswitch_5
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOST_SIGNAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -158,6 +187,7 @@
 
     goto :goto_0
 
+    .line 1023
     :pswitch_6
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_CREDENTIALS:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -165,6 +195,7 @@
 
     goto :goto_0
 
+    .line 1026
     :pswitch_7
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->OUT_OF_NETWORK:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -172,6 +203,7 @@
 
     goto :goto_0
 
+    .line 1029
     :pswitch_8
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_ERROR:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -179,6 +211,7 @@
 
     goto :goto_0
 
+    .line 1005
     nop
 
     :pswitch_data_0

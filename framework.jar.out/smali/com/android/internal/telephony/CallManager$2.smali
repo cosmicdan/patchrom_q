@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/CallManager;I)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 2674
     iput-object p1, p0, Lcom/android/internal/telephony/CallManager$2;->this$0:Lcom/android/internal/telephony/CallManager;
 
     iput p2, p0, Lcom/android/internal/telephony/CallManager$2;->val$value:I
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 7
 
+    .prologue
+    .line 2676
     const-string v4, "/sys/devices/platform/Accdet_Driver/driver/accdet_call_state"
 
     const/4 v5, 0x0
@@ -51,6 +57,8 @@
 
     move-result-object v0
 
+    .line 2678
+    .local v0, callStateFilePath:Ljava/lang/String;
     :try_start_0
     iget v4, p0, Lcom/android/internal/telephony/CallManager$2;->val$value:I
 
@@ -58,14 +66,20 @@
 
     move-result-object v3
 
+    .line 2679
+    .local v3, state:Ljava/lang/String;
     new-instance v2, Ljava/io/FileWriter;
 
     invoke-direct {v2, v0}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;)V
 
+    .line 2680
+    .local v2, fw:Ljava/io/FileWriter;
     invoke-virtual {v2, v3}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
 
+    .line 2681
     invoke-virtual {v2}, Ljava/io/FileWriter;->close()V
 
+    .line 2682
     const-string v4, "CallManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -90,12 +104,18 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2686
+    .end local v2           #fw:Ljava/io/FileWriter;
+    .end local v3           #state:Ljava/lang/String;
     :goto_0
     return-void
 
+    .line 2683
     :catch_0
     move-exception v1
 
+    .line 2684
+    .local v1, e:Ljava/lang/Exception;
     const-string v4, "CallManager"
 
     const-string v5, ""

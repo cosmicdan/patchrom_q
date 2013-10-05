@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/HTML5VideoFullScreen;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 135
     iput-object p1, p0, Landroid/webkit/HTML5VideoFullScreen$2;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,12 @@
 # virtual methods
 .method public onVideoSizeChanged(Landroid/media/MediaPlayer;II)V
     .locals 3
+    .parameter "mp"
+    .parameter "width"
+    .parameter "height"
 
+    .prologue
+    .line 138
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$2;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoWidth()I
@@ -46,6 +54,7 @@
     #setter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I
     invoke-static {v0, v1}, Landroid/webkit/HTML5VideoFullScreen;->access$002(Landroid/webkit/HTML5VideoFullScreen;I)I
 
+    .line 139
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$2;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoHeight()I
@@ -55,6 +64,7 @@
     #setter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoHeight:I
     invoke-static {v0, v1}, Landroid/webkit/HTML5VideoFullScreen;->access$102(Landroid/webkit/HTML5VideoFullScreen;I)I
 
+    .line 140
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$2;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoWidth:I
@@ -73,6 +83,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 141
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$2;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     #getter for: Landroid/webkit/HTML5VideoFullScreen;->mVideoSurfaceView:Landroid/webkit/HTML5VideoFullScreen$VideoSurfaceView;
@@ -100,6 +111,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/SurfaceHolder;->setFixedSize(II)V
 
+    .line 143
     :cond_0
     return-void
 .end method

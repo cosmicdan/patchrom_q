@@ -37,12 +37,14 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 161
     new-instance v0, Landroid/webkit/WebSettings$NotificationState;
 
     const-string v1, "ON"
@@ -51,6 +53,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$NotificationState;->ON:Landroid/webkit/WebSettings$NotificationState;
 
+    .line 162
     new-instance v0, Landroid/webkit/WebSettings$NotificationState;
 
     const-string v1, "ON_DEMAND"
@@ -59,6 +62,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$NotificationState;->ON_DEMAND:Landroid/webkit/WebSettings$NotificationState;
 
+    .line 163
     new-instance v0, Landroid/webkit/WebSettings$NotificationState;
 
     const-string v1, "OFF"
@@ -67,6 +71,7 @@
 
     sput-object v0, Landroid/webkit/WebSettings$NotificationState;->OFF:Landroid/webkit/WebSettings$NotificationState;
 
+    .line 160
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/webkit/WebSettings$NotificationState;
@@ -90,12 +95,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 160
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +112,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/webkit/WebSettings$NotificationState;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 160
     const-class v0, Landroid/webkit/WebSettings$NotificationState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,6 +130,8 @@
 .method public static values()[Landroid/webkit/WebSettings$NotificationState;
     .locals 1
 
+    .prologue
+    .line 160
     sget-object v0, Landroid/webkit/WebSettings$NotificationState;->$VALUES:[Landroid/webkit/WebSettings$NotificationState;
 
     invoke-virtual {v0}, [Landroid/webkit/WebSettings$NotificationState;->clone()Ljava/lang/Object;

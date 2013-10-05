@@ -31,6 +31,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 1539
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +40,11 @@
 
 .method public static final getContentUri(Ljava/lang/String;J)Landroid/net/Uri;
     .locals 2
+    .parameter "volumeName"
+    .parameter "genreId"
 
+    .prologue
+    .line 1543
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

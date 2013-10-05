@@ -11,6 +11,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +22,11 @@
 # virtual methods
 .method public onHealthAppConfigurationStatusChange(Landroid/bluetooth/BluetoothHealthAppConfiguration;I)V
     .locals 3
+    .parameter "config"
+    .parameter "status"
 
+    .prologue
+    .line 44
     const-string v0, "BluetoothHealthCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -53,12 +59,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 45
     return-void
 .end method
 
 .method public onHealthChannelStateChange(Landroid/bluetooth/BluetoothHealthAppConfiguration;Landroid/bluetooth/BluetoothDevice;IILandroid/os/ParcelFileDescriptor;I)V
     .locals 3
+    .parameter "config"
+    .parameter "device"
+    .parameter "prevState"
+    .parameter "newState"
+    .parameter "fd"
+    .parameter "channelId"
 
+    .prologue
+    .line 64
     const-string v0, "BluetoothHealthCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,5 +146,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 67
     return-void
 .end method

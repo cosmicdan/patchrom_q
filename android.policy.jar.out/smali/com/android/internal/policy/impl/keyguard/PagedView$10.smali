@@ -32,21 +32,28 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/PagedView;J)V
     .locals 2
+    .parameter
+    .parameter
 
+    .prologue
+    .line 2413
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     iput-wide p2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->val$startTime:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2414
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
+    .line 2418
     iget-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->val$startTime:J
 
     iput-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mStartTime:J
 
+    .line 2419
     return-void
 .end method
 
@@ -54,17 +61,22 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 5
+    .parameter "t"
 
+    .prologue
+    .line 2423
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
     if-gez v0, :cond_1
 
+    .line 2424
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
+    .line 2430
     :cond_0
     :goto_0
     const/high16 v0, 0x3f80
@@ -79,11 +91,13 @@
 
     return v0
 
+    .line 2425
     :cond_1
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
     if-nez v0, :cond_0
 
+    .line 2426
     const/high16 v0, 0x3f00
 
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -113,6 +127,7 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mOffset:F
 
+    .line 2428
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$10;->mCount:I
 
     add-int/lit8 v0, v0, 0x1

@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/net/http/RequestQueue;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 232
     iput-object p1, p0, Landroid/net/http/RequestQueue$1;->this$0:Landroid/net/http/RequestQueue;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,16 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .parameter "ctx"
+    .parameter "intent"
 
+    .prologue
+    .line 235
     iget-object v0, p0, Landroid/net/http/RequestQueue$1;->this$0:Landroid/net/http/RequestQueue;
 
     #calls: Landroid/net/http/RequestQueue;->setProxyConfig()V
     invoke-static {v0}, Landroid/net/http/RequestQueue;->access$300(Landroid/net/http/RequestQueue;)V
 
+    .line 236
     return-void
 .end method

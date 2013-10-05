@@ -23,11 +23,15 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/telephony/gemini/GeminiPhone;)V
     .locals 1
+    .parameter
 
+    .prologue
+    .line 2848
     iput-object p1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
+    .line 2849
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
@@ -37,7 +41,11 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/telephony/gemini/GeminiPhone;Lcom/android/internal/telephony/gemini/e;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 2848
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gemini/GeminiPhone$a;-><init>(Lcom/android/internal/telephony/gemini/GeminiPhone;)V
 
     return-void
@@ -47,25 +55,34 @@
 # virtual methods
 .method public a(I)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2852
     iput p1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
 
+    .line 2853
     return-void
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v6, 0x0
 
     const/4 v5, 0x1
 
     const/4 v4, 0x3
 
+    .line 2857
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 2858
     const-string v1, "PHONE"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -94,6 +111,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2859
     sget-object v1, Lcom/android/internal/telephony/gemini/GeminiPhone;->EVENT_PRE_3G_SWITCH:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -102,22 +120,26 @@
 
     if-eqz v0, :cond_0
 
+    .line 2860
     iget v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_1
 
+    .line 2861
     const-string v0, "PHONE"
 
     const-string v1, "No need to reset modem, set preferred network mode to NT_MODE_GSM_ONLY"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2862
     iget v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->set3GSim(I)V
 
+    .line 2863
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiPhone;->c(Lcom/android/internal/telephony/gemini/GeminiPhone;)Landroid/content/Context;
@@ -132,6 +154,7 @@
 
     invoke-static {v0, v1, v5}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 2865
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
@@ -142,10 +165,12 @@
 
     invoke-virtual {v0, v5, v1}, Lcom/android/internal/telephony/gemini/GeminiPhone;->setPreferredNetworkType(ILandroid/os/Message;)V
 
+    .line 2886
     :cond_0
     :goto_0
     return-void
 
+    .line 2867
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
@@ -153,6 +178,7 @@
 
     move-result v0
 
+    .line 2868
     if-eqz v0, :cond_2
 
     iget v1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
@@ -166,6 +192,7 @@
 
     if-nez v0, :cond_5
 
+    .line 2869
     :cond_3
     const-string v0, "PHONE"
 
@@ -173,10 +200,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2870
     iget v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->b:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->set3GSim(I)V
 
+    .line 2871
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiPhone;->l(Lcom/android/internal/telephony/gemini/GeminiPhone;)Lcom/android/internal/telephony/Phone;
@@ -191,6 +220,7 @@
 
     if-eqz v0, :cond_4
 
+    .line 2872
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiPhone;->c(Lcom/android/internal/telephony/gemini/GeminiPhone;)Landroid/content/Context;
@@ -205,6 +235,7 @@
 
     invoke-static {v0, v1, v6}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 2874
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
@@ -217,6 +248,7 @@
 
     goto :goto_0
 
+    .line 2876
     :cond_4
     const-string v0, "PHONE"
 
@@ -224,6 +256,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2877
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiPhone;->c(Lcom/android/internal/telephony/gemini/GeminiPhone;)Landroid/content/Context;
@@ -238,6 +271,7 @@
 
     invoke-static {v0, v1, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 2879
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
@@ -250,6 +284,7 @@
 
     goto :goto_0
 
+    .line 2882
     :cond_5
     iget-object v0, p0, Lcom/android/internal/telephony/gemini/GeminiPhone$a;->a:Lcom/android/internal/telephony/gemini/GeminiPhone;
 

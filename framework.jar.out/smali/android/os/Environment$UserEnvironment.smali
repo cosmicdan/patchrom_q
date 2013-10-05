@@ -29,41 +29,53 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 12
+    .parameter "userId"
 
+    .prologue
     const/4 v11, 0x2
 
     const/4 v10, 0x1
 
     const/4 v9, 0x0
 
+    .line 112
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 114
     const-string v6, "EXTERNAL_STORAGE"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 115
+    .local v3, rawExternalStorage:Ljava/lang/String;
     const-string v6, "EMULATED_STORAGE_TARGET"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 116
+    .local v2, rawEmulatedStorageTarget:Ljava/lang/String;
     const-string v6, "MEDIA_STORAGE"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 117
+    .local v4, rawMediaStorage:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
+    .line 118
     const-string v4, "/data/media"
 
+    .line 121
     :cond_0
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -71,18 +83,25 @@
 
     if-nez v6, :cond_1
 
+    .line 124
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v5
 
+    .line 125
+    .local v5, rawUserId:Ljava/lang/String;
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 126
+    .local v0, emulatedBase:Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 129
+    .local v1, mediaBase:Ljava/io/File;
     new-array v6, v10, [Ljava/lang/String;
 
     aput-object v5, v6, v9
@@ -94,6 +113,7 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
+    .line 131
     new-array v6, v10, [Ljava/lang/String;
 
     aput-object v5, v6, v9
@@ -105,6 +125,10 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mMediaStorage:Ljava/io/File;
 
+    .line 146
+    .end local v0           #emulatedBase:Ljava/io/File;
+    .end local v1           #mediaBase:Ljava/io/File;
+    .end local v5           #rawUserId:Ljava/lang/String;
     :goto_0
     iget-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
@@ -125,6 +149,7 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidObb:Ljava/io/File;
 
+    .line 147
     iget-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
     new-array v7, v11, [Ljava/lang/String;
@@ -144,6 +169,7 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidData:Ljava/io/File;
 
+    .line 148
     iget-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
     new-array v7, v11, [Ljava/lang/String;
@@ -163,8 +189,10 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidMedia:Ljava/io/File;
 
+    .line 149
     return-void
 
+    .line 135
     :cond_1
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -172,14 +200,17 @@
 
     if-eqz v6, :cond_2
 
+    .line 136
     const-string v6, "Environment"
 
     const-string v7, "EXTERNAL_STORAGE undefined; falling back to default"
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 137
     const-string v3, "/storage/sdcard0"
 
+    .line 141
     :cond_2
     new-instance v6, Ljava/io/File;
 
@@ -187,6 +218,7 @@
 
     iput-object v6, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
+    .line 143
     new-instance v6, Ljava/io/File;
 
     invoke-direct {v6, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -201,6 +233,8 @@
 .method public getExternalStorageAndroidDataDir()Ljava/io/File;
     .locals 1
 
+    .prologue
+    .line 164
     iget-object v0, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidData:Ljava/io/File;
 
     return-object v0
@@ -208,7 +242,10 @@
 
 .method public getExternalStorageAppCacheDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 3
+    .parameter "packageName"
 
+    .prologue
+    .line 184
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
@@ -226,7 +263,10 @@
 
 .method public getExternalStorageAppDataDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 2
+    .parameter "packageName"
 
+    .prologue
+    .line 168
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidData:Ljava/io/File;
@@ -238,7 +278,10 @@
 
 .method public getExternalStorageAppFilesDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 3
+    .parameter "packageName"
 
+    .prologue
+    .line 180
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
@@ -256,7 +299,10 @@
 
 .method public getExternalStorageAppMediaDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 2
+    .parameter "packageName"
 
+    .prologue
+    .line 172
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidMedia:Ljava/io/File;
@@ -268,7 +314,10 @@
 
 .method public getExternalStorageAppObbDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 2
+    .parameter "packageName"
 
+    .prologue
+    .line 176
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidObb:Ljava/io/File;
@@ -281,6 +330,8 @@
 .method public getExternalStorageDirectory()Ljava/io/File;
     .locals 1
 
+    .prologue
+    .line 152
     iget-object v0, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
 
     return-object v0
@@ -289,6 +340,8 @@
 .method public getExternalStorageObbDirectory()Ljava/io/File;
     .locals 1
 
+    .prologue
+    .line 156
     iget-object v0, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorageAndroidObb:Ljava/io/File;
 
     return-object v0
@@ -296,7 +349,10 @@
 
 .method public getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
     .locals 2
+    .parameter "type"
 
+    .prologue
+    .line 160
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/os/Environment$UserEnvironment;->mExternalStorage:Ljava/io/File;
@@ -309,6 +365,8 @@
 .method public getMediaStorageDirectory()Ljava/io/File;
     .locals 1
 
+    .prologue
+    .line 188
     iget-object v0, p0, Landroid/os/Environment$UserEnvironment;->mMediaStorage:Ljava/io/File;
 
     return-object v0

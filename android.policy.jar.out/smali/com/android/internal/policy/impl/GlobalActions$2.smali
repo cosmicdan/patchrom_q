@@ -21,7 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 287
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -34,8 +39,10 @@
 .method public onLongPress()Z
     .locals 2
 
+    .prologue
     const/4 v1, 0x1
 
+    .line 295
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -45,12 +52,15 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode(Z)V
 
+    .line 296
     return v1
 .end method
 
 .method public onPress()V
     .locals 2
 
+    .prologue
+    .line 291
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -62,12 +72,15 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->shutdown(Z)V
 
+    .line 292
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
+    .prologue
+    .line 304
     const/4 v0, 0x1
 
     return v0
@@ -76,6 +89,8 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
+    .prologue
+    .line 300
     const/4 v0, 0x1
 
     return v0

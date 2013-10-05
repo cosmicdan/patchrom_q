@@ -28,6 +28,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 401
     const-string v0, "content://sms/inbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -42,6 +44,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 397
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +53,15 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Z)Landroid/net/Uri;
     .locals 8
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
+    .parameter "read"
 
+    .prologue
+    .line 423
     sget-object v1, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v7, 0x0
@@ -75,7 +87,16 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZI)Landroid/net/Uri;
     .locals 11
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "date"
+    .parameter "read"
+    .parameter "simId"
 
+    .prologue
+    .line 450
     sget-object v1, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v7, 0x0
@@ -105,7 +126,16 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Z)Landroid/net/Uri;
     .locals 12
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "sc"
+    .parameter "date"
+    .parameter "read"
 
+    .prologue
+    .line 431
     sget-object v1, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v8, 0x0
@@ -137,7 +167,17 @@
 
 .method public static addMessage(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ZI)Landroid/net/Uri;
     .locals 12
+    .parameter "resolver"
+    .parameter "address"
+    .parameter "body"
+    .parameter "subject"
+    .parameter "sc"
+    .parameter "date"
+    .parameter "read"
+    .parameter "simId"
 
+    .prologue
+    .line 457
     sget-object v1, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v8, 0x0

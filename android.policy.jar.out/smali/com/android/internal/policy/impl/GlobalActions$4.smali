@@ -21,7 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 334
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -34,6 +39,8 @@
 .method public onPress()V
     .locals 2
 
+    .prologue
+    .line 337
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
@@ -43,6 +50,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 338
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
@@ -52,14 +60,18 @@
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->dismiss()V
 
+    .line 340
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
+    .line 341
+    .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.cellon.action.ACTION_SCREEN_SHOT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 342
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
@@ -69,6 +81,8 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
+    .line 344
+    .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     return-void
 .end method
@@ -76,6 +90,8 @@
 .method public showBeforeProvisioning()Z
     .locals 1
 
+    .prologue
+    .line 351
     const/4 v0, 0x1
 
     return v0
@@ -84,6 +100,8 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
+    .prologue
+    .line 347
     const/4 v0, 0x1
 
     return v0

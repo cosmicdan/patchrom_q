@@ -40,13 +40,19 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;Landroid/accounts/AccountManager;)V
     .locals 3
+    .parameter
+    .parameter "accountManager"
 
+    .prologue
+    .line 311
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 312
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountManager:Landroid/accounts/AccountManager;
 
+    .line 313
     const-string v0, "com.google"
 
     new-instance v1, Landroid/os/UserHandle;
@@ -68,12 +74,18 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccounts:[Landroid/accounts/Account;
 
+    .line 315
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;Landroid/accounts/AccountManager;Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 306
     invoke-direct {p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;Landroid/accounts/AccountManager;)V
 
     return-void
@@ -82,8 +94,10 @@
 .method private next()V
     .locals 7
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 320
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mEnableFallback:Z
@@ -101,10 +115,12 @@
 
     if-lt v0, v1, :cond_1
 
+    .line 327
     :cond_0
     :goto_0
     return-void
 
+    .line 325
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountManager:Landroid/accounts/AccountManager;
 
@@ -144,6 +160,7 @@
 # virtual methods
 .method public run(Landroid/accounts/AccountManagerFuture;)V
     .locals 3
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,6 +171,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 337
+    .local p1, future:Landroid/accounts/AccountManagerFuture;,"Landroid/accounts/AccountManagerFuture<Landroid/os/Bundle;>;"
     :try_start_0
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -161,6 +181,8 @@
 
     check-cast v0, Landroid/os/Bundle;
 
+    .line 338
+    .local v0, result:Landroid/os/Bundle;
     const-string v1, "intent"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -169,6 +191,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 339
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     const/4 v2, 0x1
@@ -181,6 +204,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_0} :catch_2
 
+    .line 348
     :cond_0
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
@@ -188,50 +212,63 @@
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 349
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
+    .line 351
+    .end local v0           #result:Landroid/os/Bundle;
     :goto_0
     return-void
 
+    .line 341
     :catch_0
     move-exception v1
 
+    .line 348
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 349
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
+    .line 343
     :catch_1
     move-exception v1
 
+    .line 348
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 349
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
+    .line 345
     :catch_2
     move-exception v1
 
+    .line 348
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 349
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
     goto :goto_0
 
+    .line 348
     :catchall_0
     move-exception v1
 
@@ -241,6 +278,7 @@
 
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 349
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
     throw v1
@@ -249,16 +287,21 @@
 .method public start()V
     .locals 2
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 330
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mEnableFallback:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->access$1102(Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;Z)Z
 
+    .line 331
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->mAccountIndex:I
 
+    .line 332
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$AccountAnalyzer;->next()V
 
+    .line 333
     return-void
 .end method

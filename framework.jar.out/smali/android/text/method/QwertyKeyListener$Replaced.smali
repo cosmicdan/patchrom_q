@@ -24,17 +24,25 @@
 # direct methods
 .method public constructor <init>([C)V
     .locals 0
+    .parameter "text"
 
+    .prologue
+    .line 516
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 517
     iput-object p1, p0, Landroid/text/method/QwertyKeyListener$Replaced;->mText:[C
 
+    .line 518
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/text/method/QwertyKeyListener$Replaced;)[C
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 514
     iget-object v0, p0, Landroid/text/method/QwertyKeyListener$Replaced;->mText:[C
 
     return-object v0

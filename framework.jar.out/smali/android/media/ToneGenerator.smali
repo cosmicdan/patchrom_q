@@ -214,11 +214,17 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
+    .parameter "streamType"
+    .parameter "volume"
 
+    .prologue
+    .line 739
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 740
     invoke-direct {p0, p1, p2}, Landroid/media/ToneGenerator;->native_setup(II)V
 
+    .line 741
     return-void
 .end method
 
@@ -233,6 +239,8 @@
 .method protected finalize()V
     .locals 0
 
+    .prologue
+    .line 887
     invoke-direct {p0}, Landroid/media/ToneGenerator;->native_finalize()V
 
     return-void
@@ -246,7 +254,10 @@
 
 .method public startTone(I)Z
     .locals 1
+    .parameter "toneType"
 
+    .prologue
+    .line 850
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/media/ToneGenerator;->startTone(II)Z

@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;Landroid/os/Handler;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 329
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -33,17 +37,22 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
+    .parameter "selfChange"
 
+    .prologue
+    .line 332
     const-string v0, "GsmServiceStateTracker"
 
     const-string v1, "Auto time zone state changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 333
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
     #calls: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->revertToNitzTimeZone()V
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$700(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;)V
 
+    .line 334
     return-void
 .end method

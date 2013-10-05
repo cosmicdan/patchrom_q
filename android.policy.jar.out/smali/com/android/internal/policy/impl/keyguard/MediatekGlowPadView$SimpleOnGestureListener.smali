@@ -24,7 +24,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2300
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +37,11 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 2300
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;-><init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
 
     return-void
@@ -44,22 +51,27 @@
 # virtual methods
 .method public onDown(Landroid/view/MotionEvent;)Z
     .locals 6
+    .parameter "event"
 
+    .prologue
     const/4 v1, 0x0
 
     const/4 v4, 0x0
 
+    .line 2352
     const-string v0, "MediatekGlowPadView"
 
     const-string v2, "onDown"
 
     invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2353
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mTapTimeOut:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$2602(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;Z)Z
 
+    .line 2354
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v2, -0x1
@@ -67,6 +79,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mPendingDragViewState:I
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1302(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;I)I
 
+    .line 2355
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -86,6 +99,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 2356
     const/4 v0, 0x1
 
     return v0
@@ -93,7 +107,13 @@
 
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 6
+    .parameter "e1"
+    .parameter "e2"
+    .parameter "velocityX"
+    .parameter "velocityY"
 
+    .prologue
+    .line 2340
     const-string v0, "MediatekGlowPadView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -126,6 +146,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2342
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mTouchTriggered:Z
@@ -135,6 +156,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 2343
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x5
@@ -158,11 +180,13 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 2347
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
+    .line 2345
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
@@ -192,21 +216,31 @@
 
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 2
+    .parameter "e"
 
+    .prologue
+    .line 2335
     const-string v0, "MediatekGlowPadView"
 
     const-string v1, "onLongPress"
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2336
     return-void
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 6
+    .parameter "e1"
+    .parameter "e2"
+    .parameter "distanceX"
+    .parameter "distanceY"
 
+    .prologue
     const/4 v4, 0x0
 
+    .line 2325
     const-string v0, "MediatekGlowPadView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -267,6 +301,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2328
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x3
@@ -288,6 +323,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 2329
     const/4 v0, 0x1
 
     return v0
@@ -295,15 +331,19 @@
 
 .method public onShowPress(Landroid/view/MotionEvent;)V
     .locals 6
+    .parameter "e"
 
+    .prologue
     const/4 v4, 0x0
 
+    .line 2317
     const-string v0, "MediatekGlowPadView"
 
     const-string v1, "onShowPress"
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2318
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x1
@@ -311,6 +351,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mTapTimeOut:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$2602(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;Z)Z
 
+    .line 2319
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x3
@@ -332,20 +373,25 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 2320
     return-void
 .end method
 
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 6
+    .parameter "e"
 
+    .prologue
     const/4 v4, 0x0
 
+    .line 2304
     const-string v0, "MediatekGlowPadView"
 
     const-string v1, "onSingleTapUp"
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2307
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mTapTimeOut:Z
@@ -355,6 +401,7 @@
 
     if-nez v0, :cond_0
 
+    .line 2308
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$SimpleOnGestureListener;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x2
@@ -376,8 +423,10 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 2309
     const/4 v0, 0x1
 
+    .line 2311
     :goto_0
     return v0
 

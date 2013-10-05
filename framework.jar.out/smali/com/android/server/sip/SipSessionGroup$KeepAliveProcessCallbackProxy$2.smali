@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;ILjava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1826
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$2;->this$0:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;
 
     iput p2, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$2;->val$errorCode:I
@@ -45,6 +50,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 1829
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$2;->this$0:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;
 
@@ -61,12 +68,16 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1833
     :goto_0
     return-void
 
+    .line 1830
     :catch_0
     move-exception v0
 
+    .line 1831
+    .local v0, t:Ljava/lang/Throwable;
     const-string v1, "SipSession"
 
     const-string/jumbo v2, "onError"

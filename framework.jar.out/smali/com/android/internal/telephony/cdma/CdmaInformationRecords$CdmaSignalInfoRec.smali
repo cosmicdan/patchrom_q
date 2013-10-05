@@ -28,6 +28,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 111
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,9 +37,16 @@
 
 .method public constructor <init>(IIII)V
     .locals 1
+    .parameter "isPresent"
+    .parameter "signalType"
+    .parameter "alertPitch"
+    .parameter "signal"
 
+    .prologue
+    .line 113
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 114
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
@@ -45,14 +54,19 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaSignalInfoRec;->isPresent:Z
 
+    .line 115
     iput p2, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaSignalInfoRec;->signalType:I
 
+    .line 116
     iput p3, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaSignalInfoRec;->alertPitch:I
 
+    .line 117
     iput p4, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaSignalInfoRec;->signal:I
 
+    .line 118
     return-void
 
+    .line 114
     :cond_0
     const/4 v0, 0x0
 
@@ -64,6 +78,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 122
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

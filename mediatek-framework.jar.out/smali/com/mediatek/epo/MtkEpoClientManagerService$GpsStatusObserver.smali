@@ -21,11 +21,17 @@
 # direct methods
 .method public constructor <init>(Lcom/mediatek/epo/MtkEpoClientManagerService;Landroid/os/Handler;)V
     .locals 0
+    .parameter
+    .parameter "handler"
 
+    .prologue
+    .line 361
     iput-object p1, p0, Lcom/mediatek/epo/MtkEpoClientManagerService$GpsStatusObserver;->this$0:Lcom/mediatek/epo/MtkEpoClientManagerService;
 
+    .line 362
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
+    .line 363
     return-void
 .end method
 
@@ -33,6 +39,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 0
+    .parameter "change"
 
+    .prologue
+    .line 371
     return-void
 .end method

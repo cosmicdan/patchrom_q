@@ -23,12 +23,19 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
+    .parameter "countryCode"
+    .parameter "newIndex"
 
+    .prologue
+    .line 2530
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2531
     iput p1, p0, Landroid/telephony/PhoneNumberUtils$CountryCallingCodeAndNewIndex;->countryCallingCode:I
 
+    .line 2532
     iput p2, p0, Landroid/telephony/PhoneNumberUtils$CountryCallingCodeAndNewIndex;->newIndex:I
 
+    .line 2533
     return-void
 .end method

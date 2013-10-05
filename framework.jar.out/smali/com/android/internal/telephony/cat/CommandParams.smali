@@ -10,11 +10,16 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/telephony/cat/CommandDetails;)V
     .locals 0
+    .parameter "cmdDet"
 
+    .prologue
+    .line 62
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 63
     iput-object p1, p0, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
+    .line 64
     return-void
 .end method
 
@@ -23,6 +28,8 @@
 .method getCommandType()Lcom/android/internal/telephony/cat/AppInterface$CommandType;
     .locals 1
 
+    .prologue
+    .line 67
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     iget v0, v0, Lcom/android/internal/telephony/cat/CommandDetails;->typeOfCommand:I
@@ -36,7 +43,10 @@
 
 .method setIcon(Landroid/graphics/Bitmap;)Z
     .locals 1
+    .parameter "icon"
 
+    .prologue
+    .line 71
     const/4 v0, 0x1
 
     return v0

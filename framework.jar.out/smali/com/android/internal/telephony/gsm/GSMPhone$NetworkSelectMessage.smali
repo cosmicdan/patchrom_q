@@ -26,7 +26,10 @@
 .method protected constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 1227
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1229
     return-void
 .end method

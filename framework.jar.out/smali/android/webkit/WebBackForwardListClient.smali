@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,12 +18,19 @@
 # virtual methods
 .method public onIndexChanged(Landroid/webkit/WebHistoryItem;I)V
     .locals 0
+    .parameter "item"
+    .parameter "index"
 
+    .prologue
+    .line 39
     return-void
 .end method
 
 .method public onNewHistoryItem(Landroid/webkit/WebHistoryItem;)V
     .locals 0
+    .parameter "item"
 
+    .prologue
+    .line 31
     return-void
 .end method

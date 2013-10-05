@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/WebViewClassic$InvokeListBox;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 8930
     iput-object p1, p0, Landroid/webkit/WebViewClassic$InvokeListBox$3;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,6 +39,10 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 5
+    .parameter
+    .parameter "v"
+    .parameter "position"
+    .parameter "id"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,8 +53,11 @@
         }
     .end annotation
 
+    .prologue
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     const/4 v4, 0x0
 
+    .line 8936
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$3;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -65,6 +75,7 @@
     #setter for: Landroid/webkit/WebViewClassic;->mListBoxMessage:Landroid/os/Message;
     invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$8702(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
 
+    .line 8938
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$3;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -76,6 +87,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 8939
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$3;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -87,6 +99,7 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
+    .line 8940
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$3;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -94,6 +107,7 @@
     #setter for: Landroid/webkit/WebViewClassic;->mListBoxDialog:Landroid/app/AlertDialog;
     invoke-static {v0, v4}, Landroid/webkit/WebViewClassic;->access$8602(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
+    .line 8942
     :cond_0
     return-void
 .end method

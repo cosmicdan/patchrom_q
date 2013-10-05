@@ -17,11 +17,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
+    .parameter "context"
 
+    .prologue
+    .line 252
     const-string v0, "BluetoothFtp.Server"
 
     invoke-direct {p0, p1, v0}, Landroid/bluetooth/BluetoothFtp$Remote;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
+    .line 253
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.bluetooth.ftp.action.BIND_SERVER"
@@ -38,10 +42,12 @@
 
     if-nez v0, :cond_0
 
+    .line 255
     const-string v0, "Could not bind to Bluetooth FTP Service"
 
     invoke-virtual {p0, v0}, Landroid/bluetooth/BluetoothFtp$Server;->printErr(Ljava/lang/String;)V
 
+    .line 257
     :cond_0
     return-void
 .end method
@@ -51,6 +57,8 @@
 .method public bridge synthetic close()V
     .locals 0
 
+    .prologue
+    .line 249
     invoke-super {p0}, Landroid/bluetooth/BluetoothFtp$Remote;->close()V
 
     return-void
@@ -58,7 +66,10 @@
 
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .parameter "device"
 
+    .prologue
+    .line 260
     const/4 v0, 0x0
 
     return v0
@@ -66,24 +77,31 @@
 
 .method protected convertState(I)I
     .locals 1
+    .parameter "serverState"
 
+    .prologue
+    .line 264
     packed-switch p1, :pswitch_data_0
 
+    .line 272
     const/4 v0, 0x2
 
     :goto_0
     return v0
 
+    .line 266
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 269
     :pswitch_1
     const/4 v0, 0x3
 
     goto :goto_0
 
+    .line 264
     nop
 
     :pswitch_data_0
@@ -95,7 +113,10 @@
 
 .method public bridge synthetic disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 249
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothFtp$Remote;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -106,19 +127,26 @@
 .method protected finalize()V
     .locals 3
 
+    .prologue
+    .line 277
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothFtp$Server;->disconnectService()V
 
+    .line 279
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 283
     :goto_0
     return-void
 
+    .line 280
     :catch_0
     move-exception v0
 
+    .line 281
+    .local v0, t:Ljava/lang/Throwable;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -145,6 +173,8 @@
 .method public bridge synthetic getConnectedDevices()Ljava/util/Set;
     .locals 1
 
+    .prologue
+    .line 249
     invoke-super {p0}, Landroid/bluetooth/BluetoothFtp$Remote;->getConnectedDevices()Ljava/util/Set;
 
     move-result-object v0
@@ -154,7 +184,10 @@
 
 .method public bridge synthetic getState(Landroid/bluetooth/BluetoothDevice;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 249
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothFtp$Remote;->getState(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0

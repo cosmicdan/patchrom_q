@@ -28,7 +28,12 @@
 # direct methods
 .method constructor <init>(Landroid/media/RemoteDisplay;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 160
     iput-object p1, p0, Landroid/media/RemoteDisplay$4;->this$0:Landroid/media/RemoteDisplay;
 
     iput p2, p0, Landroid/media/RemoteDisplay$4;->val$keyCode:I
@@ -45,6 +50,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 163
     iget-object v0, p0, Landroid/media/RemoteDisplay$4;->this$0:Landroid/media/RemoteDisplay;
 
     #getter for: Landroid/media/RemoteDisplay;->mListener:Landroid/media/RemoteDisplay$Listener;
@@ -58,5 +65,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/media/RemoteDisplay$Listener;->onDisplayKeyEvent(II)V
 
+    .line 164
     return-void
 .end method

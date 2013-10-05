@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Landroid/net/UsbDataStateTracker;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 192
     iput-object p1, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Landroid/net/UsbDataStateTracker;Landroid/net/UsbDataStateTracker$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 192
     invoke-direct {p0, p1}, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;-><init>(Landroid/net/UsbDataStateTracker;)V
 
     return-void
@@ -41,11 +48,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 12
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v6, 0x1
 
     const/4 v7, 0x0
 
+    .line 195
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v8
@@ -58,18 +69,22 @@
 
     if-eqz v8, :cond_9
 
+    .line 196
     const-string v8, "apnType"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 198
+    .local v2, apnType:Ljava/lang/String;
     const-string v8, "UsbDataStateTracker"
 
     const-string v9, "Broadcast received: mediatek.intent.action.USB_DATA_STATE"
 
     invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 200
     iget-object v8, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mApnType:Ljava/lang/String;
@@ -83,10 +98,14 @@
 
     if-nez v8, :cond_1
 
+    .line 318
+    .end local v2           #apnType:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
+    .line 203
+    .restart local v2       #apnType:Ljava/lang/String;
     :cond_1
     iget-object v8, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -113,6 +132,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/net/NetworkInfo;->setSubtype(ILjava/lang/String;)V
 
+    .line 205
     const-class v8, Lcom/android/internal/telephony/PhoneConstants$DataState;
 
     const-string/jumbo v9, "state"
@@ -127,18 +147,24 @@
 
     check-cast v5, Lcom/android/internal/telephony/PhoneConstants$DataState;
 
+    .line 207
+    .local v5, state:Lcom/android/internal/telephony/PhoneConstants$DataState;
     const-string/jumbo v8, "reason"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 208
+    .local v4, reason:Ljava/lang/String;
     const-string v8, "apn"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 209
+    .local v1, apnName:Ljava/lang/String;
     iget-object v8, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
@@ -154,6 +180,7 @@
 
     invoke-virtual {v8, v9}, Landroid/net/NetworkInfo;->setRoaming(Z)V
 
+    .line 212
     const-string v8, "UsbDataStateTracker"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -193,6 +220,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 215
     iget-object v8, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
@@ -211,6 +239,7 @@
     :goto_1
     invoke-virtual {v8, v6}, Landroid/net/NetworkInfo;->setIsAvailable(Z)V
 
+    .line 219
     const-string v8, "UsbDataStateTracker"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -265,6 +294,7 @@
 
     invoke-static {v8, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 222
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mUsbDataState:Lcom/android/internal/telephony/PhoneConstants$DataState;
@@ -274,11 +304,13 @@
 
     if-eq v6, v5, :cond_7
 
+    .line 223
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #setter for: Landroid/net/UsbDataStateTracker;->mUsbDataState:Lcom/android/internal/telephony/PhoneConstants$DataState;
     invoke-static {v6, v5}, Landroid/net/UsbDataStateTracker;->access$402(Landroid/net/UsbDataStateTracker;Lcom/android/internal/telephony/PhoneConstants$DataState;)Lcom/android/internal/telephony/PhoneConstants$DataState;
 
+    .line 224
     sget-object v6, Landroid/net/UsbDataStateTracker$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/PhoneConstants$DataState;->ordinal()I
@@ -291,6 +323,7 @@
 
     goto/16 :goto_0
 
+    .line 226
     :pswitch_0
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -300,10 +333,12 @@
 
     if-eqz v6, :cond_2
 
+    .line 227
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     invoke-virtual {v6, v7}, Landroid/net/UsbDataStateTracker;->setTeardownRequested(Z)V
 
+    .line 230
     :cond_2
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -317,13 +352,16 @@
     :cond_3
     move v6, v7
 
+    .line 215
     goto :goto_1
 
     :cond_4
     move-object v6, v4
 
+    .line 219
     goto :goto_2
 
+    .line 239
     :pswitch_1
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -334,6 +372,7 @@
 
     goto/16 :goto_0
 
+    .line 242
     :pswitch_2
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -344,6 +383,7 @@
 
     goto/16 :goto_0
 
+    .line 245
     :pswitch_3
     iget-object v7, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -358,6 +398,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
     invoke-static {v7, v6}, Landroid/net/UsbDataStateTracker;->access$602(Landroid/net/UsbDataStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
+    .line 247
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
@@ -367,12 +408,14 @@
 
     if-nez v6, :cond_5
 
+    .line 248
     const-string v6, "UsbDataStateTracker"
 
     const-string v7, "CONNECTED event did not supply link properties."
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 249
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     new-instance v7, Landroid/net/LinkProperties;
@@ -382,6 +425,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
     invoke-static {v6, v7}, Landroid/net/UsbDataStateTracker;->access$602(Landroid/net/UsbDataStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
+    .line 251
     :cond_5
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -398,6 +442,7 @@
 
     invoke-virtual {v6, v7}, Landroid/net/LinkProperties;->addDns(Ljava/net/InetAddress;)V
 
+    .line 252
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
@@ -413,6 +458,7 @@
 
     invoke-virtual {v6, v7}, Landroid/net/LinkProperties;->addDns(Ljava/net/InetAddress;)V
 
+    .line 254
     iget-object v7, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     const-string v6, "linkCapabilities"
@@ -426,6 +472,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
     invoke-static {v7, v6}, Landroid/net/UsbDataStateTracker;->access$702(Landroid/net/UsbDataStateTracker;Landroid/net/LinkCapabilities;)Landroid/net/LinkCapabilities;
 
+    .line 256
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
@@ -435,12 +482,14 @@
 
     if-nez v6, :cond_6
 
+    .line 257
     const-string v6, "UsbDataStateTracker"
 
     const-string v7, "CONNECTED event did not supply link capabilities."
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 258
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     new-instance v7, Landroid/net/LinkCapabilities;
@@ -450,6 +499,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
     invoke-static {v6, v7}, Landroid/net/UsbDataStateTracker;->access$702(Landroid/net/UsbDataStateTracker;Landroid/net/LinkCapabilities;)Landroid/net/LinkCapabilities;
 
+    .line 260
     :cond_6
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -460,6 +510,7 @@
 
     goto/16 :goto_0
 
+    .line 265
     :cond_7
     const-string v6, "linkPropertiesChanged"
 
@@ -469,6 +520,7 @@
 
     if-eqz v6, :cond_0
 
+    .line 266
     iget-object v7, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     const-string v6, "linkProperties"
@@ -482,6 +534,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
     invoke-static {v7, v6}, Landroid/net/UsbDataStateTracker;->access$602(Landroid/net/UsbDataStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
+    .line 267
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
@@ -491,12 +544,14 @@
 
     if-nez v6, :cond_8
 
+    .line 268
     const-string v6, "UsbDataStateTracker"
 
     const-string v7, "No link property in LINK_PROPERTIES change event."
 
     invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 269
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     new-instance v7, Landroid/net/LinkProperties;
@@ -506,6 +561,7 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
     invoke-static {v6, v7}, Landroid/net/UsbDataStateTracker;->access$602(Landroid/net/UsbDataStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
+    .line 272
     :cond_8
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
@@ -538,6 +594,7 @@
 
     invoke-virtual {v6, v7, v4, v8}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 274
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mTarget:Landroid/os/Handler;
@@ -558,10 +615,18 @@
 
     move-result-object v3
 
+    .line 276
+    .local v3, msg:Landroid/os/Message;
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
     goto/16 :goto_0
 
+    .line 279
+    .end local v1           #apnName:Ljava/lang/String;
+    .end local v2           #apnType:Ljava/lang/String;
+    .end local v3           #msg:Landroid/os/Message;
+    .end local v4           #reason:Ljava/lang/String;
+    .end local v5           #state:Lcom/android/internal/telephony/PhoneConstants$DataState;
     :cond_9
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -575,12 +640,15 @@
 
     if-eqz v8, :cond_c
 
+    .line 281
     const-string v8, "apnType"
 
     invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 282
+    .restart local v2       #apnType:Ljava/lang/String;
     iget-object v8, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mApnType:Ljava/lang/String;
@@ -594,6 +662,7 @@
 
     if-nez v8, :cond_a
 
+    .line 284
     const-string v8, "UsbDataStateTracker"
 
     const-string v9, "Broadcast received: ACTION_ANY_DATA_CONNECTION_FAILED ignore, mApnType=%s != received apnType=%s"
@@ -621,6 +690,7 @@
 
     goto/16 :goto_0
 
+    .line 290
     :cond_a
     const-string/jumbo v6, "reason"
 
@@ -628,12 +698,16 @@
 
     move-result-object v4
 
+    .line 291
+    .restart local v4       #reason:Ljava/lang/String;
     const-string v6, "apn"
 
     invoke-virtual {p2, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 293
+    .restart local v1       #apnName:Ljava/lang/String;
     const-string v7, "UsbDataStateTracker"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -675,6 +749,7 @@
     :goto_3
     invoke-static {v7, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 296
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     sget-object v7, Landroid/net/NetworkInfo$DetailedState;->FAILED:Landroid/net/NetworkInfo$DetailedState;
@@ -684,6 +759,7 @@
 
     goto/16 :goto_0
 
+    .line 293
     :cond_b
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -711,6 +787,10 @@
 
     goto :goto_3
 
+    .line 297
+    .end local v1           #apnName:Ljava/lang/String;
+    .end local v2           #apnType:Ljava/lang/String;
+    .end local v4           #reason:Ljava/lang/String;
     :cond_c
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -724,6 +804,7 @@
 
     if-eqz v8, :cond_d
 
+    .line 299
     const-string v6, "UsbDataStateTracker"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -753,6 +834,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 300
     iget-object v7, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     sget-object v6, Lcom/android/internal/telephony/DataConnectionTracker;->EXTRA_MESSENGER:Ljava/lang/String;
@@ -766,10 +848,13 @@
     #setter for: Landroid/net/UsbDataStateTracker;->mMessenger:Landroid/os/Messenger;
     invoke-static {v7, v6}, Landroid/net/UsbDataStateTracker;->access$902(Landroid/net/UsbDataStateTracker;Landroid/os/Messenger;)Landroid/os/Messenger;
 
+    .line 301
     new-instance v0, Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {v0}, Lcom/android/internal/util/AsyncChannel;-><init>()V
 
+    .line 302
+    .local v0, ac:Lcom/android/internal/util/AsyncChannel;
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #getter for: Landroid/net/UsbDataStateTracker;->mContext:Landroid/content/Context;
@@ -795,6 +880,8 @@
 
     goto/16 :goto_0
 
+    .line 304
+    .end local v0           #ac:Lcom/android/internal/util/AsyncChannel;
     :cond_d
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -808,6 +895,7 @@
 
     if-eqz v8, :cond_e
 
+    .line 306
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #calls: Landroid/net/UsbDataStateTracker;->onHandleReadyForUsbInternet()V
@@ -815,6 +903,7 @@
 
     goto/16 :goto_0
 
+    .line 308
     :cond_e
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -828,6 +917,7 @@
 
     if-eqz v8, :cond_f
 
+    .line 310
     iget-object v6, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     const-string v8, "connected"
@@ -841,6 +931,7 @@
 
     goto/16 :goto_0
 
+    .line 312
     :cond_f
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -854,6 +945,7 @@
 
     if-eqz v7, :cond_10
 
+    .line 313
     iget-object v7, p0, Landroid/net/UsbDataStateTracker$UsbDataStateReceiver;->this$0:Landroid/net/UsbDataStateTracker;
 
     #setter for: Landroid/net/UsbDataStateTracker;->mMassStorageActive:Z
@@ -861,6 +953,7 @@
 
     goto/16 :goto_0
 
+    .line 316
     :cond_10
     const-string v6, "UsbDataStateTracker"
 
@@ -890,6 +983,7 @@
 
     goto/16 :goto_0
 
+    .line 224
     nop
 
     :pswitch_data_0

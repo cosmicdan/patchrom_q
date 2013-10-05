@@ -21,6 +21,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 1663
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,10 +32,14 @@
 # virtual methods
 .method public println(Ljava/lang/String;)V
     .locals 1
+    .parameter "x"
 
+    .prologue
+    .line 1666
     const-string v0, "StrictMode"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1667
     return-void
 .end method

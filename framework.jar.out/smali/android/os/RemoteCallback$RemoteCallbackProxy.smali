@@ -17,9 +17,13 @@
 # direct methods
 .method constructor <init>(Landroid/os/IRemoteCallback;)V
     .locals 0
+    .parameter "target"
 
+    .prologue
+    .line 48
     invoke-direct {p0, p1}, Landroid/os/RemoteCallback;-><init>(Landroid/os/IRemoteCallback;)V
 
+    .line 49
     return-void
 .end method
 
@@ -27,6 +31,9 @@
 # virtual methods
 .method protected onResult(Landroid/os/Bundle;)V
     .locals 0
+    .parameter "bundle"
 
+    .prologue
+    .line 52
     return-void
 .end method

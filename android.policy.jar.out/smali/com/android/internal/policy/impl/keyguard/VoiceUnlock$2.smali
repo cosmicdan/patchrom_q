@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 151
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$2;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 6
 
+    .prologue
+    .line 154
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$2;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mVoiceCommandManager:Lcom/mediatek/common/voicecommand/IVoiceCommandManager;
@@ -46,6 +51,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 156
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$2;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
@@ -54,6 +60,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 157
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$2;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mVoiceCommandManager:Lcom/mediatek/common/voicecommand/IVoiceCommandManager;
@@ -79,6 +86,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 166
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$2;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
@@ -92,18 +100,26 @@
 
     invoke-virtual {v1, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 167
     return-void
 
+    .line 160
     :catch_0
     move-exception v0
 
+    .line 161
+    .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
+    .line 162
+    .end local v0           #e:Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
+    .line 163
+    .local v0, e:Ljava/lang/IllegalAccessException;
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
     goto :goto_0

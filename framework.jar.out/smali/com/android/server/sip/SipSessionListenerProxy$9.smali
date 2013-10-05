@@ -30,7 +30,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/sip/SipSessionListenerProxy;Landroid/net/sip/ISipSession;ILjava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 157
     iput-object p1, p0, Lcom/android/server/sip/SipSessionListenerProxy$9;->this$0:Lcom/android/server/sip/SipSessionListenerProxy;
 
     iput-object p2, p0, Lcom/android/server/sip/SipSessionListenerProxy$9;->val$session:Landroid/net/sip/ISipSession;
@@ -49,6 +55,8 @@
 .method public run()V
     .locals 5
 
+    .prologue
+    .line 160
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipSessionListenerProxy$9;->this$0:Lcom/android/server/sip/SipSessionListenerProxy;
 
@@ -67,12 +75,16 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 164
     :goto_0
     return-void
 
+    .line 161
     :catch_0
     move-exception v0
 
+    .line 162
+    .local v0, t:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/sip/SipSessionListenerProxy$9;->this$0:Lcom/android/server/sip/SipSessionListenerProxy;
 
     const-string/jumbo v2, "onError()"

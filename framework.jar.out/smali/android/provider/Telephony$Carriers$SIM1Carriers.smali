@@ -22,6 +22,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 2547
     const-string v0, "content://telephony/carriers_sim1"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -36,6 +38,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 2546
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

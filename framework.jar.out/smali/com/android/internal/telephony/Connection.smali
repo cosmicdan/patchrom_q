@@ -36,6 +36,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
     const/4 v0, 0x1
 
     sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
@@ -62,12 +63,16 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 23
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 27
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
 
     iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
 
+    .line 259
     return-void
 .end method
 
@@ -79,10 +84,13 @@
 .method public clearUserData()V
     .locals 1
 
+    .prologue
+    .line 276
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
+    .line 277
     return-void
 .end method
 
@@ -95,6 +103,8 @@
 .method public getCnapName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 110
     iget-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
 
     return-object v0
@@ -103,6 +113,8 @@
 .method public getCnapNamePresentation()I
     .locals 1
 
+    .prologue
+    .line 127
     iget v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
 
     return v0
@@ -132,6 +144,8 @@
 .method public getOrigDialString()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 118
     const/4 v0, 0x0
 
     return-object v0
@@ -146,14 +160,20 @@
 .method public getState()Lcom/android/internal/telephony/Call$State;
     .locals 2
 
+    .prologue
+    .line 203
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
 
     move-result-object v0
 
+    .line 205
+    .local v0, c:Lcom/android/internal/telephony/Call;
     if-nez v0, :cond_0
 
+    .line 206
     sget-object v1, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
 
+    .line 208
     :goto_0
     return-object v1
 
@@ -171,6 +191,8 @@
 .method public getUserData()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 236
     iget-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
     return-object v0
@@ -187,6 +209,8 @@
 .method public isAlive()Z
     .locals 1
 
+    .prologue
+    .line 220
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -204,6 +228,8 @@
 .method public isRinging()Z
     .locals 1
 
+    .prologue
+    .line 228
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -234,21 +260,29 @@
 
 .method public setUserData(Ljava/lang/Object;)V
     .locals 0
+    .parameter "userdata"
 
+    .prologue
+    .line 244
     iput-object p1, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
+    .line 245
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 321
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 323
+    .local v0, str:Ljava/lang/StringBuilder;
     sget-object v1, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
 
     const/4 v2, 0x3
@@ -259,6 +293,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 324
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -419,6 +454,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 331
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -496,6 +532,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 334
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

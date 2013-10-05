@@ -42,11 +42,16 @@
 # direct methods
 .method public constructor <init>(C)V
     .locals 0
+    .parameter "delimiter"
 
+    .prologue
+    .line 391
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 392
     iput-char p1, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mDelimiter:C
 
+    .line 393
     return-void
 .end method
 
@@ -55,6 +60,8 @@
 .method public hasNext()Z
     .locals 2
 
+    .prologue
+    .line 410
     iget v0, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mPosition:I
 
     iget v1, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mLength:I
@@ -84,12 +91,16 @@
         }
     .end annotation
 
+    .prologue
+    .line 406
     return-object p0
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 381
     invoke-virtual {p0}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
     move-result-object v0
@@ -100,6 +111,8 @@
 .method public next()Ljava/lang/String;
     .locals 5
 
+    .prologue
+    .line 414
     iget-object v2, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mString:Ljava/lang/String;
 
     iget-char v3, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mDelimiter:C
@@ -110,12 +123,16 @@
 
     move-result v0
 
+    .line 415
+    .local v0, end:I
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
+    .line 416
     iget v0, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mLength:I
 
+    .line 418
     :cond_0
     iget-object v2, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mString:Ljava/lang/String;
 
@@ -125,16 +142,21 @@
 
     move-result-object v1
 
+    .line 419
+    .local v1, nextString:Ljava/lang/String;
     add-int/lit8 v2, v0, 0x1
 
     iput v2, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mPosition:I
 
+    .line 420
     return-object v1
 .end method
 
 .method public remove()V
     .locals 1
 
+    .prologue
+    .line 424
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -144,13 +166,18 @@
 
 .method public setString(Ljava/lang/String;)V
     .locals 1
+    .parameter "string"
 
+    .prologue
+    .line 400
     iput-object p1, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mString:Ljava/lang/String;
 
+    .line 401
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mPosition:I
 
+    .line 402
     iget-object v0, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mString:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -159,5 +186,6 @@
 
     iput v0, p0, Landroid/text/TextUtils$SimpleStringSplitter;->mLength:I
 
+    .line 403
     return-void
 .end method

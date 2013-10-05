@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 2449
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$11;->val$onAnimationEndRunnable:Ljava/lang/Runnable;
@@ -37,10 +41,14 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
+    .parameter "animation"
 
+    .prologue
+    .line 2451
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$11;->val$onAnimationEndRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 2452
     return-void
 .end method

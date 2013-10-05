@@ -25,17 +25,26 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .parameter "name"
 
+    .prologue
+    .line 1564
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1565
     iput-object p1, p0, Landroid/content/SyncManager$AccountSyncStats;->name:Ljava/lang/String;
 
+    .line 1566
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroid/content/SyncManager$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1559
     invoke-direct {p0, p1}, Landroid/content/SyncManager$AccountSyncStats;-><init>(Ljava/lang/String;)V
 
     return-void

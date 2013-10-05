@@ -16,6 +16,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 214
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,6 +26,8 @@
 .method public static getInstance()Landroid/webkit/WebStorage;
     .locals 1
 
+    .prologue
+    .line 203
     invoke-static {}, Landroid/webkit/WebViewFactory;->getProvider()Landroid/webkit/WebViewFactoryProvider;
 
     move-result-object v0
@@ -40,17 +44,23 @@
 .method public deleteAllData()V
     .locals 0
 
+    .prologue
+    .line 195
     return-void
 .end method
 
 .method public deleteOrigin(Ljava/lang/String;)V
     .locals 0
+    .parameter "origin"
 
+    .prologue
+    .line 186
     return-void
 .end method
 
 .method public getOrigins(Landroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,11 +71,16 @@
         }
     .end annotation
 
+    .prologue
+    .line 145
+    .local p1, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/util/Map;>;"
     return-void
 .end method
 
 .method public getQuotaForOrigin(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter "origin"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,11 +92,16 @@
         }
     .end annotation
 
+    .prologue
+    .line 167
+    .local p2, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     return-void
 .end method
 
 .method public getUsageForOrigin(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter "origin"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,11 +113,18 @@
         }
     .end annotation
 
+    .prologue
+    .line 156
+    .local p2, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     return-void
 .end method
 
 .method public setQuotaForOrigin(Ljava/lang/String;J)V
     .locals 0
+    .parameter "origin"
+    .parameter "quota"
 
+    .prologue
+    .line 177
     return-void
 .end method

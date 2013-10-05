@@ -67,25 +67,35 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 15
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
+    .line 16
     const-string v0, "android.os.IPowerManager"
 
     invoke-virtual {p0, p0, v0}, Landroid/os/IPowerManager$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
+    .line 17
     return-void
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
     .locals 2
+    .parameter "obj"
 
+    .prologue
+    .line 24
     if-nez p0, :cond_0
 
+    .line 25
     const/4 v0, 0x0
 
+    .line 31
     :goto_0
     return-object v0
 
+    .line 27
     :cond_0
     const-string v1, "android.os.IPowerManager"
 
@@ -93,19 +103,24 @@
 
     move-result-object v0
 
+    .line 28
+    .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
     instance-of v1, v0, Landroid/os/IPowerManager;
 
     if-eqz v1, :cond_1
 
+    .line 29
     check-cast v0, Landroid/os/IPowerManager;
 
     goto :goto_0
 
+    .line 31
     :cond_1
     new-instance v0, Landroid/os/IPowerManager$Stub$Proxy;
 
+    .end local v0           #iin:Landroid/os/IInterface;
     invoke-direct {v0, p0}, Landroid/os/IPowerManager$Stub$Proxy;-><init>(Landroid/os/IBinder;)V
 
     goto :goto_0
@@ -116,23 +131,32 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
+    .prologue
+    .line 35
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 9
+    .parameter "code"
+    .parameter "data"
+    .parameter "reply"
+    .parameter "flags"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .prologue
     const/4 v6, 0x0
 
     const/4 v7, 0x1
 
+    .line 39
     sparse-switch p1, :sswitch_data_0
 
+    .line 243
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v7
@@ -140,6 +164,7 @@
     :goto_0
     return v7
 
+    .line 43
     :sswitch_0
     const-string v6, "android.os.IPowerManager"
 
@@ -147,29 +172,38 @@
 
     goto :goto_0
 
+    .line 48
     :sswitch_1
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 52
+    .local v0, _arg0:Landroid/os/IBinder;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 54
+    .local v2, _arg1:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
 
+    .line 56
+    .local v3, _arg2:Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     if-eqz v6, :cond_0
 
+    .line 57
     sget-object v6, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -178,52 +212,76 @@
 
     check-cast v4, Landroid/os/WorkSource;
 
+    .line 62
+    .local v4, _arg3:Landroid/os/WorkSource;
     :goto_1
     invoke-virtual {p0, v0, v2, v3, v4}, Landroid/os/IPowerManager$Stub;->acquireWakeLock(Landroid/os/IBinder;ILjava/lang/String;Landroid/os/WorkSource;)V
 
+    .line 63
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
+    .line 60
+    .end local v4           #_arg3:Landroid/os/WorkSource;
     :cond_0
     const/4 v4, 0x0
 
+    .restart local v4       #_arg3:Landroid/os/WorkSource;
     goto :goto_1
 
+    .line 68
+    .end local v0           #_arg0:Landroid/os/IBinder;
+    .end local v2           #_arg1:I
+    .end local v3           #_arg2:Ljava/lang/String;
+    .end local v4           #_arg3:Landroid/os/WorkSource;
     :sswitch_2
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 70
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 72
+    .restart local v0       #_arg0:Landroid/os/IBinder;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 73
+    .restart local v2       #_arg1:I
     invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->releaseWakeLock(Landroid/os/IBinder;I)V
 
+    .line 74
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
+    .line 79
+    .end local v0           #_arg0:Landroid/os/IBinder;
+    .end local v2           #_arg1:I
     :sswitch_3
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 81
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 83
+    .restart local v0       #_arg0:Landroid/os/IBinder;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     if-eqz v6, :cond_1
 
+    .line 84
     sget-object v6, Landroid/os/WorkSource;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v6, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -232,33 +290,48 @@
 
     check-cast v2, Landroid/os/WorkSource;
 
+    .line 89
+    .local v2, _arg1:Landroid/os/WorkSource;
     :goto_2
     invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->updateWakeLockWorkSource(Landroid/os/IBinder;Landroid/os/WorkSource;)V
 
+    .line 90
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
 
+    .line 87
+    .end local v2           #_arg1:Landroid/os/WorkSource;
     :cond_1
     const/4 v2, 0x0
 
+    .restart local v2       #_arg1:Landroid/os/WorkSource;
     goto :goto_2
 
+    .line 95
+    .end local v0           #_arg0:Landroid/os/IBinder;
+    .end local v2           #_arg1:Landroid/os/WorkSource;
     :sswitch_4
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 97
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 98
+    .local v0, _arg0:I
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->isWakeLockLevelSupported(I)Z
 
     move-result v5
 
+    .line 99
+    .local v5, _result:Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 100
     if-eqz v5, :cond_2
 
     move v6, v7
@@ -268,89 +341,129 @@
 
     goto :goto_0
 
+    .line 105
+    .end local v0           #_arg0:I
+    .end local v5           #_result:Z
     :sswitch_5
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 107
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
+    .line 109
+    .local v0, _arg0:J
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 111
+    .local v2, _arg1:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
+    .line 112
+    .local v3, _arg2:I
     invoke-virtual {p0, v0, v1, v2, v3}, Landroid/os/IPowerManager$Stub;->userActivity(JII)V
 
+    .line 113
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 118
+    .end local v0           #_arg0:J
+    .end local v2           #_arg1:I
+    .end local v3           #_arg2:I
     :sswitch_6
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 120
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
+    .line 121
+    .restart local v0       #_arg0:J
     invoke-virtual {p0, v0, v1}, Landroid/os/IPowerManager$Stub;->wakeUp(J)V
 
+    .line 122
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 127
+    .end local v0           #_arg0:J
     :sswitch_7
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 129
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
+    .line 131
+    .restart local v0       #_arg0:J
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 132
+    .restart local v2       #_arg1:I
     invoke-virtual {p0, v0, v1, v2}, Landroid/os/IPowerManager$Stub;->goToSleep(JI)V
 
+    .line 133
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 138
+    .end local v0           #_arg0:J
+    .end local v2           #_arg1:I
     :sswitch_8
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 140
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
+    .line 141
+    .restart local v0       #_arg0:J
     invoke-virtual {p0, v0, v1}, Landroid/os/IPowerManager$Stub;->nap(J)V
 
+    .line 142
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 147
+    .end local v0           #_arg0:J
     :sswitch_9
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 148
     invoke-virtual {p0}, Landroid/os/IPowerManager$Stub;->isScreenOn()Z
 
     move-result v5
 
+    .line 149
+    .restart local v5       #_result:Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
+    .line 150
     if-eqz v5, :cond_3
 
     move v6, v7
@@ -360,11 +473,14 @@
 
     goto/16 :goto_0
 
+    .line 155
+    .end local v5           #_result:Z
     :sswitch_a
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 157
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -373,11 +489,15 @@
 
     move v0, v7
 
+    .line 159
+    .local v0, _arg0:Z
     :goto_3
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 161
+    .local v2, _arg1:Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -386,28 +506,42 @@
 
     move v3, v7
 
+    .line 162
+    .local v3, _arg2:Z
     :goto_4
     invoke-virtual {p0, v0, v2, v3}, Landroid/os/IPowerManager$Stub;->reboot(ZLjava/lang/String;Z)V
 
+    .line 163
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .end local v0           #_arg0:Z
+    .end local v2           #_arg1:Ljava/lang/String;
+    .end local v3           #_arg2:Z
     :cond_4
     move v0, v6
 
+    .line 157
     goto :goto_3
 
+    .restart local v0       #_arg0:Z
+    .restart local v2       #_arg1:Ljava/lang/String;
     :cond_5
     move v3, v6
 
+    .line 161
     goto :goto_4
 
+    .line 168
+    .end local v0           #_arg0:Z
+    .end local v2           #_arg1:Ljava/lang/String;
     :sswitch_b
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 170
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -416,6 +550,8 @@
 
     move v0, v7
 
+    .line 172
+    .restart local v0       #_arg0:Z
     :goto_5
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -425,103 +561,144 @@
 
     move v2, v7
 
+    .line 173
+    .local v2, _arg1:Z
     :goto_6
     invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->shutdown(ZZ)V
 
+    .line 174
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .end local v0           #_arg0:Z
+    .end local v2           #_arg1:Z
     :cond_6
     move v0, v6
 
+    .line 170
     goto :goto_5
 
+    .restart local v0       #_arg0:Z
     :cond_7
     move v2, v6
 
+    .line 172
     goto :goto_6
 
+    .line 179
+    .end local v0           #_arg0:Z
     :sswitch_c
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 181
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 182
+    .local v0, _arg0:Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->crash(Ljava/lang/String;)V
 
+    .line 183
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 188
+    .end local v0           #_arg0:Ljava/lang/String;
     :sswitch_d
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 190
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 191
+    .local v0, _arg0:I
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setStayOnSetting(I)V
 
+    .line 192
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 197
+    .end local v0           #_arg0:I
     :sswitch_e
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 199
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 200
+    .restart local v0       #_arg0:I
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setMaximumScreenOffTimeoutFromDeviceAdmin(I)V
 
+    .line 201
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 206
+    .end local v0           #_arg0:I
     :sswitch_f
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 208
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 209
+    .restart local v0       #_arg0:I
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setTemporaryScreenBrightnessSettingOverride(I)V
 
+    .line 210
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 215
+    .end local v0           #_arg0:I
     :sswitch_10
     const-string v6, "android.os.IPowerManager"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 217
     invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
+    .line 218
+    .local v0, _arg0:F
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(F)V
 
+    .line 219
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .line 224
+    .end local v0           #_arg0:F
     :sswitch_11
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 226
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -530,23 +707,30 @@
 
     move v0, v7
 
+    .line 227
+    .local v0, _arg0:Z
     :goto_7
     invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setBacklightBrightnessOff(Z)V
 
+    .line 228
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .end local v0           #_arg0:Z
     :cond_8
     move v0, v6
 
+    .line 226
     goto :goto_7
 
+    .line 233
     :sswitch_12
     const-string v8, "android.os.IPowerManager"
 
     invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 235
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
@@ -555,22 +739,31 @@
 
     move v0, v7
 
+    .line 237
+    .restart local v0       #_arg0:Z
     :goto_8
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
+    .line 238
+    .local v2, _arg1:I
     invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->setAttentionLight(ZI)V
 
+    .line 239
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
+    .end local v0           #_arg0:Z
+    .end local v2           #_arg1:I
     :cond_9
     move v0, v6
 
+    .line 235
     goto :goto_8
 
+    .line 39
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1

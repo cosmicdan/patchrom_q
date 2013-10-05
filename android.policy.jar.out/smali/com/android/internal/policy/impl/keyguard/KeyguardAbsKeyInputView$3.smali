@@ -21,7 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;JJ)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 180
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -34,6 +39,8 @@
 .method public onFinish()V
     .locals 3
 
+    .prologue
+    .line 191
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
@@ -44,24 +51,31 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(Ljava/lang/CharSequence;Z)V
 
+    .line 192
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->resetState()V
 
+    .line 193
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 7
+    .parameter "millisUntilFinished"
 
+    .prologue
     const/4 v6, 0x1
 
+    .line 184
     const-wide/16 v1, 0x3e8
 
     div-long v1, p1, v1
 
     long-to-int v0, v1
 
+    .line 185
+    .local v0, secondsRemaining:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
@@ -80,5 +94,6 @@
 
     invoke-interface {v1, v2, v6, v3}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ[Ljava/lang/Object;)V
 
+    .line 187
     return-void
 .end method

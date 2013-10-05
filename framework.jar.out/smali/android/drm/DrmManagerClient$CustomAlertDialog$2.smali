@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/drm/DrmManagerClient$CustomAlertDialog;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1069
     iput-object p1, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onShow(Landroid/content/DialogInterface;)V
     .locals 3
+    .parameter "dialog"
 
+    .prologue
+    .line 1071
     iget-object v0, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
     #getter for: Landroid/drm/DrmManagerClient$CustomAlertDialog;->mShowListener:Landroid/content/DialogInterface$OnShowListener;
@@ -46,12 +52,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 1072
     const-string v0, "DrmManagerClient"
 
     const-string v1, "CustomerAlertDialog: execute the original show listener"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1073
     iget-object v0, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
     #getter for: Landroid/drm/DrmManagerClient$CustomAlertDialog;->mShowListener:Landroid/content/DialogInterface$OnShowListener;
@@ -61,6 +69,7 @@
 
     invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnShowListener;->onShow(Landroid/content/DialogInterface;)V
 
+    .line 1076
     :cond_0
     iget-object v0, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
@@ -71,6 +80,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 1077
     iget-object v0, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
     #getter for: Landroid/drm/DrmManagerClient$CustomAlertDialog;->mQueue:Ljava/util/ArrayList;
@@ -80,6 +90,7 @@
 
     monitor-enter v1
 
+    .line 1078
     :try_start_0
     const-string v0, "DrmManagerClient"
 
@@ -87,6 +98,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1079
     iget-object v0, p0, Landroid/drm/DrmManagerClient$CustomAlertDialog$2;->this$0:Landroid/drm/DrmManagerClient$CustomAlertDialog;
 
     #getter for: Landroid/drm/DrmManagerClient$CustomAlertDialog;->mQueue:Ljava/util/ArrayList;
@@ -98,11 +110,14 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1080
     monitor-exit v1
 
+    .line 1082
     :cond_1
     return-void
 
+    .line 1080
     :catchall_0
     move-exception v0
 

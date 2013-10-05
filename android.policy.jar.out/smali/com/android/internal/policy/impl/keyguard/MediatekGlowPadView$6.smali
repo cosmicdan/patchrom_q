@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 947
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,9 +36,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animator"
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 949
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mPointCloud:Lcom/android/internal/policy/impl/keyguard/PointCloud;
@@ -47,6 +53,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PointCloud$WaveManager;->setRadius(F)V
 
+    .line 950
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mPointCloud:Lcom/android/internal/policy/impl/keyguard/PointCloud;
@@ -58,5 +65,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PointCloud$WaveManager;->setAlpha(F)V
 
+    .line 951
     return-void
 .end method

@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 224
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,27 +42,38 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiSsid;
     .locals 5
+    .parameter "in"
 
+    .prologue
+    .line 226
     new-instance v2, Landroid/net/wifi/WifiSsid;
 
     const/4 v3, 0x0
 
     invoke-direct {v2, v3}, Landroid/net/wifi/WifiSsid;-><init>(Landroid/net/wifi/WifiSsid$1;)V
 
+    .line 227
+    .local v2, ssid:Landroid/net/wifi/WifiSsid;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 228
+    .local v1, length:I
     new-array v0, v1, [B
 
+    .line 229
+    .local v0, b:[B
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readByteArray([B)V
 
+    .line 230
     iget-object v3, v2, Landroid/net/wifi/WifiSsid;->octets:Ljava/io/ByteArrayOutputStream;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v0, v4, v1}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
+    .line 231
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
@@ -68,12 +81,16 @@
     #setter for: Landroid/net/wifi/WifiSsid;->SSID:Ljava/lang/String;
     invoke-static {v2, v3}, Landroid/net/wifi/WifiSsid;->access$102(Landroid/net/wifi/WifiSsid;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 232
     return-object v2
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 224
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiSsid$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WifiSsid;
 
     move-result-object v0
@@ -83,7 +100,10 @@
 
 .method public newArray(I)[Landroid/net/wifi/WifiSsid;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 236
     new-array v0, p1, [Landroid/net/wifi/WifiSsid;
 
     return-object v0
@@ -91,7 +111,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 224
     invoke-virtual {p0, p1}, Landroid/net/wifi/WifiSsid$1;->newArray(I)[Landroid/net/wifi/WifiSsid;
 
     move-result-object v0

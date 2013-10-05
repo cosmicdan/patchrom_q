@@ -16,11 +16,16 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/usb/UsbDevice;)V
     .locals 0
+    .parameter "device"
 
+    .prologue
+    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-object p1, p0, Landroid/hardware/usb/UsbDeviceConnection;->mDevice:Landroid/hardware/usb/UsbDevice;
 
+    .line 44
     return-void
 .end method
 
@@ -58,7 +63,13 @@
 # virtual methods
 .method public bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BII)I
     .locals 1
+    .parameter "endpoint"
+    .parameter "buffer"
+    .parameter "length"
+    .parameter "timeout"
 
+    .prologue
+    .line 140
     invoke-virtual {p1}, Landroid/hardware/usb/UsbEndpoint;->getAddress()I
 
     move-result v0
@@ -72,7 +83,11 @@
 
 .method public claimInterface(Landroid/hardware/usb/UsbInterface;Z)Z
     .locals 1
+    .parameter "intf"
+    .parameter "force"
 
+    .prologue
+    .line 92
     invoke-virtual {p1}, Landroid/hardware/usb/UsbInterface;->getId()I
 
     move-result v0
@@ -87,14 +102,26 @@
 .method public close()V
     .locals 0
 
+    .prologue
+    .line 57
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_close()V
 
+    .line 58
     return-void
 .end method
 
 .method public controlTransfer(IIII[BII)I
     .locals 1
+    .parameter "requestType"
+    .parameter "request"
+    .parameter "value"
+    .parameter "index"
+    .parameter "buffer"
+    .parameter "length"
+    .parameter "timeout"
 
+    .prologue
+    .line 125
     invoke-direct/range {p0 .. p7}, Landroid/hardware/usb/UsbDeviceConnection;->native_control_request(IIII[BII)I
 
     move-result v0
@@ -105,6 +132,8 @@
 .method public getFileDescriptor()I
     .locals 1
 
+    .prologue
+    .line 68
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_fd()I
 
     move-result v0
@@ -115,6 +144,8 @@
 .method public getRawDescriptors()[B
     .locals 1
 
+    .prologue
+    .line 79
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_desc()[B
 
     move-result-object v0
@@ -125,6 +156,8 @@
 .method public getSerial()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 168
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_serial()Ljava/lang/String;
 
     move-result-object v0
@@ -134,7 +167,11 @@
 
 .method open(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)Z
     .locals 1
+    .parameter "name"
+    .parameter "pfd"
 
+    .prologue
+    .line 47
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -148,7 +185,10 @@
 
 .method public releaseInterface(Landroid/hardware/usb/UsbInterface;)Z
     .locals 1
+    .parameter "intf"
 
+    .prologue
+    .line 101
     invoke-virtual {p1}, Landroid/hardware/usb/UsbInterface;->getId()I
 
     move-result v0
@@ -163,14 +203,20 @@
 .method public requestWait()Landroid/hardware/usb/UsbRequest;
     .locals 1
 
+    .prologue
+    .line 154
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_request_wait()Landroid/hardware/usb/UsbRequest;
 
     move-result-object v0
 
+    .line 155
+    .local v0, request:Landroid/hardware/usb/UsbRequest;
     if-eqz v0, :cond_0
 
+    .line 156
     invoke-virtual {v0}, Landroid/hardware/usb/UsbRequest;->dequeue()V
 
+    .line 158
     :cond_0
     return-object v0
 .end method

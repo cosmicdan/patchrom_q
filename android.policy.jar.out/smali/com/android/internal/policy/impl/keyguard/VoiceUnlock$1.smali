@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Landroid/content/Context;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 113
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     invoke-direct {p0, p2}, Lcom/mediatek/common/voicecommand/VoiceCommandListener;-><init>(Landroid/content/Context;)V
@@ -33,19 +37,26 @@
 # virtual methods
 .method public onVoiceCommandNotified(IILandroid/os/Bundle;)V
     .locals 10
+    .parameter "mainAction"
+    .parameter "subAction"
+    .parameter "extraData"
 
+    .prologue
     const/4 v9, 0x4
 
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
+    .line 116
     const-string v4, "Result"
 
     invoke-virtual {p3, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v2
 
+    .line 117
+    .local v2, result:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -89,14 +100,18 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 118
     if-ne v2, v8, :cond_2
 
+    .line 119
     packed-switch p2, :pswitch_data_0
 
+    .line 147
     :cond_0
     :goto_0
     return-void
 
+    .line 121
     :pswitch_0
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
@@ -105,6 +120,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 122
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mHandler:Landroid/os/Handler;
@@ -120,6 +136,7 @@
 
     goto :goto_0
 
+    .line 125
     :pswitch_1
     const-string v4, "Result_Info"
 
@@ -127,6 +144,8 @@
 
     move-result v3
 
+    .line 126
+    .local v3, verifyResult:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -150,14 +169,18 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 127
     if-ne v3, v8, :cond_1
 
+    .line 128
     const-string v4, "Reslut_INfo1"
 
     invoke-virtual {p3, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
+    .line 129
+    .local v0, commandId:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -181,6 +204,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 130
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mHandler:Landroid/os/Handler;
@@ -196,6 +220,8 @@
 
     goto :goto_0
 
+    .line 132
+    .end local v0           #commandId:I
     :cond_1
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
@@ -214,6 +240,8 @@
 
     goto :goto_0
 
+    .line 136
+    .end local v3           #verifyResult:I
     :pswitch_2
     const-string v4, "Result_Info"
 
@@ -221,6 +249,8 @@
 
     move-result v1
 
+    .line 137
+    .local v1, intensity:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -244,6 +274,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->log(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->access$000(Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;Ljava/lang/String;)V
 
+    .line 138
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mHandler:Landroid/os/Handler;
@@ -253,6 +284,7 @@
 
     invoke-virtual {v4, v9}, Landroid/os/Handler;->removeMessages(I)V
 
+    .line 139
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mHandler:Landroid/os/Handler;
@@ -268,11 +300,14 @@
 
     goto/16 :goto_0
 
+    .line 144
+    .end local v1           #intensity:I
     :cond_2
     const/16 v4, 0xa
 
     if-ne v2, v4, :cond_0
 
+    .line 145
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock$1;->this$0:Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mHandler:Landroid/os/Handler;
@@ -290,6 +325,7 @@
 
     goto/16 :goto_0
 
+    .line 119
     nop
 
     :pswitch_data_0

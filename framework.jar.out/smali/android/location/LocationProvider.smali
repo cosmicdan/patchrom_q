@@ -22,9 +22,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/android/internal/location/ProviderProperties;)V
     .locals 3
+    .parameter "name"
+    .parameter "properties"
 
+    .prologue
+    .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 60
     const-string v0, "[^a-zA-Z0-9]"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
@@ -33,6 +38,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 61
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,19 +63,27 @@
 
     throw v0
 
+    .line 63
     :cond_0
     iput-object p1, p0, Landroid/location/LocationProvider;->mName:Ljava/lang/String;
 
+    .line 64
     iput-object p2, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
+    .line 65
     return-void
 .end method
 
 .method public static propertiesMeetCriteria(Ljava/lang/String;Lcom/android/internal/location/ProviderProperties;Landroid/location/Criteria;)Z
     .locals 3
+    .parameter "name"
+    .parameter "properties"
+    .parameter "criteria"
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 87
     const-string/jumbo v1, "passive"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -78,13 +92,16 @@
 
     if-eqz v1, :cond_1
 
+    .line 117
     :cond_0
     :goto_0
     return v0
 
+    .line 91
     :cond_1
     if-eqz p1, :cond_0
 
+    .line 97
     invoke-virtual {p2}, Landroid/location/Criteria;->getAccuracy()I
 
     move-result v1
@@ -99,6 +116,7 @@
 
     if-lt v1, v2, :cond_0
 
+    .line 101
     :cond_2
     invoke-virtual {p2}, Landroid/location/Criteria;->getPowerRequirement()I
 
@@ -114,6 +132,7 @@
 
     if-lt v1, v2, :cond_0
 
+    .line 105
     :cond_3
     invoke-virtual {p2}, Landroid/location/Criteria;->isAltitudeRequired()Z
 
@@ -125,6 +144,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 108
     :cond_4
     invoke-virtual {p2}, Landroid/location/Criteria;->isSpeedRequired()Z
 
@@ -136,6 +156,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 111
     :cond_5
     invoke-virtual {p2}, Landroid/location/Criteria;->isBearingRequired()Z
 
@@ -147,6 +168,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 114
     :cond_6
     invoke-virtual {p2}, Landroid/location/Criteria;->isCostAllowed()Z
 
@@ -158,6 +180,7 @@
 
     if-nez v1, :cond_0
 
+    .line 117
     :cond_7
     const/4 v0, 0x1
 
@@ -169,6 +192,8 @@
 .method public getAccuracy()I
     .locals 1
 
+    .prologue
+    .line 203
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget v0, v0, Lcom/android/internal/location/ProviderProperties;->mAccuracy:I
@@ -179,6 +204,8 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 71
     iget-object v0, p0, Landroid/location/LocationProvider;->mName:Ljava/lang/String;
 
     return-object v0
@@ -187,6 +214,8 @@
 .method public getPowerRequirement()I
     .locals 1
 
+    .prologue
+    .line 192
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget v0, v0, Lcom/android/internal/location/ProviderProperties;->mPowerRequirement:I
@@ -197,6 +226,8 @@
 .method public hasMonetaryCost()Z
     .locals 1
 
+    .prologue
+    .line 152
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mHasMonetaryCost:Z
@@ -206,7 +237,10 @@
 
 .method public meetsCriteria(Landroid/location/Criteria;)Z
     .locals 2
+    .parameter "criteria"
 
+    .prologue
+    .line 79
     iget-object v0, p0, Landroid/location/LocationProvider;->mName:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
@@ -221,6 +255,8 @@
 .method public requiresCell()Z
     .locals 1
 
+    .prologue
+    .line 143
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mRequiresCell:Z
@@ -231,6 +267,8 @@
 .method public requiresNetwork()Z
     .locals 1
 
+    .prologue
+    .line 125
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mRequiresNetwork:Z
@@ -241,6 +279,8 @@
 .method public requiresSatellite()Z
     .locals 1
 
+    .prologue
+    .line 134
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mRequiresSatellite:Z
@@ -251,6 +291,8 @@
 .method public supportsAltitude()Z
     .locals 1
 
+    .prologue
+    .line 162
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mSupportsAltitude:Z
@@ -261,6 +303,8 @@
 .method public supportsBearing()Z
     .locals 1
 
+    .prologue
+    .line 182
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mSupportsBearing:Z
@@ -271,6 +315,8 @@
 .method public supportsSpeed()Z
     .locals 1
 
+    .prologue
+    .line 172
     iget-object v0, p0, Landroid/location/LocationProvider;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     iget-boolean v0, v0, Lcom/android/internal/location/ProviderProperties;->mSupportsSpeed:Z

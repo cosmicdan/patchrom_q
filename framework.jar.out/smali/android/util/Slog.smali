@@ -7,16 +7,23 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 29
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 30
     return-void
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)I
     .locals 1
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
     const/4 v0, 0x3
 
+    .line 42
     invoke-static {v0, v0, p0, p1}, Landroid/util/Log;->println_native(IILjava/lang/String;Ljava/lang/String;)I
 
     move-result v0
@@ -26,9 +33,14 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 3
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
     const/4 v2, 0x3
 
+    .line 46
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,7 +76,11 @@
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 73
     const/4 v0, 0x3
 
     const/4 v1, 0x6
@@ -78,7 +94,12 @@
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 77
     const/4 v0, 0x3
 
     const/4 v1, 0x6
@@ -118,7 +139,11 @@
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 51
     const/4 v0, 0x3
 
     const/4 v1, 0x4
@@ -132,7 +157,12 @@
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 55
     const/4 v0, 0x3
 
     const/4 v1, 0x4
@@ -172,7 +202,12 @@
 
 .method public static println(ILjava/lang/String;Ljava/lang/String;)I
     .locals 1
+    .parameter "priority"
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 82
     const/4 v0, 0x3
 
     invoke-static {v0, p0, p1, p2}, Landroid/util/Log;->println_native(IILjava/lang/String;Ljava/lang/String;)I
@@ -184,7 +219,11 @@
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 33
     const/4 v0, 0x3
 
     const/4 v1, 0x2
@@ -198,7 +237,12 @@
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 37
     const/4 v0, 0x3
 
     const/4 v1, 0x2
@@ -238,7 +282,11 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 60
     const/4 v0, 0x3
 
     const/4 v1, 0x5
@@ -252,7 +300,12 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 64
     const/4 v0, 0x3
 
     const/4 v1, 0x5
@@ -292,7 +345,11 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 3
+    .parameter "tag"
+    .parameter "tr"
 
+    .prologue
+    .line 69
     const/4 v0, 0x3
 
     const/4 v1, 0x5

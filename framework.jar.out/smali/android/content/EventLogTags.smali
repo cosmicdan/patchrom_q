@@ -15,6 +15,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +24,14 @@
 
 .method public static writeBinderSample(Ljava/lang/String;IILjava/lang/String;I)V
     .locals 4
+    .parameter "descriptor"
+    .parameter "methodNum"
+    .parameter "time"
+    .parameter "blockingPackage"
+    .parameter "samplePercent"
 
+    .prologue
+    .line 31
     const v0, 0xcb24
 
     const/4 v1, 0x5
@@ -63,12 +72,22 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 32
     return-void
 .end method
 
 .method public static writeContentQuerySample(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 4
+    .parameter "uri"
+    .parameter "projection"
+    .parameter "selection"
+    .parameter "sortorder"
+    .parameter "time"
+    .parameter "blockingPackage"
+    .parameter "samplePercent"
 
+    .prologue
+    .line 23
     const v0, 0xcb22
 
     const/4 v1, 0x7
@@ -113,12 +132,21 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 24
     return-void
 .end method
 
 .method public static writeContentUpdateSample(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 4
+    .parameter "uri"
+    .parameter "operation"
+    .parameter "selection"
+    .parameter "time"
+    .parameter "blockingPackage"
+    .parameter "samplePercent"
 
+    .prologue
+    .line 27
     const v0, 0xcb23
 
     const/4 v1, 0x6
@@ -159,5 +187,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 28
     return-void
 .end method

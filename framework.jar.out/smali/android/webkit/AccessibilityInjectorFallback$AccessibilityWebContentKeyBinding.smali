@@ -49,13 +49,20 @@
 # direct methods
 .method public constructor <init>(J[I)V
     .locals 0
+    .parameter "keyCodeAndModifiers"
+    .parameter "actionSequence"
 
+    .prologue
+    .line 555
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 556
     iput-wide p1, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mKeyCodeAndModifiers:J
 
+    .line 557
     iput-object p3, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
+    .line 558
     return-void
 .end method
 
@@ -63,7 +70,10 @@
 # virtual methods
 .method public getAction(I)I
     .locals 1
+    .parameter "index"
 
+    .prologue
+    .line 519
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     aget v0, v0, p1
@@ -73,7 +83,10 @@
 
 .method public getActionCode(I)I
     .locals 2
+    .parameter "index"
 
+    .prologue
+    .line 526
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     aget v0, v0, p1
@@ -90,6 +103,8 @@
 .method public getActionCount()I
     .locals 1
 
+    .prologue
+    .line 512
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     array-length v0, v0
@@ -99,7 +114,10 @@
 
 .method public getFirstArgument(I)I
     .locals 2
+    .parameter "index"
 
+    .prologue
+    .line 533
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     aget v0, v0, p1
@@ -116,6 +134,8 @@
 .method public getKeyCode()I
     .locals 4
 
+    .prologue
+    .line 498
     iget-wide v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mKeyCodeAndModifiers:J
 
     const-wide v2, 0xffffffffL
@@ -134,6 +154,8 @@
 .method public getModifiers()I
     .locals 4
 
+    .prologue
+    .line 505
     iget-wide v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mKeyCodeAndModifiers:J
 
     const-wide v2, 0xfffffff00000000L
@@ -151,7 +173,10 @@
 
 .method public getSecondArgument(I)I
     .locals 2
+    .parameter "index"
 
+    .prologue
+    .line 540
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     aget v0, v0, p1
@@ -167,7 +192,10 @@
 
 .method public getThirdArgument(I)I
     .locals 1
+    .parameter "index"
 
+    .prologue
+    .line 547
     iget-object v0, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mActionSequence:[I
 
     aget v0, v0, p1
@@ -182,102 +210,127 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 562
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 563
+    .local v0, builder:Ljava/lang/StringBuilder;
     const-string/jumbo v3, "modifiers: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 564
     invoke-virtual {p0}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getModifiers()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 565
     const-string v3, ", keyCode: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 566
     invoke-virtual {p0}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getKeyCode()I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 567
     const-string v3, ", actions["
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 568
     const/4 v2, 0x0
 
+    .local v2, i:I
     invoke-virtual {p0}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getActionCount()I
 
     move-result v1
 
+    .local v1, count:I
     :goto_0
     if-ge v2, v1, :cond_0
 
+    .line 569
     const-string/jumbo v3, "{actionCode"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 570
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 571
     const-string v3, ": "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 572
     invoke-virtual {p0, v2}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getActionCode(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 573
     const-string v3, ", firstArgument: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 574
     invoke-virtual {p0, v2}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getFirstArgument(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 575
     const-string v3, ", secondArgument: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 576
     invoke-virtual {p0, v2}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getSecondArgument(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 577
     const-string v3, ", thirdArgument: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 578
     invoke-virtual {p0, v2}, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->getThirdArgument(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 579
     const-string/jumbo v3, "}"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 568
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 581
     :cond_0
     const-string v3, "]"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 582
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3

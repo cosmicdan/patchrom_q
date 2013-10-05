@@ -43,6 +43,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -53,6 +54,7 @@
 
     const/4 v3, 0x0
 
+    .line 60
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_UNKNOWN"
@@ -61,6 +63,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 61
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_SIM"
@@ -69,6 +72,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_SIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 62
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_USIM"
@@ -77,6 +81,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_USIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 63
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_RUIM"
@@ -85,6 +90,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_RUIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 64
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_CSIM"
@@ -93,6 +99,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_CSIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 65
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     const-string v1, "APPTYPE_ISIM"
@@ -103,6 +110,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_ISIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
+    .line 59
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/internal/telephony/IccCardApplication$AppType;
@@ -140,12 +148,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 59
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -153,7 +165,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/IccCardApplication$AppType;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 59
     const-class v0, Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -168,6 +183,8 @@
 .method public static values()[Lcom/android/internal/telephony/IccCardApplication$AppType;
     .locals 1
 
+    .prologue
+    .line 59
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppType;->$VALUES:[Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/IccCardApplication$AppType;->clone()Ljava/lang/Object;

@@ -32,7 +32,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 216
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$2;->val$intent:Landroid/content/Intent;
@@ -53,6 +60,8 @@
 .method public run()V
     .locals 15
 
+    .prologue
+    .line 220
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -102,6 +111,8 @@
 
     move-result-object v13
 
+    .line 232
+    .local v13, result:Landroid/app/IActivityManager$WaitResult;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->access$200()Z
 
     move-result v0
@@ -174,6 +185,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 240
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$2;->val$onStarted:Ljava/lang/Runnable;
@@ -182,12 +194,17 @@
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 244
+    .end local v13           #result:Landroid/app/IActivityManager$WaitResult;
     :goto_0
     return-void
 
+    .line 235
     :catch_0
     move-exception v12
 
+    .line 236
+    .local v12, e:Landroid/os/RemoteException;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->access$300()Ljava/lang/String;
 
     move-result-object v0
@@ -198,9 +215,14 @@
 
     goto :goto_0
 
+    .line 241
+    .end local v12           #e:Landroid/os/RemoteException;
+    .restart local v13       #result:Landroid/app/IActivityManager$WaitResult;
     :catch_1
     move-exception v14
 
+    .line 242
+    .local v14, t:Ljava/lang/Throwable;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->access$300()Ljava/lang/String;
 
     move-result-object v0

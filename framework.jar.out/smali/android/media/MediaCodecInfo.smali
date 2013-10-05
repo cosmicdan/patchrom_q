@@ -19,11 +19,16 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
+    .parameter "index"
 
+    .prologue
+    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 23
     iput p1, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
+    .line 24
     return-void
 .end method
 
@@ -31,7 +36,10 @@
 # virtual methods
 .method public final getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
     .locals 1
+    .parameter "type"
 
+    .prologue
+    .line 211
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0, p1}, Landroid/media/MediaCodecList;->getCodecCapabilities(ILjava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
@@ -44,6 +52,8 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 30
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->getCodecName(I)Ljava/lang/String;
@@ -56,6 +66,8 @@
 .method public final getSupportedTypes()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 44
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->getSupportedTypes(I)[Ljava/lang/String;
@@ -68,6 +80,8 @@
 .method public final isEncoder()Z
     .locals 1
 
+    .prologue
+    .line 37
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->isEncoder(I)Z

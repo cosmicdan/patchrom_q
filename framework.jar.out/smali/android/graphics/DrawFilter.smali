@@ -11,6 +11,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,6 +31,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 32
     :try_start_0
     iget v0, p0, Landroid/graphics/DrawFilter;->mNativeInt:I
 
@@ -36,10 +40,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 34
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 36
     return-void
 
+    .line 34
     :catchall_0
     move-exception v0
 

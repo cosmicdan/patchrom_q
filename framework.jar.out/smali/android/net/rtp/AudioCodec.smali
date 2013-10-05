@@ -29,12 +29,14 @@
 .method static constructor <clinit>()V
     .locals 6
 
+    .prologue
     const/4 v5, 0x3
 
     const/4 v4, 0x0
 
     const/4 v3, 0x0
 
+    .line 56
     new-instance v0, Landroid/net/rtp/AudioCodec;
 
     const-string v1, "PCMU/8000"
@@ -43,6 +45,7 @@
 
     sput-object v0, Landroid/net/rtp/AudioCodec;->PCMU:Landroid/net/rtp/AudioCodec;
 
+    .line 61
     new-instance v0, Landroid/net/rtp/AudioCodec;
 
     const/16 v1, 0x8
@@ -53,6 +56,7 @@
 
     sput-object v0, Landroid/net/rtp/AudioCodec;->PCMA:Landroid/net/rtp/AudioCodec;
 
+    .line 67
     new-instance v0, Landroid/net/rtp/AudioCodec;
 
     const-string v1, "GSM/8000"
@@ -61,6 +65,7 @@
 
     sput-object v0, Landroid/net/rtp/AudioCodec;->GSM:Landroid/net/rtp/AudioCodec;
 
+    .line 73
     new-instance v0, Landroid/net/rtp/AudioCodec;
 
     const/16 v1, 0x60
@@ -71,6 +76,7 @@
 
     sput-object v0, Landroid/net/rtp/AudioCodec;->GSM_EFR:Landroid/net/rtp/AudioCodec;
 
+    .line 80
     new-instance v0, Landroid/net/rtp/AudioCodec;
 
     const/16 v1, 0x61
@@ -81,6 +87,7 @@
 
     sput-object v0, Landroid/net/rtp/AudioCodec;->AMR:Landroid/net/rtp/AudioCodec;
 
+    .line 82
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/net/rtp/AudioCodec;
@@ -118,38 +125,57 @@
 
 .method private constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .parameter "type"
+    .parameter "rtpmap"
+    .parameter "fmtp"
 
+    .prologue
+    .line 84
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 85
     iput p1, p0, Landroid/net/rtp/AudioCodec;->type:I
 
+    .line 86
     iput-object p2, p0, Landroid/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
 
+    .line 87
     iput-object p3, p0, Landroid/net/rtp/AudioCodec;->fmtp:Ljava/lang/String;
 
+    .line 88
     return-void
 .end method
 
 .method public static getCodec(ILjava/lang/String;Ljava/lang/String;)Landroid/net/rtp/AudioCodec;
     .locals 9
+    .parameter "type"
+    .parameter "rtpmap"
+    .parameter "fmtp"
 
+    .prologue
     const/4 v7, 0x0
 
+    .line 108
     if-ltz p0, :cond_0
 
     const/16 v8, 0x7f
 
     if-le p0, v8, :cond_1
 
+    .line 144
     :cond_0
     :goto_0
     return-object v7
 
+    .line 112
     :cond_1
     const/4 v4, 0x0
 
+    .line 113
+    .local v4, hint:Landroid/net/rtp/AudioCodec;
     if-eqz p1, :cond_6
 
+    .line 114
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v8
@@ -158,17 +184,24 @@
 
     move-result-object v2
 
+    .line 115
+    .local v2, clue:Ljava/lang/String;
     sget-object v0, Landroid/net/rtp/AudioCodec;->sCodecs:[Landroid/net/rtp/AudioCodec;
 
+    .local v0, arr$:[Landroid/net/rtp/AudioCodec;
     array-length v6, v0
 
+    .local v6, len$:I
     const/4 v5, 0x0
 
+    .local v5, i$:I
     :goto_1
     if-ge v5, v6, :cond_3
 
     aget-object v3, v0, v5
 
+    .line 116
+    .local v3, codec:Landroid/net/rtp/AudioCodec;
     iget-object v8, v3, Landroid/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -177,6 +210,7 @@
 
     if-eqz v8, :cond_5
 
+    .line 117
     iget-object v8, v3, Landroid/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
 
     invoke-virtual {v8}, Ljava/lang/String;->length()I
@@ -187,6 +221,8 @@
 
     move-result-object v1
 
+    .line 118
+    .local v1, channels:Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v8
@@ -201,23 +237,35 @@
 
     if-eqz v8, :cond_3
 
+    .line 119
     :cond_2
     move-object v4, v3
 
+    .line 134
+    .end local v0           #arr$:[Landroid/net/rtp/AudioCodec;
+    .end local v1           #channels:Ljava/lang/String;
+    .end local v2           #clue:Ljava/lang/String;
+    .end local v3           #codec:Landroid/net/rtp/AudioCodec;
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_3
     :goto_2
     if-eqz v4, :cond_0
 
+    .line 137
     sget-object v8, Landroid/net/rtp/AudioCodec;->AMR:Landroid/net/rtp/AudioCodec;
 
     if-ne v4, v8, :cond_4
 
     if-eqz p2, :cond_4
 
+    .line 138
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 139
+    .restart local v2       #clue:Ljava/lang/String;
     const-string v8, "crc=1"
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -242,6 +290,8 @@
 
     if-nez v8, :cond_0
 
+    .line 144
+    .end local v2           #clue:Ljava/lang/String;
     :cond_4
     new-instance v7, Landroid/net/rtp/AudioCodec;
 
@@ -249,37 +299,59 @@
 
     goto :goto_0
 
+    .line 115
+    .restart local v0       #arr$:[Landroid/net/rtp/AudioCodec;
+    .restart local v2       #clue:Ljava/lang/String;
+    .restart local v3       #codec:Landroid/net/rtp/AudioCodec;
+    .restart local v5       #i$:I
+    .restart local v6       #len$:I
     :cond_5
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
+    .line 124
+    .end local v0           #arr$:[Landroid/net/rtp/AudioCodec;
+    .end local v2           #clue:Ljava/lang/String;
+    .end local v3           #codec:Landroid/net/rtp/AudioCodec;
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_6
     const/16 v8, 0x60
 
     if-ge p0, v8, :cond_3
 
+    .line 125
     sget-object v0, Landroid/net/rtp/AudioCodec;->sCodecs:[Landroid/net/rtp/AudioCodec;
 
+    .restart local v0       #arr$:[Landroid/net/rtp/AudioCodec;
     array-length v6, v0
 
+    .restart local v6       #len$:I
     const/4 v5, 0x0
 
+    .restart local v5       #i$:I
     :goto_3
     if-ge v5, v6, :cond_3
 
     aget-object v3, v0, v5
 
+    .line 126
+    .restart local v3       #codec:Landroid/net/rtp/AudioCodec;
     iget v8, v3, Landroid/net/rtp/AudioCodec;->type:I
 
     if-ne p0, v8, :cond_7
 
+    .line 127
     move-object v4, v3
 
+    .line 128
     iget-object p1, v3, Landroid/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
 
+    .line 129
     goto :goto_2
 
+    .line 125
     :cond_7
     add-int/lit8 v5, v5, 0x1
 
@@ -289,6 +361,8 @@
 .method public static getCodecs()[Landroid/net/rtp/AudioCodec;
     .locals 2
 
+    .prologue
+    .line 94
     sget-object v0, Landroid/net/rtp/AudioCodec;->sCodecs:[Landroid/net/rtp/AudioCodec;
 
     sget-object v1, Landroid/net/rtp/AudioCodec;->sCodecs:[Landroid/net/rtp/AudioCodec;

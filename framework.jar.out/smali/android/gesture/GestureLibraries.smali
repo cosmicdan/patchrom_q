@@ -16,14 +16,20 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     return-void
 .end method
 
 .method public static fromFile(Ljava/io/File;)Landroid/gesture/GestureLibrary;
     .locals 1
+    .parameter "path"
 
+    .prologue
+    .line 40
     new-instance v0, Landroid/gesture/GestureLibraries$FileGestureLibrary;
 
     invoke-direct {v0, p0}, Landroid/gesture/GestureLibraries$FileGestureLibrary;-><init>(Ljava/io/File;)V
@@ -33,7 +39,10 @@
 
 .method public static fromFile(Ljava/lang/String;)Landroid/gesture/GestureLibrary;
     .locals 1
+    .parameter "path"
 
+    .prologue
+    .line 36
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -47,7 +56,11 @@
 
 .method public static fromPrivateFile(Landroid/content/Context;Ljava/lang/String;)Landroid/gesture/GestureLibrary;
     .locals 1
+    .parameter "context"
+    .parameter "name"
 
+    .prologue
+    .line 44
     invoke-virtual {p0, p1}, Landroid/content/Context;->getFileStreamPath(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
@@ -61,7 +74,11 @@
 
 .method public static fromRawResource(Landroid/content/Context;I)Landroid/gesture/GestureLibrary;
     .locals 1
+    .parameter "context"
+    .parameter "resourceId"
 
+    .prologue
+    .line 48
     new-instance v0, Landroid/gesture/GestureLibraries$ResourceGestureLibrary;
 
     invoke-direct {v0, p0, p1}, Landroid/gesture/GestureLibraries$ResourceGestureLibrary;-><init>(Landroid/content/Context;I)V

@@ -32,21 +32,27 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/widget/DigitalClock;)V
     .locals 1
+    .parameter "clock"
 
+    .prologue
+    .line 74
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
+    .line 75
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
 
+    .line 76
     invoke-virtual {p1}, Lcom/android/internal/widget/DigitalClock;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
 
+    .line 77
     return-void
 .end method
 
@@ -54,7 +60,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 82
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -65,6 +75,8 @@
 
     move-result v1
 
+    .line 84
+    .local v1, timezoneChanged:Z
     iget-object v2, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -73,8 +85,11 @@
 
     check-cast v0, Lcom/android/internal/widget/DigitalClock;
 
+    .line 85
+    .local v0, clock:Lcom/android/internal/widget/DigitalClock;
     if-eqz v0, :cond_0
 
+    .line 86
     #getter for: Lcom/android/internal/widget/DigitalClock;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$100(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
 
@@ -86,9 +101,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 101
     :goto_0
     return-void
 
+    .line 96
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
@@ -99,6 +116,7 @@
 
     goto :goto_0
 
+    .line 97
     :catch_0
     move-exception v2
 

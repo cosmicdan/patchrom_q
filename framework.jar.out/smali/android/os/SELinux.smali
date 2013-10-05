@@ -11,6 +11,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,12 +50,15 @@
 
 .method public static restorecon(Ljava/io/File;)Z
     .locals 4
+    .parameter "file"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NullPointerException;
         }
     .end annotation
 
+    .prologue
+    .line 169
     :try_start_0
     invoke-virtual {p0}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
 
@@ -65,12 +70,16 @@
 
     move-result v1
 
+    .line 173
     :goto_0
     return v1
 
+    .line 170
     :catch_0
     move-exception v0
 
+    .line 171
+    .local v0, e:Ljava/io/IOException;
     const-string v1, "SELinux"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -97,6 +106,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 173
     const/4 v1, 0x0
 
     goto :goto_0
@@ -104,12 +114,15 @@
 
 .method public static restorecon(Ljava/lang/String;)Z
     .locals 1
+    .parameter "pathname"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NullPointerException;
         }
     .end annotation
 
+    .prologue
+    .line 140
     if-nez p0, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -118,6 +131,7 @@
 
     throw v0
 
+    .line 141
     :cond_0
     invoke-static {p0}, Landroid/os/SELinux;->native_restorecon(Ljava/lang/String;)Z
 

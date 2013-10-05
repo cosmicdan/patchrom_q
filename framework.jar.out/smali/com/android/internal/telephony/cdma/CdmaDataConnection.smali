@@ -10,15 +10,29 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
     .locals 0
+    .parameter "phone"
+    .parameter "name"
+    .parameter "id"
+    .parameter "rm"
+    .parameter "dct"
 
+    .prologue
+    .line 46
     invoke-direct/range {p0 .. p5}, Lcom/android/internal/telephony/DataConnection;-><init>(Lcom/android/internal/telephony/PhoneBase;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
+    .line 47
     return-void
 .end method
 
 .method static makeDataConnection(Lcom/android/internal/telephony/cdma/CDMAPhone;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)Lcom/android/internal/telephony/cdma/CdmaDataConnection;
     .locals 6
+    .parameter "phone"
+    .parameter "id"
+    .parameter "rm"
+    .parameter "dct"
 
+    .prologue
+    .line 59
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -55,8 +69,11 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
+    .line 61
+    .local v0, cdmaDc:Lcom/android/internal/telephony/cdma/CdmaDataConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->start()V
 
+    .line 62
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -81,6 +98,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 63
     return-object v0
 .end method
 
@@ -88,23 +106,33 @@
 # virtual methods
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 1
+    .parameter "fd"
+    .parameter "pw"
+    .parameter "args"
 
+    .prologue
+    .line 125
     const-string v0, "CdmaDataConnection extends:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 126
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/DataConnection;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    .line 127
     return-void
 .end method
 
 .method protected isDnsOk([Ljava/lang/String;)Z
     .locals 4
+    .parameter "domainNameServers"
 
+    .prologue
     const/4 v1, 0x1
 
     const/4 v0, 0x0
 
+    .line 109
     const-string v2, "0.0.0.0"
 
     aget-object v3, p1, v0
@@ -133,6 +161,7 @@
 
     if-nez v2, :cond_0
 
+    .line 114
     :goto_0
     return v0
 
@@ -144,7 +173,10 @@
 
 .method protected log(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 120
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -181,12 +213,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 121
     return-void
 .end method
 
 .method protected logd(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 132
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -225,12 +261,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 136
     return-void
 .end method
 
 .method protected loge(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 156
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -269,12 +309,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 160
     return-void
 .end method
 
 .method protected logi(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 140
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -313,12 +357,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 144
     return-void
 .end method
 
 .method protected logw(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 148
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -357,34 +405,43 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 152
     return-void
 .end method
 
 .method protected onConnect(Lcom/android/internal/telephony/DataConnection$ConnectionParams;)V
     .locals 10
+    .parameter "cp"
 
+    .prologue
     const-wide/16 v4, -0x1
 
     const/4 v3, 0x0
 
     const/4 v2, 0x0
 
+    .line 75
     const-string v0, "CdmaDataConnection Connecting..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 77
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
+    .line 78
     iput-wide v4, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->createTime:J
 
+    .line 79
     iput-wide v4, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->lastFailTime:J
 
+    .line 80
     sget-object v0, Lcom/android/internal/telephony/DataConnection$FailCause;->NONE:Lcom/android/internal/telephony/DataConnection$FailCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->lastFailCause:Lcom/android/internal/telephony/DataConnection$FailCause;
 
+    .line 82
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v0, :cond_0
@@ -419,12 +476,16 @@
 
     if-eqz v0, :cond_0
 
+    .line 84
     const-string v0, "CdmaDataConnection using DUN"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 85
     const/4 v9, 0x1
 
+    .line 91
+    .local v9, dataProfile:I
     :goto_0
     const v0, 0x40001
 
@@ -432,8 +493,11 @@
 
     move-result-object v8
 
+    .line 92
+    .local v8, msg:Landroid/os/Message;
     iput-object p1, v8, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 93
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -464,17 +528,24 @@
 
     invoke-interface/range {v0 .. v8}, Lcom/android/internal/telephony/CommandsInterface;->setupDataCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
+    .line 99
     return-void
 
+    .line 87
+    .end local v8           #msg:Landroid/os/Message;
+    .end local v9           #dataProfile:I
     :cond_0
     const/4 v9, 0x0
 
+    .restart local v9       #dataProfile:I
     goto :goto_0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 103
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

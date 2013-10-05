@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/content/SyncManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 309
     iput-object p1, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,25 +36,35 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/16 v3, -0x2710
 
+    .line 312
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 313
+    .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.extra.user_handle"
 
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
+    .line 314
+    .local v1, userId:I
     if-ne v1, v3, :cond_1
 
+    .line 323
     :cond_0
     :goto_0
     return-void
 
+    .line 316
     :cond_1
     const-string v2, "android.intent.action.USER_REMOVED"
 
@@ -61,6 +74,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 317
     iget-object v2, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     #calls: Landroid/content/SyncManager;->onUserRemoved(I)V
@@ -68,6 +82,7 @@
 
     goto :goto_0
 
+    .line 318
     :cond_2
     const-string v2, "android.intent.action.USER_STARTING"
 
@@ -77,6 +92,7 @@
 
     if-eqz v2, :cond_3
 
+    .line 319
     iget-object v2, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     #calls: Landroid/content/SyncManager;->onUserStarting(I)V
@@ -84,6 +100,7 @@
 
     goto :goto_0
 
+    .line 320
     :cond_3
     const-string v2, "android.intent.action.USER_STOPPING"
 
@@ -93,6 +110,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 321
     iget-object v2, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     #calls: Landroid/content/SyncManager;->onUserStopping(I)V

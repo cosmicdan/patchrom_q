@@ -44,10 +44,13 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
+    .line 72
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/PluginManager;->mInstance:Landroid/webkit/PluginManager;
 
+    .line 132
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/content/pm/Signature;
@@ -79,47 +82,67 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .parameter "context"
 
+    .prologue
+    .line 137
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 138
     iput-object p1, p0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
 
+    .line 139
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/PluginManager;->mPackageInfoCache:Ljava/util/ArrayList;
 
+    .line 140
     return-void
 .end method
 
 .method private static containsPluginPermissionAndSignatures(Landroid/content/pm/PackageInfo;)Z
     .locals 12
+    .parameter "pkgInfo"
 
+    .prologue
     const/4 v10, 0x0
 
+    .line 283
     iget-object v5, p0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
+    .line 284
+    .local v5, permissions:[Ljava/lang/String;
     if-nez v5, :cond_1
 
+    .line 318
     :cond_0
     :goto_0
     return v10
 
+    .line 287
     :cond_1
     const/4 v4, 0x0
 
+    .line 288
+    .local v4, permissionOk:Z
     move-object v0, v5
 
+    .local v0, arr$:[Ljava/lang/String;
     array-length v3, v0
 
+    .local v3, len$:I
     const/4 v2, 0x0
 
+    .local v2, i$:I
     :goto_1
     if-ge v2, v3, :cond_2
 
     aget-object v6, v0, v2
 
+    .line 289
+    .local v6, permit:Ljava/lang/String;
     const-string v11, "android.webkit.permission.PLUGIN"
 
     invoke-virtual {v11, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -128,15 +151,22 @@
 
     if-eqz v11, :cond_4
 
+    .line 290
     const/4 v4, 0x1
 
+    .line 294
+    .end local v6           #permit:Ljava/lang/String;
     :cond_2
     if-eqz v4, :cond_0
 
+    .line 299
     iget-object v9, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
+    .line 300
+    .local v9, signatures:[Landroid/content/pm/Signature;
     if-eqz v9, :cond_0
 
+    .line 303
     const-string/jumbo v11, "ro.secure"
 
     invoke-static {v11, v10}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -145,10 +175,14 @@
 
     if-eqz v11, :cond_7
 
+    .line 304
     const/4 v8, 0x0
 
+    .line 305
+    .local v8, signatureMatch:Z
     move-object v0, v9
 
+    .local v0, arr$:[Landroid/content/pm/Signature;
     array-length v3, v0
 
     const/4 v2, 0x0
@@ -158,8 +192,11 @@
 
     aget-object v7, v0, v2
 
+    .line 306
+    .local v7, signature:Landroid/content/pm/Signature;
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_3
     sget-object v11, Landroid/webkit/PluginManager;->SIGNATURES:[Landroid/content/pm/Signature;
 
@@ -167,6 +204,7 @@
 
     if-ge v1, v11, :cond_3
 
+    .line 307
     sget-object v11, Landroid/webkit/PluginManager;->SIGNATURES:[Landroid/content/pm/Signature;
 
     aget-object v11, v11, v1
@@ -177,26 +215,48 @@
 
     if-eqz v11, :cond_5
 
+    .line 308
     const/4 v8, 0x1
 
+    .line 305
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
+    .line 288
+    .end local v1           #i:I
+    .end local v7           #signature:Landroid/content/pm/Signature;
+    .end local v8           #signatureMatch:Z
+    .end local v9           #signatures:[Landroid/content/pm/Signature;
+    .local v0, arr$:[Ljava/lang/String;
+    .restart local v6       #permit:Ljava/lang/String;
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 306
+    .end local v6           #permit:Ljava/lang/String;
+    .local v0, arr$:[Landroid/content/pm/Signature;
+    .restart local v1       #i:I
+    .restart local v7       #signature:Landroid/content/pm/Signature;
+    .restart local v8       #signatureMatch:Z
+    .restart local v9       #signatures:[Landroid/content/pm/Signature;
     :cond_5
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
+    .line 313
+    .end local v1           #i:I
+    .end local v7           #signature:Landroid/content/pm/Signature;
     :cond_6
     if-eqz v8, :cond_0
 
+    .line 318
+    .end local v0           #arr$:[Landroid/content/pm/Signature;
+    .end local v8           #signatureMatch:Z
     :cond_7
     const/4 v10, 0x1
 
@@ -205,7 +265,10 @@
 
 .method public static declared-synchronized getInstance(Landroid/content/Context;)Landroid/webkit/PluginManager;
     .locals 3
+    .parameter "context"
 
+    .prologue
+    .line 143
     const-class v1, Landroid/webkit/PluginManager;
 
     monitor-enter v1
@@ -215,8 +278,10 @@
 
     if-nez v0, :cond_1
 
+    .line 144
     if-nez p0, :cond_0
 
+    .line 145
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v2, "First call to PluginManager need a valid context."
@@ -227,6 +292,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 143
     :catchall_0
     move-exception v0
 
@@ -234,6 +300,7 @@
 
     throw v0
 
+    .line 148
     :cond_0
     :try_start_1
     new-instance v0, Landroid/webkit/PluginManager;
@@ -246,6 +313,7 @@
 
     sput-object v0, Landroid/webkit/PluginManager;->mInstance:Landroid/webkit/PluginManager;
 
+    .line 150
     :cond_1
     sget-object v0, Landroid/webkit/PluginManager;->mInstance:Landroid/webkit/PluginManager;
     :try_end_1
@@ -260,13 +328,18 @@
 # virtual methods
 .method containsPluginPermissionAndSignatures(Ljava/lang/String;)Z
     .locals 6
+    .parameter "pluginAPKName"
 
+    .prologue
+    .line 265
     iget-object v3, p0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
+    .line 269
+    .local v2, pm:Landroid/content/pm/PackageManager;
     const/16 v3, 0x1040
 
     :try_start_0
@@ -274,20 +347,28 @@
 
     move-result-object v1
 
+    .line 271
+    .local v1, pkgInfo:Landroid/content/pm/PackageInfo;
     if-eqz v1, :cond_0
 
+    .line 272
     invoke-static {v1}, Landroid/webkit/PluginManager;->containsPluginPermissionAndSignatures(Landroid/content/pm/PackageInfo;)Z
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v3
 
+    .line 277
+    .end local v1           #pkgInfo:Landroid/content/pm/PackageInfo;
     :goto_0
     return v3
 
+    .line 274
     :catch_0
     move-exception v0
 
+    .line 275
+    .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v3, "webkit/PluginManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -310,6 +391,8 @@
 
     invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 277
+    .end local v0           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_0
     const/4 v3, 0x0
 
@@ -318,6 +401,8 @@
 
 .method getPluginClass(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Class;
     .locals 4
+    .parameter "packageName"
+    .parameter "className"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -336,6 +421,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 349
     iget-object v2, p0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
 
     const/4 v3, 0x3
@@ -344,10 +431,14 @@
 
     move-result-object v1
 
+    .line 352
+    .local v1, pluginContext:Landroid/content/Context;
     invoke-virtual {v1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
+    .line 353
+    .local v0, pluginCL:Ljava/lang/ClassLoader;
     invoke-virtual {v0, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
@@ -358,10 +449,14 @@
 .method getPluginDirectories()[Ljava/lang/String;
     .locals 21
 
+    .prologue
+    .line 168
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
+    .line 169
+    .local v6, directories:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
@@ -372,6 +467,8 @@
 
     move-result-object v14
 
+    .line 170
+    .local v14, pm:Landroid/content/pm/PackageManager;
     new-instance v17, Landroid/content/Intent;
 
     const-string v18, "android.webkit.PLUGIN"
@@ -388,6 +485,8 @@
 
     move-result-object v13
 
+    .line 173
+    .local v13, plugins:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/webkit/PluginManager;->mPackageInfoCache:Ljava/util/ArrayList;
@@ -396,6 +495,7 @@
 
     monitor-enter v18
 
+    .line 176
     :try_start_0
     move-object/from16 v0, p0
 
@@ -405,10 +505,12 @@
 
     invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->clear()V
 
+    .line 178
     invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
 
+    .local v9, i$:Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
@@ -423,10 +525,15 @@
 
     check-cast v10, Landroid/content/pm/ResolveInfo;
 
+    .line 181
+    .local v10, info:Landroid/content/pm/ResolveInfo;
     iget-object v15, v10, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
+    .line 182
+    .local v15, serviceInfo:Landroid/content/pm/ServiceInfo;
     if-nez v15, :cond_1
 
+    .line 183
     const-string/jumbo v17, "webkit/PluginManager"
 
     const-string v19, "Ignore bad plugin"
@@ -439,6 +546,10 @@
 
     goto :goto_0
 
+    .line 258
+    .end local v9           #i$:Ljava/util/Iterator;
+    .end local v10           #info:Landroid/content/pm/ResolveInfo;
+    .end local v15           #serviceInfo:Landroid/content/pm/ServiceInfo;
     :catchall_0
     move-exception v17
 
@@ -448,6 +559,10 @@
 
     throw v17
 
+    .line 190
+    .restart local v9       #i$:Ljava/util/Iterator;
+    .restart local v10       #info:Landroid/content/pm/ResolveInfo;
+    .restart local v15       #serviceInfo:Landroid/content/pm/ServiceInfo;
     :cond_1
     :try_start_1
     iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
@@ -467,8 +582,11 @@
 
     move-result-object v11
 
+    .line 197
+    .local v11, pkgInfo:Landroid/content/pm/PackageInfo;
     if-eqz v11, :cond_0
 
+    .line 207
     :try_start_2
     new-instance v17, Ljava/lang/StringBuilder;
 
@@ -506,6 +624,8 @@
 
     move-result-object v7
 
+    .line 208
+    .local v7, directory:Ljava/lang/String;
     iget-object v0, v11, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v17, v0
@@ -514,8 +634,12 @@
 
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
+    .line 209
+    .local v3, appFlags:I
     const/16 v16, 0x81
 
+    .line 212
+    .local v16, updatedSystemFlags:I
     and-int/lit16 v0, v3, 0x81
 
     move/from16 v17, v0
@@ -528,6 +652,7 @@
 
     if-ne v0, v1, :cond_2
 
+    .line 213
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
@@ -558,6 +683,7 @@
 
     move-result-object v7
 
+    .line 218
     :cond_2
     invoke-static {v11}, Landroid/webkit/PluginManager;->containsPluginPermissionAndSignatures(Landroid/content/pm/PackageInfo;)Z
 
@@ -565,12 +691,14 @@
 
     if-eqz v17, :cond_0
 
+    .line 223
     iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     move-object/from16 v17, v0
 
     if-nez v17, :cond_3
 
+    .line 224
     const-string/jumbo v17, "webkit/PluginManager"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -609,9 +737,16 @@
 
     goto/16 :goto_0
 
+    .line 193
+    .end local v3           #appFlags:I
+    .end local v7           #directory:Ljava/lang/String;
+    .end local v11           #pkgInfo:Landroid/content/pm/PackageInfo;
+    .end local v16           #updatedSystemFlags:I
     :catch_0
     move-exception v8
 
+    .line 194
+    .local v8, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string/jumbo v17, "webkit/PluginManager"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -644,6 +779,12 @@
 
     goto/16 :goto_0
 
+    .line 228
+    .end local v8           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    .restart local v3       #appFlags:I
+    .restart local v7       #directory:Ljava/lang/String;
+    .restart local v11       #pkgInfo:Landroid/content/pm/PackageInfo;
+    .restart local v16       #updatedSystemFlags:I
     :cond_3
     iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
@@ -659,6 +800,8 @@
 
     move-result-object v12
 
+    .line 229
+    .local v12, pluginType:Ljava/lang/String;
     const-string/jumbo v17, "native"
 
     move-object/from16 v0, v17
@@ -669,6 +812,7 @@
 
     if-nez v17, :cond_4
 
+    .line 230
     const-string/jumbo v17, "webkit/PluginManager"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -701,6 +845,7 @@
 
     goto/16 :goto_0
 
+    .line 235
     :cond_4
     :try_start_3
     iget-object v0, v15, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
@@ -721,10 +866,15 @@
 
     move-result-object v5
 
+    .line 238
+    .local v5, cls:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const/4 v4, 0x1
 
+    .line 240
+    .local v4, classFound:Z
     if-nez v4, :cond_5
 
+    .line 241
     const-string/jumbo v17, "webkit/PluginManager"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -767,9 +917,14 @@
 
     goto/16 :goto_0
 
+    .line 246
+    .end local v4           #classFound:Z
+    .end local v5           #cls:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :catch_1
     move-exception v8
 
+    .line 247
+    .restart local v8       #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :try_start_4
     const-string/jumbo v17, "webkit/PluginManager"
 
@@ -803,9 +958,13 @@
 
     goto/16 :goto_0
 
+    .line 249
+    .end local v8           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_2
     move-exception v8
 
+    .line 250
+    .local v8, e:Ljava/lang/ClassNotFoundException;
     const-string/jumbo v17, "webkit/PluginManager"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -838,6 +997,10 @@
 
     goto/16 :goto_0
 
+    .line 255
+    .end local v8           #e:Ljava/lang/ClassNotFoundException;
+    .restart local v4       #classFound:Z
+    .restart local v5       #cls:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_5
     move-object/from16 v0, p0
 
@@ -849,15 +1012,27 @@
 
     invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 256
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
+    .line 258
+    .end local v3           #appFlags:I
+    .end local v4           #classFound:Z
+    .end local v5           #cls:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
+    .end local v7           #directory:Ljava/lang/String;
+    .end local v10           #info:Landroid/content/pm/ResolveInfo;
+    .end local v11           #pkgInfo:Landroid/content/pm/PackageInfo;
+    .end local v12           #pluginType:Ljava/lang/String;
+    .end local v15           #serviceInfo:Landroid/content/pm/ServiceInfo;
+    .end local v16           #updatedSystemFlags:I
     :cond_6
     monitor-exit v18
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
+    .line 260
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v17
@@ -882,6 +1057,8 @@
 .method getPluginSharedDataDirectory()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 343
     iget-object v0, p0, Landroid/webkit/PluginManager;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "plugins"
@@ -901,9 +1078,12 @@
 
 .method getPluginsAPKName(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
+    .parameter "pluginLib"
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 325
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -912,15 +1092,18 @@
 
     if-nez v3, :cond_1
 
+    .line 339
     :cond_0
     :goto_0
     return-object v2
 
+    .line 330
     :cond_1
     iget-object v3, p0, Landroid/webkit/PluginManager;->mPackageInfoCache:Ljava/util/ArrayList;
 
     monitor-enter v3
 
+    .line 331
     :try_start_0
     iget-object v4, p0, Landroid/webkit/PluginManager;->mPackageInfoCache:Ljava/util/ArrayList;
 
@@ -928,6 +1111,7 @@
 
     move-result-object v0
 
+    .local v0, i$:Ljava/util/Iterator;
     :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -941,6 +1125,8 @@
 
     check-cast v1, Landroid/content/pm/PackageInfo;
 
+    .line 332
+    .local v1, pkgInfo:Landroid/content/pm/PackageInfo;
     iget-object v4, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -949,12 +1135,16 @@
 
     if-eqz v4, :cond_2
 
+    .line 333
     iget-object v2, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     monitor-exit v3
 
     goto :goto_0
 
+    .line 336
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #pkgInfo:Landroid/content/pm/PackageInfo;
     :catchall_0
     move-exception v2
 
@@ -964,6 +1154,7 @@
 
     throw v2
 
+    .restart local v0       #i$:Ljava/util/Iterator;
     :cond_3
     :try_start_1
     monitor-exit v3
@@ -975,7 +1166,10 @@
 
 .method public refreshPlugins(Z)V
     .locals 3
+    .parameter "reloadOpenPages"
 
+    .prologue
+    .line 161
     sget-object v0, Landroid/webkit/BrowserFrame;->sJavaBridge:Landroid/webkit/JWebCoreJavaBridge;
 
     const/16 v1, 0x64
@@ -990,5 +1184,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    .line 164
     return-void
 .end method

@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Landroid/os/Handler;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 705
     iput-object p1, p0, Landroid/os/Handler$MessengerImpl;->this$0:Landroid/os/Handler;
 
     invoke-direct {p0}, Landroid/os/IMessenger$Stub;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Landroid/os/Handler;Landroid/os/Handler$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 705
     invoke-direct {p0, p1}, Landroid/os/Handler$MessengerImpl;-><init>(Landroid/os/Handler;)V
 
     return-void
@@ -41,10 +48,14 @@
 # virtual methods
 .method public send(Landroid/os/Message;)V
     .locals 1
+    .parameter "msg"
 
+    .prologue
+    .line 707
     iget-object v0, p0, Landroid/os/Handler$MessengerImpl;->this$0:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 708
     return-void
 .end method

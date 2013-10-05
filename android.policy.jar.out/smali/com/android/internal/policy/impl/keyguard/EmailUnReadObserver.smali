@@ -64,6 +64,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 18
     const-string v0, "content://com.android.email.provider"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -72,6 +74,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->EMAIL_CONTENT_URI:Landroid/net/Uri;
 
+    .line 19
     const-string v0, "content://com.android.email.notifier"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -80,6 +83,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->EMAIL_NOTIFIER_CONTENT_URI:Landroid/net/Uri;
 
+    .line 20
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -106,6 +110,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->EMAIL_MESSAGE_CONTENT_URI:Landroid/net/Uri;
 
+    .line 96
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -123,9 +128,15 @@
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
     .locals 9
+    .parameter "handler"
+    .parameter "newEventView"
+    .parameter "createTime"
 
+    .prologue
+    .line 102
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/keyguard/UnReadObserver;-><init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
 
+    .line 104
     invoke-virtual {p2}, Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -150,12 +161,15 @@
 
     iput-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->mLatestIdOnLock:J
 
+    .line 106
     return-void
 .end method
 
 .method static synthetic access$000()Landroid/net/Uri;
     .locals 1
 
+    .prologue
+    .line 12
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->EMAIL_MESSAGE_CONTENT_URI:Landroid/net/Uri;
 
     return-object v0
@@ -164,6 +178,8 @@
 .method static synthetic access$100()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 12
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->CONTENT_PROJECTION:[Ljava/lang/String;
 
     return-object v0
@@ -171,7 +187,10 @@
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;)J
     .locals 2
+    .parameter "x0"
 
+    .prologue
+    .line 12
     iget-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;->mLatestIdOnLock:J
 
     return-wide v0
@@ -179,7 +198,17 @@
 
 .method private static getFirstRowColumn(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;IJ)J
     .locals 7
+    .parameter "context"
+    .parameter "uri"
+    .parameter "projection"
+    .parameter "selection"
+    .parameter "selectionArgs"
+    .parameter "sortOrder"
+    .parameter "column"
+    .parameter "defaultValue"
 
+    .prologue
+    .line 144
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -198,8 +227,11 @@
 
     move-result-object v6
 
+    .line 146
+    .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
+    .line 148
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -207,18 +239,24 @@
 
     if-eqz v0, :cond_1
 
+    .line 149
     invoke-interface {v6, p6}, Landroid/database/Cursor;->getLong(I)J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide p7
 
+    .line 152
+    .end local p7
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    .line 155
     :cond_0
     :goto_0
     return-wide p7
 
+    .line 152
+    .restart local p7
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
@@ -237,8 +275,10 @@
 .method public refreshUnReadNumber()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 109
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;-><init>(Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver;)V
@@ -261,5 +301,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/EmailUnReadObserver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 135
     return-void
 .end method

@@ -21,6 +21,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 802
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,7 +30,10 @@
 
 .method synthetic constructor <init>(Landroid/opengl/GLSurfaceView$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 802
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView$DefaultWindowSurfaceFactory;-><init>()V
 
     return-void
@@ -38,9 +43,17 @@
 # virtual methods
 .method public createWindowSurface(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLSurface;
     .locals 4
+    .parameter "egl"
+    .parameter "display"
+    .parameter "config"
+    .parameter "nativeWindow"
 
+    .prologue
+    .line 806
     const/4 v1, 0x0
 
+    .line 808
+    .local v1, result:Ljavax/microedition/khronos/egl/EGLSurface;
     const/4 v2, 0x0
 
     :try_start_0
@@ -50,12 +63,16 @@
 
     move-result-object v1
 
+    .line 818
     :goto_0
     return-object v1
 
+    .line 809
     :catch_0
     move-exception v0
 
+    .line 816
+    .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v2, "GLSurfaceView"
 
     const-string v3, "eglCreateWindowSurface"
@@ -67,8 +84,14 @@
 
 .method public destroySurface(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)V
     .locals 0
+    .parameter "egl"
+    .parameter "display"
+    .parameter "surface"
 
+    .prologue
+    .line 823
     invoke-interface {p1, p2, p3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
+    .line 824
     return-void
 .end method

@@ -7,8 +7,11 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 25
     return-void
 .end method
 
@@ -17,7 +20,12 @@
 
 .method private part2(DILjava/lang/String;)I
     .locals 4
+    .parameter "doubleArg"
+    .parameter "fromArray"
+    .parameter "stringArg"
 
+    .prologue
+    .line 39
     sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -56,10 +64,13 @@
 
     invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
+    .line 41
     invoke-static {p4}, Landroid/debug/JNITest;->part3(Ljava/lang/String;)I
 
     move-result v0
 
+    .line 43
+    .local v0, result:I
     add-int/lit8 v1, v0, 0x6
 
     return v1
@@ -72,13 +83,19 @@
 # virtual methods
 .method public test(IDLjava/lang/String;)I
     .locals 6
+    .parameter "intArg"
+    .parameter "doubleArg"
+    .parameter "stringArg"
 
+    .prologue
+    .line 28
     const/4 v0, 0x4
 
     new-array v5, v0, [I
 
     fill-array-data v5, :array_0
 
+    .local v5, intArray:[I
     move-object v0, p0
 
     move v1, p1
@@ -87,12 +104,14 @@
 
     move-object v4, p4
 
+    .line 30
     invoke-direct/range {v0 .. v5}, Landroid/debug/JNITest;->part1(IDLjava/lang/String;[I)I
 
     move-result v0
 
     return v0
 
+    .line 28
     nop
 
     :array_0

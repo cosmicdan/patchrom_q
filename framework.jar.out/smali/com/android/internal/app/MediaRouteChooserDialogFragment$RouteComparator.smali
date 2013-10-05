@@ -34,7 +34,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/MediaRouteChooserDialogFragment;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 631
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteComparator;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +49,11 @@
 # virtual methods
 .method public compare(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteInfo;)I
     .locals 2
+    .parameter "lhs"
+    .parameter "rhs"
 
+    .prologue
+    .line 634
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteComparator;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->getActivity()Landroid/app/Activity;
@@ -84,11 +91,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 631
     check-cast p1, Landroid/media/MediaRouter$RouteInfo;
 
+    .end local p1
     check-cast p2, Landroid/media/MediaRouter$RouteInfo;
 
+    .end local p2
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteComparator;->compare(Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteInfo;)I
 
     move-result v0

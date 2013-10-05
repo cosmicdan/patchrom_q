@@ -28,6 +28,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 123
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,14 +39,24 @@
 # virtual methods
 .method public set(IIJI)V
     .locals 0
+    .parameter "newOffset"
+    .parameter "newSize"
+    .parameter "newTimeUs"
+    .parameter "newFlags"
 
+    .prologue
+    .line 126
     iput p1, p0, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
+    .line 127
     iput p2, p0, Landroid/media/MediaCodec$BufferInfo;->size:I
 
+    .line 128
     iput-wide p3, p0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
+    .line 129
     iput p5, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
+    .line 130
     return-void
 .end method

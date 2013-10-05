@@ -32,6 +32,8 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter "name"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,17 +44,27 @@
         }
     .end annotation
 
+    .prologue
+    .line 61
+    .local p0, this:Landroid/util/Property;,"Landroid/util/Property<TT;TV;>;"
+    .local p1, type:Ljava/lang/Class;,"Ljava/lang/Class<TV;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 62
     iput-object p2, p0, Landroid/util/Property;->mName:Ljava/lang/String;
 
+    .line 63
     iput-object p1, p0, Landroid/util/Property;->mType:Ljava/lang/Class;
 
+    .line 64
     return-void
 .end method
 
 .method public static of(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Landroid/util/Property;
     .locals 1
+    .parameter
+    .parameter
+    .parameter "name"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -71,6 +83,10 @@
         }
     .end annotation
 
+    .prologue
+    .line 55
+    .local p0, hostType:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
+    .local p1, valueType:Ljava/lang/Class;,"Ljava/lang/Class<TV;>;"
     new-instance v0, Landroid/util/ReflectiveProperty;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/util/ReflectiveProperty;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)V
@@ -91,6 +107,9 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 97
+    .local p0, this:Landroid/util/Property;,"Landroid/util/Property<TT;TV;>;"
     iget-object v0, p0, Landroid/util/Property;->mName:Ljava/lang/String;
 
     return-object v0
@@ -106,6 +125,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 104
+    .local p0, this:Landroid/util/Property;,"Landroid/util/Property<TT;TV;>;"
     iget-object v0, p0, Landroid/util/Property;->mType:Ljava/lang/Class;
 
     return-object v0
@@ -114,6 +136,9 @@
 .method public isReadOnly()Z
     .locals 1
 
+    .prologue
+    .line 76
+    .local p0, this:Landroid/util/Property;,"Landroid/util/Property<TT;TV;>;"
     const/4 v0, 0x0
 
     return v0
@@ -121,12 +146,19 @@
 
 .method public set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 3
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TV;)V"
         }
     .end annotation
 
+    .prologue
+    .line 85
+    .local p0, this:Landroid/util/Property;,"Landroid/util/Property<TT;TV;>;"
+    .local p1, object:Ljava/lang/Object;,"TT;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;

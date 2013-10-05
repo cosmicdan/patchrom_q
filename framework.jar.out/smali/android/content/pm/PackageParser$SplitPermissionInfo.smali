@@ -25,14 +25,23 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[Ljava/lang/String;I)V
     .locals 0
+    .parameter "rootPerm"
+    .parameter "newPerms"
+    .parameter "targetSdk"
 
+    .prologue
+    .line 99
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 100
     iput-object p1, p0, Landroid/content/pm/PackageParser$SplitPermissionInfo;->rootPerm:Ljava/lang/String;
 
+    .line 101
     iput-object p2, p0, Landroid/content/pm/PackageParser$SplitPermissionInfo;->newPerms:[Ljava/lang/String;
 
+    .line 102
     iput p3, p0, Landroid/content/pm/PackageParser$SplitPermissionInfo;->targetSdk:I
 
+    .line 103
     return-void
 .end method

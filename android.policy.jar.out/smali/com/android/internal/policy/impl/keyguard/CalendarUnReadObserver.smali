@@ -19,14 +19,17 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
     const/4 v2, 0x1
 
+    .line 17
     sget-object v0, Landroid/provider/CalendarContract$CalendarAlerts;->CONTENT_URI:Landroid/net/Uri;
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver;->CALENDAR_URL:Landroid/net/Uri;
 
+    .line 21
     new-array v0, v2, [Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -37,6 +40,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver;->ACTIVE_ALERTS_SELECTION_ARGS:[Ljava/lang/String;
 
+    .line 23
     const/16 v0, 0xc
 
     new-array v0, v0, [Ljava/lang/String;
@@ -116,15 +120,23 @@
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
     .locals 0
+    .parameter "handler"
+    .parameter "newEventView"
+    .parameter "createTime"
 
+    .prologue
+    .line 39
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/keyguard/UnReadObserver;-><init>(Landroid/os/Handler;Lcom/android/internal/policy/impl/keyguard/LockScreenNewEventView;J)V
 
+    .line 40
     return-void
 .end method
 
 .method static synthetic access$000()[Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 13
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver;->ACTIVE_ALERTS_SELECTION_ARGS:[Ljava/lang/String;
 
     return-object v0
@@ -135,8 +147,10 @@
 .method public refreshUnReadNumber()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 43
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver$1;-><init>(Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver;)V
@@ -159,5 +173,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/CalendarUnReadObserver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 67
     return-void
 .end method

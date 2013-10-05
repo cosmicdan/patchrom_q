@@ -613,14 +613,19 @@
 .method static constructor <clinit>()V
     .locals 0
 
+    .prologue
+    .line 330
     invoke-static {}, Landroid/opengl/GLES20;->_nativeClassInit()V
 
+    .line 331
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1204,7 +1209,15 @@
 
 .method public static glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
     .locals 7
+    .parameter "indx"
+    .parameter "size"
+    .parameter "type"
+    .parameter "normalized"
+    .parameter "stride"
+    .parameter "ptr"
 
+    .prologue
+    .line 1963
     invoke-virtual {p5}, Ljava/nio/Buffer;->remaining()I
 
     move-result v6
@@ -1223,6 +1236,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/opengl/GLES20;->glVertexAttribPointerBounds(IIIZILjava/nio/Buffer;I)V
 
+    .line 1972
     return-void
 .end method
 

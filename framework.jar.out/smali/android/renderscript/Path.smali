@@ -26,23 +26,42 @@
 # direct methods
 .method constructor <init>(ILandroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;F)V
     .locals 0
+    .parameter "id"
+    .parameter "rs"
+    .parameter "p"
+    .parameter "vtx"
+    .parameter "loop"
+    .parameter "q"
 
+    .prologue
+    .line 45
     invoke-direct {p0, p1, p2}, Landroid/renderscript/BaseObj;-><init>(ILandroid/renderscript/RenderScript;)V
 
+    .line 46
     iput-object p4, p0, Landroid/renderscript/Path;->mVertexBuffer:Landroid/renderscript/Allocation;
 
+    .line 47
     iput-object p5, p0, Landroid/renderscript/Path;->mLoopBuffer:Landroid/renderscript/Allocation;
 
+    .line 48
     iput-object p3, p0, Landroid/renderscript/Path;->mPrimitive:Landroid/renderscript/Path$Primitive;
 
+    .line 49
     iput p6, p0, Landroid/renderscript/Path;->mQuality:F
 
+    .line 50
     return-void
 .end method
 
 .method public static createDynamicPath(Landroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;FLandroid/renderscript/Allocation;)Landroid/renderscript/Path;
     .locals 1
+    .parameter "rs"
+    .parameter "p"
+    .parameter "quality"
+    .parameter "vtx"
 
+    .prologue
+    .line 80
     const/4 v0, 0x0
 
     return-object v0
@@ -50,7 +69,14 @@
 
 .method public static createDynamicPath(Landroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;FLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)Landroid/renderscript/Path;
     .locals 1
+    .parameter "rs"
+    .parameter "p"
+    .parameter "quality"
+    .parameter "vtx"
+    .parameter "loops"
 
+    .prologue
+    .line 84
     const/4 v0, 0x0
 
     return-object v0
@@ -58,11 +84,17 @@
 
 .method public static createStaticPath(Landroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;FLandroid/renderscript/Allocation;)Landroid/renderscript/Path;
     .locals 7
+    .parameter "rs"
+    .parameter "p"
+    .parameter "quality"
+    .parameter "vtx"
 
+    .prologue
     const/4 v6, 0x0
 
     const/4 v2, 0x0
 
+    .line 70
     iget v1, p1, Landroid/renderscript/Path$Primitive;->mID:I
 
     invoke-virtual {p3, p0}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
@@ -79,6 +111,8 @@
 
     move-result v1
 
+    .line 71
+    .local v1, id:I
     new-instance v0, Landroid/renderscript/Path;
 
     move-object v2, p0
@@ -93,12 +127,21 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/renderscript/Path;-><init>(ILandroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;F)V
 
+    .line 72
+    .local v0, newPath:Landroid/renderscript/Path;
     return-object v0
 .end method
 
 .method public static createStaticPath(Landroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;FLandroid/renderscript/Allocation;Landroid/renderscript/Allocation;)Landroid/renderscript/Path;
     .locals 1
+    .parameter "rs"
+    .parameter "p"
+    .parameter "quality"
+    .parameter "vtx"
+    .parameter "loops"
 
+    .prologue
+    .line 76
     const/4 v0, 0x0
 
     return-object v0
@@ -109,6 +152,8 @@
 .method public getLoopAllocation()Landroid/renderscript/Allocation;
     .locals 1
 
+    .prologue
+    .line 57
     iget-object v0, p0, Landroid/renderscript/Path;->mLoopBuffer:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -117,6 +162,8 @@
 .method public getPrimitive()Landroid/renderscript/Path$Primitive;
     .locals 1
 
+    .prologue
+    .line 61
     iget-object v0, p0, Landroid/renderscript/Path;->mPrimitive:Landroid/renderscript/Path$Primitive;
 
     return-object v0
@@ -125,6 +172,8 @@
 .method public getVertexAllocation()Landroid/renderscript/Allocation;
     .locals 1
 
+    .prologue
+    .line 53
     iget-object v0, p0, Landroid/renderscript/Path;->mVertexBuffer:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -133,5 +182,7 @@
 .method updateFromNative()V
     .locals 0
 
+    .prologue
+    .line 66
     return-void
 .end method

@@ -15,6 +15,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 40
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -27,14 +29,19 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     return-void
 .end method
 
 .method public static getDefaultJournalMode()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 74
     const-string v0, "debug.sqlite.journalmode"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -57,15 +64,19 @@
 .method public static getDefaultPageSize()I
     .locals 3
 
+    .prologue
+    .line 62
     sget-object v1, Landroid/database/sqlite/SQLiteGlobal;->sLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 63
     :try_start_0
     sget v0, Landroid/database/sqlite/SQLiteGlobal;->sDefaultPageSize:I
 
     if-nez v0, :cond_0
 
+    .line 64
     new-instance v0, Landroid/os/StatFs;
 
     const-string v2, "/data"
@@ -78,6 +89,7 @@
 
     sput v0, Landroid/database/sqlite/SQLiteGlobal;->sDefaultPageSize:I
 
+    .line 66
     :cond_0
     const-string v0, "debug.sqlite.pagesize"
 
@@ -91,6 +103,7 @@
 
     return v0
 
+    .line 67
     :catchall_0
     move-exception v0
 
@@ -104,6 +117,8 @@
 .method public static getDefaultSyncMode()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 92
     const-string v0, "debug.sqlite.syncmode"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -126,6 +141,8 @@
 .method public static getJournalSizeLimit()I
     .locals 3
 
+    .prologue
+    .line 83
     const-string v0, "debug.sqlite.journalsizelimit"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -148,6 +165,8 @@
 .method public static getWALAutoCheckpoint()I
     .locals 4
 
+    .prologue
+    .line 110
     const-string v1, "debug.sqlite.wal.autocheckpoint"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -164,6 +183,8 @@
 
     move-result v0
 
+    .line 113
+    .local v0, value:I
     const/4 v1, 0x1
 
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
@@ -176,6 +197,8 @@
 .method public static getWALConnectionPoolSize()I
     .locals 4
 
+    .prologue
+    .line 120
     const-string v1, "debug.sqlite.wal.poolsize"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -192,6 +215,8 @@
 
     move-result v0
 
+    .line 123
+    .local v0, value:I
     const/4 v1, 0x2
 
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
@@ -204,6 +229,8 @@
 .method public static getWALSyncMode()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 101
     const-string v0, "debug.sqlite.wal.syncmode"
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -229,6 +256,8 @@
 .method public static releaseMemory()I
     .locals 1
 
+    .prologue
+    .line 55
     invoke-static {}, Landroid/database/sqlite/SQLiteGlobal;->nativeReleaseMemory()I
 
     move-result v0

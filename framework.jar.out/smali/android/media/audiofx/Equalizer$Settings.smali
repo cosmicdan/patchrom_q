@@ -26,42 +26,57 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 459
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 456
     const/4 v0, 0x0
 
     iput-short v0, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
+    .line 457
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/audiofx/Equalizer$Settings;->bandLevels:[S
 
+    .line 460
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 8
+    .parameter "settings"
 
+    .prologue
+    .line 467
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 456
     const/4 v5, 0x0
 
     iput-short v5, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
+    .line 457
     const/4 v5, 0x0
 
     iput-object v5, p0, Landroid/media/audiofx/Equalizer$Settings;->bandLevels:[S
 
+    .line 468
     new-instance v3, Ljava/util/StringTokenizer;
 
     const-string v5, "=;"
 
     invoke-direct {v3, p1, v5}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 469
+    .local v3, st:Ljava/util/StringTokenizer;
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
     move-result v4
 
+    .line 470
+    .local v4, tokens:I
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
     move-result v5
@@ -70,6 +85,7 @@
 
     if-ge v5, v6, :cond_0
 
+    .line 471
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -94,11 +110,14 @@
 
     throw v5
 
+    .line 473
     :cond_0
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 474
+    .local v1, key:Ljava/lang/String;
     const-string v5, "Equalizer"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -107,6 +126,7 @@
 
     if-nez v5, :cond_1
 
+    .line 475
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -131,12 +151,14 @@
 
     throw v5
 
+    .line 479
     :cond_1
     :try_start_0
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 480
     const-string v5, "curPreset"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -145,6 +167,7 @@
 
     if-nez v5, :cond_2
 
+    .line 481
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -171,9 +194,12 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 500
     :catch_0
     move-exception v2
 
+    .line 501
+    .local v2, nfe:Ljava/lang/NumberFormatException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -198,6 +224,8 @@
 
     throw v5
 
+    .line 483
+    .end local v2           #nfe:Ljava/lang/NumberFormatException;
     :cond_2
     :try_start_1
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
@@ -210,10 +238,12 @@
 
     iput-short v5, p0, Landroid/media/audiofx/Equalizer$Settings;->curPreset:S
 
+    .line 484
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 485
     const-string/jumbo v5, "numBands"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -222,6 +252,7 @@
 
     if-nez v5, :cond_3
 
+    .line 486
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -246,6 +277,7 @@
 
     throw v5
 
+    .line 488
     :cond_3
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
@@ -257,6 +289,7 @@
 
     iput-short v5, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
+    .line 489
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->countTokens()I
 
     move-result v5
@@ -267,6 +300,7 @@
 
     if-eq v5, v6, :cond_4
 
+    .line 490
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -291,6 +325,7 @@
 
     throw v5
 
+    .line 492
     :cond_4
     iget-short v5, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
@@ -298,17 +333,21 @@
 
     iput-object v5, p0, Landroid/media/audiofx/Equalizer$Settings;->bandLevels:[S
 
+    .line 493
     const/4 v0, 0x0
 
+    .local v0, i:I
     :goto_0
     iget-short v5, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
     if-ge v0, v5, :cond_6
 
+    .line 494
     invoke-virtual {v3}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 495
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -341,6 +380,7 @@
 
     if-nez v5, :cond_5
 
+    .line 496
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -365,6 +405,7 @@
 
     throw v5
 
+    .line 498
     :cond_5
     iget-object v5, p0, Landroid/media/audiofx/Equalizer$Settings;->bandLevels:[S
 
@@ -380,10 +421,12 @@
     :try_end_1
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 493
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 503
     :cond_6
     return-void
 .end method
@@ -393,6 +436,8 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 508
     new-instance v1, Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -437,13 +482,17 @@
 
     invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
+    .line 513
+    .local v1, str:Ljava/lang/String;
     const/4 v0, 0x0
 
+    .local v0, i:I
     :goto_0
     iget-short v2, p0, Landroid/media/audiofx/Equalizer$Settings;->numBands:S
 
     if-ge v0, v2, :cond_0
 
+    .line 514
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -486,10 +535,12 @@
 
     move-result-object v1
 
+    .line 513
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 516
     :cond_0
     return-object v1
 .end method

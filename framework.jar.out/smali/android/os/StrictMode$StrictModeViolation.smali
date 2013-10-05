@@ -17,8 +17,14 @@
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
     .locals 0
+    .parameter "policyState"
+    .parameter "policyViolated"
+    .parameter "message"
 
+    .prologue
+    .line 799
     invoke-direct {p0, p1, p2, p3}, Ldalvik/system/BlockGuard$BlockGuardPolicyException;-><init>(IILjava/lang/String;)V
 
+    .line 800
     return-void
 .end method

@@ -27,6 +27,8 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .prologue
+    .line 4493
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "data"
@@ -43,6 +45,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 4487
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,13 +54,17 @@
 
 .method public static getContactLookupUri(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;
     .locals 11
+    .parameter "resolver"
+    .parameter "dataUri"
 
+    .prologue
     const/4 v4, 0x1
 
     const/4 v1, 0x0
 
     const/4 v3, 0x0
 
+    .line 4514
     const/4 v0, 0x2
 
     new-array v2, v0, [Ljava/lang/String;
@@ -81,8 +89,12 @@
 
     move-result-object v8
 
+    .line 4518
+    .local v8, cursor:Landroid/database/Cursor;
     const/4 v10, 0x0
 
+    .line 4520
+    .local v10, lookupUri:Landroid/net/Uri;
     if-eqz v8, :cond_1
 
     :try_start_0
@@ -92,32 +104,44 @@
 
     if-eqz v0, :cond_1
 
+    .line 4521
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
 
+    .line 4522
+    .local v6, contactId:J
     const/4 v0, 0x1
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
+    .line 4523
+    .local v9, lookupKey:Ljava/lang/String;
     invoke-static {v6, v7, v9}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v10
 
+    .line 4526
+    .end local v10           #lookupUri:Landroid/net/Uri;
     if-eqz v8, :cond_0
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
+    .line 4528
+    .end local v6           #contactId:J
+    .end local v9           #lookupKey:Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v10
 
+    .line 4526
+    .restart local v10       #lookupUri:Landroid/net/Uri;
     :cond_1
     if-eqz v8, :cond_0
 

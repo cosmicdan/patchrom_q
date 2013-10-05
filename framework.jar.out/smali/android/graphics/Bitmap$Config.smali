@@ -48,6 +48,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -58,6 +59,7 @@
 
     const/4 v3, 0x2
 
+    .line 291
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ALPHA_8"
@@ -66,6 +68,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
+    .line 307
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "RGB_565"
@@ -74,6 +77,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
+    .line 324
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ARGB_4444"
@@ -84,6 +88,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
+    .line 335
     new-instance v0, Landroid/graphics/Bitmap$Config;
 
     const-string v1, "ARGB_8888"
@@ -94,6 +99,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
+    .line 282
     new-array v0, v7, [Landroid/graphics/Bitmap$Config;
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
@@ -114,6 +120,7 @@
 
     sput-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
+    .line 340
     const/4 v0, 0x7
 
     new-array v0, v0, [Landroid/graphics/Bitmap$Config;
@@ -157,22 +164,32 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "ni"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 344
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 345
     iput p3, p0, Landroid/graphics/Bitmap$Config;->nativeInt:I
 
+    .line 346
     return-void
 .end method
 
 .method static nativeToConfig(I)Landroid/graphics/Bitmap$Config;
     .locals 1
+    .parameter "ni"
 
+    .prologue
+    .line 349
     sget-object v0, Landroid/graphics/Bitmap$Config;->sConfigs:[Landroid/graphics/Bitmap$Config;
 
     aget-object v0, v0, p0
@@ -182,7 +199,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 282
     const-class v0, Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -197,6 +217,8 @@
 .method public static values()[Landroid/graphics/Bitmap$Config;
     .locals 1
 
+    .prologue
+    .line 282
     sget-object v0, Landroid/graphics/Bitmap$Config;->$VALUES:[Landroid/graphics/Bitmap$Config;
 
     invoke-virtual {v0}, [Landroid/graphics/Bitmap$Config;->clone()Ljava/lang/Object;

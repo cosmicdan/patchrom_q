@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 23
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -14,6 +16,7 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -22,20 +25,27 @@
         }
     .end annotation
 
+    .prologue
+    .line 34
+    .local p0, reference:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
+    .line 35
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
+    .line 37
     :cond_0
     return-object p0
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
+    .parameter
+    .parameter "errorMessage"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -46,8 +56,12 @@
         }
     .end annotation
 
+    .prologue
+    .line 51
+    .local p0, reference:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
+    .line 52
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -58,21 +72,27 @@
 
     throw v0
 
+    .line 54
     :cond_0
     return-object p0
 .end method
 
 .method public static checkState(Z)V
     .locals 1
+    .parameter "expression"
 
+    .prologue
+    .line 65
     if-nez p0, :cond_0
 
+    .line 66
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
+    .line 68
     :cond_0
     return-void
 .end method

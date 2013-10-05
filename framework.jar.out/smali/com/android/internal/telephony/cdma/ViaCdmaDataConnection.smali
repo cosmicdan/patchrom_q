@@ -14,19 +14,31 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
     .locals 0
+    .parameter "phone"
+    .parameter "name"
+    .parameter "id"
+    .parameter "rm"
+    .parameter "dct"
 
+    .prologue
+    .line 48
     invoke-direct/range {p0 .. p5}, Lcom/android/internal/telephony/DataConnection;-><init>(Lcom/android/internal/telephony/PhoneBase;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
+    .line 49
     return-void
 .end method
 
 .method private isIpAddress(Ljava/lang/String;)Z
     .locals 1
+    .parameter "address"
 
+    .prologue
+    .line 196
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
+    .line 198
     :goto_0
     return v0
 
@@ -46,11 +58,18 @@
 
 .method static makeDataConnection(Lcom/android/internal/telephony/cdma/CDMAPhone;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;
     .locals 6
+    .parameter "phone"
+    .parameter "id"
+    .parameter "rm"
+    .parameter "dct"
 
+    .prologue
+    .line 60
     sget-object v2, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mCountLock:Ljava/lang/Object;
 
     monitor-enter v2
 
+    .line 61
     :try_start_0
     sget v1, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mCount:I
 
@@ -58,10 +77,12 @@
 
     sput v1, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mCount:I
 
+    .line 62
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 63
     new-instance v0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,8 +115,11 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
+    .line 65
+    .local v0, cdmaDc:Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->start()V
 
+    .line 66
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -120,8 +144,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 67
     return-object v0
 
+    .line 62
+    .end local v0           #cdmaDc:Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;
     :catchall_0
     move-exception v1
 
@@ -135,7 +162,11 @@
 
 .method private setHttpProxy(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "httpProxy"
+    .parameter "httpPort"
 
+    .prologue
+    .line 182
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -144,6 +175,7 @@
 
     if-nez v0, :cond_1
 
+    .line 183
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -153,9 +185,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 193
     :goto_0
     return-void
 
+    .line 187
     :cond_1
     if-eqz p2, :cond_2
 
@@ -165,9 +199,11 @@
 
     if-nez v0, :cond_3
 
+    .line 188
     :cond_2
     const-string p2, "8080"
 
+    .line 191
     :cond_3
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -217,18 +253,24 @@
 .method protected clearSettings()V
     .locals 1
 
+    .prologue
+    .line 140
     invoke-super {p0}, Lcom/android/internal/telephony/DataConnection;->clearSettings()V
 
+    .line 141
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->apn:Lcom/android/internal/telephony/ApnSetting;
 
+    .line 142
     return-void
 .end method
 
 .method public getApn()Lcom/android/internal/telephony/ApnSetting;
     .locals 1
 
+    .prologue
+    .line 178
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     return-object v0
@@ -236,11 +278,14 @@
 
 .method protected isDnsOk([Ljava/lang/String;)Z
     .locals 4
+    .parameter "domainNameServers"
 
+    .prologue
     const/4 v1, 0x1
 
     const/4 v0, 0x0
 
+    .line 153
     const-string v2, "0.0.0.0"
 
     aget-object v3, p1, v0
@@ -269,6 +314,7 @@
 
     if-nez v2, :cond_1
 
+    .line 162
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v2, v2, Lcom/android/internal/telephony/ApnSetting;->types:[Ljava/lang/String;
@@ -293,6 +339,7 @@
 
     if-nez v2, :cond_1
 
+    .line 168
     :cond_0
     :goto_0
     return v0
@@ -305,7 +352,10 @@
 
 .method protected log(Ljava/lang/String;)V
     .locals 3
+    .parameter "s"
 
+    .prologue
+    .line 173
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -342,24 +392,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 174
     return-void
 .end method
 
 .method protected onConnect(Lcom/android/internal/telephony/DataConnection$ConnectionParams;)V
     .locals 11
+    .parameter "cp"
 
+    .prologue
     const-wide/16 v3, -0x1
 
     const/4 v1, 0x0
 
+    .line 79
     const-string v0, "ViaCdmaDataConnection Connecting..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 81
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
+    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -426,6 +482,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 86
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v0, v0, Lcom/android/internal/telephony/ApnSetting;->proxy:Ljava/lang/String;
@@ -436,14 +493,18 @@
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->setHttpProxy(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 89
     iput-wide v3, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->createTime:J
 
+    .line 90
     iput-wide v3, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->lastFailTime:J
 
+    .line 91
     sget-object v0, Lcom/android/internal/telephony/DataConnection$FailCause;->NONE:Lcom/android/internal/telephony/DataConnection$FailCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->lastFailCause:Lcom/android/internal/telephony/DataConnection$FailCause;
 
+    .line 93
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v0, :cond_1
@@ -478,12 +539,16 @@
 
     if-eqz v0, :cond_1
 
+    .line 95
     const-string v0, "ViaCdmaDataConnection using DUN"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->log(Ljava/lang/String;)V
 
+    .line 96
     const/4 v10, 0x1
 
+    .line 102
+    .local v10, dataProfile:I
     :goto_0
     const v0, 0x40001
 
@@ -491,16 +556,22 @@
 
     move-result-object v8
 
+    .line 103
+    .local v8, msg:Landroid/os/Message;
     iput-object p1, v8, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 115
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget v9, v0, Lcom/android/internal/telephony/ApnSetting;->authType:I
 
+    .line 116
+    .local v9, authType:I
     const/4 v0, -0x1
 
     if-ne v9, v0, :cond_0
 
+    .line 117
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v0, v0, Lcom/android/internal/telephony/ApnSetting;->user:Ljava/lang/String;
@@ -509,6 +580,7 @@
 
     const/4 v9, 0x3
 
+    .line 122
     :cond_0
     :goto_1
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
@@ -523,10 +595,13 @@
 
     if-eqz v0, :cond_3
 
+    .line 123
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v7, v0, Lcom/android/internal/telephony/ApnSetting;->roamingProtocol:Ljava/lang/String;
 
+    .line 128
+    .local v7, protocol:Ljava/lang/String;
     :goto_2
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -558,29 +633,43 @@
 
     invoke-interface/range {v0 .. v8}, Lcom/android/internal/telephony/CommandsInterface;->setupDataCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
+    .line 135
     return-void
 
+    .line 98
+    .end local v7           #protocol:Ljava/lang/String;
+    .end local v8           #msg:Landroid/os/Message;
+    .end local v9           #authType:I
+    .end local v10           #dataProfile:I
     :cond_1
     const/4 v10, 0x0
 
+    .restart local v10       #dataProfile:I
     goto :goto_0
 
+    .restart local v8       #msg:Landroid/os/Message;
+    .restart local v9       #authType:I
     :cond_2
     move v9, v1
 
+    .line 117
     goto :goto_1
 
+    .line 125
     :cond_3
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/ViaCdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v7, v0, Lcom/android/internal/telephony/ApnSetting;->protocol:Ljava/lang/String;
 
+    .restart local v7       #protocol:Ljava/lang/String;
     goto :goto_2
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 147
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

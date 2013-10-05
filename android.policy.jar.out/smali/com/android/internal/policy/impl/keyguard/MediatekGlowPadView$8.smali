@@ -25,7 +25,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1874
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     iput p2, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$8;->val$duration:I
@@ -41,15 +46,19 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 8
+    .parameter "animator"
 
+    .prologue
     const/4 v7, 0x0
 
+    .line 1876
     const-string v0, "MediatekGlowPadView"
 
     const-string v1, "fake handle drawable back Listener onAnimationEnd"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1877
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mFakeHandleAnimations:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;
@@ -59,6 +68,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;->cancel()V
 
+    .line 1878
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mFakeHandleAnimations:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;
@@ -179,6 +189,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
 
+    .line 1885
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mFakeHandleAnimations:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;
@@ -188,5 +199,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$AnimationBundle;->start()V
 
+    .line 1886
     return-void
 .end method

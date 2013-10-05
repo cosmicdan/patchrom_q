@@ -32,6 +32,8 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .prologue
+    .line 320
     new-instance v0, Landroid/os/StrictMode$ThreadPolicy;
 
     const/4 v1, 0x0
@@ -45,17 +47,26 @@
 
 .method private constructor <init>(I)V
     .locals 0
+    .parameter "mask"
 
+    .prologue
+    .line 324
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 325
     iput p1, p0, Landroid/os/StrictMode$ThreadPolicy;->mask:I
 
+    .line 326
     return-void
 .end method
 
 .method synthetic constructor <init>(ILandroid/os/StrictMode$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 316
     invoke-direct {p0, p1}, Landroid/os/StrictMode$ThreadPolicy;-><init>(I)V
 
     return-void
@@ -66,6 +77,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 330
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

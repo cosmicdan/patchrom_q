@@ -11,14 +11,18 @@
 .method protected constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 27
     new-instance v0, Landroid/gesture/GestureStore;
 
     invoke-direct {v0}, Landroid/gesture/GestureStore;-><init>()V
 
     iput-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
+    .line 28
     return-void
 .end method
 
@@ -26,11 +30,16 @@
 # virtual methods
 .method public addGesture(Ljava/lang/String;Landroid/gesture/Gesture;)V
     .locals 1
+    .parameter "entryName"
+    .parameter "gesture"
 
+    .prologue
+    .line 68
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1, p2}, Landroid/gesture/GestureStore;->addGesture(Ljava/lang/String;Landroid/gesture/Gesture;)V
 
+    .line 69
     return-void
 .end method
 
@@ -46,6 +55,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 60
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0}, Landroid/gesture/GestureStore;->getGestureEntries()Ljava/util/Set;
@@ -57,6 +68,7 @@
 
 .method public getGestures(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
+    .parameter "entryName"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,6 +81,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 80
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1}, Landroid/gesture/GestureStore;->getGestures(Ljava/lang/String;)Ljava/util/ArrayList;
@@ -81,6 +95,8 @@
 .method public getLearner()Landroid/gesture/Learner;
     .locals 1
 
+    .prologue
+    .line 40
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0}, Landroid/gesture/GestureStore;->getLearner()Landroid/gesture/Learner;
@@ -93,6 +109,8 @@
 .method public getOrientationStyle()I
     .locals 1
 
+    .prologue
+    .line 48
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0}, Landroid/gesture/GestureStore;->getOrientationStyle()I
@@ -105,6 +123,8 @@
 .method public getSequenceType()I
     .locals 1
 
+    .prologue
+    .line 56
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0}, Landroid/gesture/GestureStore;->getSequenceType()I
@@ -117,6 +137,8 @@
 .method public isReadOnly()Z
     .locals 1
 
+    .prologue
+    .line 35
     const/4 v0, 0x0
 
     return v0
@@ -127,6 +149,7 @@
 
 .method public recognize(Landroid/gesture/Gesture;)Ljava/util/ArrayList;
     .locals 1
+    .parameter "gesture"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,6 +162,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 64
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1}, Landroid/gesture/GestureStore;->recognize(Landroid/gesture/Gesture;)Ljava/util/ArrayList;
@@ -150,21 +175,30 @@
 
 .method public removeEntry(Ljava/lang/String;)V
     .locals 1
+    .parameter "entryName"
 
+    .prologue
+    .line 76
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1}, Landroid/gesture/GestureStore;->removeEntry(Ljava/lang/String;)V
 
+    .line 77
     return-void
 .end method
 
 .method public removeGesture(Ljava/lang/String;Landroid/gesture/Gesture;)V
     .locals 1
+    .parameter "entryName"
+    .parameter "gesture"
 
+    .prologue
+    .line 72
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1, p2}, Landroid/gesture/GestureStore;->removeGesture(Ljava/lang/String;Landroid/gesture/Gesture;)V
 
+    .line 73
     return-void
 .end method
 
@@ -173,20 +207,28 @@
 
 .method public setOrientationStyle(I)V
     .locals 1
+    .parameter "style"
 
+    .prologue
+    .line 44
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1}, Landroid/gesture/GestureStore;->setOrientationStyle(I)V
 
+    .line 45
     return-void
 .end method
 
 .method public setSequenceType(I)V
     .locals 1
+    .parameter "type"
 
+    .prologue
+    .line 52
     iget-object v0, p0, Landroid/gesture/GestureLibrary;->mStore:Landroid/gesture/GestureStore;
 
     invoke-virtual {v0, p1}, Landroid/gesture/GestureStore;->setSequenceType(I)V
 
+    .line 53
     return-void
 .end method

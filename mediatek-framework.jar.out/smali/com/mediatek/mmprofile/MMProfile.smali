@@ -19,16 +19,21 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 44
     const-string v0, "mmprofile_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 45
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 40
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

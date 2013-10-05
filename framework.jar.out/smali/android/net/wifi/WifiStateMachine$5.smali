@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/WifiStateMachine;Landroid/os/Handler;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 750
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$5;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -33,9 +37,12 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
+    .parameter "selfChange"
 
+    .prologue
     const/4 v0, 0x1
 
+    .line 753
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$5;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mUserWantsSuspendOpt:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -65,8 +72,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
+    .line 755
     return-void
 
+    .line 753
     :cond_0
     const/4 v0, 0x0
 

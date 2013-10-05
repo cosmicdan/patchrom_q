@@ -34,7 +34,10 @@
 # direct methods
 .method constructor <init>(Landroid/content/SyncManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1386
     iput-object p1, p0, Landroid/content/SyncManager$12;->this$0:Landroid/content/SyncManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +49,11 @@
 # virtual methods
 .method public compare(Landroid/content/SyncManager$AccountSyncStats;Landroid/content/SyncManager$AccountSyncStats;)I
     .locals 5
+    .parameter "lhs"
+    .parameter "rhs"
 
+    .prologue
+    .line 1390
     iget v1, p2, Landroid/content/SyncManager$AccountSyncStats;->times:I
 
     iget v2, p1, Landroid/content/SyncManager$AccountSyncStats;->times:I
@@ -55,8 +62,11 @@
 
     move-result v0
 
+    .line 1391
+    .local v0, compare:I
     if-nez v0, :cond_0
 
+    .line 1392
     iget-wide v1, p2, Landroid/content/SyncManager$AccountSyncStats;->elapsedTime:J
 
     iget-wide v3, p1, Landroid/content/SyncManager$AccountSyncStats;->elapsedTime:J
@@ -65,17 +75,24 @@
 
     move-result v0
 
+    .line 1394
     :cond_0
     return v0
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1386
     check-cast p1, Landroid/content/SyncManager$AccountSyncStats;
 
+    .end local p1
     check-cast p2, Landroid/content/SyncManager$AccountSyncStats;
 
+    .end local p2
     invoke-virtual {p0, p1, p2}, Landroid/content/SyncManager$12;->compare(Landroid/content/SyncManager$AccountSyncStats;Landroid/content/SyncManager$AccountSyncStats;)I
 
     move-result v0

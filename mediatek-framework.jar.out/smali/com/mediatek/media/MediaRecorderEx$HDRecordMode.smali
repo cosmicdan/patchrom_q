@@ -29,7 +29,10 @@
 # direct methods
 .method private constructor <init>(Lcom/mediatek/media/MediaRecorderEx;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 110
     iput-object p1, p0, Lcom/mediatek/media/MediaRecorderEx$HDRecordMode;->this$0:Lcom/mediatek/media/MediaRecorderEx;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

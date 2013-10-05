@@ -26,18 +26,22 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 49
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$1;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$1;-><init>()V
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/Ease$Quad;->easeIn:Landroid/animation/TimeInterpolator;
 
+    .line 54
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$2;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$2;-><init>()V
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/Ease$Quad;->easeOut:Landroid/animation/TimeInterpolator;
 
+    .line 59
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$3;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/Ease$Quad$3;-><init>()V
@@ -50,6 +54,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 101
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,26 +42,38 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/location/Geofence;
     .locals 7
+    .parameter "in"
 
+    .prologue
+    .line 104
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
+    .line 105
+    .local v5, type:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
     move-result-wide v0
 
+    .line 106
+    .local v0, latitude:D
     invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
     move-result-wide v2
 
+    .line 107
+    .local v2, longitude:D
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v4
 
+    .line 108
+    .local v4, radius:F
     #calls: Landroid/location/Geofence;->checkType(I)V
     invoke-static {v5}, Landroid/location/Geofence;->access$000(I)V
 
+    .line 109
     invoke-static {v0, v1, v2, v3, v4}, Landroid/location/Geofence;->createCircle(DDF)Landroid/location/Geofence;
 
     move-result-object v6
@@ -69,7 +83,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 101
     invoke-virtual {p0, p1}, Landroid/location/Geofence$1;->createFromParcel(Landroid/os/Parcel;)Landroid/location/Geofence;
 
     move-result-object v0
@@ -79,7 +96,10 @@
 
 .method public newArray(I)[Landroid/location/Geofence;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 113
     new-array v0, p1, [Landroid/location/Geofence;
 
     return-object v0
@@ -87,7 +107,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 101
     invoke-virtual {p0, p1}, Landroid/location/Geofence$1;->newArray(I)[Landroid/location/Geofence;
 
     move-result-object v0

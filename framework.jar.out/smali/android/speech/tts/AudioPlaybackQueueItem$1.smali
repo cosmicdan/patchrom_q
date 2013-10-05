@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/speech/tts/AudioPlaybackQueueItem;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 61
     iput-object p1, p0, Landroid/speech/tts/AudioPlaybackQueueItem$1;->this$0:Landroid/speech/tts/AudioPlaybackQueueItem;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,12 @@
 # virtual methods
 .method public onError(Landroid/media/MediaPlayer;II)Z
     .locals 3
+    .parameter "mp"
+    .parameter "what"
+    .parameter "extra"
 
+    .prologue
+    .line 64
     const-string v0, "TTS.AudioQueueItem"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,6 +77,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 65
     iget-object v0, p0, Landroid/speech/tts/AudioPlaybackQueueItem$1;->this$0:Landroid/speech/tts/AudioPlaybackQueueItem;
 
     #getter for: Landroid/speech/tts/AudioPlaybackQueueItem;->mDone:Landroid/os/ConditionVariable;
@@ -78,6 +87,7 @@
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
+    .line 66
     const/4 v0, 0x1
 
     return v0

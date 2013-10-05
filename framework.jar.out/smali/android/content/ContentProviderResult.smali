@@ -29,6 +29,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 67
     new-instance v0, Landroid/content/ContentProviderResult$1;
 
     invoke-direct {v0}, Landroid/content/ContentProviderResult$1;-><init>()V
@@ -40,27 +42,37 @@
 
 .method public constructor <init>(I)V
     .locals 1
+    .parameter "count"
 
+    .prologue
+    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/ContentProviderResult;->count:Ljava/lang/Integer;
 
+    .line 39
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
+    .line 40
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;)V
     .locals 2
+    .parameter "uri"
 
+    .prologue
+    .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -71,31 +83,41 @@
 
     throw v0
 
+    .line 33
     :cond_0
     iput-object p1, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
+    .line 34
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/ContentProviderResult;->count:Ljava/lang/Integer;
 
+    .line 35
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 3
+    .parameter "source"
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 44
+    .local v0, type:I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
+    .line 45
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -106,14 +128,18 @@
 
     iput-object v1, p0, Landroid/content/ContentProviderResult;->count:Ljava/lang/Integer;
 
+    .line 46
     iput-object v2, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
+    .line 51
     :goto_0
     return-void
 
+    .line 48
     :cond_0
     iput-object v2, p0, Landroid/content/ContentProviderResult;->count:Ljava/lang/Integer;
 
+    .line 49
     sget-object v1, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -132,6 +158,8 @@
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 64
     const/4 v0, 0x0
 
     return v0
@@ -140,10 +168,13 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 79
     iget-object v0, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
     if-eqz v0, :cond_0
 
+    .line 80
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -174,6 +205,7 @@
 
     move-result-object v0
 
+    .line 82
     :goto_0
     return-object v0
 
@@ -209,15 +241,21 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .parameter "dest"
+    .parameter "flags"
 
+    .prologue
+    .line 54
     iget-object v0, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
     if-nez v0, :cond_0
 
+    .line 55
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 56
     iget-object v0, p0, Landroid/content/ContentProviderResult;->count:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -226,14 +264,17 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 61
     :goto_0
     return-void
 
+    .line 58
     :cond_0
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 59
     iget-object v0, p0, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
 
     const/4 v1, 0x0

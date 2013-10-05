@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/media/videoeditor/MediaArtistNativeHelper;[Landroid/graphics/Bitmap;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 3781
     iput-object p1, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->this$0:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     iput-object p2, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->val$result:[Landroid/graphics/Bitmap;
@@ -40,12 +44,17 @@
 # virtual methods
 .method public onThumbnail(Landroid/graphics/Bitmap;I)V
     .locals 2
+    .parameter "bitmap"
+    .parameter "index"
 
+    .prologue
+    .line 3783
     iget-object v0, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->val$result:[Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
 
     aput-object p1, v0, v1
 
+    .line 3784
     return-void
 .end method

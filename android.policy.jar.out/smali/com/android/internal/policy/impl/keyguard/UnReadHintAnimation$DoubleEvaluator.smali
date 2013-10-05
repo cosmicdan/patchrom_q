@@ -34,7 +34,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 70
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation$DoubleEvaluator;->this$0:Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +49,12 @@
 # virtual methods
 .method public evaluate(FLjava/lang/Double;Ljava/lang/Double;)Ljava/lang/Double;
     .locals 8
+    .parameter "fraction"
+    .parameter "startValue"
+    .parameter "endValue"
 
+    .prologue
+    .line 72
     invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
@@ -76,11 +84,18 @@
 
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 70
     check-cast p2, Ljava/lang/Double;
 
+    .end local p2
     check-cast p3, Ljava/lang/Double;
 
+    .end local p3
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation$DoubleEvaluator;->evaluate(FLjava/lang/Double;Ljava/lang/Double;)Ljava/lang/Double;
 
     move-result-object v0

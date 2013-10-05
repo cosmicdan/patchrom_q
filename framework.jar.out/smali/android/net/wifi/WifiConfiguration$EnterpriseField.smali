@@ -25,23 +25,35 @@
 # direct methods
 .method private constructor <init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;)V
     .locals 1
+    .parameter
+    .parameter "varName"
 
+    .prologue
+    .line 89
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->this$0:Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 90
     iput-object p2, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->varName:Ljava/lang/String;
 
+    .line 91
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
+    .line 92
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Landroid/net/wifi/WifiConfiguration$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 85
     invoke-direct {p0, p1, p2}, Landroid/net/wifi/WifiConfiguration$EnterpriseField;-><init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;)V
 
     return-void
@@ -51,15 +63,21 @@
 # virtual methods
 .method public setValue(Ljava/lang/String;)V
     .locals 0
+    .parameter "value"
 
+    .prologue
+    .line 95
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
+    .line 96
     return-void
 .end method
 
 .method public value()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 103
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
     return-object v0
@@ -68,6 +86,8 @@
 .method public varName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 99
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->varName:Ljava/lang/String;
 
     return-object v0

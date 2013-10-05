@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/accounts/AccountManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 241
     iput-object p1, p0, Landroid/accounts/AccountManagerService$2;->this$0:Landroid/accounts/AccountManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,16 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 244
     iget-object v0, p0, Landroid/accounts/AccountManagerService$2;->this$0:Landroid/accounts/AccountManagerService;
 
     #calls: Landroid/accounts/AccountManagerService;->onUserRemoved(Landroid/content/Intent;)V
     invoke-static {v0, p2}, Landroid/accounts/AccountManagerService;->access$100(Landroid/accounts/AccountManagerService;Landroid/content/Intent;)V
 
+    .line 245
     return-void
 .end method

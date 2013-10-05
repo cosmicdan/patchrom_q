@@ -37,12 +37,14 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 415
     new-instance v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
     const-string v1, "NONE"
@@ -51,6 +53,7 @@
 
     sput-object v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;->NONE:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
+    .line 418
     new-instance v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
     const-string v1, "STATIC"
@@ -59,6 +62,7 @@
 
     sput-object v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;->STATIC:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
+    .line 421
     new-instance v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
     const-string v1, "UNASSIGNED"
@@ -67,6 +71,7 @@
 
     sput-object v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;->UNASSIGNED:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
+    .line 412
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/net/wifi/WifiConfiguration$ProxySettings;
@@ -90,12 +95,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 412
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +112,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/wifi/WifiConfiguration$ProxySettings;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 412
     const-class v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,6 +130,8 @@
 .method public static values()[Landroid/net/wifi/WifiConfiguration$ProxySettings;
     .locals 1
 
+    .prologue
+    .line 412
     sget-object v0, Landroid/net/wifi/WifiConfiguration$ProxySettings;->$VALUES:[Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
     invoke-virtual {v0}, [Landroid/net/wifi/WifiConfiguration$ProxySettings;->clone()Ljava/lang/Object;

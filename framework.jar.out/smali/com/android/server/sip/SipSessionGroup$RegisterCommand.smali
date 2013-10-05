@@ -23,13 +23,20 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/sip/SipSessionGroup;I)V
     .locals 0
+    .parameter
+    .parameter "duration"
 
+    .prologue
+    .line 1757
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$RegisterCommand;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
+    .line 1758
     invoke-direct {p0, p1}, Ljava/util/EventObject;-><init>(Ljava/lang/Object;)V
 
+    .line 1759
     iput p2, p0, Lcom/android/server/sip/SipSessionGroup$RegisterCommand;->mDuration:I
 
+    .line 1760
     return-void
 .end method
 
@@ -38,6 +45,8 @@
 .method public getDuration()I
     .locals 1
 
+    .prologue
+    .line 1763
     iget v0, p0, Lcom/android/server/sip/SipSessionGroup$RegisterCommand;->mDuration:I
 
     return v0

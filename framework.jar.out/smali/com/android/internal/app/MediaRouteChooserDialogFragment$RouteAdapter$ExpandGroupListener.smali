@@ -26,7 +26,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 564
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +41,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
+    .parameter "v"
 
+    .prologue
+    .line 571
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     iget v2, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->position:I
@@ -49,11 +55,14 @@
 
     check-cast v0, Landroid/media/MediaRouter$RouteGroup;
 
+    .line 572
+    .local v0, group:Landroid/media/MediaRouter$RouteGroup;
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     #setter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
     invoke-static {v1, v0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->access$502(Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;Landroid/media/MediaRouter$RouteGroup;)Landroid/media/MediaRouter$RouteGroup;
 
+    .line 573
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     invoke-virtual {v0}, Landroid/media/MediaRouter$RouteGroup;->getCategory()Landroid/media/MediaRouter$RouteCategory;
@@ -63,6 +72,7 @@
     #setter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
     invoke-static {v1, v2}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->access$602(Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;Landroid/media/MediaRouter$RouteCategory;)Landroid/media/MediaRouter$RouteCategory;
 
+    .line 574
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     iget-object v1, v1, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
@@ -75,6 +85,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
+    .line 575
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     iget-object v1, v1, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
@@ -99,13 +110,16 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/media/MediaRouter;->selectRouteInt(ILandroid/media/MediaRouter$RouteInfo;)V
 
+    .line 576
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     invoke-virtual {v1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->update()V
 
+    .line 577
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     invoke-virtual {v1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->scrollToEditingGroup()V
 
+    .line 578
     return-void
 .end method

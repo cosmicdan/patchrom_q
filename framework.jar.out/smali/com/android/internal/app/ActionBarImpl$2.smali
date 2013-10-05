@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/app/ActionBarImpl;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 142
     iput-object p1, p0, Lcom/android/internal/app/ActionBarImpl$2;->this$0:Lcom/android/internal/app/ActionBarImpl;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 145
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$2;->this$0:Lcom/android/internal/app/ActionBarImpl;
 
     const/4 v1, 0x0
@@ -41,6 +47,7 @@
     #setter for: Lcom/android/internal/app/ActionBarImpl;->mCurrentShowAnim:Landroid/animation/Animator;
     invoke-static {v0, v1}, Lcom/android/internal/app/ActionBarImpl;->access$502(Lcom/android/internal/app/ActionBarImpl;Landroid/animation/Animator;)Landroid/animation/Animator;
 
+    .line 146
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$2;->this$0:Lcom/android/internal/app/ActionBarImpl;
 
     #getter for: Lcom/android/internal/app/ActionBarImpl;->mTopVisibilityView:Landroid/view/ViewGroup;
@@ -50,5 +57,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->requestLayout()V
 
+    .line 147
     return-void
 .end method

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 36
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation$1;->this$0:Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 7
+    .parameter "animation"
 
+    .prologue
+    .line 39
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -49,6 +55,8 @@
 
     float-to-double v0, v3
 
+    .line 41
+    .local v0, r:D
     const-wide/high16 v3, 0x4024
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -59,11 +67,14 @@
 
     double-to-float v2, v3
 
+    .line 42
+    .local v2, rotation:F
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation$1;->this$0:Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;
 
     iget-object v3, v3, Lcom/android/internal/policy/impl/keyguard/UnReadHintAnimation;->child:Landroid/view/View;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setRotation(F)V
 
+    .line 43
     return-void
 .end method

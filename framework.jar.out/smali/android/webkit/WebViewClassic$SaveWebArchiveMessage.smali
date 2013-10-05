@@ -36,6 +36,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ZLandroid/webkit/ValueCallback;)V
     .locals 0
+    .parameter "basename"
+    .parameter "autoname"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,13 +51,20 @@
         }
     .end annotation
 
+    .prologue
+    .line 2754
+    .local p3, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/String;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2755
     iput-object p1, p0, Landroid/webkit/WebViewClassic$SaveWebArchiveMessage;->mBasename:Ljava/lang/String;
 
+    .line 2756
     iput-boolean p2, p0, Landroid/webkit/WebViewClassic$SaveWebArchiveMessage;->mAutoname:Z
 
+    .line 2757
     iput-object p3, p0, Landroid/webkit/WebViewClassic$SaveWebArchiveMessage;->mCallback:Landroid/webkit/ValueCallback;
 
+    .line 2758
     return-void
 .end method

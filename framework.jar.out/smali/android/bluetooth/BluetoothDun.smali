@@ -37,17 +37,23 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
+    .parameter "context"
 
+    .prologue
+    .line 151
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 270
     new-instance v0, Landroid/bluetooth/BluetoothDun$1;
 
     invoke-direct {v0, p0}, Landroid/bluetooth/BluetoothDun$1;-><init>(Landroid/bluetooth/BluetoothDun;)V
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothDun;->mConnection:Landroid/content/ServiceConnection;
 
+    .line 152
     iput-object p1, p0, Landroid/bluetooth/BluetoothDun;->mContext:Landroid/content/Context;
 
+    .line 153
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Landroid/bluetooth/IBluetoothDun;
@@ -68,19 +74,24 @@
 
     if-nez v0, :cond_0
 
+    .line 154
     const-string v0, "BluetoothDun"
 
     const-string v1, "Could not bind to Bluetooth Dun Service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 156
     :cond_0
     return-void
 .end method
 
 .method static synthetic access$000(Ljava/lang/String;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 116
     invoke-static {p0}, Landroid/bluetooth/BluetoothDun;->log(Ljava/lang/String;)V
 
     return-void
@@ -88,7 +99,10 @@
 
 .method static synthetic access$102(Landroid/bluetooth/IBluetoothDun;)Landroid/bluetooth/IBluetoothDun;
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 116
     sput-object p0, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     return-object p0
@@ -96,11 +110,15 @@
 
 .method private static log(Ljava/lang/String;)V
     .locals 1
+    .parameter "msg"
 
+    .prologue
+    .line 285
     const-string v0, "BluetoothDun"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 286
     return-void
 .end method
 
@@ -109,6 +127,8 @@
 .method public declared-synchronized close()V
     .locals 2
 
+    .prologue
+    .line 175
     monitor-enter p0
 
     :try_start_0
@@ -116,23 +136,27 @@
 
     if-eqz v0, :cond_0
 
+    .line 176
     iget-object v0, p0, Landroid/bluetooth/BluetoothDun;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/bluetooth/BluetoothDun;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
+    .line 177
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothDun;->mConnection:Landroid/content/ServiceConnection;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 179
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 175
     :catchall_0
     move-exception v0
 
@@ -143,7 +167,10 @@
 
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .parameter "device"
 
+    .prologue
+    .line 204
     const/4 v0, 0x0
 
     return v0
@@ -151,11 +178,15 @@
 
 .method public disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 3
+    .parameter "device"
 
+    .prologue
+    .line 209
     sget-object v1, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     if-eqz v1, :cond_0
 
+    .line 211
     :try_start_0
     sget-object v1, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
@@ -163,14 +194,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 212
     const/4 v1, 0x1
 
+    .line 219
     :goto_0
     return v1
 
+    .line 213
     :catch_0
     move-exception v0
 
+    .line 214
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothDun"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -179,11 +215,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 219
+    .end local v0           #e:Landroid/os/RemoteException;
     :goto_1
     const/4 v1, 0x0
 
     goto :goto_0
 
+    .line 217
     :cond_0
     const-string v1, "BluetoothDun"
 
@@ -202,15 +241,20 @@
         }
     .end annotation
 
+    .prologue
+    .line 161
     :try_start_0
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDun;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 163
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 165
     return-void
 
+    .line 163
     :catchall_0
     move-exception v0
 
@@ -231,16 +275,23 @@
         }
     .end annotation
 
+    .prologue
+    .line 183
     sget-object v3, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     if-eqz v3, :cond_0
 
+    .line 184
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
+    .line 185
+    .local v1, devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     const/4 v0, 0x0
 
+    .line 187
+    .local v0, connDev:Landroid/bluetooth/BluetoothDevice;
     :try_start_0
     sget-object v3, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
@@ -250,17 +301,27 @@
 
     move-result-object v0
 
+    .line 191
     :goto_0
     if-eqz v0, :cond_1
 
+    .line 193
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 199
+    .end local v0           #connDev:Landroid/bluetooth/BluetoothDevice;
+    .end local v1           #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     :goto_1
     return-object v1
 
+    .line 188
+    .restart local v0       #connDev:Landroid/bluetooth/BluetoothDevice;
+    .restart local v1       #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     :catch_0
     move-exception v2
 
+    .line 189
+    .local v2, e:Landroid/os/RemoteException;
     const-string v3, "BluetoothDun"
 
     invoke-virtual {v2}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -271,6 +332,10 @@
 
     goto :goto_0
 
+    .line 197
+    .end local v0           #connDev:Landroid/bluetooth/BluetoothDevice;
+    .end local v1           #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
+    .end local v2           #e:Landroid/os/RemoteException;
     :cond_0
     const-string v3, "BluetoothDun"
 
@@ -278,6 +343,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 199
     :cond_1
     const/4 v1, 0x0
 
@@ -286,18 +352,25 @@
 
 .method public getState(Landroid/bluetooth/BluetoothDevice;)I
     .locals 4
+    .parameter "device"
 
+    .prologue
+    .line 224
     sget-object v2, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     if-eqz v2, :cond_2
 
+    .line 226
     const/4 v1, 0x0
 
+    .line 228
+    .local v1, remoteDevices:Ljava/util/Set;,"Ljava/util/Set<Landroid/bluetooth/BluetoothDevice;>;"
     :try_start_0
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDun;->getConnectedDevices()Ljava/util/Set;
 
     move-result-object v1
 
+    .line 230
     if-eqz p1, :cond_0
 
     if-eqz v1, :cond_0
@@ -308,12 +381,17 @@
 
     if-nez v2, :cond_1
 
+    .line 231
     :cond_0
     const/4 v2, 0x2
 
+    .line 240
+    .end local v1           #remoteDevices:Ljava/util/Set;,"Ljava/util/Set<Landroid/bluetooth/BluetoothDevice;>;"
     :goto_0
     return v2
 
+    .line 233
+    .restart local v1       #remoteDevices:Ljava/util/Set;,"Ljava/util/Set<Landroid/bluetooth/BluetoothDevice;>;"
     :cond_1
     sget-object v2, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
@@ -325,9 +403,12 @@
 
     goto :goto_0
 
+    .line 234
     :catch_0
     move-exception v0
 
+    .line 235
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "BluetoothDun"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
@@ -336,11 +417,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 240
+    .end local v0           #e:Landroid/os/RemoteException;
+    .end local v1           #remoteDevices:Ljava/util/Set;,"Ljava/util/Set<Landroid/bluetooth/BluetoothDevice;>;"
     :goto_1
     const/4 v2, 0x5
 
     goto :goto_0
 
+    .line 238
     :cond_2
     const-string v2, "BluetoothDun"
 
@@ -354,21 +439,26 @@
 .method public isTetheringOn()Z
     .locals 5
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 257
     sget-object v2, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     if-nez v2, :cond_0
 
+    .line 258
     const-string v2, "BluetoothDun"
 
     const-string v3, "Service is not ready"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 265
     :goto_0
     return v1
 
+    .line 262
     :cond_0
     :try_start_0
     sget-object v2, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
@@ -381,9 +471,12 @@
 
     goto :goto_0
 
+    .line 263
     :catch_0
     move-exception v0
 
+    .line 264
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "BluetoothDun"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -419,7 +512,10 @@
 
 .method public setBluetoothTethering(Z)V
     .locals 4
+    .parameter "value"
 
+    .prologue
+    .line 244
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -446,19 +542,23 @@
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothDun;->log(Ljava/lang/String;)V
 
+    .line 245
     sget-object v1, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
 
     if-nez v1, :cond_0
 
+    .line 246
     const-string v1, "BluetoothDun"
 
     const-string v2, "Service is not ready"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 254
     :goto_0
     return-void
 
+    .line 250
     :cond_0
     :try_start_0
     sget-object v1, Landroid/bluetooth/BluetoothDun;->mService:Landroid/bluetooth/IBluetoothDun;
@@ -469,9 +569,12 @@
 
     goto :goto_0
 
+    .line 251
     :catch_0
     move-exception v0
 
+    .line 252
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BluetoothDun"
 
     new-instance v2, Ljava/lang/StringBuilder;

@@ -41,9 +41,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 4
+    .parameter "context"
+    .parameter "profile"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 96
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,68 +68,87 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/util/StateMachine;-><init>(Ljava/lang/String;)V
 
+    .line 54
     new-instance v1, Landroid/bluetooth/BluetoothProfileState$PendingCommandState;
 
     invoke-direct {v1, p0, v3}, Landroid/bluetooth/BluetoothProfileState$PendingCommandState;-><init>(Landroid/bluetooth/BluetoothProfileState;Landroid/bluetooth/BluetoothProfileState$1;)V
 
     iput-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mPendingCommandState:Landroid/bluetooth/BluetoothProfileState$PendingCommandState;
 
+    .line 55
     new-instance v1, Landroid/bluetooth/BluetoothProfileState$StableState;
 
     invoke-direct {v1, p0, v3}, Landroid/bluetooth/BluetoothProfileState$StableState;-><init>(Landroid/bluetooth/BluetoothProfileState;Landroid/bluetooth/BluetoothProfileState$1;)V
 
     iput-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mStableState:Landroid/bluetooth/BluetoothProfileState$StableState;
 
+    .line 57
     new-instance v1, Landroid/bluetooth/BluetoothProfileState$1;
 
     invoke-direct {v1, p0}, Landroid/bluetooth/BluetoothProfileState$1;-><init>(Landroid/bluetooth/BluetoothProfileState;)V
 
     iput-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
+    .line 97
     iput p2, p0, Landroid/bluetooth/BluetoothProfileState;->mProfile:I
 
+    .line 98
     iget-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mStableState:Landroid/bluetooth/BluetoothProfileState$StableState;
 
     invoke-virtual {p0, v1}, Landroid/bluetooth/BluetoothProfileState;->addState(Lcom/android/internal/util/State;)V
 
+    .line 99
     iget-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mPendingCommandState:Landroid/bluetooth/BluetoothProfileState$PendingCommandState;
 
     invoke-virtual {p0, v1}, Landroid/bluetooth/BluetoothProfileState;->addState(Lcom/android/internal/util/State;)V
 
+    .line 100
     iget-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mStableState:Landroid/bluetooth/BluetoothProfileState$StableState;
 
     invoke-virtual {p0, v1}, Landroid/bluetooth/BluetoothProfileState;->setInitialState(Lcom/android/internal/util/State;)V
 
+    .line 102
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
+    .line 103
+    .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 104
     const-string v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 105
     const-string v1, "android.bluetooth.input.profile.action.CONNECTION_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 106
     const-string v1, "android.bluetooth.device.action.ACL_DISCONNECTED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 107
     iget-object v1, p0, Landroid/bluetooth/BluetoothProfileState;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    .line 108
     return-void
 .end method
 
 .method static synthetic access$1000(Landroid/bluetooth/BluetoothProfileState;Landroid/os/Message;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 42
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothProfileState;->deferMessage(Landroid/os/Message;)V
 
     return-void
@@ -133,7 +156,10 @@
 
 .method static synthetic access$200(Landroid/bluetooth/BluetoothProfileState;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 42
     iget v0, p0, Landroid/bluetooth/BluetoothProfileState;->mProfile:I
 
     return v0
@@ -141,7 +167,11 @@
 
 .method static synthetic access$300(Landroid/bluetooth/BluetoothProfileState;Ljava/lang/String;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 42
     invoke-direct {p0, p1}, Landroid/bluetooth/BluetoothProfileState;->log(Ljava/lang/String;)V
 
     return-void
@@ -149,7 +179,10 @@
 
 .method static synthetic access$400(Landroid/bluetooth/BluetoothProfileState;)Landroid/bluetooth/BluetoothDevice;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 42
     iget-object v0, p0, Landroid/bluetooth/BluetoothProfileState;->mPendingDevice:Landroid/bluetooth/BluetoothDevice;
 
     return-object v0
@@ -157,7 +190,11 @@
 
 .method static synthetic access$402(Landroid/bluetooth/BluetoothProfileState;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 42
     iput-object p1, p0, Landroid/bluetooth/BluetoothProfileState;->mPendingDevice:Landroid/bluetooth/BluetoothDevice;
 
     return-object p1
@@ -165,7 +202,10 @@
 
 .method static synthetic access$500(Landroid/bluetooth/BluetoothProfileState;)Landroid/bluetooth/BluetoothProfileState$PendingCommandState;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 42
     iget-object v0, p0, Landroid/bluetooth/BluetoothProfileState;->mPendingCommandState:Landroid/bluetooth/BluetoothProfileState$PendingCommandState;
 
     return-object v0
@@ -173,7 +213,11 @@
 
 .method static synthetic access$600(Landroid/bluetooth/BluetoothProfileState;Lcom/android/internal/util/IState;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 42
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothProfileState;->transitionTo(Lcom/android/internal/util/IState;)V
 
     return-void
@@ -181,7 +225,10 @@
 
 .method static synthetic access$700(Landroid/bluetooth/BluetoothProfileState;)Landroid/os/Message;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 42
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothProfileState;->getCurrentMessage()Landroid/os/Message;
 
     move-result-object v0
@@ -191,7 +238,10 @@
 
 .method static synthetic access$800(Landroid/bluetooth/BluetoothProfileState;)Landroid/bluetooth/BluetoothProfileState$StableState;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 42
     iget-object v0, p0, Landroid/bluetooth/BluetoothProfileState;->mStableState:Landroid/bluetooth/BluetoothProfileState$StableState;
 
     return-object v0
@@ -199,7 +249,11 @@
 
 .method static synthetic access$900(Landroid/bluetooth/BluetoothProfileState;Lcom/android/internal/util/IState;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 42
     invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothProfileState;->transitionTo(Lcom/android/internal/util/IState;)V
 
     return-void
@@ -207,7 +261,10 @@
 
 .method private log(Ljava/lang/String;)V
     .locals 3
+    .parameter "message"
 
+    .prologue
+    .line 161
     const-string v0, "BluetoothProfileState"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -230,5 +287,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 163
     return-void
 .end method

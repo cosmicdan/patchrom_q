@@ -36,24 +36,28 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
     const/4 v2, 0x0
 
+    .line 30
     new-instance v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;
 
     invoke-direct {v0, v2, v3, v2}, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;-><init>(Landroid/text/TextDirectionHeuristics$TextDirectionAlgorithm;ZLandroid/text/TextDirectionHeuristics$1;)V
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
 
+    .line 34
     new-instance v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;
 
     invoke-direct {v0, v2, v4, v2}, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;-><init>(Landroid/text/TextDirectionHeuristics$TextDirectionAlgorithm;ZLandroid/text/TextDirectionHeuristics$1;)V
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
 
+    .line 43
     new-instance v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/text/TextDirectionHeuristics$FirstStrong;->INSTANCE:Landroid/text/TextDirectionHeuristics$FirstStrong;
@@ -62,6 +66,7 @@
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
+    .line 52
     new-instance v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/text/TextDirectionHeuristics$FirstStrong;->INSTANCE:Landroid/text/TextDirectionHeuristics$FirstStrong;
@@ -70,6 +75,7 @@
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
 
+    .line 60
     new-instance v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/text/TextDirectionHeuristics$AnyStrong;->INSTANCE_RTL:Landroid/text/TextDirectionHeuristics$AnyStrong;
@@ -78,6 +84,7 @@
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
 
+    .line 66
     sget-object v0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicLocale;->INSTANCE:Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicLocale;
 
     sput-object v0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
@@ -88,14 +95,20 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 236
     return-void
 .end method
 
 .method static synthetic access$100(I)Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 27
     invoke-static {p0}, Landroid/text/TextDirectionHeuristics;->isRtlTextOrFormat(I)Landroid/text/TextDirectionHeuristics$TriState;
 
     move-result-object v0
@@ -105,7 +118,10 @@
 
 .method static synthetic access$200(I)Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 27
     invoke-static {p0}, Landroid/text/TextDirectionHeuristics;->isRtlText(I)Landroid/text/TextDirectionHeuristics$TriState;
 
     move-result-object v0
@@ -115,24 +131,31 @@
 
 .method private static isRtlText(I)Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
+    .parameter "directionality"
 
+    .prologue
+    .line 128
     packed-switch p0, :pswitch_data_0
 
+    .line 135
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->UNKNOWN:Landroid/text/TextDirectionHeuristics$TriState;
 
     :goto_0
     return-object v0
 
+    .line 130
     :pswitch_0
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->FALSE:Landroid/text/TextDirectionHeuristics$TriState;
 
     goto :goto_0
 
+    .line 133
     :pswitch_1
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->TRUE:Landroid/text/TextDirectionHeuristics$TriState;
 
     goto :goto_0
 
+    .line 128
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -143,24 +166,31 @@
 
 .method private static isRtlTextOrFormat(I)Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
+    .parameter "directionality"
 
+    .prologue
+    .line 140
     sparse-switch p0, :sswitch_data_0
 
+    .line 151
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->UNKNOWN:Landroid/text/TextDirectionHeuristics$TriState;
 
     :goto_0
     return-object v0
 
+    .line 144
     :sswitch_0
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->FALSE:Landroid/text/TextDirectionHeuristics$TriState;
 
     goto :goto_0
 
+    .line 149
     :sswitch_1
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->TRUE:Landroid/text/TextDirectionHeuristics$TriState;
 
     goto :goto_0
 
+    .line 140
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

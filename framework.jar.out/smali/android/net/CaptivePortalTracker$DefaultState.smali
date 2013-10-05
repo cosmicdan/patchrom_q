@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Landroid/net/CaptivePortalTracker;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 132
     iput-object p1, p0, Landroid/net/CaptivePortalTracker$DefaultState;->this$0:Landroid/net/CaptivePortalTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Landroid/net/CaptivePortalTracker;Landroid/net/CaptivePortalTracker$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 132
     invoke-direct {p0, p1}, Landroid/net/CaptivePortalTracker$DefaultState;-><init>(Landroid/net/CaptivePortalTracker;)V
 
     return-void
@@ -42,6 +49,8 @@
 .method public enter()V
     .locals 2
 
+    .prologue
+    .line 135
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -67,12 +76,16 @@
     #calls: Landroid/net/CaptivePortalTracker;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/net/CaptivePortalTracker;->access$400(Ljava/lang/String;)V
 
+    .line 136
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 3
+    .parameter "message"
 
+    .prologue
+    .line 140
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -106,10 +119,12 @@
     #calls: Landroid/net/CaptivePortalTracker;->log(Ljava/lang/String;)V
     invoke-static {v1}, Landroid/net/CaptivePortalTracker;->access$400(Ljava/lang/String;)V
 
+    .line 141
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
+    .line 152
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -131,17 +146,21 @@
     #calls: Landroid/net/CaptivePortalTracker;->loge(Ljava/lang/String;)V
     invoke-static {v1}, Landroid/net/CaptivePortalTracker;->access$600(Ljava/lang/String;)V
 
+    .line 155
     :goto_0
     :pswitch_0
     const/4 v1, 0x1
 
     return v1
 
+    .line 143
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/net/NetworkInfo;
 
+    .line 146
+    .local v0, info:Landroid/net/NetworkInfo;
     iget-object v1, p0, Landroid/net/CaptivePortalTracker$DefaultState;->this$0:Landroid/net/CaptivePortalTracker;
 
     #calls: Landroid/net/CaptivePortalTracker;->notifyPortalCheckComplete(Landroid/net/NetworkInfo;)V
@@ -149,6 +168,7 @@
 
     goto :goto_0
 
+    .line 141
     nop
 
     :pswitch_data_0

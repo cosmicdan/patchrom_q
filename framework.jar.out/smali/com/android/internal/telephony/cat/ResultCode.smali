@@ -100,6 +100,7 @@
 .method static constructor <clinit>()V
     .locals 9
 
+    .prologue
     const/4 v8, 0x4
 
     const/4 v7, 0x3
@@ -110,6 +111,7 @@
 
     const/4 v4, 0x0
 
+    .line 31
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "OK"
@@ -118,6 +120,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->OK:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 34
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_WITH_PARTIAL_COMPREHENSION"
@@ -126,6 +129,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_WITH_PARTIAL_COMPREHENSION:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 37
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_WITH_MISSING_INFO"
@@ -134,6 +138,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_WITH_MISSING_INFO:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 40
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_WITH_ADDITIONAL_EFS_READ"
@@ -142,6 +147,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_WITH_ADDITIONAL_EFS_READ:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 45
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_ICON_NOT_DISPLAYED"
@@ -150,6 +156,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_ICON_NOT_DISPLAYED:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 48
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_MODIFIED_BY_NAA"
@@ -162,6 +169,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_MODIFIED_BY_NAA:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 51
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_LIMITED_SERVICE"
@@ -174,6 +182,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_LIMITED_SERVICE:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 54
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_WITH_MODIFICATION"
@@ -186,6 +195,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_WITH_MODIFICATION:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 57
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_NAA_NOT_ACTIVE"
@@ -198,6 +208,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_NAA_NOT_ACTIVE:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 60
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "PRFRMD_TONE_NOT_PLAYED"
@@ -210,6 +221,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->PRFRMD_TONE_NOT_PLAYED:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 63
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "UICC_SESSION_TERM_BY_USER"
@@ -222,6 +234,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->UICC_SESSION_TERM_BY_USER:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 66
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "BACKWARD_MOVE_BY_USER"
@@ -234,6 +247,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->BACKWARD_MOVE_BY_USER:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 69
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "NO_RESPONSE_FROM_USER"
@@ -246,6 +260,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->NO_RESPONSE_FROM_USER:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 72
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "HELP_INFO_REQUIRED"
@@ -258,6 +273,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->HELP_INFO_REQUIRED:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 75
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "USSD_SS_SESSION_TERM_BY_USER"
@@ -270,6 +286,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->USSD_SS_SESSION_TERM_BY_USER:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 83
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "TERMINAL_CRNTLY_UNABLE_TO_PROCESS"
@@ -282,6 +299,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->TERMINAL_CRNTLY_UNABLE_TO_PROCESS:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 86
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "NETWORK_CRNTLY_UNABLE_TO_PROCESS"
@@ -294,6 +312,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->NETWORK_CRNTLY_UNABLE_TO_PROCESS:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 89
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "USER_NOT_ACCEPT"
@@ -306,6 +325,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->USER_NOT_ACCEPT:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 92
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "USER_CLEAR_DOWN_CALL"
@@ -318,6 +338,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->USER_CLEAR_DOWN_CALL:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 95
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "CONTRADICTION_WITH_TIMER"
@@ -330,6 +351,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->CONTRADICTION_WITH_TIMER:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 98
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "NAA_CALL_CONTROL_TEMPORARY"
@@ -342,6 +364,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->NAA_CALL_CONTROL_TEMPORARY:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 101
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "LAUNCH_BROWSER_ERROR"
@@ -354,6 +377,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->LAUNCH_BROWSER_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 104
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "MMS_TEMPORARY"
@@ -366,6 +390,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->MMS_TEMPORARY:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 113
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "BEYOND_TERMINAL_CAPABILITY"
@@ -378,6 +403,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->BEYOND_TERMINAL_CAPABILITY:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 116
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "CMD_TYPE_NOT_UNDERSTOOD"
@@ -390,6 +416,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->CMD_TYPE_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 119
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "CMD_DATA_NOT_UNDERSTOOD"
@@ -402,6 +429,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 122
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "CMD_NUM_NOT_KNOWN"
@@ -414,6 +442,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->CMD_NUM_NOT_KNOWN:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 125
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "SS_RETURN_ERROR"
@@ -426,6 +455,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->SS_RETURN_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 128
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "SMS_RP_ERROR"
@@ -438,6 +468,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->SMS_RP_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 131
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "REQUIRED_VALUES_MISSING"
@@ -450,6 +481,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->REQUIRED_VALUES_MISSING:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 134
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "USSD_RETURN_ERROR"
@@ -462,6 +494,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->USSD_RETURN_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 137
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "MULTI_CARDS_CMD_ERROR"
@@ -474,6 +507,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->MULTI_CARDS_CMD_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 143
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "USIM_CALL_CONTROL_PERMANENT"
@@ -486,6 +520,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->USIM_CALL_CONTROL_PERMANENT:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 146
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "BIP_ERROR"
@@ -498,6 +533,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->BIP_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 149
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "ACCESS_TECH_UNABLE_TO_PROCESS"
@@ -510,6 +546,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->ACCESS_TECH_UNABLE_TO_PROCESS:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 152
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "FRAMES_ERROR"
@@ -522,6 +559,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->FRAMES_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 155
     new-instance v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     const-string v1, "MMS_ERROR"
@@ -534,6 +572,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/ResultCode;->MMS_ERROR:Lcom/android/internal/telephony/cat/ResultCode;
 
+    .line 24
     const/16 v0, 0x25
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/ResultCode;
@@ -757,47 +796,68 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter "code"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
+    .prologue
+    .line 159
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 160
     iput p3, p0, Lcom/android/internal/telephony/cat/ResultCode;->mCode:I
 
+    .line 161
     return-void
 .end method
 
 .method public static fromInt(I)Lcom/android/internal/telephony/cat/ResultCode;
     .locals 5
+    .parameter "value"
 
+    .prologue
+    .line 173
     invoke-static {}, Lcom/android/internal/telephony/cat/ResultCode;->values()[Lcom/android/internal/telephony/cat/ResultCode;
 
     move-result-object v0
 
+    .local v0, arr$:[Lcom/android/internal/telephony/cat/ResultCode;
     array-length v2, v0
 
+    .local v2, len$:I
     const/4 v1, 0x0
 
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_1
 
     aget-object v3, v0, v1
 
+    .line 174
+    .local v3, r:Lcom/android/internal/telephony/cat/ResultCode;
     iget v4, v3, Lcom/android/internal/telephony/cat/ResultCode;->mCode:I
 
     if-ne v4, p0, :cond_0
 
+    .line 178
+    .end local v3           #r:Lcom/android/internal/telephony/cat/ResultCode;
     :goto_1
     return-object v3
 
+    .line 173
+    .restart local v3       #r:Lcom/android/internal/telephony/cat/ResultCode;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 178
+    .end local v3           #r:Lcom/android/internal/telephony/cat/ResultCode;
     :cond_1
     const/4 v3, 0x0
 
@@ -806,7 +866,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/telephony/cat/ResultCode;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 24
     const-class v0, Lcom/android/internal/telephony/cat/ResultCode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -821,6 +884,8 @@
 .method public static values()[Lcom/android/internal/telephony/cat/ResultCode;
     .locals 1
 
+    .prologue
+    .line 24
     sget-object v0, Lcom/android/internal/telephony/cat/ResultCode;->$VALUES:[Lcom/android/internal/telephony/cat/ResultCode;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/ResultCode;->clone()Ljava/lang/Object;
@@ -837,6 +902,8 @@
 .method public value()I
     .locals 1
 
+    .prologue
+    .line 169
     iget v0, p0, Lcom/android/internal/telephony/cat/ResultCode;->mCode:I
 
     return v0

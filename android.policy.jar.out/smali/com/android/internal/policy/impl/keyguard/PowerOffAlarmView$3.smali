@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 364
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
 
     invoke-direct {p0, p2}, Lcom/mediatek/common/voicecommand/VoiceCommandListener;-><init>(Ljava/lang/String;)V
@@ -33,7 +37,12 @@
 # virtual methods
 .method public onVoiceCommandNotified(IILandroid/os/Bundle;)V
     .locals 16
+    .parameter "mainAction"
+    .parameter "subAction"
+    .parameter "extraData"
 
+    .prologue
+    .line 367
     const-string v11, "Result"
 
     move-object/from16 v0, p3
@@ -42,6 +51,8 @@
 
     move-result v1
 
+    .line 368
+    .local v1, actionExtraResult:I
     const-string v11, "Reslut_INfo1"
 
     move-object/from16 v0, p3
@@ -50,24 +61,30 @@
 
     move-result-object v4
 
+    .line 369
+    .local v4, errorString:Ljava/lang/String;
     const/4 v11, 0x2
 
     move/from16 v0, p1
 
     if-ne v0, v11, :cond_3
 
+    .line 370
     packed-switch p2, :pswitch_data_0
 
+    .line 431
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
+    .line 372
     :pswitch_1
     const/4 v11, 0x1
 
     if-ne v1, v11, :cond_0
 
+    .line 374
     :try_start_0
     move-object/from16 v0, p0
 
@@ -99,13 +116,18 @@
 
     goto :goto_0
 
+    .line 379
     :catch_0
     move-exception v3
 
+    .line 380
+    .local v3, e:Ljava/lang/Exception;
     invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
+    .line 385
+    .end local v3           #e:Ljava/lang/Exception;
     :pswitch_2
     const-string v11, "Result"
 
@@ -115,10 +137,13 @@
 
     move-result v6
 
+    .line 386
+    .local v6, notifyResult:I
     const/4 v11, 0x1
 
     if-ne v6, v11, :cond_0
 
+    .line 387
     const-string v11, "Result_Info"
 
     move-object/from16 v0, p3
@@ -127,6 +152,8 @@
 
     move-result v2
 
+    .line 388
+    .local v2, commandId:I
     const-string v11, "PowerOffAlarm"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -149,10 +176,12 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 389
     const/4 v11, 0x5
 
     if-ne v2, v11, :cond_1
 
+    .line 390
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -162,11 +191,13 @@
 
     goto :goto_0
 
+    .line 391
     :cond_1
     const/16 v11, 0x10
 
     if-ne v2, v11, :cond_2
 
+    .line 392
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -176,11 +207,13 @@
 
     goto :goto_0
 
+    .line 393
     :cond_2
     const/16 v11, 0x11
 
     if-ne v2, v11, :cond_0
 
+    .line 394
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -190,6 +223,9 @@
 
     goto :goto_0
 
+    .line 403
+    .end local v2           #commandId:I
+    .end local v6           #notifyResult:I
     :cond_3
     const/4 v11, 0x1
 
@@ -197,12 +233,14 @@
 
     if-ne v0, v11, :cond_0
 
+    .line 404
     const/4 v11, 0x1
 
     move/from16 v0, p2
 
     if-ne v0, v11, :cond_0
 
+    .line 405
     const-string v11, "Result"
 
     move-object/from16 v0, p3
@@ -211,10 +249,13 @@
 
     move-result v5
 
+    .line 406
+    .local v5, indicatorResult:I
     const/4 v11, 0x1
 
     if-ne v5, v11, :cond_0
 
+    .line 407
     const-string v11, "Result_Info"
 
     move-object/from16 v0, p3
@@ -223,6 +264,8 @@
 
     move-result-object v10
 
+    .line 408
+    .local v10, stringCommonInfo:[Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -238,6 +281,8 @@
 
     move-result-object v8
 
+    .line 409
+    .local v8, quotaStart:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -253,21 +298,28 @@
 
     move-result-object v7
 
+    .line 410
+    .local v7, quotaEnd:Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v11
 
     if-eqz v11, :cond_4
 
+    .line 411
     const-string v8, "\""
 
+    .line 412
     const-string v7, "\""
 
+    .line 414
     :cond_4
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 415
+    .local v9, sb:Ljava/lang/StringBuilder;
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -285,6 +337,7 @@
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 416
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
@@ -299,6 +352,7 @@
 
     invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 417
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -316,6 +370,7 @@
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 418
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
@@ -330,6 +385,7 @@
 
     invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 419
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -347,6 +403,7 @@
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 420
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
@@ -361,6 +418,7 @@
 
     invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 421
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -378,6 +436,7 @@
 
     invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 422
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -389,6 +448,7 @@
 
     if-eqz v11, :cond_5
 
+    .line 423
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -400,6 +460,7 @@
 
     invoke-virtual {v11, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 425
     :cond_5
     move-object/from16 v0, p0
 
@@ -412,6 +473,7 @@
 
     if-eqz v11, :cond_0
 
+    .line 426
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PowerOffAlarmView;
@@ -427,6 +489,7 @@
 
     goto/16 :goto_0
 
+    .line 370
     nop
 
     :pswitch_data_0

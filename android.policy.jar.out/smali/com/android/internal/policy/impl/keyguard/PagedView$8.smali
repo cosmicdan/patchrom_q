@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 2215
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
@@ -37,40 +41,53 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 2232
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
+    .line 2233
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 2236
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
+    .line 2237
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
+    .line 2238
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 2240
     :cond_0
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
+    .parameter "animation"
 
+    .prologue
+    .line 2219
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -80,6 +97,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 2220
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
@@ -114,6 +132,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
+    .line 2229
     :cond_0
     return-void
 .end method

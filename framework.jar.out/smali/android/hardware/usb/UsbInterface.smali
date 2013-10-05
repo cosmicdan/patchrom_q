@@ -35,6 +35,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 120
     new-instance v0, Landroid/hardware/usb/UsbInterface$1;
 
     invoke-direct {v0}, Landroid/hardware/usb/UsbInterface$1;-><init>()V
@@ -46,19 +48,32 @@
 
 .method public constructor <init>(IIII[Landroid/os/Parcelable;)V
     .locals 0
+    .parameter "id"
+    .parameter "Class"
+    .parameter "subClass"
+    .parameter "protocol"
+    .parameter "endpoints"
 
+    .prologue
+    .line 49
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 50
     iput p1, p0, Landroid/hardware/usb/UsbInterface;->mId:I
 
+    .line 51
     iput p2, p0, Landroid/hardware/usb/UsbInterface;->mClass:I
 
+    .line 52
     iput p3, p0, Landroid/hardware/usb/UsbInterface;->mSubclass:I
 
+    .line 53
     iput p4, p0, Landroid/hardware/usb/UsbInterface;->mProtocol:I
 
+    .line 54
     iput-object p5, p0, Landroid/hardware/usb/UsbInterface;->mEndpoints:[Landroid/os/Parcelable;
 
+    .line 55
     return-void
 .end method
 
@@ -67,6 +82,8 @@
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 137
     const/4 v0, 0x0
 
     return v0
@@ -74,7 +91,10 @@
 
 .method public getEndpoint(I)Landroid/hardware/usb/UsbEndpoint;
     .locals 1
+    .parameter "index"
 
+    .prologue
+    .line 110
     iget-object v0, p0, Landroid/hardware/usb/UsbInterface;->mEndpoints:[Landroid/os/Parcelable;
 
     aget-object v0, v0, p1
@@ -87,6 +107,8 @@
 .method public getEndpointCount()I
     .locals 1
 
+    .prologue
+    .line 101
     iget-object v0, p0, Landroid/hardware/usb/UsbInterface;->mEndpoints:[Landroid/os/Parcelable;
 
     array-length v0, v0
@@ -97,6 +119,8 @@
 .method public getId()I
     .locals 1
 
+    .prologue
+    .line 64
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mId:I
 
     return v0
@@ -105,6 +129,8 @@
 .method public getInterfaceClass()I
     .locals 1
 
+    .prologue
+    .line 74
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mClass:I
 
     return v0
@@ -113,6 +139,8 @@
 .method public getInterfaceProtocol()I
     .locals 1
 
+    .prologue
+    .line 92
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mProtocol:I
 
     return v0
@@ -121,6 +149,8 @@
 .method public getInterfaceSubclass()I
     .locals 1
 
+    .prologue
+    .line 83
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mSubclass:I
 
     return v0
@@ -129,6 +159,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 115
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,28 +240,37 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .parameter "parcel"
+    .parameter "flags"
 
+    .prologue
+    .line 141
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 142
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mClass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 143
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mSubclass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 144
     iget v0, p0, Landroid/hardware/usb/UsbInterface;->mProtocol:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 145
     iget-object v0, p0, Landroid/hardware/usb/UsbInterface;->mEndpoints:[Landroid/os/Parcelable;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
 
+    .line 146
     return-void
 .end method

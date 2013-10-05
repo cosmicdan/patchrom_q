@@ -81,6 +81,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 3581
     const-string v0, "content://wappush"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -89,6 +91,7 @@
 
     sput-object v0, Landroid/provider/Telephony$WapPush;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 3582
     const-string v0, "content://wappush/si"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -97,6 +100,7 @@
 
     sput-object v0, Landroid/provider/Telephony$WapPush;->CONTENT_URI_SI:Landroid/net/Uri;
 
+    .line 3583
     const-string v0, "content://wappush/sl"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -105,6 +109,7 @@
 
     sput-object v0, Landroid/provider/Telephony$WapPush;->CONTENT_URI_SL:Landroid/net/Uri;
 
+    .line 3584
     const-string v0, "content://wappush/thread_id"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -119,6 +124,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 3577
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

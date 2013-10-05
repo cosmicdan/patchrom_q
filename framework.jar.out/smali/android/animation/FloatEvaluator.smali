@@ -22,6 +22,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,11 +33,18 @@
 # virtual methods
 .method public evaluate(FLjava/lang/Number;Ljava/lang/Number;)Ljava/lang/Float;
     .locals 2
+    .parameter "fraction"
+    .parameter "startValue"
+    .parameter "endValue"
 
+    .prologue
+    .line 39
     invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
 
     move-result v0
 
+    .line 40
+    .local v0, startFloat:F
     invoke-virtual {p3}, Ljava/lang/Number;->floatValue()F
 
     move-result v1
@@ -55,11 +64,18 @@
 
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 22
     check-cast p2, Ljava/lang/Number;
 
+    .end local p2
     check-cast p3, Ljava/lang/Number;
 
+    .end local p3
     invoke-virtual {p0, p1, p2, p3}, Landroid/animation/FloatEvaluator;->evaluate(FLjava/lang/Number;Ljava/lang/Number;)Ljava/lang/Float;
 
     move-result-object v0

@@ -41,21 +41,28 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/telephony/cdma/EriManager;)V
     .locals 3
+    .parameter
 
+    .prologue
     const/4 v2, 0x0
 
     const/4 v0, -0x1
 
+    .line 55
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->this$0:Lcom/android/internal/telephony/cdma/EriManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 56
     iput v0, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mVersionNumber:I
 
+    .line 57
     iput v2, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mNumberOfEriEntries:I
 
+    .line 58
     iput v0, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mEriFileType:I
 
+    .line 59
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -78,11 +85,13 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mCallPromptId:[Ljava/lang/String;
 
+    .line 60
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mRoamIndTable:Ljava/util/HashMap;
 
+    .line 61
     return-void
 .end method

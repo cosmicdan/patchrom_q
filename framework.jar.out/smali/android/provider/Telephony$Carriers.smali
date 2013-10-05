@@ -101,6 +101,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 2441
     const-string v0, "content://telephony/carriers"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -109,6 +111,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Carriers;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 2445
     const-string v0, "content://telephony/carriers_dm"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -117,6 +120,7 @@
 
     sput-object v0, Landroid/provider/Telephony$Carriers;->CONTENT_URI_DM:Landroid/net/Uri;
 
+    .line 2449
     const-string v0, "content://telephony/carriers2"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -131,7 +135,10 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 2437
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2550
     return-void
 .end method

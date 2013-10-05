@@ -24,6 +24,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 297
     invoke-static {}, Lcom/android/internal/telephony/IccCardStatus$PinState;->values()[Lcom/android/internal/telephony/IccCardStatus$PinState;
 
     move-result-object v0
@@ -113,6 +115,7 @@
     :try_end_4
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_5
 
+    .line 198
     :goto_4
     invoke-static {}, Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;->values()[Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;
 
@@ -231,6 +234,7 @@
 
     goto :goto_5
 
+    .line 297
     :catch_5
     move-exception v0
 

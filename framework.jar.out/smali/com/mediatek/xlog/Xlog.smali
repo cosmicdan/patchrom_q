@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -14,7 +16,11 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 52
     const/4 v0, 0x0
 
     const/4 v1, 0x3
@@ -28,7 +34,12 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 56
     const/4 v0, 0x0
 
     const/4 v1, 0x3
@@ -68,7 +79,11 @@
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 76
     const/4 v0, 0x0
 
     const/4 v1, 0x6
@@ -82,7 +97,12 @@
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 80
     const/4 v0, 0x0
 
     const/4 v1, 0x6
@@ -122,7 +142,11 @@
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 60
     const/4 v0, 0x0
 
     const/4 v1, 0x4
@@ -136,7 +160,12 @@
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 64
     const/4 v0, 0x0
 
     const/4 v1, 0x4
@@ -179,7 +208,11 @@
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 44
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -193,7 +226,12 @@
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 48
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -233,7 +271,11 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
+    .parameter "tag"
+    .parameter "msg"
 
+    .prologue
+    .line 68
     const/4 v0, 0x0
 
     const/4 v1, 0x5
@@ -247,7 +289,12 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 4
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
+    .prologue
+    .line 72
     const/4 v0, 0x0
 
     const/4 v1, 0x5

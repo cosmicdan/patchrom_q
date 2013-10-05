@@ -18,11 +18,16 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .parameter "name"
 
+    .prologue
+    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 48
     iput-object p1, p0, Landroid/hardware/SerialPort;->mName:Ljava/lang/String;
 
+    .line 49
     return-void
 .end method
 
@@ -82,27 +87,35 @@
         }
     .end annotation
 
+    .prologue
+    .line 68
     iget-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
+    .line 69
     iget-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
 
+    .line 70
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
+    .line 72
     :cond_0
     invoke-direct {p0}, Landroid/hardware/SerialPort;->native_close()V
 
+    .line 73
     return-void
 .end method
 
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 81
     iget-object v0, p0, Landroid/hardware/SerialPort;->mName:Ljava/lang/String;
 
     return-object v0
@@ -110,37 +123,47 @@
 
 .method public open(Landroid/os/ParcelFileDescriptor;I)V
     .locals 1
+    .parameter "pfd"
+    .parameter "speed"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 60
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2}, Landroid/hardware/SerialPort;->native_open(Ljava/io/FileDescriptor;I)V
 
+    .line 61
     iput-object p1, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
+    .line 62
     return-void
 .end method
 
 .method public read(Ljava/nio/ByteBuffer;)I
     .locals 2
+    .parameter "buffer"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 91
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 92
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -149,9 +172,11 @@
 
     move-result v0
 
+    .line 94
     :goto_0
     return v0
 
+    .line 93
     :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -159,6 +184,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 94
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -173,6 +199,7 @@
 
     goto :goto_0
 
+    .line 96
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -186,30 +213,40 @@
 .method public sendBreak()V
     .locals 0
 
+    .prologue
+    .line 120
     invoke-direct {p0}, Landroid/hardware/SerialPort;->native_send_break()V
 
+    .line 121
     return-void
 .end method
 
 .method public write(Ljava/nio/ByteBuffer;I)V
     .locals 2
+    .parameter "buffer"
+    .parameter "length"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 107
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 108
     invoke-direct {p0, p1, p2}, Landroid/hardware/SerialPort;->native_write_direct(Ljava/nio/ByteBuffer;I)V
 
+    .line 114
     :goto_0
     return-void
 
+    .line 109
     :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -217,6 +254,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 110
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -225,6 +263,7 @@
 
     goto :goto_0
 
+    .line 112
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

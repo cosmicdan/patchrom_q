@@ -43,6 +43,11 @@
 # direct methods
 .method public constructor <init>(Ljava/util/HashMap;Landroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/content/pm/PackageInfo;Ljava/lang/String;)V
     .locals 1
+    .parameter
+    .parameter "sentIntent"
+    .parameter "deliveryIntent"
+    .parameter "appInfo"
+    .parameter "destAddr"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,22 +64,32 @@
         }
     .end annotation
 
+    .prologue
+    .line 1939
+    .local p1, data:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1940
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mData:Ljava/util/HashMap;
 
+    .line 1941
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
+    .line 1942
     iput-object p3, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mDeliveryIntent:Landroid/app/PendingIntent;
 
+    .line 1943
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
+    .line 1944
     iput-object p4, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mAppInfo:Landroid/content/pm/PackageInfo;
 
+    .line 1945
     iput-object p5, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mDestAddress:Ljava/lang/String;
 
+    .line 1946
     return-void
 .end method
 
@@ -83,8 +98,12 @@
 .method protected isMultipart()Z
     .locals 2
 
+    .prologue
+    .line 1953
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mData:Ljava/util/HashMap;
 
+    .line 1954
+    .local v0, map:Ljava/util/HashMap;
     const-string/jumbo v1, "parts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z

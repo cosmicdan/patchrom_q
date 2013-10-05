@@ -6,7 +6,12 @@
 # direct methods
 .method constructor <init>(I[BZ)V
     .locals 8
+    .parameter "transId"
+    .parameter "clientMac"
+    .parameter "broadcast"
 
+    .prologue
+    .line 31
     sget-object v2, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
 
     sget-object v3, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
@@ -25,6 +30,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/net/dhcp/DhcpPacket;-><init>(ILjava/net/InetAddress;Ljava/net/InetAddress;Ljava/net/InetAddress;Ljava/net/InetAddress;[BZ)V
 
+    .line 33
     return-void
 .end method
 
@@ -32,17 +38,26 @@
 # virtual methods
 .method public buildPacket(ISS)Ljava/nio/ByteBuffer;
     .locals 10
+    .parameter "encap"
+    .parameter "destUdp"
+    .parameter "srcUdp"
 
+    .prologue
     const/4 v7, 0x1
 
+    .line 45
     const/16 v0, 0x5dc
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
+    .line 46
+    .local v6, result:Ljava/nio/ByteBuffer;
     sget-object v9, Ljava/net/Inet4Address;->ALL:Ljava/net/InetAddress;
 
+    .line 48
+    .local v9, destIp:Ljava/net/InetAddress;
     sget-object v2, Ljava/net/Inet4Address;->ALL:Ljava/net/InetAddress;
 
     sget-object v3, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
@@ -59,14 +74,19 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/net/dhcp/DhcpDiscoverPacket;->fillInPacket(ILjava/net/InetAddress;Ljava/net/InetAddress;SSLjava/nio/ByteBuffer;BZ)V
 
+    .line 50
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
+    .line 51
     return-object v6
 .end method
 
 .method public doNextOp(Landroid/net/dhcp/DhcpStateMachine;)V
     .locals 4
+    .parameter "machine"
 
+    .prologue
+    .line 68
     iget-boolean v0, p0, Landroid/net/dhcp/DhcpPacket;->mBroadcast:Z
 
     iget v1, p0, Landroid/net/dhcp/DhcpPacket;->mTransId:I
@@ -77,36 +97,47 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Landroid/net/dhcp/DhcpStateMachine;->onDiscoverReceived(ZI[B[B)V
 
+    .line 70
     return-void
 .end method
 
 .method finishPacket(Ljava/nio/ByteBuffer;)V
     .locals 2
+    .parameter "buffer"
 
+    .prologue
+    .line 58
     const/16 v0, 0x35
 
     const/4 v1, 0x1
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpDiscoverPacket;->addTlv(Ljava/nio/ByteBuffer;BB)V
 
+    .line 59
     const/16 v0, 0x37
 
     iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mRequestedParams:[B
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpDiscoverPacket;->addTlv(Ljava/nio/ByteBuffer;B[B)V
 
+    .line 60
     invoke-virtual {p0, p1}, Landroid/net/dhcp/DhcpDiscoverPacket;->addTlvEnd(Ljava/nio/ByteBuffer;)V
 
+    .line 61
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
+    .prologue
+    .line 36
     invoke-super {p0}, Landroid/net/dhcp/DhcpPacket;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 37
+    .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

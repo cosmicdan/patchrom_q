@@ -29,16 +29,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/sip/SipService;Landroid/net/sip/SipProfile;Landroid/app/PendingIntent;Landroid/net/sip/ISipSessionListener;)V
     .locals 5
+    .parameter
+    .parameter "localProfile"
+    .parameter "incomingCallPendingIntent"
+    .parameter "listener"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/sip/SipException;
         }
     .end annotation
 
+    .prologue
+    .line 472
     iput-object p1, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
 
     invoke-direct {p0}, Landroid/net/sip/SipSessionAdapter;-><init>()V
 
+    .line 467
     new-instance v0, Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     iget-object v1, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
@@ -49,6 +56,7 @@
 
     iput-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
+    .line 473
     new-instance v0, Lcom/android/server/sip/SipSessionGroup;
 
     invoke-direct {p0, p2}, Lcom/android/server/sip/SipService$SipSessionGroupExt;->duplicate(Landroid/net/sip/SipProfile;)Landroid/net/sip/SipProfile;
@@ -73,18 +81,24 @@
 
     iput-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
+    .line 475
     iput-object p3, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mIncomingCallPendingIntent:Landroid/app/PendingIntent;
 
+    .line 476
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0, p4}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->setListener(Landroid/net/sip/ISipSessionListener;)V
 
+    .line 477
     return-void
 .end method
 
 .method private duplicate(Landroid/net/sip/SipProfile;)Landroid/net/sip/SipProfile;
     .locals 3
+    .parameter "p"
 
+    .prologue
+    .line 499
     :try_start_0
     new-instance v1, Landroid/net/sip/SipProfile$Builder;
 
@@ -104,15 +118,19 @@
 
     return-object v1
 
+    .line 500
     :catch_0
     move-exception v0
 
+    .line 501
+    .local v0, e:Ljava/lang/Exception;
     const-string v1, "SipService"
 
     const-string v2, "duplicate()"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 502
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "duplicate profile"
@@ -125,6 +143,8 @@
 .method private getUri()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 596
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->getLocalProfileUri()Ljava/lang/String;
@@ -139,18 +159,23 @@
 .method public close()V
     .locals 3
 
+    .prologue
+    .line 540
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mOpenedToReceiveCalls:Z
 
+    .line 541
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->close()V
 
+    .line 542
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->stop()V
 
+    .line 543
     const-string v0, "SipService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -189,12 +214,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 545
     return-void
 .end method
 
 .method public containsSession(Ljava/lang/String;)Z
     .locals 1
+    .parameter "callId"
 
+    .prologue
+    .line 484
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0, p1}, Lcom/android/server/sip/SipSessionGroup;->containsSession(Ljava/lang/String;)Z
@@ -206,7 +235,10 @@
 
 .method public createSession(Landroid/net/sip/ISipSessionListener;)Landroid/net/sip/ISipSession;
     .locals 1
+    .parameter "listener"
 
+    .prologue
+    .line 548
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0, p1}, Lcom/android/server/sip/SipSessionGroup;->createSession(Landroid/net/sip/ISipSessionListener;)Landroid/net/sip/ISipSession;
@@ -219,6 +251,8 @@
 .method public getLocalProfile()Landroid/net/sip/SipProfile;
     .locals 1
 
+    .prologue
+    .line 480
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->getLocalProfile()Landroid/net/sip/SipProfile;
@@ -231,6 +265,8 @@
 .method public isOpenedToReceiveCalls()Z
     .locals 1
 
+    .prologue
+    .line 588
     iget-boolean v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mOpenedToReceiveCalls:Z
 
     return v0
@@ -239,6 +275,8 @@
 .method public isRegistered()Z
     .locals 1
 
+    .prologue
+    .line 592
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->isRegistered()Z
@@ -250,32 +288,40 @@
 
 .method public onConnectivityChanged(Z)V
     .locals 3
+    .parameter "connected"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/sip/SipException;
         }
     .end annotation
 
+    .prologue
+    .line 526
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->onConnectivityChanged()V
 
+    .line 527
     if-eqz p1, :cond_1
 
+    .line 528
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->reset()V
 
+    .line 529
     iget-boolean v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mOpenedToReceiveCalls:Z
 
     if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/server/sip/SipService$SipSessionGroupExt;->openToReceiveCalls()V
 
+    .line 537
     :cond_0
     :goto_0
     return-void
 
+    .line 532
     :cond_1
     const-string v0, "SipService"
 
@@ -315,10 +361,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 534
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup;->close()V
 
+    .line 535
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->stop()V
@@ -328,7 +376,12 @@
 
 .method public onError(Landroid/net/sip/ISipSession;ILjava/lang/String;)V
     .locals 3
+    .parameter "session"
+    .parameter "errorCode"
+    .parameter "message"
 
+    .prologue
+    .line 583
     const-string v0, "SipService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -365,22 +418,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 585
     return-void
 .end method
 
 .method public onKeepAliveIntervalChanged()V
     .locals 1
 
+    .prologue
+    .line 488
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->onKeepAliveIntervalChanged()V
 
+    .line 489
     return-void
 .end method
 
 .method public onRinging(Landroid/net/sip/ISipSession;Landroid/net/sip/SipProfile;Ljava/lang/String;)V
     .locals 7
+    .parameter "s"
+    .parameter "caller"
+    .parameter "sessionDescription"
 
+    .prologue
+    .line 554
     const-string v3, "SipService"
 
     const-string v4, "<<<<< onRinging()"
@@ -389,12 +451,16 @@
 
     move-object v2, p1
 
+    .line 555
     check-cast v2, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
+    .line 557
+    .local v2, session:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
     iget-object v4, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v4
 
+    .line 559
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/sip/SipService$SipSessionGroupExt;->isRegistered()Z
 
@@ -411,20 +477,24 @@
 
     if-eqz v3, :cond_1
 
+    .line 560
     :cond_0
     invoke-virtual {v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->endCall()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 561
     :try_start_1
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 578
     :goto_0
     return-void
 
+    .line 565
     :cond_1
     :try_start_2
     iget-object v3, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
@@ -432,6 +502,7 @@
     #calls: Lcom/android/server/sip/SipService;->addPendingSession(Landroid/net/sip/ISipSession;)V
     invoke-static {v3, v2}, Lcom/android/server/sip/SipService;->access$600(Lcom/android/server/sip/SipService;Landroid/net/sip/ISipSession;)V
 
+    .line 566
     invoke-virtual {v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->getCallId()Ljava/lang/String;
 
     move-result-object v3
@@ -440,6 +511,8 @@
 
     move-result-object v1
 
+    .line 568
+    .local v1, intent:Landroid/content/Intent;
     const-string v3, "SipService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -506,6 +579,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 571
     iget-object v3, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mIncomingCallPendingIntent:Landroid/app/PendingIntent;
 
     iget-object v5, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
@@ -522,6 +596,8 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_2 .. :try_end_2} :catch_0
 
+    .line 577
+    .end local v1           #intent:Landroid/content/Intent;
     :goto_1
     :try_start_3
     monitor-exit v4
@@ -537,9 +613,12 @@
 
     throw v3
 
+    .line 573
     :catch_0
     move-exception v0
 
+    .line 574
+    .local v0, e:Landroid/app/PendingIntent$CanceledException;
     :try_start_4
     const-string v3, "SipService"
 
@@ -547,6 +626,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 575
     invoke-virtual {v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->endCall()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -562,10 +642,13 @@
         }
     .end annotation
 
+    .prologue
+    .line 515
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mOpenedToReceiveCalls:Z
 
+    .line 516
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->this$0:Lcom/android/server/sip/SipService;
 
     #getter for: Lcom/android/server/sip/SipService;->mNetworkType:I
@@ -577,16 +660,19 @@
 
     if-eq v0, v1, :cond_0
 
+    .line 517
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0, p0}, Lcom/android/server/sip/SipSessionGroup;->openToReceiveCalls(Landroid/net/sip/ISipSessionListener;)V
 
+    .line 518
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     iget-object v1, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0, v1}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->start(Lcom/android/server/sip/SipSessionGroup;)V
 
+    .line 520
     :cond_0
     const-string v0, "SipService"
 
@@ -626,33 +712,46 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 522
     return-void
 .end method
 
 .method public setIncomingCallPendingIntent(Landroid/app/PendingIntent;)V
     .locals 0
+    .parameter "pIntent"
 
+    .prologue
+    .line 511
     iput-object p1, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mIncomingCallPendingIntent:Landroid/app/PendingIntent;
 
+    .line 512
     return-void
 .end method
 
 .method public setListener(Landroid/net/sip/ISipSessionListener;)V
     .locals 1
+    .parameter "listener"
 
+    .prologue
+    .line 507
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mAutoRegistration:Lcom/android/server/sip/SipService$AutoRegistrationProcess;
 
     invoke-virtual {v0, p1}, Lcom/android/server/sip/SipService$AutoRegistrationProcess;->setListener(Landroid/net/sip/ISipSessionListener;)V
 
+    .line 508
     return-void
 .end method
 
 .method setWakeupTimer(Lcom/android/server/sip/SipWakeupTimer;)V
     .locals 1
+    .parameter "timer"
 
+    .prologue
+    .line 494
     iget-object v0, p0, Lcom/android/server/sip/SipService$SipSessionGroupExt;->mSipGroup:Lcom/android/server/sip/SipSessionGroup;
 
     invoke-virtual {v0, p1}, Lcom/android/server/sip/SipSessionGroup;->setWakeupTimer(Lcom/android/server/sip/SipWakeupTimer;)V
 
+    .line 495
     return-void
 .end method

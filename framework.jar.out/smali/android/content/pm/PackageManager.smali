@@ -309,14 +309,21 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 50
     return-void
 .end method
 
 .method public static getDataDirForUser(ILjava/lang/String;)Ljava/lang/String;
     .locals 2
+    .parameter "userId"
+    .parameter "packageName"
 
+    .prologue
+    .line 2964
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -380,7 +387,14 @@
 
 .method public addPreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
     .locals 2
+    .parameter "filter"
+    .parameter "match"
+    .parameter "set"
+    .parameter "activity"
+    .parameter "userId"
 
+    .prologue
+    .line 2780
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -581,54 +595,73 @@
 
 .method public getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 12
+    .parameter "archiveFilePath"
+    .parameter "flags"
 
+    .prologue
     const-wide/16 v3, 0x0
 
     const/4 v5, 0x0
 
     const/4 v1, 0x0
 
+    .line 2379
     new-instance v10, Landroid/content/pm/PackageParser;
 
     invoke-direct {v10, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
 
+    .line 2380
+    .local v10, packageParser:Landroid/content/pm/PackageParser;
     new-instance v9, Landroid/util/DisplayMetrics;
 
     invoke-direct {v9}, Landroid/util/DisplayMetrics;-><init>()V
 
+    .line 2381
+    .local v9, metrics:Landroid/util/DisplayMetrics;
     invoke-virtual {v9}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
+    .line 2382
     new-instance v11, Ljava/io/File;
 
     invoke-direct {v11, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 2383
+    .local v11, sourceFile:Ljava/io/File;
     invoke-virtual {v10, v11, p1, v9, v5}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v0
 
+    .line 2385
+    .local v0, pkg:Landroid/content/pm/PackageParser$Package;
     if-nez v0, :cond_0
 
+    .line 2392
     :goto_0
     return-object v1
 
+    .line 2388
     :cond_0
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_1
 
+    .line 2389
     invoke-virtual {v10, v0, v5}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
 
+    .line 2391
     :cond_1
     new-instance v8, Landroid/content/pm/PackageUserState;
 
     invoke-direct {v8}, Landroid/content/pm/PackageUserState;-><init>()V
 
+    .local v8, state:Landroid/content/pm/PackageUserState;
     move v2, p2
 
     move-wide v5, v3
 
     move-object v7, v1
 
+    .line 2392
     invoke-static/range {v0 .. v8}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJLjava/util/HashSet;Landroid/content/pm/PackageUserState;)Landroid/content/pm/PackageInfo;
 
     move-result-object v1
@@ -657,13 +690,18 @@
 
 .method public getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
     .locals 1
+    .parameter "packageName"
+    .parameter "observer"
 
+    .prologue
+    .line 2699
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/content/pm/PackageManager;->getPackageSizeInfo(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
 
+    .line 2700
     return-void
 .end method
 

@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/net/wifi/SupplicantStateTracker;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 265
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$ScanState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -34,5 +37,7 @@
 .method public enter()V
     .locals 0
 
+    .prologue
+    .line 269
     return-void
 .end method

@@ -155,6 +155,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -167,7 +169,13 @@
 
 .method public bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;II)Z
     .locals 2
+    .parameter "service"
+    .parameter "conn"
+    .parameter "flags"
+    .parameter "userHandle"
 
+    .prologue
+    .line 1681
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -332,7 +340,10 @@
 
 .method public final getString(I)Ljava/lang/String;
     .locals 1
+    .parameter "resId"
 
+    .prologue
+    .line 327
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -346,7 +357,11 @@
 
 .method public final varargs getString(I[Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
+    .parameter "resId"
+    .parameter "formatArgs"
 
+    .prologue
+    .line 340
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -363,7 +378,10 @@
 
 .method public final getText(I)Ljava/lang/CharSequence;
     .locals 1
+    .parameter "resId"
 
+    .prologue
+    .line 317
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -381,6 +399,8 @@
 .method public getThemeResId()I
     .locals 1
 
+    .prologue
+    .line 356
     const/4 v0, 0x0
 
     return v0
@@ -407,6 +427,8 @@
 .method public isRestricted()Z
     .locals 1
 
+    .prologue
+    .line 2758
     const/4 v0, 0x0
 
     return v0
@@ -414,12 +436,16 @@
 
 .method public final obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
     .locals 1
+    .parameter "resid"
+    .parameter "attrs"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
         }
     .end annotation
 
+    .prologue
+    .line 385
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -433,9 +459,13 @@
 
 .method public final obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
     .locals 2
+    .parameter "set"
+    .parameter "attrs"
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 397
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -449,7 +479,13 @@
 
 .method public final obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
     .locals 1
+    .parameter "set"
+    .parameter "attrs"
+    .parameter "defStyleAttr"
+    .parameter "defStyleRes"
 
+    .prologue
+    .line 409
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -463,7 +499,10 @@
 
 .method public final obtainStyledAttributes([I)Landroid/content/res/TypedArray;
     .locals 1
+    .parameter "attrs"
 
+    .prologue
+    .line 373
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -504,13 +543,17 @@
 
 .method public registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
     .locals 1
+    .parameter "callback"
 
+    .prologue
+    .line 299
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
+    .line 300
     return-void
 .end method
 
@@ -598,7 +641,12 @@
 
 .method public startActivitiesAsUser([Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
     .locals 2
+    .parameter "intents"
+    .parameter "options"
+    .parameter "userHandle"
 
+    .prologue
+    .line 1036
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -616,7 +664,12 @@
 
 .method public startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
     .locals 2
+    .parameter "intent"
+    .parameter "options"
+    .parameter "userId"
 
+    .prologue
+    .line 967
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -628,7 +681,11 @@
 
 .method public startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
     .locals 2
+    .parameter "intent"
+    .parameter "user"
 
+    .prologue
+    .line 922
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented. Must override in a subclass."
@@ -674,13 +731,17 @@
 
 .method public unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
     .locals 1
+    .parameter "callback"
 
+    .prologue
+    .line 307
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
+    .line 308
     return-void
 .end method
 

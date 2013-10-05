@@ -37,12 +37,14 @@
 .method static constructor <clinit>()V
     .locals 5
 
+    .prologue
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 69
     new-instance v0, Landroid/text/TextDirectionHeuristics$TriState;
 
     const-string v1, "TRUE"
@@ -67,6 +69,7 @@
 
     sput-object v0, Landroid/text/TextDirectionHeuristics$TriState;->UNKNOWN:Landroid/text/TextDirectionHeuristics$TriState;
 
+    .line 68
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/text/TextDirectionHeuristics$TriState;
@@ -90,12 +93,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 68
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +110,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 68
     const-class v0, Landroid/text/TextDirectionHeuristics$TriState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,6 +128,8 @@
 .method public static values()[Landroid/text/TextDirectionHeuristics$TriState;
     .locals 1
 
+    .prologue
+    .line 68
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->$VALUES:[Landroid/text/TextDirectionHeuristics$TriState;
 
     invoke-virtual {v0}, [Landroid/text/TextDirectionHeuristics$TriState;->clone()Ljava/lang/Object;

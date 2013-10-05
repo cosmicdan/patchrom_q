@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1939
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,19 +36,23 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
+    .parameter "animator"
 
+    .prologue
     const/4 v2, 0x0
 
     const/4 v4, 0x0
 
     const/high16 v3, 0x3f80
 
+    .line 1941
     const-string v0, "MediatekGlowPadView"
 
     const-string v1, "mFakeHandleDrawableResetListener"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1942
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mHandleDrawable:Lcom/android/internal/policy/impl/keyguard/TargetDrawable;
@@ -55,6 +62,7 @@
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/keyguard/TargetDrawable;->setScaleX(F)V
 
+    .line 1943
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mHandleDrawable:Lcom/android/internal/policy/impl/keyguard/TargetDrawable;
@@ -64,6 +72,7 @@
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/keyguard/TargetDrawable;->setScaleY(F)V
 
+    .line 1944
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->mHandleDrawable:Lcom/android/internal/policy/impl/keyguard/TargetDrawable;
@@ -73,10 +82,12 @@
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/keyguard/TargetDrawable;->setAlpha(F)V
 
+    .line 1945
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->invalidate()V
 
+    .line 1946
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
     const/4 v1, 0x7
@@ -88,5 +99,6 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->switchDragViewToState(IIIFF)V
     invoke-static/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->access$1800(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;IIIFF)V
 
+    .line 1947
     return-void
 .end method
