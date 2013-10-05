@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 3683
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$4;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,15 +39,20 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 2
+    .parameter "input"
 
+    .prologue
     const/high16 v1, 0x3e80
 
+    .line 3686
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_0
 
+    .line 3688
     div-float v0, p1, v1
 
+    .line 3691
     :goto_0
     return v0
 

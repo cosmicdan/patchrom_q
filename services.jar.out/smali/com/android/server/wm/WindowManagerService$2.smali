@@ -40,7 +40,18 @@
 # direct methods
 .method constructor <init>([Lcom/android/server/wm/WindowManagerService;Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZ)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 843
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$2;->val$context:Landroid/content/Context;
@@ -69,6 +80,8 @@
 .method public run()V
     .locals 12
 
+    .prologue
+    .line 846
     iget-object v10, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
 
     const/4 v11, 0x0
@@ -97,5 +110,6 @@
 
     aput-object v0, v10, v11
 
+    .line 848
     return-void
 .end method

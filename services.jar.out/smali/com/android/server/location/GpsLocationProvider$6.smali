@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GpsLocationProvider;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1857
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$6;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 1860
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v4
@@ -46,28 +53,38 @@
 
     if-eqz v4, :cond_3
 
+    .line 1861
     const-string v4, "GpsLocationProvider"
 
     const-string v5, "receive a sms"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1862
     invoke-static {p2}, Landroid/provider/Telephony$Sms$Intents;->getMessagesFromIntent(Landroid/content/Intent;)[Landroid/telephony/SmsMessage;
 
     move-result-object v1
 
+    .line 1863
+    .local v1, messages:[Landroid/telephony/SmsMessage;
     if-eqz v1, :cond_2
 
+    .line 1864
     const/4 v4, 0x0
 
     aget-object v0, v1, v4
 
+    .line 1865
+    .local v0, message:Landroid/telephony/SmsMessage;
     if-eqz v0, :cond_1
 
+    .line 1866
     invoke-virtual {v0}, Landroid/telephony/SmsMessage;->getMessageBody()Ljava/lang/String;
 
     move-result-object v3
 
+    .line 1867
+    .local v3, text:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/location/GpsLocationProvider$6;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #calls: Lcom/android/server/location/GpsLocationProvider;->gpsTestMessageParser(Ljava/lang/String;)I
@@ -75,6 +92,8 @@
 
     move-result v2
 
+    .line 1868
+    .local v2, testNum:I
     iget-object v4, p0, Lcom/android/server/location/GpsLocationProvider$6;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mAirTestFlag:Z
@@ -84,6 +103,7 @@
 
     if-eqz v4, :cond_0
 
+    .line 1869
     iget-object v4, p0, Lcom/android/server/location/GpsLocationProvider$6;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     const/4 v5, 0x1
@@ -93,10 +113,18 @@
     #calls: Lcom/android/server/location/GpsLocationProvider;->native_gps_test_start(III)Z
     invoke-static {v4, v2, v5, v6}, Lcom/android/server/location/GpsLocationProvider;->access$2600(Lcom/android/server/location/GpsLocationProvider;III)Z
 
+    .line 1885
+    .end local v0           #message:Landroid/telephony/SmsMessage;
+    .end local v1           #messages:[Landroid/telephony/SmsMessage;
+    .end local v2           #testNum:I
+    .end local v3           #text:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
+    .line 1872
+    .restart local v0       #message:Landroid/telephony/SmsMessage;
+    .restart local v1       #messages:[Landroid/telephony/SmsMessage;
     :cond_1
     const-string v4, "GpsLocationProvider"
 
@@ -106,6 +134,8 @@
 
     goto :goto_0
 
+    .line 1875
+    .end local v0           #message:Landroid/telephony/SmsMessage;
     :cond_2
     const-string v4, "GpsLocationProvider"
 
@@ -115,6 +145,8 @@
 
     goto :goto_0
 
+    .line 1877
+    .end local v1           #messages:[Landroid/telephony/SmsMessage;
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -128,12 +160,14 @@
 
     if-eqz v4, :cond_0
 
+    .line 1878
     const-string v4, "GpsLocationProvider"
 
     const-string v5, "receive gps test sms sent action"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1879
     invoke-virtual {p0}, Lcom/android/server/location/GpsLocationProvider$6;->getResultCode()I
 
     move-result v4
@@ -142,6 +176,7 @@
 
     if-ne v4, v5, :cond_4
 
+    .line 1880
     const-string v4, "GpsLocationProvider"
 
     const-string v5, "test sms has sent successfully"
@@ -150,6 +185,7 @@
 
     goto :goto_0
 
+    .line 1882
     :cond_4
     const-string v4, "GpsLocationProvider"
 

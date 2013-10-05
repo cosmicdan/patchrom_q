@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/UserStartedState;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 14953
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$15;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$15;->val$uss:Lcom/android/server/am/UserStartedState;
@@ -37,12 +41,22 @@
 # virtual methods
 .method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
     .locals 2
+    .parameter "intent"
+    .parameter "resultCode"
+    .parameter "data"
+    .parameter "extras"
+    .parameter "ordered"
+    .parameter "sticky"
+    .parameter "sendingUser"
 
+    .prologue
+    .line 14957
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$15;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$15;->val$uss:Lcom/android/server/am/UserStartedState;
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->userInitialized(Lcom/android/server/am/UserStartedState;)V
 
+    .line 14958
     return-void
 .end method

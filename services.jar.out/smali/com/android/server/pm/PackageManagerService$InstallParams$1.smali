@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService$InstallParams;I)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 6870
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$InstallParams$1;->this$1:Lcom/android/server/pm/PackageManagerService$InstallParams;
 
     iput p2, p0, Lcom/android/server/pm/PackageManagerService$InstallParams$1;->val$verificationId:I
@@ -37,7 +41,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 6873
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$InstallParams$1;->this$1:Lcom/android/server/pm/PackageManagerService$InstallParams;
 
     iget-object v1, v1, Lcom/android/server/pm/PackageManagerService$InstallParams;->this$0:Lcom/android/server/pm/PackageManagerService;
@@ -50,10 +58,13 @@
 
     move-result-object v0
 
+    .line 6875
+    .local v0, msg:Landroid/os/Message;
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$InstallParams$1;->val$verificationId:I
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
+    .line 6876
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$InstallParams$1;->this$1:Lcom/android/server/pm/PackageManagerService$InstallParams;
 
     iget-object v1, v1, Lcom/android/server/pm/PackageManagerService$InstallParams;->this$0:Lcom/android/server/pm/PackageManagerService;
@@ -71,5 +82,6 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
+    .line 6877
     return-void
 .end method

@@ -54,6 +54,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 9508
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,6 +66,8 @@
 .method public getSharedUser()Lcom/android/server/pm/SharedUserSetting;
     .locals 1
 
+    .prologue
+    .line 9576
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mSharedUser:Lcom/android/server/pm/SharedUserSetting;
 
     return-object v0
@@ -72,6 +76,8 @@
 .method public getTitlePrinted()Z
     .locals 1
 
+    .prologue
+    .line 9568
     iget-boolean v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTitlePrinted:Z
 
     return v0
@@ -79,9 +85,12 @@
 
 .method public isDumping(I)Z
     .locals 2
+    .parameter "type"
 
+    .prologue
     const/4 v0, 0x1
 
+    .line 9542
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTypes:I
 
     if-nez v1, :cond_1
@@ -90,6 +99,7 @@
 
     if-eq p1, v1, :cond_1
 
+    .line 9546
     :cond_0
     :goto_0
     return v0
@@ -108,7 +118,10 @@
 
 .method public isOptionEnabled(I)Z
     .locals 1
+    .parameter "option"
 
+    .prologue
+    .line 9554
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mOptions:I
 
     and-int/2addr v0, p1
@@ -129,51 +142,72 @@
 .method public onTitlePrinted()Z
     .locals 2
 
+    .prologue
+    .line 9562
     iget-boolean v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTitlePrinted:Z
 
+    .line 9563
+    .local v0, printed:Z
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTitlePrinted:Z
 
+    .line 9564
     return v0
 .end method
 
 .method public setDump(I)V
     .locals 1
+    .parameter "type"
 
+    .prologue
+    .line 9550
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTypes:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTypes:I
 
+    .line 9551
     return-void
 .end method
 
 .method public setOptionEnabled(I)V
     .locals 1
+    .parameter "option"
 
+    .prologue
+    .line 9558
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mOptions:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mOptions:I
 
+    .line 9559
     return-void
 .end method
 
 .method public setSharedUser(Lcom/android/server/pm/SharedUserSetting;)V
     .locals 0
+    .parameter "user"
 
+    .prologue
+    .line 9580
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mSharedUser:Lcom/android/server/pm/SharedUserSetting;
 
+    .line 9581
     return-void
 .end method
 
 .method public setTitlePrinted(Z)V
     .locals 0
+    .parameter "enabled"
 
+    .prologue
+    .line 9572
     iput-boolean p1, p0, Lcom/android/server/pm/PackageManagerService$DumpState;->mTitlePrinted:Z
 
+    .line 9573
     return-void
 .end method

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/DisplayAdapter;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 117
     iput-object p1, p0, Lcom/android/server/display/DisplayAdapter$2;->this$0:Lcom/android/server/display/DisplayAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 120
     iget-object v0, p0, Lcom/android/server/display/DisplayAdapter$2;->this$0:Lcom/android/server/display/DisplayAdapter;
 
     #getter for: Lcom/android/server/display/DisplayAdapter;->mListener:Lcom/android/server/display/DisplayAdapter$Listener;
@@ -46,5 +51,6 @@
 
     invoke-interface {v0}, Lcom/android/server/display/DisplayAdapter$Listener;->onTraversalRequested()V
 
+    .line 121
     return-void
 .end method

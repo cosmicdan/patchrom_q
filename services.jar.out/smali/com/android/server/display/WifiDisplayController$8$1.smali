@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController$8;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 478
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 481
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
     iget-object v0, v0, Lcom/android/server/display/WifiDisplayController$8;->this$0:Lcom/android/server/display/WifiDisplayController;
@@ -48,6 +53,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 482
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
     iget-object v0, v0, Lcom/android/server/display/WifiDisplayController$8;->this$0:Lcom/android/server/display/WifiDisplayController;
@@ -70,6 +76,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 483
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
     iget-object v0, v0, Lcom/android/server/display/WifiDisplayController$8;->this$0:Lcom/android/server/display/WifiDisplayController;
@@ -78,12 +85,14 @@
 
     invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$1120(Lcom/android/server/display/WifiDisplayController;I)I
 
+    .line 484
     invoke-static {}, Lcom/android/server/display/WifiDisplayController;->access$200()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 485
     const-string v0, "WifiDisplayController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -115,6 +124,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 488
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
@@ -123,10 +133,12 @@
     #calls: Lcom/android/server/display/WifiDisplayController;->tryDiscoverPeers()V
     invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1200(Lcom/android/server/display/WifiDisplayController;)V
 
+    .line 494
     :cond_1
     :goto_0
     return-void
 
+    .line 490
     :cond_2
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
@@ -135,6 +147,7 @@
     #calls: Lcom/android/server/display/WifiDisplayController;->handleScanFinished()V
     invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1300(Lcom/android/server/display/WifiDisplayController;)V
 
+    .line 491
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$8$1;->this$1:Lcom/android/server/display/WifiDisplayController$8;
 
     iget-object v0, v0, Lcom/android/server/display/WifiDisplayController$8;->this$0:Lcom/android/server/display/WifiDisplayController;

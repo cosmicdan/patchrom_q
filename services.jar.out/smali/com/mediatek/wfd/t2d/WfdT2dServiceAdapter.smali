@@ -16,14 +16,24 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 9
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 18
     return-void
 .end method
 
 .method public static createT2dService(Landroid/content/Context;Landroid/net/wifi/p2p/WifiP2pManager;Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/media/RemoteDisplay;Lcom/mediatek/wfd/t2d/WfdT2dServiceAdapter$Listener;)Lcom/mediatek/wfd/t2d/WfdT2dServiceAdapter$IWfdT2dService;
     .locals 6
+    .parameter "context"
+    .parameter "manager"
+    .parameter "channel"
+    .parameter "remoteDisplay"
+    .parameter "listener"
 
+    .prologue
+    .line 24
     new-instance v0, Lcom/mediatek/wfd/t2d/WfdT2dService;
 
     move-object v1, p0
@@ -38,5 +48,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/mediatek/wfd/t2d/WfdT2dService;-><init>(Landroid/content/Context;Landroid/net/wifi/p2p/WifiP2pManager;Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/media/RemoteDisplay;Lcom/mediatek/wfd/t2d/WfdT2dServiceAdapter$Listener;)V
 
+    .line 25
+    .local v0, instance:Lcom/mediatek/wfd/t2d/WfdT2dServiceAdapter$IWfdT2dService;
     return-object v0
 .end method

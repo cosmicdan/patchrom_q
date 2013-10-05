@@ -21,11 +21,20 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;ILjava/lang/String;Landroid/os/IBinder;Landroid/os/WorkSource;)V
     .locals 0
+    .parameter
+    .parameter "lockMode"
+    .parameter "tag"
+    .parameter "binder"
+    .parameter "ws"
 
+    .prologue
+    .line 1367
     iput-object p1, p0, Lcom/android/server/WifiService$WifiLock;->this$0:Lcom/android/server/WifiService;
 
+    .line 1368
     invoke-direct/range {p0 .. p5}, Lcom/android/server/WifiService$DeathRecipient;-><init>(Lcom/android/server/WifiService;ILjava/lang/String;Landroid/os/IBinder;Landroid/os/WorkSource;)V
 
+    .line 1369
     return-void
 .end method
 
@@ -34,6 +43,8 @@
 .method public binderDied()V
     .locals 3
 
+    .prologue
+    .line 1372
     iget-object v0, p0, Lcom/android/server/WifiService$WifiLock;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mLocks:Lcom/android/server/WifiService$LockList;
@@ -43,6 +54,7 @@
 
     monitor-enter v1
 
+    .line 1373
     :try_start_0
     iget-object v0, p0, Lcom/android/server/WifiService$WifiLock;->this$0:Lcom/android/server/WifiService;
 
@@ -51,10 +63,13 @@
     #calls: Lcom/android/server/WifiService;->releaseWifiLockLocked(Landroid/os/IBinder;)Z
     invoke-static {v0, v2}, Lcom/android/server/WifiService;->access$3100(Lcom/android/server/WifiService;Landroid/os/IBinder;)Z
 
+    .line 1374
     monitor-exit v1
 
+    .line 1375
     return-void
 
+    .line 1374
     :catchall_0
     move-exception v0
 
@@ -68,6 +83,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 1378
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

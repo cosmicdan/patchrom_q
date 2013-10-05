@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 616
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     return-void

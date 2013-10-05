@@ -35,7 +35,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 7856
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

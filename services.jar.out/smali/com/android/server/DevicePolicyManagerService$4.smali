@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DevicePolicyManagerService;Landroid/os/RemoteCallback;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1941
     iput-object p1, p0, Lcom/android/server/DevicePolicyManagerService$4;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     iput-object p2, p0, Lcom/android/server/DevicePolicyManagerService$4;->val$result:Landroid/os/RemoteCallback;
@@ -37,7 +41,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 1945
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DevicePolicyManagerService$4;->val$result:Landroid/os/RemoteCallback;
 
@@ -51,9 +59,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1948
     :goto_0
     return-void
 
+    .line 1946
     :catch_0
     move-exception v0
 

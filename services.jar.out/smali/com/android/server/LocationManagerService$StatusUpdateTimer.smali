@@ -39,43 +39,56 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 2
+    .parameter
 
+    .prologue
     const-wide/16 v0, 0x7530
 
+    .line 498
     iput-object p1, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
+    .line 499
     invoke-direct {p0, v0, v1, v0, v1}, Landroid/os/CountDownTimer;-><init>(JJ)V
 
+    .line 492
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
+    .line 495
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
+    .line 500
     invoke-direct {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->resetProviderStatus()V
 
+    .line 501
     return-void
 .end method
 
 .method private onFinishLocked()V
     .locals 13
 
+    .prologue
     const/4 v12, 0x2
 
+    .line 513
     const-string v9, "LocationManagerService"
 
     const-string v10, "status timer finished"
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 514
     new-instance v6, Ljava/util/HashSet;
 
     invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
 
+    .line 515
+    .local v6, removedProvides:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v9, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v9}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -100,6 +113,8 @@
 
     check-cast v5, Ljava/lang/String;
 
+    .line 517
+    .local v5, provider:Ljava/lang/String;
     iget-object v9, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v9, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -108,12 +123,15 @@
 
     check-cast v7, Ljava/lang/Integer;
 
+    .line 518
+    .local v7, s:Ljava/lang/Integer;
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
     move-result v9
 
     if-ne v9, v12, :cond_0
 
+    .line 520
     iget-object v9, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mProvidersByName:Ljava/util/HashMap;
@@ -127,10 +145,14 @@
 
     check-cast v4, Lcom/android/server/location/LocationProviderInterface;
 
+    .line 521
+    .local v4, p:Lcom/android/server/location/LocationProviderInterface;
     if-nez v4, :cond_1
 
+    .line 522
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 523
     const-string v9, "LocationManagerService"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -155,19 +177,26 @@
 
     goto :goto_0
 
+    .line 526
     :cond_1
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
+    .line 527
+    .local v1, extras:Landroid/os/Bundle;
     invoke-interface {v4, v1}, Lcom/android/server/location/LocationProviderInterface;->getStatus(Landroid/os/Bundle;)I
 
     move-result v8
 
+    .line 528
+    .local v8, status:I
     invoke-virtual {p0, v5, v8}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->updateProviderStatus(Ljava/lang/String;I)V
 
+    .line 529
     if-eq v8, v12, :cond_0
 
+    .line 530
     iget-object v9, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mReceivers:Ljava/util/HashMap;
@@ -183,6 +212,7 @@
 
     move-result-object v3
 
+    .local v3, i$:Ljava/util/Iterator;
     :cond_2
     :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -197,6 +227,8 @@
 
     check-cast v0, Lcom/android/server/LocationManagerService$Receiver;
 
+    .line 531
+    .local v0, aReceiver:Lcom/android/server/LocationManagerService$Receiver;
     iget-object v9, v0, Lcom/android/server/LocationManagerService$Receiver;->mUpdateRecords:Ljava/util/HashMap;
 
     invoke-virtual {v9, v5}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -205,6 +237,7 @@
 
     if-eqz v9, :cond_2
 
+    .line 532
     const-string v9, "LocationManagerService"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -253,15 +286,25 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 533
     invoke-virtual {v0, v5, v8, v1}, Lcom/android/server/LocationManagerService$Receiver;->callStatusChangedLocked(Ljava/lang/String;ILandroid/os/Bundle;)Z
 
     goto :goto_1
 
+    .line 540
+    .end local v0           #aReceiver:Lcom/android/server/LocationManagerService$Receiver;
+    .end local v1           #extras:Landroid/os/Bundle;
+    .end local v3           #i$:Ljava/util/Iterator;
+    .end local v4           #p:Lcom/android/server/location/LocationProviderInterface;
+    .end local v5           #provider:Ljava/lang/String;
+    .end local v7           #s:Ljava/lang/Integer;
+    .end local v8           #status:I
     :cond_3
     invoke-virtual {v6}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
+    .local v2, i$:Ljava/util/Iterator;
     :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -275,12 +318,16 @@
 
     check-cast v5, Ljava/lang/String;
 
+    .line 541
+    .restart local v5       #provider:Ljava/lang/String;
     iget-object v9, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v9, v5}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
+    .line 544
+    .end local v5           #provider:Ljava/lang/String;
     :cond_4
     invoke-direct {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->shouldStop()Z
 
@@ -288,11 +335,14 @@
 
     if-nez v9, :cond_5
 
+    .line 545
     invoke-virtual {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->start()Landroid/os/CountDownTimer;
 
+    .line 549
     :goto_3
     return-void
 
+    .line 547
     :cond_5
     invoke-direct {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->stopTimer()V
 
@@ -302,10 +352,13 @@
 .method private resetProviderStatus()V
     .locals 5
 
+    .prologue
+    .line 578
     iget-object v2, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
+    .line 579
     iget-object v2, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mProvidersByName:Ljava/util/HashMap;
@@ -321,6 +374,7 @@
 
     move-result-object v0
 
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -334,6 +388,8 @@
 
     check-cast v1, Ljava/lang/String;
 
+    .line 580
+    .local v1, provider:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     new-instance v3, Ljava/lang/Integer;
@@ -346,6 +402,8 @@
 
     goto :goto_0
 
+    .line 582
+    .end local v1           #provider:Ljava/lang/String;
     :cond_0
     return-void
 .end method
@@ -353,12 +411,16 @@
 .method private shouldStop()Z
     .locals 7
 
+    .prologue
     const/4 v5, 0x1
 
+    .line 592
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
+    .line 593
+    .local v4, t:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     iget-object v6, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mReceivers:Ljava/util/HashMap;
@@ -387,6 +449,8 @@
 
     check-cast v0, Lcom/android/server/LocationManagerService$Receiver;
 
+    .line 594
+    .local v0, aReceiver:Lcom/android/server/LocationManagerService$Receiver;
     iget-object v6, v0, Lcom/android/server/LocationManagerService$Receiver;->mUpdateRecords:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -397,6 +461,7 @@
 
     move-result-object v2
 
+    .local v2, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -410,6 +475,8 @@
 
     check-cast v3, Ljava/lang/String;
 
+    .line 595
+    .local v3, provider:Ljava/lang/String;
     new-instance v6, Ljava/lang/Integer;
 
     invoke-direct {v6, v5}, Ljava/lang/Integer;-><init>(I)V
@@ -418,6 +485,10 @@
 
     goto :goto_0
 
+    .line 599
+    .end local v0           #aReceiver:Lcom/android/server/LocationManagerService$Receiver;
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v3           #provider:Ljava/lang/String;
     :cond_1
     invoke-virtual {v4}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -439,6 +510,7 @@
 
     if-eqz v6, :cond_3
 
+    .line 602
     :cond_2
     :goto_1
     return v5
@@ -452,24 +524,31 @@
 .method private stopTimer()V
     .locals 2
 
+    .prologue
+    .line 568
     iget-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
     if-eqz v0, :cond_0
 
+    .line 570
     invoke-virtual {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->cancel()V
 
+    .line 571
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
+    .line 572
     const-string v0, "LocationManagerService"
 
     const-string v1, "cancel status update timer"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 573
     invoke-direct {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->resetProviderStatus()V
 
+    .line 575
     :cond_0
     return-void
 .end method
@@ -479,6 +558,8 @@
 .method public isTimerStarted()Z
     .locals 1
 
+    .prologue
+    .line 552
     iget-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
     return v0
@@ -487,6 +568,8 @@
 .method public onFinish()V
     .locals 2
 
+    .prologue
+    .line 506
     iget-object v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
@@ -496,13 +579,17 @@
 
     monitor-enter v1
 
+    .line 507
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->onFinishLocked()V
 
+    .line 508
     monitor-exit v1
 
+    .line 509
     return-void
 
+    .line 508
     :catchall_0
     move-exception v0
 
@@ -515,40 +602,54 @@
 
 .method public onTick(J)V
     .locals 0
+    .parameter "millisUntilFinished"
 
+    .prologue
+    .line 503
     return-void
 .end method
 
 .method public startTimer()V
     .locals 2
 
+    .prologue
+    .line 557
     iget-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
     if-nez v0, :cond_0
 
+    .line 558
     invoke-virtual {p0}, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->start()Landroid/os/CountDownTimer;
 
+    .line 559
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
+    .line 560
     const-string v0, "LocationManagerService"
 
     const-string v1, "start update status timer"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 562
     :cond_0
     return-void
 .end method
 
 .method public updateProviderStatus(Ljava/lang/String;I)V
     .locals 2
+    .parameter "provider"
+    .parameter "status"
 
+    .prologue
+    .line 585
     iget-boolean v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mTimerStarted:Z
 
     if-eqz v0, :cond_0
 
+    .line 586
     iget-object v0, p0, Lcom/android/server/LocationManagerService$StatusUpdateTimer;->mStatusByProvider:Ljava/util/HashMap;
 
     new-instance v1, Ljava/lang/Integer;
@@ -557,6 +658,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 588
     :cond_0
     return-void
 .end method

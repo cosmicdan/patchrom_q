@@ -32,7 +32,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;IILandroid/content/pm/IPackageDeleteObserver;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 8404
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$7;->val$packageName:Ljava/lang/String;
@@ -53,12 +60,15 @@
 .method public run()V
     .locals 6
 
+    .prologue
+    .line 8406
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
     invoke-virtual {v2, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 8407
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$7;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$7;->val$packageName:Ljava/lang/String;
@@ -72,10 +82,13 @@
 
     move-result v1
 
+    .line 8408
+    .local v1, returnCode:I
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$7;->val$observer:Landroid/content/pm/IPackageDeleteObserver;
 
     if-eqz v2, :cond_0
 
+    .line 8410
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$7;->val$observer:Landroid/content/pm/IPackageDeleteObserver;
 
@@ -85,13 +98,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 8415
     :cond_0
     :goto_0
     return-void
 
+    .line 8411
     :catch_0
     move-exception v0
 
+    .line 8412
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "PackageManager"
 
     const-string v3, "Observer no longer exists."

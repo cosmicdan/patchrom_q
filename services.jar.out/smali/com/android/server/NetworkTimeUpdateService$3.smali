@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkTimeUpdateService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 314
     iput-object p1, p0, Lcom/android/server/NetworkTimeUpdateService$3;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,13 +36,19 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v5, 0x3
 
+    .line 318
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 319
+    .local v0, action:Ljava/lang/String;
     const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -48,6 +57,7 @@
 
     if-eqz v3, :cond_2
 
+    .line 321
     const-string v3, "connectivity"
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -56,12 +66,17 @@
 
     check-cast v1, Landroid/net/ConnectivityManager;
 
+    .line 323
+    .local v1, connManager:Landroid/net/ConnectivityManager;
     invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v2
 
+    .line 324
+    .local v2, netInfo:Landroid/net/NetworkInfo;
     if-eqz v2, :cond_2
 
+    .line 326
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
 
     move-result-object v3
@@ -86,6 +101,7 @@
 
     if-ne v3, v4, :cond_1
 
+    .line 329
     :cond_0
     iget-object v3, p0, Lcom/android/server/NetworkTimeUpdateService$3;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
@@ -100,6 +116,7 @@
 
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
+    .line 332
     :cond_1
     invoke-static {}, Lcom/android/server/NetworkTimeUpdateService;->access$300()Z
 
@@ -121,12 +138,14 @@
 
     if-nez v3, :cond_2
 
+    .line 334
     const-string v3, "NetworkTimeUpdateService"
 
     const-string v4, "Ntp over mobile data connection"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 335
     iget-object v3, p0, Lcom/android/server/NetworkTimeUpdateService$3;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     #getter for: Lcom/android/server/NetworkTimeUpdateService;->mHandler:Landroid/os/Handler;
@@ -140,6 +159,9 @@
 
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
+    .line 340
+    .end local v1           #connManager:Landroid/net/ConnectivityManager;
+    .end local v2           #netInfo:Landroid/net/NetworkInfo;
     :cond_2
     return-void
 .end method

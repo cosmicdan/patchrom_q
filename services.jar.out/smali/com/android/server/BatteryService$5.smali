@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 512
     iput-object p1, p0, Lcom/android/server/BatteryService$5;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +40,21 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 515
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ACTION_POWER_CONNECTED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 516
+    .local v0, statusIntent:Landroid/content/Intent;
     const/high16 v1, 0x800
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 517
     iget-object v1, p0, Lcom/android/server/BatteryService$5;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
@@ -58,5 +66,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
+    .line 518
     return-void
 .end method

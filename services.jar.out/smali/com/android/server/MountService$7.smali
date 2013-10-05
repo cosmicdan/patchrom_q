@@ -23,7 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1232
     iput-object p1, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     iput-object p2, p0, Lcom/android/server/MountService$7;->val$path:Ljava/lang/String;
@@ -38,6 +42,8 @@
 .method public run()V
     .locals 7
 
+    .prologue
+    .line 1236
     :try_start_0
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
@@ -47,6 +53,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 1238
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     iget-object v3, p0, Lcom/android/server/MountService$7;->val$path:Ljava/lang/String;
@@ -58,9 +65,11 @@
     #calls: Lcom/android/server/MountService;->doShareUnshareVolume(Ljava/lang/String;Ljava/lang/String;Z)V
     invoke-static {v2, v3, v4, v5}, Lcom/android/server/MountService;->access$1300(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
 
+    .line 1253
     :goto_0
     return-void
 
+    .line 1241
     :cond_0
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
@@ -71,8 +80,10 @@
 
     move-result v1
 
+    .local v1, rc:I
     if-eqz v1, :cond_1
 
+    .line 1242
     const-string v2, "MountService"
 
     const-string v3, "Insertion mount failed (%d)"
@@ -95,22 +106,26 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1244
     :cond_1
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateSDExist()Z
     invoke-static {v2}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Z
 
+    .line 1245
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->doSDSwapVolumeUpdate()V
     invoke-static {v2}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)V
 
+    .line 1246
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateDefaultpath()V
     invoke-static {v2}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;)V
 
+    .line 1247
     iget-object v2, p0, Lcom/android/server/MountService$7;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->sendSDSwapIntent()V
@@ -120,9 +135,13 @@
 
     goto :goto_0
 
+    .line 1250
+    .end local v1           #rc:I
     :catch_0
     move-exception v0
 
+    .line 1251
+    .local v0, ex:Ljava/lang/Exception;
     const-string v2, "MountService"
 
     const-string v3, "Failed to mount media on insertion"

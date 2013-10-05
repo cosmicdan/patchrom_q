@@ -75,6 +75,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -85,6 +86,7 @@
 
     const/4 v3, 0x0
 
+    .line 128
     const/16 v0, 0x10
 
     new-array v0, v0, [Ljava/lang/String;
@@ -177,6 +179,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityManagerPlus;->mThirdPartyAppWhiteList:[Ljava/lang/String;
 
+    .line 151
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -209,6 +212,7 @@
 
     sput-object v0, Lcom/android/server/am/ActivityManagerPlus;->mInHouseAppWhiteList:[Ljava/lang/String;
 
+    .line 163
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -246,15 +250,20 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;)V
     .locals 13
+    .parameter "context"
+    .parameter "service"
 
+    .prologue
     const/4 v12, 0x0
 
     const/4 v11, 0x0
 
     const/4 v10, 0x1
 
+    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 80
     new-instance v7, Landroid/os/HandlerThread;
 
     const-string v8, "AMPlus"
@@ -265,58 +274,75 @@
 
     iput-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mHandlerThread:Landroid/os/HandlerThread;
 
+    .line 88
     iput-object v12, p0, Lcom/android/server/am/ActivityManagerPlus;->mTarget:Lcom/android/server/am/ActivityRecord;
 
+    .line 93
     iput-boolean v11, p0, Lcom/android/server/am/ActivityManagerPlus;->mOomAdjEnabled:Z
 
+    .line 98
     iput-boolean v11, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasInHouseWL:Z
 
+    .line 103
     iput-boolean v11, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasThirdPartyWL:Z
 
+    .line 108
     iput-object v12, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinner:Ljava/lang/String;
 
+    .line 113
     const-wide/16 v7, 0x0
 
     iput-wide v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinnerTime:J
 
+    .line 125
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mBoostDownloadingAppList:Ljava/util/ArrayList;
 
+    .line 160
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
+    .line 173
     const-string v7, "ActivityManagerPlus"
 
     const-string v8, "start ActivityManagerPlus"
 
     invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 175
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerPlus;->mContext:Landroid/content/Context;
 
+    .line 176
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
 
+    .line 177
     iput-boolean v10, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasThirdPartyWL:Z
 
+    .line 178
     iput-boolean v10, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasInHouseWL:Z
 
+    .line 179
     iput-boolean v10, p0, Lcom/android/server/am/ActivityManagerPlus;->mOomAdjEnabled:Z
 
+    .line 180
     const-string v7, "ActivityManagerPlus"
 
     const-string v8, "support wl!"
 
     invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 181
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v7}, Landroid/os/HandlerThread;->start()V
 
+    .line 182
     new-instance v7, Landroid/os/Handler;
 
     iget-object v8, p0, Lcom/android/server/am/ActivityManagerPlus;->mHandlerThread:Landroid/os/HandlerThread;
@@ -329,10 +355,13 @@
 
     iput-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mHandler:Landroid/os/Handler;
 
+    .line 184
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerPlus;->startHandler()V
 
+    .line 186
     const/4 v2, 0x0
 
+    .local v2, index:I
     :goto_0
     sget-object v7, Lcom/android/server/am/ActivityManagerPlus;->mProcessList:[Ljava/lang/String;
 
@@ -340,6 +369,7 @@
 
     if-ge v2, v7, :cond_0
 
+    .line 187
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
     sget-object v8, Lcom/android/server/am/ActivityManagerPlus;->mProcessList:[Ljava/lang/String;
@@ -348,10 +378,12 @@
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 186
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 192
     :cond_0
     const-string v7, "persist.ipo.shutdown.process.wl"
 
@@ -359,8 +391,11 @@
 
     move-result-object v5
 
+    .line 193
+    .local v5, processList:Ljava/lang/String;
     if-eqz v5, :cond_3
 
+    .line 194
     const-string v7, "ActivityManagerPlus"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -383,16 +418,21 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 195
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
+    .line 196
+    .local v4, processArrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v7, "/"
 
     invoke-direct {p0, v7, v5, v4}, Lcom/android/server/am/ActivityManagerPlus;->parseStringIntoArrary(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;)V
 
+    .line 198
     const/4 v0, 0x0
 
+    .local v0, i:I
     :goto_1
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -400,18 +440,22 @@
 
     if-ge v0, v7, :cond_3
 
+    .line 199
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Ljava/lang/String;
 
+    .line 200
+    .local v3, item:Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v7
 
     if-lez v7, :cond_1
 
+    .line 201
     const-string v7, "!"
 
     invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -438,6 +482,7 @@
 
     if-eqz v7, :cond_2
 
+    .line 202
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v10}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -446,12 +491,14 @@
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
+    .line 198
     :cond_1
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 203
     :cond_2
     const-string v7, "!"
 
@@ -469,12 +516,17 @@
 
     if-nez v7, :cond_1
 
+    .line 204
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
+    .line 210
+    .end local v0           #i:I
+    .end local v3           #item:Ljava/lang/String;
+    .end local v4           #processArrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_3
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
@@ -482,6 +534,7 @@
 
     move-result-object v1
 
+    .local v1, i$:Ljava/util/Iterator;
     :goto_3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -495,6 +548,8 @@
 
     check-cast v6, Ljava/lang/String;
 
+    .line 211
+    .local v6, target:Ljava/lang/String;
     const-string v7, "ActivityManagerPlus"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -519,13 +574,18 @@
 
     goto :goto_3
 
+    .line 231
+    .end local v6           #target:Ljava/lang/String;
     :cond_4
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/am/ActivityManagerPlus;)Landroid/content/Context;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 75
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerPlus;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -533,7 +593,10 @@
 
 .method static synthetic access$100(Lcom/android/server/am/ActivityManagerPlus;)Lcom/android/server/am/ActivityManagerService;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 75
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0
@@ -541,6 +604,9 @@
 
 .method private parseStringIntoArrary(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;)V
     .locals 4
+    .parameter "split"
+    .parameter "strings"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -553,25 +619,36 @@
         }
     .end annotation
 
+    .prologue
+    .line 386
+    .local p3, arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p2, p1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
+    .line 387
+    .local v2, str:[Ljava/lang/String;
     array-length v1, v2
 
+    .line 388
+    .local v1, length:I
     const/4 v0, 0x0
 
+    .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
+    .line 389
     aget-object v3, v2, v0
 
     invoke-virtual {p3, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 388
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 391
     :cond_0
     return-void
 .end method
@@ -581,12 +658,15 @@
 .method public IPOBootCompletedLocked()V
     .locals 2
 
+    .prologue
+    .line 497
     const-string v0, "ActivityManagerPlus"
 
     const-string v1, "IPOBootCompletedLocked"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 499
     const-string v0, "sys.boot_completed"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -601,25 +681,30 @@
 
     if-nez v0, :cond_0
 
+    .line 500
     const-string v0, "ActivityManagerPlus"
 
     const-string v1, "sys.boot_completed is not set"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 501
     const-string v0, "sys.boot_completed"
 
     const-string v1, "1"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 502
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService;->sendFullBootCompletedIntentLocked()V
 
+    .line 557
     :goto_0
     return-void
 
+    .line 506
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerPlus;->mHandler:Landroid/os/Handler;
 
@@ -634,55 +719,71 @@
 
 .method public setBootingVal(Z)V
     .locals 1
+    .parameter "val"
 
+    .prologue
+    .line 561
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iput-boolean p1, v0, Lcom/android/server/am/ActivityManagerService;->mBooting:Z
 
+    .line 562
     return-void
 .end method
 
 .method final startHandler()V
     .locals 3
 
+    .prologue
+    .line 234
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
+    .line 235
+    .local v0, itFilter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.BOOST_DOWNLOADING"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 236
     const-string v1, "android.intent.action.ACTION_BOOT_IPO"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 237
     const-string v1, "android.intent.action.ACTION_PREBOOT_IPO"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 238
     const-string v1, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 239
     const-string v1, "android.intent.action.black.mode"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 240
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->setPriority(I)V
 
+    .line 243
     const-string v1, "android.media.RINGER_MODE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 245
     const-string v1, "ActivityManagerPlus"
 
     const-string v2, "startHandler!"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 247
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerPlus;->mContext:Landroid/content/Context;
 
     new-instance v2, Lcom/android/server/am/ActivityManagerPlus$1;
@@ -691,27 +792,34 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    .line 383
     return-void
 .end method
 
 .method public updateOomAdjPlus(Lcom/android/server/am/ProcessRecord;)I
     .locals 12
+    .parameter "app"
 
+    .prologue
     const/16 v8, 0x8
 
     const/4 v7, 0x6
 
     const/4 v6, 0x7
 
+    .line 424
     iget-boolean v9, p0, Lcom/android/server/am/ActivityManagerPlus;->mOomAdjEnabled:Z
 
     if-nez v9, :cond_0
 
+    .line 425
     iget v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
+    .line 493
     :goto_0
     return v6
 
+    .line 428
     :cond_0
     iget-object v9, p0, Lcom/android/server/am/ActivityManagerPlus;->mBoostDownloadingAppList:Ljava/util/ArrayList;
 
@@ -721,12 +829,14 @@
 
     if-lez v9, :cond_3
 
+    .line 429
     iget-object v9, p0, Lcom/android/server/am/ActivityManagerPlus;->mBoostDownloadingAppList:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
+    .local v2, i$:Ljava/util/Iterator;
     :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -740,6 +850,8 @@
 
     check-cast v1, Ljava/lang/String;
 
+    .line 431
+    .local v1, boostApp:Ljava/lang/String;
     iget-object v9, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     invoke-virtual {v9, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -748,19 +860,25 @@
 
     if-eqz v9, :cond_1
 
+    .line 432
     iget v7, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     if-le v7, v6, :cond_2
 
+    .line 433
     iput v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     goto :goto_0
 
+    .line 436
     :cond_2
     iget v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     goto :goto_0
 
+    .line 443
+    .end local v1           #boostApp:Ljava/lang/String;
+    .end local v2           #i$:Ljava/util/Iterator;
     :cond_3
     iget v9, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
@@ -768,21 +886,28 @@
 
     if-ne v9, v10, :cond_b
 
+    .line 446
     iget-boolean v9, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasInHouseWL:Z
 
     if-eqz v9, :cond_5
 
+    .line 447
     sget-object v0, Lcom/android/server/am/ActivityManagerPlus;->mInHouseAppWhiteList:[Ljava/lang/String;
 
+    .local v0, arr$:[Ljava/lang/String;
     array-length v4, v0
 
+    .local v4, len$:I
     const/4 v2, 0x0
 
+    .local v2, i$:I
     :goto_1
     if-ge v2, v4, :cond_5
 
     aget-object v3, v0, v2
 
+    .line 449
+    .local v3, inHouseApp:Ljava/lang/String;
     iget-object v9, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     invoke-virtual {v9, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -791,31 +916,44 @@
 
     if-eqz v9, :cond_4
 
+    .line 450
     iget v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     goto :goto_0
 
+    .line 447
     :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 454
+    .end local v0           #arr$:[Ljava/lang/String;
+    .end local v2           #i$:I
+    .end local v3           #inHouseApp:Ljava/lang/String;
+    .end local v4           #len$:I
     :cond_5
     iget-boolean v9, p0, Lcom/android/server/am/ActivityManagerPlus;->mHasThirdPartyWL:Z
 
     if-eqz v9, :cond_a
 
+    .line 456
     sget-object v0, Lcom/android/server/am/ActivityManagerPlus;->mThirdPartyAppWhiteList:[Ljava/lang/String;
 
+    .restart local v0       #arr$:[Ljava/lang/String;
     array-length v4, v0
 
+    .restart local v4       #len$:I
     const/4 v2, 0x0
 
+    .restart local v2       #i$:I
     :goto_2
     if-ge v2, v4, :cond_a
 
     aget-object v5, v0, v2
 
+    .line 458
+    .local v5, thirdPartyApp:Ljava/lang/String;
     iget-object v9, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -824,25 +962,31 @@
 
     if-eqz v9, :cond_9
 
+    .line 463
     iget-object v8, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinner:Ljava/lang/String;
 
     if-nez v8, :cond_6
 
+    .line 464
     iget-object v6, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     iput-object v6, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinner:Ljava/lang/String;
 
+    .line 465
     iget-wide v8, p1, Lcom/android/server/am/ProcessRecord;->lastActivityTime:J
 
     iput-wide v8, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinnerTime:J
 
+    .line 480
     :goto_3
     iput v7, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     move v6, v7
 
+    .line 481
     goto :goto_0
 
+    .line 467
     :cond_6
     iget-object v8, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
@@ -854,12 +998,14 @@
 
     if-eqz v8, :cond_7
 
+    .line 469
     iget-wide v8, p1, Lcom/android/server/am/ProcessRecord;->lastActivityTime:J
 
     iput-wide v8, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinnerTime:J
 
     goto :goto_3
 
+    .line 470
     :cond_7
     iget-wide v8, p1, Lcom/android/server/am/ProcessRecord;->lastActivityTime:J
 
@@ -869,33 +1015,44 @@
 
     if-lez v8, :cond_8
 
+    .line 472
     iget-object v6, p1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     iput-object v6, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinner:Ljava/lang/String;
 
+    .line 473
     iget-wide v8, p1, Lcom/android/server/am/ProcessRecord;->lastActivityTime:J
 
     iput-wide v8, p0, Lcom/android/server/am/ActivityManagerPlus;->mThirdParyAppWinnerTime:J
 
     goto :goto_3
 
+    .line 476
     :cond_8
     iput v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     goto/16 :goto_0
 
+    .line 456
     :cond_9
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
+    .line 488
+    .end local v0           #arr$:[Ljava/lang/String;
+    .end local v2           #i$:I
+    .end local v4           #len$:I
+    .end local v5           #thirdPartyApp:Ljava/lang/String;
     :cond_a
     iput v8, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
     move v6, v8
 
+    .line 489
     goto/16 :goto_0
 
+    .line 493
     :cond_b
     iget v6, p1, Lcom/android/server/am/ProcessRecord;->curAdj:I
 
@@ -904,6 +1061,8 @@
 
 .method public updateRegisterReceivers(Ljava/util/List;Landroid/content/Intent;)V
     .locals 7
+    .parameter
+    .parameter "intent"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -916,8 +1075,11 @@
         }
     .end annotation
 
+    .prologue
+    .local p1, receivers:Ljava/util/List;,"Ljava/util/List<Lcom/android/server/am/BroadcastFilter;>;"
     const/4 v3, 0x0
 
+    .line 396
     const-string v5, "android.intent.action.ACTION_SHUTDOWN"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -930,6 +1092,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 399
     const-string v5, "_mode"
 
     invoke-virtual {p2, v5, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -938,15 +1101,18 @@
 
     if-nez v5, :cond_1
 
+    .line 400
     const-string v5, "ActivityManagerPlus"
 
     const-string v6, "normal shutdown"
 
     invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 419
     :cond_0
     return-void
 
+    .line 404
     :cond_1
     if-eqz p1, :cond_2
 
@@ -954,24 +1120,31 @@
 
     move-result v3
 
+    .line 405
+    .local v3, size:I
     :cond_2
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_0
     if-ge v1, v3, :cond_0
 
+    .line 406
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/am/BroadcastFilter;
 
+    .line 407
+    .local v0, curr:Lcom/android/server/am/BroadcastFilter;
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerPlus;->mProcessWL:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
+    .local v2, i$:Ljava/util/Iterator;
     :cond_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -985,6 +1158,8 @@
 
     check-cast v4, Ljava/lang/String;
 
+    .line 408
+    .local v4, target:Ljava/lang/String;
     iget-object v5, v0, Lcom/android/server/am/BroadcastFilter;->receiverList:Lcom/android/server/am/ReceiverList;
 
     iget-object v5, v5, Lcom/android/server/am/ReceiverList;->app:Lcom/android/server/am/ProcessRecord;
@@ -997,12 +1172,17 @@
 
     if-eqz v5, :cond_3
 
+    .line 409
     invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
+    .line 410
     add-int/lit8 v3, v3, -0x1
 
+    .line 411
     add-int/lit8 v1, v1, -0x1
 
+    .line 405
+    .end local v4           #target:Ljava/lang/String;
     :cond_4
     add-int/lit8 v1, v1, 0x1
 

@@ -31,21 +31,36 @@
 # direct methods
 .method constructor <init>(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/content/pm/ManifestDigest;Landroid/os/UserHandle;)V
     .locals 0
+    .parameter "packageURI"
+    .parameter "observer"
+    .parameter "flags"
+    .parameter "installerPackageName"
+    .parameter "manifestDigest"
+    .parameter "user"
 
+    .prologue
+    .line 7109
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 7110
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->packageURI:Landroid/net/Uri;
 
+    .line 7111
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
 
+    .line 7112
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->observer:Landroid/content/pm/IPackageInstallObserver;
 
+    .line 7113
     iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installerPackageName:Ljava/lang/String;
 
+    .line 7114
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->manifestDigest:Landroid/content/pm/ManifestDigest;
 
+    .line 7115
     iput-object p6, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->user:Landroid/os/UserHandle;
 
+    .line 7116
     return-void
 .end method
 
@@ -75,7 +90,10 @@
 
 .method doPostCopy(I)I
     .locals 1
+    .parameter "uid"
 
+    .prologue
+    .line 7149
     const/4 v0, 0x1
 
     return v0
@@ -90,6 +108,8 @@
 .method doPreCopy()I
     .locals 1
 
+    .prologue
+    .line 7138
     const/4 v0, 0x1
 
     return v0
@@ -113,6 +133,8 @@
 .method getUser()Landroid/os/UserHandle;
     .locals 1
 
+    .prologue
+    .line 7157
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->user:Landroid/os/UserHandle;
 
     return-object v0
@@ -121,6 +143,8 @@
 .method protected isFwdLocked()Z
     .locals 1
 
+    .prologue
+    .line 7153
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
 
     and-int/lit8 v0, v0, 0x1

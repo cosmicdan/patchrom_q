@@ -54,27 +54,36 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 3
+    .parameter "userId"
 
+    .prologue
     const/4 v1, -0x1
 
+    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 184
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->name:Ljava/lang/String;
 
+    .line 204
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->callbacks:Landroid/os/RemoteCallbackList;
 
+    .line 207
     iput v1, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->width:I
 
+    .line 208
     iput v1, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->height:I
 
+    .line 211
     iput p1, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->userId:I
 
+    .line 212
     new-instance v0, Ljava/io/File;
 
     #calls: Lcom/android/server/WallpaperManagerService;->getWallpaperDir(I)Ljava/io/File;
@@ -88,12 +97,16 @@
 
     iput-object v0, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->wallpaperFile:Ljava/io/File;
 
+    .line 213
     return-void
 .end method
 
 .method static synthetic access$400(Lcom/android/server/WallpaperManagerService$WallpaperData;)Landroid/os/RemoteCallbackList;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 170
     iget-object v0, p0, Lcom/android/server/WallpaperManagerService$WallpaperData;->callbacks:Landroid/os/RemoteCallbackList;
 
     return-object v0

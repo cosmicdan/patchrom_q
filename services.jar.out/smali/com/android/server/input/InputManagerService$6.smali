@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/input/InputManagerService;[Landroid/hardware/input/KeyboardLayout;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 787
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$6;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$6;->val$result:[Landroid/hardware/input/KeyboardLayout;
@@ -40,7 +44,14 @@
 # virtual methods
 .method public visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 3
+    .parameter "resources"
+    .parameter "descriptor"
+    .parameter "label"
+    .parameter "collection"
+    .parameter "keyboardLayoutResId"
 
+    .prologue
+    .line 791
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$6;->val$result:[Landroid/hardware/input/KeyboardLayout;
 
     const/4 v1, 0x0
@@ -51,5 +62,6 @@
 
     aput-object v2, v0, v1
 
+    .line 792
     return-void
 .end method

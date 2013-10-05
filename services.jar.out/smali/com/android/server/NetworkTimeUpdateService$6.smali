@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkTimeUpdateService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 485
     iput-object p1, p0, Lcom/android/server/NetworkTimeUpdateService$6;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
     .locals 1
+    .parameter "location"
 
+    .prologue
+    .line 488
     iget-object v0, p0, Lcom/android/server/NetworkTimeUpdateService$6;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     #getter for: Lcom/android/server/NetworkTimeUpdateService;->mGpsTimerThread:Ljava/lang/Thread;
@@ -46,23 +52,35 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
+    .line 489
     return-void
 .end method
 
 .method public onProviderDisabled(Ljava/lang/String;)V
     .locals 0
+    .parameter "provider"
 
+    .prologue
+    .line 492
     return-void
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
     .locals 0
+    .parameter "provider"
 
+    .prologue
+    .line 495
     return-void
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
+    .parameter "provider"
+    .parameter "status"
+    .parameter "extras"
 
+    .prologue
+    .line 498
     return-void
 .end method

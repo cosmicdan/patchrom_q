@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/dreams/DreamController;Lcom/android/server/dreams/DreamController$DreamRecord;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 165
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$1;->this$0:Lcom/android/server/dreams/DreamController;
 
     iput-object p2, p0, Lcom/android/server/dreams/DreamController$1;->val$oldDream:Lcom/android/server/dreams/DreamController$DreamRecord;
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 168
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$1;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mListener:Lcom/android/server/dreams/DreamController$Listener;
@@ -54,5 +60,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/dreams/DreamController$Listener;->onDreamStopped(Landroid/os/Binder;)V
 
+    .line 169
     return-void
 .end method

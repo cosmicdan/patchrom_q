@@ -21,7 +21,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/WiredAccessoryManager;Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 298
     iput-object p1, p0, Lcom/android/server/WiredAccessoryManager$4;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
@@ -33,14 +39,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
+    .parameter "msg"
 
+    .prologue
+    .line 301
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 306
     :goto_0
     return-void
 
+    .line 303
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/WiredAccessoryManager$4;->this$0:Lcom/android/server/WiredAccessoryManager;
 
@@ -55,6 +66,7 @@
     #calls: Lcom/android/server/WiredAccessoryManager;->setDevicesState(IILjava/lang/String;)V
     invoke-static {v1, v2, v3, v0}, Lcom/android/server/WiredAccessoryManager;->access$600(Lcom/android/server/WiredAccessoryManager;IILjava/lang/String;)V
 
+    .line 304
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$4;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     #getter for: Lcom/android/server/WiredAccessoryManager;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -66,6 +78,7 @@
 
     goto :goto_0
 
+    .line 301
     nop
 
     :pswitch_data_0

@@ -27,7 +27,15 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BootReceiver;Ljava/lang/String;ILandroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 131
     iput-object p1, p0, Lcom/android/server/BootReceiver$2;->this$0:Lcom/android/server/BootReceiver;
 
     iput-object p4, p0, Lcom/android/server/BootReceiver$2;->val$db:Landroid/os/DropBoxManager;
@@ -45,7 +53,11 @@
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
     .locals 7
+    .parameter "event"
+    .parameter "path"
 
+    .prologue
+    .line 135
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -59,6 +71,8 @@
 
     move-result-object v3
 
+    .line 136
+    .local v3, filename:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/server/BootReceiver$2;->val$db:Landroid/os/DropBoxManager;
 
     iget-object v1, p0, Lcom/android/server/BootReceiver$2;->val$prefs:Landroid/content/SharedPreferences;
@@ -76,12 +90,17 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 140
+    .end local v3           #filename:Ljava/lang/String;
     :goto_0
     return-void
 
+    .line 137
     :catch_0
     move-exception v6
 
+    .line 138
+    .local v6, e:Ljava/io/IOException;
     const-string v0, "BootReceiver"
 
     const-string v1, "Can\'t log tombstone"

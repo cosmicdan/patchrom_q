@@ -35,15 +35,19 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 8
+    .parameter "text"
 
+    .prologue
     const/4 v7, 0x2
 
     const/4 v6, 0x0
 
     const/4 v5, 0x1
 
+    .line 289
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 290
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -52,10 +56,12 @@
 
     if-gtz v3, :cond_1
 
+    .line 308
     :cond_0
     :goto_0
     return-void
 
+    .line 293
     :cond_1
     new-instance v3, Ljava/lang/String;
 
@@ -63,12 +69,15 @@
 
     iput-object v3, p0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mText:Ljava/lang/String;
 
+    .line 294
     const-string v3, " "
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
+    .line 295
+    .local v2, tokens:[Ljava/lang/String;
     aget-object v3, v2, v5
 
     const-string v4, ":"
@@ -77,12 +86,15 @@
 
     move-result-object v0
 
+    .line 296
+    .local v0, from:[Ljava/lang/String;
     if-eqz v0, :cond_2
 
     array-length v3, v0
 
     if-ne v3, v7, :cond_2
 
+    .line 297
     aget-object v3, v0, v6
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -91,6 +103,7 @@
 
     iput v3, p0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mSrcPid:I
 
+    .line 298
     aget-object v3, v0, v5
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -99,6 +112,7 @@
 
     iput v3, p0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mSrcTid:I
 
+    .line 301
     :cond_2
     const/4 v3, 0x3
 
@@ -110,12 +124,15 @@
 
     move-result-object v1
 
+    .line 302
+    .local v1, to:[Ljava/lang/String;
     if-eqz v1, :cond_3
 
     array-length v3, v1
 
     if-ne v3, v7, :cond_3
 
+    .line 303
     aget-object v3, v1, v6
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -124,6 +141,7 @@
 
     iput v3, p0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
+    .line 304
     aget-object v3, v1, v5
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -132,6 +150,7 @@
 
     iput v3, p0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstTid:I
 
+    .line 307
     :cond_3
     const-string v3, "ANRManager"
 

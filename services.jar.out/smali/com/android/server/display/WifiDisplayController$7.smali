@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController;I)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 432
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$7;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     iput p2, p0, Lcom/android/server/display/WifiDisplayController$7;->val$featureState:I
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 435
     const-string v0, "WifiDisplayController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -65,6 +71,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 436
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$7;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #getter for: Lcom/android/server/display/WifiDisplayController;->mListener:Lcom/android/server/display/WifiDisplayController$Listener;
@@ -76,5 +83,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/display/WifiDisplayController$Listener;->onFeatureStateChanged(I)V
 
+    .line 437
     return-void
 .end method

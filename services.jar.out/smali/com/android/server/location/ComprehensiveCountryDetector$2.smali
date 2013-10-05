@@ -32,7 +32,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/ComprehensiveCountryDetector;Landroid/location/Country;Landroid/location/Country;ZZ)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 418
     iput-object p1, p0, Lcom/android/server/location/ComprehensiveCountryDetector$2;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     iput-object p2, p0, Lcom/android/server/location/ComprehensiveCountryDetector$2;->val$country:Landroid/location/Country;
@@ -53,6 +60,8 @@
 .method public run()V
     .locals 5
 
+    .prologue
+    .line 421
     iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector$2;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     iget-object v1, p0, Lcom/android/server/location/ComprehensiveCountryDetector$2;->val$country:Landroid/location/Country;
@@ -65,5 +74,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/location/ComprehensiveCountryDetector;->runAfterDetection(Landroid/location/Country;Landroid/location/Country;ZZ)V
 
+    .line 423
     return-void
 .end method

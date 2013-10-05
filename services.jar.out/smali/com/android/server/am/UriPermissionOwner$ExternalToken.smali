@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UriPermissionOwner;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 36
     iput-object p1, p0, Lcom/android/server/am/UriPermissionOwner$ExternalToken;->this$0:Lcom/android/server/am/UriPermissionOwner;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -34,6 +37,8 @@
 .method getOwner()Lcom/android/server/am/UriPermissionOwner;
     .locals 1
 
+    .prologue
+    .line 38
     iget-object v0, p0, Lcom/android/server/am/UriPermissionOwner$ExternalToken;->this$0:Lcom/android/server/am/UriPermissionOwner;
 
     return-object v0

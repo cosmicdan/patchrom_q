@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2031
     iput-object p1, p0, Lcom/android/server/MountService$9;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -34,6 +37,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 2035
     :try_start_0
     const-string v1, "MountService"
 
@@ -41,6 +46,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2036
     iget-object v1, p0, Lcom/android/server/MountService$9;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mConnector:Lcom/android/server/NativeDaemonConnector;
@@ -54,12 +60,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2040
     :goto_0
     return-void
 
+    .line 2037
     :catch_0
     move-exception v0
 
+    .line 2038
+    .local v0, e:Ljava/lang/Exception;
     const-string v1, "MountService"
 
     const-string v2, "Error to notify VOLD IPO shutdown"

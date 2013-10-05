@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 599
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 604
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mBootCompleted:Z
@@ -59,12 +66,14 @@
 
     if-nez v0, :cond_0
 
+    .line 605
     const-string v0, "PowerManagerService"
 
     const-string v1, "reset mBootCompleted to false"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 606
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$4;->this$0:Lcom/android/server/power/PowerManagerService;
 
     const/4 v1, 0x0
@@ -72,6 +81,7 @@
     #setter for: Lcom/android/server/power/PowerManagerService;->mBootCompleted:Z
     invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$2002(Lcom/android/server/power/PowerManagerService;Z)Z
 
+    .line 608
     :cond_0
     return-void
 .end method

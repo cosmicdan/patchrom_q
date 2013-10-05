@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StatusBarManagerService;Z)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 346
     iput-object p1, p0, Lcom/android/server/StatusBarManagerService$5;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/StatusBarManagerService$5;->val$enabled:Z
@@ -41,6 +45,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 348
     iget-object v0, p0, Lcom/android/server/StatusBarManagerService$5;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iget-object v0, v0, Lcom/android/server/StatusBarManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -49,5 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/wm/WindowManagerService;->setHardKeyboardEnabled(Z)V
 
+    .line 349
     return-void
 .end method

@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkTimeUpdateService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 478
     iput-object p1, p0, Lcom/android/server/NetworkTimeUpdateService$5;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,11 +36,16 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .parameter "msg"
 
+    .prologue
+    .line 480
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
+    .line 481
+    .local v0, timeoutMsg:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/NetworkTimeUpdateService$5;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     #getter for: Lcom/android/server/NetworkTimeUpdateService;->mContext:Landroid/content/Context;
@@ -53,5 +61,6 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
+    .line 482
     return-void
 .end method

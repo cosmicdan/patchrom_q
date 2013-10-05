@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 812
     iput-object p1, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,9 +36,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 815
     const-string v1, "connected"
 
     invoke-virtual {p2, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -54,16 +61,20 @@
 
     const/4 v0, 0x1
 
+    .line 817
+    .local v0, available:Z
     :cond_0
     iget-object v1, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
     #setter for: Lcom/android/server/MountService;->mIsUsbConnected:Z
     invoke-static {v1, v0}, Lcom/android/server/MountService;->access$702(Lcom/android/server/MountService;Z)Z
 
+    .line 818
     iget-object v1, p0, Lcom/android/server/MountService$3;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->notifyShareAvailabilityChange(Z)V
     invoke-static {v1, v0}, Lcom/android/server/MountService;->access$2600(Lcom/android/server/MountService;Z)V
 
+    .line 819
     return-void
 .end method

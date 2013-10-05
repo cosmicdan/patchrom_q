@@ -34,7 +34,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accessibility/ScreenMagnifier;F)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 751
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier$1;->this$0:Lcom/android/server/accessibility/ScreenMagnifier;
 
     iput p2, p0, Lcom/android/server/accessibility/ScreenMagnifier$1;->val$scale:F
@@ -48,9 +52,13 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 751
     check-cast p1, [Ljava/lang/Void;
 
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
     move-result-object v0
@@ -60,7 +68,10 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 3
+    .parameter "params"
 
+    .prologue
+    .line 754
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier$1;->this$0:Lcom/android/server/accessibility/ScreenMagnifier;
 
     #getter for: Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
@@ -78,6 +89,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putFloat(Landroid/content/ContentResolver;Ljava/lang/String;F)Z
 
+    .line 756
     const/4 v0, 0x0
 
     return-object v0

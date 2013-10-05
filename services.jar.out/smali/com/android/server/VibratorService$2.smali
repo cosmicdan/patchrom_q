@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/VibratorService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 153
     iput-object p1, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,6 +36,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 157
     return-void
 .end method

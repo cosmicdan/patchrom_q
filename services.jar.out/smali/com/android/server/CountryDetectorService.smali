@@ -47,23 +47,33 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .parameter "context"
 
+    .prologue
+    .line 95
     invoke-direct {p0}, Landroid/location/ICountryDetector$Stub;-><init>()V
 
+    .line 96
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
+    .line 97
     iput-object p1, p0, Lcom/android/server/CountryDetectorService;->mContext:Landroid/content/Context;
 
+    .line 98
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/CountryDetectorService;Landroid/os/IBinder;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 45
     invoke-direct {p0, p1}, Lcom/android/server/CountryDetectorService;->removeListener(Landroid/os/IBinder;)V
 
     return-void
@@ -71,7 +81,10 @@
 
 .method static synthetic access$100(Lcom/android/server/CountryDetectorService;)Landroid/os/Handler;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 45
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -79,7 +92,10 @@
 
 .method static synthetic access$200(Lcom/android/server/CountryDetectorService;)Lcom/android/server/location/ComprehensiveCountryDetector;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 45
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mCountryDetector:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     return-object v0
@@ -87,11 +103,15 @@
 
 .method private addListener(Landroid/location/ICountryListener;)V
     .locals 5
+    .parameter "listener"
 
+    .prologue
+    .line 131
     iget-object v3, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     monitor-enter v3
 
+    .line 132
     :try_start_0
     new-instance v1, Lcom/android/server/CountryDetectorService$Receiver;
 
@@ -99,6 +119,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 134
+    .local v1, r:Lcom/android/server/CountryDetectorService$Receiver;
     :try_start_1
     invoke-interface {p1}, Landroid/location/ICountryListener;->asBinder()Landroid/os/IBinder;
 
@@ -108,6 +130,7 @@
 
     invoke-interface {v2, v1, v4}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
+    .line 135
     iget-object v2, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     invoke-interface {p1}, Landroid/location/ICountryListener;->asBinder()Landroid/os/IBinder;
@@ -116,6 +139,7 @@
 
     invoke-virtual {v2, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 136
     iget-object v2, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->size()I
@@ -126,12 +150,14 @@
 
     if-ne v2, v4, :cond_0
 
+    .line 137
     const-string v2, "CountryDetector"
 
     const-string v4, "The first listener is added"
 
     invoke-static {v2, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 138
     iget-object v2, p0, Lcom/android/server/CountryDetectorService;->mLocationBasedDetectorListener:Landroid/location/CountryListener;
 
     invoke-virtual {p0, v2}, Lcom/android/server/CountryDetectorService;->setCountryListener(Landroid/location/CountryListener;)V
@@ -139,16 +165,21 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 143
     :cond_0
     :goto_0
     :try_start_2
     monitor-exit v3
 
+    .line 144
     return-void
 
+    .line 140
     :catch_0
     move-exception v0
 
+    .line 141
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "CountryDetector"
 
     const-string v4, "linkToDeath failed:"
@@ -157,6 +188,9 @@
 
     goto :goto_0
 
+    .line 143
+    .end local v0           #e:Landroid/os/RemoteException;
+    .end local v1           #r:Lcom/android/server/CountryDetectorService$Receiver;
     :catchall_0
     move-exception v2
 
@@ -170,6 +204,8 @@
 .method private initialize()V
     .locals 2
 
+    .prologue
+    .line 177
     new-instance v0, Lcom/android/server/location/ComprehensiveCountryDetector;
 
     iget-object v1, p0, Lcom/android/server/CountryDetectorService;->mContext:Landroid/content/Context;
@@ -178,27 +214,34 @@
 
     iput-object v0, p0, Lcom/android/server/CountryDetectorService;->mCountryDetector:Lcom/android/server/location/ComprehensiveCountryDetector;
 
+    .line 178
     new-instance v0, Lcom/android/server/CountryDetectorService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/CountryDetectorService$1;-><init>(Lcom/android/server/CountryDetectorService;)V
 
     iput-object v0, p0, Lcom/android/server/CountryDetectorService;->mLocationBasedDetectorListener:Landroid/location/CountryListener;
 
+    .line 187
     return-void
 .end method
 
 .method private removeListener(Landroid/os/IBinder;)V
     .locals 3
+    .parameter "key"
 
+    .prologue
+    .line 147
     iget-object v1, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     monitor-enter v1
 
+    .line 148
     :try_start_0
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 149
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -207,21 +250,26 @@
 
     if-eqz v0, :cond_0
 
+    .line 150
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/CountryDetectorService;->setCountryListener(Landroid/location/CountryListener;)V
 
+    .line 151
     const-string v0, "CountryDetector"
 
     const-string v2, "No listener is left"
 
     invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 153
     :cond_0
     monitor-exit v1
 
+    .line 154
     return-void
 
+    .line 153
     :catchall_0
     move-exception v0
 
@@ -236,25 +284,31 @@
 # virtual methods
 .method public addCountryListener(Landroid/location/ICountryListener;)V
     .locals 1
+    .parameter "listener"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .prologue
+    .line 113
     iget-boolean v0, p0, Lcom/android/server/CountryDetectorService;->mSystemReady:Z
 
     if-nez v0, :cond_0
 
+    .line 114
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
+    .line 116
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/CountryDetectorService;->addListener(Landroid/location/ICountryListener;)V
 
+    .line 117
     return-void
 .end method
 
@@ -266,16 +320,20 @@
         }
     .end annotation
 
+    .prologue
+    .line 102
     iget-boolean v0, p0, Lcom/android/server/CountryDetectorService;->mSystemReady:Z
 
     if-nez v0, :cond_0
 
+    .line 103
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
+    .line 105
     :cond_0
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mCountryDetector:Lcom/android/server/location/ComprehensiveCountryDetector;
 
@@ -288,7 +346,12 @@
 
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 3
+    .parameter "fd"
+    .parameter "fout"
+    .parameter "args"
 
+    .prologue
+    .line 215
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.DUMP"
@@ -297,12 +360,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 217
     return-void
 .end method
 
 .method isSystemReady()Z
     .locals 1
 
+    .prologue
+    .line 209
     iget-boolean v0, p0, Lcom/android/server/CountryDetectorService;->mSystemReady:Z
 
     return v0
@@ -310,11 +376,15 @@
 
 .method protected notifyReceivers(Landroid/location/Country;)V
     .locals 6
+    .parameter "country"
 
+    .prologue
+    .line 158
     iget-object v4, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
     monitor-enter v4
 
+    .line 159
     :try_start_0
     iget-object v3, p0, Lcom/android/server/CountryDetectorService;->mReceivers:Ljava/util/HashMap;
 
@@ -326,6 +396,7 @@
 
     move-result-object v1
 
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -341,6 +412,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 161
+    .local v2, receiver:Lcom/android/server/CountryDetectorService$Receiver;
     :try_start_1
     invoke-virtual {v2}, Lcom/android/server/CountryDetectorService$Receiver;->getListener()Landroid/location/ICountryListener;
 
@@ -353,9 +426,12 @@
 
     goto :goto_0
 
+    .line 162
     :catch_0
     move-exception v0
 
+    .line 164
+    .local v0, e:Landroid/os/RemoteException;
     :try_start_2
     const-string v3, "CountryDetector"
 
@@ -365,6 +441,10 @@
 
     goto :goto_0
 
+    .line 167
+    .end local v0           #e:Landroid/os/RemoteException;
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v2           #receiver:Lcom/android/server/CountryDetectorService$Receiver;
     :catchall_0
     move-exception v3
 
@@ -374,33 +454,40 @@
 
     throw v3
 
+    .restart local v1       #i$:Ljava/util/Iterator;
     :cond_0
     :try_start_3
     monitor-exit v4
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 168
     return-void
 .end method
 
 .method public removeCountryListener(Landroid/location/ICountryListener;)V
     .locals 1
+    .parameter "listener"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .prologue
+    .line 124
     iget-boolean v0, p0, Lcom/android/server/CountryDetectorService;->mSystemReady:Z
 
     if-nez v0, :cond_0
 
+    .line 125
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
+    .line 127
     :cond_0
     invoke-interface {p1}, Landroid/location/ICountryListener;->asBinder()Landroid/os/IBinder;
 
@@ -408,38 +495,50 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/CountryDetectorService;->removeListener(Landroid/os/IBinder;)V
 
+    .line 128
     return-void
 .end method
 
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 190
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 191
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
+    .line 192
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/CountryDetectorService;->mHandler:Landroid/os/Handler;
 
+    .line 193
     invoke-direct {p0}, Lcom/android/server/CountryDetectorService;->initialize()V
 
+    .line 194
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/CountryDetectorService;->mSystemReady:Z
 
+    .line 195
     invoke-static {}, Landroid/os/Looper;->loop()V
 
+    .line 196
     return-void
 .end method
 
 .method protected setCountryListener(Landroid/location/CountryListener;)V
     .locals 2
+    .parameter "listener"
 
+    .prologue
+    .line 199
     iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/CountryDetectorService$2;
@@ -448,19 +547,25 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 205
     return-void
 .end method
 
 .method systemReady()V
     .locals 2
 
+    .prologue
+    .line 172
     new-instance v0, Ljava/lang/Thread;
 
     const-string v1, "CountryDetectorService"
 
     invoke-direct {v0, p0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
+    .line 173
+    .local v0, thread:Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
+    .line 174
     return-void
 .end method

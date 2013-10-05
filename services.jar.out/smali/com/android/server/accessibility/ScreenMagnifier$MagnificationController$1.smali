@@ -38,13 +38,18 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;Lcom/android/server/accessibility/ScreenMagnifier;)V
     .locals 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 1258
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
     iput-object p2, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$1;->val$this$0:Lcom/android/server/accessibility/ScreenMagnifier;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1259
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
 
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
@@ -62,9 +67,16 @@
 # virtual methods
 .method public evaluate(FLcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;)Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
     .locals 4
+    .parameter "fraction"
+    .parameter "fromSpec"
+    .parameter "toSpec"
 
+    .prologue
+    .line 1263
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$1;->mTempTransformationSpec:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
 
+    .line 1264
+    .local v0, result:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
     iget v1, p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScale:F
 
     iget v2, p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScale:F
@@ -79,6 +91,7 @@
 
     iput v1, v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScale:F
 
+    .line 1266
     iget v1, p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterX:F
 
     iget v2, p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterX:F
@@ -93,6 +106,7 @@
 
     iput v1, v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterX:F
 
+    .line 1269
     iget v1, p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterY:F
 
     iget v2, p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterY:F
@@ -107,6 +121,7 @@
 
     iput v1, v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mMagnifiedRegionCenterY:F
 
+    .line 1272
     iget v1, p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetX:F
 
     iget v2, p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetX:F
@@ -121,6 +136,7 @@
 
     iput v1, v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetX:F
 
+    .line 1275
     iget v1, p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetY:F
 
     iget v2, p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetY:F
@@ -135,16 +151,24 @@
 
     iput v1, v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->mScaledOffsetY:F
 
+    .line 1278
     return-object v0
 .end method
 
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 1258
     check-cast p2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
 
+    .end local p2
     check-cast p3, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
 
+    .end local p3
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$1;->evaluate(FLcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;)Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;
 
     move-result-object v0

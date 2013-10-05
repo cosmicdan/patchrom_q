@@ -21,7 +21,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1928
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -31,7 +34,11 @@
 
 .method synthetic constructor <init>(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1928
     invoke-direct {p0, p1}, Lcom/android/server/LocationManagerService$LocationWorkerHandler;-><init>(Lcom/android/server/LocationManagerService;)V
 
     return-void
@@ -41,16 +48,21 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
+    .parameter "msg"
 
+    .prologue
     const/4 v1, 0x1
 
+    .line 1931
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 1936
     :goto_0
     return-void
 
+    .line 1933
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -73,6 +85,7 @@
 
     goto :goto_1
 
+    .line 1931
     nop
 
     :pswitch_data_0

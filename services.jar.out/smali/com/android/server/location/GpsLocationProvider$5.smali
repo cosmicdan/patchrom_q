@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GpsLocationProvider;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1509
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Landroid/location/INetInitiatedListener$Stub;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public sendNiResponse(II)Z
     .locals 3
+    .parameter "notificationId"
+    .parameter "userResponse"
 
+    .prologue
+    .line 1516
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
     move-result v0
@@ -72,12 +79,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1518
     :cond_0
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #calls: Lcom/android/server/location/GpsLocationProvider;->native_send_ni_response(II)V
     invoke-static {v0, p1, p2}, Lcom/android/server/location/GpsLocationProvider;->access$1300(Lcom/android/server/location/GpsLocationProvider;II)V
 
+    .line 1519
     const/4 v0, 0x1
 
     return v0

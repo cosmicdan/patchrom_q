@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 386
     iput-object p1, p0, Lcom/android/server/MountService$DefaultContainerConnection;->this$0:Lcom/android/server/MountService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +39,17 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 4
+    .parameter "name"
+    .parameter "service"
 
+    .prologue
+    .line 390
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
     move-result-object v0
 
+    .line 391
+    .local v0, imcs:Lcom/android/internal/app/IMediaContainerService;
     iget-object v1, p0, Lcom/android/server/MountService$DefaultContainerConnection;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mObbActionHandler:Lcom/android/server/MountService$ObbActionHandler;
@@ -63,11 +72,15 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/MountService$ObbActionHandler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 392
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 0
+    .parameter "name"
 
+    .prologue
+    .line 397
     return-void
 .end method

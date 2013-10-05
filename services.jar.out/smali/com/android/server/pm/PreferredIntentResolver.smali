@@ -19,6 +19,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 23
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
 
     return-void
@@ -28,9 +30,15 @@
 # virtual methods
 .method protected bridge synthetic dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Landroid/content/IntentFilter;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
+    .prologue
+    .line 23
     check-cast p3, Lcom/android/server/pm/PreferredActivity;
 
+    .end local p3
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/pm/PreferredIntentResolver;->dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/pm/PreferredActivity;)V
 
     return-void
@@ -38,17 +46,26 @@
 
 .method protected dumpFilter(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/pm/PreferredActivity;)V
     .locals 1
+    .parameter "out"
+    .parameter "prefix"
+    .parameter "filter"
 
+    .prologue
+    .line 36
     iget-object v0, p3, Lcom/android/server/pm/PreferredActivity;->mPref:Lcom/android/server/PreferredComponent;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/PreferredComponent;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 37
     return-void
 .end method
 
 .method protected bridge synthetic newArray(I)[Landroid/content/IntentFilter;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 23
     invoke-virtual {p0, p1}, Lcom/android/server/pm/PreferredIntentResolver;->newArray(I)[Lcom/android/server/pm/PreferredActivity;
 
     move-result-object v0
@@ -58,7 +75,10 @@
 
 .method protected newArray(I)[Lcom/android/server/pm/PreferredActivity;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 27
     new-array v0, p1, [Lcom/android/server/pm/PreferredActivity;
 
     return-object v0
@@ -66,9 +86,13 @@
 
 .method protected bridge synthetic packageForFilter(Landroid/content/IntentFilter;)Ljava/lang/String;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 23
     check-cast p1, Lcom/android/server/pm/PreferredActivity;
 
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/server/pm/PreferredIntentResolver;->packageForFilter(Lcom/android/server/pm/PreferredActivity;)Ljava/lang/String;
 
     move-result-object v0
@@ -78,7 +102,10 @@
 
 .method protected packageForFilter(Lcom/android/server/pm/PreferredActivity;)Ljava/lang/String;
     .locals 1
+    .parameter "filter"
 
+    .prologue
+    .line 31
     iget-object v0, p1, Lcom/android/server/pm/PreferredActivity;->mPref:Lcom/android/server/PreferredComponent;
 
     iget-object v0, v0, Lcom/android/server/PreferredComponent;->mComponent:Landroid/content/ComponentName;

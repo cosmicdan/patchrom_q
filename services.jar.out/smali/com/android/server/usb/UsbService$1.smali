@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 89
     iput-object p1, p0, Lcom/android/server/usb/UsbService$1;->this$0:Lcom/android/server/usb/UsbService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 92
     const-string v2, "android.intent.extra.user_handle"
 
     const/4 v3, -0x1
@@ -42,10 +49,14 @@
 
     move-result v1
 
+    .line 93
+    .local v1, userId:I
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 94
+    .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -54,15 +65,18 @@
 
     if-eqz v2, :cond_1
 
+    .line 95
     iget-object v2, p0, Lcom/android/server/usb/UsbService$1;->this$0:Lcom/android/server/usb/UsbService;
 
     #calls: Lcom/android/server/usb/UsbService;->setCurrentUser(I)V
     invoke-static {v2, v1}, Lcom/android/server/usb/UsbService;->access$000(Lcom/android/server/usb/UsbService;I)V
 
+    .line 101
     :cond_0
     :goto_0
     return-void
 
+    .line 96
     :cond_1
     const-string v2, "android.intent.action.USER_STOPPED"
 
@@ -72,6 +86,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 97
     iget-object v2, p0, Lcom/android/server/usb/UsbService$1;->this$0:Lcom/android/server/usb/UsbService;
 
     #getter for: Lcom/android/server/usb/UsbService;->mLock:Ljava/lang/Object;
@@ -81,6 +96,7 @@
 
     monitor-enter v3
 
+    .line 98
     :try_start_0
     iget-object v2, p0, Lcom/android/server/usb/UsbService$1;->this$0:Lcom/android/server/usb/UsbService;
 
@@ -91,6 +107,7 @@
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->remove(I)V
 
+    .line 99
     monitor-exit v3
 
     goto :goto_0

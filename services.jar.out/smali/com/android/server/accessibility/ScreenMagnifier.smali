@@ -118,6 +118,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 128
     const-class v0, Lcom/android/server/accessibility/ScreenMagnifier;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -131,11 +133,15 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 9
+    .parameter "context"
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 141
     const-string v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -148,18 +154,21 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mWindowManagerService:Landroid/view/IWindowManager;
 
+    .line 146
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;-><init>(Lcom/android/server/accessibility/ScreenMagnifier;Lcom/android/server/accessibility/ScreenMagnifier$1;)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDetectingStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
+    .line 148
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;-><init>(Lcom/android/server/accessibility/ScreenMagnifier;Lcom/android/server/accessibility/ScreenMagnifier$1;)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mStateViewportDraggingHandler:Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;
 
+    .line 151
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x4020
@@ -168,12 +177,14 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mInterpolator:Landroid/view/animation/Interpolator;
 
+    .line 158
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTapTimeSlop:I
 
+    .line 159
     invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
 
     move-result v0
@@ -182,8 +193,10 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMultiTapTimeSlop:I
 
+    .line 182
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
 
+    .line 183
     const-string v0, "window"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -194,6 +207,7 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mWindowManager:Landroid/view/WindowManager;
 
+    .line 185
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -206,6 +220,7 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mShortAnimationDuration:I
 
+    .line 187
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -218,6 +233,7 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mLongAnimationDuration:I
 
+    .line 189
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -228,6 +244,7 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTapDistanceSlop:I
 
+    .line 190
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -238,6 +255,7 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMultiTapDistanceSlop:I
 
+    .line 191
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -252,6 +270,7 @@
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mWindowAnimationScale:F
 
+    .line 194
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
     iget v1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mShortAnimationDuration:I
@@ -260,6 +279,7 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
+    .line 195
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;
 
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mWindowManager:Landroid/view/WindowManager;
@@ -268,6 +288,7 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDisplayProvider:Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;
 
+    .line 196
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport;
 
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
@@ -288,6 +309,7 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mViewport:Lcom/android/server/accessibility/ScreenMagnifier$Viewport;
 
+    .line 198
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$DisplayContentObserver;
 
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
@@ -310,6 +332,7 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDisplayContentObserver:Lcom/android/server/accessibility/ScreenMagnifier$DisplayContentObserver;
 
+    .line 201
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$ScreenStateObserver;
 
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
@@ -322,22 +345,29 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mScreenStateObserver:Lcom/android/server/accessibility/ScreenMagnifier$ScreenStateObserver;
 
+    .line 204
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;-><init>(Lcom/android/server/accessibility/ScreenMagnifier;Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnifiedContentInteractonStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;
 
+    .line 207
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/ScreenMagnifier;->transitionToState(I)V
 
+    .line 208
     return-void
 .end method
 
 .method static synthetic access$1000(Lcom/android/server/accessibility/ScreenMagnifier;I)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 116
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier;->transitionToState(I)V
 
     return-void
@@ -345,7 +375,10 @@
 
 .method static synthetic access$1100(Lcom/android/server/accessibility/ScreenMagnifier;)Lcom/android/server/accessibility/ScreenMagnifier$Viewport;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mViewport:Lcom/android/server/accessibility/ScreenMagnifier$Viewport;
 
     return-object v0
@@ -353,7 +386,10 @@
 
 .method static synthetic access$1200(Lcom/android/server/accessibility/ScreenMagnifier;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-boolean v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTranslationEnabledBeforePan:Z
 
     return v0
@@ -361,7 +397,11 @@
 
 .method static synthetic access$1202(Lcom/android/server/accessibility/ScreenMagnifier;Z)Z
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 116
     iput-boolean p1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTranslationEnabledBeforePan:Z
 
     return p1
@@ -369,7 +409,10 @@
 
 .method static synthetic access$1500(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMultiTapTimeSlop:I
 
     return v0
@@ -377,7 +420,10 @@
 
 .method static synthetic access$1600(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMultiTapDistanceSlop:I
 
     return v0
@@ -385,7 +431,10 @@
 
 .method static synthetic access$1700(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTapDistanceSlop:I
 
     return v0
@@ -393,7 +442,10 @@
 
 .method static synthetic access$1800(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTapTimeSlop:I
 
     return v0
@@ -401,7 +453,11 @@
 
 .method static synthetic access$2000(Lcom/android/server/accessibility/ScreenMagnifier;I)[Landroid/view/MotionEvent$PointerCoords;
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 116
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier;->getTempPointerCoordsWithMinSize(I)[Landroid/view/MotionEvent$PointerCoords;
 
     move-result-object v0
@@ -411,7 +467,11 @@
 
 .method static synthetic access$2100(Lcom/android/server/accessibility/ScreenMagnifier;I)[Landroid/view/MotionEvent$PointerProperties;
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 116
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier;->getTempPointerPropertiesWithMinSize(I)[Landroid/view/MotionEvent$PointerProperties;
 
     move-result-object v0
@@ -421,7 +481,10 @@
 
 .method static synthetic access$2200(Lcom/android/server/accessibility/ScreenMagnifier;)Landroid/content/Context;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -429,7 +492,10 @@
 
 .method static synthetic access$2400(Landroid/content/Context;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     invoke-static {p0}, Lcom/android/server/accessibility/ScreenMagnifier;->isScreenMagnificationAutoUpdateEnabled(Landroid/content/Context;)Z
 
     move-result v0
@@ -439,7 +505,10 @@
 
 .method static synthetic access$3400(Lcom/android/server/accessibility/ScreenMagnifier;)Landroid/view/animation/Interpolator;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -447,7 +516,10 @@
 
 .method static synthetic access$3500(Lcom/android/server/accessibility/ScreenMagnifier;)Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDisplayProvider:Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;
 
     return-object v0
@@ -455,7 +527,10 @@
 
 .method static synthetic access$3600(Lcom/android/server/accessibility/ScreenMagnifier;)Landroid/view/IWindowManager;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mWindowManagerService:Landroid/view/IWindowManager;
 
     return-object v0
@@ -464,6 +539,8 @@
 .method static synthetic access$4100()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 116
     sget-object v0, Lcom/android/server/accessibility/ScreenMagnifier;->LOG_TAG:Ljava/lang/String;
 
     return-object v0
@@ -471,7 +548,10 @@
 
 .method static synthetic access$500(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mCurrentState:I
 
     return v0
@@ -479,7 +559,10 @@
 
 .method static synthetic access$600(Lcom/android/server/accessibility/ScreenMagnifier;)Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
     return-object v0
@@ -487,7 +570,10 @@
 
 .method static synthetic access$700(Lcom/android/server/accessibility/ScreenMagnifier;)F
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     invoke-direct {p0}, Lcom/android/server/accessibility/ScreenMagnifier;->getPersistedScale()F
 
     move-result v0
@@ -497,7 +583,11 @@
 
 .method static synthetic access$800(Lcom/android/server/accessibility/ScreenMagnifier;F)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 116
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier;->persistScale(F)V
 
     return-void
@@ -505,7 +595,10 @@
 
 .method static synthetic access$900(Lcom/android/server/accessibility/ScreenMagnifier;)I
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 116
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mPreviousState:I
 
     return v0
@@ -514,6 +607,8 @@
 .method private getPersistedScale()F
     .locals 3
 
+    .prologue
+    .line 762
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -533,9 +628,12 @@
 
 .method private getTempPointerCoordsWithMinSize(I)[Landroid/view/MotionEvent$PointerCoords;
     .locals 5
+    .parameter "size"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 317
     iget-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     if-eqz v4, :cond_1
@@ -544,27 +642,38 @@
 
     array-length v1, v4
 
+    .line 318
+    .local v1, oldSize:I
     :goto_0
     if-ge v1, p1, :cond_0
 
+    .line 319
     iget-object v2, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
+    .line 320
+    .local v2, oldTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
     new-array v4, p1, [Landroid/view/MotionEvent$PointerCoords;
 
     iput-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
+    .line 321
     if-eqz v2, :cond_0
 
+    .line 322
     iget-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     invoke-static {v2, v3, v4, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 325
+    .end local v2           #oldTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
     :cond_0
     move v0, v1
 
+    .local v0, i:I
     :goto_1
     if-ge v0, p1, :cond_2
 
+    .line 326
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     new-instance v4, Landroid/view/MotionEvent$PointerCoords;
@@ -573,15 +682,22 @@
 
     aput-object v4, v3, v0
 
+    .line 325
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .end local v0           #i:I
+    .end local v1           #oldSize:I
     :cond_1
     move v1, v3
 
+    .line 317
     goto :goto_0
 
+    .line 328
+    .restart local v0       #i:I
+    .restart local v1       #oldSize:I
     :cond_2
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
@@ -590,9 +706,12 @@
 
 .method private getTempPointerPropertiesWithMinSize(I)[Landroid/view/MotionEvent$PointerProperties;
     .locals 5
+    .parameter "size"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 332
     iget-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
     if-eqz v4, :cond_1
@@ -601,27 +720,38 @@
 
     array-length v1, v4
 
+    .line 333
+    .local v1, oldSize:I
     :goto_0
     if-ge v1, p1, :cond_0
 
+    .line 334
     iget-object v2, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
+    .line 335
+    .local v2, oldTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
     new-array v4, p1, [Landroid/view/MotionEvent$PointerProperties;
 
     iput-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
+    .line 336
     if-eqz v2, :cond_0
 
+    .line 337
     iget-object v4, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
     invoke-static {v2, v3, v4, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 340
+    .end local v2           #oldTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
     :cond_0
     move v0, v1
 
+    .local v0, i:I
     :goto_1
     if-ge v0, p1, :cond_2
 
+    .line 341
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
     new-instance v4, Landroid/view/MotionEvent$PointerProperties;
@@ -630,15 +760,22 @@
 
     aput-object v4, v3, v0
 
+    .line 340
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .end local v0           #i:I
+    .end local v1           #oldSize:I
     :cond_1
     move v1, v3
 
+    .line 332
     goto :goto_0
 
+    .line 343
+    .restart local v0       #i:I
+    .restart local v1       #oldSize:I
     :cond_2
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mTempPointerProperties:[Landroid/view/MotionEvent$PointerProperties;
 
@@ -647,13 +784,19 @@
 
 .method private handleMotionEventStateDelegating(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 25
+    .parameter "event"
+    .parameter "rawEvent"
+    .parameter "policyFlags"
 
+    .prologue
+    .line 270
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_0
 
+    .line 280
     :cond_0
     :goto_0
     move-object/from16 v0, p0
@@ -662,14 +805,19 @@
 
     if-eqz v3, :cond_3
 
+    .line 284
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v19
 
+    .line 285
+    .local v19, eventX:F
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v20
 
+    .line 286
+    .local v20, eventY:F
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
@@ -702,6 +850,7 @@
 
     if-eqz v3, :cond_2
 
+    .line 288
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
@@ -710,6 +859,8 @@
 
     move-result v22
 
+    .line 289
+    .local v22, scale:F
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
@@ -718,6 +869,8 @@
 
     move-result v23
 
+    .line 290
+    .local v23, scaledOffsetX:F
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
@@ -726,29 +879,39 @@
 
     move-result v24
 
+    .line 291
+    .local v24, scaledOffsetY:F
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v8
 
+    .line 292
+    .local v8, pointerCount:I
     move-object/from16 v0, p0
 
     invoke-direct {v0, v8}, Lcom/android/server/accessibility/ScreenMagnifier;->getTempPointerCoordsWithMinSize(I)[Landroid/view/MotionEvent$PointerCoords;
 
     move-result-object v10
 
+    .line 293
+    .local v10, coords:[Landroid/view/MotionEvent$PointerCoords;
     move-object/from16 v0, p0
 
     invoke-direct {v0, v8}, Lcom/android/server/accessibility/ScreenMagnifier;->getTempPointerPropertiesWithMinSize(I)[Landroid/view/MotionEvent$PointerProperties;
 
     move-result-object v9
 
+    .line 294
+    .local v9, properties:[Landroid/view/MotionEvent$PointerProperties;
     const/16 v21, 0x0
 
+    .local v21, i:I
     :goto_1
     move/from16 v0, v21
 
     if-ge v0, v8, :cond_1
 
+    .line 295
     aget-object v3, v10, v21
 
     move-object/from16 v0, p1
@@ -757,6 +920,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/MotionEvent;->getPointerCoords(ILandroid/view/MotionEvent$PointerCoords;)V
 
+    .line 296
     aget-object v3, v10, v21
 
     aget-object v4, v10, v21
@@ -769,6 +933,7 @@
 
     iput v4, v3, Landroid/view/MotionEvent$PointerCoords;->x:F
 
+    .line 297
     aget-object v3, v10, v21
 
     aget-object v4, v10, v21
@@ -781,6 +946,7 @@
 
     iput v4, v3, Landroid/view/MotionEvent$PointerCoords;->y:F
 
+    .line 298
     aget-object v3, v9, v21
 
     move-object/from16 v0, p1
@@ -789,10 +955,21 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/MotionEvent;->getPointerProperties(ILandroid/view/MotionEvent$PointerProperties;)V
 
+    .line 294
     add-int/lit8 v21, v21, 0x1
 
     goto :goto_1
 
+    .line 272
+    .end local v8           #pointerCount:I
+    .end local v9           #properties:[Landroid/view/MotionEvent$PointerProperties;
+    .end local v10           #coords:[Landroid/view/MotionEvent$PointerCoords;
+    .end local v19           #eventX:F
+    .end local v20           #eventY:F
+    .end local v21           #i:I
+    .end local v22           #scale:F
+    .end local v23           #scaledOffsetX:F
+    .end local v24           #scaledOffsetY:F
     :pswitch_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getDownTime()J
 
@@ -804,6 +981,7 @@
 
     goto/16 :goto_0
 
+    .line 275
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -816,6 +994,7 @@
 
     if-nez v3, :cond_0
 
+    .line 276
     const/4 v3, 0x2
 
     move-object/from16 v0, p0
@@ -824,6 +1003,16 @@
 
     goto/16 :goto_0
 
+    .line 300
+    .restart local v8       #pointerCount:I
+    .restart local v9       #properties:[Landroid/view/MotionEvent$PointerProperties;
+    .restart local v10       #coords:[Landroid/view/MotionEvent$PointerCoords;
+    .restart local v19       #eventX:F
+    .restart local v20       #eventY:F
+    .restart local v21       #i:I
+    .restart local v22       #scale:F
+    .restart local v23       #scaledOffsetX:F
+    .restart local v24       #scaledOffsetY:F
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getDownTime()J
 
@@ -863,6 +1052,14 @@
 
     move-result-object p1
 
+    .line 311
+    .end local v8           #pointerCount:I
+    .end local v9           #properties:[Landroid/view/MotionEvent$PointerProperties;
+    .end local v10           #coords:[Landroid/view/MotionEvent$PointerCoords;
+    .end local v21           #i:I
+    .end local v22           #scale:F
+    .end local v23           #scaledOffsetX:F
+    .end local v24           #scaledOffsetY:F
     :cond_2
     move-object/from16 v0, p0
 
@@ -872,6 +1069,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/view/MotionEvent;->setDownTime(J)V
 
+    .line 312
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
@@ -884,9 +1082,13 @@
 
     invoke-interface {v3, v0, v1, v2}, Lcom/android/server/accessibility/EventStreamTransformation;->onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
+    .line 314
+    .end local v19           #eventX:F
+    .end local v20           #eventY:F
     :cond_3
     return-void
 
+    .line 270
     nop
 
     :pswitch_data_0
@@ -898,9 +1100,12 @@
 
 .method private static isScreenMagnificationAutoUpdateEnabled(Landroid/content/Context;)Z
     .locals 3
+    .parameter "context"
 
+    .prologue
     const/4 v0, 0x1
 
+    .line 768
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -924,7 +1129,10 @@
 
 .method private persistScale(F)V
     .locals 2
+    .parameter "scale"
 
+    .prologue
+    .line 751
     new-instance v0, Lcom/android/server/accessibility/ScreenMagnifier$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/accessibility/ScreenMagnifier$1;-><init>(Lcom/android/server/accessibility/ScreenMagnifier;F)V
@@ -935,18 +1143,24 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/accessibility/ScreenMagnifier$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 759
     return-void
 .end method
 
 .method private transitionToState(I)V
     .locals 1
+    .parameter "state"
 
+    .prologue
+    .line 366
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mCurrentState:I
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mPreviousState:I
 
+    .line 367
     iput p1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mCurrentState:I
 
+    .line 368
     return-void
 .end method
 
@@ -955,46 +1169,59 @@
 .method public clear()V
     .locals 1
 
+    .prologue
+    .line 249
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mCurrentState:I
 
+    .line 250
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDetectingStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;->clear()V
 
+    .line 251
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mStateViewportDraggingHandler:Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;->clear()V
 
+    .line 252
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnifiedContentInteractonStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;
 
     #calls: Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;->clear()V
     invoke-static {v0}, Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;->access$300(Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;)V
 
+    .line 253
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-eqz v0, :cond_0
 
+    .line 254
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v0}, Lcom/android/server/accessibility/EventStreamTransformation;->clear()V
 
+    .line 256
     :cond_0
     return-void
 .end method
 
 .method public onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
+    .parameter "event"
 
+    .prologue
+    .line 237
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-eqz v0, :cond_0
 
+    .line 238
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v0, p1}, Lcom/android/server/accessibility/EventStreamTransformation;->onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
+    .line 240
     :cond_0
     return-void
 .end method
@@ -1002,48 +1229,62 @@
 .method public onDestroy()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
+    .line 260
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnificationController:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
     const/high16 v1, 0x3f80
 
     invoke-virtual {v0, v1, v2, v2, v3}, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;->setScaleAndMagnifiedRegionCenter(FFFZ)V
 
+    .line 262
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mViewport:Lcom/android/server/accessibility/ScreenMagnifier$Viewport;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v3}, Lcom/android/server/accessibility/ScreenMagnifier$Viewport;->setFrameShown(ZZ)V
 
+    .line 263
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDisplayProvider:Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/ScreenMagnifier$DisplayProvider;->destroy()V
 
+    .line 264
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDisplayContentObserver:Lcom/android/server/accessibility/ScreenMagnifier$DisplayContentObserver;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/ScreenMagnifier$DisplayContentObserver;->destroy()V
 
+    .line 265
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mScreenStateObserver:Lcom/android/server/accessibility/ScreenMagnifier$ScreenStateObserver;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/ScreenMagnifier$ScreenStateObserver;->destroy()V
 
+    .line 266
     return-void
 .end method
 
 .method public onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 3
+    .parameter "event"
+    .parameter "rawEvent"
+    .parameter "policyFlags"
 
+    .prologue
+    .line 213
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mMagnifiedContentInteractonStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/server/accessibility/ScreenMagnifier$MagnifiedContentInteractonStateHandler;->onMotionEvent(Landroid/view/MotionEvent;)V
 
+    .line 214
     iget v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mCurrentState:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 230
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1070,13 +1311,16 @@
 
     throw v0
 
+    .line 216
     :pswitch_0
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/accessibility/ScreenMagnifier;->handleMotionEventStateDelegating(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
+    .line 233
     :goto_0
     :pswitch_1
     return-void
 
+    .line 219
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mDetectingStateHandler:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
@@ -1084,6 +1328,7 @@
 
     goto :goto_0
 
+    .line 222
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mStateViewportDraggingHandler:Lcom/android/server/accessibility/ScreenMagnifier$StateViewportDraggingHandler;
 
@@ -1092,6 +1337,7 @@
 
     goto :goto_0
 
+    .line 214
     nop
 
     :pswitch_data_0
@@ -1105,8 +1351,12 @@
 
 .method public setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
     .locals 0
+    .parameter "next"
 
+    .prologue
+    .line 244
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier;->mNext:Lcom/android/server/accessibility/EventStreamTransformation;
 
+    .line 245
     return-void
 .end method

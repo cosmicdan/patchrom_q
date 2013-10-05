@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/DisplayPowerState;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 356
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 359
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
     const/4 v1, 0x0
@@ -44,6 +49,7 @@
     #setter for: Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawPending:Z
     invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerState;->access$1102(Lcom/android/server/power/DisplayPowerState;Z)Z
 
+    .line 361
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
     #getter for: Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
@@ -53,6 +59,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 362
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
     #getter for: Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
@@ -69,6 +76,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/power/ElectronBeam;->draw(F)Z
 
+    .line 365
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
@@ -77,10 +85,12 @@
     #setter for: Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
     invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerState;->access$1402(Lcom/android/server/power/DisplayPowerState;Z)Z
 
+    .line 366
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState$5;->this$0:Lcom/android/server/power/DisplayPowerState;
 
     #calls: Lcom/android/server/power/DisplayPowerState;->invokeCleanListenerIfNeeded()V
     invoke-static {v0}, Lcom/android/server/power/DisplayPowerState;->access$1000(Lcom/android/server/power/DisplayPowerState;)V
 
+    .line 367
     return-void
 .end method

@@ -28,15 +28,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/display/DisplayManagerService;ILandroid/hardware/display/IDisplayManagerCallback;)V
     .locals 0
+    .parameter
+    .parameter "pid"
+    .parameter "callback"
 
+    .prologue
+    .line 1005
     iput-object p1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1006
     iput p2, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mPid:I
 
+    .line 1007
     iput-object p3, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mCallback:Landroid/hardware/display/IDisplayManagerCallback;
 
+    .line 1008
     return-void
 .end method
 
@@ -45,6 +53,8 @@
 .method public binderDied()V
     .locals 2
 
+    .prologue
+    .line 1015
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     iget v1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mPid:I
@@ -52,12 +62,17 @@
     #calls: Lcom/android/server/display/DisplayManagerService;->onCallbackDied(I)V
     invoke-static {v0, v1}, Lcom/android/server/display/DisplayManagerService;->access$1500(Lcom/android/server/display/DisplayManagerService;I)V
 
+    .line 1016
     return-void
 .end method
 
 .method public notifyDisplayEventAsync(II)V
     .locals 4
+    .parameter "displayId"
+    .parameter "event"
 
+    .prologue
+    .line 1020
     :try_start_0
     iget-object v1, p0, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->mCallback:Landroid/hardware/display/IDisplayManagerCallback;
 
@@ -65,12 +80,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1026
     :goto_0
     return-void
 
+    .line 1021
     :catch_0
     move-exception v0
 
+    .line 1022
+    .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "DisplayManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -101,6 +120,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 1024
     invoke-virtual {p0}, Lcom/android/server/display/DisplayManagerService$CallbackRecord;->binderDied()V
 
     goto :goto_0

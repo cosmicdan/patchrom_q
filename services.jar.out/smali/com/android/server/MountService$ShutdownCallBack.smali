@@ -23,17 +23,25 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;Landroid/os/storage/IMountShutdownObserver;)V
     .locals 2
+    .parameter
+    .parameter "path"
+    .parameter "observer"
 
+    .prologue
+    .line 485
     iput-object p1, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
+    .line 486
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/server/MountService$UnmountCallBack;-><init>(Lcom/android/server/MountService;Ljava/lang/String;ZZ)V
 
+    .line 487
     iput-object p3, p0, Lcom/android/server/MountService$ShutdownCallBack;->observer:Landroid/os/storage/IMountShutdownObserver;
 
+    .line 488
     return-void
 .end method
 
@@ -42,6 +50,8 @@
 .method handleFinished()V
     .locals 6
 
+    .prologue
+    .line 492
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     iget-object v3, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
@@ -55,6 +65,8 @@
 
     move-result v1
 
+    .line 493
+    .local v1, ret:I
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     iget-object v3, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
@@ -69,10 +81,12 @@
     #setter for: Lcom/android/server/MountService;->mShutdownRet:I
     invoke-static {v2, v3}, Lcom/android/server/MountService;->access$1702(Lcom/android/server/MountService;I)I
 
+    .line 494
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     invoke-static {v2}, Lcom/android/server/MountService;->access$1810(Lcom/android/server/MountService;)I
 
+    .line 495
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mShutdownCount:I
@@ -86,6 +100,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 497
     :try_start_0
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
@@ -94,6 +109,7 @@
     #setter for: Lcom/android/server/MountService;->mShutdownSD:Z
     invoke-static {v2, v3}, Lcom/android/server/MountService;->access$1902(Lcom/android/server/MountService;Z)Z
 
+    .line 498
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     const/4 v3, 0x0
@@ -101,6 +117,7 @@
     #setter for: Lcom/android/server/MountService;->mUnmountPrimary:Z
     invoke-static {v2, v3}, Lcom/android/server/MountService;->access$1602(Lcom/android/server/MountService;Z)Z
 
+    .line 499
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->observer:Landroid/os/storage/IMountShutdownObserver;
 
     iget-object v3, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
@@ -112,6 +129,7 @@
 
     invoke-interface {v2, v3}, Landroid/os/storage/IMountShutdownObserver;->onShutDownComplete(I)V
 
+    .line 500
     iget-object v2, p0, Lcom/android/server/MountService$ShutdownCallBack;->this$0:Lcom/android/server/MountService;
 
     const/4 v3, 0x0
@@ -121,13 +139,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 505
     :cond_0
     :goto_0
     return-void
 
+    .line 501
     :catch_0
     move-exception v0
 
+    .line 502
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "MountService"
 
     const-string v3, "RemoteException when shutting down"

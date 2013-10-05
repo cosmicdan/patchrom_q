@@ -23,19 +23,27 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/SamplingProfilerService;Landroid/content/ContentResolver;)V
     .locals 1
+    .parameter
+    .parameter "contentResolver"
 
+    .prologue
+    .line 107
     iput-object p1, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->this$0:Lcom/android/server/SamplingProfilerService;
 
+    .line 108
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
+    .line 109
     iput-object p2, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->mContentResolver:Landroid/content/ContentResolver;
 
+    .line 110
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->onChange(Z)V
 
+    .line 111
     return-void
 .end method
 
@@ -43,7 +51,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
+    .parameter "selfChange"
 
+    .prologue
+    .line 114
     iget-object v1, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "sampling_profiler_ms"
@@ -58,6 +69,8 @@
 
     move-result-object v0
 
+    .line 118
+    .local v0, samplingProfilerMs:Ljava/lang/Integer;
     const-string v1, "persist.sys.profiler_ms"
 
     invoke-virtual {v0}, Ljava/lang/Integer;->toString()Ljava/lang/String;
@@ -66,5 +79,6 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 119
     return-void
 .end method

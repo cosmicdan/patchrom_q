@@ -87,6 +87,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -94,7 +96,13 @@
 
 .method public static writeAmActivityLaunchTime(IILjava/lang/String;J)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "componentName"
+    .parameter "time"
 
+    .prologue
+    .line 179
     const/16 v0, 0x7539
 
     const/4 v1, 0x4
@@ -131,12 +139,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 180
     return-void
 .end method
 
 .method public static writeAmAnr(IILjava/lang/String;ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "packageName"
+    .parameter "flags"
+    .parameter "reason"
 
+    .prologue
+    .line 175
     const/16 v0, 0x7538
 
     const/4 v1, 0x5
@@ -177,12 +193,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 176
     return-void
 .end method
 
 .method public static writeAmBroadcastDiscardApp(IILjava/lang/String;ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "broadcast"
+    .parameter "action"
+    .parameter "receiverNumber"
+    .parameter "app"
 
+    .prologue
+    .line 243
     const/16 v0, 0x7549
 
     const/4 v1, 0x5
@@ -223,12 +247,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 244
     return-void
 .end method
 
 .method public static writeAmBroadcastDiscardFilter(IILjava/lang/String;II)V
     .locals 4
+    .parameter "user"
+    .parameter "broadcast"
+    .parameter "action"
+    .parameter "receiverNumber"
+    .parameter "broadcastfilter"
 
+    .prologue
+    .line 239
     const/16 v0, 0x7548
 
     const/4 v1, 0x5
@@ -273,12 +305,23 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 240
     return-void
 .end method
 
 .method public static writeAmCrash(IILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "flags"
+    .parameter "exception"
+    .parameter "message"
+    .parameter "file"
+    .parameter "line"
 
+    .prologue
+    .line 279
     const/16 v0, 0x7557
 
     const/16 v1, 0x8
@@ -335,12 +378,23 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 280
     return-void
 .end method
 
 .method public static writeAmCreateActivity(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "action"
+    .parameter "mimeType"
+    .parameter "uri"
+    .parameter "flags"
 
+    .prologue
+    .line 163
     const/16 v0, 0x7535
 
     const/16 v1, 0x8
@@ -397,12 +451,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 164
     return-void
 .end method
 
 .method public static writeAmCreateService(IILjava/lang/String;Ljava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "serviceRecord"
+    .parameter "name"
+    .parameter "intent"
+    .parameter "pid"
 
+    .prologue
+    .line 247
     const/16 v0, 0x754e
 
     const/4 v1, 0x5
@@ -443,12 +505,17 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 248
     return-void
 .end method
 
 .method public static writeAmCreateTask(II)V
     .locals 4
+    .parameter "user"
+    .parameter "taskId"
 
+    .prologue
+    .line 159
     const/16 v0, 0x7534
 
     const/4 v1, 0x2
@@ -473,12 +540,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 160
     return-void
 .end method
 
 .method public static writeAmDestroyActivity(IIILjava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "reason"
 
+    .prologue
+    .line 215
     const/16 v0, 0x7542
 
     const/4 v1, 0x5
@@ -519,12 +594,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 216
     return-void
 .end method
 
 .method public static writeAmDestroyService(IILjava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "serviceRecord"
+    .parameter "name"
+    .parameter "pid"
 
+    .prologue
+    .line 251
     const/16 v0, 0x754f
 
     const/4 v1, 0x4
@@ -561,22 +643,33 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 252
     return-void
 .end method
 
 .method public static writeAmDropProcess(I)V
     .locals 1
+    .parameter "pid"
 
+    .prologue
+    .line 259
     const/16 v0, 0x7551
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
+    .line 260
     return-void
 .end method
 
 .method public static writeAmFailedToPause(IILjava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "wantingToPause"
+    .parameter "currentlyPausing"
 
+    .prologue
+    .line 191
     const/16 v0, 0x753c
 
     const/4 v1, 0x4
@@ -609,12 +702,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 192
     return-void
 .end method
 
 .method public static writeAmFinishActivity(IIILjava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "reason"
 
+    .prologue
+    .line 147
     const/16 v0, 0x7531
 
     const/4 v1, 0x5
@@ -655,12 +756,20 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 148
     return-void
 .end method
 
 .method public static writeAmKill(IILjava/lang/String;ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "oomadj"
+    .parameter "reason"
 
+    .prologue
+    .line 235
     const/16 v0, 0x7547
 
     const/4 v1, 0x5
@@ -701,22 +810,37 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 236
     return-void
 .end method
 
 .method public static writeAmLowMemory(I)V
     .locals 1
+    .parameter "numProcesses"
 
+    .prologue
+    .line 211
     const/16 v0, 0x7541
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
+    .line 212
     return-void
 .end method
 
 .method public static writeAmNewIntent(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "action"
+    .parameter "mimeType"
+    .parameter "uri"
+    .parameter "flags"
 
+    .prologue
+    .line 155
     const/16 v0, 0x7533
 
     const/16 v1, 0x8
@@ -773,12 +897,17 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 156
     return-void
 .end method
 
 .method public static writeAmOnPausedCalled(ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "componentName"
 
+    .prologue
+    .line 227
     const/16 v0, 0x7545
 
     const/4 v1, 0x2
@@ -799,12 +928,17 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 228
     return-void
 .end method
 
 .method public static writeAmOnResumeCalled(ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "componentName"
 
+    .prologue
+    .line 231
     const/16 v0, 0x7546
 
     const/4 v1, 0x2
@@ -825,12 +959,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 232
     return-void
 .end method
 
 .method public static writeAmPauseActivity(IILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "componentName"
 
+    .prologue
+    .line 195
     const/16 v0, 0x753d
 
     const/4 v1, 0x3
@@ -859,12 +999,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 196
     return-void
 .end method
 
 .method public static writeAmProcBad(IILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "uid"
+    .parameter "processName"
 
+    .prologue
+    .line 203
     const/16 v0, 0x753f
 
     const/4 v1, 0x3
@@ -893,12 +1039,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 204
     return-void
 .end method
 
 .method public static writeAmProcBound(IILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "processName"
 
+    .prologue
+    .line 183
     const/16 v0, 0x753a
 
     const/4 v1, 0x3
@@ -927,12 +1079,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 184
     return-void
 .end method
 
 .method public static writeAmProcDied(IILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "processName"
 
+    .prologue
+    .line 187
     const/16 v0, 0x753b
 
     const/4 v1, 0x3
@@ -961,12 +1119,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 188
     return-void
 .end method
 
 .method public static writeAmProcGood(IILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "uid"
+    .parameter "processName"
 
+    .prologue
+    .line 207
     const/16 v0, 0x7540
 
     const/4 v1, 0x3
@@ -995,12 +1159,21 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 208
     return-void
 .end method
 
 .method public static writeAmProcStart(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "uid"
+    .parameter "processName"
+    .parameter "type"
+    .parameter "component"
 
+    .prologue
+    .line 199
     const/16 v0, 0x753e
 
     const/4 v1, 0x6
@@ -1045,12 +1218,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 200
     return-void
 .end method
 
 .method public static writeAmProcessCrashedTooMuch(ILjava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "name"
+    .parameter "pid"
 
+    .prologue
+    .line 255
     const/16 v0, 0x7550
 
     const/4 v1, 0x3
@@ -1079,12 +1258,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 256
     return-void
 .end method
 
 .method public static writeAmProcessStartTimeout(IIILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "uid"
+    .parameter "processName"
 
+    .prologue
+    .line 275
     const/16 v0, 0x7555
 
     const/4 v1, 0x4
@@ -1121,12 +1307,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 276
     return-void
 .end method
 
 .method public static writeAmProviderLostProcess(ILjava/lang/String;ILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "packageName"
+    .parameter "uid"
+    .parameter "name"
 
+    .prologue
+    .line 271
     const/16 v0, 0x7554
 
     const/4 v1, 0x4
@@ -1159,12 +1352,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 272
     return-void
 .end method
 
 .method public static writeAmRelaunchActivity(IIILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
 
+    .prologue
+    .line 223
     const/16 v0, 0x7544
 
     const/4 v1, 0x4
@@ -1201,12 +1401,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 224
     return-void
 .end method
 
 .method public static writeAmRelaunchResumeActivity(IIILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
 
+    .prologue
+    .line 219
     const/16 v0, 0x7543
 
     const/4 v1, 0x4
@@ -1243,12 +1450,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 220
     return-void
 .end method
 
 .method public static writeAmRestartActivity(IIILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
 
+    .prologue
+    .line 167
     const/16 v0, 0x7536
 
     const/4 v1, 0x4
@@ -1285,12 +1499,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 168
     return-void
 .end method
 
 .method public static writeAmResumeActivity(IIILjava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
 
+    .prologue
+    .line 171
     const/16 v0, 0x7537
 
     const/4 v1, 0x4
@@ -1327,12 +1548,18 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 172
     return-void
 .end method
 
 .method public static writeAmScheduleServiceRestart(ILjava/lang/String;J)V
     .locals 4
+    .parameter "user"
+    .parameter "componentName"
+    .parameter "time"
 
+    .prologue
+    .line 267
     const/16 v0, 0x7553
 
     const/4 v1, 0x3
@@ -1361,12 +1588,19 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 268
     return-void
 .end method
 
 .method public static writeAmServiceCrashedTooMuch(IILjava/lang/String;I)V
     .locals 4
+    .parameter "user"
+    .parameter "crashCount"
+    .parameter "componentName"
+    .parameter "pid"
 
+    .prologue
+    .line 263
     const/16 v0, 0x7552
 
     const/4 v1, 0x4
@@ -1403,12 +1637,17 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 264
     return-void
 .end method
 
 .method public static writeAmTaskToFront(II)V
     .locals 4
+    .parameter "user"
+    .parameter "task"
 
+    .prologue
+    .line 151
     const/16 v0, 0x7532
 
     const/4 v1, 0x2
@@ -1433,12 +1672,21 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 152
     return-void
 .end method
 
 .method public static writeAmWtf(IILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter "user"
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "flags"
+    .parameter "tag"
+    .parameter "message"
 
+    .prologue
+    .line 283
     const/16 v0, 0x7558
 
     const/4 v1, 0x6
@@ -1483,42 +1731,63 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 284
     return-void
 .end method
 
 .method public static writeBootProgressAmsReady(J)V
     .locals 1
+    .parameter "time"
 
+    .prologue
+    .line 139
     const/16 v0, 0xbe0
 
     invoke-static {v0, p0, p1}, Landroid/util/EventLog;->writeEvent(IJ)I
 
+    .line 140
     return-void
 .end method
 
 .method public static writeBootProgressEnableScreen(J)V
     .locals 1
+    .parameter "time"
 
+    .prologue
+    .line 143
     const/16 v0, 0xbea
 
     invoke-static {v0, p0, p1}, Landroid/util/EventLog;->writeEvent(IJ)I
 
+    .line 144
     return-void
 .end method
 
 .method public static writeConfigurationChanged(I)V
     .locals 1
+    .parameter "configMask"
 
+    .prologue
+    .line 131
     const/16 v0, 0xa9f
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
+    .line 132
     return-void
 .end method
 
 .method public static writeCpu(IIIIII)V
     .locals 4
+    .parameter "total"
+    .parameter "user"
+    .parameter "system"
+    .parameter "iowait"
+    .parameter "irq"
+    .parameter "softirq"
 
+    .prologue
+    .line 135
     const/16 v0, 0xaa1
 
     const/4 v1, 0x6
@@ -1575,5 +1844,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 136
     return-void
 .end method

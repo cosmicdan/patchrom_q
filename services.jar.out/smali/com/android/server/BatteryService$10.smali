@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 765
     iput-object p1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
     .locals 2
+    .parameter "event"
 
+    .prologue
+    .line 768
     iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLock:Ljava/lang/Object;
@@ -43,16 +49,20 @@
 
     monitor-enter v1
 
+    .line 769
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     #calls: Lcom/android/server/BatteryService;->updateLocked()V
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$900(Lcom/android/server/BatteryService;)V
 
+    .line 770
     monitor-exit v1
 
+    .line 771
     return-void
 
+    .line 770
     :catchall_0
     move-exception v0
 

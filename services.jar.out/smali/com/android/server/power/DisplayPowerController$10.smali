@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/DisplayPowerController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1457
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$10;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public onTwilightStateChanged()V
     .locals 2
 
+    .prologue
+    .line 1460
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$10;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     const/4 v1, 0x1
@@ -44,10 +49,12 @@
     #setter for: Lcom/android/server/power/DisplayPowerController;->mTwilightChanged:Z
     invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerController;->access$1302(Lcom/android/server/power/DisplayPowerController;Z)Z
 
+    .line 1461
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$10;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #calls: Lcom/android/server/power/DisplayPowerController;->updatePowerState()V
     invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$500(Lcom/android/server/power/DisplayPowerController;)V
 
+    .line 1462
     return-void
 .end method

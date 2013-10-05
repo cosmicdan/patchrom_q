@@ -28,7 +28,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/IntentResolver;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 712
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
     iput-object p1, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-direct {p0}, Lcom/android/server/IntentResolverOld;-><init>()V
@@ -40,6 +44,8 @@
 # virtual methods
 .method protected allowFilterResult(Landroid/content/IntentFilter;Ljava/util/List;)Z
     .locals 1
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TF;",
@@ -48,6 +54,11 @@
         }
     .end annotation
 
+    .prologue
+    .line 717
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
+    .local p1, filter:Landroid/content/IntentFilter;,"TF;"
+    .local p2, dest:Ljava/util/List;,"Ljava/util/List<TR;>;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/IntentResolver;->allowFilterResult(Landroid/content/IntentFilter;Ljava/util/List;)Z
@@ -59,12 +70,18 @@
 
 .method protected isFilterStopped(Landroid/content/IntentFilter;I)Z
     .locals 1
+    .parameter
+    .parameter "userId"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TF;I)Z"
         }
     .end annotation
 
+    .prologue
+    .line 720
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
+    .local p1, filter:Landroid/content/IntentFilter;,"TF;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/IntentResolver;->isFilterStopped(Landroid/content/IntentFilter;I)Z
@@ -76,12 +93,19 @@
 
 .method protected newResult(Landroid/content/IntentFilter;II)Ljava/lang/Object;
     .locals 1
+    .parameter
+    .parameter "match"
+    .parameter "userId"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TF;II)TR;"
         }
     .end annotation
 
+    .prologue
+    .line 723
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
+    .local p1, filter:Landroid/content/IntentFilter;,"TF;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/IntentResolver;->newResult(Landroid/content/IntentFilter;II)Ljava/lang/Object;
@@ -93,6 +117,7 @@
 
 .method protected packageForFilter(Landroid/content/IntentFilter;)Ljava/lang/String;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TF;)",
@@ -100,6 +125,10 @@
         }
     .end annotation
 
+    .prologue
+    .line 714
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
+    .local p1, filter:Landroid/content/IntentFilter;,"TF;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-virtual {v0, p1}, Lcom/android/server/IntentResolver;->packageForFilter(Landroid/content/IntentFilter;)Ljava/lang/String;
@@ -111,6 +140,7 @@
 
 .method protected sortResults(Ljava/util/List;)V
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -119,9 +149,14 @@
         }
     .end annotation
 
+    .prologue
+    .line 726
+    .local p0, this:Lcom/android/server/IntentResolver$2;,"Lcom/android/server/IntentResolver.2;"
+    .local p1, results:Ljava/util/List;,"Ljava/util/List<TR;>;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$2;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-virtual {v0, p1}, Lcom/android/server/IntentResolver;->sortResults(Ljava/util/List;)V
 
+    .line 727
     return-void
 .end method

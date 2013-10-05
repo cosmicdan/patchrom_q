@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/WifiService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 424
     iput-object p1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
+    .line 427
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
@@ -50,12 +57,15 @@
 
     if-eqz v3, :cond_2
 
+    .line 428
     const-string v3, "wifi_state"
 
     invoke-virtual {p2, v3, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
+    .line 431
+    .local v0, wifiState:I
     iget-object v3, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     const/4 v4, 0x3
@@ -66,25 +76,33 @@
     #setter for: Lcom/android/server/WifiService;->mWifiEnabled:Z
     invoke-static {v3, v1}, Lcom/android/server/WifiService;->access$1202(Lcom/android/server/WifiService;Z)Z
 
+    .line 434
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->resetNotification()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1300(Lcom/android/server/WifiService;)V
 
+    .line 435
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #setter for: Lcom/android/server/WifiService;->mWaitForScanResult:Z
     invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1402(Lcom/android/server/WifiService;Z)Z
 
+    .line 454
+    .end local v0           #wifiState:I
     :cond_0
     :goto_1
     return-void
 
+    .restart local v0       #wifiState:I
     :cond_1
     move v1, v2
 
+    .line 431
     goto :goto_0
 
+    .line 436
+    .end local v0           #wifiState:I
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -98,6 +116,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 438
     iget-object v2, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     const-string v1, "networkInfo"
@@ -110,6 +129,7 @@
 
     iput-object v1, v2, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
 
+    .line 441
     sget-object v1, Lcom/android/server/WifiService$5;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
 
     iget-object v2, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
@@ -130,12 +150,14 @@
 
     goto :goto_1
 
+    .line 445
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->evaluateTrafficStatsPolling()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1500(Lcom/android/server/WifiService;)V
 
+    .line 446
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->resetNotification()V
@@ -143,6 +165,7 @@
 
     goto :goto_1
 
+    .line 449
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -156,11 +179,13 @@
 
     if-eqz v1, :cond_0
 
+    .line 451
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->noteScanEnd()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1600(Lcom/android/server/WifiService;)V
 
+    .line 452
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->checkAndSetNotification()V
@@ -168,6 +193,7 @@
 
     goto :goto_1
 
+    .line 441
     nop
 
     :pswitch_data_0

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/dreams/DreamManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 395
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService$6;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onDreamStopped(Landroid/os/Binder;)V
     .locals 2
+    .parameter "token"
 
+    .prologue
+    .line 398
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$6;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     #getter for: Lcom/android/server/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
@@ -46,6 +52,7 @@
 
     monitor-enter v1
 
+    .line 399
     :try_start_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$6;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
@@ -56,16 +63,20 @@
 
     if-ne v0, p1, :cond_0
 
+    .line 400
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$6;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     #calls: Lcom/android/server/dreams/DreamManagerService;->cleanupDreamLocked()V
     invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->access$400(Lcom/android/server/dreams/DreamManagerService;)V
 
+    .line 402
     :cond_0
     monitor-exit v1
 
+    .line 403
     return-void
 
+    .line 402
     :catchall_0
     move-exception v0
 

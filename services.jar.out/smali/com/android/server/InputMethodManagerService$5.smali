@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2645
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$5;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,10 +39,14 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
+    .parameter "dialog"
 
+    .prologue
+    .line 2648
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$5;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
 
+    .line 2649
     return-void
 .end method

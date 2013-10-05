@@ -36,7 +36,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 11927
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,6 +52,8 @@
 .method public hasNext()Z
     .locals 2
 
+    .prologue
+    .line 11932
     iget v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->cur:I
 
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
@@ -78,12 +83,15 @@
 .method public next()Lcom/android/server/wm/DisplayContent;
     .locals 3
 
+    .prologue
+    .line 11937
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 11938
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
@@ -105,6 +113,7 @@
 
     return-object v0
 
+    .line 11940
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -116,6 +125,8 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 11927
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->next()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v0
@@ -126,6 +137,8 @@
 .method public remove()V
     .locals 2
 
+    .prologue
+    .line 11945
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "AllDisplayContentIterator.remove not implemented"

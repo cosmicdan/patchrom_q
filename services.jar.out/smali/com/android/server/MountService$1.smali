@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 772
     iput-object p1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -34,14 +37,18 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 774
     const-wide/16 v0, 0x7d0
 
     invoke-static {v0, v1}, Landroid/os/SystemClock;->sleep(J)V
 
+    .line 775
     iget-object v0, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateDefaultpath()V
     invoke-static {v0}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;)V
 
+    .line 776
     return-void
 .end method

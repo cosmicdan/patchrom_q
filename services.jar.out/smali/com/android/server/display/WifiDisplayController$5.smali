@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 317
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,19 +39,25 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 320
     invoke-static {}, Lcom/android/server/display/WifiDisplayController;->access$200()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 321
     const-string v0, "WifiDisplayController"
 
     const-string v1, "disconnect previous Wi-Fi P2p connection"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 324
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
 
@@ -70,5 +79,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/wifi/p2p/WifiP2pManager;->removeGroup(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V
 
+    .line 336
     return-void
 .end method

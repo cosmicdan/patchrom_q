@@ -30,13 +30,19 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 273
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 275
     return-void
 .end method
 
 .method private static getBinderInfo(IILjava/util/ArrayList;)Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     .locals 6
+    .parameter "pid"
+    .parameter "tid"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -48,8 +54,11 @@
         }
     .end annotation
 
+    .prologue
+    .local p2, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     const/4 v3, 0x0
 
+    .line 376
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -63,18 +72,23 @@
     :cond_0
     move-object v0, v3
 
+    .line 387
     :goto_0
     return-object v0
 
+    .line 379
     :cond_1
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
+    .line 381
+    .local v2, size:I
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
+    .local v1, i$:Ljava/util/Iterator;
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -88,6 +102,8 @@
 
     check-cast v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
 
+    .line 382
+    .local v0, bi:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     iget v4, v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mSrcPid:I
 
     if-ne v4, p0, :cond_2
@@ -96,6 +112,7 @@
 
     if-ne v4, p1, :cond_2
 
+    .line 383
     const-string v3, "ANRManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -134,14 +151,18 @@
 
     goto :goto_0
 
+    .end local v0           #bi:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     :cond_3
     move-object v0, v3
 
+    .line 387
     goto :goto_0
 .end method
 
 .method public static final getTimeoutBinderFromPid(ILjava/util/ArrayList;)Ljava/util/ArrayList;
     .locals 7
+    .parameter "pid"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -156,17 +177,23 @@
         }
     .end annotation
 
+    .prologue
+    .line 348
+    .local p1, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     if-lez p0, :cond_0
 
     if-nez p1, :cond_2
 
+    .line 349
     :cond_0
     const/4 v3, 0x0
 
+    .line 372
     :cond_1
     :goto_0
     return-object v3
 
+    .line 351
     :cond_2
     const-string v4, "ANRManager"
 
@@ -204,16 +231,22 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 353
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
+    .line 355
+    .local v3, pidList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
+    .line 356
+    .local v1, count:I
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
+    .local v2, i$:Ljava/util/Iterator;
     :cond_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -227,14 +260,18 @@
 
     check-cast v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
 
+    .line 357
+    .local v0, bi:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     if-eqz v0, :cond_3
 
     iget v4, v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mSrcPid:I
 
     if-ne v4, p0, :cond_3
 
+    .line 358
     add-int/lit8 v1, v1, 0x1
 
+    .line 359
     iget v4, v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -247,6 +284,7 @@
 
     if-nez v4, :cond_4
 
+    .line 360
     const-string v4, "ANRManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -283,6 +321,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 361
     iget v4, v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -291,6 +330,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 367
     :goto_1
     const/4 v4, 0x5
 
@@ -298,6 +338,7 @@
 
     goto/16 :goto_0
 
+    .line 364
     :cond_4
     const-string v4, "ANRManager"
 
@@ -340,6 +381,8 @@
 
 .method public static final getTimeoutBinderPidList(II)Ljava/util/ArrayList;
     .locals 7
+    .parameter "pid"
+    .parameter "tid"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -350,38 +393,54 @@
         }
     .end annotation
 
+    .prologue
+    .line 315
     if-gtz p0, :cond_1
 
+    .line 316
     const/4 v3, 0x0
 
+    .line 344
     :cond_0
     :goto_0
     return-object v3
 
+    .line 318
     :cond_1
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
+    .line 320
+    .local v3, pidList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-static {}, Lcom/android/server/am/ANRManager$BinderWatchdog;->readTimeoutBinderListFromFile()Ljava/util/ArrayList;
 
     move-result-object v0
 
+    .line 322
+    .local v0, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     const/4 v1, 0x0
 
+    .line 323
+    .local v1, count:I
     invoke-static {p0, p1, v0}, Lcom/android/server/am/ANRManager$BinderWatchdog;->getBinderInfo(IILjava/util/ArrayList;)Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
 
     move-result-object v2
 
+    .line 324
+    .local v2, next:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     :goto_1
     if-eqz v2, :cond_2
 
+    .line 325
     iget v4, v2, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
     if-lez v4, :cond_5
 
+    .line 326
     add-int/lit8 v1, v1, 0x1
 
+    .line 327
     iget v4, v2, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -394,6 +453,7 @@
 
     if-nez v4, :cond_4
 
+    .line 328
     const-string v4, "ANRManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -430,6 +490,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 329
     iget v4, v2, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -438,11 +499,13 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 334
     :goto_2
     const/4 v4, 0x5
 
     if-lt v1, v4, :cond_5
 
+    .line 340
     :cond_2
     if-eqz v3, :cond_3
 
@@ -452,6 +515,7 @@
 
     if-nez v4, :cond_0
 
+    .line 341
     :cond_3
     invoke-static {p0, v0}, Lcom/android/server/am/ANRManager$BinderWatchdog;->getTimeoutBinderFromPid(ILjava/util/ArrayList;)Ljava/util/ArrayList;
 
@@ -459,6 +523,7 @@
 
     goto :goto_0
 
+    .line 332
     :cond_4
     const-string v4, "ANRManager"
 
@@ -498,6 +563,7 @@
 
     goto :goto_2
 
+    .line 337
     :cond_5
     iget v4, v2, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mDstPid:I
 
@@ -522,10 +588,16 @@
         }
     .end annotation
 
+    .prologue
+    .line 391
     const/4 v3, 0x0
 
+    .line 392
+    .local v3, br:Ljava/io/BufferedReader;
     const/4 v1, 0x0
 
+    .line 394
+    .local v1, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :try_start_0
     new-instance v6, Ljava/io/File;
 
@@ -533,6 +605,8 @@
 
     invoke-direct {v6, v9}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 395
+    .local v6, file:Ljava/io/File;
     if-eqz v6, :cond_0
 
     invoke-virtual {v6}, Ljava/io/File;->exists()Z
@@ -546,9 +620,11 @@
 
     if-nez v9, :cond_2
 
+    .line 419
     :cond_0
     if-eqz v3, :cond_1
 
+    .line 421
     :try_start_1
     throw v3
     :try_end_1
@@ -559,12 +635,22 @@
     :goto_0
     move-object v2, v1
 
+    .line 428
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v6           #file:Ljava/io/File;
+    .local v2, binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :goto_1
     return-object v2
 
+    .line 422
+    .end local v2           #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v6       #file:Ljava/io/File;
     :catch_0
     move-exception v7
 
+    .line 423
+    .local v7, ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -573,9 +659,13 @@
 
     goto :goto_0
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_1
     move-exception v5
 
+    .line 425
+    .local v5, e:Ljava/lang/Exception;
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -584,6 +674,8 @@
 
     goto :goto_0
 
+    .line 397
+    .end local v5           #e:Ljava/lang/Exception;
     :cond_2
     :try_start_2
     new-instance v2, Ljava/util/ArrayList;
@@ -595,6 +687,9 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_7
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_a
 
+    .line 399
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .local v2, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :try_start_3
     new-instance v4, Ljava/io/BufferedReader;
 
@@ -609,26 +704,35 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_11
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_f
 
+    .line 402
+    .end local v3           #br:Ljava/io/BufferedReader;
+    .local v4, br:Ljava/io/BufferedReader;
     :cond_3
     :try_start_4
     invoke-virtual {v4}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v8
 
+    .local v8, line:Ljava/lang/String;
     if-eqz v8, :cond_5
 
+    .line 403
     new-instance v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
 
     invoke-direct {v0, v8}, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;-><init>(Ljava/lang/String;)V
 
+    .line 404
+    .local v0, bi:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     if-eqz v0, :cond_4
 
     iget v9, v0, Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;->mSrcPid:I
 
     if-lez v9, :cond_4
 
+    .line 405
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 406
     :cond_4
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
     :try_end_4
@@ -643,9 +747,12 @@
 
     if-le v9, v10, :cond_3
 
+    .line 419
+    .end local v0           #bi:Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;
     :cond_5
     if-eqz v4, :cond_6
 
+    .line 421
     :try_start_5
     invoke-virtual {v4}, Ljava/io/BufferedReader;->close()V
     :try_end_5
@@ -656,11 +763,19 @@
     :goto_2
     move-object v1, v2
 
+    .line 428
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto :goto_1
 
+    .line 422
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_2
     move-exception v7
 
+    .line 423
+    .restart local v7       #ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -669,9 +784,13 @@
 
     goto :goto_2
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_3
     move-exception v5
 
+    .line 425
+    .restart local v5       #e:Ljava/lang/Exception;
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -680,9 +799,19 @@
 
     goto :goto_2
 
+    .line 411
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v4           #br:Ljava/io/BufferedReader;
+    .end local v5           #e:Ljava/lang/Exception;
+    .end local v6           #file:Ljava/io/File;
+    .end local v8           #line:Ljava/lang/String;
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v3       #br:Ljava/io/BufferedReader;
     :catch_4
     move-exception v5
 
+    .line 412
+    .local v5, e:Ljava/io/FileNotFoundException;
     :goto_3
     :try_start_6
     const-string v9, "ANRManager"
@@ -693,23 +822,33 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
+    .line 419
     if-eqz v3, :cond_7
 
+    .line 421
     :try_start_7
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_6
 
+    .end local v5           #e:Ljava/io/FileNotFoundException;
     :cond_7
     :goto_4
     move-object v2, v1
 
+    .line 428
+    .local v2, binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto :goto_1
 
+    .line 422
+    .end local v2           #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v5       #e:Ljava/io/FileNotFoundException;
     :catch_5
     move-exception v7
 
+    .line 423
+    .restart local v7       #ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -718,9 +857,13 @@
 
     goto :goto_4
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_6
     move-exception v5
 
+    .line 425
+    .local v5, e:Ljava/lang/Exception;
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -729,9 +872,13 @@
 
     goto :goto_4
 
+    .line 413
+    .end local v5           #e:Ljava/lang/Exception;
     :catch_7
     move-exception v5
 
+    .line 414
+    .local v5, e:Ljava/io/IOException;
     :goto_5
     :try_start_8
     const-string v9, "ANRManager"
@@ -742,23 +889,33 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
+    .line 419
     if-eqz v3, :cond_8
 
+    .line 421
     :try_start_9
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_8
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_9
 
+    .end local v5           #e:Ljava/io/IOException;
     :cond_8
     :goto_6
     move-object v2, v1
 
+    .line 428
+    .restart local v2       #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto/16 :goto_1
 
+    .line 422
+    .end local v2           #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v5       #e:Ljava/io/IOException;
     :catch_8
     move-exception v7
 
+    .line 423
+    .restart local v7       #ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -767,9 +924,13 @@
 
     goto :goto_6
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_9
     move-exception v5
 
+    .line 425
+    .local v5, e:Ljava/lang/Exception;
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -778,9 +939,13 @@
 
     goto :goto_6
 
+    .line 415
+    .end local v5           #e:Ljava/lang/Exception;
     :catch_a
     move-exception v5
 
+    .line 416
+    .restart local v5       #e:Ljava/lang/Exception;
     :goto_7
     :try_start_a
     const-string v9, "ANRManager"
@@ -791,8 +956,10 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
+    .line 419
     if-eqz v3, :cond_9
 
+    .line 421
     :try_start_b
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_b
@@ -803,11 +970,17 @@
     :goto_8
     move-object v2, v1
 
+    .line 428
+    .restart local v2       #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto/16 :goto_1
 
+    .line 422
+    .end local v2           #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_b
     move-exception v7
 
+    .line 423
+    .restart local v7       #ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -816,9 +989,12 @@
 
     goto :goto_8
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_c
     move-exception v5
 
+    .line 425
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -827,12 +1003,15 @@
 
     goto :goto_8
 
+    .line 419
+    .end local v5           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v9
 
     :goto_9
     if-eqz v3, :cond_a
 
+    .line 421
     :try_start_c
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_c
@@ -843,11 +1022,17 @@
     :goto_a
     move-object v2, v1
 
+    .line 428
+    .restart local v2       #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto/16 :goto_1
 
+    .line 422
+    .end local v2           #binderList:Ljava/lang/Object;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_d
     move-exception v7
 
+    .line 423
+    .restart local v7       #ioe:Ljava/io/IOException;
     const-string v9, "ANRManager"
 
     const-string v10, "IOException when close buffer reader:"
@@ -856,9 +1041,13 @@
 
     goto :goto_a
 
+    .line 424
+    .end local v7           #ioe:Ljava/io/IOException;
     :catch_e
     move-exception v5
 
+    .line 425
+    .restart local v5       #e:Ljava/lang/Exception;
     const-string v9, "ANRManager"
 
     const-string v10, "close timeout binder node failed"
@@ -867,67 +1056,121 @@
 
     goto :goto_a
 
+    .line 419
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v5           #e:Ljava/lang/Exception;
+    .local v2, binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v6       #file:Ljava/io/File;
     :catchall_1
     move-exception v9
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto :goto_9
 
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v3           #br:Ljava/io/BufferedReader;
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v4       #br:Ljava/io/BufferedReader;
     :catchall_2
     move-exception v9
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     move-object v3, v4
 
+    .end local v4           #br:Ljava/io/BufferedReader;
+    .restart local v3       #br:Ljava/io/BufferedReader;
     goto :goto_9
 
+    .line 415
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_f
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto :goto_7
 
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v3           #br:Ljava/io/BufferedReader;
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v4       #br:Ljava/io/BufferedReader;
     :catch_10
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     move-object v3, v4
 
+    .end local v4           #br:Ljava/io/BufferedReader;
+    .restart local v3       #br:Ljava/io/BufferedReader;
     goto :goto_7
 
+    .line 413
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_11
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto :goto_5
 
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v3           #br:Ljava/io/BufferedReader;
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v4       #br:Ljava/io/BufferedReader;
     :catch_12
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     move-object v3, v4
 
+    .end local v4           #br:Ljava/io/BufferedReader;
+    .restart local v3       #br:Ljava/io/BufferedReader;
     goto :goto_5
 
+    .line 411
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     :catch_13
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     goto/16 :goto_3
 
+    .end local v1           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .end local v3           #br:Ljava/io/BufferedReader;
+    .restart local v2       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v4       #br:Ljava/io/BufferedReader;
     :catch_14
     move-exception v5
 
     move-object v1, v2
 
+    .end local v2           #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
+    .restart local v1       #binderList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/am/ANRManager$BinderWatchdog$BinderInfo;>;"
     move-object v3, v4
 
+    .end local v4           #br:Ljava/io/BufferedReader;
+    .restart local v3       #br:Ljava/io/BufferedReader;
     goto/16 :goto_3
 .end method

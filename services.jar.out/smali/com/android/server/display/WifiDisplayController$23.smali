@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1417
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public onT2dConnectFail()V
     .locals 3
 
+    .prologue
+    .line 1430
     const-string v0, "WifiDisplayController"
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -57,6 +62,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1431
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     const/4 v1, 0x0
@@ -64,12 +70,16 @@
     #setter for: Lcom/android/server/display/WifiDisplayController;->mFast_NeedFastRtsp:Z
     invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$4402(Lcom/android/server/display/WifiDisplayController;Z)Z
 
+    .line 1432
     return-void
 .end method
 
 .method public onT2dConnecting(Ljava/lang/String;)V
     .locals 4
+    .parameter "desiredMac"
 
+    .prologue
+    .line 1435
     const-string v0, "WifiDisplayController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,6 +122,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1436
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     const/4 v1, 0x1
@@ -119,19 +130,23 @@
     #setter for: Lcom/android/server/display/WifiDisplayController;->mFast_NeedFastRtsp:Z
     invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$4402(Lcom/android/server/display/WifiDisplayController;Z)Z
 
+    .line 1437
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #setter for: Lcom/android/server/display/WifiDisplayController;->mFast_DesiredMac:Ljava/lang/String;
     invoke-static {v0, p1}, Lcom/android/server/display/WifiDisplayController;->access$4502(Lcom/android/server/display/WifiDisplayController;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 1438
     return-void
 .end method
 
 .method public onT2dRequestReceived()I
     .locals 5
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 1419
     const-string v1, "WifiDisplayController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -181,6 +196,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1420
     iget-object v1, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #getter for: Lcom/android/server/display/WifiDisplayController;->mDesiredDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -190,12 +206,14 @@
 
     if-nez v1, :cond_0
 
+    .line 1421
     const-string v1, "WifiDisplayController"
 
     const-string v2, "Disable auto-connect for T2D"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1422
     iget-object v1, p0, Lcom/android/server/display/WifiDisplayController$23;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #getter for: Lcom/android/server/display/WifiDisplayController;->mContext:Landroid/content/Context;
@@ -211,8 +229,10 @@
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 1423
     const/4 v0, 0x1
 
+    .line 1425
     :cond_0
     return v0
 .end method

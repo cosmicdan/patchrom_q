@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/input/InputManagerService;Ljava/util/ArrayList;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 770
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$5;->val$list:Ljava/util/ArrayList;
@@ -40,7 +44,14 @@
 # virtual methods
 .method public visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 2
+    .parameter "resources"
+    .parameter "descriptor"
+    .parameter "label"
+    .parameter "collection"
+    .parameter "keyboardLayoutResId"
 
+    .prologue
+    .line 774
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$5;->val$list:Ljava/util/ArrayList;
 
     new-instance v1, Landroid/hardware/input/KeyboardLayout;
@@ -49,5 +60,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 775
     return-void
 .end method

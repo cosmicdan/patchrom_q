@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 903
     iput-object p1, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 19
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 907
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 908
+    .local v1, action:Ljava/lang/String;
     const-string v14, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -46,12 +55,14 @@
 
     if-eqz v14, :cond_0
 
+    .line 909
     const-string v14, "MountService"
 
     const-string v15, "MountService BOOT_COMPLETED!"
 
     invoke-static {v14, v15}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 910
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -61,9 +72,11 @@
     #setter for: Lcom/android/server/MountService;->mBootCompleted:Z
     invoke-static {v14, v15}, Lcom/android/server/MountService;->access$2902(Lcom/android/server/MountService;Z)Z
 
+    .line 970
     :goto_0
     return-void
 
+    .line 914
     :cond_0
     const-string v14, "MountService"
 
@@ -71,6 +84,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 915
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -80,6 +94,7 @@
     #setter for: Lcom/android/server/MountService;->mFirstTime_SwapStateForSDSwapMountPoint:Z
     invoke-static {v14, v15}, Lcom/android/server/MountService;->access$3002(Lcom/android/server/MountService;Z)Z
 
+    .line 918
     :try_start_0
     const-string v14, "MountService"
 
@@ -87,6 +102,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 919
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -102,6 +118,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 923
     :goto_1
     move-object/from16 v0, p0
 
@@ -110,6 +127,7 @@
     #calls: Lcom/android/server/MountService;->readStorageListLocked()V
     invoke-static {v14}, Lcom/android/server/MountService;->access$3200(Lcom/android/server/MountService;)V
 
+    .line 924
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -117,6 +135,7 @@
     #calls: Lcom/android/server/MountService;->updateSDExist()Z
     invoke-static {v14}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Z
 
+    .line 925
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -124,6 +143,7 @@
     #calls: Lcom/android/server/MountService;->doSDSwapVolumeUpdate()V
     invoke-static {v14}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)V
 
+    .line 928
     :try_start_1
     move-object/from16 v0, p0
 
@@ -160,29 +180,42 @@
 
     move-result-object v11
 
+    .line 931
+    .local v11, vols:[Ljava/lang/String;
     move-object v2, v11
 
+    .local v2, arr$:[Ljava/lang/String;
     array-length v5, v2
 
+    .local v5, len$:I
     const/4 v4, 0x0
 
+    .local v4, i$:I
     :goto_2
     if-ge v4, v5, :cond_2
 
     aget-object v12, v2, v4
 
+    .line 932
+    .local v12, volstr:Ljava/lang/String;
     const-string v14, " "
 
     invoke-virtual {v12, v14}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v10
 
+    .line 934
+    .local v10, tok:[Ljava/lang/String;
     const/4 v14, 0x1
 
     aget-object v6, v10, v14
 
+    .line 935
+    .local v6, path:Ljava/lang/String;
     const-string v9, "removed"
 
+    .line 938
+    .local v9, state:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -196,6 +229,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 939
     :try_start_2
     move-object/from16 v0, p0
 
@@ -212,10 +246,13 @@
 
     check-cast v13, Landroid/os/storage/StorageVolume;
 
+    .line 940
+    .local v13, volume:Landroid/os/storage/StorageVolume;
     monitor-exit v15
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 942
     const/4 v14, 0x2
 
     :try_start_3
@@ -225,13 +262,18 @@
 
     move-result v8
 
+    .line 943
+    .local v8, st:I
     if-nez v8, :cond_3
 
+    .line 944
     const-string v9, "removed"
 
+    .line 957
     :goto_3
     if-eqz v9, :cond_1
 
+    .line 958
     const-string v14, "MountService"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -254,6 +296,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 959
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -263,14 +306,28 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
+    .line 931
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
+    .line 920
+    .end local v2           #arr$:[Ljava/lang/String;
+    .end local v4           #i$:I
+    .end local v5           #len$:I
+    .end local v6           #path:Ljava/lang/String;
+    .end local v8           #st:I
+    .end local v9           #state:Ljava/lang/String;
+    .end local v10           #tok:[Ljava/lang/String;
+    .end local v11           #vols:[Ljava/lang/String;
+    .end local v12           #volstr:Ljava/lang/String;
+    .end local v13           #volume:Landroid/os/storage/StorageVolume;
     :catch_0
     move-exception v3
 
+    .line 921
+    .local v3, e:Ljava/lang/Exception;
     const-string v14, "MountService"
 
     const-string v15, "Error reinit SD card while IPO"
@@ -279,6 +336,16 @@
 
     goto/16 :goto_1
 
+    .line 940
+    .end local v3           #e:Ljava/lang/Exception;
+    .restart local v2       #arr$:[Ljava/lang/String;
+    .restart local v4       #i$:I
+    .restart local v5       #len$:I
+    .restart local v6       #path:Ljava/lang/String;
+    .restart local v9       #state:Ljava/lang/String;
+    .restart local v10       #tok:[Ljava/lang/String;
+    .restart local v11       #vols:[Ljava/lang/String;
+    .restart local v12       #volstr:Ljava/lang/String;
     :catchall_0
     move-exception v14
 
@@ -292,15 +359,27 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
 
+    .line 962
+    .end local v2           #arr$:[Ljava/lang/String;
+    .end local v4           #i$:I
+    .end local v5           #len$:I
+    .end local v6           #path:Ljava/lang/String;
+    .end local v9           #state:Ljava/lang/String;
+    .end local v10           #tok:[Ljava/lang/String;
+    .end local v11           #vols:[Ljava/lang/String;
+    .end local v12           #volstr:Ljava/lang/String;
     :catch_1
     move-exception v3
 
+    .line 963
+    .restart local v3       #e:Ljava/lang/Exception;
     const-string v14, "MountService"
 
     const-string v15, "Error processing initial volume state"
 
     invoke-static {v14, v15, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 964
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -310,8 +389,11 @@
 
     move-result-object v7
 
+    .line 965
+    .local v7, primary:Landroid/os/storage/StorageVolume;
     if-eqz v7, :cond_2
 
+    .line 966
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
@@ -321,6 +403,9 @@
     #calls: Lcom/android/server/MountService;->updatePublicVolumeState(Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
     invoke-static {v14, v7, v15}, Lcom/android/server/MountService;->access$1000(Lcom/android/server/MountService;Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
 
+    .line 969
+    .end local v3           #e:Ljava/lang/Exception;
+    .end local v7           #primary:Landroid/os/storage/StorageVolume;
     :cond_2
     move-object/from16 v0, p0
 
@@ -331,23 +416,38 @@
 
     goto/16 :goto_0
 
+    .line 945
+    .restart local v2       #arr$:[Ljava/lang/String;
+    .restart local v4       #i$:I
+    .restart local v5       #len$:I
+    .restart local v6       #path:Ljava/lang/String;
+    .restart local v8       #st:I
+    .restart local v9       #state:Ljava/lang/String;
+    .restart local v10       #tok:[Ljava/lang/String;
+    .restart local v11       #vols:[Ljava/lang/String;
+    .restart local v12       #volstr:Ljava/lang/String;
+    .restart local v13       #volume:Landroid/os/storage/StorageVolume;
     :cond_3
     const/4 v14, 0x1
 
     if-ne v8, v14, :cond_4
 
+    .line 946
     :try_start_6
     const-string v9, "unmounted"
 
     goto :goto_3
 
+    .line 947
     :cond_4
     const/4 v14, 0x4
 
     if-ne v8, v14, :cond_5
 
+    .line 948
     const-string v9, "mounted"
 
+    .line 949
     const-string v14, "MountService"
 
     const-string v15, "Media already mounted on daemon connection"
@@ -356,13 +456,16 @@
 
     goto :goto_3
 
+    .line 950
     :cond_5
     const/4 v14, 0x7
 
     if-ne v8, v14, :cond_6
 
+    .line 951
     const-string v9, "shared"
 
+    .line 952
     const-string v14, "MountService"
 
     const-string v15, "Media shared on daemon connection"
@@ -371,6 +474,7 @@
 
     goto :goto_3
 
+    .line 954
     :cond_6
     new-instance v14, Ljava/lang/Exception;
 

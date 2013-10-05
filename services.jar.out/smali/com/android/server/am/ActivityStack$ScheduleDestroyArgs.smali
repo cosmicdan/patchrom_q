@@ -25,14 +25,23 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ProcessRecord;ZLjava/lang/String;)V
     .locals 0
+    .parameter "owner"
+    .parameter "oomAdj"
+    .parameter "reason"
 
+    .prologue
+    .line 322
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 323
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mOwner:Lcom/android/server/am/ProcessRecord;
 
+    .line 324
     iput-boolean p2, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mOomAdj:Z
 
+    .line 325
     iput-object p3, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mReason:Ljava/lang/String;
 
+    .line 326
     return-void
 .end method

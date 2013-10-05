@@ -27,16 +27,26 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService;Lcom/android/internal/backup/IBackupTransport;Lcom/android/server/BackupManagerService$ActiveRestoreSession;Landroid/app/backup/IRestoreObserver;)V
     .locals 0
+    .parameter
+    .parameter "_transport"
+    .parameter "_session"
+    .parameter "_observer"
 
+    .prologue
+    .line 292
     iput-object p1, p0, Lcom/android/server/BackupManagerService$RestoreGetSetsParams;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 293
     iput-object p2, p0, Lcom/android/server/BackupManagerService$RestoreGetSetsParams;->transport:Lcom/android/internal/backup/IBackupTransport;
 
+    .line 294
     iput-object p3, p0, Lcom/android/server/BackupManagerService$RestoreGetSetsParams;->session:Lcom/android/server/BackupManagerService$ActiveRestoreSession;
 
+    .line 295
     iput-object p4, p0, Lcom/android/server/BackupManagerService$RestoreGetSetsParams;->observer:Landroid/app/backup/IRestoreObserver;
 
+    .line 296
     return-void
 .end method

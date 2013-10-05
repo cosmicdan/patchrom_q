@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/UiModeManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 124
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 127
     const-string v1, "android.intent.extra.DOCK_STATE"
 
     const/4 v2, 0x0
@@ -42,10 +49,13 @@
 
     move-result v0
 
+    .line 129
+    .local v0, state:I
     iget-object v1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
     #calls: Lcom/android/server/UiModeManagerService;->updateDockState(I)V
     invoke-static {v1, v0}, Lcom/android/server/UiModeManagerService;->access$100(Lcom/android/server/UiModeManagerService;I)V
 
+    .line 130
     return-void
 .end method

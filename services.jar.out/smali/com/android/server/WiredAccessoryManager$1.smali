@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/WiredAccessoryManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 108
     iput-object p1, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,16 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .parameter "ctx"
+    .parameter "intent"
 
+    .prologue
+    .line 111
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$1;->this$0:Lcom/android/server/WiredAccessoryManager;
 
     #calls: Lcom/android/server/WiredAccessoryManager;->bootCompleted()V
     invoke-static {v0}, Lcom/android/server/WiredAccessoryManager;->access$000(Lcom/android/server/WiredAccessoryManager;)V
 
+    .line 112
     return-void
 .end method

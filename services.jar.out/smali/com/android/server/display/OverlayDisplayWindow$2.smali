@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/OverlayDisplayWindow;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 290
     iput-object p1, p0, Lcom/android/server/display/OverlayDisplayWindow$2;->this$0:Lcom/android/server/display/OverlayDisplayWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,12 @@
 # virtual methods
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
     .locals 2
+    .parameter "surfaceTexture"
+    .parameter "width"
+    .parameter "height"
 
+    .prologue
+    .line 294
     iget-object v0, p0, Lcom/android/server/display/OverlayDisplayWindow$2;->this$0:Lcom/android/server/display/OverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/OverlayDisplayWindow;->mListener:Lcom/android/server/display/OverlayDisplayWindow$Listener;
@@ -55,12 +63,16 @@
 
     invoke-interface {v0, p1, v1}, Lcom/android/server/display/OverlayDisplayWindow$Listener;->onWindowCreated(Landroid/graphics/SurfaceTexture;F)V
 
+    .line 295
     return-void
 .end method
 
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .locals 1
+    .parameter "surfaceTexture"
 
+    .prologue
+    .line 299
     iget-object v0, p0, Lcom/android/server/display/OverlayDisplayWindow$2;->this$0:Lcom/android/server/display/OverlayDisplayWindow;
 
     #getter for: Lcom/android/server/display/OverlayDisplayWindow;->mListener:Lcom/android/server/display/OverlayDisplayWindow$Listener;
@@ -70,6 +82,7 @@
 
     invoke-interface {v0}, Lcom/android/server/display/OverlayDisplayWindow$Listener;->onWindowDestroyed()V
 
+    .line 300
     const/4 v0, 0x1
 
     return v0
@@ -77,12 +90,20 @@
 
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
     .locals 0
+    .parameter "surfaceTexture"
+    .parameter "width"
+    .parameter "height"
 
+    .prologue
+    .line 306
     return-void
 .end method
 
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
     .locals 0
+    .parameter "surfaceTexture"
 
+    .prologue
+    .line 310
     return-void
 .end method

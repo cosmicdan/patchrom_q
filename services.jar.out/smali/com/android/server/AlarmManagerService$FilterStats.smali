@@ -22,6 +22,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 133
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +31,10 @@
 
 .method synthetic constructor <init>(Lcom/android/server/AlarmManagerService$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 133
     invoke-direct {p0}, Lcom/android/server/AlarmManagerService$FilterStats;-><init>()V
 
     return-void

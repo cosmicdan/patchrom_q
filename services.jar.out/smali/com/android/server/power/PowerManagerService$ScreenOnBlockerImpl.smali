@@ -26,7 +26,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2844
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,11 @@
 
 .method synthetic constructor <init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 2844
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -47,8 +54,11 @@
 .method public acquire()V
     .locals 3
 
+    .prologue
+    .line 2855
     monitor-enter p0
 
+    .line 2856
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -56,6 +66,7 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
+    .line 2858
     const-string v0, "PowerManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -80,10 +91,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2860
     monitor-exit p0
 
+    .line 2861
     return-void
 
+    .line 2860
     :catchall_0
     move-exception v0
 
@@ -97,8 +111,11 @@
 .method public isHeld()Z
     .locals 1
 
+    .prologue
+    .line 2848
     monitor-enter p0
 
+    .line 2849
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -116,6 +133,7 @@
 
     goto :goto_0
 
+    .line 2850
     :catchall_0
     move-exception v0
 
@@ -129,8 +147,11 @@
 .method public release()V
     .locals 3
 
+    .prologue
+    .line 2865
     monitor-enter p0
 
+    .line 2866
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -138,10 +159,12 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
+    .line 2867
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-gez v0, :cond_0
 
+    .line 2868
     const-string v0, "PowerManagerService"
 
     const-string v1, "Screen on blocker was released without being acquired!"
@@ -152,15 +175,18 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 2870
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
+    .line 2872
     :cond_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-nez v0, :cond_1
 
+    .line 2873
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
@@ -172,6 +198,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->sendEmptyMessage(I)Z
 
+    .line 2876
     :cond_1
     const-string v0, "PowerManagerService"
 
@@ -197,10 +224,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2878
     monitor-exit p0
 
+    .line 2879
     return-void
 
+    .line 2878
     :catchall_0
     move-exception v0
 
@@ -214,8 +244,11 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 2883
     monitor-enter p0
 
+    .line 2884
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -263,6 +296,7 @@
 
     goto :goto_0
 
+    .line 2885
     :catchall_0
     move-exception v0
 

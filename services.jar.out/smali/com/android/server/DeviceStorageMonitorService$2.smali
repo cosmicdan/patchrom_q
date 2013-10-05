@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DeviceStorageMonitorService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 419
     iput-object p1, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageStatsObserver$Stub;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onGetStatsCompleted(Landroid/content/pm/PackageStats;Z)V
     .locals 5
+    .parameter "stats"
+    .parameter "succeeded"
 
+    .prologue
+    .line 421
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     iget-wide v1, p1, Landroid/content/pm/PackageStats;->cacheSize:J
@@ -41,6 +48,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mCacheSize:J
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$1002(Lcom/android/server/DeviceStorageMonitorService;J)J
 
+    .line 422
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     iget-wide v1, p1, Landroid/content/pm/PackageStats;->codeSize:J
@@ -48,6 +56,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mCodeSize:J
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$1102(Lcom/android/server/DeviceStorageMonitorService;J)J
 
+    .line 423
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     iget-wide v1, p1, Landroid/content/pm/PackageStats;->dataSize:J
@@ -55,6 +64,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mDataSize:J
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$1202(Lcom/android/server/DeviceStorageMonitorService;J)J
 
+    .line 424
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
@@ -85,6 +95,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mTotalSize:J
     invoke-static {v0, v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$402(Lcom/android/server/DeviceStorageMonitorService;J)J
 
+    .line 425
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$2;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     const/4 v1, 0x1
@@ -92,6 +103,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mGetSize:Z
     invoke-static {v0, v1}, Lcom/android/server/DeviceStorageMonitorService;->access$1302(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
+    .line 426
     const-string v0, "DeviceStorageMonitorService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -172,5 +184,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 428
     return-void
 .end method

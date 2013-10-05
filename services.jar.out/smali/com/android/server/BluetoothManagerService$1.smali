@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BluetoothManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 117
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$1;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothCallback$Stub;-><init>()V
@@ -33,12 +36,16 @@
 # virtual methods
 .method public onBluetoothStateChange(II)V
     .locals 3
+    .parameter "prevState"
+    .parameter "newState"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
+    .prologue
+    .line 120
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService$1;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #getter for: Lcom/android/server/BluetoothManagerService;->mHandler:Lcom/android/server/BluetoothManagerService$BluetoothHandler;
@@ -52,6 +59,8 @@
 
     move-result-object v0
 
+    .line 121
+    .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService$1;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #getter for: Lcom/android/server/BluetoothManagerService;->mHandler:Lcom/android/server/BluetoothManagerService$BluetoothHandler;
@@ -61,11 +70,15 @@
 
     invoke-virtual {v1, v0}, Lcom/android/server/BluetoothManagerService$BluetoothHandler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 122
     return-void
 .end method
 
 .method public onRfcommChannelFound(I)V
     .locals 0
+    .parameter "channel"
 
+    .prologue
+    .line 127
     return-void
 .end method

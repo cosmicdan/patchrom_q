@@ -39,19 +39,31 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/dreams/DreamController;Landroid/os/Binder;Landroid/content/ComponentName;ZI)V
     .locals 0
+    .parameter
+    .parameter "token"
+    .parameter "name"
+    .parameter "isTest"
+    .parameter "userId"
 
+    .prologue
+    .line 223
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 224
     iput-object p2, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mToken:Landroid/os/Binder;
 
+    .line 225
     iput-object p3, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mName:Landroid/content/ComponentName;
 
+    .line 226
     iput-boolean p4, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mIsTest:Z
 
+    .line 227
     iput p5, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mUserId:I
 
+    .line 228
     return-void
 .end method
 
@@ -60,6 +72,8 @@
 .method public binderDied()V
     .locals 2
 
+    .prologue
+    .line 233
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -73,12 +87,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 242
     return-void
 .end method
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 2
+    .parameter "name"
+    .parameter "service"
 
+    .prologue
+    .line 247
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -92,12 +111,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 255
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 2
+    .parameter "name"
 
+    .prologue
+    .line 260
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -111,5 +134,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 269
     return-void
 .end method

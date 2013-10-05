@@ -27,17 +27,27 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver;Ljava/lang/String;II)V
     .locals 0
+    .parameter
+    .parameter "devName"
+    .parameter "state1Bits"
+    .parameter "state2Bits"
 
+    .prologue
+    .line 505
     iput-object p1, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->this$1:Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 506
     iput-object p2, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mDevName:Ljava/lang/String;
 
+    .line 507
     iput p3, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mState1Bits:I
 
+    .line 508
     iput p4, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mState2Bits:I
 
+    .line 509
     return-void
 .end method
 
@@ -46,6 +56,8 @@
 .method public checkSwitchExists()Z
     .locals 2
 
+    .prologue
+    .line 522
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p0}, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->getSwitchStatePath()Ljava/lang/String;
@@ -54,6 +66,8 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 523
+    .local v0, f:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -63,7 +77,11 @@
 
 .method public computeNewHeadsetState(II)I
     .locals 4
+    .parameter "headsetState"
+    .parameter "switchState"
 
+    .prologue
+    .line 527
     iget v2, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mState1Bits:I
 
     iget v3, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mState2Bits:I
@@ -72,12 +90,16 @@
 
     xor-int/lit8 v0, v2, -0x1
 
+    .line 528
+    .local v0, preserveMask:I
     const/4 v2, 0x1
 
     if-ne p2, v2, :cond_0
 
     iget v1, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mState1Bits:I
 
+    .line 531
+    .local v1, setBits:I
     :goto_0
     and-int v2, p1, v0
 
@@ -85,6 +107,8 @@
 
     return v2
 
+    .line 528
+    .end local v1           #setBits:I
     :cond_0
     const/4 v2, 0x2
 
@@ -103,6 +127,8 @@
 .method public getDevName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 511
     iget-object v0, p0, Lcom/android/server/WiredAccessoryManager$WiredAccessoryObserver$UEventInfo;->mDevName:Ljava/lang/String;
 
     return-object v0
@@ -111,6 +137,8 @@
 .method public getDevPath()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 514
     const-string v0, "/devices/virtual/switch/%s"
 
     const/4 v1, 0x1
@@ -133,6 +161,8 @@
 .method public getSwitchStatePath()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 518
     const-string v0, "/sys/class/switch/%s/state"
 
     const/4 v1, 0x1

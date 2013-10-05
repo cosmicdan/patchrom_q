@@ -45,7 +45,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NsdService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 467
     iput-object p1, p0, Lcom/android/server/NsdService$NativeResponseCode;->this$0:Lcom/android/server/NsdService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

@@ -28,7 +28,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 424
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$ForegroundToken;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

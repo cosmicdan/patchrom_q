@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2741
     iput-object p1, p0, Lcom/android/server/MountService$10;->this$0:Lcom/android/server/MountService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 6
 
+    .prologue
+    .line 2744
     :try_start_0
     iget-object v1, p0, Lcom/android/server/MountService$10;->this$0:Lcom/android/server/MountService;
 
@@ -61,12 +66,16 @@
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2748
     :goto_0
     return-void
 
+    .line 2745
     :catch_0
     move-exception v0
 
+    .line 2746
+    .local v0, e:Lcom/android/server/NativeDaemonConnectorException;
     const-string v1, "MountService"
 
     const-string v2, "problem executing in background"

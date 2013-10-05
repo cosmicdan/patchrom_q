@@ -29,21 +29,32 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService;Ljava/lang/String;ZZ)V
     .locals 1
+    .parameter
+    .parameter "path"
+    .parameter "force"
+    .parameter "removeEncryption"
 
+    .prologue
+    .line 418
     iput-object p1, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 419
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/MountService$UnmountCallBack;->retries:I
 
+    .line 420
     iput-object p2, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
 
+    .line 421
     iput-boolean p3, p0, Lcom/android/server/MountService$UnmountCallBack;->force:Z
 
+    .line 422
     iput-boolean p4, p0, Lcom/android/server/MountService$UnmountCallBack;->removeEncryption:Z
 
+    .line 423
     return-void
 .end method
 
@@ -52,6 +63,8 @@
 .method handleFinished()V
     .locals 4
 
+    .prologue
+    .line 426
     const-string v0, "MountService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,6 +89,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 427
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     iget-object v1, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
@@ -87,6 +101,7 @@
     #calls: Lcom/android/server/MountService;->doUnmountVolume(Ljava/lang/String;ZZ)I
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/MountService;->access$100(Lcom/android/server/MountService;Ljava/lang/String;ZZ)I
 
+    .line 428
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mUnmountSwap:Z
@@ -96,16 +111,19 @@
 
     if-eqz v0, :cond_0
 
+    .line 429
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateSDExist()Z
     invoke-static {v0}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Z
 
+    .line 430
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->doSDSwapVolumeUpdate()V
     invoke-static {v0}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)V
 
+    .line 431
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     const/4 v1, 0x0
@@ -113,16 +131,19 @@
     #setter for: Lcom/android/server/MountService;->mUnmountSwap:Z
     invoke-static {v0, v1}, Lcom/android/server/MountService;->access$202(Lcom/android/server/MountService;Z)Z
 
+    .line 432
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateDefaultpath()V
     invoke-static {v0}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;)V
 
+    .line 433
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->sendSDSwapIntent()V
     invoke-static {v0}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;)V
 
+    .line 435
     :cond_0
     return-void
 .end method

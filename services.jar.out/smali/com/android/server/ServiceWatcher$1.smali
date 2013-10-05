@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ServiceWatcher;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 206
     iput-object p1, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onPackageAdded(Ljava/lang/String;I)V
     .locals 2
+    .parameter "packageName"
+    .parameter "uid"
 
+    .prologue
+    .line 224
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #getter for: Lcom/android/server/ServiceWatcher;->mLock:Ljava/lang/Object;
@@ -43,6 +50,7 @@
 
     monitor-enter v1
 
+    .line 225
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -57,21 +65,26 @@
 
     if-eqz v0, :cond_0
 
+    .line 227
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #calls: Lcom/android/server/ServiceWatcher;->unbindLocked()V
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;)V
 
+    .line 230
     :cond_0
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #calls: Lcom/android/server/ServiceWatcher;->bindBestPackageLocked(Ljava/lang/String;)Z
     invoke-static {v0, p1}, Lcom/android/server/ServiceWatcher;->access$300(Lcom/android/server/ServiceWatcher;Ljava/lang/String;)Z
 
+    .line 231
     monitor-exit v1
 
+    .line 232
     return-void
 
+    .line 231
     :catchall_0
     move-exception v0
 
@@ -84,7 +97,11 @@
 
 .method public onPackageRemoved(Ljava/lang/String;I)V
     .locals 3
+    .parameter "packageName"
+    .parameter "uid"
 
+    .prologue
+    .line 236
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #getter for: Lcom/android/server/ServiceWatcher;->mLock:Ljava/lang/Object;
@@ -94,6 +111,7 @@
 
     monitor-enter v1
 
+    .line 237
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -108,11 +126,13 @@
 
     if-eqz v0, :cond_0
 
+    .line 238
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #calls: Lcom/android/server/ServiceWatcher;->unbindLocked()V
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;)V
 
+    .line 241
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     const/4 v2, 0x0
@@ -120,11 +140,14 @@
     #calls: Lcom/android/server/ServiceWatcher;->bindBestPackageLocked(Ljava/lang/String;)Z
     invoke-static {v0, v2}, Lcom/android/server/ServiceWatcher;->access$300(Lcom/android/server/ServiceWatcher;Ljava/lang/String;)Z
 
+    .line 243
     :cond_0
     monitor-exit v1
 
+    .line 244
     return-void
 
+    .line 243
     :catchall_0
     move-exception v0
 
@@ -137,7 +160,11 @@
 
 .method public onPackageUpdateFinished(Ljava/lang/String;I)V
     .locals 2
+    .parameter "packageName"
+    .parameter "uid"
 
+    .prologue
+    .line 212
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #getter for: Lcom/android/server/ServiceWatcher;->mLock:Ljava/lang/Object;
@@ -147,6 +174,7 @@
 
     monitor-enter v1
 
+    .line 213
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -161,21 +189,26 @@
 
     if-eqz v0, :cond_0
 
+    .line 215
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #calls: Lcom/android/server/ServiceWatcher;->unbindLocked()V
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;)V
 
+    .line 218
     :cond_0
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$1;->this$0:Lcom/android/server/ServiceWatcher;
 
     #calls: Lcom/android/server/ServiceWatcher;->bindBestPackageLocked(Ljava/lang/String;)Z
     invoke-static {v0, p1}, Lcom/android/server/ServiceWatcher;->access$300(Lcom/android/server/ServiceWatcher;Ljava/lang/String;)Z
 
+    .line 219
     monitor-exit v1
 
+    .line 220
     return-void
 
+    .line 219
     :catchall_0
     move-exception v0
 

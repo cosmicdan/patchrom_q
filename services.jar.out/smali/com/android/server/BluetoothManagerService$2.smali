@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BluetoothManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 131
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,13 +36,19 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
     const/4 v6, 0x0
 
+    .line 134
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 135
+    .local v0, action:Ljava/lang/String;
     const-string v2, "android.bluetooth.adapter.action.LOCAL_NAME_CHANGED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -48,12 +57,15 @@
 
     if-eqz v2, :cond_1
 
+    .line 136
     const-string v2, "android.bluetooth.adapter.extra.LOCAL_NAME"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 137
+    .local v1, newName:Ljava/lang/String;
     const-string v2, "BluetoothManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -76,8 +88,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 138
     if-eqz v1, :cond_0
 
+    .line 139
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     const/4 v3, 0x0
@@ -85,10 +99,13 @@
     #calls: Lcom/android/server/BluetoothManagerService;->storeNameAndAddress(Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v2, v1, v3}, Lcom/android/server/BluetoothManagerService;->access$100(Lcom/android/server/BluetoothManagerService;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 155
+    .end local v1           #newName:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
+    .line 141
     :cond_1
     const-string v2, "android.intent.action.AIRPLANE_MODE"
 
@@ -98,6 +115,7 @@
 
     if-eqz v2, :cond_3
 
+    .line 142
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #calls: Lcom/android/server/BluetoothManagerService;->isAirplaneModeOn()Z
@@ -107,6 +125,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 144
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #getter for: Lcom/android/server/BluetoothManagerService;->mHandler:Lcom/android/server/BluetoothManagerService$BluetoothHandler;
@@ -131,6 +150,7 @@
 
     goto :goto_0
 
+    .line 146
     :cond_2
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
@@ -141,6 +161,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 148
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #getter for: Lcom/android/server/BluetoothManagerService;->mHandler:Lcom/android/server/BluetoothManagerService$BluetoothHandler;
@@ -165,6 +186,7 @@
 
     goto :goto_0
 
+    .line 151
     :cond_3
     const-string v2, "android.intent.action.USER_SWITCHED"
 
@@ -174,6 +196,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 152
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     #getter for: Lcom/android/server/BluetoothManagerService;->mHandler:Lcom/android/server/BluetoothManagerService$BluetoothHandler;

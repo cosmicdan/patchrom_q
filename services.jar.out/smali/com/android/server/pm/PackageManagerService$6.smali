@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 8354
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$6;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,11 @@
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
     .locals 1
+    .parameter "dir"
+    .parameter "name"
 
+    .prologue
+    .line 8356
     const-string v0, "vmdl"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

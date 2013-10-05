@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ClipboardService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 96
     iput-object p1, p0, Lcom/android/server/ClipboardService$1;->this$0:Lcom/android/server/ClipboardService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +36,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 99
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 100
+    .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -46,6 +55,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 101
     iget-object v1, p0, Lcom/android/server/ClipboardService$1;->this$0:Lcom/android/server/ClipboardService;
 
     const-string v2, "android.intent.extra.user_handle"
@@ -59,6 +69,7 @@
     #calls: Lcom/android/server/ClipboardService;->removeClipboard(I)V
     invoke-static {v1, v2}, Lcom/android/server/ClipboardService;->access$000(Lcom/android/server/ClipboardService;I)V
 
+    .line 103
     :cond_0
     return-void
 .end method

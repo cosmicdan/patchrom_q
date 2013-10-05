@@ -37,25 +37,44 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;IIIIILandroid/app/Notification;)V
     .locals 0
+    .parameter "pkg"
+    .parameter "tag"
+    .parameter "id"
+    .parameter "uid"
+    .parameter "initialPid"
+    .parameter "userId"
+    .parameter "score"
+    .parameter "notification"
 
+    .prologue
+    .line 339
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 340
     iput-object p1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->pkg:Ljava/lang/String;
 
+    .line 341
     iput-object p2, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->tag:Ljava/lang/String;
 
+    .line 342
     iput p3, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->id:I
 
+    .line 343
     iput p4, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->uid:I
 
+    .line 344
     iput p5, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->initialPid:I
 
+    .line 345
     iput p6, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->userId:I
 
+    .line 346
     iput p7, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->score:I
 
+    .line 347
     iput-object p8, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
 
+    .line 348
     return-void
 .end method
 
@@ -63,7 +82,12 @@
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;Landroid/content/Context;)V
     .locals 3
+    .parameter "pw"
+    .parameter "prefix"
+    .parameter "baseContext"
 
+    .prologue
+    .line 351
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -82,6 +106,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 352
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -135,6 +160,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 354
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -163,6 +189,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 355
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -189,6 +216,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 356
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -217,6 +245,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 357
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -245,6 +274,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 358
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -273,6 +303,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 359
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -301,6 +332,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 360
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -339,6 +371,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 361
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -371,6 +404,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 362
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -403,6 +437,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 363
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -431,6 +466,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 364
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -463,6 +499,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 365
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -523,12 +560,15 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 368
     return-void
 .end method
 
 .method public final toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 373
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

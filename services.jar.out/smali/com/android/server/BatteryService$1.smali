@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 176
     iput-object p1, p0, Lcom/android/server/BatteryService$1;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 179
     iget-object v0, p0, Lcom/android/server/BatteryService$1;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
@@ -49,9 +54,11 @@
     #calls: Lcom/android/server/BatteryService$Led;->doLedMatTest(I)V
     invoke-static {v0, v1}, Lcom/android/server/BatteryService$Led;->access$100(Lcom/android/server/BatteryService$Led;I)V
 
+    .line 180
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$202(Z)Z
 
+    .line 181
     return-void
 .end method

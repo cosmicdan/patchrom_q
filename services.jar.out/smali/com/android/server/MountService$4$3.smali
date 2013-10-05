@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/MountService$4;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 855
     iput-object p1, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -34,12 +37,15 @@
 .method public run()V
     .locals 11
 
+    .prologue
+    .line 857
     invoke-static {}, Lcom/android/server/MountService;->access$2700()Ljava/lang/Object;
 
     move-result-object v8
 
     monitor-enter v8
 
+    .line 858
     :try_start_0
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
@@ -54,13 +60,19 @@
 
     move-result v3
 
+    .line 859
+    .local v3, length:I
     const/4 v5, 0x0
 
+    .line 860
+    .local v5, path:Ljava/lang/String;
     const/4 v1, 0x0
 
+    .local v1, i:I
     :goto_0
     if-ge v1, v3, :cond_4
 
+    .line 861
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
     iget-object v7, v7, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
@@ -82,6 +94,7 @@
 
     move-result-object v5
 
+    .line 863
     :try_start_1
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
@@ -91,10 +104,13 @@
 
     move-result-object v4
 
+    .line 864
+    .local v4, mCurState:Ljava/lang/String;
     const-string v7, "MountService"
 
     invoke-static {v7, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 865
     const-string v7, "mounted"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -103,6 +119,7 @@
 
     if-eqz v7, :cond_2
 
+    .line 867
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
     iget-object v7, v7, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
@@ -113,17 +130,21 @@
 
     invoke-virtual {v7, v5, v9, v10}, Lcom/android/server/MountService;->unmountVolumeNotSwap(Ljava/lang/String;ZZ)V
 
+    .line 872
     const/4 v2, 0x0
 
+    .local v2, j:I
     :goto_1
     const/16 v7, 0x14
 
     if-ge v2, v7, :cond_0
 
+    .line 873
     const-wide/16 v9, 0x3e8
 
     invoke-static {v9, v10}, Lcom/android/server/MountService$4$3;->sleep(J)V
 
+    .line 874
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
     iget-object v7, v7, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
@@ -132,6 +153,7 @@
 
     move-result-object v4
 
+    .line 875
     const-string v7, "unmounted"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -140,12 +162,15 @@
 
     if-eqz v7, :cond_1
 
+    .line 876
     const-string v7, "MountService"
 
     const-string v9, "Unmount Succeeded!"
 
     invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 885
+    .end local v2           #j:I
     :cond_0
     :goto_2
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
@@ -156,24 +181,35 @@
 
     move-result v6
 
+    .line 886
+    .local v6, ret:I
     if-nez v6, :cond_3
 
+    .line 887
     const-string v7, "MountService"
 
     const-string v9, "SD format Succeed!"
 
     invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 860
+    .end local v4           #mCurState:Ljava/lang/String;
+    .end local v6           #ret:I
     :goto_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 872
+    .restart local v2       #j:I
+    .restart local v4       #mCurState:Ljava/lang/String;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 881
+    .end local v2           #j:I
     :cond_2
     const-string v7, "shared"
 
@@ -183,6 +219,7 @@
 
     if-eqz v7, :cond_0
 
+    .line 882
     iget-object v7, p0, Lcom/android/server/MountService$4$3;->this$1:Lcom/android/server/MountService$4;
 
     iget-object v7, v7, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
@@ -199,9 +236,13 @@
 
     goto :goto_2
 
+    .line 891
+    .end local v4           #mCurState:Ljava/lang/String;
     :catch_0
     move-exception v0
 
+    .line 892
+    .local v0, ex:Ljava/lang/Exception;
     :try_start_2
     const-string v7, "MountService"
 
@@ -211,6 +252,11 @@
 
     goto :goto_3
 
+    .line 895
+    .end local v0           #ex:Ljava/lang/Exception;
+    .end local v1           #i:I
+    .end local v3           #length:I
+    .end local v5           #path:Ljava/lang/String;
     :catchall_0
     move-exception v7
 
@@ -220,6 +266,12 @@
 
     throw v7
 
+    .line 889
+    .restart local v1       #i:I
+    .restart local v3       #length:I
+    .restart local v4       #mCurState:Ljava/lang/String;
+    .restart local v5       #path:Ljava/lang/String;
+    .restart local v6       #ret:I
     :cond_3
     :try_start_3
     const-string v7, "MountService"
@@ -233,11 +285,15 @@
 
     goto :goto_3
 
+    .line 895
+    .end local v4           #mCurState:Ljava/lang/String;
+    .end local v6           #ret:I
     :cond_4
     :try_start_4
     monitor-exit v8
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
+    .line 896
     return-void
 .end method

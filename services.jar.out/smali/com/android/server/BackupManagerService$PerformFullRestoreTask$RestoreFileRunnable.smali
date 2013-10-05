@@ -32,22 +32,33 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BackupManagerService$PerformFullRestoreTask;Landroid/app/IBackupAgent;Lcom/android/server/BackupManagerService$FileMetadata;Landroid/os/ParcelFileDescriptor;I)V
     .locals 1
+    .parameter
+    .parameter "agent"
+    .parameter "info"
+    .parameter "socket"
+    .parameter "token"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
+    .prologue
+    .line 2955
     iput-object p1, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->this$1:Lcom/android/server/BackupManagerService$PerformFullRestoreTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2956
     iput-object p2, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->mAgent:Landroid/app/IBackupAgent;
 
+    .line 2957
     iput-object p3, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->mInfo:Lcom/android/server/BackupManagerService$FileMetadata;
 
+    .line 2958
     iput p5, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->mToken:I
 
+    .line 2965
     invoke-virtual {p4}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -58,6 +69,7 @@
 
     iput-object v0, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->mSocket:Landroid/os/ParcelFileDescriptor;
 
+    .line 2966
     return-void
 .end method
 
@@ -66,6 +78,8 @@
 .method public run()V
     .locals 13
 
+    .prologue
+    .line 2971
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask$RestoreFileRunnable;->mAgent:Landroid/app/IBackupAgent;
 
@@ -107,9 +121,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2977
     :goto_0
     return-void
 
+    .line 2974
     :catch_0
     move-exception v0
 

@@ -22,8 +22,10 @@
 .method static constructor <clinit>()V
     .locals 10
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 46
     new-instance v0, Lcom/android/internal/location/ProviderProperties;
 
     const/4 v8, 0x1
@@ -51,11 +53,16 @@
 
 .method public constructor <init>(Landroid/location/ILocationManager;)V
     .locals 0
+    .parameter "locationManager"
 
+    .prologue
+    .line 53
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 54
     iput-object p1, p0, Lcom/android/server/location/PassiveProvider;->mLocationManager:Landroid/location/ILocationManager;
 
+    .line 55
     return-void
 .end method
 
@@ -64,12 +71,19 @@
 .method public disable()V
     .locals 0
 
+    .prologue
+    .line 78
     return-void
 .end method
 
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 2
+    .parameter "fd"
+    .parameter "pw"
+    .parameter "args"
 
+    .prologue
+    .line 122
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -92,18 +106,24 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 123
     return-void
 .end method
 
 .method public enable()V
     .locals 0
 
+    .prologue
+    .line 74
     return-void
 .end method
 
 .method public getFileTime([J)I
     .locals 1
+    .parameter "times"
 
+    .prologue
+    .line 126
     const/4 v0, -0x1
 
     return v0
@@ -112,6 +132,8 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
+    .prologue
+    .line 59
     const-string v0, "passive"
 
     return-object v0
@@ -120,6 +142,8 @@
 .method public getProperties()Lcom/android/internal/location/ProviderProperties;
     .locals 1
 
+    .prologue
+    .line 64
     sget-object v0, Lcom/android/server/location/PassiveProvider;->PROPERTIES:Lcom/android/internal/location/ProviderProperties;
 
     return-object v0
@@ -127,13 +151,18 @@
 
 .method public getStatus(Landroid/os/Bundle;)I
     .locals 1
+    .parameter "extras"
 
+    .prologue
+    .line 82
     iget-boolean v0, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
 
     if-eqz v0, :cond_0
 
+    .line 83
     const/4 v0, 0x2
 
+    .line 85
     :goto_0
     return v0
 
@@ -146,6 +175,8 @@
 .method public getStatusUpdateTime()J
     .locals 2
 
+    .prologue
+    .line 91
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -154,6 +185,8 @@
 .method public isEnabled()Z
     .locals 1
 
+    .prologue
+    .line 69
     const/4 v0, 0x1
 
     return v0
@@ -161,7 +194,11 @@
 
 .method public sendExtraCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
     .locals 1
+    .parameter "command"
+    .parameter "extras"
 
+    .prologue
+    .line 117
     const/4 v0, 0x0
 
     return v0
@@ -169,23 +206,33 @@
 
 .method public setRequest(Lcom/android/internal/location/ProviderRequest;Landroid/os/WorkSource;)V
     .locals 1
+    .parameter "request"
+    .parameter "source"
 
+    .prologue
+    .line 96
     iget-boolean v0, p1, Lcom/android/internal/location/ProviderRequest;->reportLocation:Z
 
     iput-boolean v0, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
 
+    .line 97
     return-void
 .end method
 
 .method public switchUser(I)V
     .locals 0
+    .parameter "userId"
 
+    .prologue
+    .line 102
     return-void
 .end method
 
 .method public updateEPOFile()I
     .locals 1
 
+    .prologue
+    .line 130
     const/4 v0, -0x1
 
     return v0
@@ -193,11 +240,15 @@
 
 .method public updateLocation(Landroid/location/Location;)V
     .locals 3
+    .parameter "location"
 
+    .prologue
+    .line 105
     iget-boolean v1, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
 
     if-eqz v1, :cond_0
 
+    .line 108
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/PassiveProvider;->mLocationManager:Landroid/location/ILocationManager;
 
@@ -207,13 +258,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 113
     :cond_0
     :goto_0
     return-void
 
+    .line 109
     :catch_0
     move-exception v0
 
+    .line 110
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "PassiveProvider"
 
     const-string v2, "RemoteException calling reportLocation"

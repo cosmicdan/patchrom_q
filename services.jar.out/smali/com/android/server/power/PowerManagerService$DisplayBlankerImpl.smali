@@ -26,7 +26,10 @@
 # direct methods
 .method private constructor <init>(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 2889
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,11 @@
 
 .method synthetic constructor <init>(Lcom/android/server/power/PowerManagerService;Lcom/android/server/power/PowerManagerService$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 2889
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -47,8 +54,11 @@
 .method public blankAllDisplays()V
     .locals 2
 
+    .prologue
+    .line 2894
     monitor-enter p0
 
+    .line 2895
     :try_start_0
     const-string v0, "PowerManagerService"
 
@@ -56,10 +66,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2896
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->mBlanked:Z
 
+    .line 2897
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mDisplayManagerService:Lcom/android/server/display/DisplayManagerService;
@@ -69,6 +81,7 @@
 
     invoke-virtual {v0}, Lcom/android/server/display/DisplayManagerService;->blankAllDisplaysFromPowerManager()V
 
+    .line 2899
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mTvOut:Lcom/mediatek/common/tvout/ITVOUTNative;
@@ -80,6 +93,7 @@
 
     invoke-interface {v0, v1}, Lcom/mediatek/common/tvout/ITVOUTNative;->tvoutPowerEnable(Z)Z
 
+    .line 2900
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mHDMI:Lcom/mediatek/common/hdmi/IHDMINative;
@@ -91,32 +105,39 @@
 
     invoke-interface {v0, v1}, Lcom/mediatek/common/hdmi/IHDMINative;->hdmiPowerEnable(Z)Z
 
+    .line 2902
     const-string v0, "PowerManagerService"
 
     const-string v1, "blankAllDisplays  ..."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2903
     const/4 v0, 0x0
 
     #calls: Lcom/android/server/power/PowerManagerService;->nativeSetInteractive(Z)V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4000(Z)V
 
+    .line 2904
     const/4 v0, 0x1
 
     #calls: Lcom/android/server/power/PowerManagerService;->nativeSetAutoSuspend(Z)V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4100(Z)V
 
+    .line 2906
     const-string v0, "PowerManagerService"
 
     const-string v1, "blankAllDisplays out ..."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2911
     monitor-exit p0
 
+    .line 2912
     return-void
 
+    .line 2911
     :catchall_0
     move-exception v0
 
@@ -130,8 +151,11 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 2939
     monitor-enter p0
 
+    .line 2940
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -157,6 +181,7 @@
 
     return-object v0
 
+    .line 2941
     :catchall_0
     move-exception v0
 
@@ -170,8 +195,11 @@
 .method public unblankAllDisplays()V
     .locals 2
 
+    .prologue
+    .line 2916
     monitor-enter p0
 
+    .line 2917
     :try_start_0
     const-string v0, "PowerManagerService"
 
@@ -179,22 +207,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2918
     const/4 v0, 0x0
 
     #calls: Lcom/android/server/power/PowerManagerService;->nativeSetAutoSuspend(Z)V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4100(Z)V
 
+    .line 2919
     const/4 v0, 0x1
 
     #calls: Lcom/android/server/power/PowerManagerService;->nativeSetInteractive(Z)V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4000(Z)V
 
+    .line 2920
     const-string v0, "PowerManagerService"
 
     const-string v1, "unblankAllDisplays 1"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2921
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mDisplayManagerService:Lcom/android/server/display/DisplayManagerService;
@@ -204,16 +236,19 @@
 
     invoke-virtual {v0}, Lcom/android/server/display/DisplayManagerService;->unblankAllDisplaysFromPowerManager()V
 
+    .line 2922
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->mBlanked:Z
 
+    .line 2923
     const-string v0, "PowerManagerService"
 
     const-string v1, "unblankAllDisplays 2"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2925
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mTvOut:Lcom/mediatek/common/tvout/ITVOUTNative;
@@ -225,6 +260,7 @@
 
     invoke-interface {v0, v1}, Lcom/mediatek/common/tvout/ITVOUTNative;->tvoutPowerEnable(Z)Z
 
+    .line 2926
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DisplayBlankerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mHDMI:Lcom/mediatek/common/hdmi/IHDMINative;
@@ -236,16 +272,20 @@
 
     invoke-interface {v0, v1}, Lcom/mediatek/common/hdmi/IHDMINative;->hdmiPowerEnable(Z)Z
 
+    .line 2929
     const-string v0, "PowerManager_performance"
 
     const-string v1, "unblankAllDisplays out ..."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2934
     monitor-exit p0
 
+    .line 2935
     return-void
 
+    .line 2934
     :catchall_0
     move-exception v0
 

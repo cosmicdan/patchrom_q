@@ -23,12 +23,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
     .locals 0
+    .parameter "c"
+    .parameter "ta"
 
+    .prologue
+    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 59
     iput-object p1, p0, Lcom/android/server/AttributeCache$Entry;->context:Landroid/content/Context;
 
+    .line 60
     iput-object p2, p0, Lcom/android/server/AttributeCache$Entry;->array:Landroid/content/res/TypedArray;
 
+    .line 61
     return-void
 .end method

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController$5;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 324
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$5$1;->this$1:Lcom/android/server/display/WifiDisplayController$5;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
+    .parameter "reason"
 
+    .prologue
+    .line 332
     const-string v0, "WifiDisplayController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -59,17 +65,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 333
     return-void
 .end method
 
 .method public onSuccess()V
     .locals 2
 
+    .prologue
+    .line 327
     const-string v0, "WifiDisplayController"
 
     const-string v1, "Disconnected from previous Wi-Fi P2p device, succeess"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 328
     return-void
 .end method

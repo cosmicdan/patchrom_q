@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DockObserver;Z)V
     .locals 0
+    .parameter
+    .parameter "x0"
 
+    .prologue
+    .line 196
     iput-object p1, p0, Lcom/android/server/DockObserver$1;->this$0:Lcom/android/server/DockObserver;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Z)V
@@ -33,14 +37,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
+    .parameter "msg"
 
+    .prologue
+    .line 199
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 204
     :goto_0
     return-void
 
+    .line 201
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/DockObserver$1;->this$0:Lcom/android/server/DockObserver;
 
@@ -49,6 +58,7 @@
 
     goto :goto_0
 
+    .line 199
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

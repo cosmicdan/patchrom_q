@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/DisplayPowerController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1270
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$5;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 1273
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$5;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
@@ -46,5 +51,6 @@
 
     invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onProximityPositive()V
 
+    .line 1274
     return-void
 .end method

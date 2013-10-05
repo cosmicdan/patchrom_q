@@ -21,6 +21,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 262
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,35 +32,45 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 264
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$000()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
+    .line 265
     const/4 v0, 0x0
 
     :try_start_0
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$102(Z)Z
 
+    .line 266
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 267
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$200()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
+    .line 268
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$202(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
+    .line 270
     :cond_0
     return-void
 
+    .line 266
     :catchall_0
     move-exception v0
 

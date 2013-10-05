@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 229
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$2;->val$context:Landroid/content/Context;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
     #calls: Lcom/android/server/power/ShutdownThread;->disableWakeAlarm()V
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->_disableWakeAlarm()V
 

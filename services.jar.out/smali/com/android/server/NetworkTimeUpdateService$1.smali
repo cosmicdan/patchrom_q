@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkTimeUpdateService;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 204
     iput-object p1, p0, Lcom/android/server/NetworkTimeUpdateService$1;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 207
     iget-object v0, p0, Lcom/android/server/NetworkTimeUpdateService$1;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
     #getter for: Lcom/android/server/NetworkTimeUpdateService;->mHandler:Landroid/os/Handler;
@@ -49,5 +56,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    .line 208
     return-void
 .end method
