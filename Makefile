@@ -11,14 +11,14 @@ local-out-zip-file :=
 # all the miui apps are listed in the file patchrom/build/miuiapps.mk - this variable defines those miui apps which we modified.
 local-miui-modifed-apps :=
 
-# This variable defines those apps from local-zip-file which we modified.
+# This variable defines those apps from local-zip-file which we modified
 local-modified-apps :=
 
 # Normally not all the miui apps is suitable for our device (e.g. some device will not want Phone.apk). This variable defines those miui apps which we don't want.
 local-miui-removed-apps :=
 
-# This variable defines those stock ROM apps which we want to keep. If replacing an MIUI app with stock app, be sure to also remove MIUI one in local-miui-removed-apps
-local-phone-apps :=
+# Removed these apps from original ZIP file
+local-remove-apps :=
 
 # This target permits you to do some customization before we generate the final recovery-ROM.
 # To include the local targets before and after zip the final ZIP file, 
