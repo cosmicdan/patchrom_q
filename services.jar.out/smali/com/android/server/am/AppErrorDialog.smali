@@ -613,7 +613,7 @@
 
     move-result-object v2
 
-    const v3, 0x10403e0
+    const v3, 0x10403dc
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -623,7 +623,7 @@
 
     move-result-object v1
 
-    const-string v2, " MIUI"
+    const-string v2, " to Xtreamer"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
