@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Chronometer;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 267
     iput-object p1, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .parameter "m"
 
+    .prologue
+    .line 269
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     #getter for: Landroid/widget/Chronometer;->mRunning:Z
@@ -43,6 +49,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 270
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -52,10 +59,12 @@
     #calls: Landroid/widget/Chronometer;->updateText(J)V
     invoke-static {v0, v1, v2}, Landroid/widget/Chronometer;->access$100(Landroid/widget/Chronometer;J)V
 
+    .line 271
     iget-object v0, p0, Landroid/widget/Chronometer$1;->this$0:Landroid/widget/Chronometer;
 
     invoke-virtual {v0}, Landroid/widget/Chronometer;->dispatchChronometerTick()V
 
+    .line 272
     const/4 v0, 0x2
 
     invoke-static {p0, v0}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
@@ -66,6 +75,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/widget/Chronometer$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
+    .line 274
     :cond_0
     return-void
 .end method

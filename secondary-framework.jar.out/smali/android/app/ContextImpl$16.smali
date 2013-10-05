@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 386
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -28,6 +30,8 @@
 .method public createStaticService()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 388
     invoke-static {}, Landroid/app/ContextImpl;->createDropBoxManager()Landroid/os/DropBoxManager;
 
     move-result-object v0

@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 554
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,14 +29,20 @@
 # virtual methods
 .method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 4
+    .parameter "ctx"
 
+    .prologue
+    .line 556
     #getter for: Landroid/app/ContextImpl;->mDisplay:Landroid/view/Display;
     invoke-static {p1}, Landroid/app/ContextImpl;->access$100(Landroid/app/ContextImpl;)Landroid/view/Display;
 
     move-result-object v0
 
+    .line 557
+    .local v0, display:Landroid/view/Display;
     if-nez v0, :cond_0
 
+    .line 558
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v2
@@ -47,12 +55,16 @@
 
     check-cast v1, Landroid/hardware/display/DisplayManager;
 
+    .line 560
+    .local v1, dm:Landroid/hardware/display/DisplayManager;
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
     move-result-object v0
 
+    .line 562
+    .end local v1           #dm:Landroid/hardware/display/DisplayManager;
     :cond_0
     new-instance v2, Landroid/view/WindowManagerImpl;
 

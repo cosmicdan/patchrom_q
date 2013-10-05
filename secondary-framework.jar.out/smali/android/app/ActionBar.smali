@@ -37,8 +37,11 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 908
     return-void
 .end method
 
@@ -92,6 +95,8 @@
 .method public getThemedContext()Landroid/content/Context;
     .locals 1
 
+    .prologue
+    .line 680
     const/4 v0, 0x0
 
     return-object v0
@@ -159,7 +164,10 @@
 
 .method public setHomeButtonEnabled(Z)V
     .locals 0
+    .parameter "enabled"
 
+    .prologue
+    .line 669
     return-void
 .end method
 
@@ -186,13 +194,19 @@
 
 .method public setSplitBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .parameter "d"
 
+    .prologue
+    .line 446
     return-void
 .end method
 
 .method public setStackedBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .parameter "d"
 
+    .prologue
+    .line 436
     return-void
 .end method
 

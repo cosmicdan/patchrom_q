@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/Gallery;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1239
     iput-object p1, p0, Landroid/widget/Gallery$2;->this$0:Landroid/widget/Gallery;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +40,13 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 1242
     iget-object v0, p0, Landroid/widget/Gallery$2;->this$0:Landroid/widget/Gallery;
 
     #calls: Landroid/widget/Gallery;->dispatchUnpress()V
     invoke-static {v0}, Landroid/widget/Gallery;->access$300(Landroid/widget/Gallery;)V
 
+    .line 1243
     return-void
 .end method

@@ -20,11 +20,16 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .parameter "context"
 
+    .prologue
+    .line 86
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 87
     iput-object p1, p0, Landroid/app/SearchEngineManager;->mContext:Landroid/content/Context;
 
+    .line 88
     const-string v0, "search_engine"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -37,6 +42,7 @@
 
     sput-object v0, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
+    .line 90
     return-void
 .end method
 
@@ -54,6 +60,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 96
     :try_start_0
     sget-object v1, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
@@ -63,12 +71,16 @@
 
     move-result-object v1
 
+    .line 99
     :goto_0
     return-object v1
 
+    .line 97
     :catch_0
     move-exception v0
 
+    .line 98
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SearchEngineManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -91,6 +103,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 99
     const/4 v1, 0x0
 
     goto :goto_0
@@ -98,7 +111,11 @@
 
 .method public getBestMatchSearchEngine(Ljava/lang/String;Ljava/lang/String;)Landroid/app/SearchEngineInfo;
     .locals 4
+    .parameter "name"
+    .parameter "favicon"
 
+    .prologue
+    .line 108
     :try_start_0
     sget-object v1, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
@@ -108,12 +125,16 @@
 
     move-result-object v1
 
+    .line 111
     :goto_0
     return-object v1
 
+    .line 109
     :catch_0
     move-exception v0
 
+    .line 110
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SearchEngineManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -136,6 +157,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 111
     const/4 v1, 0x0
 
     goto :goto_0
@@ -144,6 +166,8 @@
 .method public getDefaultSearchEngine()Landroid/app/SearchEngineInfo;
     .locals 4
 
+    .prologue
+    .line 146
     :try_start_0
     sget-object v1, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
@@ -153,12 +177,16 @@
 
     move-result-object v1
 
+    .line 149
     :goto_0
     return-object v1
 
+    .line 147
     :catch_0
     move-exception v0
 
+    .line 148
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SearchEngineManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -181,6 +209,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 149
     const/4 v1, 0x0
 
     goto :goto_0
@@ -188,7 +217,11 @@
 
 .method public getSearchEngineBy(ILjava/lang/String;)Landroid/app/SearchEngineInfo;
     .locals 4
+    .parameter "field"
+    .parameter "name"
 
+    .prologue
+    .line 134
     :try_start_0
     sget-object v1, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
@@ -198,12 +231,16 @@
 
     move-result-object v1
 
+    .line 137
     :goto_0
     return-object v1
 
+    .line 135
     :catch_0
     move-exception v0
 
+    .line 136
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SearchEngineManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -226,6 +263,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 137
     const/4 v1, 0x0
 
     goto :goto_0
@@ -233,7 +271,10 @@
 
 .method public getSearchEngineByFavicon(Ljava/lang/String;)Landroid/app/SearchEngineInfo;
     .locals 1
+    .parameter "favicon"
 
+    .prologue
+    .line 119
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0, p1}, Landroid/app/SearchEngineManager;->getSearchEngineBy(ILjava/lang/String;)Landroid/app/SearchEngineInfo;
@@ -245,7 +286,10 @@
 
 .method public getSearchEngineByName(Ljava/lang/String;)Landroid/app/SearchEngineInfo;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 126
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0, p1}, Landroid/app/SearchEngineManager;->getSearchEngineBy(ILjava/lang/String;)Landroid/app/SearchEngineInfo;
@@ -257,7 +301,10 @@
 
 .method public setDefaultSearchEngine(Landroid/app/SearchEngineInfo;)Z
     .locals 4
+    .parameter "engine"
 
+    .prologue
+    .line 158
     :try_start_0
     sget-object v1, Landroid/app/SearchEngineManager;->mService:Landroid/app/ISearchEngineManager;
 
@@ -267,12 +314,16 @@
 
     move-result v1
 
+    .line 161
     :goto_0
     return v1
 
+    .line 159
     :catch_0
     move-exception v0
 
+    .line 160
+    .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SearchEngineManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -295,6 +346,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 161
     const/4 v1, 0x0
 
     goto :goto_0

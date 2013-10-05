@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/widget/BookmarkAdapter;I)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 144
     iput-object p1, p0, Landroid/widget/BookmarkAdapter$1;->this$0:Landroid/widget/BookmarkAdapter;
 
     iput p2, p0, Landroid/widget/BookmarkAdapter$1;->val$position:I
@@ -40,12 +44,16 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .parameter "v"
 
+    .prologue
+    .line 147
     iget-object v0, p0, Landroid/widget/BookmarkAdapter$1;->this$0:Landroid/widget/BookmarkAdapter;
 
     iget v1, p0, Landroid/widget/BookmarkAdapter$1;->val$position:I
 
     invoke-virtual {v0, v1}, Landroid/widget/BookmarkAdapter;->remove(I)Ljava/lang/Object;
 
+    .line 148
     return-void
 .end method

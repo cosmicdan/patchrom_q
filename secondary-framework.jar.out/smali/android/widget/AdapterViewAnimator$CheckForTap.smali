@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AdapterViewAnimator;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 702
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$CheckForTap;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 704
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$CheckForTap;->this$0:Landroid/widget/AdapterViewAnimator;
 
     #getter for: Landroid/widget/AdapterViewAnimator;->mTouchMode:I
@@ -48,16 +53,21 @@
 
     if-ne v1, v2, :cond_0
 
+    .line 705
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$CheckForTap;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-virtual {v1}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
 
+    .line 706
+    .local v0, v:Landroid/view/View;
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$CheckForTap;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-virtual {v1, v0}, Landroid/widget/AdapterViewAnimator;->showTapFeedback(Landroid/view/View;)V
 
+    .line 708
+    .end local v0           #v:Landroid/view/View;
     :cond_0
     return-void
 .end method

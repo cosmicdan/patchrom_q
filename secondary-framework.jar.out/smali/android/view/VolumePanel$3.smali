@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/VolumePanel;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 302
     iput-object p1, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
+    .parameter "dialog"
 
+    .prologue
+    .line 304
     iget-object v0, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     const/4 v1, -0x1
@@ -44,6 +50,7 @@
     #setter for: Landroid/view/VolumePanel;->mActiveStreamType:I
     invoke-static {v0, v1}, Landroid/view/VolumePanel;->access$402(Landroid/view/VolumePanel;I)I
 
+    .line 305
     iget-object v0, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     #getter for: Landroid/view/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -60,5 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
+    .line 306
     return-void
 .end method

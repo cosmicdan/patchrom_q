@@ -26,17 +26,25 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/app/backup/IRestoreSession;)V
     .locals 1
+    .parameter "context"
+    .parameter "binder"
 
+    .prologue
+    .line 174
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
+    .line 175
     iput-object p1, p0, Landroid/app/backup/RestoreSession;->mContext:Landroid/content/Context;
 
+    .line 176
     iput-object p2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
+    .line 177
     return-void
 .end method
 
@@ -45,8 +53,10 @@
 .method public endRestoreSession()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 162
     :try_start_0
     iget-object v1, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -55,14 +65,19 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 166
     :goto_0
     iput-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
+    .line 168
     return-void
 
+    .line 163
     :catch_0
     move-exception v0
 
+    .line 164
+    .local v0, e:Landroid/os/RemoteException;
     :try_start_1
     const-string v1, "RestoreSession"
 
@@ -74,6 +89,8 @@
 
     goto :goto_0
 
+    .line 166
+    .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
 
@@ -84,15 +101,22 @@
 
 .method public getAvailableRestoreSets(Landroid/app/backup/RestoreObserver;)I
     .locals 5
+    .parameter "observer"
 
+    .prologue
+    .line 51
     const/4 v1, -0x1
 
+    .line 52
+    .local v1, err:I
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     iget-object v3, p0, Landroid/app/backup/RestoreSession;->mContext:Landroid/content/Context;
 
     invoke-direct {v2, p0, v3, p1}, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;-><init>(Landroid/app/backup/RestoreSession;Landroid/content/Context;Landroid/app/backup/RestoreObserver;)V
 
+    .line 54
+    .local v2, obsWrapper:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
     :try_start_0
     iget-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -102,12 +126,16 @@
 
     move-result v1
 
+    .line 58
     :goto_0
     return v1
 
+    .line 55
     :catch_0
     move-exception v0
 
+    .line 56
+    .local v0, e:Landroid/os/RemoteException;
     const-string v3, "RestoreSession"
 
     const-string v4, "Can\'t contact server to get available sets"
@@ -119,24 +147,34 @@
 
 .method public restoreAll(JLandroid/app/backup/RestoreObserver;)I
     .locals 4
+    .parameter "token"
+    .parameter "observer"
 
+    .prologue
+    .line 75
     const/4 v1, -0x1
 
+    .line 76
+    .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_0
 
+    .line 77
     const-string v2, "RestoreSession"
 
     const-string v3, "restoreAll() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 78
     const/4 v2, -0x1
 
+    .line 86
     :goto_0
     return v2
 
+    .line 80
     :cond_0
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -146,6 +184,7 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
+    .line 82
     :try_start_0
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -160,11 +199,15 @@
     :goto_1
     move v2, v1
 
+    .line 86
     goto :goto_0
 
+    .line 83
     :catch_0
     move-exception v0
 
+    .line 84
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 
     const-string v3, "Can\'t contact server to restore"
@@ -176,24 +219,34 @@
 
 .method public restorePackage(Ljava/lang/String;Landroid/app/backup/RestoreObserver;)I
     .locals 4
+    .parameter "packageName"
+    .parameter "observer"
 
+    .prologue
+    .line 139
     const/4 v1, -0x1
 
+    .line 140
+    .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_0
 
+    .line 141
     const-string v2, "RestoreSession"
 
     const-string v3, "restorePackage() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 142
     const/4 v2, -0x1
 
+    .line 150
     :goto_0
     return v2
 
+    .line 144
     :cond_0
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -203,6 +256,7 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
+    .line 146
     :try_start_0
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -217,11 +271,15 @@
     :goto_1
     move v2, v1
 
+    .line 150
     goto :goto_0
 
+    .line 147
     :catch_0
     move-exception v0
 
+    .line 148
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 
     const-string v3, "Can\'t contact server to restore package"
@@ -233,24 +291,35 @@
 
 .method public restoreSome(JLandroid/app/backup/RestoreObserver;[Ljava/lang/String;)I
     .locals 4
+    .parameter "token"
+    .parameter "observer"
+    .parameter "packages"
 
+    .prologue
+    .line 109
     const/4 v1, -0x1
 
+    .line 110
+    .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_0
 
+    .line 111
     const-string v2, "RestoreSession"
 
     const-string v3, "restoreAll() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 112
     const/4 v2, -0x1
 
+    .line 120
     :goto_0
     return v2
 
+    .line 114
     :cond_0
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -260,6 +329,7 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
+    .line 116
     :try_start_0
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -274,11 +344,15 @@
     :goto_1
     move v2, v1
 
+    .line 120
     goto :goto_0
 
+    .line 117
     :catch_0
     move-exception v0
 
+    .line 118
+    .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 
     const-string v3, "Can\'t contact server to restore packages"

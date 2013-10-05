@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/app/NotificationManagerPlus;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 287
     iput-object p1, p0, Landroid/app/NotificationManagerPlus$4;->this$0:Landroid/app/NotificationManagerPlus;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 292
     const-string v1, "NotificationManangerPlus"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -73,6 +80,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 294
     iget-object v1, p0, Landroid/app/NotificationManagerPlus$4;->this$0:Landroid/app/NotificationManagerPlus;
 
     #getter for: Landroid/app/NotificationManagerPlus;->mSend:Z
@@ -82,10 +90,12 @@
 
     if-nez v1, :cond_1
 
+    .line 302
     :cond_0
     :goto_0
     return-void
 
+    .line 297
     :cond_1
     const-string v1, "mediatek.intent.action.FULL_SCRENN_NOTIFY"
 
@@ -99,6 +109,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 298
     iget-object v1, p0, Landroid/app/NotificationManagerPlus$4;->this$0:Landroid/app/NotificationManagerPlus;
 
     #getter for: Landroid/app/NotificationManagerPlus;->mHandler:Landroid/os/Handler;
@@ -112,12 +123,15 @@
 
     move-result-object v0
 
+    .line 299
+    .local v0, msg:Landroid/os/Message;
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 300
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0

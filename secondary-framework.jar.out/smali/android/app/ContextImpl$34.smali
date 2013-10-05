@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 510
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -28,12 +30,16 @@
 .method public createStaticService()Ljava/lang/Object;
     .locals 3
 
+    .prologue
+    .line 512
     const-string v1, "throttle"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 513
+    .local v0, b:Landroid/os/IBinder;
     new-instance v1, Landroid/net/ThrottleManager;
 
     invoke-static {v0}, Landroid/net/IThrottleManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IThrottleManager;

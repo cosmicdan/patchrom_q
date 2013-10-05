@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/inputmethod/InputMethodManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 529
     iput-object p1, p0, Landroid/view/inputmethod/InputMethodManager$2;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-direct {p0}, Lcom/android/internal/view/IInputMethodCallback$Stub;-><init>()V
@@ -33,22 +36,33 @@
 # virtual methods
 .method public finishedEvent(IZ)V
     .locals 1
+    .parameter "seq"
+    .parameter "handled"
 
+    .prologue
+    .line 532
     iget-object v0, p0, Landroid/view/inputmethod/InputMethodManager$2;->this$0:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/inputmethod/InputMethodManager;->finishedEvent(IZ)V
 
+    .line 533
     return-void
 .end method
 
 .method public notifyImsPid(I)V
     .locals 0
+    .parameter "pid"
 
+    .prologue
+    .line 543
     return-void
 .end method
 
 .method public sessionCreated(Lcom/android/internal/view/IInputMethodSession;)V
     .locals 0
+    .parameter "session"
 
+    .prologue
+    .line 538
     return-void
 .end method

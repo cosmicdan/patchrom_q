@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 348
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,7 +29,10 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
+    .parameter "ctx"
 
+    .prologue
+    .line 350
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0

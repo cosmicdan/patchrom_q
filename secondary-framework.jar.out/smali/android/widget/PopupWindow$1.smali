@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/PopupWindow;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 131
     iput-object p1, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,8 +40,10 @@
 .method public onScrollChanged()V
     .locals 8
 
+    .prologue
     const/4 v3, -0x1
 
+    .line 133
     iget-object v0, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
 
     #getter for: Landroid/widget/PopupWindow;->mAnchor:Ljava/lang/ref/WeakReference;
@@ -63,6 +68,8 @@
 
     move-object v6, v0
 
+    .line 134
+    .local v6, anchor:Landroid/view/View;
     :goto_0
     if-eqz v6, :cond_0
 
@@ -75,6 +82,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 135
     iget-object v0, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
 
     #getter for: Landroid/widget/PopupWindow;->mPopupView:Landroid/view/View;
@@ -88,6 +96,8 @@
 
     check-cast v7, Landroid/view/WindowManager$LayoutParams;
 
+    .line 138
+    .local v7, p:Landroid/view/WindowManager$LayoutParams;
     iget-object v0, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
@@ -114,6 +124,7 @@
     #calls: Landroid/widget/PopupWindow;->updateAboveAnchor(Z)V
     invoke-static {v0, v1}, Landroid/widget/PopupWindow;->access$500(Landroid/widget/PopupWindow;Z)V
 
+    .line 139
     iget-object v0, p0, Landroid/widget/PopupWindow$1;->this$0:Landroid/widget/PopupWindow;
 
     iget v1, v7, Landroid/view/WindowManager$LayoutParams;->x:I
@@ -126,9 +137,13 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/PopupWindow;->update(IIIIZ)V
 
+    .line 141
+    .end local v7           #p:Landroid/view/WindowManager$LayoutParams;
     :cond_0
     return-void
 
+    .line 133
+    .end local v6           #anchor:Landroid/view/View;
     :cond_1
     const/4 v6, 0x0
 

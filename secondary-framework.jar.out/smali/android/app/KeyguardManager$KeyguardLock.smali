@@ -25,19 +25,26 @@
 # direct methods
 .method constructor <init>(Landroid/app/KeyguardManager;Ljava/lang/String;)V
     .locals 1
+    .parameter
+    .parameter "tag"
 
+    .prologue
+    .line 50
     iput-object p1, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->mToken:Landroid/os/IBinder;
 
+    .line 51
     iput-object p2, p0, Landroid/app/KeyguardManager$KeyguardLock;->mTag:Ljava/lang/String;
 
+    .line 52
     return-void
 .end method
 
@@ -46,6 +53,8 @@
 .method public disableKeyguard()V
     .locals 3
 
+    .prologue
+    .line 71
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
@@ -62,9 +71,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 74
     :goto_0
     return-void
 
+    .line 72
     :catch_0
     move-exception v0
 
@@ -74,6 +85,8 @@
 .method public reenableKeyguard()V
     .locals 2
 
+    .prologue
+    .line 92
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
@@ -88,9 +101,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 95
     :goto_0
     return-void
 
+    .line 93
     :catch_0
     move-exception v0
 

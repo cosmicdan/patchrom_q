@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/TextureView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 816
     iput-object p1, p0, Landroid/view/TextureView$3;->this$0:Landroid/view/TextureView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +40,13 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 819
     iget-object v0, p0, Landroid/view/TextureView$3;->this$0:Landroid/view/TextureView;
 
     #calls: Landroid/view/TextureView;->destroySurface()V
     invoke-static {v0}, Landroid/view/TextureView;->access$000(Landroid/view/TextureView;)V
 
+    .line 820
     return-void
 .end method

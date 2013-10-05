@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 720
     iput-object p1, p0, Landroid/app/Activity$1;->this$0:Landroid/app/Activity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public findViewById(I)Landroid/view/View;
     .locals 1
+    .parameter "id"
 
+    .prologue
+    .line 723
     iget-object v0, p0, Landroid/app/Activity$1;->this$0:Landroid/app/Activity;
 
     invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;

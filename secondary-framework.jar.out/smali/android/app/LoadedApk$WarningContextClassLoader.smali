@@ -22,6 +22,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 393
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/app/LoadedApk$WarningContextClassLoader;->warned:Z
@@ -32,6 +34,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 391
     invoke-direct {p0}, Ljava/lang/ClassLoader;-><init>()V
 
     return-void
@@ -39,7 +43,10 @@
 
 .method synthetic constructor <init>(Landroid/app/LoadedApk$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 391
     invoke-direct {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;-><init>()V
 
     return-void
@@ -47,19 +54,25 @@
 
 .method private warn(Ljava/lang/String;)V
     .locals 3
+    .parameter "methodName"
 
+    .prologue
+    .line 396
     sget-boolean v0, Landroid/app/LoadedApk$WarningContextClassLoader;->warned:Z
 
     if-eqz v0, :cond_0
 
+    .line 407
     :goto_0
     return-void
 
+    .line 399
     :cond_0
     const/4 v0, 0x1
 
     sput-boolean v0, Landroid/app/LoadedApk$WarningContextClassLoader;->warned:Z
 
+    .line 400
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -70,6 +83,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setContextClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 401
     const-string v0, "ActivityThread"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -136,26 +150,34 @@
 .method public clearAssertionStatus()V
     .locals 1
 
+    .prologue
+    .line 445
     const-string v0, "clearAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 446
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/ClassLoader;->clearAssertionStatus()V
 
+    .line 447
     return-void
 .end method
 
 .method public getResource(Ljava/lang/String;)Ljava/net/URL;
     .locals 1
+    .parameter "resName"
 
+    .prologue
+    .line 410
     const-string v0, "getResource"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 411
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
@@ -169,11 +191,15 @@
 
 .method public getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
     .locals 1
+    .parameter "resName"
 
+    .prologue
+    .line 420
     const-string v0, "getResourceAsStream"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 421
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
@@ -187,6 +213,7 @@
 
 .method public getResources(Ljava/lang/String;)Ljava/util/Enumeration;
     .locals 1
+    .parameter "resName"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -205,10 +232,13 @@
         }
     .end annotation
 
+    .prologue
+    .line 415
     const-string v0, "getResources"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 416
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
@@ -222,6 +252,7 @@
 
 .method public loadClass(Ljava/lang/String;)Ljava/lang/Class;
     .locals 1
+    .parameter "className"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,10 +269,13 @@
         }
     .end annotation
 
+    .prologue
+    .line 425
     const-string v0, "loadClass"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 426
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
@@ -255,48 +289,65 @@
 
 .method public setClassAssertionStatus(Ljava/lang/String;Z)V
     .locals 1
+    .parameter "cname"
+    .parameter "enable"
 
+    .prologue
+    .line 430
     const-string v0, "setClassAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 431
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Ljava/lang/ClassLoader;->setClassAssertionStatus(Ljava/lang/String;Z)V
 
+    .line 432
     return-void
 .end method
 
 .method public setDefaultAssertionStatus(Z)V
     .locals 1
+    .parameter "enable"
 
+    .prologue
+    .line 440
     const-string v0, "setDefaultAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 441
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->setDefaultAssertionStatus(Z)V
 
+    .line 442
     return-void
 .end method
 
 .method public setPackageAssertionStatus(Ljava/lang/String;Z)V
     .locals 1
+    .parameter "pname"
+    .parameter "enable"
 
+    .prologue
+    .line 435
     const-string v0, "setPackageAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
+    .line 436
     invoke-virtual {p0}, Landroid/app/LoadedApk$WarningContextClassLoader;->getParent()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Ljava/lang/ClassLoader;->setPackageAssertionStatus(Ljava/lang/String;Z)V
 
+    .line 437
     return-void
 .end method

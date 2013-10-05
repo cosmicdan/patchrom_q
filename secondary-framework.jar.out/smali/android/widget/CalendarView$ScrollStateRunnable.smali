@@ -28,7 +28,10 @@
 # direct methods
 .method private constructor <init>(Landroid/widget/CalendarView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1285
     iput-object p1, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +41,11 @@
 
 .method synthetic constructor <init>(Landroid/widget/CalendarView;Landroid/widget/CalendarView$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1285
     invoke-direct {p0, p1}, Landroid/widget/CalendarView$ScrollStateRunnable;-><init>(Landroid/widget/CalendarView;)V
 
     return-void
@@ -48,29 +55,39 @@
 # virtual methods
 .method public doScrollStateChange(Landroid/widget/AbsListView;I)V
     .locals 3
+    .parameter "view"
+    .parameter "scrollState"
 
+    .prologue
+    .line 1298
     iput-object p1, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mView:Landroid/widget/AbsListView;
 
+    .line 1299
     iput p2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mNewState:I
 
+    .line 1300
     iget-object v0, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     invoke-virtual {v0, p0}, Landroid/widget/CalendarView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
+    .line 1301
     iget-object v0, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     const-wide/16 v1, 0x28
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/widget/CalendarView;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 1302
     return-void
 .end method
 
 .method public run()V
     .locals 5
 
+    .prologue
     const/16 v4, 0x1f4
 
+    .line 1305
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     iget v3, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mNewState:I
@@ -78,6 +95,7 @@
     #setter for: Landroid/widget/CalendarView;->mCurrentScrollState:I
     invoke-static {v2, v3}, Landroid/widget/CalendarView;->access$1002(Landroid/widget/CalendarView;I)I
 
+    .line 1307
     iget v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mNewState:I
 
     if-nez v2, :cond_1
@@ -91,6 +109,7 @@
 
     if-eqz v2, :cond_1
 
+    .line 1309
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mView:Landroid/widget/AbsListView;
 
     const/4 v3, 0x0
@@ -99,11 +118,17 @@
 
     move-result-object v0
 
+    .line 1310
+    .local v0, child:Landroid/view/View;
     if-nez v0, :cond_0
 
+    .line 1324
+    .end local v0           #child:Landroid/view/View;
     :goto_0
     return-void
 
+    .line 1314
+    .restart local v0       #child:Landroid/view/View;
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
@@ -118,6 +143,8 @@
 
     sub-int v1, v2, v3
 
+    .line 1315
+    .local v1, dist:I
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mListScrollTopOffset:I
@@ -127,6 +154,7 @@
 
     if-le v1, v2, :cond_1
 
+    .line 1316
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mIsScrollingUp:Z
@@ -136,6 +164,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 1317
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mView:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -146,6 +175,9 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/AbsListView;->smoothScrollBy(II)V
 
+    .line 1323
+    .end local v0           #child:Landroid/view/View;
+    .end local v1           #dist:I
     :cond_1
     :goto_1
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->this$0:Landroid/widget/CalendarView;
@@ -157,6 +189,9 @@
 
     goto :goto_0
 
+    .line 1319
+    .restart local v0       #child:Landroid/view/View;
+    .restart local v1       #dist:I
     :cond_2
     iget-object v2, p0, Landroid/widget/CalendarView$ScrollStateRunnable;->mView:Landroid/widget/AbsListView;
 

@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/app/NotificationManagerPlus;Landroid/app/PendingIntent;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 270
     iput-object p1, p0, Landroid/app/NotificationManagerPlus$3;->this$0:Landroid/app/NotificationManagerPlus;
 
     iput-object p2, p0, Landroid/app/NotificationManagerPlus$3;->val$pending:Landroid/app/PendingIntent;
@@ -40,7 +44,10 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 4
+    .parameter "dialog"
 
+    .prologue
+    .line 274
     const-string v1, "NotificationManangerPlus"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -65,24 +72,30 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 277
     :try_start_0
     iget-object v1, p0, Landroid/app/NotificationManagerPlus$3;->val$pending:Landroid/app/PendingIntent;
 
     if-eqz v1, :cond_0
 
+    .line 278
     iget-object v1, p0, Landroid/app/NotificationManagerPlus$3;->val$pending:Landroid/app/PendingIntent;
 
     invoke-virtual {v1}, Landroid/app/PendingIntent;->send()V
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 283
     :cond_0
     :goto_0
     return-void
 
+    .line 280
     :catch_0
     move-exception v0
 
+    .line 281
+    .local v0, e:Landroid/app/PendingIntent$CanceledException;
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
     goto :goto_0

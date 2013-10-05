@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 573
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,9 +29,14 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 6
+    .parameter "ctx"
 
+    .prologue
+    .line 576
     const/4 v2, 0x0
 
+    .line 578
+    .local v2, epoMgr:Lcom/mediatek/common/epo/MtkEpoClientManager;
     :try_start_0
     const-class v3, Lcom/mediatek/common/epo/MtkEpoClientManager;
 
@@ -53,12 +60,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 582
     :goto_0
     return-object v2
 
+    .line 579
     :catch_0
     move-exception v1
 
+    .line 580
+    .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0

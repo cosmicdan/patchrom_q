@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 36
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,6 +43,8 @@
 .method public bridge synthetic newInstance()Landroid/util/Poolable;
     .locals 1
 
+    .prologue
+    .line 36
     invoke-virtual {p0}, Landroid/view/VelocityTracker$1;->newInstance()Landroid/view/VelocityTracker;
 
     move-result-object v0
@@ -51,8 +55,10 @@
 .method public newInstance()Landroid/view/VelocityTracker;
     .locals 2
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 38
     new-instance v0, Landroid/view/VelocityTracker;
 
     invoke-direct {v0, v1, v1}, Landroid/view/VelocityTracker;-><init>(Ljava/lang/String;Landroid/view/VelocityTracker$1;)V
@@ -62,9 +68,13 @@
 
 .method public bridge synthetic onAcquired(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 36
     check-cast p1, Landroid/view/VelocityTracker;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/view/VelocityTracker$1;->onAcquired(Landroid/view/VelocityTracker;)V
 
     return-void
@@ -72,15 +82,22 @@
 
 .method public onAcquired(Landroid/view/VelocityTracker;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 43
     return-void
 .end method
 
 .method public bridge synthetic onReleased(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 36
     check-cast p1, Landroid/view/VelocityTracker;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/view/VelocityTracker$1;->onReleased(Landroid/view/VelocityTracker;)V
 
     return-void
@@ -88,8 +105,12 @@
 
 .method public onReleased(Landroid/view/VelocityTracker;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 46
     invoke-virtual {p1}, Landroid/view/VelocityTracker;->clear()V
 
+    .line 47
     return-void
 .end method

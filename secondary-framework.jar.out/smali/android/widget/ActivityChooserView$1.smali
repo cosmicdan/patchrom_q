@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ActivityChooserView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 116
     iput-object p1, p0, Landroid/widget/ActivityChooserView$1;->this$0:Landroid/widget/ActivityChooserView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -34,8 +37,11 @@
 .method public onChanged()V
     .locals 1
 
+    .prologue
+    .line 120
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
+    .line 121
     iget-object v0, p0, Landroid/widget/ActivityChooserView$1;->this$0:Landroid/widget/ActivityChooserView;
 
     #getter for: Landroid/widget/ActivityChooserView;->mAdapter:Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -45,14 +51,18 @@
 
     invoke-virtual {v0}, Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;->notifyDataSetChanged()V
 
+    .line 122
     return-void
 .end method
 
 .method public onInvalidated()V
     .locals 1
 
+    .prologue
+    .line 125
     invoke-super {p0}, Landroid/database/DataSetObserver;->onInvalidated()V
 
+    .line 126
     iget-object v0, p0, Landroid/widget/ActivityChooserView$1;->this$0:Landroid/widget/ActivityChooserView;
 
     #getter for: Landroid/widget/ActivityChooserView;->mAdapter:Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -62,5 +72,6 @@
 
     invoke-virtual {v0}, Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;->notifyDataSetInvalidated()V
 
+    .line 127
     return-void
 .end method

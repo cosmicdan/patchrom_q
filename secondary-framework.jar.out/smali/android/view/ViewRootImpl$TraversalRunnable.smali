@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/ViewRootImpl;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 4876
     iput-object p1, p0, Landroid/view/ViewRootImpl$TraversalRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +40,12 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 4879
     iget-object v0, p0, Landroid/view/ViewRootImpl$TraversalRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->doTraversal()V
 
+    .line 4880
     return-void
 .end method

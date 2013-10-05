@@ -59,10 +59,13 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 173
     sput-boolean v0, Landroid/view/HardwareRenderer;->sRendererDisabled:Z
 
+    .line 180
     sput-boolean v0, Landroid/view/HardwareRenderer;->sSystemRendererDisabled:Z
 
     return-void
@@ -71,18 +74,25 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 56
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 193
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/HardwareRenderer;->mRequested:Z
 
+    .line 1425
     return-void
 .end method
 
 .method static synthetic access$200([I)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 56
     invoke-static {p0}, Landroid/view/HardwareRenderer;->beginFrame([I)V
 
     return-void
@@ -90,17 +100,26 @@
 
 .method private static beginFrame([I)V
     .locals 0
+    .parameter "size"
 
+    .prologue
+    .line 349
     invoke-static {p0}, Landroid/view/HardwareRenderer;->nBeginFrame([I)V
 
+    .line 350
     return-void
 .end method
 
 .method static createGlRenderer(IZ)Landroid/view/HardwareRenderer;
     .locals 3
+    .parameter "glVersion"
+    .parameter "translucent"
 
+    .prologue
+    .line 555
     packed-switch p0, :pswitch_data_0
 
+    .line 559
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -125,6 +144,7 @@
 
     throw v0
 
+    .line 557
     :pswitch_0
     invoke-static {p1}, Landroid/view/HardwareRenderer$Gl20Renderer;->create(Z)Landroid/view/HardwareRenderer;
 
@@ -132,6 +152,7 @@
 
     return-object v0
 
+    .line 555
     nop
 
     :pswitch_data_0
@@ -142,15 +163,21 @@
 
 .method public static disable(Z)V
     .locals 1
+    .parameter "system"
 
+    .prologue
     const/4 v0, 0x1
 
+    .line 204
     sput-boolean v0, Landroid/view/HardwareRenderer;->sRendererDisabled:Z
 
+    .line 205
     if-eqz p0, :cond_0
 
+    .line 206
     sput-boolean v0, Landroid/view/HardwareRenderer;->sSystemRendererDisabled:Z
 
+    .line 208
     :cond_0
     return-void
 .end method
@@ -158,22 +185,30 @@
 .method static disableVsync()V
     .locals 0
 
+    .prologue
+    .line 397
     invoke-static {}, Landroid/view/HardwareRenderer;->nDisableVsync()V
 
+    .line 398
     return-void
 .end method
 
 .method static endTrimMemory()V
     .locals 0
 
+    .prologue
+    .line 592
     invoke-static {}, Landroid/view/HardwareRenderer$Gl20Renderer;->endTrimMemory()V
 
+    .line 593
     return-void
 .end method
 
 .method public static isAvailable()Z
     .locals 1
 
+    .prologue
+    .line 218
     invoke-static {}, Landroid/view/GLES20Canvas;->isAvailable()Z
 
     move-result v0
@@ -184,6 +219,8 @@
 .method static isBackBufferPreserved()Z
     .locals 1
 
+    .prologue
+    .line 388
     invoke-static {}, Landroid/view/HardwareRenderer;->nIsBackBufferPreserved()Z
 
     move-result v0
@@ -212,6 +249,8 @@
 .method static preserveBackBuffer()Z
     .locals 1
 
+    .prologue
+    .line 375
     invoke-static {}, Landroid/view/HardwareRenderer;->nPreserveBackBuffer()Z
 
     move-result v0
@@ -221,15 +260,22 @@
 
 .method public static setHWUIDebugLog(Z)V
     .locals 0
+    .parameter "enable"
 
+    .prologue
+    .line 360
     invoke-static {p0}, Landroid/view/HardwareRenderer;->nSetHWUIDebugLog(Z)V
 
+    .line 361
     return-void
 .end method
 
 .method public static setupDiskCache(Ljava/io/File;)V
     .locals 2
+    .parameter "cacheDir"
 
+    .prologue
+    .line 339
     new-instance v0, Ljava/io/File;
 
     const-string v1, "com.android.opengl.shaders_cache"
@@ -242,24 +288,34 @@
 
     invoke-static {v0}, Landroid/view/HardwareRenderer;->nSetupShadersDiskCache(Ljava/lang/String;)V
 
+    .line 340
     return-void
 .end method
 
 .method static startTrimMemory(I)V
     .locals 0
+    .parameter "level"
 
+    .prologue
+    .line 584
     invoke-static {p0}, Landroid/view/HardwareRenderer$Gl20Renderer;->startTrimMemory(I)V
 
+    .line 585
     return-void
 .end method
 
 .method static trimMemory(I)V
     .locals 0
+    .parameter "level"
 
+    .prologue
+    .line 571
     invoke-static {p0}, Landroid/view/HardwareRenderer;->startTrimMemory(I)V
 
+    .line 572
     invoke-static {}, Landroid/view/HardwareRenderer;->endTrimMemory()V
 
+    .line 573
     return-void
 .end method
 
@@ -301,6 +357,8 @@
 .method forceDestroyLayers()Z
     .locals 1
 
+    .prologue
+    .line 622
     iget-boolean v0, p0, Landroid/view/HardwareRenderer;->mForceDestroyLayers:Z
 
     return v0
@@ -328,34 +386,44 @@
 
 .method initializeIfNeeded(IILandroid/view/Surface;)Z
     .locals 1
+    .parameter "width"
+    .parameter "height"
+    .parameter "surface"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/view/Surface$OutOfResourcesException;
         }
     .end annotation
 
+    .prologue
+    .line 534
     invoke-virtual {p0}, Landroid/view/HardwareRenderer;->isRequested()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 536
     invoke-virtual {p0}, Landroid/view/HardwareRenderer;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 537
     invoke-virtual {p0, p3}, Landroid/view/HardwareRenderer;->initialize(Landroid/view/Surface;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 538
     invoke-virtual {p0, p1, p2}, Landroid/view/HardwareRenderer;->setup(II)V
 
+    .line 539
     const/4 v0, 0x1
 
+    .line 543
     :goto_0
     return v0
 
@@ -371,6 +439,8 @@
 .method isEnabled()Z
     .locals 1
 
+    .prologue
+    .line 601
     iget-boolean v0, p0, Landroid/view/HardwareRenderer;->mEnabled:Z
 
     return v0
@@ -379,6 +449,8 @@
 .method isRequested()Z
     .locals 1
 
+    .prologue
+    .line 645
     iget-boolean v0, p0, Landroid/view/HardwareRenderer;->mRequested:Z
 
     return v0
@@ -392,25 +464,37 @@
 
 .method setEnabled(Z)V
     .locals 0
+    .parameter "enabled"
 
+    .prologue
+    .line 610
     iput-boolean p1, p0, Landroid/view/HardwareRenderer;->mEnabled:Z
 
+    .line 611
     return-void
 .end method
 
 .method setForceDestroyLayers(Z)V
     .locals 0
+    .parameter "force"
 
+    .prologue
+    .line 635
     iput-boolean p1, p0, Landroid/view/HardwareRenderer;->mForceDestroyLayers:Z
 
+    .line 636
     return-void
 .end method
 
 .method setRequested(Z)V
     .locals 0
+    .parameter "requested"
 
+    .prologue
+    .line 655
     iput-boolean p1, p0, Landroid/view/HardwareRenderer;->mRequested:Z
 
+    .line 656
     return-void
 .end method
 

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/SearchView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1328
     iput-object p1, p0, Landroid/widget/SearchView$9;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,6 +39,10 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
+    .parameter
+    .parameter "view"
+    .parameter "position"
+    .parameter "id"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,16 +53,21 @@
         }
     .end annotation
 
+    .prologue
+    .line 1335
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/widget/SearchView$9;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onItemSelected(I)Z
     invoke-static {v0, p3}, Landroid/widget/SearchView;->access$1900(Landroid/widget/SearchView;I)Z
 
+    .line 1336
     return-void
 .end method
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
     .locals 0
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,5 +76,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 1344
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method

@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,7 +18,10 @@
 # virtual methods
 .method public createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
     .locals 1
+    .parameter "virtualViewId"
 
+    .prologue
+    .line 96
     const/4 v0, 0x0
 
     return-object v0
@@ -24,6 +29,8 @@
 
 .method public findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
     .locals 1
+    .parameter "text"
+    .parameter "virtualViewId"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,6 +43,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 133
     const/4 v0, 0x0
 
     return-object v0
@@ -43,7 +52,12 @@
 
 .method public performAction(IILandroid/os/Bundle;)Z
     .locals 1
+    .parameter "virtualViewId"
+    .parameter "action"
+    .parameter "arguments"
 
+    .prologue
+    .line 114
     const/4 v0, 0x0
 
     return v0

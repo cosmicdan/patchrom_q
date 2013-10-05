@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AdapterViewAnimator$1;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 757
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$1$1;->this$1:Landroid/widget/AdapterViewAnimator$1;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +40,15 @@
 .method public run()V
     .locals 5
 
+    .prologue
+    .line 759
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1$1;->this$1:Landroid/widget/AdapterViewAnimator$1;
 
     iget-object v0, v0, Landroid/widget/AdapterViewAnimator$1;->val$viewData:Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
 
     if-eqz v0, :cond_0
 
+    .line 760
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1$1;->this$1:Landroid/widget/AdapterViewAnimator$1;
 
     iget-object v0, v0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
@@ -65,9 +71,11 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/AdapterViewAnimator;->performItemClick(Landroid/view/View;IJ)Z
 
+    .line 765
     :goto_0
     return-void
 
+    .line 763
     :cond_0
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1$1;->this$1:Landroid/widget/AdapterViewAnimator$1;
 

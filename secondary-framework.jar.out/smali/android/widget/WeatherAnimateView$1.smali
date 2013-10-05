@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/widget/WeatherAnimateView;Landroid/graphics/Bitmap;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 136
     iput-object p1, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     iput-object p2, p0, Landroid/widget/WeatherAnimateView$1;->val$res:Landroid/graphics/Bitmap;
@@ -40,25 +44,33 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 140
     const-string v0, "WeatherAnimationView"
 
     const-string v1, "onAnimationCancel"
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 141
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .parameter "animation"
 
+    .prologue
+    .line 145
     const-string v0, "WeatherAnimationView"
 
     const-string v1, "onAnimationEnd"
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 146
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     #getter for: Landroid/widget/WeatherAnimateView;->mOutView:Landroid/widget/ImageView;
@@ -70,6 +82,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 147
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     iget-object v1, p0, Landroid/widget/WeatherAnimateView$1;->val$res:Landroid/graphics/Bitmap;
@@ -77,6 +90,7 @@
     #setter for: Landroid/widget/WeatherAnimateView;->mLastRes:Landroid/graphics/Bitmap;
     invoke-static {v0, v1}, Landroid/widget/WeatherAnimateView;->access$102(Landroid/widget/WeatherAnimateView;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
+    .line 148
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     #getter for: Landroid/widget/WeatherAnimateView;->mInView:Landroid/widget/ImageView;
@@ -88,6 +102,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 149
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     #getter for: Landroid/widget/WeatherAnimateView;->mInView:Landroid/widget/ImageView;
@@ -99,6 +114,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 150
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     #getter for: Landroid/widget/WeatherAnimateView;->mFadeInAnimator:Landroid/animation/Animator;
@@ -115,6 +131,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
+    .line 151
     iget-object v0, p0, Landroid/widget/WeatherAnimateView$1;->this$0:Landroid/widget/WeatherAnimateView;
 
     #getter for: Landroid/widget/WeatherAnimateView;->mFadeInAnimator:Landroid/animation/Animator;
@@ -124,17 +141,24 @@
 
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
+    .line 152
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
+    .parameter "animation"
 
+    .prologue
+    .line 156
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
+    .parameter "animation"
 
+    .prologue
+    .line 160
     return-void
 .end method

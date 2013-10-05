@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/BookmarkView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 432
     iput-object p1, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -34,6 +37,8 @@
 .method public onChanged()V
     .locals 3
 
+    .prologue
+    .line 435
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #getter for: Landroid/widget/BookmarkView;->mBookmarkAdapter:Landroid/widget/BookmarkAdapter;
@@ -43,6 +48,7 @@
 
     invoke-virtual {v0}, Landroid/widget/BookmarkAdapter;->clearBitmapCache()V
 
+    .line 436
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     iget-object v1, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
@@ -55,6 +61,7 @@
     #setter for: Landroid/widget/BookmarkView;->mOldItemCount:I
     invoke-static {v0, v1}, Landroid/widget/BookmarkView;->access$202(Landroid/widget/BookmarkView;I)I
 
+    .line 437
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     iget-object v1, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
@@ -71,6 +78,7 @@
     #setter for: Landroid/widget/BookmarkView;->mItemCount:I
     invoke-static {v0, v1}, Landroid/widget/BookmarkView;->access$302(Landroid/widget/BookmarkView;I)I
 
+    .line 439
     const-string v0, "BookmarkView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -134,6 +142,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 445
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #getter for: Landroid/widget/BookmarkView;->mCurrentSelectedPosition:I
@@ -152,6 +161,7 @@
 
     if-le v0, v1, :cond_0
 
+    .line 446
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #getter for: Landroid/widget/BookmarkView;->mCoverflow:Landroid/widget/BounceCoverFlow;
@@ -170,6 +180,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/BounceCoverFlow;->setNextSelectedPositionInt(I)V
 
+    .line 453
     :cond_0
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
@@ -177,17 +188,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/BookmarkView;->refreshInfo(Z)V
 
+    .line 454
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #calls: Landroid/widget/BookmarkView;->refreshIndicators()V
     invoke-static {v0}, Landroid/widget/BookmarkView;->access$000(Landroid/widget/BookmarkView;)V
 
+    .line 455
     return-void
 .end method
 
 .method public onInvalidated()V
     .locals 3
 
+    .prologue
+    .line 460
     const-string v0, "BookmarkView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -234,6 +249,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 463
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #getter for: Landroid/widget/BookmarkView;->mBookmarkAdapter:Landroid/widget/BookmarkAdapter;
@@ -243,16 +259,19 @@
 
     invoke-virtual {v0}, Landroid/widget/BookmarkAdapter;->clearBitmapCache()V
 
+    .line 464
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/BookmarkView;->refreshInfo(Z)V
 
+    .line 465
     iget-object v0, p0, Landroid/widget/BookmarkView$BookmarkDataSetObserver;->this$0:Landroid/widget/BookmarkView;
 
     #calls: Landroid/widget/BookmarkView;->refreshIndicators()V
     invoke-static {v0}, Landroid/widget/BookmarkView;->access$000(Landroid/widget/BookmarkView;)V
 
+    .line 466
     return-void
 .end method

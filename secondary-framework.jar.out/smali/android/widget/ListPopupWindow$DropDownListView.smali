@@ -27,25 +27,36 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 2
+    .parameter "context"
+    .parameter "hijackFocus"
 
+    .prologue
+    .line 1181
     const/4 v0, 0x0
 
     const v1, 0x101006d
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
+    .line 1182
     iput-boolean p2, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
+    .line 1184
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ListPopupWindow$DropDownListView;->setCacheColorHint(I)V
 
+    .line 1185
     return-void
 .end method
 
 .method static synthetic access$502(Landroid/widget/ListPopupWindow$DropDownListView;Z)Z
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1138
     iput-boolean p1, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
 
     return p1
@@ -56,6 +67,8 @@
 .method public hasFocus()Z
     .locals 1
 
+    .prologue
+    .line 1238
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -81,6 +94,8 @@
 .method public hasWindowFocus()Z
     .locals 1
 
+    .prologue
+    .line 1218
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -106,6 +121,8 @@
 .method public isFocused()Z
     .locals 1
 
+    .prologue
+    .line 1228
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -131,6 +148,8 @@
 .method public isInTouchMode()Z
     .locals 1
 
+    .prologue
+    .line 1208
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-eqz v0, :cond_0
@@ -160,23 +179,31 @@
 
 .method obtainView(I[Z)Landroid/view/View;
     .locals 3
+    .parameter "position"
+    .parameter "isScrap"
 
+    .prologue
+    .line 1196
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;
 
     move-result-object v0
 
+    .line 1198
+    .local v0, view:Landroid/view/View;
     instance-of v1, v0, Landroid/widget/TextView;
 
     if-eqz v1, :cond_0
 
     move-object v1, v0
 
+    .line 1199
     check-cast v1, Landroid/widget/TextView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setHorizontallyScrolling(Z)V
 
+    .line 1202
     :cond_0
     return-object v0
 .end method

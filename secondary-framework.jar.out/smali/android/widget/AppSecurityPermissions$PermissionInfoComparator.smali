@@ -35,14 +35,18 @@
 .method constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 594
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 593
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$PermissionInfoComparator;->sCollator:Ljava/text/Collator;
 
+    .line 595
     return-void
 .end method
 
@@ -50,7 +54,11 @@
 # virtual methods
 .method public final compare(Landroid/widget/AppSecurityPermissions$MyPermissionInfo;Landroid/widget/AppSecurityPermissions$MyPermissionInfo;)I
     .locals 3
+    .parameter "a"
+    .parameter "b"
 
+    .prologue
+    .line 597
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions$PermissionInfoComparator;->sCollator:Ljava/text/Collator;
 
     iget-object v1, p1, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;->mLabel:Ljava/lang/CharSequence;
@@ -66,11 +74,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 592
     check-cast p1, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
+    .end local p1
     check-cast p2, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
+    .end local p2
     invoke-virtual {p0, p1, p2}, Landroid/widget/AppSecurityPermissions$PermissionInfoComparator;->compare(Landroid/widget/AppSecurityPermissions$MyPermissionInfo;Landroid/widget/AppSecurityPermissions$MyPermissionInfo;)I
 
     move-result v0

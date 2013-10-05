@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 464
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,17 +29,24 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 5
+    .parameter "ctx"
 
+    .prologue
+    .line 466
     const-string v2, "power"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 467
+    .local v0, b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
     move-result-object v1
 
+    .line 468
+    .local v1, service:Landroid/os/IPowerManager;
     new-instance v2, Landroid/os/PowerManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;

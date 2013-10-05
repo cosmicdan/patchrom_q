@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 835
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,11 +42,16 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
     .locals 2
+    .parameter "in"
 
+    .prologue
+    .line 837
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 838
+    .local v0, target:Landroid/os/IBinder;
     if-eqz v0, :cond_0
 
     new-instance v1, Landroid/app/PendingIntent;
@@ -62,7 +69,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 835
     invoke-virtual {p0, p1}, Landroid/app/PendingIntent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v0
@@ -72,7 +82,10 @@
 
 .method public newArray(I)[Landroid/app/PendingIntent;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 842
     new-array v0, p1, [Landroid/app/PendingIntent;
 
     return-object v0
@@ -80,7 +93,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 835
     invoke-virtual {p0, p1}, Landroid/app/PendingIntent$1;->newArray(I)[Landroid/app/PendingIntent;
 
     move-result-object v0

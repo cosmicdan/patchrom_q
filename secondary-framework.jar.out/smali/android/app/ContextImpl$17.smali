@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 391
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -28,6 +30,8 @@
 .method public createStaticService()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 393
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v0

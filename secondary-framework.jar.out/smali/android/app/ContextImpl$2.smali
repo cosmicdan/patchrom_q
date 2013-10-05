@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 300
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,7 +29,10 @@
 # virtual methods
 .method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
+    .parameter "ctx"
 
+    .prologue
+    .line 302
     invoke-static {p1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
     move-result-object v0

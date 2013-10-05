@@ -60,8 +60,11 @@
 .method constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 289
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 290
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V

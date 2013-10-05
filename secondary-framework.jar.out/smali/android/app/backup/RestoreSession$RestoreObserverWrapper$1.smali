@@ -23,7 +23,12 @@
 # direct methods
 .method constructor <init>(Landroid/app/backup/RestoreSession$RestoreObserverWrapper;Landroid/os/Looper;Landroid/app/backup/RestoreSession;)V
     .locals 0
+    .parameter
+    .parameter "x0"
+    .parameter
 
+    .prologue
+    .line 194
     iput-object p1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     iput-object p3, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->val$this$0:Landroid/app/backup/RestoreSession;
@@ -37,14 +42,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
+    .parameter "msg"
 
+    .prologue
+    .line 197
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 211
     :goto_0
     return-void
 
+    .line 199
     :pswitch_0
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -56,6 +66,7 @@
 
     goto :goto_0
 
+    .line 202
     :pswitch_1
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -71,6 +82,7 @@
 
     goto :goto_0
 
+    .line 205
     :pswitch_2
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -82,6 +94,7 @@
 
     goto :goto_0
 
+    .line 208
     :pswitch_3
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;->this$1:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -97,6 +110,7 @@
 
     goto :goto_0
 
+    .line 197
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

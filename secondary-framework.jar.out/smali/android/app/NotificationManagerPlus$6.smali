@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/app/NotificationManagerPlus;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 323
     iput-object p1, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onShow(Landroid/content/DialogInterface;)V
     .locals 6
+    .parameter "dialog"
 
+    .prologue
+    .line 326
     iget-object v2, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
 
     #getter for: Landroid/app/NotificationManagerPlus;->mList:Ljava/util/ArrayList;
@@ -46,6 +52,7 @@
 
     monitor-enter v3
 
+    .line 327
     :try_start_0
     iget-object v2, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
 
@@ -64,6 +71,8 @@
 
     move-result v1
 
+    .line 328
+    .local v1, add:Z
     if-eqz v1, :cond_0
 
     iget-object v2, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
@@ -92,6 +101,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 329
     iget-object v2, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
 
     #getter for: Landroid/app/NotificationManagerPlus;->mParams:Landroid/app/NotificationManagerPlus$Parameters;
@@ -103,6 +113,7 @@
 
     invoke-interface {v2, p1}, Landroid/app/NotificationManagerPlus$OnFirstShowListener;->onFirstShow(Landroid/content/DialogInterface;)V
 
+    .line 331
     :cond_0
     if-eqz v1, :cond_1
 
@@ -117,6 +128,7 @@
 
     if-eqz v2, :cond_1
 
+    .line 332
     iget-object v2, p0, Landroid/app/NotificationManagerPlus$6;->this$0:Landroid/app/NotificationManagerPlus;
 
     #getter for: Landroid/app/NotificationManagerPlus;->mParams:Landroid/app/NotificationManagerPlus$Parameters;
@@ -128,6 +140,7 @@
 
     invoke-interface {v2, p1}, Landroid/content/DialogInterface$OnShowListener;->onShow(Landroid/content/DialogInterface;)V
 
+    .line 335
     :cond_1
     const-string v2, "NotificationManangerPlus"
 
@@ -172,10 +185,14 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 337
     monitor-exit v3
 
+    .line 338
     return-void
 
+    .line 337
+    .end local v1           #add:Z
     :catchall_0
     move-exception v2
 

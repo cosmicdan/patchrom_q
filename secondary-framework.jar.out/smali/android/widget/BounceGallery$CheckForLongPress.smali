@@ -24,7 +24,10 @@
 # direct methods
 .method private constructor <init>(Landroid/widget/BounceGallery;)V
     .locals 1
+    .parameter
 
+    .prologue
+    .line 1765
     iput-object p1, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     const/4 v0, 0x0
@@ -36,7 +39,11 @@
 
 .method synthetic constructor <init>(Landroid/widget/BounceGallery;Landroid/widget/BounceGallery$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 1765
     invoke-direct {p0, p1}, Landroid/widget/BounceGallery$CheckForLongPress;-><init>(Landroid/widget/BounceGallery;)V
 
     return-void
@@ -47,8 +54,10 @@
 .method public run()V
     .locals 10
 
+    .prologue
     const/4 v9, 0x0
 
+    .line 1767
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     #getter for: Landroid/widget/BounceGallery;->mDownTouchPosition:I
@@ -56,6 +65,8 @@
 
     move-result v5
 
+    .line 1768
+    .local v5, motionPosition:I
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     iget-object v7, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
@@ -68,6 +79,8 @@
 
     move-result-object v0
 
+    .line 1770
+    .local v0, child:Landroid/view/View;
     const-string v6, "BounceGallery"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -152,8 +165,10 @@
 
     invoke-static {v6, v7}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1775
     if-eqz v0, :cond_1
 
+    .line 1776
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     #getter for: Landroid/widget/BounceGallery;->mDownTouchPosition:I
@@ -161,6 +176,8 @@
 
     move-result v4
 
+    .line 1777
+    .local v4, longPressPosition:I
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     iget-object v6, v6, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
@@ -176,8 +193,12 @@
 
     move-result-wide v2
 
+    .line 1779
+    .local v2, longPressId:J
     const/4 v1, 0x0
 
+    .line 1780
+    .local v1, handled:Z
     invoke-virtual {p0}, Landroid/widget/BounceGallery$CheckForLongPress;->sameWindow()Z
 
     move-result v6
@@ -190,6 +211,7 @@
 
     if-nez v6, :cond_0
 
+    .line 1781
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     #calls: Landroid/widget/BounceGallery;->performLongPress(Landroid/view/View;IJ)Z
@@ -197,9 +219,11 @@
 
     move-result v1
 
+    .line 1783
     :cond_0
     if-eqz v1, :cond_1
 
+    .line 1784
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     const/4 v7, -0x1
@@ -207,12 +231,18 @@
     #setter for: Landroid/widget/BounceGallery;->mTouchMode:I
     invoke-static {v6, v7}, Landroid/widget/BounceGallery;->access$302(Landroid/widget/BounceGallery;I)I
 
+    .line 1785
     iget-object v6, p0, Landroid/widget/BounceGallery$CheckForLongPress;->this$0:Landroid/widget/BounceGallery;
 
     invoke-virtual {v6, v9}, Landroid/widget/BounceGallery;->setPressed(Z)V
 
+    .line 1786
     invoke-virtual {v0, v9}, Landroid/view/View;->setPressed(Z)V
 
+    .line 1789
+    .end local v1           #handled:Z
+    .end local v2           #longPressId:J
+    .end local v4           #longPressPosition:I
     :cond_1
     return-void
 .end method

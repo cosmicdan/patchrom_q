@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 1591
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +42,10 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/app/ActivityManager$RunningAppProcessInfo;
     .locals 2
+    .parameter "source"
 
+    .prologue
+    .line 1593
     new-instance v0, Landroid/app/ActivityManager$RunningAppProcessInfo;
 
     const/4 v1, 0x0
@@ -52,7 +57,10 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 1591
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningAppProcessInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/ActivityManager$RunningAppProcessInfo;
 
     move-result-object v0
@@ -62,7 +70,10 @@
 
 .method public newArray(I)[Landroid/app/ActivityManager$RunningAppProcessInfo;
     .locals 1
+    .parameter "size"
 
+    .prologue
+    .line 1596
     new-array v0, p1, [Landroid/app/ActivityManager$RunningAppProcessInfo;
 
     return-object v0
@@ -70,7 +81,10 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 1591
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningAppProcessInfo$1;->newArray(I)[Landroid/app/ActivityManager$RunningAppProcessInfo;
 
     move-result-object v0

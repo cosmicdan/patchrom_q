@@ -25,7 +25,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZLandroid/os/IBinder;I)V
     .locals 9
+    .parameter "intent"
+    .parameter "resultCode"
+    .parameter "resultData"
+    .parameter "resultExtras"
+    .parameter "ordered"
+    .parameter "sticky"
+    .parameter "token"
+    .parameter "sendingUser"
 
+    .prologue
+    .line 380
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -46,8 +56,10 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/content/BroadcastReceiver$PendingResult;-><init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;I)V
 
+    .line 382
     iput-object p1, p0, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
+    .line 383
     return-void
 .end method
 
@@ -56,6 +68,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 389
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

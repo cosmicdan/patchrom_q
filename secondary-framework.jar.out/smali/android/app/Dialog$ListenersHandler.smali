@@ -30,15 +30,20 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Dialog;)V
     .locals 1
+    .parameter "dialog"
 
+    .prologue
+    .line 1224
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
+    .line 1225
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/app/Dialog$ListenersHandler;->mDialog:Ljava/lang/ref/WeakReference;
 
+    .line 1226
     return-void
 .end method
 
@@ -46,14 +51,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
+    .parameter "msg"
 
+    .prologue
+    .line 1230
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 1241
     :goto_0
     return-void
 
+    .line 1232
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -71,6 +81,7 @@
 
     goto :goto_0
 
+    .line 1235
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -88,6 +99,7 @@
 
     goto :goto_0
 
+    .line 1238
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -105,6 +117,7 @@
 
     goto :goto_0
 
+    .line 1230
     :pswitch_data_0
     .packed-switch 0x43
         :pswitch_0

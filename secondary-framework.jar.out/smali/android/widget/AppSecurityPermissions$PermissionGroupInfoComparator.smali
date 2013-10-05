@@ -35,14 +35,18 @@
 .method constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 579
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 578
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/AppSecurityPermissions$PermissionGroupInfoComparator;->sCollator:Ljava/text/Collator;
 
+    .line 580
     return-void
 .end method
 
@@ -50,11 +54,15 @@
 # virtual methods
 .method public final compare(Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;)I
     .locals 4
+    .parameter "a"
+    .parameter "b"
 
+    .prologue
     const/4 v1, 0x1
 
     const/4 v0, -0x1
 
+    .line 582
     iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
 
     iget v3, p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
@@ -65,12 +73,14 @@
 
     if-eqz v2, :cond_2
 
+    .line 583
     iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->flags:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-eqz v2, :cond_1
 
+    .line 588
     :cond_0
     :goto_0
     return v0
@@ -78,8 +88,10 @@
     :cond_1
     move v0, v1
 
+    .line 583
     goto :goto_0
 
+    .line 585
     :cond_2
     iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
 
@@ -87,6 +99,7 @@
 
     if-eq v2, v3, :cond_3
 
+    .line 586
     iget v2, p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
 
     iget v3, p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;->priority:I
@@ -97,6 +110,7 @@
 
     goto :goto_0
 
+    .line 588
     :cond_3
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions$PermissionGroupInfoComparator;->sCollator:Ljava/text/Collator;
 
@@ -113,11 +127,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 577
     check-cast p1, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;
 
+    .end local p1
     check-cast p2, Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;
 
+    .end local p2
     invoke-virtual {p0, p1, p2}, Landroid/widget/AppSecurityPermissions$PermissionGroupInfoComparator;->compare(Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;Landroid/widget/AppSecurityPermissions$MyPermissionGroupInfo;)I
 
     move-result v0

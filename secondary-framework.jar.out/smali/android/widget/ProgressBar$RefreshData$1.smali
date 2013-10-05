@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 617
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,6 +43,8 @@
 .method public bridge synthetic newInstance()Landroid/util/Poolable;
     .locals 1
 
+    .prologue
+    .line 617
     invoke-virtual {p0}, Landroid/widget/ProgressBar$RefreshData$1;->newInstance()Landroid/widget/ProgressBar$RefreshData;
 
     move-result-object v0
@@ -51,6 +55,8 @@
 .method public newInstance()Landroid/widget/ProgressBar$RefreshData;
     .locals 2
 
+    .prologue
+    .line 620
     new-instance v0, Landroid/widget/ProgressBar$RefreshData;
 
     const/4 v1, 0x0
@@ -62,9 +68,13 @@
 
 .method public bridge synthetic onAcquired(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 617
     check-cast p1, Landroid/widget/ProgressBar$RefreshData;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar$RefreshData$1;->onAcquired(Landroid/widget/ProgressBar$RefreshData;)V
 
     return-void
@@ -72,15 +82,22 @@
 
 .method public onAcquired(Landroid/widget/ProgressBar$RefreshData;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 625
     return-void
 .end method
 
 .method public bridge synthetic onReleased(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 617
     check-cast p1, Landroid/widget/ProgressBar$RefreshData;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/widget/ProgressBar$RefreshData$1;->onReleased(Landroid/widget/ProgressBar$RefreshData;)V
 
     return-void
@@ -88,6 +105,9 @@
 
 .method public onReleased(Landroid/widget/ProgressBar$RefreshData;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 629
     return-void
 .end method

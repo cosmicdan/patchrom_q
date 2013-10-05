@@ -46,6 +46,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -56,6 +57,7 @@
 
     const/4 v3, 0x0
 
+    .line 325
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "NEW_VIEW"
@@ -64,6 +66,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->NEW_VIEW:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 326
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "BIND_VIEW"
@@ -72,6 +75,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->BIND_VIEW:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 327
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "RECYCLE_FROM_ACTIVE_HEAP"
@@ -80,6 +84,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->RECYCLE_FROM_ACTIVE_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 328
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "RECYCLE_FROM_SCRAP_HEAP"
@@ -88,6 +93,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->RECYCLE_FROM_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 329
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "MOVE_TO_SCRAP_HEAP"
@@ -96,6 +102,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->MOVE_TO_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 330
     new-instance v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     const-string v1, "MOVE_FROM_ACTIVE_TO_SCRAP_HEAP"
@@ -106,6 +113,7 @@
 
     sput-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->MOVE_FROM_ACTIVE_TO_SCRAP_HEAP:Landroid/view/ViewDebug$RecyclerTraceType;
 
+    .line 323
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/view/ViewDebug$RecyclerTraceType;
@@ -143,12 +151,16 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
+    .prologue
+    .line 324
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -156,7 +168,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/view/ViewDebug$RecyclerTraceType;
     .locals 1
+    .parameter "name"
 
+    .prologue
+    .line 323
     const-class v0, Landroid/view/ViewDebug$RecyclerTraceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -171,6 +186,8 @@
 .method public static values()[Landroid/view/ViewDebug$RecyclerTraceType;
     .locals 1
 
+    .prologue
+    .line 323
     sget-object v0, Landroid/view/ViewDebug$RecyclerTraceType;->$VALUES:[Landroid/view/ViewDebug$RecyclerTraceType;
 
     invoke-virtual {v0}, [Landroid/view/ViewDebug$RecyclerTraceType;->clone()Ljava/lang/Object;

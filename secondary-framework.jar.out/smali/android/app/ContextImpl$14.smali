@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 376
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,7 +29,9 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 3
+    .parameter "ctx"
 
+    .prologue
     new-instance v0, Landroid/app/MiuiDownloadManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getContentResolver()Landroid/content/ContentResolver;

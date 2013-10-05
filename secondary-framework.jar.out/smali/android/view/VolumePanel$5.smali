@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/VolumePanel;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 886
     iput-object p1, p0, Landroid/view/VolumePanel$5;->this$0:Landroid/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,12 +39,17 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
+    .parameter "dialog"
+    .parameter "which"
 
+    .prologue
+    .line 888
     iget-object v0, p0, Landroid/view/VolumePanel$5;->this$0:Landroid/view/VolumePanel;
 
     iget-object v0, v0, Landroid/view/VolumePanel;->mAudioService:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Landroid/media/AudioService;->disableSafeMediaVolume()V
 
+    .line 889
     return-void
 .end method

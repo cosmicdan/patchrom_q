@@ -7,6 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 29
     invoke-direct {p0}, Landroid/graphics/Canvas;-><init>()V
 
     return-void
@@ -19,7 +21,10 @@
 
 .method public callDrawGLFunction(I)I
     .locals 1
+    .parameter "drawGLFunction"
 
+    .prologue
+    .line 99
     const/4 v0, 0x0
 
     return v0
@@ -39,7 +44,10 @@
 
 .method public invokeFunctors(Landroid/graphics/Rect;)I
     .locals 1
+    .parameter "dirty"
 
+    .prologue
+    .line 111
     const/4 v0, 0x0
 
     return v0
@@ -48,6 +56,8 @@
 .method public isHardwareAccelerated()Z
     .locals 1
 
+    .prologue
+    .line 32
     const/4 v0, 0x1
 
     return v0
@@ -67,7 +77,10 @@
 
 .method public setBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
+    .parameter "bitmap"
 
+    .prologue
+    .line 37
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

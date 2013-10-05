@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ZoomButtonsController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 272
     iput-object p1, p0, Landroid/widget/ZoomButtonsController$4;->this$0:Landroid/widget/ZoomButtonsController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .parameter "v"
 
+    .prologue
+    .line 274
     iget-object v0, p0, Landroid/widget/ZoomButtonsController$4;->this$0:Landroid/widget/ZoomButtonsController;
 
     invoke-static {}, Landroid/widget/ZoomButtonsController;->access$400()I
@@ -46,6 +52,7 @@
     #calls: Landroid/widget/ZoomButtonsController;->dismissControlsDelayed(I)V
     invoke-static {v0, v1}, Landroid/widget/ZoomButtonsController;->access$500(Landroid/widget/ZoomButtonsController;I)V
 
+    .line 275
     iget-object v0, p0, Landroid/widget/ZoomButtonsController$4;->this$0:Landroid/widget/ZoomButtonsController;
 
     #getter for: Landroid/widget/ZoomButtonsController;->mCallback:Landroid/widget/ZoomButtonsController$OnZoomListener;
@@ -66,6 +73,7 @@
 
     invoke-interface {v0, v1}, Landroid/widget/ZoomButtonsController$OnZoomListener;->onZoom(Z)V
 
+    .line 276
     :cond_0
     return-void
 .end method

@@ -26,16 +26,23 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 2187
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2188
     invoke-virtual {p0}, Landroid/widget/GridLayout$Bounds;->reset()V
 
+    .line 2189
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/widget/GridLayout$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 2182
     invoke-direct {p0}, Landroid/widget/GridLayout$Bounds;-><init>()V
 
     return-void
@@ -45,7 +52,14 @@
 # virtual methods
 .method protected getOffset(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Alignment;IZ)I
     .locals 2
+    .parameter "gl"
+    .parameter "c"
+    .parameter "a"
+    .parameter "size"
+    .parameter "horizontal"
 
+    .prologue
+    .line 2212
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
     invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
@@ -63,7 +77,11 @@
 
 .method protected include(II)V
     .locals 1
+    .parameter "before"
+    .parameter "after"
 
+    .prologue
+    .line 2198
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
@@ -72,6 +90,7 @@
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
+    .line 2199
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
     invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
@@ -80,12 +99,19 @@
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
+    .line 2200
     return-void
 .end method
 
 .method protected final include(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Axis;)V
     .locals 6
+    .parameter "gl"
+    .parameter "c"
+    .parameter "spec"
+    .parameter "axis"
 
+    .prologue
+    .line 2216
     iget v4, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
     invoke-virtual {p3}, Landroid/widget/GridLayout$Spec;->getFlexibility()I
@@ -96,18 +122,25 @@
 
     iput v4, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
+    .line 2217
     iget-boolean v2, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
 
+    .line 2218
+    .local v2, horizontal:Z
     invoke-virtual {p1, p2, v2}, Landroid/widget/GridLayout;->getMeasurementIncludingMargin(Landroid/view/View;Z)I
 
     move-result v3
 
+    .line 2219
+    .local v3, size:I
     iget-object v4, p3, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
 
     invoke-virtual {p1, v4, v2}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
 
     move-result-object v0
 
+    .line 2221
+    .local v0, alignment:Landroid/widget/GridLayout$Alignment;
     invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
 
     move-result v4
@@ -116,34 +149,46 @@
 
     move-result v1
 
+    .line 2222
+    .local v1, before:I
     sub-int v4, v3, v1
 
     invoke-virtual {p0, v1, v4}, Landroid/widget/GridLayout$Bounds;->include(II)V
 
+    .line 2223
     return-void
 .end method
 
 .method protected reset()V
     .locals 1
 
+    .prologue
     const/high16 v0, -0x8000
 
+    .line 2192
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
+    .line 2193
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
+    .line 2194
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
+    .line 2195
     return-void
 .end method
 
 .method protected size(Z)I
     .locals 2
+    .parameter "min"
 
+    .prologue
+    .line 2203
     if-nez p1, :cond_0
 
+    .line 2204
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
     invoke-static {v0}, Landroid/widget/GridLayout;->canStretch(I)Z
@@ -152,8 +197,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 2205
     const v0, 0x186a0
 
+    .line 2208
     :goto_0
     return v0
 
@@ -170,6 +217,8 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 2227
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -21,13 +21,20 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/Editor$SuggestionsPopupWindow;Landroid/content/Context;I)V
     .locals 1
+    .parameter
+    .parameter "context"
+    .parameter "defStyle"
 
+    .prologue
+    .line 2215
     iput-object p1, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
+    .line 2216
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, v0, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
+    .line 2217
     return-void
 .end method
 
@@ -36,8 +43,11 @@
 .method public dismiss()V
     .locals 2
 
+    .prologue
+    .line 2221
     invoke-super {p0}, Landroid/widget/PopupWindow;->dismiss()V
 
+    .line 2223
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -51,6 +61,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Editor$PositionListener;->removeSubscriber(Landroid/widget/Editor$TextViewPositionListener;)V
 
+    .line 2226
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -74,6 +85,7 @@
 
     invoke-interface {v0, v1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
+    .line 2228
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -92,6 +104,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCursorVisible(Z)V
 
+    .line 2229
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -102,6 +115,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 2230
     iget-object v0, p0, Landroid/widget/Editor$SuggestionsPopupWindow$CustomPopupWindow;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow;->this$0:Landroid/widget/Editor;
@@ -112,6 +126,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Editor$InsertionPointCursorController;->show()V
 
+    .line 2232
     :cond_0
     return-void
 .end method

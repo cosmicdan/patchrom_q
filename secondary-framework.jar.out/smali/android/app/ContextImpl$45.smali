@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 598
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,15 +29,21 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 6
+    .parameter "ctx"
 
+    .prologue
+    .line 600
     const/4 v2, 0x0
 
+    .line 601
+    .local v2, vCmdMgr:Lcom/mediatek/common/voicecommand/IVoiceCommandManager;
     const-string v3, "ApplicationContext"
 
     const-string v4, "register voicecommand"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 603
     :try_start_0
     const-class v3, Lcom/mediatek/common/voicecommand/IVoiceCommandManager;
 
@@ -59,12 +67,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 607
     :goto_0
     return-object v2
 
+    .line 604
     :catch_0
     move-exception v1
 
+    .line 605
+    .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0

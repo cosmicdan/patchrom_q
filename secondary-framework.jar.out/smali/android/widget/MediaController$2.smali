@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/MediaController;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 282
     iput-object p1, p0, Landroid/widget/MediaController$2;->this$0:Landroid/widget/MediaController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,23 +39,30 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
+    .parameter "v"
+    .parameter "event"
 
+    .prologue
+    .line 284
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 285
     iget-object v0, p0, Landroid/widget/MediaController$2;->this$0:Landroid/widget/MediaController;
 
     iget-boolean v0, v0, Landroid/widget/MediaController;->mShowing:Z
 
     if-eqz v0, :cond_0
 
+    .line 286
     iget-object v0, p0, Landroid/widget/MediaController$2;->this$0:Landroid/widget/MediaController;
 
     invoke-virtual {v0}, Landroid/widget/MediaController;->hide()V
 
+    .line 289
     :cond_0
     const/4 v0, 0x0
 

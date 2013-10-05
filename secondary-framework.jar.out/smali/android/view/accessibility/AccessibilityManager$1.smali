@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/view/accessibility/AccessibilityManager;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 110
     iput-object p1, p0, Landroid/view/accessibility/AccessibilityManager$1;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
     invoke-direct {p0}, Landroid/view/accessibility/IAccessibilityManagerClient$Stub;-><init>()V
@@ -33,7 +36,10 @@
 # virtual methods
 .method public setState(I)V
     .locals 3
+    .parameter "state"
 
+    .prologue
+    .line 112
     iget-object v0, p0, Landroid/view/accessibility/AccessibilityManager$1;->this$0:Landroid/view/accessibility/AccessibilityManager;
 
     iget-object v0, v0, Landroid/view/accessibility/AccessibilityManager;->mHandler:Landroid/os/Handler;
@@ -48,5 +54,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    .line 113
     return-void
 .end method

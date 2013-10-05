@@ -31,6 +31,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 1646
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,6 +43,8 @@
 .method public bridge synthetic newInstance()Landroid/util/Poolable;
     .locals 1
 
+    .prologue
+    .line 1646
     invoke-virtual {p0}, Landroid/widget/RelativeLayout$DependencyGraph$Node$1;->newInstance()Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     move-result-object v0
@@ -51,6 +55,8 @@
 .method public newInstance()Landroid/widget/RelativeLayout$DependencyGraph$Node;
     .locals 1
 
+    .prologue
+    .line 1648
     new-instance v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     invoke-direct {v0}, Landroid/widget/RelativeLayout$DependencyGraph$Node;-><init>()V
@@ -60,9 +66,13 @@
 
 .method public bridge synthetic onAcquired(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 1646
     check-cast p1, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/widget/RelativeLayout$DependencyGraph$Node$1;->onAcquired(Landroid/widget/RelativeLayout$DependencyGraph$Node;)V
 
     return-void
@@ -70,15 +80,22 @@
 
 .method public onAcquired(Landroid/widget/RelativeLayout$DependencyGraph$Node;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 1652
     return-void
 .end method
 
 .method public bridge synthetic onReleased(Landroid/util/Poolable;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 1646
     check-cast p1, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/widget/RelativeLayout$DependencyGraph$Node$1;->onReleased(Landroid/widget/RelativeLayout$DependencyGraph$Node;)V
 
     return-void
@@ -86,6 +103,9 @@
 
 .method public onReleased(Landroid/widget/RelativeLayout$DependencyGraph$Node;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 1655
     return-void
 .end method

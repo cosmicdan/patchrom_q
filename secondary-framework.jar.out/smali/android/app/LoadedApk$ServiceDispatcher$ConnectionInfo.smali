@@ -24,6 +24,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 969
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +33,10 @@
 
 .method synthetic constructor <init>(Landroid/app/LoadedApk$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 969
     invoke-direct {p0}, Landroid/app/LoadedApk$ServiceDispatcher$ConnectionInfo;-><init>()V
 
     return-void

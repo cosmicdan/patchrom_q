@@ -26,7 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/widget/RemoteViews$SetPendingIntentTemplate;Landroid/widget/RemoteViews$OnClickHandler;)V
     .locals 0
+    .parameter
+    .parameter
 
+    .prologue
+    .line 434
     iput-object p1, p0, Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;->this$1:Landroid/widget/RemoteViews$SetPendingIntentTemplate;
 
     iput-object p2, p0, Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
@@ -40,6 +44,10 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 11
+    .parameter
+    .parameter "view"
+    .parameter "position"
+    .parameter "id"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,45 +58,65 @@
         }
     .end annotation
 
+    .prologue
+    .line 438
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     instance-of v9, p2, Landroid/view/ViewGroup;
 
     if-eqz v9, :cond_1
 
     move-object v8, p2
 
+    .line 439
     check-cast v8, Landroid/view/ViewGroup;
 
+    .line 443
+    .local v8, vg:Landroid/view/ViewGroup;
     instance-of v9, p1, Landroid/widget/AdapterViewAnimator;
 
     if-eqz v9, :cond_0
 
+    .line 444
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
+    .end local v8           #vg:Landroid/view/ViewGroup;
     check-cast v8, Landroid/view/ViewGroup;
 
+    .line 446
+    .restart local v8       #vg:Landroid/view/ViewGroup;
     :cond_0
     if-nez v8, :cond_2
 
+    .line 474
+    .end local v8           #vg:Landroid/view/ViewGroup;
     :cond_1
     :goto_0
     return-void
 
+    .line 448
+    .restart local v8       #vg:Landroid/view/ViewGroup;
     :cond_2
     const/4 v2, 0x0
 
+    .line 449
+    .local v2, fillInIntent:Landroid/content/Intent;
     invoke-virtual {v8}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
+    .line 450
+    .local v1, childCount:I
     const/4 v3, 0x0
 
+    .local v3, i:I
     :goto_1
     if-ge v3, v1, :cond_3
 
+    .line 451
     invoke-virtual {v8, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
@@ -99,17 +127,23 @@
 
     move-result-object v7
 
+    .line 452
+    .local v7, tag:Ljava/lang/Object;
     instance-of v9, v7, Landroid/content/Intent;
 
     if-eqz v9, :cond_4
 
     move-object v2, v7
 
+    .line 453
     check-cast v2, Landroid/content/Intent;
 
+    .line 457
+    .end local v7           #tag:Ljava/lang/Object;
     :cond_3
     if-eqz v2, :cond_1
 
+    .line 459
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v9
@@ -124,16 +158,23 @@
 
     iget v0, v9, Landroid/content/res/CompatibilityInfo;->applicationScale:F
 
+    .line 461
+    .local v0, appScale:F
     const/4 v9, 0x2
 
     new-array v5, v9, [I
 
+    .line 462
+    .local v5, pos:[I
     invoke-virtual {p2, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
+    .line 464
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
+    .line 465
+    .local v6, rect:Landroid/graphics/Rect;
     const/4 v9, 0x0
 
     aget v9, v5, v9
@@ -150,6 +191,7 @@
 
     iput v9, v6, Landroid/graphics/Rect;->left:I
 
+    .line 466
     const/4 v9, 0x1
 
     aget v9, v5, v9
@@ -166,6 +208,7 @@
 
     iput v9, v6, Landroid/graphics/Rect;->top:I
 
+    .line 467
     const/4 v9, 0x0
 
     aget v9, v5, v9
@@ -188,6 +231,7 @@
 
     iput v9, v6, Landroid/graphics/Rect;->right:I
 
+    .line 468
     const/4 v9, 0x1
 
     aget v9, v5, v9
@@ -210,12 +254,16 @@
 
     iput v9, v6, Landroid/graphics/Rect;->bottom:I
 
+    .line 470
     new-instance v4, Landroid/content/Intent;
 
     invoke-direct {v4}, Landroid/content/Intent;-><init>()V
 
+    .line 471
+    .local v4, intent:Landroid/content/Intent;
     invoke-virtual {v4, v6}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
+    .line 472
     iget-object v9, p0, Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
 
     iget-object v10, p0, Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;->this$1:Landroid/widget/RemoteViews$SetPendingIntentTemplate;
@@ -226,6 +274,12 @@
 
     goto :goto_0
 
+    .line 450
+    .end local v0           #appScale:F
+    .end local v4           #intent:Landroid/content/Intent;
+    .end local v5           #pos:[I
+    .end local v6           #rect:Landroid/graphics/Rect;
+    .restart local v7       #tag:Ljava/lang/Object;
     :cond_4
     add-int/lit8 v3, v3, 0x1
 

@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 585
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,9 +29,14 @@
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 6
+    .parameter "ctx"
 
+    .prologue
+    .line 588
     const/4 v1, 0x0
 
+    .line 590
+    .local v1, agpsMgr:Lcom/mediatek/common/agps/MtkAgpsManager;
     :try_start_0
     const-class v3, Lcom/mediatek/common/agps/MtkAgpsManager;
 
@@ -53,12 +60,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 594
     :goto_0
     return-object v1
 
+    .line 591
     :catch_0
     move-exception v2
 
+    .line 592
+    .local v2, e:Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0

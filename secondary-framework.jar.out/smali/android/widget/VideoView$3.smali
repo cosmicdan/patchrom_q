@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/VideoView;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 466
     iput-object p1, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,29 +39,36 @@
 # virtual methods
 .method public onCompletion(Landroid/media/MediaPlayer;)V
     .locals 2
+    .parameter "mp"
 
+    .prologue
     const/4 v1, 0x5
 
+    .line 468
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     iput v1, v0, Landroid/widget/VideoView;->mCurrentState:I
 
+    .line 469
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     iput v1, v0, Landroid/widget/VideoView;->mTargetState:I
 
+    .line 470
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     iget-object v0, v0, Landroid/widget/VideoView;->mMediaController:Landroid/widget/MediaController;
 
     if-eqz v0, :cond_0
 
+    .line 471
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     iget-object v0, v0, Landroid/widget/VideoView;->mMediaController:Landroid/widget/MediaController;
 
     invoke-virtual {v0}, Landroid/widget/MediaController;->hide()V
 
+    .line 473
     :cond_0
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
@@ -66,6 +76,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 474
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     iget-object v0, v0, Landroid/widget/VideoView;->mOnCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
@@ -76,6 +87,7 @@
 
     invoke-interface {v0, v1}, Landroid/media/MediaPlayer$OnCompletionListener;->onCompletion(Landroid/media/MediaPlayer;)V
 
+    .line 476
     :cond_1
     return-void
 .end method

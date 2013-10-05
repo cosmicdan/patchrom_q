@@ -61,6 +61,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 156
     new-instance v0, Landroid/view/DisplayInfo$1;
 
     invoke-direct {v0}, Landroid/view/DisplayInfo$1;-><init>()V
@@ -73,24 +75,36 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 168
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 169
     return-void
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 0
+    .parameter "source"
 
+    .prologue
+    .line 175
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 176
     invoke-virtual {p0, p1}, Landroid/view/DisplayInfo;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 177
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroid/view/DisplayInfo$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 30
     invoke-direct {p0, p1}, Landroid/view/DisplayInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -98,38 +112,52 @@
 
 .method public constructor <init>(Landroid/view/DisplayInfo;)V
     .locals 0
+    .parameter "other"
 
+    .prologue
+    .line 171
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 172
     invoke-virtual {p0, p1}, Landroid/view/DisplayInfo;->copyFrom(Landroid/view/DisplayInfo;)V
 
+    .line 173
     return-void
 .end method
 
 .method private static flagsToString(I)Ljava/lang/String;
     .locals 2
+    .parameter "flags"
 
+    .prologue
+    .line 326
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 327
+    .local v0, result:Ljava/lang/StringBuilder;
     and-int/lit8 v1, p0, 0x2
 
     if-eqz v1, :cond_0
 
+    .line 328
     const-string v1, ", FLAG_SECURE"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 330
     :cond_0
     and-int/lit8 v1, p0, 0x1
 
     if-eqz v1, :cond_1
 
+    .line 331
     const-string v1, ", FLAG_SUPPORTS_PROTECTED_BUFFERS"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 333
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -140,21 +168,30 @@
 
 .method private getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/view/CompatibilityInfoHolder;II)V
     .locals 3
+    .parameter "outMetrics"
+    .parameter "cih"
+    .parameter "width"
+    .parameter "height"
 
+    .prologue
+    .line 290
     iget v1, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
     iput v1, p1, Landroid/util/DisplayMetrics;->noncompatDensityDpi:I
 
     iput v1, p1, Landroid/util/DisplayMetrics;->densityDpi:I
 
+    .line 291
     iput p3, p1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iput p3, p1, Landroid/util/DisplayMetrics;->noncompatWidthPixels:I
 
+    .line 292
     iput p4, p1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     iput p4, p1, Landroid/util/DisplayMetrics;->noncompatHeightPixels:I
 
+    .line 294
     iget v1, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
     int-to-float v1, v1
@@ -167,34 +204,44 @@
 
     iput v1, p1, Landroid/util/DisplayMetrics;->density:F
 
+    .line 296
     iget v1, p1, Landroid/util/DisplayMetrics;->density:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->noncompatScaledDensity:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->scaledDensity:F
 
+    .line 297
     iget v1, p0, Landroid/view/DisplayInfo;->physicalXDpi:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->noncompatXdpi:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->xdpi:F
 
+    .line 298
     iget v1, p0, Landroid/view/DisplayInfo;->physicalYDpi:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->noncompatYdpi:F
 
     iput v1, p1, Landroid/util/DisplayMetrics;->ydpi:F
 
+    .line 300
     if-eqz p2, :cond_0
 
+    .line 301
     invoke-virtual {p2}, Landroid/view/CompatibilityInfoHolder;->getIfNeeded()Landroid/content/res/CompatibilityInfo;
 
     move-result-object v0
 
+    .line 302
+    .local v0, ci:Landroid/content/res/CompatibilityInfo;
     if-eqz v0, :cond_0
 
+    .line 303
     invoke-virtual {v0, p1}, Landroid/content/res/CompatibilityInfo;->applyToDisplayMetrics(Landroid/util/DisplayMetrics;)V
 
+    .line 306
+    .end local v0           #ci:Landroid/content/res/CompatibilityInfo;
     :cond_0
     return-void
 .end method
@@ -203,85 +250,108 @@
 # virtual methods
 .method public copyFrom(Landroid/view/DisplayInfo;)V
     .locals 1
+    .parameter "other"
 
+    .prologue
+    .line 212
     iget v0, p1, Landroid/view/DisplayInfo;->layerStack:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->layerStack:I
 
+    .line 213
     iget v0, p1, Landroid/view/DisplayInfo;->flags:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->flags:I
 
+    .line 214
     iget v0, p1, Landroid/view/DisplayInfo;->type:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->type:I
 
+    .line 215
     iget-object v0, p1, Landroid/view/DisplayInfo;->address:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/view/DisplayInfo;->address:Ljava/lang/String;
 
+    .line 216
     iget-object v0, p1, Landroid/view/DisplayInfo;->name:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/view/DisplayInfo;->name:Ljava/lang/String;
 
+    .line 217
     iget v0, p1, Landroid/view/DisplayInfo;->appWidth:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->appWidth:I
 
+    .line 218
     iget v0, p1, Landroid/view/DisplayInfo;->appHeight:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->appHeight:I
 
+    .line 219
     iget v0, p1, Landroid/view/DisplayInfo;->smallestNominalAppWidth:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppWidth:I
 
+    .line 220
     iget v0, p1, Landroid/view/DisplayInfo;->smallestNominalAppHeight:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppHeight:I
 
+    .line 221
     iget v0, p1, Landroid/view/DisplayInfo;->largestNominalAppWidth:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->largestNominalAppWidth:I
 
+    .line 222
     iget v0, p1, Landroid/view/DisplayInfo;->largestNominalAppHeight:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->largestNominalAppHeight:I
 
+    .line 223
     iget v0, p1, Landroid/view/DisplayInfo;->logicalWidth:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalWidth:I
 
+    .line 224
     iget v0, p1, Landroid/view/DisplayInfo;->logicalHeight:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalHeight:I
 
+    .line 225
     iget v0, p1, Landroid/view/DisplayInfo;->rotation:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->rotation:I
 
+    .line 226
     iget v0, p1, Landroid/view/DisplayInfo;->refreshRate:F
 
     iput v0, p0, Landroid/view/DisplayInfo;->refreshRate:F
 
+    .line 227
     iget v0, p1, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
+    .line 228
     iget v0, p1, Landroid/view/DisplayInfo;->physicalXDpi:F
 
     iput v0, p0, Landroid/view/DisplayInfo;->physicalXDpi:F
 
+    .line 229
     iget v0, p1, Landroid/view/DisplayInfo;->physicalYDpi:F
 
     iput v0, p0, Landroid/view/DisplayInfo;->physicalYDpi:F
 
+    .line 230
     return-void
 .end method
 
 .method public describeContents()I
     .locals 1
 
+    .prologue
+    .line 277
     const/4 v0, 0x0
 
     return v0
@@ -289,7 +359,10 @@
 
 .method public equals(Landroid/view/DisplayInfo;)Z
     .locals 2
+    .parameter "other"
 
+    .prologue
+    .line 185
     if-eqz p1, :cond_0
 
     iget v0, p0, Landroid/view/DisplayInfo;->layerStack:I
@@ -427,13 +500,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
+    .parameter "o"
 
+    .prologue
+    .line 181
     instance-of v0, p1, Landroid/view/DisplayInfo;
 
     if-eqz v0, :cond_0
 
     check-cast p1, Landroid/view/DisplayInfo;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/view/DisplayInfo;->equals(Landroid/view/DisplayInfo;)Z
 
     move-result v0
@@ -453,31 +530,43 @@
 
 .method public getAppMetrics(Landroid/util/DisplayMetrics;Landroid/view/CompatibilityInfoHolder;)V
     .locals 2
+    .parameter "outMetrics"
+    .parameter "cih"
 
+    .prologue
+    .line 281
     iget v0, p0, Landroid/view/DisplayInfo;->appWidth:I
 
     iget v1, p0, Landroid/view/DisplayInfo;->appHeight:I
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/view/CompatibilityInfoHolder;II)V
 
+    .line 282
     return-void
 .end method
 
 .method public getLogicalMetrics(Landroid/util/DisplayMetrics;Landroid/view/CompatibilityInfoHolder;)V
     .locals 2
+    .parameter "outMetrics"
+    .parameter "cih"
 
+    .prologue
+    .line 285
     iget v0, p0, Landroid/view/DisplayInfo;->logicalWidth:I
 
     iget v1, p0, Landroid/view/DisplayInfo;->logicalHeight:I
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/view/DisplayInfo;->getMetricsWithSize(Landroid/util/DisplayMetrics;Landroid/view/CompatibilityInfoHolder;II)V
 
+    .line 286
     return-void
 .end method
 
 .method public hashCode()I
     .locals 1
 
+    .prologue
+    .line 208
     const/4 v0, 0x0
 
     return v0
@@ -485,121 +574,144 @@
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 1
+    .parameter "source"
 
+    .prologue
+    .line 233
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->layerStack:I
 
+    .line 234
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->flags:I
 
+    .line 235
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->type:I
 
+    .line 236
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/DisplayInfo;->address:Ljava/lang/String;
 
+    .line 237
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/DisplayInfo;->name:Ljava/lang/String;
 
+    .line 238
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->appWidth:I
 
+    .line 239
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->appHeight:I
 
+    .line 240
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppWidth:I
 
+    .line 241
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppHeight:I
 
+    .line 242
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->largestNominalAppWidth:I
 
+    .line 243
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->largestNominalAppHeight:I
 
+    .line 244
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalWidth:I
 
+    .line 245
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalHeight:I
 
+    .line 246
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->rotation:I
 
+    .line 247
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->refreshRate:F
 
+    .line 248
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
+    .line 249
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->physicalXDpi:F
 
+    .line 250
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v0
 
     iput v0, p0, Landroid/view/DisplayInfo;->physicalYDpi:F
 
+    .line 251
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
+    .prologue
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -849,78 +961,100 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
+    .parameter "dest"
+    .parameter "flags"
 
+    .prologue
+    .line 255
     iget v0, p0, Landroid/view/DisplayInfo;->layerStack:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 256
     iget v0, p0, Landroid/view/DisplayInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 257
     iget v0, p0, Landroid/view/DisplayInfo;->type:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 258
     iget-object v0, p0, Landroid/view/DisplayInfo;->address:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 259
     iget-object v0, p0, Landroid/view/DisplayInfo;->name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 260
     iget v0, p0, Landroid/view/DisplayInfo;->appWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 261
     iget v0, p0, Landroid/view/DisplayInfo;->appHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 262
     iget v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 263
     iget v0, p0, Landroid/view/DisplayInfo;->smallestNominalAppHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 264
     iget v0, p0, Landroid/view/DisplayInfo;->largestNominalAppWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 265
     iget v0, p0, Landroid/view/DisplayInfo;->largestNominalAppHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 266
     iget v0, p0, Landroid/view/DisplayInfo;->logicalWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 267
     iget v0, p0, Landroid/view/DisplayInfo;->logicalHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 268
     iget v0, p0, Landroid/view/DisplayInfo;->rotation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 269
     iget v0, p0, Landroid/view/DisplayInfo;->refreshRate:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 270
     iget v0, p0, Landroid/view/DisplayInfo;->logicalDensityDpi:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 271
     iget v0, p0, Landroid/view/DisplayInfo;->physicalXDpi:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 272
     iget v0, p0, Landroid/view/DisplayInfo;->physicalYDpi:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
+    .line 273
     return-void
 .end method

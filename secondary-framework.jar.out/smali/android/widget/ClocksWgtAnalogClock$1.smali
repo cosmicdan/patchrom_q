@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/ClocksWgtAnalogClock;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 442
     iput-object p1, p0, Landroid/widget/ClocksWgtAnalogClock$1;->this$0:Landroid/widget/ClocksWgtAnalogClock;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +36,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .parameter "context"
+    .parameter "intent"
 
+    .prologue
+    .line 444
     iget-object v0, p0, Landroid/widget/ClocksWgtAnalogClock$1;->this$0:Landroid/widget/ClocksWgtAnalogClock;
 
     #getter for: Landroid/widget/ClocksWgtAnalogClock;->mIsScreenEnter:Z
@@ -43,15 +50,18 @@
 
     if-nez v0, :cond_0
 
+    .line 449
     :goto_0
     return-void
 
+    .line 447
     :cond_0
     iget-object v0, p0, Landroid/widget/ClocksWgtAnalogClock$1;->this$0:Landroid/widget/ClocksWgtAnalogClock;
 
     #calls: Landroid/widget/ClocksWgtAnalogClock;->onTimeChanged()V
     invoke-static {v0}, Landroid/widget/ClocksWgtAnalogClock;->access$100(Landroid/widget/ClocksWgtAnalogClock;)V
 
+    .line 448
     iget-object v0, p0, Landroid/widget/ClocksWgtAnalogClock$1;->this$0:Landroid/widget/ClocksWgtAnalogClock;
 
     invoke-virtual {v0}, Landroid/widget/ClocksWgtAnalogClock;->invalidate()V

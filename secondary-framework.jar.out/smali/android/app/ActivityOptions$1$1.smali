@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/app/ActivityOptions$1;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 169
     iput-object p1, p0, Landroid/app/ActivityOptions$1$1;->this$1:Landroid/app/ActivityOptions$1;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +40,14 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 171
     iget-object v0, p0, Landroid/app/ActivityOptions$1$1;->this$1:Landroid/app/ActivityOptions$1;
 
     iget-object v0, v0, Landroid/app/ActivityOptions$1;->val$finalListener:Landroid/app/ActivityOptions$OnAnimationStartedListener;
 
     invoke-interface {v0}, Landroid/app/ActivityOptions$OnAnimationStartedListener;->onAnimationStarted()V
 
+    .line 172
     return-void
 .end method

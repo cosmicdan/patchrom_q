@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 2629
     invoke-direct {p0}, Landroid/widget/GridLayout$Alignment;-><init>()V
 
     return-void
@@ -27,7 +29,12 @@
 # virtual methods
 .method public getAlignmentValue(Landroid/view/View;II)I
     .locals 1
+    .parameter "view"
+    .parameter "viewSize"
+    .parameter "mode"
 
+    .prologue
+    .line 2637
     shr-int/lit8 v0, p2, 0x1
 
     return v0
@@ -35,7 +42,11 @@
 
 .method getGravityOffset(Landroid/view/View;I)I
     .locals 1
+    .parameter "view"
+    .parameter "cellDelta"
 
+    .prologue
+    .line 2632
     shr-int/lit8 v0, p2, 0x1
 
     return v0

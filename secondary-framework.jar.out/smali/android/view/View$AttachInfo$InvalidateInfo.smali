@@ -62,6 +62,8 @@
 .method static constructor <clinit>()V
     .locals 2
 
+    .prologue
+    .line 17730
     new-instance v0, Landroid/view/View$AttachInfo$InvalidateInfo$1;
 
     invoke-direct {v0}, Landroid/view/View$AttachInfo$InvalidateInfo$1;-><init>()V
@@ -84,6 +86,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 17728
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -92,6 +96,8 @@
 .method static acquire()Landroid/view/View$AttachInfo$InvalidateInfo;
     .locals 1
 
+    .prologue
+    .line 17764
     sget-object v0, Landroid/view/View$AttachInfo$InvalidateInfo;->sPool:Landroid/util/Pool;
 
     invoke-interface {v0}, Landroid/util/Pool;->acquire()Landroid/util/Poolable;
@@ -108,6 +114,8 @@
 .method public getNextPoolable()Landroid/view/View$AttachInfo$InvalidateInfo;
     .locals 1
 
+    .prologue
+    .line 17760
     iget-object v0, p0, Landroid/view/View$AttachInfo$InvalidateInfo;->mNext:Landroid/view/View$AttachInfo$InvalidateInfo;
 
     return-object v0
@@ -116,6 +124,8 @@
 .method public bridge synthetic getNextPoolable()Ljava/lang/Object;
     .locals 1
 
+    .prologue
+    .line 17728
     invoke-virtual {p0}, Landroid/view/View$AttachInfo$InvalidateInfo;->getNextPoolable()Landroid/view/View$AttachInfo$InvalidateInfo;
 
     move-result-object v0
@@ -126,6 +136,8 @@
 .method public isPooled()Z
     .locals 1
 
+    .prologue
+    .line 17772
     iget-boolean v0, p0, Landroid/view/View$AttachInfo$InvalidateInfo;->mIsPooled:Z
 
     return v0
@@ -134,26 +146,37 @@
 .method release()V
     .locals 1
 
+    .prologue
+    .line 17768
     sget-object v0, Landroid/view/View$AttachInfo$InvalidateInfo;->sPool:Landroid/util/Pool;
 
     invoke-interface {v0, p0}, Landroid/util/Pool;->release(Landroid/util/Poolable;)V
 
+    .line 17769
     return-void
 .end method
 
 .method public setNextPoolable(Landroid/view/View$AttachInfo$InvalidateInfo;)V
     .locals 0
+    .parameter "element"
 
+    .prologue
+    .line 17756
     iput-object p1, p0, Landroid/view/View$AttachInfo$InvalidateInfo;->mNext:Landroid/view/View$AttachInfo$InvalidateInfo;
 
+    .line 17757
     return-void
 .end method
 
 .method public bridge synthetic setNextPoolable(Ljava/lang/Object;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 17728
     check-cast p1, Landroid/view/View$AttachInfo$InvalidateInfo;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/view/View$AttachInfo$InvalidateInfo;->setNextPoolable(Landroid/view/View$AttachInfo$InvalidateInfo;)V
 
     return-void
@@ -161,8 +184,12 @@
 
 .method public setPooled(Z)V
     .locals 0
+    .parameter "isPooled"
 
+    .prologue
+    .line 17776
     iput-boolean p1, p0, Landroid/view/View$AttachInfo$InvalidateInfo;->mIsPooled:Z
 
+    .line 17777
     return-void
 .end method

@@ -36,7 +36,10 @@
 # direct methods
 .method private constructor <init>(Landroid/view/View;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 18444
     iput-object p1, p0, Landroid/view/View$MatchLabelForPredicate;->this$0:Landroid/view/View;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +49,11 @@
 
 .method synthetic constructor <init>(Landroid/view/View;Landroid/view/View$1;)V
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 18444
     invoke-direct {p0, p1}, Landroid/view/View$MatchLabelForPredicate;-><init>(Landroid/view/View;)V
 
     return-void
@@ -54,7 +61,11 @@
 
 .method static synthetic access$802(Landroid/view/View$MatchLabelForPredicate;I)I
     .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
+    .prologue
+    .line 18444
     iput p1, p0, Landroid/view/View$MatchLabelForPredicate;->mLabeledId:I
 
     return p1
@@ -64,7 +75,10 @@
 # virtual methods
 .method public apply(Landroid/view/View;)Z
     .locals 2
+    .parameter "view"
 
+    .prologue
+    .line 18449
     #getter for: Landroid/view/View;->mLabelForId:I
     invoke-static {p1}, Landroid/view/View;->access$2500(Landroid/view/View;)I
 
@@ -87,9 +101,13 @@
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 1
+    .parameter "x0"
 
+    .prologue
+    .line 18444
     check-cast p1, Landroid/view/View;
 
+    .end local p1
     invoke-virtual {p0, p1}, Landroid/view/View$MatchLabelForPredicate;->apply(Landroid/view/View;)Z
 
     move-result v0

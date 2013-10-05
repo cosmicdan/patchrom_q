@@ -26,6 +26,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 294
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +35,10 @@
 
 .method synthetic constructor <init>(Landroid/widget/Filter$1;)V
     .locals 0
+    .parameter "x0"
 
+    .prologue
+    .line 294
     invoke-direct {p0}, Landroid/widget/Filter$RequestArguments;-><init>()V
 
     return-void

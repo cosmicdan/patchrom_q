@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 1262
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver$1;->this$1:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 1264
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver$1;->this$1:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     iget-object v1, v1, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->this$0:Landroid/widget/AutoCompleteTextView;
@@ -46,8 +51,11 @@
 
     move-result-object v0
 
+    .line 1265
+    .local v0, adapter:Landroid/widget/ListAdapter;
     if-eqz v0, :cond_0
 
+    .line 1268
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver$1;->this$1:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     iget-object v1, v1, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;->this$0:Landroid/widget/AutoCompleteTextView;
@@ -59,6 +67,7 @@
     #calls: Landroid/widget/AutoCompleteTextView;->updateDropDownForFilter(I)V
     invoke-static {v1, v2}, Landroid/widget/AutoCompleteTextView;->access$800(Landroid/widget/AutoCompleteTextView;I)V
 
+    .line 1270
     :cond_0
     return-void
 .end method

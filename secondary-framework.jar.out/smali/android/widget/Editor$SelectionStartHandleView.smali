@@ -21,11 +21,18 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 0
+    .parameter
+    .parameter "drawableLtr"
+    .parameter "drawableRtl"
 
+    .prologue
+    .line 3319
     iput-object p1, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
+    .line 3320
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Editor$HandleView;-><init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
+    .line 3321
     return-void
 .end method
 
@@ -34,6 +41,8 @@
 .method public getActionPopupWindow()Landroid/widget/Editor$ActionPopupWindow;
     .locals 1
 
+    .prologue
+    .line 3356
     iget-object v0, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     return-object v0
@@ -42,6 +51,8 @@
 .method public getCurrentCursorOffset()I
     .locals 1
 
+    .prologue
+    .line 3334
     iget-object v0, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -58,15 +69,21 @@
 
 .method protected getHotspotX(Landroid/graphics/drawable/Drawable;Z)I
     .locals 1
+    .parameter "drawable"
+    .parameter "isRtlRun"
 
+    .prologue
+    .line 3325
     if-eqz p2, :cond_0
 
+    .line 3326
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
 
     div-int/lit8 v0, v0, 0x4
 
+    .line 3328
     :goto_0
     return v0
 
@@ -84,9 +101,13 @@
 
 .method public updatePosition(FF)V
     .locals 4
+    .parameter "x"
+    .parameter "y"
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 3346
     iget-object v2, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -98,6 +119,8 @@
 
     move-result v0
 
+    .line 3349
+    .local v0, offset:I
     iget-object v2, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -109,6 +132,8 @@
 
     move-result v1
 
+    .line 3350
+    .local v1, selectionEnd:I
     if-lt v0, v1, :cond_0
 
     add-int/lit8 v2, v1, -0x1
@@ -117,15 +142,20 @@
 
     move-result v0
 
+    .line 3352
     :cond_0
     invoke-virtual {p0, v0, v3}, Landroid/widget/Editor$SelectionStartHandleView;->positionAtCursorOffset(IZ)V
 
+    .line 3353
     return-void
 .end method
 
 .method public updateSelection(I)V
     .locals 2
+    .parameter "offset"
 
+    .prologue
+    .line 3339
     iget-object v0, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -152,7 +182,9 @@
 
     invoke-static {v0, p1, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
+    .line 3341
     invoke-virtual {p0}, Landroid/widget/Editor$SelectionStartHandleView;->updateDrawable()V
 
+    .line 3342
     return-void
 .end method

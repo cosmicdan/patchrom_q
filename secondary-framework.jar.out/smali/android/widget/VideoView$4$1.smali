@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Landroid/widget/VideoView$4;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 516
     iput-object p1, p0, Landroid/widget/VideoView$4$1;->this$1:Landroid/widget/VideoView$4;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
+    .parameter "dialog"
+    .parameter "whichButton"
 
+    .prologue
+    .line 521
     iget-object v0, p0, Landroid/widget/VideoView$4$1;->this$1:Landroid/widget/VideoView$4;
 
     iget-object v0, v0, Landroid/widget/VideoView$4;->this$0:Landroid/widget/VideoView;
@@ -45,6 +52,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 522
     iget-object v0, p0, Landroid/widget/VideoView$4$1;->this$1:Landroid/widget/VideoView$4;
 
     iget-object v0, v0, Landroid/widget/VideoView$4;->this$0:Landroid/widget/VideoView;
@@ -59,6 +67,7 @@
 
     invoke-interface {v0, v1}, Landroid/media/MediaPlayer$OnCompletionListener;->onCompletion(Landroid/media/MediaPlayer;)V
 
+    .line 524
     :cond_0
     return-void
 .end method
