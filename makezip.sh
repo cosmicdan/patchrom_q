@@ -28,20 +28,10 @@ cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build
     | sed -e "s/ro\.skia\.use_data_fonts=.*//g" \
     | sed -e "s/ro\.config\.notification_sound=.*//g" \
     | sed -e "s/ro\.config\.ringtone=.*//g" \
-    | sed -e "s/ro\.config\.alarm_alert=.*//g" \
-    | sed -e "s/ro\.xtreamer\.device=.*/ro\.xtreamer\.device=q_miui/" > build.prop.new
+    | sed -e "s/ro\.config\.alarm_alert=.*//g" > build.prop.new
 
-sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
+sed -n -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
-echo "ro.miui.ui.version.code=3" >> build.prop.new
-echo "ro.miui.ui.version.name=V5" >> build.prop.new
-echo "ro.skia.use_data_fonts=1" >> build.prop.new
-echo "ro.config.ringtone=MI.ogg" >> build.prop.new
-echo "ro.config.notification_sound=FadeIn.ogg" >> build.prop.new
-echo "ro.config.alarm_alert=GoodMorning.ogg" >> build.prop.new
-echo "ro.config.sms_received_sound=FadeIn.ogg" >> build.prop.new
-echo "ro.config.sms_delivered_sound=MessageComplete.ogg" >> build.prop.new
 mv -f ./build.prop.new ./system/build.prop
 zip -9mr Xtreamer_Q-MIUI_3.9.27.zip ./system
-rm -rf ./system
 echo "[i] ${OUT_ZIP} is ready"
