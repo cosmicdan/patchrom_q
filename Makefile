@@ -14,9 +14,6 @@ local-miui-modifed-apps :=
 # This variable defines those apps from local-zip-file which we modified
 local-modified-apps :=
 
-# Normally not all the miui apps is suitable for our device (e.g. some device will not want Phone.apk). This variable defines those miui apps which we don't want.
-local-miui-removed-apps :=
-
 # Removed these apps from original ZIP file
 local-remove-apps :=
 
@@ -32,7 +29,4 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-	#rm -rf $(ZIP_DIR)/system/backup/
-	#rm $(ZIP_DIR)/system/framework/theme-res-mint.apk
-	#rm $(ZIP_DIR)/system/framework/theme-res-mocha.apk
-	#rm $(ZIP_DIR)/system/framework/theme-res-raspberry.apk
+	echo "[i] local-zip-misc - nothing to do"
