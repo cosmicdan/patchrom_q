@@ -1,91 +1,82 @@
-.class Lcom/android/server/power/ShutdownThread$8;
-.super Landroid/os/storage/IMountShutdownObserver$Stub;
+.class final Lcom/android/server/power/ShutdownThread$8;
+.super Ljava/lang/Object;
 .source "ShutdownThread.java"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/power/ShutdownThread;->running()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/power/ShutdownThread;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/server/power/ShutdownThread;
-
-
 # direct methods
-.method constructor <init>(Lcom/android/server/power/ShutdownThread;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 723
-    iput-object p1, p0, Lcom/android/server/power/ShutdownThread$8;->this$0:Lcom/android/server/power/ShutdownThread;
-
-    invoke-direct {p0}, Landroid/os/storage/IMountShutdownObserver$Stub;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onShutDownComplete(I)V
-    .locals 3
-    .parameter "statusCode"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 2
+    .parameter "className"
+    .parameter "service"
 
     .prologue
     .line 725
     const-string v0, "ShutdownThread"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onServiceConnected() entry"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v2, "Result code "
+    invoke-static {p2}, Lcom/android/server/power/IPreShutdown$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/server/power/IPreShutdown;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$802(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, "ShutdownThread"
 
-    move-result-object v1
+    const-string v1, "onServiceConnected() exit"
 
-    const-string v2, " from MountService.shutdown"
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    move-result-object v1
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 2
+    .parameter "className"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .prologue
+    const-string v0, "ShutdownThread"
 
-    move-result-object v1
+    const-string v1, "onServiceDisconnected() entry"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 726
-    if-gez p1, :cond_0
-
-    .line 727
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$702(I)I
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$802(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
 
-    .line 729
-    :cond_0
-    iget-object v0, p0, Lcom/android/server/power/ShutdownThread$8;->this$0:Lcom/android/server/power/ShutdownThread;
+    const-string v0, "ShutdownThread"
 
-    invoke-virtual {v0}, Lcom/android/server/power/ShutdownThread;->actionDone()V
+    const-string v1, "onServiceDisconnected() exit"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 730
     return-void
