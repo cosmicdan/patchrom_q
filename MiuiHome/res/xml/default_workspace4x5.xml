@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res/com.miui.home">
+    <default launcher:screen="2" />
+    <folder launcher:screen="1" launcher:x="2" launcher:y="4" launcher:title="com.miui.home:string/default_folder_title_tools" />
+    <folder launcher:screen="1" launcher:x="3" launcher:y="4" launcher:title="com.miui.home:string/default_folder_title_security" />
+    <search launcher:screen="0" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.miui.userbook.GuideListActivity" launcher:packageName="com.miui.userbook" launcher:screen="0" launcher:x="3" launcher:y="4" />
+    <clock2x4 launcher:screen="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.marginz.camera.CameraLauncher" launcher:packageName="com.marginz.snap" launcher:screen="1" launcher:x="0" launcher:y="3" />
+    <favorite launcher:className="com.miui.gallery.app.Gallery" launcher:packageName="com.miui.gallery" launcher:screen="1" launcher:x="1" launcher:y="3" />
+    <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="3" />
+    <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="3" />
+    <favorite launcher:className="com.android.settings.MiuiSettings" launcher:packageName="com.android.settings" launcher:screen="1" launcher:x="0" launcher:y="4" />
+    <favorite launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" launcher:screen="1" launcher:x="1" launcher:y="4" />
+    <favorite launcher:className="com.android.deskclock.DeskClockTabActivity" launcher:packageName="com.android.deskclock" launcher:container="1" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.soundrecorder.SoundRecorder" launcher:packageName="com.android.soundrecorder" launcher:container="1" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.miui.fmradio.FmRadioActivity" launcher:packageName="com.miui.fmradio" launcher:container="1" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.systemui.TorchActivity" launcher:packageName="com.android.systemui" launcher:container="1" launcher:x="3" launcher:y="0" />
+    <favorite launcher:className="com.android.calculator2.Calculator" launcher:packageName="com.android.calculator2" launcher:container="1" launcher:x="4" launcher:y="0" />
+    <favorite launcher:className="com.miui.voiceassist.MiuiVoiceAssistActivity" launcher:packageName="com.miui.voiceassist" launcher:container="1" launcher:x="5" launcher:y="0" />
+    <favorite launcher:className="com.miui.compass.CompassActivity" launcher:packageName="com.miui.compass" launcher:container="1" launcher:x="6" launcher:y="0" />
+    <favorite launcher:className="com.android.quicksearchbox.SearchActivity" launcher:packageName="com.android.quicksearchbox" launcher:container="1" launcher:x="7" launcher:y="0" />
+    <favorite launcher:className="com.miui.transfer.activity.ReceiveActivity" launcher:packageName="com.miui.transfer" launcher:container="1" launcher:x="8" launcher:y="0" />
+    <favorite launcher:className="com.xiaomi.xmsf.account.ui.MiCloudSettingsActivity" launcher:packageName="com.xiaomi.xmsf" launcher:container="2" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.xiaomi.xmsf.payment.MiliCenterEntryActivity" launcher:packageName="com.xiaomi.xmsf" launcher:container="2" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.miui.antispam.firewall.AntiSpamTab" launcher:packageName="com.miui.antispam" launcher:container="2" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.providers.downloads.ui.DownloadList" launcher:packageName="com.android.providers.downloads.ui" launcher:container="2" launcher:x="3" launcher:y="0" />
+    <favorite launcher:className="com.android.updater.MainActivity" launcher:packageName="com.android.updater" launcher:container="2" launcher:x="4" launcher:y="0" />
+    <favorite launcher:className="com.android.settings.MiuiPasswordGuardActivity" launcher:packageName="com.android.settings" launcher:container="2" launcher:x="5" launcher:y="0" />
+    <favorite launcher:className="com.android.settings.VirusScanActivity" launcher:packageName="com.android.settings" launcher:container="2" launcher:x="6" launcher:y="0" />
+    <favorite launcher:className="com.miui.backup.BackupActivity" launcher:packageName="com.miui.backup" launcher:container="2" launcher:x="7" launcher:y="0" />
+    <favorite launcher:className="com.wali.miui.networkassistant.NetworkAssistantActivity" launcher:packageName="com.wali.miui.networkassistant" launcher:container="2" launcher:x="8" launcher:y="0" />
+    <favorite launcher:className="com.android.settings.BackgroundApplicationsManager" launcher:packageName="com.android.settings" launcher:container="2" launcher:x="9" launcher:y="0" />
+    <favorite launcher:className="com.android.settings.permission.PermManageActivity" launcher:packageName="com.android.settings" launcher:container="2" launcher:x="10" launcher:y="0" />
+    <favorite launcher:className="com.miui.bugreport.ui.TypeSelectionActivity" launcher:packageName="com.miui.bugreport" launcher:container="2" launcher:x="11" launcher:y="0" />
+    <favorite launcher:className="com.android.stk.StkLauncherActivity" launcher:packageName="com.android.stk" launcher:container="2" launcher:x="12" launcher:y="0" launcher:retained="true" />
+    <favorite launcher:className="com.android.stk.StkLauncherActivityII" launcher:packageName="com.android.stk" launcher:container="2" launcher:x="13" launcher:y="0" launcher:retained="true" />
+    <favorite launcher:className="com.android.contacts.activities.TwelveKeyDialer" launcher:packageName="com.android.contacts" launcher:container="-101" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.android.contacts.activities.PeopleActivity" launcher:packageName="com.android.contacts" launcher:container="-101" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.android.browser.BrowserActivity" launcher:packageName="com.android.browser" launcher:container="-101" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.mms.ui.MmsTabActivity" launcher:packageName="com.android.mms" launcher:container="-101" launcher:x="3" launcher:y="0" />
+</favorites>

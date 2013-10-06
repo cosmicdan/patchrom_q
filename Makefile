@@ -9,7 +9,7 @@ local-zip-file     := stockrom.zip
 local-out-zip-file :=
 
 # all the miui apps are listed in the file patchrom/build/miuiapps.mk - this variable defines those miui apps which we modified.
-local-miui-modifed-apps :=
+local-miui-modified-apps := MiuiHome
 
 # This variable defines those apps from local-zip-file which we modified
 local-modified-apps :=
