@@ -29218,7 +29218,7 @@
     .line 7601
     iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mInputMonitor:Lcom/android/server/wm/InputMonitor;
 
-    const-wide/16 v8, 0x3e8
+    const-wide/16 v8, 0xbb8
 
     invoke-virtual {v7, v8, v9}, Lcom/android/server/wm/InputMonitor;->waitForInputDevicesReady(J)Z
 
@@ -29229,7 +29229,7 @@
     .line 7603
     const-string v7, "WindowManager"
 
-    const-string v8, "Devices still not ready after waiting 1000 milliseconds before attempting to detect safe mode."
+    const-string v8, "Devices still not ready after waiting 3000 milliseconds before attempting to detect safe mode."
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
