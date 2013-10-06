@@ -28,7 +28,8 @@ cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build
     | sed -e "s/ro\.skia\.use_data_fonts=.*//g" \
     | sed -e "s/ro\.config\.notification_sound=.*//g" \
     | sed -e "s/ro\.config\.ringtone=.*//g" \
-    | sed -e "s/ro\.config\.alarm_alert=.*//g" > build.prop.new
+    | sed -e "s/ro\.config\.alarm_alert=.*//g" \
+    | sed -e "s/ro\.xtreamer\.device=.*/ro\.xtreamer\.device=q_miui/" > build.prop.new
 
 sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
