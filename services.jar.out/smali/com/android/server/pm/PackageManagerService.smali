@@ -37951,6 +37951,9 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
+    # Disable ASEC
+    and-int/lit8 p3, p3, -0x2
+
     .line 5931
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
