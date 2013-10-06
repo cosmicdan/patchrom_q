@@ -30,6 +30,8 @@ cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build
     | sed -e "s/ro\.config\.ringtone=.*//g" \
     | sed -e "s/ro\.config\.alarm_alert=.*//g" > build.prop.new
 
+sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
+echo >> build.prop.new
 echo "ro.miui.ui.version.code=3" >> build.prop.new
 echo "ro.miui.ui.version.name=V5" >> build.prop.new
 echo "ro.skia.use_data_fonts=1" >> build.prop.new
