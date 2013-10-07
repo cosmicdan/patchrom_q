@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 .source "CameraWidgetFrame.java"
@@ -538,7 +537,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040329		#[0x1040325]string:keyguard_accessibility_camera
+    const v5, 0x1040325
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -612,7 +611,7 @@
     .local v3, wlp:Landroid/view/WindowManager$LayoutParams;
     if-eqz p1, :cond_3
 
-    const v1, 0x10301e2		#style:Animation.LockScreen
+    const v1, 0x10301e2
 
     .line 425
     .local v1, newWindowAnimations:I
@@ -707,7 +706,7 @@
 
     .line 186
     .local v0, iv:Landroid/widget/ImageView;
-    const v1, 0x10802e8		#[0x10802e1]drawable:ic_lockscreen_camera
+    const v1, 0x10802e1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

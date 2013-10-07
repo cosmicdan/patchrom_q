@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/SimPukUnlockScreen;
 .super Landroid/widget/LinearLayout;
 .source "SimPukUnlockScreen.java"
@@ -135,13 +134,13 @@
     if-ne v0, v5, :cond_0
 
     .line 84
-    const v0, 0x109006a		#[0x1090067]layout:keyguard_screen_sim_puk_landscape
+    const v0, 0x1090067
 
     invoke-virtual {v6, v0, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 92
     :goto_0
-    const v0, 0x10202ed		#[0x10202ec]id:headerText
+    const v0, 0x10202ec
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +151,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     .line 94
-    const v0, 0x10202f6		#[0x10202f5]id:pukDisplay
+    const v0, 0x10202f5
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +162,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mPukText:Landroid/widget/TextView;
 
     .line 95
-    const v0, 0x10202ef		#[0x10202ee]id:pinDisplay
+    const v0, 0x10202ee
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -174,7 +173,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     .line 96
-    const v0, 0x10202f7		#[0x10202f6]id:pukDel
+    const v0, 0x10202f6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +182,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mDelPukButton:Landroid/view/View;
 
     .line 97
-    const v0, 0x10202e8		#id:pinDel
+    const v0, 0x10202e8
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -192,7 +191,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mDelPinButton:Landroid/view/View;
 
     .line 98
-    const v0, 0x10202a6		#id:ok
+    const v0, 0x10202a6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +217,7 @@
     .line 104
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402e1		#[0x10402dd]string:keyguard_password_enter_puk_code
+    const v1, 0x10402dd
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -267,7 +266,7 @@
 
     .line 87
     :cond_0
-    const v0, 0x109006b		#[0x1090068]layout:keyguard_screen_sim_puk_portrait
+    const v0, 0x1090068
 
     invoke-virtual {v6, v0, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -379,7 +378,7 @@
     .line 228
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x1040086		#[0x1040082]string:invalidPuk
+    const v1, 0x1040082
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -426,7 +425,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x1040085		#[0x1040081]string:invalidPin
+    const v1, 0x1040081
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -500,7 +499,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040309		#[0x1040305]string:lockscreen_sim_unlock_progress_dialog_message
+    const v2, 0x1040305
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -888,7 +887,7 @@
     .line 130
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402e1		#[0x10402dd]string:keyguard_password_enter_puk_code
+    const v1, 0x10402dd
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 .source "KeyguardWidgetCarousel.java"
@@ -107,7 +106,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e003f		#[0x10e0040]integer:kg_carousel_angle
+    const v1, 0x10e0040
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

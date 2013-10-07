@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .source "KeyguardPasswordView.java"
@@ -237,7 +236,7 @@
 
     .prologue
     .line 70
-    const v0, 0x10202bf		#id:passwordEntry
+    const v0, 0x10202bf
 
     return v0
 .end method
@@ -247,7 +246,7 @@
 
     .prologue
     .line 217
-    const v0, 0x1040529		#[0x1040525]string:kg_wrong_password
+    const v0, 0x1040525
 
     return v0
 .end method
@@ -330,7 +329,7 @@
     invoke-virtual {v4}, Landroid/widget/TextView;->requestFocus()Z
 
     .line 139
-    const v4, 0x10202c0		#id:switch_ime_button
+    const v4, 0x10202c0
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 
@@ -553,7 +552,7 @@
     .line 64
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x104052f		#[0x104052b]string:kg_password_instructions
+    const v1, 0x104052b
 
     const/4 v2, 0x0
 

@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class final Lcom/android/internal/policy/impl/IconUtilities;
 .super Ljava/lang/Object;
 .source "IconUtilities.java"
@@ -211,7 +210,7 @@
 
     move-result-object v6
 
-    const v8, 0x101038d		#attr:colorPressedHighlight
+    const v8, 0x101038d
 
     invoke-virtual {v6, v8, v5, v10}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -240,7 +239,7 @@
 
     move-result-object v6
 
-    const v8, 0x101038f		#attr:colorFocusedHighlight
+    const v8, 0x101038f
 
     invoke-virtual {v6, v8, v5, v10}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -656,7 +655,7 @@
     .local v0, result:Landroid/graphics/drawable/StateListDrawable;
     new-array v2, v6, [I
 
-    const v3, 0x101009c		#attr:state_focused
+    const v3, 0x101009c
 
     aput v3, v2, v5
 
@@ -673,7 +672,7 @@
     .line 102
     new-array v2, v6, [I
 
-    const v3, 0x10100a7		#attr:state_pressed
+    const v3, 0x10100a7
 
     aput v3, v2, v5
 

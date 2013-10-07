@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/LockScreen;
 .super Landroid/widget/LinearLayout;
 .source "LockScreen.java"
@@ -137,7 +136,7 @@
     if-eq v0, v1, :cond_0
 
     .line 464
-    const v0, 0x109006e		#[0x109006b]layout:keyguard_screen_tab_unlock
+    const v0, 0x109006b
 
     invoke-virtual {v6, v0, p0, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -205,7 +204,7 @@
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/LockScreen;->mSilentMode:Z
 
     .line 480
-    const v0, 0x10202fa		#[0x10202f8]id:unlock_widget
+    const v0, 0x10202f8
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/LockScreen;->findViewById(I)Landroid/view/View;
 
@@ -228,7 +227,7 @@
     .line 466
     .end local v7           #vibrator:Landroid/os/Vibrator;
     :cond_0
-    const v0, 0x109006f		#[0x109006c]layout:keyguard_screen_tab_unlock_land
+    const v0, 0x109006c
 
     invoke-virtual {v6, v0, p0, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -458,18 +457,18 @@
     invoke-virtual {v3, v6, v7}, Lcom/android/internal/widget/SlidingTab;->setHoldAfterTrigger(ZZ)V
 
     .line 491
-    const v6, 0x104031b		#[0x1040317]string:lockscreen_unlock_label
+    const v6, 0x1040317
 
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/SlidingTab;->setLeftHintText(I)V
 
     .line 492
-    const v6, 0x10802da		#[0x10802d6]drawable:ic_jog_dial_unlock
+    const v6, 0x10802d6
 
-    const v7, 0x10803ca		#[0x10803b0]drawable:jog_tab_target_green
+    const v7, 0x10803b0
 
-    const v8, 0x10803ab		#[0x1080391]drawable:jog_tab_bar_left_unlock
+    const v8, 0x1080391
 
-    const v9, 0x10803be		#[0x10803a4]drawable:jog_tab_left_unlock
+    const v9, 0x10803a4
 
     invoke-virtual {v3, v6, v7, v8, v9}, Lcom/android/internal/widget/SlidingTab;->setLeftTabResources(IIII)V
 
@@ -770,7 +769,7 @@
 
     check-cast v5, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;
 
-    const v8, 0x10802e8		#[0x10802e1]drawable:ic_lockscreen_camera
+    const v8, 0x10802e1
 
     invoke-virtual {v5, v8}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->isTargetPresent(I)Z
 
@@ -789,7 +788,7 @@
 
     check-cast v5, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;
 
-    const v8, 0x1080298		#[0x1080294]drawable:ic_action_assist_generic
+    const v8, 0x1080294
 
     invoke-virtual {v5, v8}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->isTargetPresent(I)Z
 

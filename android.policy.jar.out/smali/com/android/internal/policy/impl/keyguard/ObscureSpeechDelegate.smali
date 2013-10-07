@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/ObscureSpeechDelegate;
 .super Landroid/view/View$AccessibilityDelegate;
 .source "ObscureSpeechDelegate.java"
@@ -133,7 +132,7 @@
     invoke-virtual {p2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     .line 80
-    const v1, 0x10404e5		#[0x10404e1]string:keyboard_password_character_no_headset
+    const v1, 0x10404e1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -183,7 +182,7 @@
 
     move-result-object v0
 
-    const v1, 0x10404e5		#[0x10404e1]string:keyboard_password_character_no_headset
+    const v1, 0x10404e1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -230,7 +229,7 @@
 
     move-result-object v0
 
-    const v1, 0x10404e4		#[0x10404e0]string:keyboard_headset_required_to_hear_password
+    const v1, 0x10404e0
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

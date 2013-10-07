@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView$1;
 .super Ljava/lang/Object;
 .source "KeyguardAccountView.java"
@@ -165,7 +164,7 @@
 
     move-result-object v1
 
-    const v2, 0x104053e		#[0x104053a]string:kg_login_invalid_input
+    const v2, 0x104053a
 
     invoke-interface {v1, v2, v4}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 

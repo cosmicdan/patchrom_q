@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/KeyguardStatusViewManager;
 .super Ljava/lang/Object;
 .source "KeyguardStatusViewManager.java"
@@ -18,7 +17,7 @@
 
 
 # static fields
-.field public static final ALARM_ICON:I = 0x108002e		#drawable:ic_lock_idle_alarm
+.field public static final ALARM_ICON:I = 0x108002e
 
 .field private static final BATTERY_INFO:I = 0xf
 
@@ -156,7 +155,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040067		#[0x1040063]string:abbrev_wday_month_day_no_year
+    const v6, 0x1040063
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -174,7 +173,7 @@
     iput-object p4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     .line 178
-    const v5, 0x10202e7		#id:carrier
+    const v5, 0x10202e7
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +184,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCarrierView:Landroid/widget/TextView;
 
     .line 179
-    const v5, 0x1020063		#id:date
+    const v5, 0x1020063
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +195,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
 
     .line 180
-    const v5, 0x10202e6		#id:status1
+    const v5, 0x10202e6
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +206,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mStatus1View:Landroid/widget/TextView;
 
     .line 181
-    const v5, 0x10202e5		#id:alarm_status
+    const v5, 0x10202e5
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +217,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
     .line 182
-    const v5, 0x10202f8		#[0x10202f7]id:owner_info
+    const v5, 0x10202f7
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +228,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mOwnerInfoView:Landroid/widget/TextView;
 
     .line 183
-    const v5, 0x10202e9		#id:transport
+    const v5, 0x10202e9
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +239,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mTransportView:Lcom/android/internal/widget/TransportControlView;
 
     .line 184
-    const v5, 0x10202d1		#id:emergencyCallButton
+    const v5, 0x10202d1
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -254,7 +253,7 @@
     iput-boolean p5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyCallButtonEnabledInScreen:Z
 
     .line 186
-    const v5, 0x1020064		#id:time
+    const v5, 0x1020064
 
     invoke-direct {p0, v5}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->findViewById(I)Landroid/view/View;
 
@@ -285,7 +284,7 @@
     .line 194
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyCallButton:Landroid/widget/Button;
 
-    const v6, 0x10402ef		#[0x10402eb]string:lockscreen_emergency_call
+    const v6, 0x10402eb
 
     invoke-virtual {v5, v6}, Landroid/widget/Button;->setText(I)V
 
@@ -558,7 +557,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x10402f6		#[0x10402f2]string:lockscreen_charged
+    const v1, 0x10402f2
 
     :goto_0
     const/4 v3, 0x1
@@ -587,7 +586,7 @@
 
     .line 378
     :cond_1
-    const v1, 0x10402f5		#[0x10402f1]string:lockscreen_plugged_in
+    const v1, 0x10402f1
 
     goto :goto_0
 
@@ -602,7 +601,7 @@
 
     move-result-object v1
 
-    const v2, 0x10402f8		#[0x10402f4]string:lockscreen_low_battery
+    const v2, 0x10402f4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -685,7 +684,7 @@
 
     if-eqz v1, :cond_2
 
-    const v1, 0x10402f6		#[0x10402f2]string:lockscreen_charged
+    const v1, 0x10402f2
 
     :goto_1
     const/4 v3, 0x1
@@ -711,7 +710,7 @@
 
     .line 402
     :cond_2
-    const v1, 0x10402f5		#[0x10402f1]string:lockscreen_plugged_in
+    const v1, 0x10402f1
 
     goto :goto_1
 
@@ -726,7 +725,7 @@
 
     move-result-object v1
 
-    const v2, 0x10402f8		#[0x10402f4]string:lockscreen_low_battery
+    const v2, 0x10402f4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1037,7 +1036,7 @@
     .line 337
     iget-object v3, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
-    const v4, 0x108002e		#drawable:ic_lock_idle_alarm
+    const v4, 0x108002e
 
     invoke-virtual {v3, v4, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
@@ -1075,7 +1074,7 @@
     .parameter "simState"
 
     .prologue
-    const v5, 0x10402f9		#[0x10402f5]string:lockscreen_missing_sim_message_short
+    const v5, 0x10402f5
 
     const/4 v4, 0x1
 
@@ -1150,7 +1149,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040305		#[0x1040301]string:lockscreen_network_locked_message
+    const v3, 0x1040301
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1163,7 +1162,7 @@
     move-result-object v1
 
     .line 486
-    const v0, 0x10402ed		#[0x10402e9]string:lockscreen_instructions_when_pattern_disabled
+    const v0, 0x10402e9
 
     .line 487
     goto :goto_0
@@ -1185,7 +1184,7 @@
     move-result-object v1
 
     .line 497
-    const v0, 0x10402fc		#[0x10402f8]string:lockscreen_missing_sim_instructions_long
+    const v0, 0x10402f8
 
     .line 498
     goto :goto_0
@@ -1196,14 +1195,14 @@
 
     move-result-object v2
 
-    const v3, 0x10402fd		#[0x10402f9]string:lockscreen_permanent_disabled_sim_message_short
+    const v3, 0x10402f9
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
     .line 503
-    const v0, 0x10402fe		#[0x10402fa]string:lockscreen_permanent_disabled_sim_instructions
+    const v0, 0x10402fa
 
     .line 504
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
@@ -1227,7 +1226,7 @@
     move-result-object v1
 
     .line 511
-    const v0, 0x10402fb		#[0x10402f7]string:lockscreen_missing_sim_instructions
+    const v0, 0x10402f7
 
     .line 512
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
@@ -1240,7 +1239,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040308		#[0x1040304]string:lockscreen_sim_locked_message
+    const v3, 0x1040304
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1263,7 +1262,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040306		#[0x1040302]string:lockscreen_sim_puk_locked_message
+    const v3, 0x1040302
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1759,7 +1758,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402f4		#[0x10402f0]string:faceunlock_multiple_failures
+    const v1, 0x10402f0
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

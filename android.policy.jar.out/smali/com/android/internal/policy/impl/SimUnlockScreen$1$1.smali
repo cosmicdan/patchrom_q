@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/SimUnlockScreen$1$1;
 .super Ljava/lang/Object;
 .source "SimUnlockScreen.java"
@@ -128,7 +127,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402e7		#[0x10402e3]string:keyguard_password_wrong_pin_code
+    const v1, 0x10402e3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

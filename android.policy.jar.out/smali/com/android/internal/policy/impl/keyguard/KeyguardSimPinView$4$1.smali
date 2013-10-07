@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView$4$1;
 .super Ljava/lang/Object;
 .source "KeyguardSimPinView.java"
@@ -136,7 +135,7 @@
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x1040534		#[0x1040530]string:kg_password_wrong_pin_code
+    const v1, 0x1040530
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 

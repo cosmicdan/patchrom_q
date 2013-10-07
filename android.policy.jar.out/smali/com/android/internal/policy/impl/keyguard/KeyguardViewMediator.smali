@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator;
 .super Ljava/lang/Object;
 .source "KeyguardViewMediator.java"
@@ -579,7 +578,7 @@
 
     move-result-object v5
 
-    const v6, 0x10e0005		#integer:config_lockSoundVolumeDb
+    const v6, 0x10e0005
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1082,7 +1081,7 @@
     .line 1599
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
 
-    const v4, 0x104050c		#[0x1040508]string:status_bar_device_locked
+    const v4, 0x1040508
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1094,7 +1093,7 @@
 
     const-string v4, "secure"
 
-    const v5, 0x1080577		#[0x1080556]drawable:stat_sys_secure
+    const v5, 0x1080556
 
     invoke-virtual {v3, v4, v5, v6, v0}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
@@ -1265,7 +1264,7 @@
 
     move-result-object v1
 
-    const v2, 0x1080027		#drawable:ic_dialog_alert
+    const v2, 0x1080027
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
@@ -1281,7 +1280,7 @@
 
     move-result-object v1
 
-    const v2, 0x104000a		#string:ok
+    const v2, 0x104000a
 
     new-instance v3, Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$6;
 

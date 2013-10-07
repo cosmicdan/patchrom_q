@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/LockScreen$SlidingTabMethods;
 .super Ljava/lang/Object;
 .source "LockScreen.java"
@@ -118,7 +117,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x104031c		#[0x1040318]string:lockscreen_sound_on_label
+    const v0, 0x1040318
 
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/internal/widget/SlidingTab;->setRightHintText(I)V
@@ -143,7 +142,7 @@
 
     .line 171
     :cond_2
-    const v0, 0x104031d		#[0x1040319]string:lockscreen_sound_off_label
+    const v0, 0x1040319
 
     goto :goto_0
 .end method
@@ -276,7 +275,7 @@
 
     if-eqz v0, :cond_1
 
-    const v1, 0x10802db		#[0x10802d7]drawable:ic_jog_dial_vibrate_on
+    const v1, 0x10802d7
 
     :goto_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/LockScreen$SlidingTabMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
@@ -288,7 +287,7 @@
 
     if-eqz v2, :cond_3
 
-    const v2, 0x10803cc		#[0x10803b2]drawable:jog_tab_target_yellow
+    const v2, 0x10803b2
 
     :goto_2
     iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$SlidingTabMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
@@ -300,7 +299,7 @@
 
     if-eqz v3, :cond_4
 
-    const v3, 0x10803b5		#[0x108039b]drawable:jog_tab_bar_right_sound_on
+    const v3, 0x108039b
 
     :goto_3
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$SlidingTabMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
@@ -312,7 +311,7 @@
 
     if-eqz v4, :cond_5
 
-    const v4, 0x10803c8		#[0x10803ae]drawable:jog_tab_right_sound_on
+    const v4, 0x10803ae
 
     :goto_4
     invoke-virtual {v5, v1, v2, v3, v4}, Lcom/android/internal/widget/SlidingTab;->setRightTabResources(IIII)V
@@ -330,27 +329,27 @@
     .line 145
     .restart local v0       #vibe:Z
     :cond_1
-    const v1, 0x10802d8		#[0x10802d4]drawable:ic_jog_dial_sound_off
+    const v1, 0x10802d4
 
     goto :goto_1
 
     :cond_2
-    const v1, 0x10802d9		#[0x10802d5]drawable:ic_jog_dial_sound_on
+    const v1, 0x10802d5
 
     goto :goto_1
 
     :cond_3
-    const v2, 0x10803c9		#[0x10803af]drawable:jog_tab_target_gray
+    const v2, 0x10803af
 
     goto :goto_2
 
     :cond_4
-    const v3, 0x10803b4		#[0x108039a]drawable:jog_tab_bar_right_sound_off
+    const v3, 0x108039a
 
     goto :goto_3
 
     :cond_5
-    const v4, 0x10803c7		#[0x10803ad]drawable:jog_tab_right_sound_off
+    const v4, 0x10803ad
 
     goto :goto_4
 .end method

@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$1;
 .super Ljava/lang/Object;
 .source "KeyguardSelectorView.java"
@@ -312,9 +311,9 @@
     :sswitch_data_0
     .sparse-switch
         -0x1 -> :sswitch_3
-        0x1080298 -> :sswitch_0		#[0x1080294]drawable:ic_action_assist_generic
-        0x10802e8 -> :sswitch_1		#[0x10802e1]drawable:ic_lockscreen_camera
-        0x1080315 -> :sswitch_2		#[0x10802ff]drawable:ic_lockscreen_unlock
-        0x1080318 -> :sswitch_2		#[0x1080302]drawable:ic_lockscreen_unlock_phantom
+        0x1080294 -> :sswitch_0
+        0x10802e1 -> :sswitch_1
+        0x10802ff -> :sswitch_2
+        0x1080302 -> :sswitch_2
     .end sparse-switch
 .end method

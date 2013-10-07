@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .source "KeyguardSimPukView.java"
@@ -284,7 +283,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040533		#[0x104052f]string:kg_sim_unlock_progress_dialog_message
+    const v2, 0x104052f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -399,7 +398,7 @@
 
     .prologue
     .line 113
-    const v0, 0x10202c4		#id:pinEntry
+    const v0, 0x10202c4
 
     return v0
 .end method
@@ -414,7 +413,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
     .line 120
-    const v2, 0x10202d0		#id:key_enter
+    const v2, 0x10202d0
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 
@@ -433,7 +432,7 @@
 
     .line 133
     :cond_0
-    const v2, 0x10202c5		#id:delete_button
+    const v2, 0x10202c5
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

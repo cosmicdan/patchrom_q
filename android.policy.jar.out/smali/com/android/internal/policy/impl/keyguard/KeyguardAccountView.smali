@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView;
 .super Landroid/widget/LinearLayout;
 .source "KeyguardAccountView.java"
@@ -486,7 +485,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040540		#[0x104053c]string:kg_login_checking_password
+    const v2, 0x104053c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -733,7 +732,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 89
-    const v0, 0x10202a4		#id:login
+    const v0, 0x10202a4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView;->findViewById(I)Landroid/view/View;
 
@@ -766,7 +765,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 93
-    const v0, 0x10202a5		#id:password
+    const v0, 0x10202a5
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView;->findViewById(I)Landroid/view/View;
 
@@ -782,7 +781,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 96
-    const v0, 0x10202a6		#id:ok
+    const v0, 0x10202a6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAccountView;->findViewById(I)Landroid/view/View;
 
@@ -908,7 +907,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x1040539		#[0x1040535]string:kg_login_too_many_attempts
+    const v1, 0x1040535
 
     move v2, v1
 
@@ -925,7 +924,7 @@
 
     .line 145
     :cond_0
-    const v1, 0x104053a		#[0x1040536]string:kg_login_instructions
+    const v1, 0x1040536
 
     move v2, v1
 

@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$23;
 .super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
@@ -76,7 +75,7 @@
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBootMsgDialog:Landroid/app/ProgressDialog;
 
-    const v2, 0x10403eb		#[0x10403e7]string:android_upgrading_title
+    const v2, 0x10403e7
 
     invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(I)V
 

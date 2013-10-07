@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PasswordUnlockScreen$5;
 .super Landroid/os/CountDownTimer;
 .source "PasswordUnlockScreen.java"
@@ -97,7 +96,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040310		#[0x104030c]string:lockscreen_too_many_failed_attempts_countdown
+    const v3, 0x104030c
 
     const/4 v4, 0x1
 

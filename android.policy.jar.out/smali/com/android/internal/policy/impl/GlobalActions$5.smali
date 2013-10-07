@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/GlobalActions$5;
 .super Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 .source "GlobalActions.java"
@@ -65,12 +64,12 @@
 
     .line 368
     .local v0, builder:Landroid/app/AlertDialog$Builder;
-    const v2, 0x10400ec		#[0x10400e8]string:bugreport_title
+    const v2, 0x10400e8
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 369
-    const v2, 0x10400ed		#[0x10400e9]string:bugreport_message
+    const v2, 0x10400e9
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -82,7 +81,7 @@
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 371
-    const v2, 0x10403e0		#[0x10403dc]string:report
+    const v2, 0x10403dc
 
     new-instance v3, Lcom/android/internal/policy/impl/GlobalActions$5$1;
 

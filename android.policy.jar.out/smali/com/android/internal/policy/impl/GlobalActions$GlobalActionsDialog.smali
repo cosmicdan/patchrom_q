@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class final Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
 .super Landroid/app/Dialog;
 .source "GlobalActions.java"
@@ -98,7 +97,7 @@
 
     move-result-object v1
 
-    const v2, 0x1010309		#attr:alertDialogTheme
+    const v2, 0x1010309
 
     const/4 v3, 0x1
 

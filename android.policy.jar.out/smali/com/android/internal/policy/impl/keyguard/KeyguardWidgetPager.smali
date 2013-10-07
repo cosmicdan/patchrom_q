@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 .super Lcom/android/internal/policy/impl/keyguard/PagedView;
 .source "KeyguardWidgetPager.java"
@@ -604,7 +603,7 @@
     .line 328
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mContext:Landroid/content/Context;
 
-    const v8, 0x1040326		#[0x1040322]string:keyguard_accessibility_widget
+    const v8, 0x1040322
 
     new-array v9, v9, [Ljava/lang/Object;
 
@@ -1280,7 +1279,7 @@
 
     move-result v1
 
-    const v2, 0x10202a7		#id:keyguard_add_widget
+    const v2, 0x10202a7
 
     if-ne v1, v2, :cond_0
 

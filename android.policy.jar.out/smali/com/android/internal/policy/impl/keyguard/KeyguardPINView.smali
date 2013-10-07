@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .source "KeyguardPINView.java"
@@ -44,7 +43,7 @@
 
     .prologue
     .line 61
-    const v0, 0x10202c4		#id:pinEntry
+    const v0, 0x10202c4
 
     return v0
 .end method
@@ -54,7 +53,7 @@
 
     .prologue
     .line 124
-    const v0, 0x104052a		#[0x1040526]string:kg_wrong_pin
+    const v0, 0x1040526
 
     return v0
 .end method
@@ -67,7 +66,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
     .line 68
-    const v2, 0x10202d0		#id:key_enter
+    const v2, 0x10202d0
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +96,7 @@
 
     .line 84
     :cond_0
-    const v2, 0x10202c5		#id:delete_button
+    const v2, 0x10202c5
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +239,7 @@
     .line 49
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x10402f4		#[0x10402f0]string:faceunlock_multiple_failures
+    const v1, 0x10402f0
 
     invoke-interface {v0, v1, v3}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
@@ -277,7 +276,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x104052e		#[0x104052a]string:kg_pin_instructions
+    const v1, 0x104052a
 
     const/4 v2, 0x0
 

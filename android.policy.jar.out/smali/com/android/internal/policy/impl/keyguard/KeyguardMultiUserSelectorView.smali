@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 .super Landroid/widget/FrameLayout;
 .source "KeyguardMultiUserSelectorView.java"
@@ -126,7 +125,7 @@
 
     .prologue
     .line 103
-    const v1, 0x109005d		#[0x109005a]layout:keyguard_multi_user_avatar
+    const v1, 0x109005a
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mContext:Landroid/content/Context;
 
@@ -389,7 +388,7 @@
     const/4 v2, 0x0
 
     .line 58
-    const v0, 0x10202bc		#id:keyguard_users_grid
+    const v0, 0x10202bc
 
     .line 59
     .local v0, resId:I

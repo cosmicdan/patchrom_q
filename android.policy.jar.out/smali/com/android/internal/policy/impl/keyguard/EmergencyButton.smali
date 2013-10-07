@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/EmergencyButton;
 .super Landroid/widget/Button;
 .source "EmergencyButton.java"
@@ -206,7 +205,7 @@
 
     move-result-object v11
 
-    const v12, 0x10402ea		#[0x10402e6]string:lockscreen_carrier_default
+    const v12, 0x10402e6
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

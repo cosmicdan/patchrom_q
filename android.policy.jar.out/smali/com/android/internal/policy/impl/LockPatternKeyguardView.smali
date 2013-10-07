@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 .super Lcom/android/internal/policy/impl/KeyguardViewBase;
 .source "LockPatternKeyguardView.java"
@@ -973,7 +972,7 @@
 
     .prologue
     .line 965
-    const v0, 0x10202e9		#id:transport
+    const v0, 0x10202e9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1401,7 +1400,7 @@
     .local v0, count:I
     iget-object v3, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
 
-    const v4, 0x104030d		#[0x1040309]string:lockscreen_failed_attempts_almost_glogin
+    const v4, 0x1040309
 
     const/4 v5, 0x3
 
@@ -1462,7 +1461,7 @@
     .local v1, timeoutInSeconds:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
 
-    const v3, 0x104030e		#[0x104030a]string:lockscreen_failed_attempts_almost_at_wipe
+    const v3, 0x104030a
 
     const/4 v4, 0x2
 
@@ -1522,7 +1521,7 @@
 
     move-result-object v1
 
-    const v2, 0x104000a		#string:ok
+    const v2, 0x104000a
 
     const/4 v3, 0x0
 
@@ -1560,7 +1559,7 @@
 
     .line 1106
     .local v2, timeoutInSeconds:I
-    const v1, 0x104030a		#[0x1040306]string:lockscreen_too_many_failed_attempts_dialog_message
+    const v1, 0x1040306
 
     .line 1107
     .local v1, messageId:I
@@ -1584,7 +1583,7 @@
     if-ne v3, v4, :cond_1
 
     .line 1110
-    const v1, 0x104030c		#[0x1040308]string:lockscreen_too_many_failed_pin_attempts_dialog_message
+    const v1, 0x1040308
 
     .line 1115
     :cond_0
@@ -1630,7 +1629,7 @@
 
     .end local v0           #message:Ljava/lang/String;
     :cond_1
-    const v1, 0x104030b		#[0x1040307]string:lockscreen_too_many_failed_password_attempts_dialog_message
+    const v1, 0x1040307
 
     goto :goto_0
 .end method
@@ -1643,7 +1642,7 @@
     .line 1138
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mContext:Landroid/content/Context;
 
-    const v2, 0x104030f		#[0x104030b]string:lockscreen_failed_attempts_now_wiping
+    const v2, 0x104030b
 
     const/4 v3, 0x1
 

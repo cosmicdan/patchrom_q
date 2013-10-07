@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class final Lcom/android/internal/policy/impl/PhoneWindow$DecorView;
 .super Landroid/widget/FrameLayout;
 .source "PhoneWindow.java"
@@ -2640,7 +2639,7 @@
 
     iget-object v8, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mContext:Landroid/content/Context;
 
-    const v9, 0x10103e4		#attr:actionModePopupWindowStyle
+    const v9, 0x10103e4
 
     invoke-direct {v5, v8, v10, v9}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -2690,7 +2689,7 @@
 
     move-result-object v5
 
-    const v8, 0x10102eb		#attr:actionBarSize
+    const v8, 0x10102eb
 
     invoke-virtual {v5, v8, v1, v6}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -2814,7 +2813,7 @@
 
     .line 2363
     :cond_7
-    const v5, 0x1020363		#[0x102035c]id:action_mode_bar_stub
+    const v5, 0x102035c
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->findViewById(I)Landroid/view/View;
 

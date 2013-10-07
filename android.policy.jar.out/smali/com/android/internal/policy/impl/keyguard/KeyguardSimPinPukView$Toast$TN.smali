@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView$Toast$TN;
 .super Landroid/app/ITransientNotification$Stub;
 .source "KeyguardSimPinPukView.java"
@@ -82,7 +81,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 1047
-    const v1, 0x1030004		#style:Animation.Toast
+    const v1, 0x1030004
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

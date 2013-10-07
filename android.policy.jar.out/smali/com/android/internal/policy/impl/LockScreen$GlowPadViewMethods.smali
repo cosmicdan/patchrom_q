@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;
 .super Ljava/lang/Object;
 .source "LockScreen.java"
@@ -400,11 +399,11 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x1080298 -> :sswitch_0		#[0x1080294]drawable:ic_action_assist_generic
-        0x10802e8 -> :sswitch_1		#[0x10802e1]drawable:ic_lockscreen_camera
-        0x108030c -> :sswitch_2		#[0x10802f6]drawable:ic_lockscreen_silent
-        0x1080315 -> :sswitch_3		#[0x10802ff]drawable:ic_lockscreen_unlock
-        0x1080318 -> :sswitch_3		#[0x1080302]drawable:ic_lockscreen_unlock_phantom
+        0x1080294 -> :sswitch_0
+        0x10802e1 -> :sswitch_1
+        0x10802f6 -> :sswitch_2
+        0x10802ff -> :sswitch_3
+        0x1080302 -> :sswitch_3
     .end sparse-switch
 .end method
 
@@ -458,7 +457,7 @@
 
     const/4 v6, 0x0
 
-    const v9, 0x1080298		#[0x1080294]drawable:ic_action_assist_generic
+    const v9, 0x1080294
 
     .line 266
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
@@ -489,7 +488,7 @@
 
     if-eqz v4, :cond_2
 
-    const v3, 0x1070009		#array:lockscreen_targets_when_silent
+    const v3, 0x1070009
 
     .line 273
     .local v3, resId:I
@@ -608,7 +607,7 @@
     .end local v1           #intent:Landroid/content/Intent;
     .end local v2           #replaced:Z
     :cond_1
-    const v7, 0x10802e8		#[0x10802e1]drawable:ic_lockscreen_camera
+    const v7, 0x10802e1
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
@@ -643,13 +642,13 @@
     .line 268
     .end local v3           #resId:I
     :cond_2
-    const v3, 0x107000c		#array:lockscreen_targets_when_soundon
+    const v3, 0x107000c
 
     goto :goto_0
 
     .line 271
     :cond_3
-    const v3, 0x107000e		#array:lockscreen_targets_with_camera
+    const v3, 0x107000e
 
     .restart local v3       #resId:I
     goto/16 :goto_0

@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/GlobalActions$SilentModeTriStateAction;
 .super Ljava/lang/Object;
 .source "GlobalActions.java"
@@ -64,9 +63,9 @@
     .line 851
     :array_0
     .array-data 0x4
-        0x85t 0x2t 0x2t 0x1t		#id:option1
-        0x86t 0x2t 0x2t 0x1t		#id:option2
-        0x87t 0x2t 0x2t 0x1t		#id:option3
+        0x85t 0x2t 0x2t 0x1t
+        0x86t 0x2t 0x2t 0x1t
+        0x87t 0x2t 0x2t 0x1t
     .end array-data
 .end method
 
@@ -101,7 +100,7 @@
     const/4 v5, 0x0
 
     .line 875
-    const v4, 0x1090044		#layout:global_actions_silent_mode
+    const v4, 0x1090044
 
     invoke-virtual {p4, v4, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

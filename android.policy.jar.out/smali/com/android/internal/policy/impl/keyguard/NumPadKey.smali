@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/NumPadKey;
 .super Landroid/widget/Button;
 .source "NumPadKey.java"
@@ -165,7 +164,7 @@
 
     move-result-object v4
 
-    const v5, 0x1070012		#array:lockscreen_num_pad_klondike
+    const v5, 0x1070012
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -215,7 +214,7 @@
     .line 94
     new-instance v4, Landroid/text/style/TextAppearanceSpan;
 
-    const v5, 0x10302a5		#style:TextAppearance.NumPadKey.Klondike
+    const v5, 0x10302a5
 
     invoke-direct {v4, p1, v5}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
 

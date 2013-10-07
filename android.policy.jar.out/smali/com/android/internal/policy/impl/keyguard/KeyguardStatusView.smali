@@ -1,11 +1,10 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;
 .super Landroid/widget/GridLayout;
 .source "KeyguardStatusView.java"
 
 
 # static fields
-.field public static final ALARM_ICON:I = 0x108002e		#drawable:ic_lock_idle_alarm
+.field public static final ALARM_ICON:I = 0x108002e
 
 .field public static final BATTERY_LOW_ICON:I = 0x0
 
@@ -100,7 +99,7 @@
 
     move-result v0
 
-    const v1, 0x10202f8		#[0x10202f7]id:owner_info
+    const v1, 0x10202f7
 
     if-eq v0, v1, :cond_1
 
@@ -211,7 +210,7 @@
 
     .line 83
     .local v2, res:Landroid/content/res/Resources;
-    const v4, 0x1040067		#[0x1040063]string:abbrev_wday_month_day_no_year
+    const v4, 0x1040063
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -220,7 +219,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mDateFormatString:Ljava/lang/CharSequence;
 
     .line 85
-    const v4, 0x1020063		#id:date
+    const v4, 0x1020063
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -231,7 +230,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mDateView:Landroid/widget/TextView;
 
     .line 86
-    const v4, 0x10202e5		#id:alarm_status
+    const v4, 0x10202e5
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -242,7 +241,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mAlarmStatusView:Landroid/widget/TextView;
 
     .line 87
-    const v4, 0x1020306		#[0x1020304]id:clock_view
+    const v4, 0x1020304
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -412,7 +411,7 @@
     .line 116
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mAlarmStatusView:Landroid/widget/TextView;
 
-    const v2, 0x108002e		#drawable:ic_lock_idle_alarm
+    const v2, 0x108002e
 
     invoke-virtual {v1, v2, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 

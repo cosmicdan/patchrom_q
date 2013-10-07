@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/AccountUnlockScreen$1;
 .super Ljava/lang/Object;
 .source "AccountUnlockScreen.java"
@@ -150,7 +149,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040318		#[0x1040314]string:lockscreen_glogin_invalid_input
+    const v2, 0x1040314
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

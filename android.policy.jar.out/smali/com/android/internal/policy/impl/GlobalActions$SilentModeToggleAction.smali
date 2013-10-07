@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;
 .super Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
 .source "GlobalActions.java"
@@ -29,15 +28,15 @@
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     .line 825
-    const v1, 0x10802a7		#[0x10802a3]drawable:ic_audio_vol_mute
+    const v1, 0x10802a3
 
-    const v2, 0x10802a6		#[0x10802a2]drawable:ic_audio_vol
+    const v2, 0x10802a2
 
-    const v3, 0x10400ee		#[0x10400ea]string:global_action_toggle_silent_mode
+    const v3, 0x10400ea
 
-    const v4, 0x10400ef		#[0x10400eb]string:global_action_silent_mode_on_status
+    const v4, 0x10400eb
 
-    const v5, 0x10400f0		#[0x10400ec]string:global_action_silent_mode_off_status
+    const v5, 0x10400ec
 
     move-object v0, p0
 

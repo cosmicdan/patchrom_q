@@ -1,4 +1,3 @@
-#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;
 .super Landroid/widget/LinearLayout;
 .source "KeyguardFaceUnlockView.java"
@@ -156,7 +155,7 @@
 
     .prologue
     .line 131
-    const v0, 0x10202ad		#id:face_unlock_area_view
+    const v0, 0x10202ad
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +178,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->mBiometricUnlock:Lcom/android/internal/policy/impl/keyguard/BiometricSensorUnlock;
 
     .line 135
-    const v0, 0x10202af		#id:face_unlock_cancel_button
+    const v0, 0x10202af
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -435,7 +434,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 63
-    const v1, 0x10202b0		#id:keyguard_selector_fade_container
+    const v1, 0x10202b0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -444,7 +443,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->mEcaView:Landroid/view/View;
 
     .line 64
-    const v1, 0x10202ac		#id:keyguard_bouncer_frame
+    const v1, 0x10202ac
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardFaceUnlockView;->findViewById(I)Landroid/view/View;
 
