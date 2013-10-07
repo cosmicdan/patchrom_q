@@ -1,0 +1,4 @@
+Be sure to normalize EOL after remapping:
+
+cd x.jar.out
+find | xargs perl -pi -e 's/\r\n/\n/g'

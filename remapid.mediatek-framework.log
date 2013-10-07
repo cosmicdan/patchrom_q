@@ -1,0 +1,9 @@
+smali files found [108]
+framework resource id found in [./mediatek-framework.jar.out/smali/com/mediatek/op/wifi/DefaultWifiAutoConnect.smali]
+adding comment for [0x10e000d] -> name=[config_wifi_framework_scan_interval] type=[integer] line=[63]
+correcting id for name=[wifi_tether_configure_ssid_default] type=[string] [0x104040c] -> [0x1040410] line=[79]
+corrected [1] resource id
+added [2] comments
+saving [./mediatek-framework.jar.out/smali/com/mediatek/op/wifi/DefaultWifiAutoConnect.smali]
+files processed [108]
+files changed [1]

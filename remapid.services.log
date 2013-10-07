@@ -1,0 +1,491 @@
+smali files found [968]
+framework resource id found in [./services.jar.out/smali/com/android/server/LocationManagerService.smali]
+adding comment for [0x107002d] -> name=[config_locationProviderPackageNames] type=[array] line=[3456]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/LocationManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/power/ShutdownThread.smali]
+correcting id for name=[power_off] type=[string] [0x10400d9] -> [0x10400dd] line=[839]
+correcting id for name=[shutdown_progress] type=[string] [0x10400dd] -> [0x10400e1] line=[850]
+adding comment for [0x10e0017] -> name=[config_longPressOnPowerBehavior] type=[integer] line=[2175]
+correcting id for name=[reboot_safemode_confirm] type=[string] [0x10400e1] -> [0x10400e5] line=[2187]
+correcting id for name=[reboot_safemode_title] type=[string] [0x10400e0] -> [0x10400e4] line=[2256]
+adding comment for [0x1040013] -> name=[yes] type=[string] line=[2267]
+adding comment for [0x1040009] -> name=[no] type=[string] line=[2277]
+adding comment for [0x1010355] -> name=[alertDialogIcon] type=[attr] line=[2307]
+correcting id for name=[reboot_confirm] type=[string] [0x104054e] -> [0x1040553] line=[2385]
+correcting id for name=[shutdown_confirm_question] type=[string] [0x10400df] -> [0x10400e3] line=[2392]
+correcting id for name=[shutdown_confirm] type=[string] [0x10400de] -> [0x10400e2] line=[2397]
+correcting id for name=[factorytest_reboot] type=[string] [0x104033e] -> [0x1040342] line=[2409]
+correcting id for name=[power_off] type=[string] [0x10400d9] -> [0x10400dd] line=[2414]
+corrected [9] resource id's
+added [13] comments
+saving [./services.jar.out/smali/com/android/server/power/ShutdownThread.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/power/DisplayPowerController.smali]
+correcting id for name=[config_screenBrightnessDim] type=[integer] [0x10e0028] -> [0x10e0027] line=[432]
+correcting id for name=[config_screenBrightnessSettingMinimum] type=[integer] [0x10e0025] -> [0x10e0024] line=[445]
+adding comment for [0x1070029] -> name=[config_autoBrightnessLevels] type=[array] line=[473]
+adding comment for [0x107002a] -> name=[config_autoBrightnessLcdBacklightValues] type=[array] line=[481]
+correcting id for name=[config_lightSensorWarmupTime] type=[integer] [0x10e0029] -> [0x10e0028] line=[575]
+corrected [3] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/power/DisplayPowerController.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/wm/WindowManagerService.smali]
+adding comment for [0x10c0003] -> name=[decelerate_cubic] type=[interpolator] line=[5957]
+adding comment for [0x10c0001] -> name=[decelerate_quad] type=[interpolator] line=[6184]
+adding comment for [0x10c0001] -> name=[decelerate_quad] type=[interpolator] line=[6237]
+adding comment for [0x10a0070] -> name=[window_move_from_decor] type=[anim] line=[11515]
+added [4] comments
+saving [./services.jar.out/smali/com/android/server/wm/WindowManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/wm/ScreenRotationAnimation.smali]
+adding comment for [0x10a004d] -> name=[screen_rotate_start_exit] type=[anim] line=[1192]
+adding comment for [0x10a004c] -> name=[screen_rotate_start_enter] type=[anim] line=[1203]
+adding comment for [0x10a004e] -> name=[screen_rotate_start_frame] type=[anim] line=[1219]
+adding comment for [0x10a0044] -> name=[screen_rotate_finish_exit] type=[anim] line=[1231]
+adding comment for [0x10a0043] -> name=[screen_rotate_finish_enter] type=[anim] line=[1242]
+adding comment for [0x10a0045] -> name=[screen_rotate_finish_frame] type=[anim] line=[1258]
+adding comment for [0x10a003e] -> name=[screen_rotate_0_exit] type=[anim] line=[2064]
+adding comment for [0x10a003d] -> name=[screen_rotate_0_enter] type=[anim] line=[2075]
+adding comment for [0x10a003f] -> name=[screen_rotate_0_frame] type=[anim] line=[2091]
+adding comment for [0x10a004a] -> name=[screen_rotate_plus_90_exit] type=[anim] line=[2105]
+adding comment for [0x10a0049] -> name=[screen_rotate_plus_90_enter] type=[anim] line=[2116]
+adding comment for [0x10a004b] -> name=[screen_rotate_plus_90_frame] type=[anim] line=[2132]
+adding comment for [0x10a0041] -> name=[screen_rotate_180_exit] type=[anim] line=[2146]
+adding comment for [0x10a0040] -> name=[screen_rotate_180_enter] type=[anim] line=[2157]
+adding comment for [0x10a0042] -> name=[screen_rotate_180_frame] type=[anim] line=[2173]
+adding comment for [0x10a0047] -> name=[screen_rotate_minus_90_exit] type=[anim] line=[2187]
+adding comment for [0x10a0046] -> name=[screen_rotate_minus_90_enter] type=[anim] line=[2198]
+adding comment for [0x10a0048] -> name=[screen_rotate_minus_90_frame] type=[anim] line=[2214]
+added [18] comments
+saving [./services.jar.out/smali/com/android/server/wm/ScreenRotationAnimation.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/input/InputManagerService.smali]
+correcting id for name=[config_virtualKeyQuietTimeMillis] type=[integer] [0x10e002a] -> [0x10e0029] line=[1638]
+correcting id for name=[select_keyboard_layout_notification_title] type=[string] [0x1040457] -> [0x104045b] line=[1808]
+correcting id for name=[select_keyboard_layout_notification_title] type=[string] [0x1040457] -> [0x104045b] line=[2348]
+correcting id for name=[select_keyboard_layout_notification_message] type=[string] [0x1040458] -> [0x104045c] line=[2413]
+correcting id for name=[ic_settings_language] type=[drawable] [0x108035e] -> [0x1080378] line=[2429]
+corrected [5] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/input/InputManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/BatteryService.smali]
+adding comment for [0x10e0018] -> name=[config_criticalBatteryWarningLevel] type=[integer] line=[286]
+adding comment for [0x10e001a] -> name=[config_lowBatteryWarningLevel] type=[integer] line=[301]
+adding comment for [0x10e001b] -> name=[config_lowBatteryCloseWarningLevel] type=[integer] line=[316]
+adding comment for [0x10e0019] -> name=[config_shutdownBatteryTemperature] type=[integer] line=[331]
+error: resource id not found for [0x10e001c] line=[346]
+correcting id for name=[stat_sys_battery_charge] type=[drawable] [0x1080532] -> [0x1080553] line=[779]
+correcting id for name=[stat_sys_battery] type=[drawable] [0x1080524] -> [0x1080545] line=[781]
+correcting id for name=[stat_sys_battery_unknown] type=[drawable] [0x1080540] -> [0x1080561] line=[846]
+corrected [3] resource id's
+added [7] comments
+saving [./services.jar.out/smali/com/android/server/BatteryService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/StatusBarManagerService.smali]
+adding comment for [0x1070013] -> name=[config_statusBarIcons] type=[array] line=[180]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/StatusBarManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/BatteryService$Led.smali]
+correcting id for name=[config_notificationsBatteryLowARGB] type=[integer] [0x10e001f] -> [0x10e001e] line=[61]
+correcting id for name=[config_notificationsBatteryMediumARGB] type=[integer] [0x10e0020] -> [0x10e001f] line=[74]
+correcting id for name=[config_notificationsBatteryFullARGB] type=[integer] [0x10e0021] -> [0x10e0020] line=[87]
+correcting id for name=[config_notificationsBatteryLedOn] type=[integer] [0x10e0022] -> [0x10e0021] line=[100]
+correcting id for name=[config_notificationsBatteryLedOff] type=[integer] [0x10e0023] -> [0x10e0022] line=[113]
+corrected [5] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/BatteryService$Led.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/MountService.smali]
+adding comment for [0x10f000e] -> name=[storage_list] type=[xml] line=[5175]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/MountService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/WifiService.smali]
+correcting id for name=[stat_notify_wifi_in_range] type=[drawable] [0x1080522] -> [0x1080543] line=[33]
+correcting id for name=[stat_notify_wifi_in_range] type=[drawable] [0x1080522] -> [0x1080543] line=[3200]
+corrected [2] resource id's
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/WifiService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/LocationManagerService$3.smali]
+adding comment for [0x107002d] -> name=[config_locationProviderPackageNames] type=[array] line=[161]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/LocationManagerService$3.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/usb/UsbHostManager.smali]
+adding comment for [0x1070021] -> name=[config_usbHostBlacklist] type=[array] line=[82]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/usb/UsbHostManager.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/usb/UsbDeviceManager.smali]
+adding comment for [0x1070031] -> name=[config_oemUsbModeOverride] type=[array] line=[1573]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/usb/UsbDeviceManager.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/usb/UsbDeviceManager$UsbHandler.smali]
+correcting id for name=[adb_active_notification_title] type=[string] [0x1040450] -> [0x1040454] line=[2213]
+correcting id for name=[adb_active_notification_title] type=[string] [0x1040450] -> [0x1040454] line=[2236]
+correcting id for name=[adb_active_notification_message] type=[string] [0x1040451] -> [0x1040455] line=[2321]
+correcting id for name=[stat_sys_adb] type=[drawable] [0x1080523] -> [0x1080544] line=[2335]
+correcting id for name=[usb_mtp_notification_title] type=[string] [0x1040448] -> [0x104044c] line=[3023]
+correcting id for name=[usb_notification_message] type=[string] [0x104044c] -> [0x1040450] line=[3077]
+correcting id for name=[stat_sys_data_usb] type=[drawable] [0x1080541] -> [0x1080562] line=[3097]
+correcting id for name=[usb_ptp_notification_title] type=[string] [0x1040449] -> [0x104044d] line=[3203]
+correcting id for name=[usb_cd_installer_notification_title] type=[string] [0x104044a] -> [0x104044e] line=[3278]
+correcting id for name=[usb_accessory_notification_title] type=[string] [0x104044b] -> [0x104044f] line=[3302]
+correcting id for name=[usb_cd_installer_notification_title] type=[string] [0x104044a] -> [0x104044e] line=[3361]
+corrected [11] resource id's
+added [11] comments
+saving [./services.jar.out/smali/com/android/server/usb/UsbDeviceManager$UsbHandler.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/InputMethodManagerService$ImeSubtypeListAdapter.smali]
+adding comment for [0x1020014] -> name=[text1] type=[id] line=[164]
+adding comment for [0x1020015] -> name=[text2] type=[id] line=[174]
+correcting id for name=[radio] type=[id] [0x1020315] -> [0x1020317] line=[200]
+corrected [1] resource id
+added [3] comments
+saving [./services.jar.out/smali/com/android/server/InputMethodManagerService$ImeSubtypeListAdapter.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/SerialService.smali]
+adding comment for [0x1070022] -> name=[config_serialPorts] type=[array] line=[30]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/SerialService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/net/NetworkPolicyManagerService.smali]
+correcting id for name=[config_networkPolicyDefaultWarning] type=[integer] [0x10e0037] -> [0x10e0036] line=[974]
+correcting id for name=[data_usage_warning_title] type=[string] [0x10404e9] -> [0x10404ed] line=[1617]
+correcting id for name=[data_usage_warning_body] type=[string] [0x10404ea] -> [0x10404ee] line=[1625]
+adding comment for [0x1080078] -> name=[stat_notify_error] type=[drawable] line=[1633]
+correcting id for name=[data_usage_limit_body] type=[string] [0x10404ef] -> [0x10404f3] line=[1706]
+correcting id for name=[stat_notify_disabled] type=[drawable] [0x108051a] -> [0x108053b] line=[1731]
+correcting id for name=[data_usage_3g_limit_title] type=[string] [0x10404eb] -> [0x10404ef] line=[1775]
+correcting id for name=[data_usage_4g_limit_title] type=[string] [0x10404ec] -> [0x10404f0] line=[1788]
+correcting id for name=[data_usage_mobile_limit_title] type=[string] [0x10404ed] -> [0x10404f1] line=[1801]
+correcting id for name=[data_usage_wifi_limit_title] type=[string] [0x10404ee] -> [0x10404f2] line=[1814]
+correcting id for name=[data_usage_limit_snoozed_body] type=[string] [0x10404f4] -> [0x10404f8] line=[1836]
+adding comment for [0x1080078] -> name=[stat_notify_error] type=[drawable] line=[1874]
+correcting id for name=[data_usage_3g_limit_snoozed_title] type=[string] [0x10404f0] -> [0x10404f4] line=[1914]
+correcting id for name=[data_usage_4g_limit_snoozed_title] type=[string] [0x10404f1] -> [0x10404f5] line=[1927]
+correcting id for name=[data_usage_mobile_limit_snoozed_title] type=[string] [0x10404f2] -> [0x10404f6] line=[1940]
+correcting id for name=[data_usage_wifi_limit_snoozed_title] type=[string] [0x10404f3] -> [0x10404f7] line=[1953]
+correcting id for name=[data_usage_restricted_title] type=[string] [0x10404f5] -> [0x10404f9] line=[2025]
+correcting id for name=[data_usage_restricted_body] type=[string] [0x10404f6] -> [0x10404fa] line=[2033]
+adding comment for [0x1080078] -> name=[stat_notify_error] type=[drawable] line=[2047]
+corrected [16] resource id's
+added [19] comments
+saving [./services.jar.out/smali/com/android/server/net/NetworkPolicyManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/net/LockdownVpnTracker.smali]
+correcting id for name=[vpn_lockdown_error] type=[string] [0x104048d] -> [0x1040491] line=[212]
+correcting id for name=[vpn_disconnected] type=[drawable] [0x108060b] -> [0x108062c] line=[214]
+correcting id for name=[vpn_lockdown_connecting] type=[string] [0x104048b] -> [0x104048f] line=[403]
+correcting id for name=[vpn_lockdown_connected] type=[string] [0x104048c] -> [0x1040490] line=[513]
+correcting id for name=[vpn_connected] type=[drawable] [0x108060a] -> [0x108062b] line=[515]
+correcting id for name=[vpn_lockdown_reset] type=[string] [0x104048e] -> [0x1040492] line=[802]
+corrected [6] resource id's
+added [6] comments
+saving [./services.jar.out/smali/com/android/server/net/LockdownVpnTracker.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/OverlayDisplayWindow.smali]
+correcting id for name=[display_manager_overlay_display_title] type=[string] [0x104051e] -> [0x1040522] line=[207]
+correcting id for name=[overlay_display_window] type=[layout] [0x1090097] -> [0x109009b] line=[459]
+correcting id for name=[overlay_display_window_texture] type=[id] [0x1020340] -> [0x1020347] line=[479]
+correcting id for name=[overlay_display_window_title] type=[id] [0x1020341] -> [0x1020348] line=[536]
+corrected [4] resource id's
+added [4] comments
+saving [./services.jar.out/smali/com/android/server/display/OverlayDisplayWindow.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/HeadlessDisplayAdapter$HeadlessDisplayDevice.smali]
+correcting id for name=[display_manager_built_in_display_name] type=[string] [0x104051b] -> [0x104051f] line=[75]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/display/HeadlessDisplayAdapter$HeadlessDisplayDevice.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/WifiDisplayController.smali]
+correcting id for name=[dlg_ok] type=[string] [0x1040447] -> [0x104044b] line=[1464]
+correcting id for name=[decline] type=[string] [0x1040413] -> [0x1040417] line=[1466]
+correcting id for name=[dlg_ok] type=[string] [0x1040447] -> [0x104044b] line=[4880]
+correcting id for name=[decline] type=[string] [0x1040413] -> [0x1040417] line=[4894]
+corrected [4] resource id's
+added [4] comments
+saving [./services.jar.out/smali/com/android/server/display/WifiDisplayController.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/OverlayDisplayAdapter.smali]
+correcting id for name=[display_manager_overlay_display_name] type=[string] [0x104051d] -> [0x1040521] line=[478]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/display/OverlayDisplayAdapter.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/LocalDisplayAdapter$LocalDisplayDevice.smali]
+correcting id for name=[display_manager_built_in_display_name] type=[string] [0x104051b] -> [0x104051f] line=[278]
+correcting id for name=[display_manager_hdmi_display_name] type=[string] [0x104051c] -> [0x1040520] line=[426]
+corrected [2] resource id's
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/display/LocalDisplayAdapter$LocalDisplayDevice.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/display/WifiDisplayAdapter.smali]
+correcting id for name=[wifi_display_notification_title] type=[string] [0x104051f] -> [0x1040523] line=[648]
+correcting id for name=[wifi_display_notification_message] type=[string] [0x1040520] -> [0x1040524] line=[783]
+correcting id for name=[ic_notify_wifidisplay] type=[drawable] [0x1080355] -> [0x108036f] line=[799]
+adding comment for [0x1080038] -> name=[ic_menu_close_clear_cancel] type=[drawable] line=[809]
+correcting id for name=[wifi_display_notification_disconnect] type=[string] [0x1040521] -> [0x1040525] line=[811]
+corrected [4] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/display/WifiDisplayAdapter.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/WallpaperManagerService.smali]
+adding comment for [0x104001d] -> name=[default_wallpaper_component] type=[string] line=[1640]
+correcting id for name=[wallpaper_binding_label] type=[string] [0x1040484] -> [0x1040488] line=[2070]
+correcting id for name=[chooser_wallpaper] type=[string] [0x1040485] -> [0x1040489] line=[2093]
+corrected [2] resource id's
+added [3] comments
+saving [./services.jar.out/smali/com/android/server/WallpaperManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/pm/UserManagerService.smali]
+correcting id for name=[owner_name] type=[string] [0x104054a] -> [0x104054e] line=[606]
+correcting id for name=[owner_name] type=[string] [0x104054a] -> [0x104054e] line=[2212]
+corrected [2] resource id's
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/pm/UserManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/pm/PackageManagerService.smali]
+correcting id for name=[android_upgrading_apk] type=[string] [0x10403e8] -> [0x10403ec] line=[38763]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/pm/PackageManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/DeviceStorageMonitorService$1.smali]
+adding comment for [0x1080027] -> name=[ic_dialog_alert] type=[drawable] line=[185]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/DeviceStorageMonitorService$1.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/ServerThread.smali]
+correcting id for name=[android_upgrading_starting_apps] type=[string] [0x10403e9] -> [0x10403ed] line=[1355]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/ServerThread.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/DeviceStorageMonitorService.smali]
+correcting id for name=[low_internal_storage_view_title] type=[string] [0x10403c8] -> [0x10403cc] line=[1691]
+correcting id for name=[low_internal_storage_view_text] type=[string] [0x10403c9] -> [0x10403cd] line=[1701]
+correcting id for name=[stat_notify_disk_full] type=[drawable] [0x108051b] -> [0x108053c] line=[1727]
+corrected [3] resource id's
+added [3] comments
+saving [./services.jar.out/smali/com/android/server/DeviceStorageMonitorService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/ThrottleService.smali]
+correcting id for name=[config_datause_iface] type=[string] [0x104001e] -> [0x1040022] line=[150]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/ThrottleService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/InputMethodManagerService.smali]
+correcting id for name=[ic_notification_ime_default] type=[drawable] [0x1080354] -> [0x108036e] line=[446]
+adding comment for [0x101005d] -> name=[alertDialogStyle] type=[attr] line=[5364]
+adding comment for [0x109004b] -> name=[input_method_switch_dialog_title] type=[layout] line=[5450]
+adding comment for [0x102029f] -> name=[hard_keyboard_section] type=[id] line=[5490]
+adding comment for [0x10202a0] -> name=[hard_keyboard_switch] type=[id] line=[5528]
+correcting id for name=[simple_list_item_2_single_choice] type=[layout] [0x10900c9] -> [0x10900cd] line=[5574]
+correcting id for name=[configure_input_methods] type=[string] [0x1040454] -> [0x1040458] line=[5614]
+correcting id for name=[select_keyboard_layout_notification_title] type=[string] [0x1040457] -> [0x104045b] line=[10164]
+correcting id for name=[select_input_method] type=[string] [0x1040453] -> [0x1040457] line=[10764]
+correcting id for name=[select_input_method] type=[string] [0x1040453] -> [0x1040457] line=[10907]
+correcting id for name=[select_input_method] type=[string] [0x1040453] -> [0x1040457] line=[11041]
+correcting id for name=[input_method_binding_label] type=[string] [0x1040481] -> [0x1040485] line=[12611]
+corrected [8] resource id's
+added [12] comments
+saving [./services.jar.out/smali/com/android/server/InputMethodManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService$Service.smali]
+correcting id for name=[accessibility_binding_label] type=[string] [0x1040483] -> [0x1040487] line=[213]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService$Service.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService$MainHandler.smali]
+correcting id for name=[user_switched] type=[string] [0x1040549] -> [0x104054d] line=[107]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService$MainHandler.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow.smali]
+adding comment for [0x106000d] -> name=[transparent] type=[color] line=[91]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier.smali]
+adding comment for [0x10e0002] -> name=[config_longAnimTime] type=[integer] line=[229]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService.smali]
+adding comment for [0x1080027] -> name=[ic_dialog_alert] type=[drawable] line=[2345]
+adding comment for [0x104000a] -> name=[ok] type=[string] line=[2351]
+correcting id for name=[enable_explore_by_touch_warning_title] type=[string] [0x10403a5] -> [0x10403a9] line=[2371]
+correcting id for name=[enable_explore_by_touch_warning_message] type=[string] [0x10403a6] -> [0x10403aa] line=[2379]
+corrected [2] resource id's
+added [4] comments
+saving [./services.jar.out/smali/com/android/server/accessibility/AccessibilityManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView.smali]
+correcting id for name=[magnified_region_frame] type=[drawable] [0x10803ff] -> [0x108041a] line=[42]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityManagerService.smali]
+error: resource id not found for [0x1400000] line=[1129]
+correcting id for name=[safe_mode] type=[layout] [0x10900b3] -> [0x10900b7] line=[67809]
+adding comment for [0x10a0050] -> name=[screen_user_exit] type=[anim] line=[71554]
+adding comment for [0x10a004f] -> name=[screen_user_enter] type=[anim] line=[71556]
+correcting id for name=[factorytest_not_system] type=[string] [0x104033c] -> [0x1040340] line=[72975]
+correcting id for name=[factorytest_no_action] type=[string] [0x104033d] -> [0x1040341] line=[72994]
+corrected [3] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/am/ActivityManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/StrictModeViolationDialog.smali]
+correcting id for name=[smv_application] type=[string] [0x10403e5] -> [0x10403e9] line=[88]
+correcting id for name=[dlg_ok] type=[string] [0x1040447] -> [0x104044b] line=[119]
+correcting id for name=[report] type=[string] [0x10403dc] -> [0x10403e0] line=[141]
+correcting id for name=[aerr_title] type=[string] [0x10403d3] -> [0x10403d7] line=[157]
+correcting id for name=[smv_process] type=[string] [0x10403e6] -> [0x10403ea] line=[226]
+corrected [5] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/am/StrictModeViolationDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityRecord.smali]
+adding comment for [0x1030005] -> name=[Theme] type=[style] line=[484]
+adding comment for [0x103006b] -> name=[Theme.Holo] type=[style] line=[774]
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/am/ActivityRecord.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/AppErrorDialog.smali]
+correcting id for name=[force_close] type=[string] [0x10403db] -> [0x10403df] line=[177]
+correcting id for name=[report] type=[string] [0x10403dc] -> [0x10403e0] line=[203]
+correcting id for name=[aerr_title] type=[string] [0x10403d3] -> [0x10403d7] line=[285]
+correcting id for name=[aerr_application] type=[string] [0x10403d4] -> [0x10403d8] line=[410]
+correcting id for name=[aerr_process] type=[string] [0x10403d5] -> [0x10403d9] line=[535]
+correcting id for name=[report] type=[string] [0x10403dc] -> [0x10403e0] line=[617]
+corrected [6] resource id's
+added [6] comments
+saving [./services.jar.out/smali/com/android/server/am/AppErrorDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/BaseErrorDialog.smali]
+adding comment for [0x1010355] -> name=[alertDialogIcon] type=[attr] line=[73]
+adding comment for [0x1020019] -> name=[button1] type=[id] line=[111]
+adding comment for [0x102001a] -> name=[button2] type=[id] line=[128]
+adding comment for [0x102001b] -> name=[button3] type=[id] line=[146]
+added [4] comments
+saving [./services.jar.out/smali/com/android/server/am/BaseErrorDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/FactoryErrorDialog.smali]
+correcting id for name=[factorytest_failed] type=[string] [0x104033b] -> [0x104033f] line=[34]
+correcting id for name=[factorytest_reboot] type=[string] [0x104033e] -> [0x1040342] line=[48]
+corrected [2] resource id's
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/am/FactoryErrorDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/AppNotRespondingDialog.smali]
+correcting id for name=[anr_activity_application] type=[string] [0x10403d7] -> [0x10403db] line=[110]
+correcting id for name=[force_close] type=[string] [0x10403db] -> [0x10403df] line=[141]
+correcting id for name=[wait] type=[string] [0x10403dd] -> [0x10403e1] line=[158]
+correcting id for name=[report] type=[string] [0x10403dc] -> [0x10403e0] line=[180]
+correcting id for name=[anr_title] type=[string] [0x10403d6] -> [0x10403da] line=[198]
+correcting id for name=[anr_application_process] type=[string] [0x10403d9] -> [0x10403dd] line=[298]
+correcting id for name=[anr_activity_process] type=[string] [0x10403d8] -> [0x10403dc] line=[312]
+correcting id for name=[anr_process] type=[string] [0x10403da] -> [0x10403de] line=[323]
+corrected [8] resource id's
+added [8] comments
+saving [./services.jar.out/smali/com/android/server/am/AppNotRespondingDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/CompatModeDialog.smali]
+adding comment for [0x1030070] -> name=[Theme.Holo.Dialog.MinWidth] type=[style] line=[30]
+adding comment for [0x1090028] -> name=[am_compat_mode_dialog] type=[layout] line=[72]
+adding comment for [0x1020267] -> name=[compat_checkbox] type=[id] line=[77]
+adding comment for [0x1020268] -> name=[ask_checkbox] type=[id] line=[97]
+adding comment for [0x1020269] -> name=[reask_hint] type=[id] line=[117]
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/am/CompatModeDialog.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityManagerService$2.smali]
+correcting id for name=[heavy_weight_notification] type=[string] [0x10403eb] -> [0x10403ef] line=[2062]
+correcting id for name=[stat_sys_adb] type=[drawable] [0x1080523] -> [0x1080544] line=[2096]
+correcting id for name=[heavy_weight_notification_detail] type=[string] [0x10403ec] -> [0x10403f0] line=[2151]
+correcting id for name=[heavy_weight_notification] type=[string] [0x10403eb] -> [0x10403ef] line=[2211]
+correcting id for name=[heavy_weight_notification] type=[string] [0x10403eb] -> [0x10403ef] line=[2291]
+corrected [5] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/am/ActivityManagerService$2.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/BatteryStatsService.smali]
+adding comment for [0x10e0008] -> name=[config_radioScanningTimeout] type=[integer] line=[2260]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/am/BatteryStatsService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityStack.smali]
+adding comment for [0x1050002] -> name=[thumbnail_width] type=[dimen] line=[19041]
+adding comment for [0x1050001] -> name=[thumbnail_height] type=[dimen] line=[19050]
+added [2] comments
+saving [./services.jar.out/smali/com/android/server/am/ActivityStack.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/LaunchWarningWindow.smali]
+adding comment for [0x10302fd] -> name=[Theme.Toast] type=[style] line=[22]
+correcting id for name=[launch_warning] type=[layout] [0x109007a] -> [0x109007e] line=[48]
+correcting id for name=[launch_warning_title] type=[string] [0x10403df] -> [0x10403e3] line=[53]
+adding comment for [0x1010355] -> name=[alertDialogIcon] type=[attr] line=[76]
+correcting id for name=[replace_app_icon] type=[id] [0x102030d] -> [0x102030f] line=[90]
+correcting id for name=[replace_message] type=[id] [0x102030e] -> [0x1020310] line=[115]
+correcting id for name=[launch_warning_replace] type=[string] [0x10403e0] -> [0x10403e4] line=[129]
+correcting id for name=[original_app_icon] type=[id] [0x102030f] -> [0x1020311] line=[158]
+correcting id for name=[original_message] type=[id] [0x1020310] -> [0x1020312] line=[184]
+correcting id for name=[launch_warning_original] type=[string] [0x10403e1] -> [0x10403e5] line=[199]
+corrected [8] resource id's
+added [10] comments
+saving [./services.jar.out/smali/com/android/server/am/LaunchWarningWindow.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityManagerService$8$1.smali]
+correcting id for name=[android_upgrading_complete] type=[string] [0x10403ea] -> [0x10403ee] line=[86]
+corrected [1] resource id
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/am/ActivityManagerService$8$1.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/NotificationManagerService.smali]
+adding comment for [0x106006b] -> name=[config_defaultNotificationColor] type=[color] line=[342]
+correcting id for name=[config_defaultNotificationLedOn] type=[integer] [0x10e001d] -> [0x10e001c] line=[351]
+correcting id for name=[config_defaultNotificationLedOff] type=[integer] [0x10e001e] -> [0x10e001d] line=[360]
+adding comment for [0x1070032] -> name=[config_defaultNotificationVibePattern] type=[array] line=[369]
+adding comment for [0x1070033] -> name=[config_notificationFallbackVibePattern] type=[array] line=[380]
+corrected [2] resource id's
+added [5] comments
+saving [./services.jar.out/smali/com/android/server/NotificationManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/InputMethodManagerService$HardKeyboardListener.smali]
+adding comment for [0x102029f] -> name=[hard_keyboard_section] type=[id] line=[146]
+added [1] comment
+saving [./services.jar.out/smali/com/android/server/InputMethodManagerService$HardKeyboardListener.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/ConnectivityService.smali]
+correcting id for name=[config_default_dns_server] type=[string] [0x104001f] -> [0x1040023] line=[622]
+adding comment for [0x10e0009] -> name=[config_networkTransitionTimeout] type=[integer] line=[747]
+adding comment for [0x1070017] -> name=[radioAttributes] type=[array] line=[807]
+adding comment for [0x1070015] -> name=[networkAttributes] type=[array] line=[1021]
+adding comment for [0x1070016] -> name=[config_protectedNetworks] type=[array] line=[1248]
+correcting id for name=[config_wimaxServiceJarLocation] type=[string] [0x1040027] -> [0x104002b] line=[8236]
+correcting id for name=[config_wimaxNativeLibLocation] type=[string] [0x1040028] -> [0x104002c] line=[8248]
+correcting id for name=[config_wimaxManagerClassname] type=[string] [0x1040029] -> [0x104002d] line=[8260]
+correcting id for name=[config_wimaxServiceClassname] type=[string] [0x104002a] -> [0x104002e] line=[8272]
+correcting id for name=[config_wimaxStateTrackerClassname] type=[string] [0x104002b] -> [0x104002f] line=[8284]
+corrected [6] resource id's
+added [10] comments
+saving [./services.jar.out/smali/com/android/server/ConnectivityService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/UiModeManagerService.smali]
+adding comment for [0x10e0012] -> name=[config_defaultUiModeType] type=[integer] line=[243]
+adding comment for [0x10e0014] -> name=[config_carDockKeepsScreenOn] type=[integer] line=[256]
+adding comment for [0x10e0013] -> name=[config_deskDockKeepsScreenOn] type=[integer] line=[274]
+correcting id for name=[car_mode_disable_notification_title] type=[string] [0x1040493] -> [0x1040497] line=[417]
+correcting id for name=[stat_notify_car_mode] type=[drawable] [0x1080519] -> [0x108053a] line=[504]
+correcting id for name=[car_mode_disable_notification_message] type=[string] [0x1040494] -> [0x1040498] line=[534]
+corrected [3] resource id's
+added [6] comments
+saving [./services.jar.out/smali/com/android/server/UiModeManagerService.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/ThrottleService$MyHandler.smali]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[470]
+correcting id for name=[throttled_notification_title] type=[string] [0x104049c] -> [0x10404a0] line=[475]
+correcting id for name=[throttled_notification_message] type=[string] [0x104049d] -> [0x10404a1] line=[477]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[479]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[716]
+correcting id for name=[throttle_warning_notification_title] type=[string] [0x104049a] -> [0x104049e] line=[721]
+correcting id for name=[throttle_warning_notification_message] type=[string] [0x104049b] -> [0x104049f] line=[723]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[725]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[776]
+correcting id for name=[stat_sys_throttled] type=[drawable] [0x1080565] -> [0x1080586] line=[887]
+correcting id for name=[config_datause_polling_period_sec] type=[integer] [0x10e002b] -> [0x10e002a] line=[1086]
+correcting id for name=[config_datause_threshold_bytes] type=[integer] [0x10e002c] -> [0x10e002b] line=[1134]
+correcting id for name=[config_datause_throttle_kbitsps] type=[integer] [0x10e002d] -> [0x10e002c] line=[1157]
+correcting id for name=[config_datause_notification_type] type=[integer] [0x10e002e] -> [0x10e002d] line=[1420]
+corrected [14] resource id's
+added [14] comments
+saving [./services.jar.out/smali/com/android/server/ThrottleService$MyHandler.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/connectivity/Tethering.smali]
+adding comment for [0x107001d] -> name=[config_tether_dhcp_range] type=[array] line=[486]
+correcting id for name=[stat_sys_tether_general] type=[drawable] [0x1080562] -> [0x1080583] line=[2386]
+correcting id for name=[stat_sys_tether_usb] type=[drawable] [0x1080563] -> [0x1080584] line=[2406]
+correcting id for name=[stat_sys_tether_general] type=[drawable] [0x1080562] -> [0x1080583] line=[2424]
+correcting id for name=[stat_sys_tether_wifi] type=[drawable] [0x1080564] -> [0x1080585] line=[2444]
+correcting id for name=[stat_sys_tether_bluetooth] type=[drawable] [0x1080561] -> [0x1080582] line=[2459]
+correcting id for name=[tethered_notification_title] type=[string] [0x1040495] -> [0x1040499] line=[2658]
+correcting id for name=[tethered_notification_message] type=[string] [0x1040496] -> [0x104049a] line=[2950]
+correcting id for name=[tethered_notification_title] type=[string] [0x1040495] -> [0x1040499] line=[3414]
+adding comment for [0x1070019] -> name=[config_tether_usb_regexs] type=[array] line=[6298]
+adding comment for [0x107001a] -> name=[config_tether_wifi_regexs] type=[array] line=[6312]
+adding comment for [0x107001c] -> name=[config_tether_bluetooth_regexs] type=[array] line=[6326]
+adding comment for [0x107001f] -> name=[config_tether_upstream_types] type=[array] line=[6340]
+corrected [8] resource id's
+added [13] comments
+saving [./services.jar.out/smali/com/android/server/connectivity/Tethering.smali]
+framework resource id found in [./services.jar.out/smali/com/android/server/connectivity/Vpn.smali]
+correcting id for name=[vpn_connected] type=[drawable] [0x108060a] -> [0x108062b] line=[444]
+correcting id for name=[vpn_connected] type=[drawable] [0x108060a] -> [0x108062b] line=[497]
+correcting id for name=[vpn_title] type=[string] [0x1040487] -> [0x104048b] line=[543]
+correcting id for name=[vpn_text] type=[string] [0x1040489] -> [0x104048d] line=[558]
+correcting id for name=[vpn_title_long] type=[string] [0x1040488] -> [0x104048c] line=[631]
+correcting id for name=[vpn_text_long] type=[string] [0x104048a] -> [0x104048e] line=[648]
+adding comment for [0x1050005] -> name=[notification_large_icon_width] type=[dimen] line=[1062]
+adding comment for [0x1050006] -> name=[notification_large_icon_height] type=[dimen] line=[1080]
+corrected [6] resource id's
+added [8] comments
+saving [./services.jar.out/smali/com/android/server/connectivity/Vpn.smali]
+files processed [968]
+files changed [59]
