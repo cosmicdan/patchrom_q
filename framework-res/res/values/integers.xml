@@ -32,7 +32,7 @@
     <integer name="config_defaultNotificationLedOn">500</integer>
     <integer name="config_defaultNotificationLedOff">4500</integer>
     <integer name="config_notificationsBatteryLowARGB">0xffff0000</integer>
-    <integer name="config_notificationsBatteryMediumARGB">0xff00ff00</integer>
+    <integer name="config_notificationsBatteryMediumARGB">0xffff0000</integer>
     <integer name="config_notificationsBatteryFullARGB">0xff0000ff</integer>
     <integer name="config_notificationsBatteryLedOn">125</integer>
     <integer name="config_notificationsBatteryLedOff">4875</integer>
