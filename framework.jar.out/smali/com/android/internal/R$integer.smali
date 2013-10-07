@@ -66,7 +66,7 @@
 
 .field public static final config_lowBatteryCloseWarningLevel:I = 0x10e001b		#integer:config_lowBatteryCloseWarningLevel
 
-.field public static final config_lowBatteryStopFlashLevel:I = 0x10e001c
+.field public static final config_lowBatteryStopFlashLevel:I = 0x10e0046
 
 .field public static final config_lowBatteryWarningLevel:I = 0x10e001a		#integer:config_lowBatteryWarningLevel
 

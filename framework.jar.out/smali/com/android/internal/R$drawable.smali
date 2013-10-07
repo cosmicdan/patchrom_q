@@ -212,7 +212,7 @@
 
 .field public static final ic_lock_airplane_mode_off:I = 0x10802de		#[0x10802da]drawable:ic_lock_airplane_mode_off
 
-.field public static final ic_lock_capture_screen:I = 0x10802db
+.field public static final ic_lock_capture_screen:I = 0x1080170
 
 .field public static final ic_lock_idle_alarm:I = 0x108002e		#drawable:ic_lock_idle_alarm
 

@@ -300,6 +300,7 @@ corrected [1] resource id
 added [1] comment
 saving [./services.jar.out/smali/com/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView.smali]
 framework resource id found in [./services.jar.out/smali/com/android/server/am/ActivityManagerService.smali]
+### [XT] NOT A RESID
 error: resource id not found for [0x1400000] line=[1129]
 correcting id for name=[safe_mode] type=[layout] [0x10900b3] -> [0x10900b7] line=[67809]
 adding comment for [0x10a0050] -> name=[screen_user_exit] type=[anim] line=[71554]

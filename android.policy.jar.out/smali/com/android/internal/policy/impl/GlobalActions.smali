@@ -1126,9 +1126,9 @@
 
     new-instance v1, Lcom/android/internal/policy/impl/GlobalActions$4;
 
-    const v2, 0x10802db
+    const v2, 0x1080170
 
-    const v3, 0x104054f
+    const v3, 0x1040557
 
     invoke-direct {v1, p0, v2, v3}, Lcom/android/internal/policy/impl/GlobalActions$4;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 

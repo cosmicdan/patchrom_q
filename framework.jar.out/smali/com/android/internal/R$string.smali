@@ -254,7 +254,7 @@
 
 .field public static final cancel:I = 0x1040000		#string:cancel
 
-.field public static final capture_screen:I = 0x104054f
+.field public static final capture_screen:I = 0x1040557
 
 .field public static final car_mode_disable_notification_message:I = 0x1040498		#[0x1040494]string:car_mode_disable_notification_message
 

@@ -6893,6 +6893,7 @@ corrected [1] resource id
 added [1] comment
 saving [./framework.jar.out/smali/android/os/UserManager.smali]
 framework resource id found in [./framework.jar.out/smali/android/os/BatteryStats$HistoryItem.smali]
+### [XT] NOT A RESID
 error: resource id not found for [0x101c000] line=[50]
 framework resource id found in [./framework.jar.out/smali/android/os/PowerManager.smali]
 correcting id for name=[config_screenBrightnessSettingDefault] type=[integer] [0x10e0027] -> [0x10e0026] line=[193]
