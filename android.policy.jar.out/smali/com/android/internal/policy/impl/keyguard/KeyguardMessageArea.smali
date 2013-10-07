@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 .super Landroid/widget/TextView;
 .source "KeyguardMessageArea.java"
@@ -151,7 +152,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040543
+    const v1, 0x1040547		#[0x1040543]string:kg_text_message_separator
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -323,7 +324,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x10402f2
+    const v1, 0x10402f6		#[0x10402f2]string:lockscreen_charged
 
     :goto_0
     const/4 v3, 0x1
@@ -352,7 +353,7 @@
 
     .line 239
     :cond_1
-    const v1, 0x10402f1
+    const v1, 0x10402f5		#[0x10402f1]string:lockscreen_plugged_in
 
     goto :goto_0
 
@@ -367,7 +368,7 @@
 
     move-result-object v1
 
-    const v2, 0x10402f4
+    const v2, 0x10402f8		#[0x10402f4]string:lockscreen_low_battery
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

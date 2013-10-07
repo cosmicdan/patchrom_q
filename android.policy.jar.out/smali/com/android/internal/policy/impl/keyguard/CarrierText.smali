@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/CarrierText;
 .super Landroid/widget/TextView;
 .source "CarrierText.java"
@@ -208,28 +209,28 @@
 
     .line 235
     :pswitch_0
-    const v0, 0x10402e9
+    const v0, 0x10402ed		#[0x10402e9]string:lockscreen_instructions_when_pattern_disabled
 
     .line 236
     goto :goto_0
 
     .line 239
     :pswitch_1
-    const v0, 0x10402f8
+    const v0, 0x10402fc		#[0x10402f8]string:lockscreen_missing_sim_instructions_long
 
     .line 240
     goto :goto_0
 
     .line 243
     :pswitch_2
-    const v0, 0x10402fa
+    const v0, 0x10402fe		#[0x10402fa]string:lockscreen_permanent_disabled_sim_instructions
 
     .line 244
     goto :goto_0
 
     .line 247
     :pswitch_3
-    const v0, 0x10402f7
+    const v0, 0x10402fb		#[0x10402f7]string:lockscreen_missing_sim_instructions
 
     .line 248
     goto :goto_0
@@ -253,7 +254,7 @@
     .parameter "spn"
 
     .prologue
-    const v4, 0x10402f5
+    const v4, 0x10402f9		#[0x10402f5]string:lockscreen_missing_sim_message_short
 
     .line 114
     const/4 v0, 0x0
@@ -300,7 +301,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/CarrierText;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040301
+    const v3, 0x1040305		#[0x1040301]string:lockscreen_network_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -336,7 +337,7 @@
 
     move-result-object v2
 
-    const v3, 0x10402f9
+    const v3, 0x10402fd		#[0x10402f9]string:lockscreen_permanent_disabled_sim_message_short
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -368,7 +369,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040304
+    const v3, 0x1040308		#[0x1040304]string:lockscreen_sim_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -387,7 +388,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040302
+    const v3, 0x1040306		#[0x1040302]string:lockscreen_sim_puk_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -633,7 +634,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040543
+    const v1, 0x1040547		#[0x1040543]string:kg_text_message_separator
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

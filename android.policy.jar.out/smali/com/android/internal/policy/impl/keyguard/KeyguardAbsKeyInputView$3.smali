@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView$3;
 .super Landroid/os/CountDownTimer;
 .source "KeyguardAbsKeyInputView.java"
@@ -80,7 +81,7 @@
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v2, 0x1040527
+    const v2, 0x104052b		#[0x1040527]string:kg_too_many_failed_attempts_countdown
 
     new-array v3, v6, [Ljava/lang/Object;
 

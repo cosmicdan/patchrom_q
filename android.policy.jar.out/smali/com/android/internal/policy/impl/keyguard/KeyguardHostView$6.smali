@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;
 .super Ljava/lang/Object;
 .source "KeyguardHostView.java"
@@ -43,7 +44,7 @@
     .line 1197
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    const v2, 0x10202b8
+    const v2, 0x10202b8		#id:sliding_layout
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;
 .super Ljava/lang/Object;
 .source "KeyguardSimPukView.java"
@@ -110,7 +111,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
     .line 61
-    const v0, 0x104052d
+    const v0, 0x1040531		#[0x104052d]string:kg_puk_enter_pin_hint
 
     .line 83
     :cond_0
@@ -139,7 +140,7 @@
 
     .line 63
     :cond_2
-    const v0, 0x1040532
+    const v0, 0x1040536		#[0x1040532]string:kg_invalid_sim_puk_hint
 
     goto :goto_0
 
@@ -163,13 +164,13 @@
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
     .line 68
-    const v0, 0x104052e
+    const v0, 0x1040532		#[0x104052e]string:kg_enter_confirm_pin_hint
 
     goto :goto_0
 
     .line 70
     :cond_4
-    const v0, 0x1040531
+    const v0, 0x1040535		#[0x1040531]string:kg_invalid_sim_pin_hint
 
     goto :goto_0
 
@@ -194,7 +195,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
     .line 75
-    const v0, 0x1040305
+    const v0, 0x1040309		#[0x1040305]string:lockscreen_sim_unlock_progress_dialog_message
 
     .line 77
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;
@@ -209,7 +210,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView$StateMachine;->state:I
 
     .line 80
-    const v0, 0x1040534
+    const v0, 0x1040538		#[0x1040534]string:kg_invalid_confirm_pin_hint
 
     goto :goto_0
 .end method
@@ -244,7 +245,7 @@
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPukView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x104052c
+    const v1, 0x1040530		#[0x104052c]string:kg_puk_enter_puk_hint
 
     const/4 v2, 0x1
 

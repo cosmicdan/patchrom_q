@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/PasswordUnlockScreen;
 .super Landroid/widget/LinearLayout;
 .source "PasswordUnlockScreen.java"
@@ -112,7 +113,7 @@
     if-eq v1, v2, :cond_4
 
     .line 98
-    const v1, 0x1090064
+    const v1, 0x1090067		#[0x1090064]layout:keyguard_screen_password_portrait
 
     const/4 v2, 0x1
 
@@ -162,7 +163,7 @@
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mIsAlpha:Z
 
     .line 111
-    const v1, 0x1020220
+    const v1, 0x1020220		#id:keyboard
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +174,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mKeyboardView:Lcom/android/internal/widget/PasswordEntryKeyboardView;
 
     .line 112
-    const v1, 0x10202bf
+    const v1, 0x10202bf		#id:passwordEntry
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +290,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 181
-    const v1, 0x10202c0
+    const v1, 0x10202c0		#id:switch_ime_button
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -380,7 +381,7 @@
     .end local v12           #quality:I
     .end local v13           #switchImeButton:Landroid/view/View;
     :cond_4
-    const v1, 0x1090063
+    const v1, 0x1090066		#[0x1090063]layout:keyguard_screen_password_landscape
 
     const/4 v2, 0x1
 
@@ -419,7 +420,7 @@
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->setVisibility(I)V
 
     .line 130
-    const v1, 0x10202e8
+    const v1, 0x10202e8		#id:pinDel
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -794,7 +795,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x10402ef
+    const v5, 0x10402f3		#[0x10402ef]string:lockscreen_password_wrong
 
     .line 294
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;

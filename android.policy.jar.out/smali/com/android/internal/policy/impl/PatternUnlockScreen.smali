@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PatternUnlockScreen;
 .super Lcom/android/internal/widget/LinearLayoutWithDefaultTouchRecepient;
 .source "PatternUnlockScreen.java"
@@ -151,7 +152,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 167
-    const v0, 0x109006e
+    const v0, 0x1090071		#[0x109006e]layout:keyguard_screen_unlock_portrait
 
     invoke-virtual {v6, v0, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -172,7 +173,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen;->mKeyguardStatusViewManager:Lcom/android/internal/policy/impl/KeyguardStatusViewManager;
 
     .line 176
-    const v0, 0x10202fb
+    const v0, 0x10202fd		#[0x10202fb]id:lockPattern
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +184,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
 
     .line 178
-    const v0, 0x10202fa
+    const v0, 0x10202fc		#[0x10202fa]id:forgotPatternButton
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PatternUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +197,7 @@
     .line 179
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen;->mForgotPatternButton:Landroid/widget/Button;
 
-    const v1, 0x104030d
+    const v1, 0x1040311		#[0x104030d]string:lockscreen_forgot_pattern_button_text
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
@@ -278,7 +279,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 170
-    const v0, 0x109006d
+    const v0, 0x1090070		#[0x109006d]layout:keyguard_screen_unlock_landscape
 
     invoke-virtual {v6, v0, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;
 .super Ljava/lang/Object;
 .source "VoiceUnlock.java"
@@ -952,7 +953,7 @@
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mVoiceUnlockView:Landroid/view/View;
 
     .line 183
-    const v0, 0x10203be
+    const v0, 0x10203c5		#[0x10203be]id:zz_voiceLockWave
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -984,7 +985,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageLevel(I)V
 
     .line 187
-    const v0, 0x10203bf
+    const v0, 0x10203c6		#[0x10203bf]id:zz_voiceLockCancel
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

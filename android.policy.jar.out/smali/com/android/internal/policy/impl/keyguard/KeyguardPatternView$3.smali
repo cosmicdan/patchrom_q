@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$3;
 .super Landroid/os/CountDownTimer;
 .source "KeyguardPatternView.java"
@@ -123,7 +124,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040527
+    const v2, 0x104052b		#[0x1040527]string:kg_too_many_failed_attempts_countdown
 
     new-array v3, v6, [Ljava/lang/Object;
 

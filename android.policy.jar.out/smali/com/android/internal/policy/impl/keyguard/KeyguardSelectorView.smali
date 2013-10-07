@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 .super Lcom/android/internal/policy/impl/keyguard/LockScreenLayout;
 .source "KeyguardSelectorView.java"
@@ -388,7 +389,7 @@
 
     .line 226
     .local v4, disabledBySimState:Z
-    const v11, 0x10802e1
+    const v11, 0x10802e8		#[0x10802e1]drawable:ic_lockscreen_camera
 
     invoke-virtual {p0, v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->isTargetPresent(I)Z
 
@@ -396,7 +397,7 @@
 
     .line 228
     .local v1, cameraTargetPresent:Z
-    const v11, 0x1080294
+    const v11, 0x1080298		#[0x1080294]drawable:ic_action_assist_generic
 
     invoke-virtual {p0, v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->isTargetPresent(I)Z
 
@@ -764,7 +765,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/LockScreenLayout;->onFinishInflate()V
 
     .line 173
-    const v5, 0x10202b1
+    const v5, 0x10202b1		#id:glow_pad_view
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +792,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 178
-    const v5, 0x10202fd
+    const v5, 0x10202ff		#[0x10202fd]id:keyguard_selector_view_frame
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 
@@ -854,7 +855,7 @@
     invoke-static {v5, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 190
-    const v5, 0x10202fe
+    const v5, 0x1020300		#[0x10202fe]id:keyguard_unlock_panel
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 
@@ -1340,7 +1341,7 @@
 
     const/4 v5, 0x0
 
-    const v8, 0x1080294
+    const v8, 0x1080298		#[0x1080294]drawable:ic_action_assist_generic
 
     .line 253
     iget-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mSearchDisabled:Z
@@ -1429,7 +1430,7 @@
     :cond_0
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mGlowPadView:Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;
 
-    const v7, 0x10802e1
+    const v7, 0x10802e8		#[0x10802e1]drawable:ic_lockscreen_camera
 
     iget-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mCameraDisabled:Z
 

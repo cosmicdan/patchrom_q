@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView$7$1;
 .super Ljava/lang/Object;
 .source "KeyguardSimPinPukView.java"
@@ -50,7 +51,7 @@
 
     const v6, 0x2050011
 
-    const v5, 0x10402dc
+    const v5, 0x10402e0		#[0x10402dc]string:keyguard_password_enter_pin_code
 
     const/4 v4, 0x1
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class abstract Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 .super Ljava/lang/Object;
 .source "GlobalActions.java"
@@ -123,7 +124,7 @@
 
     .prologue
     .line 672
-    const v3, 0x1090043
+    const v3, 0x1090043		#layout:global_actions_item
 
     const/4 v4, 0x0
 
@@ -133,7 +134,7 @@
 
     .line 674
     .local v2, v:Landroid/view/View;
-    const v3, 0x1020006
+    const v3, 0x1020006		#id:icon
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -143,7 +144,7 @@
 
     .line 675
     .local v0, icon:Landroid/widget/ImageView;
-    const v3, 0x102000b
+    const v3, 0x102000b		#id:message
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -153,7 +154,7 @@
 
     .line 677
     .local v1, messageView:Landroid/widget/TextView;
-    const v3, 0x1020284
+    const v3, 0x1020284		#id:status
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

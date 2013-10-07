@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 .super Ljava/lang/Object;
 .source "KeyguardUpdateMonitor.java"
@@ -580,7 +581,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402e6
+    const v1, 0x10402ea		#[0x10402e6]string:lockscreen_carrier_default
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

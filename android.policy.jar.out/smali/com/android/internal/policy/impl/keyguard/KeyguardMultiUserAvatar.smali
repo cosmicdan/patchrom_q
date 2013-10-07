@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 .super Landroid/widget/FrameLayout;
 .source "KeyguardMultiUserAvatar.java"
@@ -143,7 +144,7 @@
 
     .line 94
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x1060069
+    const v1, 0x1060069		#color:keyguard_avatar_nick_color
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -152,7 +153,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mTextColor:I
 
     .line 95
-    const v1, 0x1050072
+    const v1, 0x1050072		#dimen:keyguard_avatar_size
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -161,7 +162,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mIconSize:F
 
     .line 96
-    const v1, 0x1050070
+    const v1, 0x1050070		#dimen:keyguard_avatar_frame_stroke_width
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -170,7 +171,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mStroke:F
 
     .line 97
-    const v1, 0x1050071
+    const v1, 0x1050071		#dimen:keyguard_avatar_frame_shadow_radius
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -179,7 +180,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mShadowRadius:F
 
     .line 98
-    const v1, 0x1060067
+    const v1, 0x1060067		#color:keyguard_avatar_frame_color
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -188,7 +189,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mFrameColor:I
 
     .line 99
-    const v1, 0x1060068
+    const v1, 0x1060068		#color:keyguard_avatar_frame_shadow_color
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -197,7 +198,7 @@
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mFrameShadowColor:I
 
     .line 100
-    const v1, 0x106006a
+    const v1, 0x106006a		#color:keyguard_avatar_frame_pressed_color
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -327,7 +328,7 @@
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mUserSelector:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 
     .line 123
-    const v0, 0x10202b9
+    const v0, 0x10202b9		#id:keyguard_user_avatar
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +339,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mUserImage:Landroid/widget/ImageView;
 
     .line 124
-    const v0, 0x10202ba
+    const v0, 0x10202ba		#id:keyguard_user_name
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->findViewById(I)Landroid/view/View;
 
@@ -378,7 +379,7 @@
 
     move-result-object v0
 
-    const v2, 0x10802be
+    const v2, 0x10802c2		#[0x10802be]drawable:ic_contact_picture
 
     invoke-static {v0, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -566,7 +567,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040549
+    const v3, 0x104054d		#[0x1040549]string:user_switched
 
     const/4 v4, 0x1
 

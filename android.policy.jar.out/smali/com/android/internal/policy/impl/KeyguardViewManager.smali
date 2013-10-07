@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/KeyguardViewManager;
 .super Ljava/lang/Object;
 .source "KeyguardViewManager.java"
@@ -76,7 +77,7 @@
 
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x103006b
+    const v1, 0x103006b		#style:Theme.Holo
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -552,7 +553,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     .line 133
-    const v1, 0x10301e2
+    const v1, 0x10301e2		#style:Animation.LockScreen
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -651,7 +652,7 @@
     .line 160
     iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardViewManager;->mKeyguardView:Lcom/android/internal/policy/impl/KeyguardViewBase;
 
-    const v2, 0x1020243
+    const v2, 0x1020243		#id:lock_screen
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/KeyguardViewBase;->setId(I)V
 

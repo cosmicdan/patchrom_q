@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/SimPukUnlockScreen$1$1;
 .super Ljava/lang/Object;
 .source "SimPukUnlockScreen.java"
@@ -115,7 +116,7 @@
 
     move-result-object v0
 
-    const v1, 0x104007f
+    const v1, 0x1040083		#[0x104007f]string:badPuk
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

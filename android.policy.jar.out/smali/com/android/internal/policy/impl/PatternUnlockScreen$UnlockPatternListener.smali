@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PatternUnlockScreen$UnlockPatternListener;
 .super Ljava/lang/Object;
 .source "PatternUnlockScreen.java"
@@ -339,7 +340,7 @@
 
     move-result-object v4
 
-    const v5, 0x10402ee
+    const v5, 0x10402f2		#[0x10402ee]string:lockscreen_pattern_wrong
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

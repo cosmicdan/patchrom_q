@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView$Toast;
 .super Ljava/lang/Object;
 .source "KeyguardSimPinPukView.java"
@@ -78,7 +79,7 @@
 
     move-result-object v0
 
-    const v1, 0x105000b
+    const v1, 0x105000b		#dimen:toast_y_offset
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -149,7 +150,7 @@
 
     .line 979
     .local v0, inflate:Landroid/view/LayoutInflater;
-    const v4, 0x10900de
+    const v4, 0x10900e2		#[0x10900de]layout:transient_notification
 
     const/4 v5, 0x0
 
@@ -159,7 +160,7 @@
 
     .line 980
     .local v3, v:Landroid/view/View;
-    const v4, 0x102000b
+    const v4, 0x102000b		#id:message
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

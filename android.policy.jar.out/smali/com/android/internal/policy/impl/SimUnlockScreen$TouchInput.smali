@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;
 .super Ljava/lang/Object;
 .source "SimUnlockScreen.java"
@@ -55,7 +56,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 319
-    const v0, 0x10203a6
+    const v0, 0x10203ad		#[0x10203a6]id:zero
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +67,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mZero:Landroid/widget/TextView;
 
     .line 320
-    const v0, 0x102039d
+    const v0, 0x10203a4		#[0x102039d]id:one
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +78,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mOne:Landroid/widget/TextView;
 
     .line 321
-    const v0, 0x102039e
+    const v0, 0x10203a5		#[0x102039e]id:two
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +89,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mTwo:Landroid/widget/TextView;
 
     .line 322
-    const v0, 0x102039f
+    const v0, 0x10203a6		#[0x102039f]id:three
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +100,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mThree:Landroid/widget/TextView;
 
     .line 323
-    const v0, 0x10203a0
+    const v0, 0x10203a7		#[0x10203a0]id:four
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +111,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFour:Landroid/widget/TextView;
 
     .line 324
-    const v0, 0x10203a1
+    const v0, 0x10203a8		#[0x10203a1]id:five
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +122,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFive:Landroid/widget/TextView;
 
     .line 325
-    const v0, 0x10203a2
+    const v0, 0x10203a9		#[0x10203a2]id:six
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -132,7 +133,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSix:Landroid/widget/TextView;
 
     .line 326
-    const v0, 0x10203a3
+    const v0, 0x10203aa		#[0x10203a3]id:seven
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -143,7 +144,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSeven:Landroid/widget/TextView;
 
     .line 327
-    const v0, 0x10203a4
+    const v0, 0x10203ab		#[0x10203a4]id:eight
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +155,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mEight:Landroid/widget/TextView;
 
     .line 328
-    const v0, 0x10203a5
+    const v0, 0x10203ac		#[0x10203a5]id:nine
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +166,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mNine:Landroid/widget/TextView;
 
     .line 329
-    const v0, 0x1020276
+    const v0, 0x1020276		#id:cancel
 
     invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 

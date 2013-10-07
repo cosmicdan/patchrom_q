@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class abstract Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
 .super Ljava/lang/Object;
 .source "GlobalActions.java"
@@ -113,7 +114,7 @@
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->willCreate()V
 
     .line 757
-    const v6, 0x1090043
+    const v6, 0x1090043		#layout:global_actions_item
 
     invoke-virtual {p4, v6, p3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -121,7 +122,7 @@
 
     .line 760
     .local v5, v:Landroid/view/View;
-    const v6, 0x1020006
+    const v6, 0x1020006		#id:icon
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +132,7 @@
 
     .line 761
     .local v1, icon:Landroid/widget/ImageView;
-    const v6, 0x102000b
+    const v6, 0x102000b		#id:message
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +142,7 @@
 
     .line 762
     .local v2, messageView:Landroid/widget/TextView;
-    const v6, 0x1020284
+    const v6, 0x1020284		#id:status
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

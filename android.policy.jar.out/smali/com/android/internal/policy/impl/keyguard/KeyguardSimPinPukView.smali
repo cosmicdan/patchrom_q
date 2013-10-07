@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .source "KeyguardSimPinPukView.java"
@@ -1709,7 +1710,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView;->mContext:Landroid/content/Context;
 
-    const v2, 0x104052f
+    const v2, 0x1040533		#[0x104052f]string:kg_sim_unlock_progress_dialog_message
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1927,7 +1928,7 @@
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     .line 374
-    const v2, 0x104000a
+    const v2, 0x104000a		#string:ok
 
     const/4 v3, 0x0
 
@@ -2068,7 +2069,7 @@
 
     move-result-object v2
 
-    const v3, 0x104000a
+    const v3, 0x104000a		#string:ok
 
     const/4 v4, 0x0
 
@@ -3185,7 +3186,7 @@
     if-ne v2, v7, :cond_1
 
     .line 818
-    const v5, 0x10402ec
+    const v5, 0x10402f0		#[0x10402ec]string:lockscreen_return_to_call
 
     .line 819
     .local v5, textId:I
@@ -3215,7 +3216,7 @@
     .line 822
     .restart local v1       #isVoiceCapable:Z
     :cond_1
-    const v5, 0x10402eb
+    const v5, 0x10402ef		#[0x10402eb]string:lockscreen_emergency_call
 
     .line 823
     .restart local v5       #textId:I
@@ -3472,7 +3473,7 @@
     .line 942
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView;->mContext:Landroid/content/Context;
 
-    const v4, 0x10402dc
+    const v4, 0x10402e0		#[0x10402dc]string:keyguard_password_enter_pin_code
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -3598,7 +3599,7 @@
     .line 588
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v3, 0x1040531
+    const v3, 0x1040535		#[0x1040531]string:kg_invalid_sim_pin_hint
 
     const/4 v4, 0x1
 

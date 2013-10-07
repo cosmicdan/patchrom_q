@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/ClockView$AmPm;
 .super Ljava/lang/Object;
 .source "ClockView.java"
@@ -33,7 +34,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 98
-    const v1, 0x1020306
+    const v1, 0x1020308		#[0x1020306]id:am_pm
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
