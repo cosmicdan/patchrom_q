@@ -1,4 +1,5 @@
 name="AtciService.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
+name="DefaultContainerService.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="GoogleKeyboard.apk" certificate="PRESIGNED" private_key=""
 name="Snap.apk" certificate="PRESIGNED" private_key=""
 name="Stk1.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
