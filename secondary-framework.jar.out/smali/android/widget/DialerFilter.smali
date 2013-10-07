@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/DialerFilter;
 .super Landroid/widget/RelativeLayout;
 .source "DialerFilter.java"
@@ -486,7 +487,7 @@
     iput-object v0, p0, Landroid/widget/DialerFilter;->mInputFilters:[Landroid/text/InputFilter;
 
     .line 55
-    const v0, 0x1020005
+    const v0, 0x1020005		#id:hint
 
     invoke-virtual {p0, v0}, Landroid/widget/DialerFilter;->findViewById(I)Landroid/view/View;
 
@@ -543,7 +544,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/EditText;->setFocusable(Z)V
 
     .line 67
-    const v0, 0x102000c
+    const v0, 0x102000c		#id:primary
 
     invoke-virtual {p0, v0}, Landroid/widget/DialerFilter;->findViewById(I)Landroid/view/View;
 
@@ -600,7 +601,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/EditText;->setFocusable(Z)V
 
     .line 79
-    const v0, 0x1020006
+    const v0, 0x1020006		#id:icon
 
     invoke-virtual {p0, v0}, Landroid/widget/DialerFilter;->findViewById(I)Landroid/view/View;
 

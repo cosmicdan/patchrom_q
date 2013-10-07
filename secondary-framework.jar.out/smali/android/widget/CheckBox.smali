@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/CheckBox;
 .super Landroid/widget/CompoundButton;
 .source "CheckBox.java"
@@ -25,7 +26,7 @@
 
     .prologue
     .line 64
-    const v0, 0x101006c
+    const v0, 0x101006c		#attr:checkboxStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

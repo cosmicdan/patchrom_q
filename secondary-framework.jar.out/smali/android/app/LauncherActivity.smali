@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/app/LauncherActivity;
 .super Landroid/app/ListActivity;
 .source "LauncherActivity.java"
@@ -39,7 +40,7 @@
 
     .prologue
     .line 364
-    const v1, 0x102025a
+    const v1, 0x102025a		#id:alertTitle
 
     invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
 
@@ -68,7 +69,7 @@
 
     .prologue
     .line 371
-    const v1, 0x1020019
+    const v1, 0x1020019		#id:button1
 
     invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
 
@@ -374,7 +375,7 @@
 
     .prologue
     .line 398
-    const v0, 0x1090020
+    const v0, 0x1090020		#layout:activity_list
 
     invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->setContentView(I)V
 

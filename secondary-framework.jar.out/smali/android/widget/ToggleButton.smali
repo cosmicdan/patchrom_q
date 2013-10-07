@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/ToggleButton;
 .super Landroid/widget/CompoundButton;
 .source "ToggleButton.java"
@@ -39,7 +40,7 @@
 
     .prologue
     .line 64
-    const v0, 0x101004b
+    const v0, 0x101004b		#attr:buttonStyleToggle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -164,7 +165,7 @@
 
     .line 140
     .local v0, layerDrawable:Landroid/graphics/drawable/LayerDrawable;
-    const v1, 0x1020017
+    const v1, 0x1020017		#id:toggle
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
 

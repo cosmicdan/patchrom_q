@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/Button;
 .super Landroid/widget/TextView;
 .source "Button.java"
@@ -30,7 +31,7 @@
 
     .prologue
     .line 103
-    const v0, 0x1010048
+    const v0, 0x1010048		#attr:buttonStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

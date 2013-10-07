@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Notification$InboxStyle;
 .super Landroid/app/Notification$Style;
 .source "Notification.java"
@@ -89,7 +90,7 @@
     invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 1999
-    const v8, 0x1090092
+    const v8, 0x1090096		#[0x1090092]layout:notification_template_inbox
 
     invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
 
@@ -97,7 +98,7 @@
 
     .line 2001
     .local v1, contentView:Landroid/widget/RemoteViews;
-    const v8, 0x1020015
+    const v8, 0x1020015		#id:text2
 
     invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
@@ -194,7 +195,7 @@
     .line 2022
     .end local v7           #str:Ljava/lang/CharSequence;
     :cond_2
-    const v11, 0x102033c
+    const v11, 0x1020343		#[0x102033c]id:inbox_end_pad
 
     iget-object v8, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
@@ -210,7 +211,7 @@
     invoke-virtual {v1, v11, v8}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 2025
-    const v8, 0x102033b
+    const v8, 0x1020342		#[0x102033b]id:inbox_more
 
     iget-object v11, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
@@ -245,13 +246,13 @@
 
     :array_0
     .array-data 0x4
-        0x34t 0x3t 0x2t 0x1t
-        0x35t 0x3t 0x2t 0x1t
-        0x36t 0x3t 0x2t 0x1t
-        0x37t 0x3t 0x2t 0x1t
-        0x38t 0x3t 0x2t 0x1t
-        0x39t 0x3t 0x2t 0x1t
-        0x3at 0x3t 0x2t 0x1t
+        0x3bt 0x3t 0x2t 0x1t		#[0x34t 0x3t 0x2t 0x1t]id:inbox_text0
+        0x3ct 0x3t 0x2t 0x1t		#[0x35t 0x3t 0x2t 0x1t]id:inbox_text1
+        0x3dt 0x3t 0x2t 0x1t		#[0x36t 0x3t 0x2t 0x1t]id:inbox_text2
+        0x3et 0x3t 0x2t 0x1t		#[0x37t 0x3t 0x2t 0x1t]id:inbox_text3
+        0x3ft 0x3t 0x2t 0x1t		#[0x38t 0x3t 0x2t 0x1t]id:inbox_text4
+        0x40t 0x3t 0x2t 0x1t		#[0x39t 0x3t 0x2t 0x1t]id:inbox_text5
+        0x41t 0x3t 0x2t 0x1t		#[0x3at 0x3t 0x2t 0x1t]id:inbox_text6
     .end array-data
 .end method
 

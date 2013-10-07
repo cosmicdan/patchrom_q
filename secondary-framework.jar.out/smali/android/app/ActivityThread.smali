@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/app/ActivityThread;
 .super Ljava/lang/Object;
 .source "ActivityThread.java"
@@ -1457,7 +1458,7 @@
 
     .line 3053
     .local v3, res:Landroid/content/res/Resources;
-    const v6, 0x1050001
+    const v6, 0x1050001		#dimen:thumbnail_height
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1467,7 +1468,7 @@
     iput v2, p0, Landroid/app/ActivityThread;->mThumbnailHeight:I
 
     .line 3056
-    const v6, 0x1050002
+    const v6, 0x1050002		#dimen:thumbnail_width
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/Editor$SelectionActionModeCallback;
 .super Ljava/lang/Object;
 .source "Editor.java"
@@ -164,7 +165,7 @@
 
     move-result-object v5
 
-    const v6, 0x10403c3
+    const v6, 0x10403c7		#[0x10403c3]string:textSelectionCABTitle
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -196,9 +197,9 @@
 
     .line 2699
     :cond_0
-    const v5, 0x102001f
+    const v5, 0x102001f		#id:selectAll
 
-    const v6, 0x104000d
+    const v6, 0x104000d		#string:selectAll
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -231,9 +232,9 @@
     if-eqz v5, :cond_1
 
     .line 2706
-    const v5, 0x1020020
+    const v5, 0x1020020		#id:cut
 
-    const v6, 0x1040003
+    const v6, 0x1040003		#string:cut
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -271,9 +272,9 @@
     if-eqz v5, :cond_2
 
     .line 2715
-    const v5, 0x1020021
+    const v5, 0x1020021		#id:copy
 
-    const v6, 0x1040001
+    const v6, 0x1040001		#string:copy
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -311,9 +312,9 @@
     if-eqz v5, :cond_3
 
     .line 2724
-    const v5, 0x1020022
+    const v5, 0x1020022		#id:paste
 
-    const v6, 0x104000b
+    const v6, 0x104000b		#string:paste
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

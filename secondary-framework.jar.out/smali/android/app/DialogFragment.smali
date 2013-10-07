@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/DialogFragment;
 .super Landroid/app/Fragment;
 .source "DialogFragment.java"
@@ -994,7 +995,7 @@
 
     .line 207
     :cond_0
-    const v0, 0x1030312
+    const v0, 0x1030312		#style:Theme.DeviceDefault.Dialog.NoFrame
 
     iput v0, p0, Landroid/app/DialogFragment;->mTheme:I
 

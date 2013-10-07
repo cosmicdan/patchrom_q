@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Notification$Builder;
 .super Ljava/lang/Object;
 .source "Notification.java"
@@ -264,7 +265,7 @@
 
     .line 1475
     .local v9, showLine2:Z
-    const v11, 0x1020006
+    const v11, 0x1020006		#id:icon
 
     .line 1476
     .local v11, smallIconImageViewId:I
@@ -275,7 +276,7 @@
     if-eqz v2, :cond_0
 
     .line 1477
-    const v2, 0x1020006
+    const v2, 0x1020006		#id:icon
 
     move-object/from16 v0, p0
 
@@ -284,7 +285,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 1478
-    const v11, 0x1020241
+    const v11, 0x1020241		#id:right_icon
 
     .line 1480
     :cond_0
@@ -297,20 +298,20 @@
     if-ge v2, v3, :cond_1
 
     .line 1481
-    const v2, 0x1020006
+    const v2, 0x1020006		#id:icon
 
     const-string v3, "setBackgroundResource"
 
-    const v4, 0x108061a
+    const v4, 0x108063b		#[0x108061a]drawable:notification_template_icon_low_bg
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
     .line 1483
-    const v2, 0x1020327
+    const v2, 0x1020329		#[0x1020327]id:status_bar_latest_event_content
 
     const-string v3, "setBackgroundResource"
 
-    const v4, 0x108041b
+    const v4, 0x1080436		#[0x108041b]drawable:notification_bg_low
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
@@ -343,7 +344,7 @@
     if-eqz v2, :cond_2
 
     .line 1493
-    const v2, 0x1020016
+    const v2, 0x1020016		#id:title
 
     move-object/from16 v0, p0
 
@@ -360,7 +361,7 @@
     if-eqz v2, :cond_3
 
     .line 1496
-    const v2, 0x1020046
+    const v2, 0x1020046		#id:text
 
     move-object/from16 v0, p0
 
@@ -380,7 +381,7 @@
     if-eqz v2, :cond_7
 
     .line 1500
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     move-object/from16 v0, p0
 
@@ -389,7 +390,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
     .line 1501
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     const/4 v3, 0x0
 
@@ -407,7 +408,7 @@
     if-eqz v2, :cond_b
 
     .line 1521
-    const v2, 0x1020046
+    const v2, 0x1020046		#id:text
 
     move-object/from16 v0, p0
 
@@ -423,7 +424,7 @@
     if-eqz v2, :cond_a
 
     .line 1523
-    const v2, 0x1020015
+    const v2, 0x1020015		#id:text2
 
     move-object/from16 v0, p0
 
@@ -432,7 +433,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
     .line 1524
-    const v2, 0x1020015
+    const v2, 0x1020015		#id:text2
 
     const/4 v3, 0x0
 
@@ -459,7 +460,7 @@
 
     .line 1544
     .local v8, res:Landroid/content/res/Resources;
-    const v2, 0x1050057
+    const v2, 0x1050057		#dimen:notification_subtext_size
 
     invoke-virtual {v8, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -469,7 +470,7 @@
 
     .line 1546
     .local v12, subTextSize:F
-    const v2, 0x1020046
+    const v2, 0x1020046		#id:text
 
     const/4 v3, 0x0
 
@@ -479,7 +480,7 @@
     .end local v8           #res:Landroid/content/res/Resources;
     .end local v12           #subTextSize:F
     :cond_4
-    const v2, 0x102032f
+    const v2, 0x102032a		#[0x102032f]id:line1
 
     const/4 v3, 0x0
 
@@ -517,14 +518,14 @@
     if-eqz v2, :cond_e
 
     .line 1554
-    const v2, 0x1020329
+    const v2, 0x102032b		#[0x1020329]id:chronometer
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1555
-    const v2, 0x1020329
+    const v2, 0x102032b		#[0x1020329]id:chronometer
 
     const-string v3, "setBase"
 
@@ -547,7 +548,7 @@
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/widget/RemoteViews;->setLong(ILjava/lang/String;J)V
 
     .line 1557
-    const v2, 0x1020329
+    const v2, 0x102032b		#[0x1020329]id:chronometer
 
     const-string v3, "setStarted"
 
@@ -557,7 +558,7 @@
 
     .line 1566
     :goto_3
-    const v3, 0x102032d
+    const v3, 0x1020330		#[0x102032d]id:line3
 
     if-eqz v10, :cond_10
 
@@ -567,7 +568,7 @@
     invoke-virtual {v1, v3, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1567
-    const v3, 0x1020333
+    const v3, 0x1020339		#[0x1020333]id:overflow_divider
 
     if-eqz v10, :cond_11
 
@@ -604,7 +605,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0003
+    const v3, 0x10e0003		#integer:status_bar_notification_info_maxnum
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -619,7 +620,7 @@
     if-le v2, v13, :cond_8
 
     .line 1507
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     move-object/from16 v0, p0
 
@@ -629,7 +630,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040017
+    const v4, 0x1040017		#string:status_bar_notification_info_overflow
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -639,7 +640,7 @@
 
     .line 1513
     :goto_6
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     const/4 v3, 0x0
 
@@ -659,7 +660,7 @@
 
     .line 1511
     .local v7, f:Ljava/text/NumberFormat;
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     move-object/from16 v0, p0
 
@@ -679,7 +680,7 @@
     .end local v7           #f:Ljava/text/NumberFormat;
     .end local v13           #tooBig:I
     :cond_9
-    const v2, 0x102032e
+    const v2, 0x1020331		#[0x102032e]id:info
 
     const/16 v3, 0x8
 
@@ -689,7 +690,7 @@
 
     .line 1527
     :cond_a
-    const v2, 0x1020015
+    const v2, 0x1020015		#id:text2
 
     const/16 v3, 0x8
 
@@ -699,7 +700,7 @@
 
     .line 1530
     :cond_b
-    const v2, 0x1020015
+    const v2, 0x1020015		#id:text2
 
     const/16 v3, 0x8
 
@@ -720,7 +721,7 @@
 
     .line 1532
     :cond_c
-    const v2, 0x102000d
+    const v2, 0x102000d		#id:progress
 
     move-object/from16 v0, p0
 
@@ -737,7 +738,7 @@
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/widget/RemoteViews;->setProgressBar(IIIZ)V
 
     .line 1534
-    const v2, 0x102000d
+    const v2, 0x102000d		#id:progress
 
     const/4 v3, 0x0
 
@@ -750,7 +751,7 @@
 
     .line 1537
     :cond_d
-    const v2, 0x102000d
+    const v2, 0x102000d		#id:progress
 
     const/16 v3, 0x8
 
@@ -760,14 +761,14 @@
 
     .line 1559
     :cond_e
-    const v2, 0x1020064
+    const v2, 0x1020064		#id:time
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1560
-    const v2, 0x1020064
+    const v2, 0x1020064		#id:time
 
     const-string v3, "setTime"
 
@@ -781,7 +782,7 @@
 
     .line 1563
     :cond_f
-    const v2, 0x1020064
+    const v2, 0x1020064		#id:time
 
     const/16 v3, 0x8
 
@@ -807,7 +808,7 @@
     .parameter "layoutId"
 
     .prologue
-    const v6, 0x1020324
+    const v6, 0x1020326		#[0x1020324]id:actions
 
     const/4 v5, 0x0
 
@@ -832,7 +833,7 @@
     invoke-virtual {v1, v6, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1578
-    const v4, 0x1020331
+    const v4, 0x1020334		#[0x1020331]id:action_divider
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
@@ -1128,7 +1129,7 @@
     .parameter "action"
 
     .prologue
-    const v1, 0x1020323
+    const v1, 0x1020325		#[0x1020323]id:action0
 
     const/4 v3, 0x0
 
@@ -1152,7 +1153,7 @@
 
     if-eqz v6, :cond_2
 
-    const v2, 0x109008c
+    const v2, 0x1090090		#[0x109008c]layout:notification_action_tombstone
 
     :goto_1
     invoke-direct {v0, v4, v2}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
@@ -1200,7 +1201,7 @@
     .line 1620
     .restart local v6       #tombstone:Z
     :cond_2
-    const v2, 0x109008a
+    const v2, 0x109008e		#[0x109008a]layout:notification_action
 
     goto :goto_1
 .end method
@@ -1225,7 +1226,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x109008f
+    const v0, 0x1090093		#[0x109008f]layout:notification_template_big_base
 
     invoke-direct {p0, v0}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActions(I)Landroid/widget/RemoteViews;
 
@@ -1251,7 +1252,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x109008e
+    const v0, 0x1090092		#[0x109008e]layout:notification_template_base
 
     const/4 v1, 0x1
 
@@ -1289,7 +1290,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x10900cd
+    const v0, 0x10900d1		#[0x10900cd]layout:status_bar_latest_event_ticker
 
     :goto_1
     const/4 v1, 0x1
@@ -1301,7 +1302,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x10900ce
+    const v0, 0x10900d2		#[0x10900ce]layout:status_bar_latest_event_ticker_large_icon
 
     goto :goto_1
 

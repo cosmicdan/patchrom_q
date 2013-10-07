@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/ZoomButtonsController;
 .super Ljava/lang/Object;
 .source "ZoomButtonsController.java"
@@ -363,7 +364,7 @@
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 254
-    const v3, 0x10301eb
+    const v3, 0x10301eb		#style:Animation.ZoomButtons
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -399,12 +400,12 @@
 
     .line 263
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x10900eb
+    const v3, 0x10900ef		#[0x10900eb]layout:zoom_container
 
     invoke-virtual {v1, v3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 265
-    const v3, 0x10203b7
+    const v3, 0x10203be		#[0x10203b7]id:zoomControls
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

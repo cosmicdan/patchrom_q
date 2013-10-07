@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/HorizontalScrollView;
 .super Landroid/widget/FrameLayout;
 .source "HorizontalScrollView.java"
@@ -77,7 +78,7 @@
 
     .prologue
     .line 141
-    const v0, 0x1010353
+    const v0, 0x1010353		#attr:horizontalScrollViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

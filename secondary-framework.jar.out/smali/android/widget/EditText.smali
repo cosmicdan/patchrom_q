@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/EditText;
 .super Landroid/widget/TextView;
 .source "EditText.java"
@@ -25,7 +26,7 @@
 
     .prologue
     .line 56
-    const v0, 0x101006e
+    const v0, 0x101006e		#attr:editTextStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

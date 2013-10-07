@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/Switch;
 .super Landroid/widget/CompoundButton;
 .source "Switch.java"
@@ -87,7 +88,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, 0x10100a0		#attr:state_checked
 
     aput v2, v0, v1
 
@@ -117,7 +118,7 @@
 
     .prologue
     .line 133
-    const v0, 0x10103f6
+    const v0, 0x10103f6		#attr:switchStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

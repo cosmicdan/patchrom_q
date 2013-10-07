@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/EdgeEffect;
 .super Ljava/lang/Object;
 .source "EdgeEffect.java"
@@ -149,7 +150,7 @@
 
     .line 137
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x1080434
+    const v1, 0x1080455		#[0x1080434]drawable:overscroll_edge
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -157,7 +158,7 @@
 
     iput-object v1, p0, Landroid/widget/EdgeEffect;->mEdge:Landroid/graphics/drawable/Drawable;
 
-    const v1, 0x1080435
+    const v1, 0x1080456		#[0x1080435]drawable:overscroll_glow
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

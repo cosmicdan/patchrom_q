@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/RadioGroup;
 .super Landroid/widget/LinearLayout;
 .source "RadioGroup.java"
@@ -82,7 +83,7 @@
     .line 81
     sget-object v3, Lcom/android/internal/R$styleable;->RadioGroup:[I
 
-    const v4, 0x101007e
+    const v4, 0x101007e		#attr:radioButtonStyle
 
     invoke-virtual {p1, p2, v3, v4, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 

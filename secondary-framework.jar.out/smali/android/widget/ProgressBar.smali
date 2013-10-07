@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/ProgressBar;
 .super Landroid/view/View;
 .source "ProgressBar.java"
@@ -113,7 +114,7 @@
 
     .prologue
     .line 242
-    const v0, 0x1010077
+    const v0, 0x1010077		#attr:progressBarStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ProgressBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -269,7 +270,7 @@
     .line 280
     const/16 v5, 0xd
 
-    const v6, 0x10a000b
+    const v6, 0x10a000b		#anim:linear_interpolator
 
     invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -505,7 +506,7 @@
     :goto_2
     if-eqz p4, :cond_1
 
-    const v5, 0x102000d
+    const v5, 0x102000d		#id:progress
 
     if-ne p1, v5, :cond_1
 
@@ -798,11 +799,11 @@
 
     move-result-object v15
 
-    const v14, 0x102000d
+    const v14, 0x102000d		#id:progress
 
     if-eq v6, v14, :cond_0
 
-    const v14, 0x102000f
+    const v14, 0x102000f		#id:secondaryProgress
 
     if-ne v6, v14, :cond_1
 
@@ -2466,7 +2467,7 @@
     iput p1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     :cond_1
-    const v0, 0x102000d
+    const v0, 0x102000d		#id:progress
 
     iget v1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
@@ -2560,7 +2561,7 @@
 
     iput p1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
-    const v0, 0x102000d
+    const v0, 0x102000d		#id:progress
 
     iget v1, p0, Landroid/widget/ProgressBar;->mProgress:I
 
@@ -2660,13 +2661,13 @@
 
     invoke-direct {p0}, Landroid/widget/ProgressBar;->updateDrawableState()V
 
-    const v2, 0x102000d
+    const v2, 0x102000d		#id:progress
 
     iget v3, p0, Landroid/widget/ProgressBar;->mProgress:I
 
     invoke-direct {p0, v2, v3, v4, v4}, Landroid/widget/ProgressBar;->doRefreshProgress(IIZZ)V
 
-    const v2, 0x102000f
+    const v2, 0x102000f		#id:secondaryProgress
 
     iget v3, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
@@ -2725,7 +2726,7 @@
 
     iput p1, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 
-    const v0, 0x102000f
+    const v0, 0x102000f		#id:secondaryProgress
 
     iget v1, p0, Landroid/widget/ProgressBar;->mSecondaryProgress:I
 

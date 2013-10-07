@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/ListFragment;
 .super Landroid/app/Fragment;
 .source "ListFragment.java"
@@ -152,7 +153,7 @@
     .line 391
     .restart local v2       #root:Landroid/view/View;
     :cond_4
-    const v3, 0x1020313
+    const v3, 0x1020315		#[0x1020313]id:internalEmpty
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,7 +169,7 @@
     if-nez v3, :cond_5
 
     .line 394
-    const v3, 0x1020004
+    const v3, 0x1020004		#id:empty
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +179,7 @@
 
     .line 398
     :goto_3
-    const v3, 0x1020311
+    const v3, 0x1020313		#[0x1020311]id:progressContainer
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +188,7 @@
     iput-object v3, p0, Landroid/app/ListFragment;->mProgressContainer:Landroid/view/View;
 
     .line 399
-    const v3, 0x1020312
+    const v3, 0x1020314		#[0x1020312]id:listContainer
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +197,7 @@
     iput-object v3, p0, Landroid/app/ListFragment;->mListContainer:Landroid/view/View;
 
     .line 400
-    const v3, 0x102000a
+    const v3, 0x102000a		#id:list
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +307,7 @@
     .parameter "animate"
 
     .prologue
-    const v5, 0x10a0001
+    const v5, 0x10a0001		#anim:fade_out
 
     const/high16 v4, 0x10a
 
@@ -527,7 +528,7 @@
 
     .prologue
     .line 193
-    const v0, 0x1090014
+    const v0, 0x1090014		#layout:list_content
 
     const/4 v1, 0x0
 

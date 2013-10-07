@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/QuickContactBadge;
 .super Landroid/widget/ImageView;
 .source "QuickContactBadge.java"
@@ -698,7 +699,7 @@
 
     move-result-object v0
 
-    const v1, 0x10802be
+    const v1, 0x10802c2		#[0x10802be]drawable:ic_contact_picture
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

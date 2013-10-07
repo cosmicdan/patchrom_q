@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/RemoteViewsAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "RemoteViewsAdapter.java"
@@ -638,7 +639,7 @@
     if-eqz p1, :cond_0
 
     .line 1056
-    const v2, 0x1020247
+    const v2, 0x1020247		#id:rowTypeId
 
     invoke-virtual {p1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -2090,7 +2091,7 @@
 
     .line 1123
     .local v20, newView:Landroid/view/View;
-    const v3, 0x1020247
+    const v3, 0x1020247		#id:rowTypeId
 
     new-instance v4, Ljava/lang/Integer;
 

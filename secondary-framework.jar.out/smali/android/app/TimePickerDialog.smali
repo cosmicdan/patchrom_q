@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/TimePickerDialog;
 .super Landroid/app/AlertDialog;
 .source "TimePickerDialog.java"
@@ -67,7 +68,7 @@
     invoke-virtual {p0, v3}, Landroid/app/TimePickerDialog;->setIcon(I)V
 
     .line 96
-    const v3, 0x104042f
+    const v3, 0x1040433		#[0x104042f]string:time_picker_dialog_title
 
     invoke-virtual {p0, v3}, Landroid/app/TimePickerDialog;->setTitle(I)V
 
@@ -80,7 +81,7 @@
     .local v1, themeContext:Landroid/content/Context;
     const/4 v3, -0x1
 
-    const v4, 0x1040432
+    const v4, 0x1040436		#[0x1040432]string:date_time_done
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -99,7 +100,7 @@
 
     .line 103
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x10900dc
+    const v3, 0x10900e0		#[0x10900dc]layout:time_picker_dialog
 
     const/4 v4, 0x0
 
@@ -112,7 +113,7 @@
     invoke-virtual {p0, v2}, Landroid/app/TimePickerDialog;->setView(Landroid/view/View;)V
 
     .line 105
-    const v3, 0x102039b
+    const v3, 0x10203a2		#[0x102039b]id:timePicker
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

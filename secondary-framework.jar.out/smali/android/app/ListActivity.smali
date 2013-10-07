@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/ListActivity;
 .super Landroid/app/Activity;
 .source "ListActivity.java"
@@ -69,7 +70,7 @@
 
     .line 312
     :cond_0
-    const v0, 0x109007b
+    const v0, 0x109007f		#[0x109007b]layout:list_content_simple
 
     invoke-virtual {p0, v0}, Landroid/app/ListActivity;->setContentView(I)V
 
@@ -137,7 +138,7 @@
     invoke-super {p0}, Landroid/app/Activity;->onContentChanged()V
 
     .line 240
-    const v1, 0x1020004
+    const v1, 0x1020004		#id:empty
 
     invoke-virtual {p0, v1}, Landroid/app/ListActivity;->findViewById(I)Landroid/view/View;
 
@@ -145,7 +146,7 @@
 
     .line 241
     .local v0, emptyView:Landroid/view/View;
-    const v1, 0x102000a
+    const v1, 0x102000a		#id:list
 
     invoke-virtual {p0, v1}, Landroid/app/ListActivity;->findViewById(I)Landroid/view/View;
 

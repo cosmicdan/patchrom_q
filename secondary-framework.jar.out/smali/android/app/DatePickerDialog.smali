@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/DatePickerDialog;
 .super Landroid/app/AlertDialog;
 .source "DatePickerDialog.java"
@@ -71,7 +72,7 @@
     .local v1, themeContext:Landroid/content/Context;
     const/4 v3, -0x1
 
-    const v4, 0x1040432
+    const v4, 0x1040436		#[0x1040432]string:date_time_done
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -95,7 +96,7 @@
 
     .line 108
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x1090037
+    const v3, 0x1090037		#layout:date_picker_dialog
 
     const/4 v4, 0x0
 
@@ -108,7 +109,7 @@
     invoke-virtual {p0, v2}, Landroid/app/DatePickerDialog;->setView(Landroid/view/View;)V
 
     .line 110
-    const v3, 0x1020280
+    const v3, 0x1020280		#id:datePicker
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -281,7 +282,7 @@
     iput-boolean v1, p0, Landroid/app/DatePickerDialog;->mTitleNeedsUpdate:Z
 
     .line 176
-    const v1, 0x1040430
+    const v1, 0x1040434		#[0x1040430]string:date_picker_dialog_title
 
     invoke-virtual {p0, v1}, Landroid/app/DatePickerDialog;->setTitle(I)V
 

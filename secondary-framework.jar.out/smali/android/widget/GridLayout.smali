@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/GridLayout;
 .super Landroid/view/ViewGroup;
 .source "GridLayout.java"
@@ -288,7 +289,7 @@
 
     move-result-object v1
 
-    const v2, 0x1050048
+    const v2, 0x1050048		#dimen:default_gap
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

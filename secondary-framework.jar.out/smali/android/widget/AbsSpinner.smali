@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/widget/AbsSpinner;
 .super Landroid/widget/AdapterView;
 .source "AbsSpinner.java"
@@ -166,13 +167,13 @@
     .line 76
     new-instance v1, Landroid/widget/ArrayAdapter;
 
-    const v3, 0x1090008
+    const v3, 0x1090008		#layout:simple_spinner_item
 
     invoke-direct {v1, p1, v3, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 79
     .local v1, adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Ljava/lang/CharSequence;>;"
-    const v3, 0x1090009
+    const v3, 0x1090009		#layout:simple_spinner_dropdown_item
 
     invoke-virtual {v1, v3}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 

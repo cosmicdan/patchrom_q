@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/widget/CompoundButton;
 .super Landroid/widget/Button;
 .source "CompoundButton.java"
@@ -47,7 +48,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, 0x10100a0		#attr:state_checked
 
     aput v2, v0, v1
 

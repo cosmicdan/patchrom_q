@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/AppSecurityPermissions$PermissionItemView;
 .super Landroid/widget/LinearLayout;
 .source "AppSecurityPermissions.java"
@@ -188,7 +189,7 @@
 
     move-result-object v6
 
-    const v7, 0x1040434
+    const v7, 0x1040438		#[0x1040434]string:perms_description_app
 
     new-array v8, v9, [Ljava/lang/Object;
 
@@ -276,7 +277,7 @@
     iput-object p2, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
     .line 165
-    const v8, 0x102026a
+    const v8, 0x102026a		#id:perm_icon
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 
@@ -286,7 +287,7 @@
 
     .line 166
     .local v5, permGrpIcon:Landroid/widget/ImageView;
-    const v8, 0x102026b
+    const v8, 0x102026b		#id:perm_name
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 

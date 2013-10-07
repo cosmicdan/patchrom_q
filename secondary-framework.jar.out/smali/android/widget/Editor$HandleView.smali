@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class abstract Landroid/widget/Editor$HandleView;
 .super Landroid/view/View;
 .source "Editor.java"
@@ -140,7 +141,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x10102c8
+    const v4, 0x10102c8		#attr:textSelectHandleWindowStyle
 
     invoke-direct {v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

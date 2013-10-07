@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/Toast;
 .super Ljava/lang/Object;
 .source "Toast.java"
@@ -59,7 +60,7 @@
 
     move-result-object v1
 
-    const v2, 0x105000b
+    const v2, 0x105000b		#dimen:toast_y_offset
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -159,7 +160,7 @@
 
     .line 242
     .local v0, inflate:Landroid/view/LayoutInflater;
-    const v4, 0x10900de
+    const v4, 0x10900e2		#[0x10900de]layout:transient_notification
 
     const/4 v5, 0x0
 
@@ -169,7 +170,7 @@
 
     .line 243
     .local v3, v:Landroid/view/View;
-    const v4, 0x102000b
+    const v4, 0x102000b		#id:message
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -410,7 +411,7 @@
     :cond_0
     iget-object v1, p0, Landroid/widget/Toast;->mNextView:Landroid/view/View;
 
-    const v2, 0x102000b
+    const v2, 0x102000b		#id:message
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

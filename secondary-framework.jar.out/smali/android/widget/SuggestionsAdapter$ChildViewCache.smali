@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Landroid/widget/SuggestionsAdapter$ChildViewCache;
 .super Ljava/lang/Object;
 .source "SuggestionsAdapter.java"
@@ -36,7 +37,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 309
-    const v0, 0x1020014
+    const v0, 0x1020014		#id:text1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -47,7 +48,7 @@
     iput-object v0, p0, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     .line 310
-    const v0, 0x1020015
+    const v0, 0x1020015		#id:text2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -58,7 +59,7 @@
     iput-object v0, p0, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText2:Landroid/widget/TextView;
 
     .line 311
-    const v0, 0x1020007
+    const v0, 0x1020007		#id:icon1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -69,7 +70,7 @@
     iput-object v0, p0, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon1:Landroid/widget/ImageView;
 
     .line 312
-    const v0, 0x1020008
+    const v0, 0x1020008		#id:icon2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -80,7 +81,7 @@
     iput-object v0, p0, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon2:Landroid/widget/ImageView;
 
     .line 313
-    const v0, 0x102036a
+    const v0, 0x1020371		#[0x102036a]id:edit_query
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

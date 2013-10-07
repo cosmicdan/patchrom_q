@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/Toast$TN;
 .super Landroid/app/ITransientNotification$Stub;
 .source "Toast.java"
@@ -104,7 +105,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 347
-    const v1, 0x1030004
+    const v1, 0x1030004		#style:Animation.Toast
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

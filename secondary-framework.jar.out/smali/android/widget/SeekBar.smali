@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/SeekBar;
 .super Landroid/widget/AbsSeekBar;
 .source "SeekBar.java"
@@ -37,7 +38,7 @@
 
     .prologue
     .line 79
-    const v0, 0x101007b
+    const v0, 0x101007b		#attr:seekBarStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/SeekBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

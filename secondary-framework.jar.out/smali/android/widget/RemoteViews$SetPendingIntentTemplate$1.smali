@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;
 .super Ljava/lang/Object;
 .source "RemoteViews.java"
@@ -121,7 +122,7 @@
 
     move-result-object v9
 
-    const v10, 0x1020246
+    const v10, 0x1020246		#id:fillInIntent
 
     invoke-virtual {v9, v10}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

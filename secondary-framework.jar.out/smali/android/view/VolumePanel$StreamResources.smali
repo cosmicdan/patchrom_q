@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final enum Landroid/view/VolumePanel$StreamResources;
 .super Ljava/lang/Enum;
 .source "VolumePanel.java"
@@ -81,11 +82,11 @@
 
     const/4 v3, 0x6
 
-    const v4, 0x10403fd
+    const v4, 0x1040401		#[0x10403fd]string:volume_icon_description_bluetooth
 
-    const v5, 0x108029a
+    const v5, 0x108029e		#[0x108029a]drawable:ic_audio_bt
 
-    const v6, 0x108029a
+    const v6, 0x108029e		#[0x108029a]drawable:ic_audio_bt
 
     move v7, v2
 
@@ -98,11 +99,11 @@
 
     const-string v4, "RingerStream"
 
-    const v7, 0x10403fe
+    const v7, 0x1040402		#[0x10403fe]string:volume_icon_description_ringer
 
-    const v8, 0x108029f
+    const v8, 0x10802a3		#[0x108029f]drawable:ic_audio_ring_notif
 
-    const v9, 0x10802a0
+    const v9, 0x10802a4		#[0x10802a0]drawable:ic_audio_ring_notif_mute
 
     move v5, v11
 
@@ -119,11 +120,11 @@
 
     const-string v4, "VoiceStream"
 
-    const v7, 0x10403ff
+    const v7, 0x1040403		#[0x10403ff]string:volume_icon_description_incall
 
-    const v8, 0x108029e
+    const v8, 0x10802a2		#[0x108029e]drawable:ic_audio_phone
 
-    const v9, 0x108029e
+    const v9, 0x10802a2		#[0x108029e]drawable:ic_audio_phone
 
     move v5, v12
 
@@ -140,11 +141,11 @@
 
     const-string v4, "AlarmStream"
 
-    const v7, 0x10403fa
+    const v7, 0x10403fe		#[0x10403fa]string:volume_alarm
 
-    const v8, 0x1080298
+    const v8, 0x108029c		#[0x1080298]drawable:ic_audio_alarm
 
-    const v9, 0x1080299
+    const v9, 0x108029d		#[0x1080299]drawable:ic_audio_alarm_mute
 
     move v5, v13
 
@@ -165,9 +166,9 @@
 
     const v7, 0x2050051
 
-    const v8, 0x108036a
+    const v8, 0x1080384		#[0x108036a]drawable:ic_volume_small
 
-    const v9, 0x1080369
+    const v9, 0x1080383		#[0x1080369]drawable:ic_volume_off_small
 
     move v5, v14
 
@@ -188,9 +189,9 @@
 
     const v7, 0x2050052
 
-    const v8, 0x108036a
+    const v8, 0x1080384		#[0x108036a]drawable:ic_volume_small
 
-    const v9, 0x1080369
+    const v9, 0x1080383		#[0x1080369]drawable:ic_volume_off_small
 
     move v10, v2
 
@@ -205,11 +206,11 @@
 
     const/4 v5, 0x6
 
-    const v7, 0x1040400
+    const v7, 0x1040404		#[0x1040400]string:volume_icon_description_media
 
-    const v8, 0x10802a2
+    const v8, 0x10802a6		#[0x10802a2]drawable:ic_audio_vol
 
-    const v9, 0x10802a3
+    const v9, 0x10802a7		#[0x10802a3]drawable:ic_audio_vol_mute
 
     move v6, v13
 
@@ -228,11 +229,11 @@
 
     const/4 v6, 0x5
 
-    const v7, 0x1040401
+    const v7, 0x1040405		#[0x1040401]string:volume_icon_description_notification
 
-    const v8, 0x108029c
+    const v8, 0x10802a0		#[0x108029c]drawable:ic_audio_notification
 
-    const v9, 0x108029d
+    const v9, 0x10802a1		#[0x108029d]drawable:ic_audio_notification_mute
 
     move v10, v11
 
@@ -249,11 +250,11 @@
 
     const/16 v6, -0x64
 
-    const v7, 0x1040400
+    const v7, 0x1040404		#[0x1040400]string:volume_icon_description_media
 
-    const v8, 0x10802a2
+    const v8, 0x10802a6		#[0x10802a2]drawable:ic_audio_vol
 
-    const v9, 0x10802a3
+    const v9, 0x10802a7		#[0x10802a3]drawable:ic_audio_vol_mute
 
     move v10, v2
 
@@ -270,11 +271,11 @@
 
     const/16 v6, -0xc8
 
-    const v7, 0x1040400
+    const v7, 0x1040404		#[0x1040400]string:volume_icon_description_media
 
-    const v8, 0x108031a
+    const v8, 0x1080334		#[0x108031a]drawable:ic_media_route_on_holo_dark
 
-    const v9, 0x108030e
+    const v9, 0x1080328		#[0x108030e]drawable:ic_media_route_disabled_holo_dark
 
     move v10, v2
 

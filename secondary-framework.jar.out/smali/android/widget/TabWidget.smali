@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/TabWidget;
 .super Landroid/widget/LinearLayout;
 .source "TabWidget.java"
@@ -58,7 +59,7 @@
 
     .prologue
     .line 74
-    const v0, 0x1010083
+    const v0, 0x1010083		#attr:tabWidgetStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/TabWidget;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -188,7 +189,7 @@
     if-nez v2, :cond_0
 
     .line 126
-    const v2, 0x10805a6
+    const v2, 0x10805c7		#[0x10805a6]drawable:tab_bottom_left_v4
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -203,7 +204,7 @@
     if-nez v2, :cond_1
 
     .line 130
-    const v2, 0x10805a8
+    const v2, 0x10805c9		#[0x10805a8]drawable:tab_bottom_right_v4
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -229,7 +230,7 @@
     if-nez v2, :cond_3
 
     .line 136
-    const v2, 0x10805a5
+    const v2, 0x10805c6		#[0x10805a5]drawable:tab_bottom_left
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -244,7 +245,7 @@
     if-nez v2, :cond_1
 
     .line 140
-    const v2, 0x10805a7
+    const v2, 0x10805c8		#[0x10805a7]drawable:tab_bottom_right
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

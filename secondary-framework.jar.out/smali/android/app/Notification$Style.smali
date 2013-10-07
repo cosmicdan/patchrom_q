@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/app/Notification$Style;
 .super Ljava/lang/Object;
 .source "Notification.java"
@@ -78,11 +79,11 @@
     .parameter "layoutId"
 
     .prologue
-    const v8, 0x1020333
+    const v8, 0x1020339		#[0x1020333]id:overflow_divider
 
-    const v7, 0x102032f
+    const v7, 0x102032a		#[0x102032f]id:line1
 
-    const v6, 0x102032d
+    const v6, 0x1020330		#[0x102032d]id:line3
 
     const/16 v5, 0x8
 
@@ -145,7 +146,7 @@
     if-eqz v1, :cond_3
 
     .line 1763
-    const v2, 0x1020046
+    const v2, 0x1020046		#id:text
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 

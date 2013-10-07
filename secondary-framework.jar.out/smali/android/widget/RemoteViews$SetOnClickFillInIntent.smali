@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/RemoteViews$SetOnClickFillInIntent;
 .super Landroid/widget/RemoteViews$Action;
 .source "RemoteViews.java"
@@ -134,7 +135,7 @@
     if-ne v1, p1, :cond_3
 
     .line 352
-    const v2, 0x1020246
+    const v2, 0x1020246		#id:fillInIntent
 
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 

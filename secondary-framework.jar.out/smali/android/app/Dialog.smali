@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Dialog;
 .super Ljava/lang/Object;
 .source "Dialog.java"
@@ -163,7 +164,7 @@
 
     move-result-object v2
 
-    const v3, 0x1010308
+    const v3, 0x1010308		#attr:dialogTheme
 
     invoke-virtual {v2, v3, v0, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

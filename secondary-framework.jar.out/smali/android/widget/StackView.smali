@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/StackView;
 .super Landroid/widget/AdapterViewAnimator;
 .source "StackView.java"
@@ -145,7 +146,7 @@
 
     .prologue
     .line 171
-    const v0, 0x10103dd
+    const v0, 0x10103dd		#attr:stackViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/StackView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

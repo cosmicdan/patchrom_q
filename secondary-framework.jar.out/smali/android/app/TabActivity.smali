@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/TabActivity;
 .super Landroid/app/ActivityGroup;
 .source "TabActivity.java"
@@ -48,7 +49,7 @@
     if-nez v0, :cond_0
 
     .line 140
-    const v0, 0x10900cf
+    const v0, 0x10900d3		#[0x10900cf]layout:tab_content
 
     invoke-virtual {p0, v0}, Landroid/app/TabActivity;->setContentView(I)V
 
@@ -137,7 +138,7 @@
     invoke-super {p0}, Landroid/app/ActivityGroup;->onContentChanged()V
 
     .line 128
-    const v0, 0x1020012
+    const v0, 0x1020012		#id:tabhost
 
     invoke-virtual {p0, v0}, Landroid/app/TabActivity;->findViewById(I)Landroid/view/View;
 

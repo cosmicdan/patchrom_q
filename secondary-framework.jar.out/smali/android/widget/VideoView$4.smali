@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/VideoView$4;
 .super Ljava/lang/Object;
 .source "VideoView.java"
@@ -167,7 +168,7 @@
     if-ne p2, v2, :cond_3
 
     .line 508
-    const v0, 0x1040015
+    const v0, 0x1040015		#string:VideoView_error_text_invalid_progressive_playback
 
     .line 513
     .local v0, messageId:I
@@ -187,7 +188,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040010
+    const v3, 0x1040010		#string:VideoView_error_button
 
     new-instance v4, Landroid/widget/VideoView$4$1;
 
@@ -210,7 +211,7 @@
     .line 510
     .end local v0           #messageId:I
     :cond_3
-    const v0, 0x1040011
+    const v0, 0x1040011		#string:VideoView_error_text_unknown
 
     .restart local v0       #messageId:I
     goto :goto_1

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/ClocksWgtAnalogClock;
 .super Landroid/view/View;
 .source "ClocksWgtAnalogClock.java"
@@ -159,7 +160,7 @@
     if-nez v2, :cond_0
 
     .line 139
-    const v2, 0x1080210
+    const v2, 0x1080214		#[0x1080210]drawable:clock_dial
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -181,7 +182,7 @@
     if-nez v2, :cond_1
 
     .line 144
-    const v2, 0x1080211
+    const v2, 0x1080215		#[0x1080211]drawable:clock_hand_hour
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -205,7 +206,7 @@
     if-nez v2, :cond_2
 
     .line 149
-    const v2, 0x1080212
+    const v2, 0x1080216		#[0x1080212]drawable:clock_hand_minute
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

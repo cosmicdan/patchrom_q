@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/DateTimeView;
 .super Landroid/widget/TextView;
 .source "DateTimeView.java"
@@ -206,7 +207,7 @@
     if-eqz v3, :cond_0
 
     .line 195
-    const v2, 0x1040031
+    const v2, 0x1040035		#[0x1040031]string:twenty_four_hour_time_format
 
     .line 199
     .local v2, res:I
@@ -227,7 +228,7 @@
     .end local v1           #format:Ljava/lang/String;
     .end local v2           #res:I
     :cond_0
-    const v2, 0x1040030
+    const v2, 0x1040034		#[0x1040030]string:twelve_hour_time_format
 
     .restart local v2       #res:I
     goto :goto_0

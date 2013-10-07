@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/view/PointerIcon;
 .super Ljava/lang/Object;
 .source "PointerIcon.java"
@@ -237,7 +238,7 @@
 
     sget-object v5, Lcom/android/internal/R$styleable;->Pointer:[I
 
-    const v6, 0x10103f7
+    const v6, 0x10103f7		#attr:pointerStyle
 
     const/4 v7, 0x0
 

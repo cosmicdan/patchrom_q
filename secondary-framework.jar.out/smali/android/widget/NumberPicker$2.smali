@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/NumberPicker$2;
 .super Ljava/lang/Object;
 .source "NumberPicker.java"
@@ -67,7 +68,7 @@
 
     move-result v0
 
-    const v1, 0x102033d
+    const v1, 0x1020344		#[0x102033d]id:increment
 
     if-ne v0, v1, :cond_0
 

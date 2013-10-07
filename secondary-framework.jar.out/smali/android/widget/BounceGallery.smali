@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/BounceGallery;
 .super Landroid/widget/AbsSpinner;
 .source "BounceGallery.java"
@@ -129,7 +130,7 @@
 
     .prologue
     .line 271
-    const v0, 0x1010070
+    const v0, 0x1010070		#attr:galleryStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/BounceGallery;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

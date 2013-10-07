@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Landroid/app/ContextImpl$25;
 .super Landroid/app/ContextImpl$ServiceFetcher;
 .source "ContextImpl.java"
@@ -51,11 +52,11 @@
 
     iget v4, v4, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    const v5, 0x103000b
+    const v5, 0x103000b		#style:Theme.Dialog
 
-    const v6, 0x103006f
+    const v6, 0x103006f		#style:Theme.Holo.Dialog
 
-    const v7, 0x103012e
+    const v7, 0x103012e		#style:Theme.DeviceDefault.Dialog
 
     invoke-static {v3, v4, v5, v6, v7}, Landroid/content/res/Resources;->selectSystemTheme(IIIII)I
 

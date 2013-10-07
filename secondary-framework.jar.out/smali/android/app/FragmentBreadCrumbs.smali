@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/FragmentBreadCrumbs;
 .super Landroid/view/ViewGroup;
 .source "FragmentBreadCrumbs.java"
@@ -62,7 +63,7 @@
 
     .prologue
     .line 84
-    const v0, 0x1030089
+    const v0, 0x1030089		#style:Widget.FragmentBreadCrumbs
 
     invoke-direct {p0, p1, p2, v0}, Landroid/app/FragmentBreadCrumbs;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -611,7 +612,7 @@
     .line 106
     iget-object v0, p0, Landroid/app/FragmentBreadCrumbs;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090042
+    const v1, 0x1090042		#layout:fragment_bread_crumbs
 
     const/4 v2, 0x0
 
@@ -881,7 +882,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x1090041
+    const v19, 0x1090041		#layout:fragment_bread_crumb_item
 
     const/16 v20, 0x0
 
@@ -899,7 +900,7 @@
 
     .line 306
     .local v8, item:Landroid/view/View;
-    const v18, 0x1020016
+    const v18, 0x1020016		#id:title
 
     move/from16 v0, v18
 
@@ -926,7 +927,7 @@
     if-nez v7, :cond_3
 
     .line 310
-    const v18, 0x102023f
+    const v18, 0x102023f		#id:left_icon
 
     move/from16 v0, v18
 
@@ -1030,7 +1031,7 @@
 
     .line 326
     .local v5, child:Landroid/view/View;
-    const v18, 0x1020016
+    const v18, 0x1020016		#id:title
 
     move/from16 v0, v18
 
@@ -1083,7 +1084,7 @@
     invoke-virtual {v5, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 330
-    const v18, 0x102023f
+    const v18, 0x102023f		#id:left_icon
 
     move/from16 v0, v18
 

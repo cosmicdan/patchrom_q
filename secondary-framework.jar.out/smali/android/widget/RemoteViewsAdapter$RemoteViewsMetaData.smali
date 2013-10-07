@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/RemoteViewsAdapter$RemoteViewsMetaData;
 .super Ljava/lang/Object;
 .source "RemoteViewsAdapter.java"
@@ -134,7 +135,7 @@
 
     .line 441
     .local v8, loadingView:Landroid/view/View;
-    const v9, 0x1020247
+    const v9, 0x1020247		#id:rowTypeId
 
     new-instance v10, Ljava/lang/Integer;
 
@@ -220,7 +221,7 @@
     .end local v5           #firstView:Landroid/view/View;
     :cond_1
     :goto_1
-    const v9, 0x10900b0
+    const v9, 0x10900b4		#[0x10900b0]layout:remote_views_adapter_default_loading_view
 
     const/4 v10, 0x0
 

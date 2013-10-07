@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/AutoCompleteTextView;
 .super Landroid/widget/EditText;
 .source "AutoCompleteTextView.java"
@@ -87,7 +88,7 @@
 
     .prologue
     .line 133
-    const v0, 0x101006b
+    const v0, 0x101006b		#attr:autoCompleteTextViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/AutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -130,7 +131,7 @@
     .line 139
     new-instance v2, Landroid/widget/ListPopupWindow;
 
-    const v3, 0x101006b
+    const v3, 0x101006b		#attr:autoCompleteTextViewStyle
 
     invoke-direct {v2, p1, p2, v3}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -238,7 +239,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/ListPopupWindow;->setHeight(I)V
 
     .line 173
-    const v2, 0x10900c7
+    const v2, 0x10900cb		#[0x10900c7]layout:simple_dropdown_hint
 
     invoke-virtual {v0, v4, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -1931,7 +1932,7 @@
 
     move-result-object v1
 
-    const v2, 0x1020014
+    const v2, 0x1020014		#id:text1
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

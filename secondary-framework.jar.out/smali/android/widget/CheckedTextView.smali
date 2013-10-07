@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/CheckedTextView;
 .super Landroid/widget/TextView;
 .source "CheckedTextView.java"
@@ -36,7 +37,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, 0x10100a0		#attr:state_checked
 
     aput v2, v0, v1
 
@@ -66,7 +67,7 @@
 
     .prologue
     .line 58
-    const v0, 0x10103c8
+    const v0, 0x10103c8		#attr:checkedTextViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

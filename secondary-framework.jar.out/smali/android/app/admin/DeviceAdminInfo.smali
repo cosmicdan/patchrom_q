@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/app/admin/DeviceAdminInfo;
 .super Ljava/lang/Object;
 .source "DeviceAdminInfo.java"
@@ -126,9 +127,9 @@
 
     const-string v5, "wipe-data"
 
-    const v6, 0x104028a
+    const v6, 0x104028e		#[0x104028a]string:policylab_wipeData
 
-    const v7, 0x104028b
+    const v7, 0x104028f		#[0x104028b]string:policydesc_wipeData
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -143,9 +144,9 @@
 
     const-string v5, "reset-password"
 
-    const v6, 0x1040286
+    const v6, 0x104028a		#[0x1040286]string:policylab_resetPassword
 
-    const v7, 0x1040287
+    const v7, 0x104028b		#[0x1040287]string:policydesc_resetPassword
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -160,9 +161,9 @@
 
     const-string v5, "limit-password"
 
-    const v6, 0x1040282
+    const v6, 0x1040286		#[0x1040282]string:policylab_limitPassword
 
-    const v7, 0x1040283
+    const v7, 0x1040287		#[0x1040283]string:policydesc_limitPassword
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -177,9 +178,9 @@
 
     const-string v5, "watch-login"
 
-    const v6, 0x1040284
+    const v6, 0x1040288		#[0x1040284]string:policylab_watchLogin
 
-    const v7, 0x1040285
+    const v7, 0x1040289		#[0x1040285]string:policydesc_watchLogin
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -194,9 +195,9 @@
 
     const-string v5, "force-lock"
 
-    const v6, 0x1040288
+    const v6, 0x104028c		#[0x1040288]string:policylab_forceLock
 
-    const v7, 0x1040289
+    const v7, 0x104028d		#[0x1040289]string:policydesc_forceLock
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -211,9 +212,9 @@
 
     const-string v5, "set-global-proxy"
 
-    const v6, 0x104028c
+    const v6, 0x1040290		#[0x104028c]string:policylab_setGlobalProxy
 
-    const v7, 0x104028d
+    const v7, 0x1040291		#[0x104028d]string:policydesc_setGlobalProxy
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -228,9 +229,9 @@
 
     const-string v5, "expire-password"
 
-    const v6, 0x104028e
+    const v6, 0x1040292		#[0x104028e]string:policylab_expirePassword
 
-    const v7, 0x104028f
+    const v7, 0x1040293		#[0x104028f]string:policydesc_expirePassword
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -245,9 +246,9 @@
 
     const-string v5, "encrypted-storage"
 
-    const v6, 0x1040290
+    const v6, 0x1040294		#[0x1040290]string:policylab_encryptedStorage
 
-    const v7, 0x1040291
+    const v7, 0x1040295		#[0x1040291]string:policydesc_encryptedStorage
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -262,9 +263,9 @@
 
     const-string v5, "disable-camera"
 
-    const v6, 0x1040292
+    const v6, 0x1040296		#[0x1040292]string:policylab_disableCamera
 
-    const v7, 0x1040293
+    const v7, 0x1040297		#[0x1040293]string:policydesc_disableCamera
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -279,9 +280,9 @@
 
     const-string v5, "disable-keyguard-features"
 
-    const v6, 0x1040294
+    const v6, 0x1040298		#[0x1040294]string:policylab_disableKeyguardFeatures
 
-    const v7, 0x1040295
+    const v7, 0x1040299		#[0x1040295]string:policydesc_disableKeyguardFeatures
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Notification$BigPictureStyle;
 .super Landroid/app/Notification$Style;
 .source "Notification.java"
@@ -64,7 +65,7 @@
 
     .prologue
     .line 1841
-    const v1, 0x1090090
+    const v1, 0x1090094		#[0x1090090]layout:notification_template_big_picture
 
     invoke-virtual {p0, v1}, Landroid/app/Notification$BigPictureStyle;->getStandardView(I)Landroid/widget/RemoteViews;
 
@@ -72,7 +73,7 @@
 
     .line 1843
     .local v0, contentView:Landroid/widget/RemoteViews;
-    const v1, 0x1020332
+    const v1, 0x1020335		#[0x1020332]id:big_picture
 
     iget-object v2, p0, Landroid/app/Notification$BigPictureStyle;->mPicture:Landroid/graphics/Bitmap;
 

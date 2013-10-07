@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/WallpaperManager;
 .super Ljava/lang/Object;
 .source "WallpaperManager.java"
@@ -587,7 +588,7 @@
 
     .prologue
     .line 802
-    const v0, 0x108021e
+    const v0, 0x1080222		#[0x108021e]drawable:default_wallpaper
 
     invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
 

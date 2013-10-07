@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/TwoLineListItem;
 .super Landroid/widget/RelativeLayout;
 .source "TwoLineListItem.java"
@@ -103,7 +104,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 72
-    const v0, 0x1020014
+    const v0, 0x1020014		#id:text1
 
     invoke-virtual {p0, v0}, Landroid/widget/TwoLineListItem;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +115,7 @@
     iput-object v0, p0, Landroid/widget/TwoLineListItem;->mText1:Landroid/widget/TextView;
 
     .line 73
-    const v0, 0x1020015
+    const v0, 0x1020015		#id:text2
 
     invoke-virtual {p0, v0}, Landroid/widget/TwoLineListItem;->findViewById(I)Landroid/view/View;
 

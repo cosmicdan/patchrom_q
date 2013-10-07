@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionInfo;
 .super Ljava/lang/Object;
 .source "Editor.java"
@@ -64,7 +65,7 @@
 
     move-result-object v1
 
-    const v2, 0x1030118
+    const v2, 0x1030118		#style:TextAppearance.SuggestionHighlight
 
     invoke-direct {v0, v1, v2}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
 

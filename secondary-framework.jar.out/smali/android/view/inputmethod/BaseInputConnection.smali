@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/view/inputmethod/BaseInputConnection;
 .super Ljava/lang/Object;
 .source "BaseInputConnection.java"
@@ -165,7 +166,7 @@
 
     new-array v4, v4, [I
 
-    const v5, 0x1010230
+    const v5, 0x1010230		#attr:candidatesTextStyleSpans
 
     aput v5, v4, v6
 

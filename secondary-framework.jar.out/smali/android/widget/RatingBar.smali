@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/RatingBar;
 .super Landroid/widget/AbsSeekBar;
 .source "RatingBar.java"
@@ -41,7 +42,7 @@
 
     .prologue
     .line 116
-    const v0, 0x101007c
+    const v0, 0x101007c		#attr:ratingBarStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/RatingBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

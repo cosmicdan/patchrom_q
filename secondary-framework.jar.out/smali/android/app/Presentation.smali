@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Presentation;
 .super Landroid/app/Dialog;
 .source "Presentation.java"
@@ -185,7 +186,7 @@
 
     move-result-object v4
 
-    const v5, 0x10103c0
+    const v5, 0x10103c0		#attr:presentationTheme
 
     const/4 v6, 0x1
 

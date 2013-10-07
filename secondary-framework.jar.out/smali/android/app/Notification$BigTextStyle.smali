@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Notification$BigTextStyle;
 .super Landroid/app/Notification$Style;
 .source "Notification.java"
@@ -49,7 +50,7 @@
     .locals 8
 
     .prologue
-    const v7, 0x1020330
+    const v7, 0x1020333		#[0x1020330]id:big_text
 
     const/4 v2, 0x0
 
@@ -85,7 +86,7 @@
     invoke-static {v1, v3}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 1918
-    const v1, 0x1090091
+    const v1, 0x1090095		#[0x1090091]layout:notification_template_big_text
 
     invoke-virtual {p0, v1}, Landroid/app/Notification$BigTextStyle;->getStandardView(I)Landroid/widget/RemoteViews;
 
@@ -96,7 +97,7 @@
     if-eqz v6, :cond_0
 
     .line 1922
-    const v1, 0x102032f
+    const v1, 0x102032a		#[0x102032f]id:line1
 
     move v3, v2
 
@@ -116,7 +117,7 @@
     invoke-virtual {v0, v7, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1927
-    const v1, 0x1020015
+    const v1, 0x1020015		#id:text2
 
     const/16 v2, 0x8
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/MultiAutoCompleteTextView;
 .super Landroid/widget/AutoCompleteTextView;
 .source "MultiAutoCompleteTextView.java"
@@ -38,7 +39,7 @@
 
     .prologue
     .line 67
-    const v0, 0x101006b
+    const v0, 0x101006b		#attr:autoCompleteTextViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/MultiAutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

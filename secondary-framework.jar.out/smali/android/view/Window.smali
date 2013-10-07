@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/view/Window;
 .super Ljava/lang/Object;
 .source "Window.java"
@@ -38,7 +39,7 @@
 
 .field public static final FEATURE_RIGHT_ICON:I = 0x4
 
-.field public static final ID_ANDROID_CONTENT:I = 0x1020002
+.field public static final ID_ANDROID_CONTENT:I = 0x1020002		#id:content
 
 .field public static final PROGRESS_END:I = 0x2710
 

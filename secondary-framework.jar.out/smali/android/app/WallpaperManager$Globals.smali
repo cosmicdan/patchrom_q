@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/app/WallpaperManager$Globals;
 .super Landroid/app/IWallpaperManagerCallback$Stub;
 .source "WallpaperManager.java"
@@ -309,7 +310,7 @@
 
     move-result-object v6
 
-    const v8, 0x108021e
+    const v8, 0x1080222		#[0x108021e]drawable:default_wallpaper
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 

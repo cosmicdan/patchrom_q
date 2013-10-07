@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/TextView;
 .super Landroid/view/View;
 .source "TextView.java"
@@ -39,13 +40,13 @@
 
 .field private static final HIGHLIGHT_COLOR_DEFAULT:I = 0x6633b5e5
 
-.field static final ID_COPY:I = 0x1020021
+.field static final ID_COPY:I = 0x1020021		#id:copy
 
-.field static final ID_CUT:I = 0x1020020
+.field static final ID_CUT:I = 0x1020020		#id:cut
 
-.field static final ID_PASTE:I = 0x1020022
+.field static final ID_PASTE:I = 0x1020022		#id:paste
 
-.field static final ID_SELECT_ALL:I = 0x102001f
+.field static final ID_SELECT_ALL:I = 0x102001f		#id:selectAll
 
 .field static LAST_CUT_OR_COPY_TIME:J = 0x0L
 
@@ -290,7 +291,7 @@
     .line 266
     new-array v1, v4, [I
 
-    const v2, 0x101034d
+    const v2, 0x101034d		#attr:state_multiline
 
     aput v2, v1, v3
 
@@ -341,7 +342,7 @@
 
     .prologue
     .line 459
-    const v0, 0x1010084
+    const v0, 0x1010084		#attr:textViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -17821,7 +17822,7 @@
     .line 4706
     aget v4, v0, v1
 
-    const v5, 0x10100a7
+    const v5, 0x10100a7		#attr:state_pressed
 
     if-ne v4, v5, :cond_1
 
@@ -20168,7 +20169,7 @@
     if-eqz v1, :cond_0
 
     .line 7694
-    const v1, 0x102001f
+    const v1, 0x102001f		#id:selectAll
 
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
@@ -20185,7 +20186,7 @@
     if-eqz v1, :cond_0
 
     .line 7699
-    const v1, 0x1020020
+    const v1, 0x1020020		#id:cut
 
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
@@ -20202,7 +20203,7 @@
     if-eqz v1, :cond_0
 
     .line 7704
-    const v1, 0x1020021
+    const v1, 0x1020021		#id:copy
 
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
@@ -20219,7 +20220,7 @@
     if-eqz v1, :cond_0
 
     .line 7709
-    const v1, 0x1020022
+    const v1, 0x1020022		#id:paste
 
     invoke-virtual {p0, v1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
 
@@ -22574,7 +22575,7 @@
 
     .line 7939
     :pswitch_data_0
-    .packed-switch 0x102001f
+    .packed-switch 0x102001f		#id:selectAll
         :pswitch_0
         :pswitch_2
         :pswitch_3
@@ -25241,7 +25242,7 @@
 
     move-result-object v1
 
-    const v2, 0x1080378
+    const v2, 0x1080392		#[0x1080378]drawable:indicator_input_error
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

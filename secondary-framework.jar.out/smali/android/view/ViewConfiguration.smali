@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/view/ViewConfiguration;
 .super Ljava/lang/Object;
 .source "ViewConfiguration.java"
@@ -467,7 +468,7 @@
     iput-boolean v10, p0, Landroid/view/ViewConfiguration;->mFadingMarqueeEnabled:Z
 
     .line 303
-    const v10, 0x1050008
+    const v10, 0x1050008		#dimen:config_viewConfigurationTouchSlop
 
     invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

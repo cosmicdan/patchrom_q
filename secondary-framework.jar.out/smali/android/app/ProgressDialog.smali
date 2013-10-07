@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/ProgressDialog;
 .super Landroid/app/AlertDialog;
 .source "ProgressDialog.java"
@@ -504,7 +505,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    const v8, 0x102000d
+    const v8, 0x102000d		#id:progress
 
     const/4 v7, 0x0
 
@@ -521,7 +522,7 @@
 
     sget-object v4, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    const v5, 0x101005d
+    const v5, 0x101005d		#attr:alertDialogStyle
 
     const/4 v6, 0x0
 
@@ -547,7 +548,7 @@
     .line 156
     const/16 v3, 0x10
 
-    const v4, 0x1090025
+    const v4, 0x1090025		#layout:alert_dialog_progress
 
     invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -568,7 +569,7 @@
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgress:Landroid/widget/ProgressBar;
 
     .line 160
-    const v3, 0x1020264
+    const v3, 0x1020264		#id:progress_number
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -579,7 +580,7 @@
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgressNumber:Landroid/widget/TextView;
 
     .line 161
-    const v3, 0x1020263
+    const v3, 0x1020263		#id:progress_percent
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -703,7 +704,7 @@
     :cond_8
     const/16 v3, 0xf
 
-    const v4, 0x10900ac
+    const v4, 0x10900b0		#[0x10900ac]layout:progress_dialog
 
     invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -724,7 +725,7 @@
     iput-object v3, p0, Landroid/app/ProgressDialog;->mProgress:Landroid/widget/ProgressBar;
 
     .line 168
-    const v3, 0x102000b
+    const v3, 0x102000b		#id:message
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

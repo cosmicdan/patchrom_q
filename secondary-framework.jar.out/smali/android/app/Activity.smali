@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/app/Activity;
 .super Landroid/view/ContextThemeWrapper;
 .source "Activity.java"
@@ -197,7 +198,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x101009c
+    const v2, 0x101009c		#attr:state_focused
 
     aput v2, v0, v1
 
@@ -5228,7 +5229,7 @@
 
     move-result v0
 
-    const v2, 0x102002c
+    const v2, 0x102002c		#id:home
 
     if-ne v0, v2, :cond_2
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/GridView;
 .super Landroid/widget/AbsListView;
 .source "GridView.java"
@@ -68,7 +69,7 @@
 
     .prologue
     .line 106
-    const v0, 0x1010071
+    const v0, 0x1010071		#attr:gridViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/GridView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

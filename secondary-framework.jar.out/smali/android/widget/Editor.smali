@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/widget/Editor;
 .super Ljava/lang/Object;
 .source "Editor.java"
@@ -494,7 +495,7 @@
 
     move-result-object v1
 
-    const v2, 0x105004c
+    const v2, 0x105004c		#dimen:textview_error_popup_default_width
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2208,7 +2209,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900d2
+    const v3, 0x10900d6		#[0x10900d2]layout:text_drag_thumbnail
 
     const/4 v4, 0x0
 
@@ -3455,7 +3456,7 @@
 
     .line 271
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v4, 0x10900da
+    const v4, 0x10900de		#[0x10900da]layout:textview_hint
 
     const/4 v5, 0x0
 

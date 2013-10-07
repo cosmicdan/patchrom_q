@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/view/ViewRootImpl;
 .super Ljava/lang/Object;
 .source "ViewRootImpl.java"
@@ -7506,7 +7507,7 @@
 
     move-result-object v2
 
-    const v3, 0x10103f8
+    const v3, 0x10103f8		#attr:accessibilityFocusedDrawable
 
     const/4 v4, 0x1
 
@@ -8669,7 +8670,7 @@
 
     .line 1206
     .local v4, packageMetrics:Landroid/util/DisplayMetrics;
-    const v6, 0x1050007
+    const v6, 0x1050007		#dimen:config_prefDialogWidth
 
     iget-object v7, p0, Landroid/view/ViewRootImpl;->mTmpValue:Landroid/util/TypedValue;
 
@@ -12052,7 +12053,7 @@
 
     move-result-object v4
 
-    const v10, 0x10e0001
+    const v10, 0x10e0001		#integer:config_mediumAnimTime
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "ActivityChooserView.java"
@@ -311,9 +312,9 @@
     .parameter "parent"
 
     .prologue
-    const v11, 0x109001f
+    const v11, 0x109001f		#layout:activity_chooser_view_list_item
 
-    const v10, 0x1020016
+    const v10, 0x1020016		#id:title
 
     const/4 v9, 0x1
 
@@ -380,7 +381,7 @@
 
     move-result-object v6
 
-    const v7, 0x1040505
+    const v7, 0x1040509		#[0x1040505]string:activity_chooser_view_see_all
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -408,7 +409,7 @@
 
     move-result v6
 
-    const v7, 0x1020256
+    const v7, 0x1020256		#id:list_item
 
     if-eq v6, v7, :cond_3
 
@@ -443,7 +444,7 @@
 
     .line 710
     .local v4, packageManager:Landroid/content/pm/PackageManager;
-    const v6, 0x1020006
+    const v6, 0x1020006		#id:icon
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
