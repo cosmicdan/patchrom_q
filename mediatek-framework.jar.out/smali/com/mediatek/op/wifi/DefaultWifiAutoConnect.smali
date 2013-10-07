@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/mediatek/op/wifi/DefaultWifiAutoConnect;
 .super Ljava/lang/Object;
 .source "DefaultWifiAutoConnect.java"
@@ -59,7 +60,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e000d
+    const v1, 0x10e000d		#integer:config_wifi_framework_scan_interval
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -75,7 +76,7 @@
     .line 167
     iget-object v0, p0, Lcom/mediatek/op/wifi/DefaultWifiAutoConnect;->mContext:Landroid/content/Context;
 
-    const v1, 0x104040c
+    const v1, 0x1040410		#[0x104040c]string:wifi_tether_configure_ssid_default
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
