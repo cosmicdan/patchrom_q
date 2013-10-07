@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/GlobalActions;
 .super Ljava/lang/Object;
 .source "GlobalActions.java"
@@ -794,7 +795,7 @@
     :goto_3
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$7;
 
-    const v2, 0x1080326
+    const v2, 0x1080340		#[0x1080326]drawable:ic_menu_cc
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1068,15 +1069,15 @@
     :goto_0
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$1;
 
-    const v2, 0x10802d9
+    const v2, 0x10802dd		#[0x10802d9]drawable:ic_lock_airplane_mode
 
-    const v3, 0x10802da
+    const v3, 0x10802de		#[0x10802da]drawable:ic_lock_airplane_mode_off
 
-    const v4, 0x10400ed
+    const v4, 0x10400f1		#[0x10400ed]string:global_actions_toggle_airplane_mode
 
-    const v5, 0x10400ee
+    const v5, 0x10400f2		#[0x10400ee]string:global_actions_airplane_mode_on_status
 
-    const v6, 0x10400ef
+    const v6, 0x10400f3		#[0x10400ef]string:global_actions_airplane_mode_off_status
 
     move-object v1, p0
 
@@ -1099,9 +1100,9 @@
 
     new-instance v1, Lcom/android/internal/policy/impl/GlobalActions$2;
 
-    const v2, 0x1080030
+    const v2, 0x1080030		#drawable:ic_lock_power_off
 
-    const v3, 0x10400e6
+    const v3, 0x10400ea		#[0x10400e6]string:global_action_power_off
 
     invoke-direct {v1, p0, v2, v3}, Lcom/android/internal/policy/impl/GlobalActions$2;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1112,9 +1113,9 @@
 
     new-instance v1, Lcom/android/internal/policy/impl/GlobalActions$3;
 
-    const v2, 0x10802dc
+    const v2, 0x10802df		#[0x10802dc]drawable:ic_lock_reboot
 
-    const v3, 0x104033e
+    const v3, 0x1040342		#[0x104033e]string:factorytest_reboot
 
     invoke-direct {v1, p0, v2, v3}, Lcom/android/internal/policy/impl/GlobalActions$3;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 
@@ -1160,9 +1161,9 @@
 
     new-instance v1, Lcom/android/internal/policy/impl/GlobalActions$5;
 
-    const v2, 0x1080523
+    const v2, 0x1080544		#[0x1080523]drawable:stat_sys_adb
 
-    const v3, 0x10400e7
+    const v3, 0x10400eb		#[0x10400e7]string:global_action_bug_report
 
     invoke-direct {v1, p0, v2, v3}, Lcom/android/internal/policy/impl/GlobalActions$5;-><init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PatternUnlockScreen$3;
 .super Landroid/os/CountDownTimer;
 .source "PatternUnlockScreen.java"
@@ -66,7 +67,7 @@
 
     move-result-object v1
 
-    const v2, 0x10402ea
+    const v2, 0x10402ee		#[0x10402ea]string:lockscreen_pattern_instructions
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -155,7 +156,7 @@
 
     move-result-object v2
 
-    const v3, 0x104030c
+    const v3, 0x1040310		#[0x104030c]string:lockscreen_too_many_failed_attempts_countdown
 
     new-array v4, v7, [Ljava/lang/Object;
 

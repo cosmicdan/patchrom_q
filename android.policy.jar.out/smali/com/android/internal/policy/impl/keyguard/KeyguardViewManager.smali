@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 .super Ljava/lang/Object;
 .source "KeyguardViewManager.java"
@@ -203,11 +204,11 @@
 
     .prologue
     .line 248
-    const v3, 0x10202b2
+    const v3, 0x10202b2		#id:keyguard_host_view
 
     .line 249
     .local v3, resId:I
-    const v2, 0x1090057
+    const v2, 0x1090057		#layout:keyguard_host_view
 
     .line 250
     .local v2, layoutId:I
@@ -305,7 +306,7 @@
     .line 276
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->mKeyguardView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    const v7, 0x10202be
+    const v7, 0x10202be		#id:keyguard_password_view
 
     invoke-virtual {v6, v7}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -473,7 +474,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     .line 216
-    const v1, 0x10301e2
+    const v1, 0x10301e2		#style:Animation.LockScreen
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

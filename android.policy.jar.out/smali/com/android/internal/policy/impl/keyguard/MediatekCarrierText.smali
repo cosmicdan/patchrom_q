@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText;
 .super Landroid/widget/LinearLayout;
 .source "MediatekCarrierText.java"
@@ -283,7 +284,7 @@
     .parameter "spn"
 
     .prologue
-    const v4, 0x10402f5
+    const v4, 0x10402f9		#[0x10402f5]string:lockscreen_missing_sim_message_short
 
     .line 234
     if-nez p2, :cond_0
@@ -396,7 +397,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MediatekCarrierText;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040301
+    const v3, 0x1040305		#[0x1040301]string:lockscreen_network_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -432,7 +433,7 @@
 
     move-result-object v2
 
-    const v3, 0x10402f9
+    const v3, 0x10402fd		#[0x10402f9]string:lockscreen_permanent_disabled_sim_message_short
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -464,7 +465,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040304
+    const v3, 0x1040308		#[0x1040304]string:lockscreen_sim_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -483,7 +484,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040302
+    const v3, 0x1040306		#[0x1040302]string:lockscreen_sim_puk_locked_message
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -521,7 +522,7 @@
 
     move-result-object v0
 
-    const v1, 0x10402e6
+    const v1, 0x10402ea		#[0x10402e6]string:lockscreen_carrier_default
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1410,7 +1411,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040543
+    const v1, 0x1040547		#[0x1040543]string:kg_text_message_separator
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

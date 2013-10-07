@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 .super Landroid/widget/LinearLayout;
 .source "KeyguardPatternView.java"
@@ -330,7 +331,7 @@
     .line 219
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x10402f0
+    const v1, 0x10402f4		#[0x10402f0]string:faceunlock_multiple_failures
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
@@ -362,7 +363,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x1040528
+    const v1, 0x104052c		#[0x1040528]string:kg_pattern_instructions
 
     const/4 v2, 0x0
 
@@ -599,7 +600,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     .line 121
-    const v1, 0x10202c2
+    const v1, 0x10202c2		#id:lockPatternView
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -658,7 +659,7 @@
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/LockPatternView;->setTactileFeedbackEnabled(Z)V
 
     .line 132
-    const v1, 0x10202aa
+    const v1, 0x10202aa		#id:forgot_password_button
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -676,7 +677,7 @@
     .line 135
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mForgotPatternButton:Landroid/widget/Button;
 
-    const v3, 0x1040523
+    const v3, 0x1040527		#[0x1040523]string:kg_forgot_pattern_button_text
 
     invoke-virtual {v1, v3}, Landroid/widget/Button;->setText(I)V
 
@@ -706,7 +707,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 147
-    const v1, 0x10202b0
+    const v1, 0x10202b0		#id:keyguard_selector_fade_container
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 
@@ -715,7 +716,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mEcaView:Landroid/view/View;
 
     .line 148
-    const v1, 0x10202ac
+    const v1, 0x10202ac		#id:keyguard_bouncer_frame
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->findViewById(I)Landroid/view/View;
 

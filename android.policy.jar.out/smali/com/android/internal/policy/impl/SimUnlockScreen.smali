@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/SimUnlockScreen;
 .super Landroid/widget/LinearLayout;
 .source "SimUnlockScreen.java"
@@ -145,13 +146,13 @@
     if-ne v0, v7, :cond_0
 
     .line 84
-    const v0, 0x1090065
+    const v0, 0x1090068		#[0x1090065]layout:keyguard_screen_sim_pin_landscape
 
     invoke-virtual {v6, v0, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 90
     :goto_0
-    const v0, 0x10202ec
+    const v0, 0x10202ed		#[0x10202ec]id:headerText
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +163,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     .line 91
-    const v0, 0x10202ee
+    const v0, 0x10202ef		#[0x10202ee]id:pinDisplay
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +174,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     .line 92
-    const v0, 0x10202ef
+    const v0, 0x10202f0		#[0x10202ef]id:backspace
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +188,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 95
-    const v0, 0x10202a6
+    const v0, 0x10202a6		#id:ok
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +201,7 @@
     .line 97
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402dc
+    const v1, 0x10402e0		#[0x10402dc]string:keyguard_password_enter_pin_code
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -237,7 +238,7 @@
 
     .line 86
     :cond_0
-    const v0, 0x1090066
+    const v0, 0x1090069		#[0x1090066]layout:keyguard_screen_sim_pin_portrait
 
     invoke-virtual {v6, v0, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -357,7 +358,7 @@
     .line 208
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x1040081
+    const v1, 0x1040085		#[0x1040081]string:invalidPin
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -433,7 +434,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040305
+    const v2, 0x1040309		#[0x1040305]string:lockscreen_sim_unlock_progress_dialog_message
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -765,7 +766,7 @@
     .line 121
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402dc
+    const v1, 0x10402e0		#[0x10402dc]string:keyguard_password_enter_pin_code
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

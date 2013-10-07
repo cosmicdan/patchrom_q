@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;
 .super Ljava/lang/Object;
 .source "KeyguardMessageArea.java"
@@ -31,7 +32,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 89
-    const v0, 0x1020282
+    const v0, 0x1020282		#id:keyguard_message_area
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

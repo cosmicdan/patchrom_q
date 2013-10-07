@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 .super Landroid/widget/FrameLayout;
 .source "KeyguardTransportControlView.java"
@@ -819,11 +820,11 @@
     sparse-switch p1, :sswitch_data_0
 
     .line 377
-    const v1, 0x1080024
+    const v1, 0x1080024		#drawable:ic_media_play
 
     .line 378
     .local v1, imageResId:I
-    const v0, 0x10402fe
+    const v0, 0x1040302		#[0x10402fe]string:lockscreen_transport_play_description
 
     .line 381
     .local v0, imageDescId:I
@@ -859,11 +860,11 @@
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_0
-    const v1, 0x108008a
+    const v1, 0x108008a		#drawable:stat_sys_warning
 
     .line 362
     .restart local v1       #imageResId:I
-    const v0, 0x10402fe
+    const v0, 0x1040302		#[0x10402fe]string:lockscreen_transport_play_description
 
     .line 363
     .restart local v0       #imageDescId:I
@@ -873,11 +874,11 @@
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_1
-    const v1, 0x1080023
+    const v1, 0x1080023		#drawable:ic_media_pause
 
     .line 367
     .restart local v1       #imageResId:I
-    const v0, 0x10402fd
+    const v0, 0x1040301		#[0x10402fd]string:lockscreen_transport_pause_description
 
     .line 368
     .restart local v0       #imageDescId:I
@@ -887,11 +888,11 @@
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_2
-    const v1, 0x108031c
+    const v1, 0x1080336		#[0x108031c]drawable:ic_media_stop
 
     .line 372
     .restart local v1       #imageResId:I
-    const v0, 0x10402ff
+    const v0, 0x1040303		#[0x10402ff]string:lockscreen_transport_stop_description
 
     .line 373
     .restart local v0       #imageDescId:I
@@ -1179,7 +1180,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 225
-    const v5, 0x1020016
+    const v5, 0x1020016		#id:title
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1195,7 +1196,7 @@
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 227
-    const v5, 0x1020308
+    const v5, 0x102030a		#[0x1020308]id:albumart
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1206,7 +1207,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
     .line 228
-    const v5, 0x1020309
+    const v5, 0x102030b		#[0x1020309]id:btn_prev
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1217,7 +1218,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
     .line 229
-    const v5, 0x102030a
+    const v5, 0x102030c		#[0x102030a]id:btn_play
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1228,7 +1229,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     .line 230
-    const v5, 0x102030b
+    const v5, 0x102030d		#[0x102030b]id:btn_next
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 

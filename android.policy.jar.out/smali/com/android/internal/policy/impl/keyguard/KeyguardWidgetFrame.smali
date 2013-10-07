@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 .super Landroid/widget/FrameLayout;
 .source "KeyguardWidgetFrame.java"
@@ -238,7 +239,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->mFrameStrokeAdjustment:I
 
     .line 116
-    const v3, 0x1050076
+    const v3, 0x1050076		#dimen:kg_small_widget_height
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -247,7 +248,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->mSmallWidgetHeight:I
 
     .line 118
-    const v3, 0x10803c2
+    const v3, 0x10803dc		#[0x10803c2]drawable:kg_widget_bg_padded
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -256,7 +257,7 @@
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 119
-    const v3, 0x1060048
+    const v3, 0x1060048		#color:kg_widget_pager_gradient
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 

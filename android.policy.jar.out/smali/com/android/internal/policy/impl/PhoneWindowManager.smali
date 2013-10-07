@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/PhoneWindowManager;
 .super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
@@ -1627,7 +1628,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0024
+    const v3, 0x10e0023		#[0x10e0024]integer:config_longPressOnHomeBehavior
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -5102,7 +5103,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x10a0030
+    const v0, 0x10a0030		#anim:lock_screen_wallpaper_behind_enter
 
     :goto_0
     invoke-static {v1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
@@ -5112,7 +5113,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x10a002d
+    const v0, 0x10a002d		#anim:lock_screen_behind_enter
 
     goto :goto_0
 .end method
@@ -8437,7 +8438,7 @@
 
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mEnableShiftMenuBugReports:Z
 
-    const v4, 0x10e000f
+    const v4, 0x10e000f		#integer:config_lidOpenRotation
 
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->readRotation(I)I
 
@@ -8445,7 +8446,7 @@
 
     iput v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLidOpenRotation:I
 
-    const v4, 0x10e0011
+    const v4, 0x10e0011		#integer:config_carDockRotation
 
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->readRotation(I)I
 
@@ -8453,7 +8454,7 @@
 
     iput v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mCarDockRotation:I
 
-    const v4, 0x10e0010
+    const v4, 0x10e0010		#integer:config_deskDockRotation
 
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->readRotation(I)I
 
@@ -8495,7 +8496,7 @@
 
     move-result-object v4
 
-    const v7, 0x10e0015
+    const v7, 0x10e0015		#integer:config_lidKeyboardAccessibility
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -8509,7 +8510,7 @@
 
     move-result-object v4
 
-    const v7, 0x10e0016
+    const v7, 0x10e0016		#integer:config_lidNavigationAccessibility
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -8650,7 +8651,7 @@
 
     move-result-object v4
 
-    const v7, 0x1070023
+    const v7, 0x1070023		#array:config_longPressVibePattern
 
     invoke-static {v4, v7}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getLongIntArray(Landroid/content/res/Resources;I)[J
 
@@ -8664,7 +8665,7 @@
 
     move-result-object v4
 
-    const v7, 0x1070024
+    const v7, 0x1070024		#array:config_virtualKeyVibePattern
 
     invoke-static {v4, v7}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getLongIntArray(Landroid/content/res/Resources;I)[J
 
@@ -8678,7 +8679,7 @@
 
     move-result-object v4
 
-    const v7, 0x1070025
+    const v7, 0x1070025		#array:config_keyboardTapVibePattern
 
     invoke-static {v4, v7}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getLongIntArray(Landroid/content/res/Resources;I)[J
 
@@ -8692,7 +8693,7 @@
 
     move-result-object v4
 
-    const v7, 0x1070026
+    const v7, 0x1070026		#array:config_safeModeDisabledVibePattern
 
     invoke-static {v4, v7}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getLongIntArray(Landroid/content/res/Resources;I)[J
 
@@ -8706,7 +8707,7 @@
 
     move-result-object v4
 
-    const v7, 0x1070027
+    const v7, 0x1070027		#array:config_safeModeEnabledVibePattern
 
     invoke-static {v4, v7}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getLongIntArray(Landroid/content/res/Resources;I)[J
 
@@ -15489,7 +15490,7 @@
     if-ne p2, v4, :cond_1
 
     :cond_0
-    const v0, 0x10a001b
+    const v0, 0x10a001b		#anim:dock_top_exit
 
     :goto_0
     return v0
@@ -15500,7 +15501,7 @@
     if-ne p2, v1, :cond_b
 
     :cond_2
-    const v0, 0x10a001a
+    const v0, 0x10a001a		#anim:dock_top_enter
 
     goto :goto_0
 
@@ -15518,7 +15519,7 @@
     if-ne p2, v4, :cond_5
 
     :cond_4
-    const v0, 0x10a0015
+    const v0, 0x10a0015		#anim:dock_bottom_exit
 
     goto :goto_0
 
@@ -15528,7 +15529,7 @@
     if-ne p2, v1, :cond_b
 
     :cond_6
-    const v0, 0x10a0014
+    const v0, 0x10a0014		#anim:dock_bottom_enter
 
     goto :goto_0
 
@@ -15538,7 +15539,7 @@
     if-ne p2, v4, :cond_9
 
     :cond_8
-    const v0, 0x10a0019
+    const v0, 0x10a0019		#anim:dock_right_exit
 
     goto :goto_0
 
@@ -15548,7 +15549,7 @@
     if-ne p2, v1, :cond_b
 
     :cond_a
-    const v0, 0x10a0018
+    const v0, 0x10a0018		#anim:dock_right_enter
 
     goto :goto_0
 
@@ -15563,7 +15564,7 @@
 
     if-eqz v0, :cond_d
 
-    const v0, 0x10a0011
+    const v0, 0x10a0011		#anim:app_starting_exit
 
     goto :goto_0
 
@@ -15979,7 +15980,7 @@
 
     move-result-object v9
 
-    const v10, 0x105000c
+    const v10, 0x105000c		#dimen:status_bar_height
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -16013,7 +16014,7 @@
 
     move-result-object v13
 
-    const v14, 0x105000d
+    const v14, 0x105000d		#dimen:navigation_bar_height
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -16047,7 +16048,7 @@
 
     move-result-object v13
 
-    const v14, 0x105000e
+    const v14, 0x105000e		#dimen:navigation_bar_height_landscape
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -16101,7 +16102,7 @@
 
     move-result-object v17
 
-    const v18, 0x105000f
+    const v18, 0x105000f		#dimen:navigation_bar_width
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 .super Landroid/view/ViewGroup;
 .source "SlidingChallengeLayout.java"
@@ -350,7 +351,7 @@
 
     .line 254
     .local v1, res:Landroid/content/res/Resources;
-    const v3, 0x1050074
+    const v3, 0x1050074		#dimen:kg_edge_swipe_region_size
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -428,7 +429,7 @@
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleOpenBelow:I
 
     .line 269
-    const v3, 0x1050069
+    const v3, 0x1050069		#dimen:kg_widget_pager_bottom_padding
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1541,7 +1542,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040320
+    const v2, 0x1040324		#[0x1040320]string:keyguard_accessibility_unlock_area_expanded
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1585,7 +1586,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040321
+    const v2, 0x1040325		#[0x1040321]string:keyguard_accessibility_unlock_area_collapsed
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4068,7 +4069,7 @@
     if-nez v2, :cond_5
 
     .line 874
-    const v2, 0x10202fc
+    const v2, 0x10202fe		#[0x10202fc]id:keyguard_selector_view
 
     invoke-virtual {v8, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

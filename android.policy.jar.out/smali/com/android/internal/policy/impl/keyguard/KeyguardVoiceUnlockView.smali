@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;
 .super Landroid/widget/LinearLayout;
 .source "KeyguardVoiceUnlockView.java"
@@ -170,7 +171,7 @@
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->log(Ljava/lang/String;)V
 
     .line 112
-    const v0, 0x10203bc
+    const v0, 0x10203c3		#[0x10203bc]id:zz_voice_unlock_area_view
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -512,7 +513,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 50
-    const v1, 0x10202b0
+    const v1, 0x10202b0		#id:keyguard_selector_fade_container
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -521,7 +522,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mEcaView:Landroid/view/View;
 
     .line 51
-    const v1, 0x10202ac
+    const v1, 0x10202ac		#id:keyguard_bouncer_frame
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinPukView$8$1;
 .super Ljava/lang/Object;
 .source "KeyguardSimPinPukView.java"
@@ -383,7 +384,7 @@
 
     move-result-object v6
 
-    const v7, 0x10402ee
+    const v7, 0x10402f2		#[0x10402ee]string:lockscreen_pattern_wrong
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

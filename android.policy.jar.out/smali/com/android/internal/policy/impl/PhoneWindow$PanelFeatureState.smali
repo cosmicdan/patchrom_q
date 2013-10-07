@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;
 .super Ljava/lang/Object;
 .source "PhoneWindow.java"
@@ -201,7 +202,7 @@
     .line 3514
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->iconMenuPresenter:Lcom/android/internal/view/menu/IconMenuPresenter;
 
-    const v2, 0x102024a
+    const v2, 0x102024a		#id:icon_menu_presenter
 
     invoke-virtual {v1, v2}, Lcom/android/internal/view/menu/IconMenuPresenter;->setId(I)V
 
@@ -262,7 +263,7 @@
     .line 3492
     new-instance v1, Lcom/android/internal/view/menu/ListMenuPresenter;
 
-    const v2, 0x109007f
+    const v2, 0x1090083		#[0x109007f]layout:list_menu_item_layout
 
     iget v3, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->listPresenterTheme:I
 
@@ -278,7 +279,7 @@
     .line 3495
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;->listMenuPresenter:Lcom/android/internal/view/menu/ListMenuPresenter;
 
-    const v2, 0x102024b
+    const v2, 0x102024b		#id:list_menu_presenter
 
     invoke-virtual {v1, v2}, Lcom/android/internal/view/menu/ListMenuPresenter;->setId(I)V
 
@@ -639,7 +640,7 @@
     .line 3464
     const/16 v1, 0xe7
 
-    const v2, 0x10302f8
+    const v2, 0x10302f8		#style:Theme.ExpandedMenu
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 

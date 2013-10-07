@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .super Landroid/widget/LinearLayout;
 .source "KeyguardAbsKeyInputView.java"
@@ -131,7 +132,7 @@
 
     .prologue
     .line 154
-    const v0, 0x1040525
+    const v0, 0x1040529		#[0x1040525]string:kg_wrong_password
 
     return v0
 .end method
@@ -342,7 +343,7 @@
     .line 134
     .end local v0           #bouncerFrameView:Landroid/view/View;
     :cond_1
-    const v1, 0x10202b0
+    const v1, 0x10202b0		#id:keyguard_selector_fade_container
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 
@@ -351,7 +352,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mEcaView:Landroid/view/View;
 
     .line 135
-    const v1, 0x10202ac
+    const v1, 0x10202ac		#id:keyguard_bouncer_frame
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 

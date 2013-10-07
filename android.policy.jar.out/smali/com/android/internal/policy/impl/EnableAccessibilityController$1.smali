@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/EnableAccessibilityController$1;
 .super Landroid/os/Handler;
 .source "EnableAccessibilityController.java"
@@ -61,7 +62,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040546
+    const v2, 0x104054a		#[0x1040546]string:continue_to_enable_accessibility
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -90,7 +91,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040548
+    const v2, 0x104054c		#[0x1040548]string:enable_accessibility_canceled
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -142,7 +143,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040547
+    const v3, 0x104054b		#[0x1040547]string:accessibility_enabled
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

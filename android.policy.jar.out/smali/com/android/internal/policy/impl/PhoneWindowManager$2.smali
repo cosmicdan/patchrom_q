@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$2;
 .super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
@@ -65,7 +66,7 @@
 
     move-result-object v4
 
-    const v5, 0x10e0017
+    const v5, 0x10e0017		#integer:config_longPressOnPowerBehavior
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 

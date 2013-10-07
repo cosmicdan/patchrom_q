@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;
 .super Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;
 .source "KeyguardSimPinView.java"
@@ -101,7 +102,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->mContext:Landroid/content/Context;
 
-    const v2, 0x104052f
+    const v2, 0x1040533		#[0x104052f]string:kg_sim_unlock_progress_dialog_message
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -155,7 +156,7 @@
 
     .prologue
     .line 62
-    const v0, 0x10202c4
+    const v0, 0x10202c4		#id:pinEntry
 
     return v0
 .end method
@@ -168,7 +169,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
     .line 69
-    const v2, 0x10202d0
+    const v2, 0x10202d0		#id:key_enter
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +188,7 @@
 
     .line 82
     :cond_0
-    const v2, 0x10202c5
+    const v2, 0x10202c5		#id:delete_button
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -275,7 +276,7 @@
     .line 56
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v1, 0x1040529
+    const v1, 0x104052d		#[0x1040529]string:kg_sim_pin_instructions
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
@@ -326,7 +327,7 @@
     .line 177
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
-    const v2, 0x1040531
+    const v2, 0x1040535		#[0x1040531]string:kg_invalid_sim_pin_hint
 
     invoke-interface {v1, v2, v3}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 

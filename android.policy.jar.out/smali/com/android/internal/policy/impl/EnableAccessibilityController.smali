@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/policy/impl/EnableAccessibilityController;
 .super Ljava/lang/Object;
 .source "EnableAccessibilityController.java"
@@ -135,7 +136,7 @@
 
     move-result-object v0
 
-    const v1, 0x105006b
+    const v1, 0x105006b		#dimen:accessibility_touch_slop
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Lcom/android/internal/policy/impl/keyguard/PagedView;
 .super Landroid/view/ViewGroup;
 .source "PagedView.java"
@@ -543,7 +544,7 @@
 
     .line 280
     .local v1, r:Landroid/content/res/Resources;
-    const v2, 0x1050074
+    const v2, 0x1050074		#dimen:kg_edge_swipe_region_size
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4474,7 +4475,7 @@
     .line 2129
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040328
+    const v2, 0x104032c		#[0x1040328]string:keyguard_accessibility_widget_reorder_end
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5997,7 +5998,7 @@
     .line 2095
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040327
+    const v2, 0x104032b		#[0x1040327]string:keyguard_accessibility_widget_reorder_start
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

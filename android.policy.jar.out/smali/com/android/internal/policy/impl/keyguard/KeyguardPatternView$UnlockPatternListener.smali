@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$UnlockPatternListener;
 .super Ljava/lang/Object;
 .source "KeyguardPatternView.java"
@@ -301,7 +302,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040524
+    const v3, 0x1040528		#[0x1040524]string:kg_wrong_pattern
 
     invoke-interface {v2, v3, v5}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
