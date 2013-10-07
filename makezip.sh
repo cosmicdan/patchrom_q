@@ -24,11 +24,7 @@ mv -f ./out/fullota.zip ./${OUT_ZIP}
 echo "[#] Modifying build.prop..."
 unzip ${OUT_ZIP} system/build.prop
 cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build\.version\.incremental=${MIUI_THISVER_PARSED}/" \
-    | sed -e "s/ro\.product\.mod_device=.*/ro\.product\.mod_device=Xtreamer_Q/" \
-    | sed -e "s/ro\.skia\.use_data_fonts=.*//g" \
-    | sed -e "s/ro\.config\.notification_sound=.*//g" \
-    | sed -e "s/ro\.config\.ringtone=.*//g" \
-    | sed -e "s/ro\.config\.alarm_alert=.*//g" > build.prop.new
+    | sed -e "s/ro\.product\.mod_device=.*/ro\.product\.mod_device=Xtreamer_Q/" > build.prop.new
 
 sed -n -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
