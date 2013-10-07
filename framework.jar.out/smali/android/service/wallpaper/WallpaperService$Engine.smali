@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/service/wallpaper/WallpaperService$Engine;
 .super Ljava/lang/Object;
 .source "WallpaperService.java"
@@ -2368,7 +2369,7 @@
 
     iget-object v2, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    const v3, 0x10301ec
+    const v3, 0x10301ec		#style:Animation.Wallpaper
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

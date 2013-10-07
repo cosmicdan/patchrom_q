@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/R$array;
 .super Ljava/lang/Object;
 .source "R.java"
@@ -15,15 +16,15 @@
 
 
 # static fields
-.field public static final emailAddressTypes:I = 0x1070000
+.field public static final emailAddressTypes:I = 0x1070000		#array:emailAddressTypes
 
-.field public static final imProtocols:I = 0x1070001
+.field public static final imProtocols:I = 0x1070001		#array:imProtocols
 
-.field public static final organizationTypes:I = 0x1070002
+.field public static final organizationTypes:I = 0x1070002		#array:organizationTypes
 
-.field public static final phoneTypes:I = 0x1070003
+.field public static final phoneTypes:I = 0x1070003		#array:phoneTypes
 
-.field public static final postalAddressTypes:I = 0x1070004
+.field public static final postalAddressTypes:I = 0x1070004		#array:postalAddressTypes
 
 
 # direct methods

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/ActionBarContainer;
 .super Landroid/widget/FrameLayout;
 .source "ActionBarContainer.java"
@@ -85,7 +86,7 @@
 
     move-result v3
 
-    const v4, 0x1020364
+    const v4, 0x102036b		#[0x1020364]id:split_action_bar
 
     if-ne v3, v4, :cond_0
 
@@ -407,7 +408,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 76
-    const v0, 0x1020362
+    const v0, 0x1020369		#[0x1020362]id:action_bar
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarContainer;->findViewById(I)Landroid/view/View;
 

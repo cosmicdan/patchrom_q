@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/RingtonePreference;
 .super Landroid/preference/Preference;
 .source "RingtonePreference.java"
@@ -42,7 +43,7 @@
 
     .prologue
     .line 68
-    const v0, 0x1010093
+    const v0, 0x1010093		#attr:ringtonePreferenceStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/RingtonePreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

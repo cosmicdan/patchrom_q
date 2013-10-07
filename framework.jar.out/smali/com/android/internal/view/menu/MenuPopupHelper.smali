@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/MenuPopupHelper;
 .super Ljava/lang/Object;
 .source "MenuPopupHelper.java"
@@ -20,7 +21,7 @@
 
 
 # static fields
-.field static final ITEM_LAYOUT:I = 0x109009a
+.field static final ITEM_LAYOUT:I = 0x109009e		#[0x109009a]layout:popup_menu_item_layout
 
 .field private static final TAG:Ljava/lang/String; = "MenuPopupHelper"
 
@@ -127,7 +128,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    const v2, 0x1050007
+    const v2, 0x1050007		#dimen:config_prefDialogWidth
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -876,7 +877,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x1010300
+    const v6, 0x1010300		#attr:popupMenuStyle
 
     invoke-direct {v3, v4, v5, v6}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

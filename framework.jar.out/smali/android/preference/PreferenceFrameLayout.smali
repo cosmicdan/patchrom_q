@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/PreferenceFrameLayout;
 .super Landroid/widget/FrameLayout;
 .source "PreferenceFrameLayout.java"
@@ -56,7 +57,7 @@
 
     .prologue
     .line 45
-    const v0, 0x10103f5
+    const v0, 0x10103f5		#attr:preferenceFrameLayoutStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

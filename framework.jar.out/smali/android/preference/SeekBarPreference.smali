@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/SeekBarPreference;
 .super Landroid/preference/Preference;
 .source "SeekBarPreference.java"
@@ -87,7 +88,7 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 46
-    const v1, 0x10900a9
+    const v1, 0x10900ad		#[0x10900a9]layout:preference_widget_seekbar
 
     invoke-virtual {p0, v1}, Landroid/preference/SeekBarPreference;->setLayoutResource(I)V
 
@@ -170,7 +171,7 @@
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
     .line 60
-    const v1, 0x102034f
+    const v1, 0x1020356		#[0x102034f]id:seekbar
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

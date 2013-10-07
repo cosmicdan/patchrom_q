@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "MediaRouteChooserDialogFragment.java"
@@ -857,7 +858,7 @@
     iput p1, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->position:I
 
     .line 417
-    const v5, 0x1020014
+    const v5, 0x1020014		#id:text1
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -868,7 +869,7 @@
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text1:Landroid/widget/TextView;
 
     .line 418
-    const v5, 0x1020015
+    const v5, 0x1020015		#id:text2
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -879,7 +880,7 @@
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text2:Landroid/widget/TextView;
 
     .line 419
-    const v5, 0x1020006
+    const v5, 0x1020006		#id:icon
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -890,7 +891,7 @@
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->icon:Landroid/widget/ImageView;
 
     .line 420
-    const v5, 0x1020321
+    const v5, 0x1020323		#[0x1020321]id:check
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -901,7 +902,7 @@
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->check:Landroid/widget/CheckBox;
 
     .line 421
-    const v5, 0x1020320
+    const v5, 0x1020322		#[0x1020320]id:expand_button
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

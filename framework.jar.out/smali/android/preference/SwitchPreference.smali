@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/SwitchPreference;
 .super Landroid/preference/TwoStatePreference;
 .source "SwitchPreference.java"
@@ -42,7 +43,7 @@
 
     .prologue
     .line 88
-    const v0, 0x101036d
+    const v0, 0x101036d		#attr:switchPreferenceStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -160,7 +161,7 @@
     invoke-super {p0, p1}, Landroid/preference/TwoStatePreference;->onBindView(Landroid/view/View;)V
 
     .line 104
-    const v2, 0x1020350
+    const v2, 0x1020357		#[0x1020350]id:switchWidget
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

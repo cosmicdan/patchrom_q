@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Event;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -46,7 +47,7 @@
     .parameter "type"
 
     .prologue
-    const v0, 0x10402ae
+    const v0, 0x10402b2		#[0x10402ae]string:eventTypeOther
 
     .line 6609
     if-nez p0, :cond_0
@@ -65,19 +66,19 @@
     packed-switch v1, :pswitch_data_0
 
     .line 6617
-    const v0, 0x10402ab
+    const v0, 0x10402af		#[0x10402ab]string:eventTypeCustom
 
     goto :goto_0
 
     .line 6614
     :pswitch_1
-    const v0, 0x10402ad
+    const v0, 0x10402b1		#[0x10402ad]string:eventTypeAnniversary
 
     goto :goto_0
 
     .line 6615
     :pswitch_2
-    const v0, 0x10402ac
+    const v0, 0x10402b0		#[0x10402ac]string:eventTypeBirthday
 
     goto :goto_0
 

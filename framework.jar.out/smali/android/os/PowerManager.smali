@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/os/PowerManager;
 .super Ljava/lang/Object;
 .source "PowerManager.java"
@@ -189,7 +190,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0027
+    const v1, 0x10e0026		#[0x10e0027]integer:config_screenBrightnessSettingDefault
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -209,7 +210,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0026
+    const v1, 0x10e0025		#[0x10e0026]integer:config_screenBrightnessSettingMaximum
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -229,7 +230,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0025
+    const v1, 0x10e0024		#[0x10e0025]integer:config_screenBrightnessSettingMinimum
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

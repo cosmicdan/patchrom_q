@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/accounts/ChooseAccountTypeActivity$AccountArrayAdapter;
 .super Landroid/widget/ArrayAdapter;
 .source "ChooseAccountTypeActivity.java"
@@ -96,7 +97,7 @@
     .line 188
     iget-object v1, p0, Landroid/accounts/ChooseAccountTypeActivity$AccountArrayAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x1090033
+    const v2, 0x1090033		#layout:choose_account_row
 
     invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -109,7 +110,7 @@
 
     .line 190
     .local v0, holder:Landroid/accounts/ChooseAccountTypeActivity$ViewHolder;
-    const v1, 0x1020278
+    const v1, 0x1020278		#id:account_row_text
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +121,7 @@
     iput-object v1, v0, Landroid/accounts/ChooseAccountTypeActivity$ViewHolder;->text:Landroid/widget/TextView;
 
     .line 191
-    const v1, 0x1020277
+    const v1, 0x1020277		#id:account_row_icon
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/provider/ContactsContract$StatusUpdates;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -88,32 +89,32 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5120
-    const v0, 0x108006a
+    const v0, 0x108006a		#drawable:presence_offline
 
     :goto_0
     return v0
 
     .line 5110
     :pswitch_0
-    const v0, 0x108006b
+    const v0, 0x108006b		#drawable:presence_online
 
     goto :goto_0
 
     .line 5113
     :pswitch_1
-    const v0, 0x1080067
+    const v0, 0x1080067		#drawable:presence_away
 
     goto :goto_0
 
     .line 5115
     :pswitch_2
-    const v0, 0x1080068
+    const v0, 0x1080068		#drawable:presence_busy
 
     goto :goto_0
 
     .line 5117
     :pswitch_3
-    const v0, 0x1080069
+    const v0, 0x1080069		#drawable:presence_invisible
 
     goto :goto_0
 

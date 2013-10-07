@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/preference/TwoStatePreference;
 .super Landroid/preference/Preference;
 .source "TwoStatePreference.java"
@@ -580,7 +581,7 @@
 
     .prologue
     .line 215
-    const v4, 0x1020010
+    const v4, 0x1020010		#id:summary
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

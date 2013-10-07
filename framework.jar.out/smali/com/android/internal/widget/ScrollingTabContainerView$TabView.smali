@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
 .super Landroid/widget/LinearLayout;
 .source "ScrollingTabContainerView.java"
@@ -44,7 +45,7 @@
     .line 365
     const/4 v0, 0x0
 
-    const v1, 0x10102f3
+    const v1, 0x10102f3		#attr:actionBarTabStyle
 
     invoke-direct {p0, p2, v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -406,7 +407,7 @@
 
     move-result-object v10
 
-    const v11, 0x10102f5
+    const v11, 0x10102f5		#attr:actionBarTabTextStyle
 
     invoke-direct {v8, v10, v12, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/media/MediaRouter$RouteInfo;
 .super Ljava/lang/Object;
 .source "MediaRouter.java"
@@ -679,28 +680,28 @@
     .line 1012
     .restart local v0       #resId:I
     :pswitch_0
-    const v0, 0x1040517
+    const v0, 0x104051b		#[0x1040517]string:media_route_status_scanning
 
     .line 1013
     goto :goto_0
 
     .line 1015
     :pswitch_1
-    const v0, 0x1040518
+    const v0, 0x104051c		#[0x1040518]string:media_route_status_connecting
 
     .line 1016
     goto :goto_0
 
     .line 1018
     :pswitch_2
-    const v0, 0x1040519
+    const v0, 0x104051d		#[0x1040519]string:media_route_status_available
 
     .line 1019
     goto :goto_0
 
     .line 1021
     :pswitch_3
-    const v0, 0x104051a
+    const v0, 0x104051e		#[0x104051a]string:media_route_status_not_available
 
     goto :goto_0
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/UiccCard;
 .super Ljava/lang/Object;
 .source "UiccCard.java"
@@ -572,7 +573,7 @@
     .local v5, r:Landroid/content/res/Resources;
     if-eqz p1, :cond_0
 
-    const v7, 0x104042c
+    const v7, 0x1040430		#[0x104042c]string:sim_added_title
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -583,7 +584,7 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    const v7, 0x104042d
+    const v7, 0x1040431		#[0x104042d]string:sim_added_message
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -592,7 +593,7 @@
     .line 380
     .local v4, message:Ljava/lang/String;
     :goto_1
-    const v7, 0x104042e
+    const v7, 0x1040432		#[0x104042e]string:sim_restart_button
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -647,7 +648,7 @@
     .end local v4           #message:Ljava/lang/String;
     .end local v6           #title:Ljava/lang/String;
     :cond_0
-    const v7, 0x1040429
+    const v7, 0x104042d		#[0x1040429]string:sim_removed_title
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -658,7 +659,7 @@
     .line 378
     .restart local v6       #title:Ljava/lang/String;
     :cond_1
-    const v7, 0x104042a
+    const v7, 0x104042e		#[0x104042a]string:sim_removed_message
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
     :try_end_1

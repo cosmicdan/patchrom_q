@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/SmsUsageMonitor;
 .super Ljava/lang/Object;
 .source "SmsUsageMonitor.java"
@@ -670,7 +671,7 @@
 
     .prologue
     .line 310
-    const v0, 0x10f000d
+    const v0, 0x10f000d		#xml:sms_short_codes
 
     .line 311
     .local v0, id:I

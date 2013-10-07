@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Landroid/server/BluetoothPanProfileHandler;
 .super Ljava/lang/Object;
 .source "BluetoothPanProfileHandler.java"
@@ -110,7 +111,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e000a
+    const v2, 0x10e000a		#integer:config_max_pan_devices
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

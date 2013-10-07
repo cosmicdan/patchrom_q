@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;
 .super Lcom/android/internal/telephony/DataConnectionTracker;
 .source "CdmaDataConnectionTracker.java"
@@ -247,7 +248,7 @@
 
     move-result-object v4
 
-    const v5, 0x1070020
+    const v5, 0x1070020		#array:config_cdma_dun_supported_types
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

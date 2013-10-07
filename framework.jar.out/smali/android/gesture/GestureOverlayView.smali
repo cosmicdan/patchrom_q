@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/gesture/GestureOverlayView;
 .super Landroid/widget/FrameLayout;
 .source "GestureOverlayView.java"
@@ -315,7 +316,7 @@
 
     .prologue
     .line 134
-    const v0, 0x10103db
+    const v0, 0x10103db		#attr:gestureOverlayViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/gesture/GestureOverlayView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

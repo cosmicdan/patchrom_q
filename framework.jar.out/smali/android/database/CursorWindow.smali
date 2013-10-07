@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/database/CursorWindow;
 .super Landroid/database/sqlite/SQLiteClosable;
 .source "CursorWindow.java"
@@ -45,7 +46,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0035
+    const v1, 0x10e0034		#[0x10e0035]integer:config_cursorWindowSize
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

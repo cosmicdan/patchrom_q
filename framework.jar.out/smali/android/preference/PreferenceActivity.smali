@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/preference/PreferenceActivity;
 .super Landroid/app/ListActivity;
 .source "PreferenceActivity.java"
@@ -315,7 +316,7 @@
     invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->setTransition(I)Landroid/app/FragmentTransaction;
 
     .line 1141
-    const v2, 0x102034b
+    const v2, 0x1020352		#[0x102034b]id:prefs
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -1615,7 +1616,7 @@
     invoke-super/range {p0 .. p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 510
-    const v17, 0x10900a5
+    const v17, 0x10900a9		#[0x10900a5]layout:preference_list_content
 
     move-object/from16 v0, p0
 
@@ -1624,7 +1625,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 512
-    const v17, 0x1020349
+    const v17, 0x1020350		#[0x1020349]id:list_footer
 
     move-object/from16 v0, p0
 
@@ -1643,7 +1644,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 513
-    const v17, 0x102034a
+    const v17, 0x1020351		#[0x102034a]id:prefs_frame
 
     move-object/from16 v0, p0
 
@@ -1837,7 +1838,7 @@
     if-eqz v17, :cond_c
 
     .line 571
-    const v17, 0x1020348
+    const v17, 0x102034f		#[0x1020348]id:headers
 
     move-object/from16 v0, p0
 
@@ -1915,7 +1916,7 @@
     if-eqz v17, :cond_5
 
     .line 603
-    const v17, 0x102027a
+    const v17, 0x102027a		#id:button_bar
 
     move-object/from16 v0, p0
 
@@ -1930,7 +1931,7 @@
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
     .line 605
-    const v17, 0x102034c
+    const v17, 0x1020353		#[0x102034c]id:back_button
 
     move-object/from16 v0, p0
 
@@ -1957,7 +1958,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 612
-    const v17, 0x102034d
+    const v17, 0x1020354		#[0x102034d]id:skip_button
 
     move-object/from16 v0, p0
 
@@ -1982,7 +1983,7 @@
     invoke-virtual/range {v16 .. v17}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 619
-    const v17, 0x102034e
+    const v17, 0x1020355		#[0x102034e]id:next_button
 
     move-object/from16 v0, p0
 
@@ -2356,7 +2357,7 @@
 
     .line 592
     :cond_e
-    const v17, 0x10900a6
+    const v17, 0x10900aa		#[0x10900a6]layout:preference_list_content_single
 
     move-object/from16 v0, p0
 
@@ -2365,7 +2366,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 593
-    const v17, 0x1020349
+    const v17, 0x1020350		#[0x1020349]id:list_footer
 
     move-object/from16 v0, p0
 
@@ -2384,7 +2385,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 594
-    const v17, 0x102034b
+    const v17, 0x1020352		#[0x102034b]id:prefs
 
     move-object/from16 v0, p0
 
@@ -3114,7 +3115,7 @@
     if-nez v3, :cond_3
 
     .line 1073
-    const v3, 0x1020016
+    const v3, 0x1020016		#id:title
 
     invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->findViewById(I)Landroid/view/View;
 
@@ -3167,7 +3168,7 @@
     invoke-virtual {v3, v4}, Landroid/app/FragmentBreadCrumbs;->setVisibility(I)V
 
     .line 1089
-    const v3, 0x1020272
+    const v3, 0x1020272		#id:breadcrumb_section
 
     invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->findViewById(I)Landroid/view/View;
 
@@ -3224,7 +3225,7 @@
 
     .line 1230
     .local v0, transaction:Landroid/app/FragmentTransaction;
-    const v1, 0x102034b
+    const v1, 0x1020352		#[0x102034b]id:prefs
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -3318,7 +3319,7 @@
 
     .line 1269
     .local v8, transaction:Landroid/app/FragmentTransaction;
-    const v0, 0x102034b
+    const v0, 0x1020352		#[0x102034b]id:prefs
 
     invoke-virtual {v8, v0, v7}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

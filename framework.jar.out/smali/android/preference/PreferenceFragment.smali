@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/preference/PreferenceFragment;
 .super Landroid/app/Fragment;
 .source "PreferenceFragment.java"
@@ -151,7 +152,7 @@
 
     .line 348
     :cond_1
-    const v2, 0x102000a
+    const v2, 0x102000a		#id:list
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -498,7 +499,7 @@
 
     .prologue
     .line 162
-    const v0, 0x10900a7
+    const v0, 0x10900ab		#[0x10900a7]layout:preference_list_fragment
 
     const/4 v1, 0x0
 

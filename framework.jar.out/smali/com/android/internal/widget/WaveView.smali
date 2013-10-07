@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/WaveView;
 .super Landroid/view/View;
 .source "WaveView.java"
@@ -426,7 +427,7 @@
     .line 569
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mContext:Landroid/content/Context;
 
-    const v1, 0x10404df
+    const v1, 0x10404e3		#[0x10404df]string:description_target_unlock_tablet
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -534,7 +535,7 @@
     .line 168
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080605
+    const v4, 0x1080626		#[0x1080605]drawable:unlock_ring
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -583,7 +584,7 @@
     .line 176
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080603
+    const v4, 0x1080624		#[0x1080603]drawable:unlock_default
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -632,7 +633,7 @@
     .line 184
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080604
+    const v4, 0x1080625		#[0x1080604]drawable:unlock_halo
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -679,7 +680,7 @@
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 192
-    const v3, 0x1080606
+    const v3, 0x1080627		#[0x1080606]drawable:unlock_wave
 
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 

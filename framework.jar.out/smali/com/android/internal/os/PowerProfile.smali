@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/os/PowerProfile;
 .super Ljava/lang/Object;
 .source "PowerProfile.java"
@@ -113,7 +114,7 @@
 
     .prologue
     .line 160
-    const v4, 0x10f000b
+    const v4, 0x10f000b		#xml:power_profile
 
     .line 161
     .local v4, id:I

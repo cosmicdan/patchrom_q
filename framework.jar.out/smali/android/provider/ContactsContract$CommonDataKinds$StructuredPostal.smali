@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$StructuredPostal;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -124,26 +125,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6051
-    const v0, 0x10402b4
+    const v0, 0x10402b8		#[0x10402b4]string:postalTypeCustom
 
     :goto_0
     return v0
 
     .line 6048
     :pswitch_0
-    const v0, 0x10402b5
+    const v0, 0x10402b9		#[0x10402b5]string:postalTypeHome
 
     goto :goto_0
 
     .line 6049
     :pswitch_1
-    const v0, 0x10402b6
+    const v0, 0x10402ba		#[0x10402b6]string:postalTypeWork
 
     goto :goto_0
 
     .line 6050
     :pswitch_2
-    const v0, 0x10402b7
+    const v0, 0x10402bb		#[0x10402b7]string:postalTypeOther
 
     goto :goto_0
 

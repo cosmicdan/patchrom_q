@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/net/wifi/WifiStateMachine$DisconnectedState;
 .super Lcom/android/internal/util/State;
 .source "WifiStateMachine.java"
@@ -394,7 +395,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e000d
+    const v1, 0x10e000d		#integer:config_wifi_framework_scan_interval
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -996,7 +997,7 @@
 
     move-result-object v6
 
-    const v7, 0x10e000c
+    const v7, 0x10e000c		#integer:config_wifi_scan_interval_p2p_connected
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1184,7 +1185,7 @@
 
     move-result-object v9
 
-    const v10, 0x10e000d
+    const v10, 0x10e000d		#integer:config_wifi_framework_scan_interval
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getInteger(I)I
 

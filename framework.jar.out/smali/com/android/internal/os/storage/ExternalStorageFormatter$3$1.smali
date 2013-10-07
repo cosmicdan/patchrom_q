@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/os/storage/ExternalStorageFormatter$3$1;
 .super Ljava/lang/Object;
 .source "ExternalStorageFormatter.java"
@@ -46,7 +47,7 @@
 
     iget-object v0, v0, Lcom/android/internal/os/storage/ExternalStorageFormatter$3;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
-    const v1, 0x10404a3
+    const v1, 0x10404a7		#[0x10404a3]string:format_error
 
     const/4 v2, 0x1
 

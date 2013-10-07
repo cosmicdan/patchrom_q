@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/content/SyncManager$ActiveSyncContext;
 .super Landroid/content/ISyncContext$Stub;
 .source "SyncManager.java"
@@ -203,7 +204,7 @@
     .line 1021
     const-string v0, "android.intent.extra.client_label"
 
-    const v2, 0x1040482
+    const v2, 0x1040486		#[0x1040482]string:sync_binding_label
 
     invoke-virtual {v7, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

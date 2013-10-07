@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/GsmAlphabet;
 .super Ljava/lang/Object;
 .source "GsmAlphabet.java"
@@ -234,7 +235,7 @@
 
     .line 1429
     .local v7, r:Landroid/content/res/Resources;
-    const v12, 0x107002f
+    const v12, 0x107002f		#array:config_sms_enabled_single_shift_tables
 
     invoke-virtual {v7, v12}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -243,7 +244,7 @@
     sput-object v12, Lcom/android/internal/telephony/GsmAlphabet;->sEnabledSingleShiftTables:[I
 
     .line 1430
-    const v12, 0x1070030
+    const v12, 0x1070030		#array:config_sms_enabled_locking_shift_tables
 
     invoke-virtual {v7, v12}, Landroid/content/res/Resources;->getIntArray(I)[I
 

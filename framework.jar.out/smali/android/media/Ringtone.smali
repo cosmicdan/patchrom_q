@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/media/Ringtone;
 .super Ljava/lang/Object;
 .source "Ringtone.java"
@@ -242,7 +243,7 @@
 
     .line 126
     .local v6, actualTitle:Ljava/lang/String;
-    const v1, 0x1040403
+    const v1, 0x1040407		#[0x1040403]string:ringtone_default_with_actual
 
     new-array v2, v11, [Ljava/lang/Object;
 
@@ -261,7 +262,7 @@
     if-nez v10, :cond_1
 
     .line 157
-    const v1, 0x1040406
+    const v1, 0x104040a		#[0x1040406]string:ringtone_unknown
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

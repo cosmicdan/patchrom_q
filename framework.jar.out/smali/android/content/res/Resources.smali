@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/content/res/Resources;
 .super Ljava/lang/Object;
 .source "Resources.java"
@@ -1118,7 +1119,7 @@
     invoke-virtual {p0}, Landroid/content/res/Resources;->startPreloading()V
 
     .line 2400
-    const v5, 0x1070006
+    const v5, 0x1070006		#array:preloaded_color_state_lists
 
     invoke-virtual {p0, v5}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
@@ -1233,7 +1234,7 @@
     invoke-virtual {p0}, Landroid/content/res/Resources;->startPreloading()V
 
     .line 2374
-    const v6, 0x1070005
+    const v6, 0x1070005		#array:preloaded_drawables
 
     invoke-virtual {p0, v6}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
@@ -1418,11 +1419,11 @@
 
     .prologue
     .line 130
-    const v0, 0x1030005
+    const v0, 0x1030005		#style:Theme
 
-    const v1, 0x103006b
+    const v1, 0x103006b		#style:Theme.Holo
 
-    const v2, 0x1030128
+    const v2, 0x1030128		#style:Theme.DeviceDefault
 
     invoke-static {p0, p1, v0, v1, v2}, Landroid/content/res/Resources;->selectSystemTheme(IIIII)I
 

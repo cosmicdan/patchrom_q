@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/R$dimen;
 .super Ljava/lang/Object;
 .source "R.java"
@@ -15,19 +16,19 @@
 
 
 # static fields
-.field public static final app_icon_size:I = 0x1050000
+.field public static final app_icon_size:I = 0x1050000		#dimen:app_icon_size
 
-.field public static final dialog_min_width_major:I = 0x1050003
+.field public static final dialog_min_width_major:I = 0x1050003		#dimen:dialog_min_width_major
 
-.field public static final dialog_min_width_minor:I = 0x1050004
+.field public static final dialog_min_width_minor:I = 0x1050004		#dimen:dialog_min_width_minor
 
-.field public static final notification_large_icon_height:I = 0x1050006
+.field public static final notification_large_icon_height:I = 0x1050006		#dimen:notification_large_icon_height
 
-.field public static final notification_large_icon_width:I = 0x1050005
+.field public static final notification_large_icon_width:I = 0x1050005		#dimen:notification_large_icon_width
 
-.field public static final thumbnail_height:I = 0x1050001
+.field public static final thumbnail_height:I = 0x1050001		#dimen:thumbnail_height
 
-.field public static final thumbnail_width:I = 0x1050002
+.field public static final thumbnail_width:I = 0x1050002		#dimen:thumbnail_width
 
 
 # direct methods

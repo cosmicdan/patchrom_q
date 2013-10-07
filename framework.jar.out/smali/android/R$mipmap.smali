@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/R$mipmap;
 .super Ljava/lang/Object;
 .source "R.java"
@@ -15,7 +16,7 @@
 
 
 # static fields
-.field public static final sym_def_app_icon:I = 0x10d0000
+.field public static final sym_def_app_icon:I = 0x10d0000		#mipmap:sym_def_app_icon
 
 
 # direct methods

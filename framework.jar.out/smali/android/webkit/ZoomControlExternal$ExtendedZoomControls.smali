@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 .super Landroid/widget/FrameLayout;
 .source "ZoomControlExternal.java"
@@ -40,14 +41,14 @@
 
     .line 124
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x10900ed
+    const v1, 0x10900f1		#[0x10900ed]layout:zoom_magnify
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 125
-    const v1, 0x10203b7
+    const v1, 0x10203be		#[0x10203b7]id:zoomControls
 
     invoke-virtual {p0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->findViewById(I)Landroid/view/View;
 
@@ -58,7 +59,7 @@
     iput-object v1, p0, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->mPlusMinusZoomControls:Landroid/widget/ZoomControls;
 
     .line 127
-    const v1, 0x10203ba
+    const v1, 0x10203c1		#[0x10203ba]id:zoomMagnify
 
     invoke-virtual {p0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->findViewById(I)Landroid/view/View;
 

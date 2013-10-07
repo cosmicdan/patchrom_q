@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/accounts/ChooseAccountActivity;
 .super Landroid/app/Activity;
 .source "ChooseAccountActivity.java"
@@ -406,12 +407,12 @@
 
     .line 75
     :cond_1
-    const v3, 0x1090032
+    const v3, 0x1090032		#layout:choose_account
 
     invoke-virtual {p0, v3}, Landroid/accounts/ChooseAccountActivity;->setContentView(I)V
 
     .line 78
-    const v3, 0x102000a
+    const v3, 0x102000a		#id:list
 
     invoke-virtual {p0, v3}, Landroid/accounts/ChooseAccountActivity;->findViewById(I)Landroid/view/View;
 
@@ -423,7 +424,7 @@
     .local v1, list:Landroid/widget/ListView;
     new-instance v3, Landroid/accounts/ChooseAccountActivity$AccountArrayAdapter;
 
-    const v4, 0x1090003
+    const v4, 0x1090003		#layout:simple_list_item_1
 
     invoke-direct {v3, p0, v4, v2}, Landroid/accounts/ChooseAccountActivity$AccountArrayAdapter;-><init>(Landroid/content/Context;I[Landroid/accounts/ChooseAccountActivity$AccountInfo;)V
 

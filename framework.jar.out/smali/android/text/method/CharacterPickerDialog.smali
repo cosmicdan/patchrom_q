@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/method/CharacterPickerDialog;
 .super Landroid/app/Dialog;
 .source "CharacterPickerDialog.java"
@@ -40,7 +41,7 @@
 
     .prologue
     .line 57
-    const v0, 0x1030059
+    const v0, 0x1030059		#style:Theme.Panel
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -216,12 +217,12 @@
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 75
-    const v2, 0x1090030
+    const v2, 0x1090030		#layout:character_picker
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->setContentView(I)V
 
     .line 77
-    const v2, 0x1020275
+    const v2, 0x1020275		#id:characterPicker
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
 
@@ -245,7 +246,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 81
-    const v2, 0x1020276
+    const v2, 0x1020276		#id:cancel
 
     invoke-virtual {p0, v2}, Landroid/text/method/CharacterPickerDialog;->findViewById(I)Landroid/view/View;
 

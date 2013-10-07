@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/content/res/ColorStateList;
 .super Ljava/lang/Object;
 .source "ColorStateList.java"
@@ -550,7 +551,7 @@
     .line 208
     .restart local v18       #stateResId:I
     :cond_7
-    const v22, 0x10101a5
+    const v22, 0x10101a5		#attr:color
 
     move/from16 v0, v18
 

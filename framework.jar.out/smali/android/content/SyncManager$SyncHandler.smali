@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/content/SyncManager$SyncHandler;
 .super Landroid/os/Handler;
 .source "SyncManager.java"
@@ -822,7 +823,7 @@
 
     move-result-object v2
 
-    const v3, 0x10400d1
+    const v3, 0x10400d5		#[0x10400d1]string:contentServiceTooManyDeletesNotificationDesc
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -832,7 +833,7 @@
     .local v12, tooManyDeletesDescFormat:Ljava/lang/CharSequence;
     new-instance v9, Landroid/app/Notification;
 
-    const v2, 0x1080521
+    const v2, 0x1080542		#[0x1080521]drawable:stat_notify_sync_error
 
     iget-object v3, p0, Landroid/content/SyncManager$SyncHandler;->this$0:Landroid/content/SyncManager;
 
@@ -841,7 +842,7 @@
 
     move-result-object v3
 
-    const v5, 0x10400cf
+    const v5, 0x10400d3		#[0x10400cf]string:contentServiceSync
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -869,7 +870,7 @@
 
     move-result-object v3
 
-    const v5, 0x10400d0
+    const v5, 0x10400d4		#[0x10400d0]string:contentServiceSyncNotificationTitle
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

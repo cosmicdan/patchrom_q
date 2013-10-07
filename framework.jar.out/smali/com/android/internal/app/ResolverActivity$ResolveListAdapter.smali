@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "ResolverActivity.java"
@@ -148,7 +149,7 @@
 
     .prologue
     .line 659
-    const v3, 0x1020014
+    const v3, 0x1020014		#id:text1
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -158,7 +159,7 @@
 
     .line 660
     .local v1, text:Landroid/widget/TextView;
-    const v3, 0x1020015
+    const v3, 0x1020015		#id:text2
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,7 +169,7 @@
 
     .line 661
     .local v2, text2:Landroid/widget/TextView;
-    const v3, 0x1020006
+    const v3, 0x1020006		#id:icon
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1218,7 +1219,7 @@
     .line 644
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x10900b1
+    const v4, 0x10900b5		#[0x10900b1]layout:resolve_list_item
 
     const/4 v5, 0x0
 
@@ -1228,7 +1229,7 @@
 
     .line 648
     .local v2, view:Landroid/view/View;
-    const v3, 0x1020006
+    const v3, 0x1020006		#id:icon
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

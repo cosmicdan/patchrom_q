@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/service/dreams/DreamService;
 .super Landroid/app/Service;
 .source "DreamService.java"
@@ -473,7 +474,7 @@
     iput-object p1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
     .line 634
-    const v2, 0x10301f1
+    const v2, 0x10301f1		#style:Animation.Dream
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

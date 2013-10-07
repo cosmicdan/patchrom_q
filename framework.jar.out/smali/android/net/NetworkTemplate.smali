@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/NetworkTemplate;
 .super Ljava/lang/Object;
 .source "NetworkTemplate.java"
@@ -55,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070018
+    const v1, 0x1070018		#array:config_data_usage_network_types
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/widget/ActionBarView$HomeView;
 .super Landroid/widget/FrameLayout;
 .source "ActionBarView.java"
@@ -129,7 +130,7 @@
 
     .prologue
     .line 1341
-    const v0, 0x1020248
+    const v0, 0x1020248		#id:up
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarView$HomeView;->findViewById(I)Landroid/view/View;
 
@@ -138,7 +139,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
 
     .line 1342
-    const v0, 0x102002c
+    const v0, 0x102002c		#id:home
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarView$HomeView;->findViewById(I)Landroid/view/View;
 

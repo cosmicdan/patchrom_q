@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/cdma/CDMAPhone;
 .super Lcom/android/internal/telephony/PhoneBase;
 .source "CDMAPhone.java"
@@ -3408,7 +3409,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040004
+    const v2, 0x1040004		#string:defaultVoiceMailAlphaTag
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

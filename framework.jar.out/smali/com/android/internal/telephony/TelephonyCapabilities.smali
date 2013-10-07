@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/TelephonyCapabilities;
 .super Ljava/lang/Object;
 .source "TelephonyCapabilities.java"
@@ -53,7 +54,7 @@
     if-ne v0, v1, :cond_0
 
     .line 103
-    const v0, 0x1040085
+    const v0, 0x1040089		#[0x1040085]string:imei
 
     .line 109
     :goto_0
@@ -70,7 +71,7 @@
     if-ne v0, v1, :cond_1
 
     .line 105
-    const v0, 0x1040086
+    const v0, 0x104008a		#[0x1040086]string:meid
 
     goto :goto_0
 

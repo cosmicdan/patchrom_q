@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/util/TimeUtils;
 .super Ljava/lang/Object;
 .source "TimeUtils.java"
@@ -993,7 +994,7 @@
 
     .line 67
     .local v8, r:Landroid/content/res/Resources;
-    const v10, 0x10f000f
+    const v10, 0x10f000f		#xml:time_zones_by_country
 
     invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
@@ -1186,7 +1187,7 @@
 
     .line 174
     .local v4, r:Landroid/content/res/Resources;
-    const v8, 0x10f000f
+    const v8, 0x10f000f		#xml:time_zones_by_country
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/CallerInfo;
 .super Ljava/lang/Object;
 .source "CallerInfo.java"
@@ -1456,7 +1457,7 @@
 
     .prologue
     .line 450
-    const v0, 0x10402e5
+    const v0, 0x10402e9		#[0x10402e5]string:emergency_call_dialog_number_for_display
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1465,7 +1466,7 @@
     iput-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
     .line 452
-    const v0, 0x108045b
+    const v0, 0x108047c		#[0x108045b]drawable:picture_emergency
 
     iput v0, p0, Lcom/android/internal/telephony/CallerInfo;->photoResource:I
 

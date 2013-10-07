@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/AutoText;
 .super Ljava/lang/Object;
 .source "AutoText.java"
@@ -419,7 +420,7 @@
 
     .prologue
     .line 162
-    const v9, 0x10f0001
+    const v9, 0x10f0001		#xml:autotext
 
     invoke-virtual {p1, v9}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 

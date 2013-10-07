@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Landroid/preference/DialogPreference;
 .super Landroid/preference/Preference;
 .source "DialogPreference.java"
@@ -44,7 +45,7 @@
 
     .prologue
     .line 90
-    const v0, 0x1010091
+    const v0, 0x1010091		#attr:dialogPreferenceStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/DialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -285,7 +286,7 @@
 
     .prologue
     .line 354
-    const v3, 0x102000b
+    const v3, 0x102000b		#id:message
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

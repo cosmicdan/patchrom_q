@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/format/DateFormat;
 .super Ljava/lang/Object;
 .source "DateFormat.java"
@@ -1481,7 +1482,7 @@
     if-ltz v9, :cond_17
 
     .line 383
-    const v11, 0x1040034
+    const v11, 0x1040038		#[0x1040034]string:numeric_date_template
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1667,7 +1668,7 @@
     .end local v9           #year:I
     .end local v10           #yearValue:Ljava/lang/String;
     :cond_17
-    const v11, 0x1040033
+    const v11, 0x1040037		#[0x1040033]string:numeric_date_format
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1821,7 +1822,7 @@
     if-eqz v0, :cond_0
 
     .line 272
-    const v1, 0x1040031
+    const v1, 0x1040035		#[0x1040031]string:twenty_four_hour_time_format
 
     .line 277
     .local v1, res:I
@@ -1839,7 +1840,7 @@
     .line 274
     .end local v1           #res:I
     :cond_0
-    const v1, 0x1040030
+    const v1, 0x1040034		#[0x1040030]string:twelve_hour_time_format
 
     .restart local v1       #res:I
     goto :goto_0

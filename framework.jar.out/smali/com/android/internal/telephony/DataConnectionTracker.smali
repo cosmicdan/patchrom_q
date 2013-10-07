@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Lcom/android/internal/telephony/DataConnectionTracker;
 .super Landroid/os/Handler;
 .source "DataConnectionTracker.java"
@@ -3285,7 +3286,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040019
+    const v4, 0x1040019		#string:config_tether_apndata
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

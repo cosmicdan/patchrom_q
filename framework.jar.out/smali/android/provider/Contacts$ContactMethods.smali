@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/Contacts$ContactMethods;
 .super Ljava/lang/Object;
 .source "Contacts.java"
@@ -334,7 +335,7 @@
     packed-switch p1, :pswitch_data_0
 
     .line 1436
-    const v3, 0x104000f
+    const v3, 0x104000f		#string:untitled
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -405,7 +406,7 @@
 
     move-result-object v3
 
-    const v4, 0x1070004
+    const v4, 0x1070004		#array:postalAddressTypes
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 

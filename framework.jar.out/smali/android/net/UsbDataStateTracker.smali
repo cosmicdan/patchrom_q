@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/UsbDataStateTracker;
 .super Ljava/lang/Object;
 .source "UsbDataStateTracker.java"
@@ -407,7 +408,7 @@
 
     move-result-object v9
 
-    const v10, 0x1070019
+    const v10, 0x1070019		#array:config_tether_usb_regexs
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

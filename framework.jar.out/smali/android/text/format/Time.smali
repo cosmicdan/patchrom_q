@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/format/Time;
 .super Ljava/lang/Object;
 .source "Time.java"
@@ -694,7 +695,7 @@
 
     .line 338
     .local v2, r:Landroid/content/res/Resources;
-    const v4, 0x1040036
+    const v4, 0x104003a		#[0x1040036]string:time_of_day
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -703,7 +704,7 @@
     sput-object v4, Landroid/text/format/Time;->sTimeOnlyFormat:Ljava/lang/String;
 
     .line 339
-    const v4, 0x1040035
+    const v4, 0x1040039		#[0x1040035]string:month_day_year
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -712,7 +713,7 @@
     sput-object v4, Landroid/text/format/Time;->sDateOnlyFormat:Ljava/lang/String;
 
     .line 340
-    const v4, 0x1040037
+    const v4, 0x104003b		#[0x1040037]string:date_and_time
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

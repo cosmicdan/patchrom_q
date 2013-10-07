@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/inputmethodservice/Keyboard$Key;
 .super Ljava/lang/Object;
 .source "Keyboard.java"
@@ -98,7 +99,7 @@
     .line 296
     new-array v0, v3, [I
 
-    const v1, 0x101009f
+    const v1, 0x101009f		#attr:state_checkable
 
     aput v1, v0, v2
 
@@ -119,7 +120,7 @@
     .line 308
     new-array v0, v3, [I
 
-    const v1, 0x10100a7
+    const v1, 0x10100a7		#attr:state_pressed
 
     aput v1, v0, v2
 
@@ -130,23 +131,23 @@
     .line 285
     :array_0
     .array-data 0x4
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        0x9ft 0x0t 0x1t 0x1t		#attr:state_checkable
+        0xa0t 0x0t 0x1t 0x1t		#attr:state_checked
     .end array-data
 
     .line 290
     :array_1
     .array-data 0x4
-        0xa7t 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        0xa7t 0x0t 0x1t 0x1t		#attr:state_pressed
+        0x9ft 0x0t 0x1t 0x1t		#attr:state_checkable
+        0xa0t 0x0t 0x1t 0x1t		#attr:state_checked
     .end array-data
 
     .line 300
     :array_2
     .array-data 0x4
-        0xa7t 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
+        0xa7t 0x0t 0x1t 0x1t		#attr:state_pressed
+        0x9ft 0x0t 0x1t 0x1t		#attr:state_checkable
     .end array-data
 .end method
 

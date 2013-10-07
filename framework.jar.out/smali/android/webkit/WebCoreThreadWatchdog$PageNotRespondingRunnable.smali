@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 .super Ljava/lang/Object;
 .source "WebCoreThreadWatchdog.java"
@@ -128,13 +129,13 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x10403de
+    const v1, 0x10403e2		#[0x10403de]string:webpage_unresponsive
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x10403db
+    const v1, 0x10403df		#[0x10403db]string:force_close
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$3;
 
@@ -144,7 +145,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403dd
+    const v1, 0x10403e1		#[0x10403dd]string:wait
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$2;
 
@@ -162,7 +163,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080027
+    const v1, 0x1080027		#drawable:ic_dialog_alert
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 

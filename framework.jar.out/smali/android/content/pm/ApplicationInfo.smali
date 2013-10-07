@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/content/pm/ApplicationInfo;
 .super Landroid/content/pm/PackageItemInfo;
 .source "ApplicationInfo.java"
@@ -1348,7 +1349,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080588
+    const v1, 0x10805a9		#[0x1080588]drawable:sym_app_on_sd_unavailable_icon
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

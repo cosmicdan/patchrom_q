@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/preference/PreferenceActivity$HeaderAdapter;
 .super Landroid/widget/ArrayAdapter;
 .source "PreferenceActivity.java"
@@ -102,7 +103,7 @@
 
     .line 271
     .local v1, holder:Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;
-    const v4, 0x1020006
+    const v4, 0x1020006		#id:icon
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +114,7 @@
     iput-object v4, v1, Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;->icon:Landroid/widget/ImageView;
 
     .line 272
-    const v4, 0x1020016
+    const v4, 0x1020016		#id:title
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +125,7 @@
     iput-object v4, v1, Landroid/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;->title:Landroid/widget/TextView;
 
     .line 273
-    const v4, 0x1020010
+    const v4, 0x1020010		#id:summary
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

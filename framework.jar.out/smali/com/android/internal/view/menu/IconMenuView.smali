@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/internal/view/menu/IconMenuView;
 .super Landroid/view/ViewGroup;
 .source "IconMenuView.java"
@@ -1132,7 +1133,7 @@
 
     .line 295
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v4, 0x1090047
+    const v4, 0x1090047		#layout:icon_menu_item_layout
 
     const/4 v5, 0x0
 
@@ -1150,7 +1151,7 @@
 
     .line 299
     .local v3, r:Landroid/content/res/Resources;
-    const v4, 0x104039b
+    const v4, 0x104039f		#[0x104039b]string:more_item_label
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

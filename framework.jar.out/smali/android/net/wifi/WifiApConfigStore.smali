@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/net/wifi/WifiApConfigStore;
 .super Lcom/android/internal/util/StateMachine;
 .source "WifiApConfigStore.java"
@@ -287,7 +288,7 @@
 
     iget-object v4, p0, Landroid/net/wifi/WifiApConfigStore;->mContext:Landroid/content/Context;
 
-    const v5, 0x104040c
+    const v5, 0x1040410		#[0x104040c]string:wifi_tether_configure_ssid_default
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

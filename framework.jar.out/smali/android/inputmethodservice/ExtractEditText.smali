@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/inputmethodservice/ExtractEditText;
 .super Landroid/widget/EditText;
 .source "ExtractEditText.java"
@@ -31,7 +32,7 @@
 
     .prologue
     .line 38
-    const v0, 0x101006e
+    const v0, 0x101006e		#attr:editTextStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -205,7 +206,7 @@
     if-eqz v0, :cond_1
 
     .line 105
-    const v0, 0x1020021
+    const v0, 0x1020021		#id:copy
 
     if-ne p1, v0, :cond_0
 

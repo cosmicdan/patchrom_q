@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/CheckBoxPreference;
 .super Landroid/preference/TwoStatePreference;
 .source "CheckBoxPreference.java"
@@ -25,7 +26,7 @@
 
     .prologue
     .line 50
-    const v0, 0x101008f
+    const v0, 0x101008f		#attr:checkBoxPreferenceStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -123,7 +124,7 @@
     invoke-super {p0, p1}, Landroid/preference/TwoStatePreference;->onBindView(Landroid/view/View;)V
 
     .line 61
-    const v1, 0x1020001
+    const v1, 0x1020001		#id:checkbox
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

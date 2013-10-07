@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/style/URLSpan;
 .super Landroid/text/style/ClickableSpan;
 .source "URLSpan.java"
@@ -205,7 +206,7 @@
     invoke-virtual {v1, v10}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     .line 84
-    const v10, 0x104000a
+    const v10, 0x104000a		#string:ok
 
     new-instance v11, Landroid/text/style/URLSpan$1;
 

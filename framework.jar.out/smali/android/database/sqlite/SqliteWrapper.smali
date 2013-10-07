@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/database/sqlite/SqliteWrapper;
 .super Ljava/lang/Object;
 .source "SqliteWrapper.java"
@@ -35,7 +36,7 @@
     if-eqz v0, :cond_0
 
     .line 49
-    const v0, 0x10400d2
+    const v0, 0x10400d6		#[0x10400d2]string:low_memory
 
     const/4 v1, 0x0
 

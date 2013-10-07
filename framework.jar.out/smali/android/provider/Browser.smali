@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/provider/Browser;
 .super Ljava/lang/Object;
 .source "Browser.java"
@@ -1271,7 +1272,7 @@
 
     .prologue
     .line 198
-    const v0, 0x10403f3
+    const v0, 0x10403f7		#[0x10403f3]string:sendText
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 .super Lcom/android/internal/telephony/ServiceStateTracker;
 .source "GsmServiceStateTracker.java"
@@ -8235,7 +8236,7 @@
     .line 2586
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mNotification:Landroid/app/Notification;
 
-    const v8, 0x108008a
+    const v8, 0x108008a		#drawable:stat_sys_warning
 
     iput v8, v7, Landroid/app/Notification;->icon:I
 
@@ -15761,7 +15762,7 @@
 
     move-result-object v14
 
-    const v15, 0x10402e6
+    const v15, 0x10402ea		#[0x10402e6]string:lockscreen_carrier_default
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -15857,7 +15858,7 @@
 
     move-result-object v14
 
-    const v15, 0x1040300
+    const v15, 0x1040304		#[0x1040300]string:emergency_calls_only
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

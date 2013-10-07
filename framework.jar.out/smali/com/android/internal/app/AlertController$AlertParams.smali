@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/app/AlertController$AlertParams;
 .super Ljava/lang/Object;
 .source "AlertController.java"
@@ -156,7 +157,7 @@
     .parameter "dialog"
 
     .prologue
-    const v4, 0x1020014
+    const v4, 0x1020014		#id:text1
 
     const/4 v9, 0x1
 

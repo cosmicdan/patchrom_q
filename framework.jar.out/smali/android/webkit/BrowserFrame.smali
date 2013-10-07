@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/BrowserFrame;
 .super Landroid/os/Handler;
 .source "BrowserFrame.java"
@@ -1078,7 +1079,7 @@
     .line 997
     .end local v2           #resid:I
     :pswitch_2
-    const v2, 0x10800e1
+    const v2, 0x10800e5		#[0x10800e1]drawable:btn_check_off
 
     .line 998
     .restart local v2       #resid:I
@@ -1091,7 +1092,7 @@
 
     move-result-object v4
 
-    const v5, 0x104048f
+    const v5, 0x1040493		#[0x104048f]string:upload_file
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1105,7 +1106,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040491
+    const v5, 0x1040495		#[0x1040491]string:reset
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1119,7 +1120,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040492
+    const v5, 0x1040496		#[0x1040492]string:submit
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1133,7 +1134,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040490
+    const v5, 0x1040494		#[0x1040490]string:no_file_chosen
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

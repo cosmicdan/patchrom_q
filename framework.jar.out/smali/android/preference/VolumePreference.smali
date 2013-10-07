@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/VolumePreference;
 .super Landroid/preference/SeekBarDialogPreference;
 .source "VolumePreference.java"
@@ -103,7 +104,7 @@
 
     move-result-object v2
 
-    const v3, 0x102034f
+    const v3, 0x1020356		#[0x102034f]id:seekbar
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +168,7 @@
     invoke-super {p0, p1}, Landroid/preference/SeekBarDialogPreference;->onBindDialogView(Landroid/view/View;)V
 
     .line 68
-    const v1, 0x102034f
+    const v1, 0x1020356		#[0x102034f]id:seekbar
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/util/StateSet;
 .super Ljava/lang/Object;
 .source "StateSet.java"
@@ -127,11 +128,11 @@
     .line 159
     :sswitch_data_0
     .sparse-switch
-        0x101009c -> :sswitch_3
-        0x101009d -> :sswitch_0
-        0x101009e -> :sswitch_4
-        0x10100a1 -> :sswitch_2
-        0x10100a7 -> :sswitch_1
+        0x101009c -> :sswitch_3		#attr:state_focused
+        0x101009d -> :sswitch_0		#attr:state_window_focused
+        0x101009e -> :sswitch_4		#attr:state_enabled
+        0x10100a1 -> :sswitch_2		#attr:state_selected
+        0x10100a7 -> :sswitch_1		#attr:state_pressed
     .end sparse-switch
 .end method
 

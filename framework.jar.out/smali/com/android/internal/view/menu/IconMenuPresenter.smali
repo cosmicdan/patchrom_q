@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/IconMenuPresenter;
 .super Lcom/android/internal/view/menu/BaseMenuPresenter;
 .source "IconMenuPresenter.java"
@@ -38,13 +39,13 @@
     .line 46
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x10302f7
+    const v1, 0x10302f7		#style:Theme.IconMenu
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    const v1, 0x1090048
+    const v1, 0x1090048		#layout:icon_menu_layout
 
-    const v2, 0x1090047
+    const v2, 0x1090047		#layout:icon_menu_item_layout
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/view/menu/BaseMenuPresenter;-><init>(Landroid/content/Context;II)V
 

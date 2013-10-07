@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/app/ResolverActivity;
 .super Lcom/android/internal/app/AlertActivity;
 .source "ResolverActivity.java"
@@ -357,7 +358,7 @@
 
     move-result v2
 
-    const v1, 0x102035a
+    const v1, 0x1020361		#[0x102035a]id:button_always
 
     if-ne v0, v1, :cond_0
 
@@ -395,7 +396,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403cd
+    const v1, 0x10403d1		#[0x10403cd]string:whichApplication
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -620,7 +621,7 @@
 
     move-result-object v1
 
-    const v2, 0x10900b2
+    const v2, 0x10900b6		#[0x10900b2]layout:resolver_grid
 
     const/4 v3, 0x0
 
@@ -633,7 +634,7 @@
     .line 142
     iget-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    const v2, 0x1020359
+    const v2, 0x1020360		#[0x1020359]id:resolver_grid
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -686,7 +687,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x102027a
+    const v1, 0x102027a		#id:button_bar
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->findViewById(I)Landroid/view/View;
 
@@ -704,7 +705,7 @@
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 168
-    const v1, 0x102035a
+    const v1, 0x1020361		#[0x102035a]id:button_always
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -715,7 +716,7 @@
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysButton:Landroid/widget/Button;
 
     .line 169
-    const v1, 0x102035b
+    const v1, 0x1020362		#[0x102035b]id:button_once
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -766,7 +767,7 @@
 
     move-result-object v1
 
-    const v2, 0x10403d2
+    const v2, 0x10403d6		#[0x10403d2]string:noApplications
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

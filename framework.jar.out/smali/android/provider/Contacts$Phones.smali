@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/Contacts$Phones;
 .super Ljava/lang/Object;
 .source "Contacts.java"
@@ -153,7 +154,7 @@
 
     move-result-object v3
 
-    const v4, 0x1070003
+    const v4, 0x1070003		#array:phoneTypes
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 

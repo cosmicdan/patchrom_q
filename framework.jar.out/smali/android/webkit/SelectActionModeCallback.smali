@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/SelectActionModeCallback;
 .super Ljava/lang/Object;
 .source "SelectActionModeCallback.java"
@@ -246,13 +247,13 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x1020020 -> :sswitch_0
-        0x1020021 -> :sswitch_1
-        0x1020022 -> :sswitch_2
-        0x10203c1 -> :sswitch_4
-        0x10203c2 -> :sswitch_3
-        0x10203c3 -> :sswitch_5
-        0x10203c4 -> :sswitch_6
+        0x1020020 -> :sswitch_0		#id:cut
+        0x1020021 -> :sswitch_1		#id:copy
+        0x1020022 -> :sswitch_2		#id:paste
+        0x10203c8 -> :sswitch_4		#[0x10203c1]id:select_all
+        0x10203c9 -> :sswitch_3		#[0x10203c2]id:share
+        0x10203ca -> :sswitch_5		#[0x10203c3]id:find
+        0x10203cb -> :sswitch_6		#[0x10203c4]id:websearch
     .end sparse-switch
 .end method
 
@@ -284,7 +285,7 @@
 
     .line 57
     .local v6, context:Landroid/content/Context;
-    const v9, 0x10403c3
+    const v9, 0x10403c7		#[0x10403c3]string:textSelectionCABTitle
 
     invoke-virtual {v6, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,27 +370,27 @@
 
     .line 74
     .local v4, canWebSearch:Z
-    const v9, 0x10203c3
+    const v9, 0x10203ca		#[0x10203c3]id:find
 
     invoke-direct {p0, p2, v2, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 75
-    const v9, 0x1020022
+    const v9, 0x1020022		#id:paste
 
     invoke-direct {p0, p2, v3, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 76
-    const v9, 0x1020020
+    const v9, 0x1020020		#id:cut
 
     invoke-direct {p0, p2, v1, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 77
-    const v9, 0x1020021
+    const v9, 0x1020021		#id:copy
 
     invoke-direct {p0, p2, v0, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 78
-    const v9, 0x10203c4
+    const v9, 0x10203cb		#[0x10203c4]id:websearch
 
     invoke-direct {p0, p2, v4, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/TextUtils;
 .super Ljava/lang/Object;
 .source "TextUtils.java"
@@ -1201,7 +1202,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040074
+    const v1, 0x1040078		#[0x1040074]string:ellipsis_two_dots
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1237,7 +1238,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040073
+    const v1, 0x1040077		#[0x1040073]string:ellipsis
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3667,7 +3668,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040509
+    const v2, 0x104050d		#[0x1040509]string:list_delimeter
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

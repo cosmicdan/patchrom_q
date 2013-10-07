@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/os/storage/ExternalStorageFormatter;
 .super Landroid/app/Service;
 .source "ExternalStorageFormatter.java"
@@ -178,7 +179,7 @@
     .parameter "stringId"
 
     .prologue
-    const v5, 0x10404e6
+    const v5, 0x10404ea		#[0x10404e6]string:storage_sd_card
 
     const/4 v4, 0x1
 
@@ -1073,7 +1074,7 @@
 
     .line 201
     :cond_1
-    const v4, 0x10404a1
+    const v4, 0x10404a5		#[0x10404a1]string:progress_unmounting
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->updateProgressDialog(I)V
 
@@ -1144,7 +1145,7 @@
 
     .line 217
     :cond_3
-    const v4, 0x10404a2
+    const v4, 0x10404a6		#[0x10404a2]string:progress_erasing
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->updateProgressDialog(I)V
 
@@ -1193,7 +1194,7 @@
     if-eqz v4, :cond_6
 
     .line 266
-    const v4, 0x10404a4
+    const v4, 0x10404a8		#[0x10404a4]string:media_bad_removal
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -1210,7 +1211,7 @@
     if-eqz v4, :cond_7
 
     .line 268
-    const v4, 0x10404a5
+    const v4, 0x10404a9		#[0x10404a5]string:media_checking
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -1227,7 +1228,7 @@
     if-eqz v4, :cond_8
 
     .line 270
-    const v4, 0x10404a6
+    const v4, 0x10404aa		#[0x10404a6]string:media_removed
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -1244,7 +1245,7 @@
     if-eqz v4, :cond_9
 
     .line 272
-    const v4, 0x10404a7
+    const v4, 0x10404ab		#[0x10404a7]string:media_shared
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -1252,7 +1253,7 @@
 
     .line 274
     :cond_9
-    const v4, 0x10404a8
+    const v4, 0x10404ac		#[0x10404a8]string:media_unknown_state
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/ActionMenuPresenter;
 .super Lcom/android/internal/view/menu/BaseMenuPresenter;
 .source "ActionMenuPresenter.java"
@@ -70,9 +71,9 @@
 
     .prologue
     .line 72
-    const v0, 0x109001b
+    const v0, 0x109001b		#layout:action_menu_layout
 
-    const v1, 0x109001a
+    const v1, 0x109001a		#layout:action_menu_item_layout
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/internal/view/menu/BaseMenuPresenter;-><init>(Landroid/content/Context;II)V
 
@@ -1392,7 +1393,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e003b
+    const v1, 0x10e003a		#[0x10e003b]integer:max_action_buttons
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

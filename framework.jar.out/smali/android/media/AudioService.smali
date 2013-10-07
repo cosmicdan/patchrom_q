@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/media/AudioService;
 .super Landroid/media/IAudioService$Stub;
 .source "AudioService.java"
@@ -1192,7 +1193,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0004
+    const v3, 0x10e0004		#integer:config_soundEffectVolumeDb
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1582,7 +1583,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070014
+    const v3, 0x1070014		#array:config_masterVolumeRamp
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -8773,7 +8774,7 @@
 
     move-result-object v2
 
-    const v4, 0x10e003a
+    const v4, 0x10e0039		#[0x10e003a]integer:config_safe_media_volume_index
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/ActionBarPolicy;
 .super Ljava/lang/Object;
 .source "ActionBarPolicy.java"
@@ -99,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e003b
+    const v1, 0x10e003a		#[0x10e003b]integer:max_action_buttons
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -119,7 +120,7 @@
 
     move-result-object v0
 
-    const v1, 0x1050054
+    const v1, 0x1050054		#dimen:action_bar_stacked_tab_max_width
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -141,7 +142,7 @@
 
     sget-object v5, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    const v6, 0x10102ce
+    const v6, 0x10102ce		#attr:actionBarStyle
 
     invoke-virtual {v3, v4, v5, v6, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -172,7 +173,7 @@
     if-nez v3, :cond_0
 
     .line 72
-    const v3, 0x1050053
+    const v3, 0x1050053		#dimen:action_bar_stacked_max_height
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

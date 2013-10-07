@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/http/RequestHandle;
 .super Ljava/lang/Object;
 .source "RequestHandle.java"
@@ -1488,7 +1489,7 @@
 
     const/16 v5, -0x9
 
-    const v6, 0x10400c9
+    const v6, 0x10400cd		#[0x10400c9]string:httpErrorRedirectLoop
 
     invoke-virtual {v4, v5, v6}, Landroid/net/http/Request;->error(II)V
 

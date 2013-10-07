@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/LockPatternUtils;
 .super Ljava/lang/Object;
 .source "LockPatternUtils.java"
@@ -4904,13 +4905,13 @@
     if-ne p2, v6, :cond_2
 
     .line 1335
-    const v3, 0x10402ec
+    const v3, 0x10402f0		#[0x10402ec]string:lockscreen_return_to_call
 
     .line 1336
     .local v3, textId:I
     if-eqz p5, :cond_1
 
-    const v2, 0x1080084
+    const v2, 0x1080084		#drawable:stat_sys_phone_call
 
     .line 1337
     .local v2, phoneCallIcon:I
@@ -4975,13 +4976,13 @@
     .line 1339
     .end local v3           #textId:I
     :cond_2
-    const v3, 0x10402eb
+    const v3, 0x10402ef		#[0x10402eb]string:lockscreen_emergency_call
 
     .line 1340
     .restart local v3       #textId:I
     if-eqz p5, :cond_3
 
-    const v0, 0x10802c8
+    const v0, 0x10802cc		#[0x10802c8]drawable:ic_emergency
 
     .line 1341
     .local v0, emergencyIcon:I

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 .super Lcom/android/internal/telephony/ServiceStateTracker;
 .source "CdmaServiceStateTracker.java"
@@ -8316,7 +8317,7 @@
 
     move-result-object v23
 
-    const v24, 0x10400b8
+    const v24, 0x10400bc		#[0x10400b8]string:roamingTextSearching
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

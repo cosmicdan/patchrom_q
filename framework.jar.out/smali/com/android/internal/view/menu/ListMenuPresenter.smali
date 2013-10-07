@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/ListMenuPresenter;
 .super Ljava/lang/Object;
 .source "ListMenuPresenter.java"
@@ -193,7 +194,7 @@
     .line 99
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090040
+    const v1, 0x1090040		#layout:expanded_menu_layout
 
     const/4 v2, 0x0
 

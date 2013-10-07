@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Lcom/android/internal/telephony/PhoneBase;
 .super Landroid/os/Handler;
 .source "PhoneBase.java"
@@ -1170,7 +1171,7 @@
 
     move-result-object v9
 
-    const v10, 0x1070038
+    const v10, 0x1070038		#array:carrier_properties
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 

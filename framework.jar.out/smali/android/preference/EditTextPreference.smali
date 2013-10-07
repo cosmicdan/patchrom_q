@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/EditTextPreference;
 .super Landroid/preference/DialogPreference;
 .source "EditTextPreference.java"
@@ -39,7 +40,7 @@
 
     .prologue
     .line 71
-    const v0, 0x1010092
+    const v0, 0x1010092		#attr:editTextPreferenceStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/EditTextPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -67,7 +68,7 @@
     .line 59
     iget-object v0, p0, Landroid/preference/EditTextPreference;->mEditText:Landroid/widget/EditText;
 
-    const v1, 0x1020003
+    const v1, 0x1020003		#id:edit
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setId(I)V
 
@@ -121,7 +122,7 @@
 
     .prologue
     .line 127
-    const v1, 0x1020347
+    const v1, 0x102034e		#[0x1020347]id:edittext_container
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

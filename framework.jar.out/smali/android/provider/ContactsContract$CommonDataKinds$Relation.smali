@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Relation;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -109,92 +110,92 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6522
-    const v0, 0x10402c8
+    const v0, 0x10402cc		#[0x10402c8]string:orgTypeCustom
 
     :goto_0
     return v0
 
     .line 6506
     :pswitch_0
-    const v0, 0x10402ca
+    const v0, 0x10402ce		#[0x10402ca]string:relationTypeAssistant
 
     goto :goto_0
 
     .line 6507
     :pswitch_1
-    const v0, 0x10402cb
+    const v0, 0x10402cf		#[0x10402cb]string:relationTypeBrother
 
     goto :goto_0
 
     .line 6508
     :pswitch_2
-    const v0, 0x10402cc
+    const v0, 0x10402d0		#[0x10402cc]string:relationTypeChild
 
     goto :goto_0
 
     .line 6510
     :pswitch_3
-    const v0, 0x10402cd
+    const v0, 0x10402d1		#[0x10402cd]string:relationTypeDomesticPartner
 
     goto :goto_0
 
     .line 6511
     :pswitch_4
-    const v0, 0x10402ce
+    const v0, 0x10402d2		#[0x10402ce]string:relationTypeFather
 
     goto :goto_0
 
     .line 6512
     :pswitch_5
-    const v0, 0x10402cf
+    const v0, 0x10402d3		#[0x10402cf]string:relationTypeFriend
 
     goto :goto_0
 
     .line 6513
     :pswitch_6
-    const v0, 0x10402d0
+    const v0, 0x10402d4		#[0x10402d0]string:relationTypeManager
 
     goto :goto_0
 
     .line 6514
     :pswitch_7
-    const v0, 0x10402d1
+    const v0, 0x10402d5		#[0x10402d1]string:relationTypeMother
 
     goto :goto_0
 
     .line 6515
     :pswitch_8
-    const v0, 0x10402d2
+    const v0, 0x10402d6		#[0x10402d2]string:relationTypeParent
 
     goto :goto_0
 
     .line 6516
     :pswitch_9
-    const v0, 0x10402d3
+    const v0, 0x10402d7		#[0x10402d3]string:relationTypePartner
 
     goto :goto_0
 
     .line 6518
     :pswitch_a
-    const v0, 0x10402d4
+    const v0, 0x10402d8		#[0x10402d4]string:relationTypeReferredBy
 
     goto :goto_0
 
     .line 6519
     :pswitch_b
-    const v0, 0x10402d5
+    const v0, 0x10402d9		#[0x10402d5]string:relationTypeRelative
 
     goto :goto_0
 
     .line 6520
     :pswitch_c
-    const v0, 0x10402d6
+    const v0, 0x10402da		#[0x10402d6]string:relationTypeSister
 
     goto :goto_0
 
     .line 6521
     :pswitch_d
-    const v0, 0x10402d7
+    const v0, 0x10402db		#[0x10402d7]string:relationTypeSpouse
 
     goto :goto_0
 

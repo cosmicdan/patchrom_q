@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/webkit/WebView;
 .super Landroid/widget/AbsoluteLayout;
 .source "WebView.java"
@@ -62,7 +63,7 @@
 
     .prologue
     .line 498
-    const v0, 0x1010085
+    const v0, 0x1010085		#attr:webViewStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

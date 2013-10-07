@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/app/PlatLogoActivity;
 .super Landroid/app/Activity;
 .source "PlatLogoActivity.java"
@@ -303,7 +304,7 @@
     .line 95
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity;->mContent:Landroid/widget/ImageView;
 
-    const v3, 0x108045d
+    const v3, 0x108047e		#[0x108045d]drawable:platlogo_alt
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

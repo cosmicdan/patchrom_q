@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/RotarySelector;
 .super Landroid/view/View;
 .source "RotarySelector.java"
@@ -219,7 +220,7 @@
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
 
     .line 183
-    const v3, 0x1080386
+    const v3, 0x10803a0		#[0x1080386]drawable:jog_dial_bg
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -228,7 +229,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackground:Landroid/graphics/Bitmap;
 
     .line 184
-    const v3, 0x1080387
+    const v3, 0x10803a1		#[0x1080387]drawable:jog_dial_dimple
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -237,7 +238,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
 
     .line 185
-    const v3, 0x1080388
+    const v3, 0x10803a2		#[0x1080388]drawable:jog_dial_dimple_dim
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -246,7 +247,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
 
     .line 187
-    const v3, 0x108037e
+    const v3, 0x1080398		#[0x108037e]drawable:jog_dial_arrow_long_left_green
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -255,7 +256,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongLeft:Landroid/graphics/Bitmap;
 
     .line 188
-    const v3, 0x1080381
+    const v3, 0x108039b		#[0x1080381]drawable:jog_dial_arrow_long_right_red
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -264,7 +265,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongRight:Landroid/graphics/Bitmap;
 
     .line 189
-    const v3, 0x1080384
+    const v3, 0x108039e		#[0x1080384]drawable:jog_dial_arrow_short_left_and_right
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 

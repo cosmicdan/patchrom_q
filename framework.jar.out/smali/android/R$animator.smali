@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/R$animator;
 .super Ljava/lang/Object;
 .source "R.java"
@@ -15,9 +16,9 @@
 
 
 # static fields
-.field public static final fade_in:I = 0x10b0000
+.field public static final fade_in:I = 0x10b0000		#animator:fade_in
 
-.field public static final fade_out:I = 0x10b0001
+.field public static final fade_out:I = 0x10b0001		#animator:fade_out
 
 
 # direct methods

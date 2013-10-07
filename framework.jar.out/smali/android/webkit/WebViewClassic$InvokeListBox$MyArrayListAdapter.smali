@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/WebViewClassic$InvokeListBox$MyArrayListAdapter;
 .super Landroid/widget/ArrayAdapter;
 .source "WebViewClassic.java"
@@ -51,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x1090013
+    const v0, 0x1090013		#layout:select_dialog_multichoice
 
     :goto_0
     #getter for: Landroid/webkit/WebViewClassic$InvokeListBox;->mContainers:[Landroid/webkit/WebViewClassic$InvokeListBox$Container;
@@ -66,7 +67,7 @@
 
     .line 8717
     :cond_0
-    const v0, 0x10900e7
+    const v0, 0x10900eb		#[0x10900e7]layout:webview_select_singlechoice
 
     goto :goto_0
 .end method
@@ -153,7 +154,7 @@
     .prologue
     const/4 v7, 0x0
 
-    const v6, 0x1080012
+    const v6, 0x1080012		#drawable:divider_horizontal_bright
 
     const/4 v5, 0x1
 

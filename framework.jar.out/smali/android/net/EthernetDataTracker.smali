@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/EthernetDataTracker;
 .super Ljava/lang/Object;
 .source "EthernetDataTracker.java"
@@ -1027,7 +1028,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040018
+    const v9, 0x1040018		#string:config_ethernet_iface_regex
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

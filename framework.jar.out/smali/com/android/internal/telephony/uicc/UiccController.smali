@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/uicc/UiccController;
 .super Landroid/os/Handler;
 .source "UiccController.java"
@@ -1151,7 +1152,7 @@
 
     iput v5, v2, Landroid/app/Notification;->flags:I
 
-    const v5, 0x108008a
+    const v5, 0x108008a		#drawable:stat_sys_warning
 
     iput v5, v2, Landroid/app/Notification;->icon:I
 
@@ -1299,7 +1300,7 @@
     iput v5, v2, Landroid/app/Notification;->flags:I
 
     .line 598
-    const v5, 0x108008a
+    const v5, 0x108008a		#drawable:stat_sys_warning
 
     iput v5, v2, Landroid/app/Notification;->icon:I
 

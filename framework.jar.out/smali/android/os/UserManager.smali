@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/os/UserManager;
 .super Ljava/lang/Object;
 .source "UserManager.java"
@@ -73,7 +74,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0039
+    const v2, 0x10e0038		#[0x10e0039]integer:config_multiuserMaximumUsers
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/internal/view/menu/MenuItemImpl;
 .super Ljava/lang/Object;
 .source "MenuItemImpl.java"
@@ -125,7 +126,7 @@
 
     move-result-object v0
 
-    const v1, 0x104039c
+    const v1, 0x10403a0		#[0x104039c]string:prepend_shortcut_label
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -142,7 +143,7 @@
 
     move-result-object v0
 
-    const v1, 0x104039e
+    const v1, 0x10403a2		#[0x104039e]string:menu_enter_shortcut_label
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -159,7 +160,7 @@
 
     move-result-object v0
 
-    const v1, 0x104039f
+    const v1, 0x10403a3		#[0x104039f]string:menu_delete_shortcut_label
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +177,7 @@
 
     move-result-object v0
 
-    const v1, 0x104039d
+    const v1, 0x10403a1		#[0x104039d]string:menu_space_shortcut_label
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

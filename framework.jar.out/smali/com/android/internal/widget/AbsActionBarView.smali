@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public abstract Lcom/android/internal/widget/AbsActionBarView;
 .super Landroid/view/ViewGroup;
 .source "AbsActionBarView.java"
@@ -563,7 +564,7 @@
 
     sget-object v3, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    const v4, 0x10102ce
+    const v4, 0x10102ce		#attr:actionBarStyle
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 

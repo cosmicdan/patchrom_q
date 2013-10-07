@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/preference/PreferenceScreen;
 .super Landroid/preference/PreferenceGroup;
 .source "PreferenceScreen.java"
@@ -32,7 +33,7 @@
 
     .prologue
     .line 101
-    const v0, 0x101008b
+    const v0, 0x101008b		#attr:preferenceScreenStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -75,7 +76,7 @@
 
     .line 167
     .local v3, inflater:Landroid/view/LayoutInflater;
-    const v5, 0x10900a7
+    const v5, 0x10900ab		#[0x10900a7]layout:preference_list_fragment
 
     invoke-virtual {v3, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -83,7 +84,7 @@
 
     .line 169
     .local v0, childPrefScreen:Landroid/view/View;
-    const v5, 0x102000a
+    const v5, 0x102000a		#id:list
 
     invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

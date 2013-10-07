@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/view/menu/MenuPopupHelper$MenuAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "MenuPopupHelper.java"
@@ -313,7 +314,7 @@
 
     move-result-object v1
 
-    const v2, 0x109009a
+    const v2, 0x109009e		#[0x109009a]layout:popup_menu_item_layout
 
     invoke-virtual {v1, v2, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

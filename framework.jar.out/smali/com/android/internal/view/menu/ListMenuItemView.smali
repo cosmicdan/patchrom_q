@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/ListMenuItemView;
 .super Landroid/widget/LinearLayout;
 .source "ListMenuItemView.java"
@@ -149,7 +150,7 @@
 
     .line 252
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x109007d
+    const v1, 0x1090081		#[0x109007d]layout:list_menu_item_checkbox
 
     const/4 v2, 0x0
 
@@ -183,7 +184,7 @@
 
     .line 237
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x109007e
+    const v1, 0x1090082		#[0x109007e]layout:list_menu_item_icon
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -213,7 +214,7 @@
 
     .line 244
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x1090080
+    const v1, 0x1090084		#[0x1090080]layout:list_menu_item_radio
 
     const/4 v2, 0x0
 
@@ -332,7 +333,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 84
-    const v0, 0x1020016
+    const v0, 0x1020016		#id:title
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +361,7 @@
 
     .line 90
     :cond_0
-    const v0, 0x1020314
+    const v0, 0x1020316		#[0x1020314]id:shortcut
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 

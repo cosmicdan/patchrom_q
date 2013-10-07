@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/appwidget/AppWidgetHostView;
 .super Landroid/widget/FrameLayout;
 .source "AppWidgetHostView.java"
@@ -78,7 +79,7 @@
     .line 93
     const/high16 v0, 0x10a
 
-    const v1, 0x10a0001
+    const v1, 0x10a0001		#anim:fade_out
 
     invoke-direct {p0, p1, v0, v1}, Landroid/appwidget/AppWidgetHostView;-><init>(Landroid/content/Context;II)V
 
@@ -139,7 +140,7 @@
     .line 100
     const/high16 v0, 0x10a
 
-    const v1, 0x10a0001
+    const v1, 0x10a0001		#anim:fade_out
 
     invoke-direct {p0, p1, v0, v1}, Landroid/appwidget/AppWidgetHostView;-><init>(Landroid/content/Context;II)V
 
@@ -227,7 +228,7 @@
 
     .line 187
     .local v3, r:Landroid/content/res/Resources;
-    const v4, 0x105004e
+    const v4, 0x105004e		#dimen:default_app_widget_padding_left
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -236,7 +237,7 @@
     iput v4, p2, Landroid/graphics/Rect;->left:I
 
     .line 189
-    const v4, 0x1050050
+    const v4, 0x1050050		#dimen:default_app_widget_padding_right
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -245,7 +246,7 @@
     iput v4, p2, Landroid/graphics/Rect;->right:I
 
     .line 191
-    const v4, 0x105004f
+    const v4, 0x105004f		#dimen:default_app_widget_padding_top
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -254,7 +255,7 @@
     iput v4, p2, Landroid/graphics/Rect;->top:I
 
     .line 193
-    const v4, 0x1050051
+    const v4, 0x1050051		#dimen:default_app_widget_padding_bottom
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -859,7 +860,7 @@
 
     .line 594
     .local v0, tv:Landroid/widget/TextView;
-    const v1, 0x1040470
+    const v1, 0x1040474		#[0x1040470]string:gadget_host_error_inflating
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

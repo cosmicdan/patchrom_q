@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/app/ExternalMediaFormatActivity;
 .super Lcom/android/internal/app/AlertActivity;
 .source "ExternalMediaFormatActivity.java"
@@ -191,12 +192,12 @@
 
     .line 64
     .local v0, p:Lcom/android/internal/app/AlertController$AlertParams;
-    const v1, 0x108008a
+    const v1, 0x108008a		#drawable:stat_sys_warning
 
     iput v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mIconId:I
 
     .line 65
-    const v1, 0x104044d
+    const v1, 0x1040451		#[0x104044d]string:extmedia_format_title
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 
@@ -205,7 +206,7 @@
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     .line 66
-    const v1, 0x104044e
+    const v1, 0x1040452		#[0x104044e]string:extmedia_format_message
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 
@@ -214,7 +215,7 @@
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
     .line 67
-    const v1, 0x104044f
+    const v1, 0x1040453		#[0x104044f]string:extmedia_format_button_format
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 

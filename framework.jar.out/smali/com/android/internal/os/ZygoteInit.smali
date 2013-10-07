@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/os/ZygoteInit;
 .super Ljava/lang/Object;
 .source "ZygoteInit.java"
@@ -1675,7 +1676,7 @@
     .local v4, startTime:J
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
 
-    const v7, 0x1070005
+    const v7, 0x1070005		#array:preloaded_drawables
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
@@ -1746,7 +1747,7 @@
     .line 387
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
 
-    const v7, 0x1070006
+    const v7, 0x1070006		#array:preloaded_color_state_lists
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 

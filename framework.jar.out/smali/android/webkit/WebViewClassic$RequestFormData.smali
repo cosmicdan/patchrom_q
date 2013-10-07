@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/WebViewClassic$RequestFormData;
 .super Ljava/lang/Object;
 .source "WebViewClassic.java"
@@ -125,7 +126,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040346
+    const v4, 0x104034a		#[0x1040346]string:autofill_this_form
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -221,7 +222,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900e5
+    const v3, 0x10900e9		#[0x10900e5]layout:web_text_view_dropdown
 
     invoke-direct {v0, v2, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -254,7 +255,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040347
+    const v3, 0x104034b		#[0x1040347]string:setup_autofill
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

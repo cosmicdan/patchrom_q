@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/SlidingTab;
 .super Landroid/view/ViewGroup;
 .source "SlidingTab.java"
@@ -91,7 +92,7 @@
     .parameter "attrs"
 
     .prologue
-    const v5, 0x10803af
+    const v5, 0x10803c9		#[0x10803af]drawable:jog_tab_target_gray
 
     const/4 v2, 0x1
 
@@ -162,9 +163,9 @@
     .line 459
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
-    const v3, 0x10803a1
+    const v3, 0x10803bb		#[0x10803a1]drawable:jog_tab_left_generic
 
-    const v4, 0x1080390
+    const v4, 0x10803aa		#[0x1080390]drawable:jog_tab_bar_left_generic
 
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
 
@@ -173,9 +174,9 @@
     .line 463
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
-    const v3, 0x10803aa
+    const v3, 0x10803c4		#[0x10803aa]drawable:jog_tab_right_generic
 
-    const v4, 0x1080399
+    const v4, 0x10803b3		#[0x1080399]drawable:jog_tab_bar_right_generic
 
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
 

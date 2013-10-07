@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/internal/view/menu/IconMenuItemView;
 .super Landroid/widget/TextView;
 .source "IconMenuItemView.java"
@@ -86,7 +87,7 @@
 
     move-result-object v1
 
-    const v2, 0x104039c
+    const v2, 0x10403a0		#[0x104039c]string:prepend_shortcut_label
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

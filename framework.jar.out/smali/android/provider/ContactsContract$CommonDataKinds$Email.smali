@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Email;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -139,32 +140,32 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5844
-    const v0, 0x10402af
+    const v0, 0x10402b3		#[0x10402af]string:emailTypeCustom
 
     :goto_0
     return v0
 
     .line 5840
     :pswitch_0
-    const v0, 0x10402b0
+    const v0, 0x10402b4		#[0x10402b0]string:emailTypeHome
 
     goto :goto_0
 
     .line 5841
     :pswitch_1
-    const v0, 0x10402b1
+    const v0, 0x10402b5		#[0x10402b1]string:emailTypeWork
 
     goto :goto_0
 
     .line 5842
     :pswitch_2
-    const v0, 0x10402b2
+    const v0, 0x10402b6		#[0x10402b2]string:emailTypeOther
 
     goto :goto_0
 
     .line 5843
     :pswitch_3
-    const v0, 0x10402b3
+    const v0, 0x10402b7		#[0x10402b3]string:emailTypeMobile
 
     goto :goto_0
 

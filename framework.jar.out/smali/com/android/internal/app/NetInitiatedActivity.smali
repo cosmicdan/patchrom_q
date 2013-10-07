@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/app/NetInitiatedActivity;
 .super Lcom/android/internal/app/AlertActivity;
 .source "NetInitiatedActivity.java"
@@ -305,7 +306,7 @@
 
     .line 90
     .local v0, context:Landroid/content/Context;
-    const v3, 0x10802c7
+    const v3, 0x10802cb		#[0x10802c7]drawable:ic_dialog_usb
 
     iput v3, v2, Lcom/android/internal/app/AlertController$AlertParams;->mIconId:I
 
@@ -328,7 +329,7 @@
     iput-object v3, v2, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
     .line 93
-    const v3, 0x10404b1
+    const v3, 0x10404b5		#[0x10404b1]string:gpsVerifYes
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -346,7 +347,7 @@
     iput-object p0, v2, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     .line 95
-    const v3, 0x10404b2
+    const v3, 0x10404b6		#[0x10404b2]string:gpsVerifNo
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

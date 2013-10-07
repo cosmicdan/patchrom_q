@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/format/DateUtils;
 .super Ljava/lang/Object;
 .source "DateUtils.java"
@@ -191,43 +192,43 @@
     .line 127
     :array_0
     .array-data 0x4
-        0x51t 0x0t 0x4t 0x1t
-        0x52t 0x0t 0x4t 0x1t
-        0x5et 0x0t 0x4t 0x1t
-        0x60t 0x0t 0x4t 0x1t
-        0x53t 0x0t 0x4t 0x1t
-        0x55t 0x0t 0x4t 0x1t
-        0x57t 0x0t 0x4t 0x1t
-        0x59t 0x0t 0x4t 0x1t
-        0x43t 0x0t 0x4t 0x1t
-        0x44t 0x0t 0x4t 0x1t
-        0x45t 0x0t 0x4t 0x1t
-        0x46t 0x0t 0x4t 0x1t
-        0x48t 0x0t 0x4t 0x1t
-        0x49t 0x0t 0x4t 0x1t
-        0x4at 0x0t 0x4t 0x1t
-        0x47t 0x0t 0x4t 0x1t
+        0x55t 0x0t 0x4t 0x1t		#[0x51t 0x0t 0x4t 0x1t]string:same_year_md1_md2
+        0x56t 0x0t 0x4t 0x1t		#[0x52t 0x0t 0x4t 0x1t]string:same_year_wday1_md1_wday2_md2
+        0x62t 0x0t 0x4t 0x1t		#[0x5et 0x0t 0x4t 0x1t]string:same_year_mdy1_mdy2
+        0x64t 0x0t 0x4t 0x1t		#[0x60t 0x0t 0x4t 0x1t]string:same_year_wday1_mdy1_wday2_mdy2
+        0x57t 0x0t 0x4t 0x1t		#[0x53t 0x0t 0x4t 0x1t]string:same_year_md1_time1_md2_time2
+        0x59t 0x0t 0x4t 0x1t		#[0x55t 0x0t 0x4t 0x1t]string:same_year_wday1_md1_time1_wday2_md2_time2
+        0x5bt 0x0t 0x4t 0x1t		#[0x57t 0x0t 0x4t 0x1t]string:same_year_mdy1_time1_mdy2_time2
+        0x5dt 0x0t 0x4t 0x1t		#[0x59t 0x0t 0x4t 0x1t]string:same_year_wday1_mdy1_time1_wday2_mdy2_time2
+        0x47t 0x0t 0x4t 0x1t		#[0x43t 0x0t 0x4t 0x1t]string:numeric_md1_md2
+        0x48t 0x0t 0x4t 0x1t		#[0x44t 0x0t 0x4t 0x1t]string:numeric_wday1_md1_wday2_md2
+        0x49t 0x0t 0x4t 0x1t		#[0x45t 0x0t 0x4t 0x1t]string:numeric_mdy1_mdy2
+        0x4at 0x0t 0x4t 0x1t		#[0x46t 0x0t 0x4t 0x1t]string:numeric_wday1_mdy1_wday2_mdy2
+        0x4ct 0x0t 0x4t 0x1t		#[0x48t 0x0t 0x4t 0x1t]string:numeric_md1_time1_md2_time2
+        0x4dt 0x0t 0x4t 0x1t		#[0x49t 0x0t 0x4t 0x1t]string:numeric_wday1_md1_time1_wday2_md2_time2
+        0x4et 0x0t 0x4t 0x1t		#[0x4at 0x0t 0x4t 0x1t]string:numeric_mdy1_time1_mdy2_time2
+        0x4bt 0x0t 0x4t 0x1t		#[0x47t 0x0t 0x4t 0x1t]string:numeric_wday1_mdy1_time1_wday2_mdy2_time2
     .end array-data
 
     .line 154
     :array_1
     .array-data 0x4
-        0x5ct 0x0t 0x4t 0x1t
-        0x5dt 0x0t 0x4t 0x1t
-        0x5ft 0x0t 0x4t 0x1t
-        0x5bt 0x0t 0x4t 0x1t
-        0x54t 0x0t 0x4t 0x1t
-        0x56t 0x0t 0x4t 0x1t
-        0x58t 0x0t 0x4t 0x1t
-        0x5at 0x0t 0x4t 0x1t
-        0x43t 0x0t 0x4t 0x1t
-        0x44t 0x0t 0x4t 0x1t
-        0x45t 0x0t 0x4t 0x1t
-        0x46t 0x0t 0x4t 0x1t
-        0x48t 0x0t 0x4t 0x1t
-        0x49t 0x0t 0x4t 0x1t
-        0x4at 0x0t 0x4t 0x1t
-        0x47t 0x0t 0x4t 0x1t
+        0x60t 0x0t 0x4t 0x1t		#[0x5ct 0x0t 0x4t 0x1t]string:same_month_md1_md2
+        0x61t 0x0t 0x4t 0x1t		#[0x5dt 0x0t 0x4t 0x1t]string:same_month_wday1_md1_wday2_md2
+        0x63t 0x0t 0x4t 0x1t		#[0x5ft 0x0t 0x4t 0x1t]string:same_month_mdy1_mdy2
+        0x5ft 0x0t 0x4t 0x1t		#[0x5bt 0x0t 0x4t 0x1t]string:same_month_wday1_mdy1_wday2_mdy2
+        0x58t 0x0t 0x4t 0x1t		#[0x54t 0x0t 0x4t 0x1t]string:same_month_md1_time1_md2_time2
+        0x5at 0x0t 0x4t 0x1t		#[0x56t 0x0t 0x4t 0x1t]string:same_month_wday1_md1_time1_wday2_md2_time2
+        0x5ct 0x0t 0x4t 0x1t		#[0x58t 0x0t 0x4t 0x1t]string:same_month_mdy1_time1_mdy2_time2
+        0x5et 0x0t 0x4t 0x1t		#[0x5at 0x0t 0x4t 0x1t]string:same_month_wday1_mdy1_time1_wday2_mdy2_time2
+        0x47t 0x0t 0x4t 0x1t		#[0x43t 0x0t 0x4t 0x1t]string:numeric_md1_md2
+        0x48t 0x0t 0x4t 0x1t		#[0x44t 0x0t 0x4t 0x1t]string:numeric_wday1_md1_wday2_md2
+        0x49t 0x0t 0x4t 0x1t		#[0x45t 0x0t 0x4t 0x1t]string:numeric_mdy1_mdy2
+        0x4at 0x0t 0x4t 0x1t		#[0x46t 0x0t 0x4t 0x1t]string:numeric_wday1_mdy1_wday2_mdy2
+        0x4ct 0x0t 0x4t 0x1t		#[0x48t 0x0t 0x4t 0x1t]string:numeric_md1_time1_md2_time2
+        0x4dt 0x0t 0x4t 0x1t		#[0x49t 0x0t 0x4t 0x1t]string:numeric_wday1_md1_time1_wday2_md2_time2
+        0x4et 0x0t 0x4t 0x1t		#[0x4at 0x0t 0x4t 0x1t]string:numeric_mdy1_time1_mdy2_time2
+        0x4bt 0x0t 0x4t 0x1t		#[0x47t 0x0t 0x4t 0x1t]string:numeric_wday1_mdy1_time1_wday2_mdy2_time2
     .end array-data
 .end method
 
@@ -924,7 +925,7 @@
     if-eqz v62, :cond_1c
 
     .line 1203
-    const v65, 0x104002d
+    const v65, 0x1040031		#[0x104002d]string:hour_minute_24
 
     move-object/from16 v0, v40
 
@@ -967,7 +968,7 @@
     if-eqz v39, :cond_35
 
     .line 1300
-    const v65, 0x1040032
+    const v65, 0x1040036		#[0x1040032]string:numeric_date
 
     move-object/from16 v0, v40
 
@@ -986,7 +987,7 @@
     if-eqz v43, :cond_3d
 
     .line 1333
-    const v65, 0x104004b
+    const v65, 0x104004f		#[0x104004b]string:wday1_date1_time1_wday2_date2_time2
 
     move-object/from16 v0, v40
 
@@ -1464,7 +1465,7 @@
     if-eqz v7, :cond_26
 
     .line 1217
-    const v65, 0x104033a
+    const v65, 0x104033e		#[0x104033a]string:hour_cap_ampm
 
     move-object/from16 v0, v40
 
@@ -1487,7 +1488,7 @@
     if-eqz v7, :cond_29
 
     .line 1236
-    const v65, 0x104033a
+    const v65, 0x104033e		#[0x104033a]string:hour_cap_ampm
 
     move-object/from16 v0, v40
 
@@ -1519,7 +1520,7 @@
     if-eqz v9, :cond_2c
 
     .line 1250
-    const v65, 0x10403bc
+    const v65, 0x10403c0		#[0x10403bc]string:Noon
 
     move-object/from16 v0, v40
 
@@ -1554,7 +1555,7 @@
     if-eqz v9, :cond_2f
 
     .line 1265
-    const v65, 0x10403bc
+    const v65, 0x10403c0		#[0x10403bc]string:Noon
 
     move-object/from16 v0, v40
 
@@ -1632,7 +1633,7 @@
     .line 1219
     .restart local v21       #endOnTheHour:Z
     :cond_26
-    const v65, 0x1040339
+    const v65, 0x104033d		#[0x1040339]string:hour_ampm
 
     move-object/from16 v0, v40
 
@@ -1649,7 +1650,7 @@
     if-eqz v7, :cond_28
 
     .line 1223
-    const v65, 0x104002f
+    const v65, 0x1040033		#[0x104002f]string:hour_minute_cap_ampm
 
     move-object/from16 v0, v40
 
@@ -1663,7 +1664,7 @@
 
     .line 1225
     :cond_28
-    const v65, 0x104002e
+    const v65, 0x1040032		#[0x104002e]string:hour_minute_ampm
 
     move-object/from16 v0, v40
 
@@ -1677,7 +1678,7 @@
 
     .line 1238
     :cond_29
-    const v65, 0x1040339
+    const v65, 0x104033d		#[0x1040339]string:hour_ampm
 
     move-object/from16 v0, v40
 
@@ -1694,7 +1695,7 @@
     if-eqz v7, :cond_2b
 
     .line 1242
-    const v65, 0x104002f
+    const v65, 0x1040033		#[0x104002f]string:hour_minute_cap_ampm
 
     move-object/from16 v0, v40
 
@@ -1708,7 +1709,7 @@
 
     .line 1244
     :cond_2b
-    const v65, 0x104002e
+    const v65, 0x1040032		#[0x104002e]string:hour_minute_ampm
 
     move-object/from16 v0, v40
 
@@ -1722,7 +1723,7 @@
 
     .line 1252
     :cond_2c
-    const v65, 0x10403bb
+    const v65, 0x10403bf		#[0x10403bb]string:noon
 
     move-object/from16 v0, v40
 
@@ -1750,7 +1751,7 @@
     if-eqz v8, :cond_2e
 
     .line 1256
-    const v65, 0x10403be
+    const v65, 0x10403c2		#[0x10403be]string:Midnight
 
     move-object/from16 v0, v40
 
@@ -1764,7 +1765,7 @@
 
     .line 1258
     :cond_2e
-    const v65, 0x10403bd
+    const v65, 0x10403c1		#[0x10403bd]string:midnight
 
     move-object/from16 v0, v40
 
@@ -1778,7 +1779,7 @@
 
     .line 1267
     :cond_2f
-    const v65, 0x10403bb
+    const v65, 0x10403bf		#[0x10403bb]string:noon
 
     move-object/from16 v0, v40
 
@@ -1878,7 +1879,7 @@
     if-eqz v36, :cond_36
 
     .line 1304
-    const v65, 0x1040040
+    const v65, 0x1040044		#[0x1040040]string:abbrev_month_year
 
     move-object/from16 v0, v40
 
@@ -1894,7 +1895,7 @@
     .line 1306
     .end local v13           #defaultDateFormat:Ljava/lang/String;
     :cond_36
-    const v65, 0x104003a
+    const v65, 0x104003e		#[0x104003a]string:abbrev_month_day_year
 
     move-object/from16 v0, v40
 
@@ -1913,7 +1914,7 @@
     if-eqz v36, :cond_38
 
     .line 1310
-    const v65, 0x104003d
+    const v65, 0x1040041		#[0x104003d]string:month_year
 
     move-object/from16 v0, v40
 
@@ -1929,7 +1930,7 @@
     .line 1312
     .end local v13           #defaultDateFormat:Ljava/lang/String;
     :cond_38
-    const v65, 0x1040035
+    const v65, 0x1040039		#[0x1040035]string:month_day_year
 
     move-object/from16 v0, v40
 
@@ -1951,7 +1952,7 @@
     if-eqz v36, :cond_3a
 
     .line 1318
-    const v65, 0x104003f
+    const v65, 0x1040043		#[0x104003f]string:abbrev_month
 
     move-object/from16 v0, v40
 
@@ -1967,7 +1968,7 @@
     .line 1320
     .end local v13           #defaultDateFormat:Ljava/lang/String;
     :cond_3a
-    const v65, 0x104003e
+    const v65, 0x1040042		#[0x104003e]string:abbrev_month_day
 
     move-object/from16 v0, v40
 
@@ -1986,7 +1987,7 @@
     if-eqz v36, :cond_3c
 
     .line 1324
-    const v65, 0x104003c
+    const v65, 0x1040040		#[0x104003c]string:month
 
     move-object/from16 v0, v40
 
@@ -2002,7 +2003,7 @@
     .line 1326
     .end local v13           #defaultDateFormat:Ljava/lang/String;
     :cond_3c
-    const v65, 0x104003b
+    const v65, 0x104003f		#[0x104003b]string:month_day
 
     move-object/from16 v0, v40
 
@@ -2017,7 +2018,7 @@
 
     .line 1335
     :cond_3d
-    const v65, 0x104004c
+    const v65, 0x1040050		#[0x104004c]string:wday1_date1_wday2_date2
 
     move-object/from16 v0, v40
 
@@ -2036,7 +2037,7 @@
     if-eqz v43, :cond_3f
 
     .line 1339
-    const v65, 0x104004d
+    const v65, 0x1040051		#[0x104004d]string:date1_time1_date2_time2
 
     move-object/from16 v0, v40
 
@@ -2052,7 +2053,7 @@
     .line 1341
     .end local v30           #fullFormat:Ljava/lang/String;
     :cond_3f
-    const v65, 0x1040042
+    const v65, 0x1040046		#[0x1040042]string:date1_date2
 
     move-object/from16 v0, v40
 
@@ -2396,7 +2397,7 @@
     if-eqz v4, :cond_4a
 
     .line 1377
-    const v65, 0x1040061
+    const v65, 0x1040065		#[0x1040061]string:short_format_month
 
     move-object/from16 v0, v40
 
@@ -2645,7 +2646,7 @@
     if-eqz v43, :cond_5a
 
     .line 1476
-    const v65, 0x104004e
+    const v65, 0x1040052		#[0x104004e]string:time_wday_date
 
     move-object/from16 v0, v40
 
@@ -2703,7 +2704,7 @@
     .restart local v42       #showDate:Z
     .restart local v61       #timeString:Ljava/lang/String;
     :cond_59
-    const v65, 0x1040041
+    const v65, 0x1040045		#[0x1040041]string:time1_time2
 
     move-object/from16 v0, v40
 
@@ -2745,7 +2746,7 @@
     .end local v60           #timeFormat:Ljava/lang/String;
     .restart local v11       #dateString:Ljava/lang/String;
     :cond_5a
-    const v65, 0x104004f
+    const v65, 0x1040053		#[0x104004f]string:wday_date
 
     move-object/from16 v0, v40
 
@@ -2762,7 +2763,7 @@
     if-eqz v43, :cond_5c
 
     .line 1484
-    const v65, 0x1040039
+    const v65, 0x104003d		#[0x1040039]string:time_date
 
     move-object/from16 v0, v40
 
@@ -2810,7 +2811,7 @@
     if-eqz v43, :cond_5e
 
     .line 1493
-    const v65, 0x1040050
+    const v65, 0x1040054		#[0x1040050]string:time_wday
 
     move-object/from16 v0, v40
 
@@ -3691,7 +3692,7 @@
 
     .line 523
     .local v16, relativeClause:Ljava/lang/CharSequence;
-    const v3, 0x10403ba
+    const v3, 0x10403be		#[0x10403ba]string:relative_time
 
     const/4 v4, 0x2
 
@@ -3745,7 +3746,7 @@
 
     .line 526
     .local v10, dateClause:Ljava/lang/CharSequence;
-    const v3, 0x1040038
+    const v3, 0x104003c		#[0x1040038]string:date_time
 
     const/4 v4, 0x2
 
@@ -4457,7 +4458,7 @@
 
     .line 1621
     .local v12, result:Ljava/lang/String;
-    const v10, 0x10403ac
+    const v10, 0x10403b0		#[0x10403ac]string:preposition_for_time
 
     .line 1635
     .local v10, prepositionId:I
@@ -4523,7 +4524,7 @@
 
     .line 1628
     .restart local v12       #result:Ljava/lang/String;
-    const v10, 0x10403ab
+    const v10, 0x10403af		#[0x10403ab]string:preposition_for_date
 
     .line 1629
     .restart local v10       #prepositionId:I
@@ -4550,7 +4551,7 @@
 
     .line 1633
     .restart local v12       #result:Ljava/lang/String;
-    const v10, 0x10403ab
+    const v10, 0x10403af		#[0x10403ab]string:preposition_for_date
 
     .restart local v10       #prepositionId:I
     goto :goto_0
@@ -4727,7 +4728,7 @@
     sput-object v2, Landroid/text/format/DateUtils;->sStatusTimeFormat:Ljava/text/DateFormat;
 
     .line 592
-    const v2, 0x10403bf
+    const v2, 0x10403c3		#[0x10403bf]string:elapsed_time_short_format_mm_ss
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4736,7 +4737,7 @@
     sput-object v2, Landroid/text/format/DateUtils;->sElapsedFormatMMSS:Ljava/lang/String;
 
     .line 593
-    const v2, 0x10403c0
+    const v2, 0x10403c4		#[0x10403c0]string:elapsed_time_short_format_h_mm_ss
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

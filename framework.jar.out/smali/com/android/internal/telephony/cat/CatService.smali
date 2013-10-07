@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/cat/CatService;
 .super Landroid/os/Handler;
 .source "CatService.java"
@@ -4342,7 +4343,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x104050b
+    const v3, 0x104050f		#[0x104050b]string:launchBrowserDefault
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -4599,7 +4600,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x104050a
+    const v3, 0x104050e		#[0x104050a]string:sending
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -4657,7 +4658,7 @@
 
     iget-object v2, v0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v3, 0x104050c
+    const v3, 0x1040510		#[0x104050c]string:SetupCallDefault
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/content/SyncActivityTooManyDeletes;
 .super Landroid/app/Activity;
 .source "SyncActivityTooManyDeletes.java"
@@ -193,7 +194,7 @@
 
     move-result-object v9
 
-    const v10, 0x10404b5
+    const v10, 0x10404b9		#[0x10404b5]string:sync_really_delete
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -207,7 +208,7 @@
 
     move-result-object v9
 
-    const v10, 0x10404b6
+    const v10, 0x10404ba		#[0x10404b6]string:sync_undo_deletes
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -221,7 +222,7 @@
 
     move-result-object v9
 
-    const v10, 0x10404b7
+    const v10, 0x10404bb		#[0x10404b7]string:sync_do_nothing
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -233,9 +234,9 @@
     .local v5, options:[Ljava/lang/CharSequence;
     new-instance v0, Landroid/widget/ArrayAdapter;
 
-    const v8, 0x1090003
+    const v8, 0x1090003		#layout:simple_list_item_1
 
-    const v9, 0x1020014
+    const v9, 0x1020014		#id:text1
 
     invoke-direct {v0, p0, v8, v9, v5}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
 
@@ -268,7 +269,7 @@
 
     move-result-object v8
 
-    const v9, 0x10404b4
+    const v9, 0x10404b8		#[0x10404b4]string:sync_too_many_deletes_desc
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

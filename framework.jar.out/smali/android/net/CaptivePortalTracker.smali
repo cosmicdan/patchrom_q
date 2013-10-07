@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/CaptivePortalTracker;
 .super Lcom/android/internal/util/StateMachine;
 .source "CaptivePortalTracker.java"
@@ -912,9 +913,9 @@
     .parameter "visible"
 
     .prologue
-    const v12, 0x1040409
+    const v12, 0x104040d		#[0x1040409]string:network_available_sign_in_detailed
 
-    const v9, 0x1040408
+    const v9, 0x104040c		#[0x1040408]string:network_available_sign_in
 
     const/4 v11, 0x1
 
@@ -993,7 +994,7 @@
 
     .line 352
     .local v0, details:Ljava/lang/CharSequence;
-    const v1, 0x108051e
+    const v1, 0x108053f		#[0x108051e]drawable:stat_notify_rssi_in_range
 
     .line 356
     .local v1, icon:I
@@ -1072,7 +1073,7 @@
 
     .line 336
     :pswitch_0
-    const v7, 0x1040407
+    const v7, 0x104040b		#[0x1040407]string:wifi_available_sign_in
 
     new-array v8, v11, [Ljava/lang/Object;
 
@@ -1104,7 +1105,7 @@
 
     .line 339
     .restart local v0       #details:Ljava/lang/CharSequence;
-    const v1, 0x1080522
+    const v1, 0x1080543		#[0x1080522]drawable:stat_notify_wifi_in_range
 
     .line 340
     .restart local v1       #icon:I
@@ -1137,7 +1138,7 @@
 
     .line 346
     .restart local v0       #details:Ljava/lang/CharSequence;
-    const v1, 0x108051e
+    const v1, 0x108053f		#[0x108051e]drawable:stat_notify_rssi_in_range
 
     .line 347
     .restart local v1       #icon:I

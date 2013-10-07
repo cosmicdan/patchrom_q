@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Organization;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -99,20 +100,20 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6396
-    const v0, 0x10402c8
+    const v0, 0x10402cc		#[0x10402c8]string:orgTypeCustom
 
     :goto_0
     return v0
 
     .line 6394
     :pswitch_0
-    const v0, 0x10402c6
+    const v0, 0x10402ca		#[0x10402c6]string:orgTypeWork
 
     goto :goto_0
 
     .line 6395
     :pswitch_1
-    const v0, 0x10402c7
+    const v0, 0x10402cb		#[0x10402c7]string:orgTypeOther
 
     goto :goto_0
 

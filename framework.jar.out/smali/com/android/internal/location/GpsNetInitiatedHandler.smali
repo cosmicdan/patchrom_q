@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/location/GpsNetInitiatedHandler;
 .super Ljava/lang/Object;
 .source "GpsNetInitiatedHandler.java"
@@ -534,7 +535,7 @@
 
     .prologue
     .line 407
-    const v1, 0x10404b0
+    const v1, 0x10404b4		#[0x10404b0]string:gpsNotifMessage
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -588,7 +589,7 @@
 
     .prologue
     .line 391
-    const v1, 0x10404ae
+    const v1, 0x10404b2		#[0x10404ae]string:gpsNotifTicker
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -642,7 +643,7 @@
 
     .prologue
     .line 400
-    const v1, 0x10404af
+    const v1, 0x10404b3		#[0x10404af]string:gpsNotifTitle
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -839,7 +840,7 @@
     .line 198
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
-    const v6, 0x108054b
+    const v6, 0x108056c		#[0x108054b]drawable:stat_sys_gps_on
 
     iput v6, v5, Landroid/app/Notification;->icon:I
 

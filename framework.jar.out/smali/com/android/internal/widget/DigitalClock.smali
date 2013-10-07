@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/DigitalClock;
 .super Landroid/widget/RelativeLayout;
 .source "DigitalClock.java"
@@ -349,7 +350,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 170
-    const v0, 0x10202e3
+    const v0, 0x10202e3		#id:timeDisplayBackground
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -374,7 +375,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 174
-    const v0, 0x10202e4
+    const v0, 0x10202e4		#id:timeDisplayForeground
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 

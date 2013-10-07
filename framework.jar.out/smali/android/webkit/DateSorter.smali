@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/webkit/DateSorter;
 .super Ljava/lang/Object;
 .source "DateSorter.java"
@@ -190,7 +191,7 @@
 
     const/4 v7, 0x3
 
-    const v8, 0x10403a9
+    const v8, 0x10403ad		#[0x10403a9]string:last_month
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,7 +204,7 @@
 
     const/4 v7, 0x4
 
-    const v8, 0x10403aa
+    const v8, 0x10403ae		#[0x10403aa]string:older
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

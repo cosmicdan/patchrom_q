@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/drm/DrmManagerClient;
 .super Ljava/lang/Object;
 .source "DrmManagerClient.java"
@@ -1026,7 +1027,7 @@
     .local v1, res:Landroid/content/res/Resources;
     const/4 v3, -0x1
 
-    const v4, 0x104000a
+    const v4, 0x104000a		#string:ok
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1054,7 +1055,7 @@
     invoke-virtual {v0, v3, v4, v5}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 2051
-    const v3, 0x108009b
+    const v3, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v0, v3}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -1165,7 +1166,7 @@
     .local v1, res:Landroid/content/res/Resources;
     const/4 v3, -0x1
 
-    const v4, 0x104000a
+    const v4, 0x104000a		#string:ok
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1185,7 +1186,7 @@
     invoke-virtual {v0, v3, v4, p1}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 1305
-    const v3, 0x108009b
+    const v3, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v0, v3}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -1286,7 +1287,7 @@
     .local v1, res:Landroid/content/res/Resources;
     const/4 v3, -0x1
 
-    const v4, 0x104000a
+    const v4, 0x104000a		#string:ok
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1299,7 +1300,7 @@
     invoke-virtual {v0, v3, v4, v5}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 2094
-    const v3, 0x108009b
+    const v3, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v0, v3}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -1405,7 +1406,7 @@
     .local v1, res:Landroid/content/res/Resources;
     const/4 v3, -0x1
 
-    const v4, 0x104000a
+    const v4, 0x104000a		#string:ok
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1414,7 +1415,7 @@
     invoke-virtual {v0, v3, v4, p1}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 1266
-    const v3, 0x108009b
+    const v3, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v0, v3}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -4766,7 +4767,7 @@
     invoke-virtual {v1, v7, v8, v9}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 2216
-    const v7, 0x108009b
+    const v7, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v1, v7}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -5184,7 +5185,7 @@
     invoke-virtual {v1, v7, v8, v9}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 1668
-    const v7, 0x108009b
+    const v7, 0x108009b		#drawable:ic_dialog_info
 
     invoke-virtual {v1, v7}, Landroid/drm/DrmManagerClient$CustomAlertDialog;->setIcon(I)V
 
@@ -5909,7 +5910,7 @@
     :goto_2
     const/16 v29, -0x3
 
-    const v30, 0x104000a
+    const v30, 0x104000a		#string:ok
 
     move-object/from16 v0, v18
 

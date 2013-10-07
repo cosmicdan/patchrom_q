@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/text/HtmlToSpannedConverter;
 .super Ljava/lang/Object;
 .source "Html.java"
@@ -1935,7 +1936,7 @@
 
     move-result-object v3
 
-    const v4, 0x1080602
+    const v4, 0x1080623		#[0x1080602]drawable:unknown_image
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

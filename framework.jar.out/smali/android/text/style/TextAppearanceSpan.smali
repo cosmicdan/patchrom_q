@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/text/style/TextAppearanceSpan;
 .super Landroid/text/style/MetricAffectingSpan;
 .source "TextAppearanceSpan.java"
@@ -111,7 +112,7 @@
     if-ltz p3, :cond_0
 
     .line 99
-    const v4, 0x1030005
+    const v4, 0x1030005		#style:Theme
 
     sget-object v5, Lcom/android/internal/R$styleable;->Theme:[I
 

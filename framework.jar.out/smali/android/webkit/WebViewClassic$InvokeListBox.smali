@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/WebViewClassic$InvokeListBox;
 .super Ljava/lang/Object;
 .source "WebViewClassic.java"
@@ -316,7 +317,7 @@
 
     move-result-object v1
 
-    const v3, 0x10900c2
+    const v3, 0x10900c6		#[0x10900c2]layout:select_dialog
 
     const/4 v9, 0x0
 
@@ -364,7 +365,7 @@
     if-eqz v1, :cond_2
 
     .line 8897
-    const v1, 0x104000a
+    const v1, 0x104000a		#string:ok
 
     new-instance v3, Landroid/webkit/WebViewClassic$InvokeListBox$1;
 

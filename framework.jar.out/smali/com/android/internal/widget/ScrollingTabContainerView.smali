@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/ScrollingTabContainerView;
 .super Landroid/widget/HorizontalScrollView;
 .source "ScrollingTabContainerView.java"
@@ -168,7 +169,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x10102d7
+    const v3, 0x10102d7		#attr:actionDropDownStyle
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -204,7 +205,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x10102f4
+    const v3, 0x10102f4		#attr:actionBarTabBarStyle
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

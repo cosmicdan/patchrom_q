@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/graphics/drawable/StateListDrawable;
 .super Landroid/graphics/drawable/DrawableContainer;
 .source "StateListDrawable.java"
@@ -439,7 +440,7 @@
     .end local v5           #dr:Landroid/graphics/drawable/Drawable;
     .restart local v12       #stateResId:I
     :cond_3
-    const v15, 0x1010199
+    const v15, 0x1010199		#attr:drawable
 
     if-ne v12, v15, :cond_4
 

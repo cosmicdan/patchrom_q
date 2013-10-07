@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Phone;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -212,128 +213,128 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5693
-    const v0, 0x1040296
+    const v0, 0x104029a		#[0x1040296]string:phoneTypeCustom
 
     :goto_0
     return v0
 
     .line 5673
     :pswitch_0
-    const v0, 0x1040297
+    const v0, 0x104029b		#[0x1040297]string:phoneTypeHome
 
     goto :goto_0
 
     .line 5674
     :pswitch_1
-    const v0, 0x1040298
+    const v0, 0x104029c		#[0x1040298]string:phoneTypeMobile
 
     goto :goto_0
 
     .line 5675
     :pswitch_2
-    const v0, 0x1040299
+    const v0, 0x104029d		#[0x1040299]string:phoneTypeWork
 
     goto :goto_0
 
     .line 5676
     :pswitch_3
-    const v0, 0x104029a
+    const v0, 0x104029e		#[0x104029a]string:phoneTypeFaxWork
 
     goto :goto_0
 
     .line 5677
     :pswitch_4
-    const v0, 0x104029b
+    const v0, 0x104029f		#[0x104029b]string:phoneTypeFaxHome
 
     goto :goto_0
 
     .line 5678
     :pswitch_5
-    const v0, 0x104029c
+    const v0, 0x10402a0		#[0x104029c]string:phoneTypePager
 
     goto :goto_0
 
     .line 5679
     :pswitch_6
-    const v0, 0x104029d
+    const v0, 0x10402a1		#[0x104029d]string:phoneTypeOther
 
     goto :goto_0
 
     .line 5680
     :pswitch_7
-    const v0, 0x104029e
+    const v0, 0x10402a2		#[0x104029e]string:phoneTypeCallback
 
     goto :goto_0
 
     .line 5681
     :pswitch_8
-    const v0, 0x104029f
+    const v0, 0x10402a3		#[0x104029f]string:phoneTypeCar
 
     goto :goto_0
 
     .line 5682
     :pswitch_9
-    const v0, 0x10402a0
+    const v0, 0x10402a4		#[0x10402a0]string:phoneTypeCompanyMain
 
     goto :goto_0
 
     .line 5683
     :pswitch_a
-    const v0, 0x10402a1
+    const v0, 0x10402a5		#[0x10402a1]string:phoneTypeIsdn
 
     goto :goto_0
 
     .line 5684
     :pswitch_b
-    const v0, 0x10402a2
+    const v0, 0x10402a6		#[0x10402a2]string:phoneTypeMain
 
     goto :goto_0
 
     .line 5685
     :pswitch_c
-    const v0, 0x10402a3
+    const v0, 0x10402a7		#[0x10402a3]string:phoneTypeOtherFax
 
     goto :goto_0
 
     .line 5686
     :pswitch_d
-    const v0, 0x10402a4
+    const v0, 0x10402a8		#[0x10402a4]string:phoneTypeRadio
 
     goto :goto_0
 
     .line 5687
     :pswitch_e
-    const v0, 0x10402a5
+    const v0, 0x10402a9		#[0x10402a5]string:phoneTypeTelex
 
     goto :goto_0
 
     .line 5688
     :pswitch_f
-    const v0, 0x10402a6
+    const v0, 0x10402aa		#[0x10402a6]string:phoneTypeTtyTdd
 
     goto :goto_0
 
     .line 5689
     :pswitch_10
-    const v0, 0x10402a7
+    const v0, 0x10402ab		#[0x10402a7]string:phoneTypeWorkMobile
 
     goto :goto_0
 
     .line 5690
     :pswitch_11
-    const v0, 0x10402a8
+    const v0, 0x10402ac		#[0x10402a8]string:phoneTypeWorkPager
 
     goto :goto_0
 
     .line 5691
     :pswitch_12
-    const v0, 0x10402a9
+    const v0, 0x10402ad		#[0x10402a9]string:phoneTypeAssistant
 
     goto :goto_0
 
     .line 5692
     :pswitch_13
-    const v0, 0x10402aa
+    const v0, 0x10402ae		#[0x10402aa]string:phoneTypeMms
 
     goto :goto_0
 

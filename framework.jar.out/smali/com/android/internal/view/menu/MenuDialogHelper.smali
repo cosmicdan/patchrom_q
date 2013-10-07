@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/MenuDialogHelper;
 .super Ljava/lang/Object;
 .source "MenuDialogHelper.java"
@@ -347,7 +348,7 @@
 
     move-result-object v5
 
-    const v6, 0x109007f
+    const v6, 0x1090083		#[0x109007f]layout:list_menu_item_layout
 
     invoke-direct {v4, v5, v6}, Lcom/android/internal/view/menu/ListMenuPresenter;-><init>(Landroid/content/Context;I)V
 

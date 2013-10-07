@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$Im;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -111,62 +112,62 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6223
-    const v0, 0x10402bc
+    const v0, 0x10402c0		#[0x10402bc]string:imProtocolCustom
 
     :goto_0
     return v0
 
     .line 6214
     :pswitch_0
-    const v0, 0x10402bd
+    const v0, 0x10402c1		#[0x10402bd]string:imProtocolAim
 
     goto :goto_0
 
     .line 6215
     :pswitch_1
-    const v0, 0x10402be
+    const v0, 0x10402c2		#[0x10402be]string:imProtocolMsn
 
     goto :goto_0
 
     .line 6216
     :pswitch_2
-    const v0, 0x10402bf
+    const v0, 0x10402c3		#[0x10402bf]string:imProtocolYahoo
 
     goto :goto_0
 
     .line 6217
     :pswitch_3
-    const v0, 0x10402c0
+    const v0, 0x10402c4		#[0x10402c0]string:imProtocolSkype
 
     goto :goto_0
 
     .line 6218
     :pswitch_4
-    const v0, 0x10402c1
+    const v0, 0x10402c5		#[0x10402c1]string:imProtocolQq
 
     goto :goto_0
 
     .line 6219
     :pswitch_5
-    const v0, 0x10402c2
+    const v0, 0x10402c6		#[0x10402c2]string:imProtocolGoogleTalk
 
     goto :goto_0
 
     .line 6220
     :pswitch_6
-    const v0, 0x10402c3
+    const v0, 0x10402c7		#[0x10402c3]string:imProtocolIcq
 
     goto :goto_0
 
     .line 6221
     :pswitch_7
-    const v0, 0x10402c4
+    const v0, 0x10402c8		#[0x10402c4]string:imProtocolJabber
 
     goto :goto_0
 
     .line 6222
     :pswitch_8
-    const v0, 0x10402c5
+    const v0, 0x10402c9		#[0x10402c5]string:imProtocolNetMeeting
 
     goto :goto_0
 
@@ -233,26 +234,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6189
-    const v0, 0x10402b8
+    const v0, 0x10402bc		#[0x10402b8]string:imTypeCustom
 
     :goto_0
     return v0
 
     .line 6186
     :pswitch_0
-    const v0, 0x10402b9
+    const v0, 0x10402bd		#[0x10402b9]string:imTypeHome
 
     goto :goto_0
 
     .line 6187
     :pswitch_1
-    const v0, 0x10402ba
+    const v0, 0x10402be		#[0x10402ba]string:imTypeWork
 
     goto :goto_0
 
     .line 6188
     :pswitch_2
-    const v0, 0x10402bb
+    const v0, 0x10402bf		#[0x10402bb]string:imTypeOther
 
     goto :goto_0
 

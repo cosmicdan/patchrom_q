@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/view/menu/ActionMenuView;
 .super Landroid/widget/LinearLayout;
 .source "ActionMenuView.java"
@@ -107,7 +108,7 @@
     .line 63
     sget-object v2, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    const v3, 0x10102ce
+    const v3, 0x10102ce		#attr:actionBarStyle
 
     invoke-virtual {p1, p2, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -2034,7 +2035,7 @@
 
     .line 94
     .local v3, inflater:Landroid/view/LayoutInflater;
-    const v6, 0x109001a
+    const v6, 0x109001a		#layout:action_menu_item_layout
 
     invoke-virtual {v3, v6, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

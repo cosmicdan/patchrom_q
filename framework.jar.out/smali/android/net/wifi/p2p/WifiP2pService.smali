@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/wifi/p2p/WifiP2pService;
 .super Landroid/net/wifi/p2p/IWifiP2pManager$Stub;
 .source "WifiP2pService.java"
@@ -360,7 +361,7 @@
 
     move-result-object v1
 
-    const v2, 0x104001a
+    const v2, 0x104001a		#string:config_wifi_p2p_device_type
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

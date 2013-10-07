@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/PasswordEntryKeyboardHelper;
 .super Ljava/lang/Object;
 .source "PasswordEntryKeyboardHelper.java"
@@ -219,11 +220,11 @@
     .line 65
     :array_0
     .array-data 0x4
-        0x5t 0x0t 0xft 0x1t
-        0x7t 0x0t 0xft 0x1t
-        0x8t 0x0t 0xft 0x1t
-        0x9t 0x0t 0xft 0x1t
-        0xat 0x0t 0xft 0x1t
+        0x5t 0x0t 0xft 0x1t		#xml:password_kbd_numeric
+        0x7t 0x0t 0xft 0x1t		#xml:password_kbd_qwerty
+        0x8t 0x0t 0xft 0x1t		#xml:password_kbd_qwerty_shifted
+        0x9t 0x0t 0xft 0x1t		#xml:password_kbd_symbols
+        0xat 0x0t 0xft 0x1t		#xml:password_kbd_symbols_shift
     .end array-data
 .end method
 
@@ -231,7 +232,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x10203c0
+    const v5, 0x10203c7		#[0x10203c0]id:mode_normal
 
     const/4 v4, 0x1
 
@@ -348,7 +349,7 @@
     .parameter "height"
 
     .prologue
-    const v3, 0x10203c0
+    const v3, 0x10203c7		#[0x10203c0]id:mode_normal
 
     const/4 v6, 0x1
 

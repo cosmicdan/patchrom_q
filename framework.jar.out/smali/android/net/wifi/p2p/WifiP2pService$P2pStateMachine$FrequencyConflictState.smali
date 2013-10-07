@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$FrequencyConflictState;
 .super Lcom/android/internal/util/State;
 .source "WifiP2pService.java"
@@ -66,7 +67,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x104041a
+    const v3, 0x104041e		#[0x104041a]string:wifi_p2p_frequency_conflict_message
 
     const/4 v4, 0x1
 
@@ -100,7 +101,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040447
+    const v3, 0x104044b		#[0x1040447]string:dlg_ok
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -114,7 +115,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040413
+    const v3, 0x1040417		#[0x1040413]string:decline
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

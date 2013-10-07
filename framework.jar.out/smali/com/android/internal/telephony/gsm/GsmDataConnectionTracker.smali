@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 .super Lcom/android/internal/telephony/DataConnectionTracker;
 .source "GsmDataConnectionTracker.java"
@@ -13515,7 +13516,7 @@
 
     move-result-object v9
 
-    const v10, 0x1070015
+    const v10, 0x1070015		#array:networkAttributes
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

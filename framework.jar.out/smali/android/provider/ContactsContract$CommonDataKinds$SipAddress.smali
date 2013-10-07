@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Landroid/provider/ContactsContract$CommonDataKinds$SipAddress;
 .super Ljava/lang/Object;
 .source "ContactsContract.java"
@@ -87,26 +88,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6929
-    const v0, 0x10402d8
+    const v0, 0x10402dc		#[0x10402d8]string:sipAddressTypeCustom
 
     :goto_0
     return v0
 
     .line 6926
     :pswitch_0
-    const v0, 0x10402d9
+    const v0, 0x10402dd		#[0x10402d9]string:sipAddressTypeHome
 
     goto :goto_0
 
     .line 6927
     :pswitch_1
-    const v0, 0x10402da
+    const v0, 0x10402de		#[0x10402da]string:sipAddressTypeWork
 
     goto :goto_0
 
     .line 6928
     :pswitch_2
-    const v0, 0x10402db
+    const v0, 0x10402df		#[0x10402db]string:sipAddressTypeOther
 
     goto :goto_0
 

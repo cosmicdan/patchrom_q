@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/internal/app/AlertController$AlertParams$2;
 .super Landroid/widget/CursorAdapter;
 .source "AlertController.java"
@@ -90,7 +91,7 @@
     const/4 v1, 0x1
 
     .line 924
-    const v2, 0x1020014
+    const v2, 0x1020014		#id:text1
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

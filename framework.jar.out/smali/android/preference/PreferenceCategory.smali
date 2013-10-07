@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/preference/PreferenceCategory;
 .super Landroid/preference/PreferenceGroup;
 .source "PreferenceCategory.java"
@@ -29,7 +30,7 @@
 
     .prologue
     .line 43
-    const v0, 0x101008c
+    const v0, 0x101008c		#attr:preferenceCategoryStyle
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceCategory;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

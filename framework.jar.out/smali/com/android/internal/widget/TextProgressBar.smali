@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/widget/TextProgressBar;
 .super Landroid/widget/RelativeLayout;
 .source "TextProgressBar.java"
@@ -12,9 +13,9 @@
 
 
 # static fields
-.field static final CHRONOMETER_ID:I = 0x1020014
+.field static final CHRONOMETER_ID:I = 0x1020014		#id:text1
 
-.field static final PROGRESSBAR_ID:I = 0x102000d
+.field static final PROGRESSBAR_ID:I = 0x102000d		#id:progress
 
 .field public static final TAG:Ljava/lang/String; = "TextProgressBar"
 
@@ -170,7 +171,7 @@
 
     .line 83
     .local v0, childId:I
-    const v1, 0x1020014
+    const v1, 0x1020014		#id:text1
 
     if-ne v0, v1, :cond_2
 
@@ -228,7 +229,7 @@
     .line 92
     .restart local p1
     :cond_2
-    const v1, 0x102000d
+    const v1, 0x102000d		#id:progress
 
     if-ne v0, v1, :cond_0
 

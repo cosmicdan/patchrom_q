@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Landroid/net/http/ErrorStrings;
 .super Ljava/lang/Object;
 .source "ErrorStrings.java"
@@ -23,7 +24,7 @@
     .parameter "errorCode"
 
     .prologue
-    const v0, 0x10400c1
+    const v0, 0x10400c5		#[0x10400c1]string:httpError
 
     .line 45
     packed-switch p0, :pswitch_data_0
@@ -58,91 +59,91 @@
 
     .line 47
     :pswitch_1
-    const v0, 0x10400c0
+    const v0, 0x10400c4		#[0x10400c0]string:httpErrorOk
 
     goto :goto_0
 
     .line 53
     :pswitch_2
-    const v0, 0x10400c2
+    const v0, 0x10400c6		#[0x10400c2]string:httpErrorLookup
 
     goto :goto_0
 
     .line 56
     :pswitch_3
-    const v0, 0x10400c3
+    const v0, 0x10400c7		#[0x10400c3]string:httpErrorUnsupportedAuthScheme
 
     goto :goto_0
 
     .line 59
     :pswitch_4
-    const v0, 0x10400c4
+    const v0, 0x10400c8		#[0x10400c4]string:httpErrorAuth
 
     goto :goto_0
 
     .line 62
     :pswitch_5
-    const v0, 0x10400c5
+    const v0, 0x10400c9		#[0x10400c5]string:httpErrorProxyAuth
 
     goto :goto_0
 
     .line 65
     :pswitch_6
-    const v0, 0x10400c6
+    const v0, 0x10400ca		#[0x10400c6]string:httpErrorConnect
 
     goto :goto_0
 
     .line 68
     :pswitch_7
-    const v0, 0x10400c7
+    const v0, 0x10400cb		#[0x10400c7]string:httpErrorIO
 
     goto :goto_0
 
     .line 71
     :pswitch_8
-    const v0, 0x10400c8
+    const v0, 0x10400cc		#[0x10400c8]string:httpErrorTimeout
 
     goto :goto_0
 
     .line 74
     :pswitch_9
-    const v0, 0x10400c9
+    const v0, 0x10400cd		#[0x10400c9]string:httpErrorRedirectLoop
 
     goto :goto_0
 
     .line 77
     :pswitch_a
-    const v0, 0x1040008
+    const v0, 0x1040008		#string:httpErrorUnsupportedScheme
 
     goto :goto_0
 
     .line 80
     :pswitch_b
-    const v0, 0x10400ca
+    const v0, 0x10400ce		#[0x10400ca]string:httpErrorFailedSslHandshake
 
     goto :goto_0
 
     .line 83
     :pswitch_c
-    const v0, 0x1040007
+    const v0, 0x1040007		#string:httpErrorBadUrl
 
     goto :goto_0
 
     .line 86
     :pswitch_d
-    const v0, 0x10400cb
+    const v0, 0x10400cf		#[0x10400cb]string:httpErrorFile
 
     goto :goto_0
 
     .line 89
     :pswitch_e
-    const v0, 0x10400cc
+    const v0, 0x10400d0		#[0x10400cc]string:httpErrorFileNotFound
 
     goto :goto_0
 
     .line 92
     :pswitch_f
-    const v0, 0x10400cd
+    const v0, 0x10400d1		#[0x10400cd]string:httpErrorTooManyRequests
 
     goto :goto_0
 

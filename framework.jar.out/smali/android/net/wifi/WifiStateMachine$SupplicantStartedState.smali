@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/net/wifi/WifiStateMachine$SupplicantStartedState;
 .super Lcom/android/internal/util/State;
 .source "WifiStateMachine.java"
@@ -107,7 +108,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e000b
+    const v2, 0x10e000b		#integer:config_wifi_supplicant_scan_interval
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -201,7 +202,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e000d
+    const v2, 0x10e000d		#integer:config_wifi_framework_scan_interval
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1689,7 +1690,7 @@
 
     move-result-object v14
 
-    const v15, 0x10e000b
+    const v15, 0x10e000b		#integer:config_wifi_supplicant_scan_interval
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1753,7 +1754,7 @@
 
     move-result-object v14
 
-    const v15, 0x10e000d
+    const v15, 0x10e000d		#integer:config_wifi_framework_scan_interval
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getInteger(I)I
 

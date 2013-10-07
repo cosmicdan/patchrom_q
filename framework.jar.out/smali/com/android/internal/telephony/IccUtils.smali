@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/internal/telephony/IccUtils;
 .super Ljava/lang/Object;
 .source "IccUtils.java"
@@ -345,7 +346,7 @@
 
     .line 427
     .local v2, defaultCharset:Ljava/lang/String;
-    const v10, 0x1040020
+    const v10, 0x1040024		#[0x1040020]string:gsm_alphabet_default_charset
 
     :try_start_1
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

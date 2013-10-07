@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/webkit/Plugin$DefaultClickHandler;
 .super Ljava/lang/Object;
 .source "Plugin.java"
@@ -94,7 +95,7 @@
 
     move-result-object v0
 
-    const v1, 0x104000a
+    const v1, 0x104000a		#string:ok
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

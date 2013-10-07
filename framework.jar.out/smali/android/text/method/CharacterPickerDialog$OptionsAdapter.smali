@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Landroid/text/method/CharacterPickerDialog$OptionsAdapter;
 .super Landroid/widget/BaseAdapter;
 .source "CharacterPickerDialog.java"
@@ -106,7 +107,7 @@
 
     move-result-object v1
 
-    const v2, 0x1090031
+    const v2, 0x1090031		#layout:character_picker_button
 
     const/4 v3, 0x0
 
