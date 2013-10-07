@@ -1805,6 +1805,7 @@
     <attr name="firstItemOffset" format="float" />
     <attr name="magneticTargets" format="boolean" />
     <attr name="allowScaling" format="boolean" />
+    <attr name="expandDrawables" format="reference" />
     <attr name="targetDrawables" format="reference" />
     <attr name="handleDrawable" format="reference" />
     <attr name="chevronDrawables" format="reference" />
@@ -1814,6 +1815,11 @@
     <attr name="snapMargin" format="dimension" />
     <attr name="feedbackCount" format="integer" />
     <attr name="alwaysTrackFinger" format="boolean" />
+    <attr name="verticalOffset" format="dimension" />
+    <attr name="horizontalOffset" format="dimension" />
+    <attr name="rightChevronDrawable" format="reference" />
+    <attr name="hitRadius" format="dimension" />
+    <attr name="drawbackground" format="reference" />
     <attr name="layout_maxHeight" format="dimension">
         <enum name="unbounded" value="-1" />
     </attr>

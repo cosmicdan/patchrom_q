@@ -30,6 +30,10 @@
     <string name="widget_default_package_name" />
     <string name="widget_default_class_name" />
     <string name="default_wallpaper_component">@null</string>
+    <string name="config_networkLocationProvider1">com.google.android.location.NetworkLocationProvider</string>
+    <string name="config_networkLocationProvider2">com.android.location.service.NetworkLocationProvider</string>
+    <string name="config_geocodeProvider">com.android.location.service.GeocodeProvider</string>
+    <string name="config_geofenceProvider">com.qualcomm.services.location</string>
     <string name="config_datause_iface">rmnet0</string>
     <string name="config_default_dns_server">8.8.8.8</string>
     <string name="gsm_alphabet_default_charset" />
@@ -1393,6 +1397,9 @@ Listening at high volume for long periods may damage your hearing."</string>
     <string name="storage_phone">Phone storage</string>
     <string name="storage_external_usb">External USB storage</string>
     <string name="zz_keyguard_accessibility_voice_unlock">Voice unlock.</string>
-    <string name="reboot_confirm">Your phone will reboot.</string>
-    <string name="capture_screen">Screen Capture</string>
+    <string name="reboot_title">Restart phone?</string>
+    <string name="reboot_confirm">Restarting your phone will clear temporary files out of memory. Would you like to restart your phone now?</string>
+    <string name="global_action_reboot_summary">Close all apps and restart phone</string>
+    <string name="gps_assistance_enable_title">Alert</string>
+    <string name="gps_assistance_enable_message">GPS assistance has been turned on to speed up GPS positioning, that may cause extra fees.</string>
 </resources>

@@ -5,8 +5,8 @@
     <dimen name="thumbnail_width">164.0dip</dimen>
     <item type="dimen" name="dialog_min_width_major">65.0%</item>
     <item type="dimen" name="dialog_min_width_minor">95.00001%</item>
-    <dimen name="notification_large_icon_width">64.0dip</dimen>
-    <dimen name="notification_large_icon_height">64.0dip</dimen>
+    <dimen name="notification_large_icon_width">50.0dip</dimen>
+    <dimen name="notification_large_icon_height">50.0dip</dimen>
     <dimen name="config_prefDialogWidth">320.0dip</dimen>
     <dimen name="config_viewConfigurationTouchSlop">8.0dip</dimen>
     <dimen name="config_minScalingSpan">27.0mm</dimen>
@@ -119,4 +119,14 @@
     <dimen name="kg_edge_swipe_region_size">24.0dip</dimen>
     <dimen name="kg_squashed_layout_threshold">600.0dip</dimen>
     <dimen name="kg_small_widget_height">160.0dip</dimen>
+    <dimen name="multiwaveview_target_placement_radius">140.0dip</dimen>
+    <dimen name="multiwaveview_snap_margin">20.0dip</dimen>
+    <dimen name="multiwaveview_hit_radius">60.0dip</dimen>
+    <dimen name="notification_content_margin_left_to_icon">15.0dip</dimen>
+    <dimen name="notification_content_margin_left">72.5dip</dimen>
+    <dimen name="notification_height">65.0dip</dimen>
+    <dimen name="notification_padding_left">7.5dip</dimen>
+    <dimen name="notification_padding_right">7.5dip</dimen>
+    <dimen name="notification_action_height">48.0dip</dimen>
+    <dimen name="notification_action_text_size">14.0dip</dimen>
 </resources>

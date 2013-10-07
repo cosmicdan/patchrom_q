@@ -219,6 +219,7 @@
     <item type="id" name="transport">false</item>
     <item type="id" name="cancel_button">false</item>
     <item type="id" name="transport_bg_protect">false</item>
+    <item type="id" name="faceLockAreaView">false</item>
     <item type="id" name="headerText">false</item>
     <item type="id" name="pinDisplayGroup">false</item>
     <item type="id" name="pinDisplay">false</item>
@@ -231,6 +232,7 @@
     <item type="id" name="pukDisplay">false</item>
     <item type="id" name="pukDel">false</item>
     <item type="id" name="owner_info">false</item>
+    <item type="id" name="carrierdivider">false</item>
     <item type="id" name="unlock_widget">false</item>
     <item type="id" name="screenLocked">false</item>
     <item type="id" name="forgotPatternButton">false</item>
@@ -279,18 +281,23 @@
     <item type="id" name="action1">false</item>
     <item type="id" name="action2">false</item>
     <item type="id" name="status_bar_latest_event_content">false</item>
-    <item type="id" name="notification_sim_indicator">false</item>
+    <item type="id" name="line1">false</item>
     <item type="id" name="chronometer">false</item>
+    <item type="id" name="notification_sim_indicator">false</item>
     <item type="id" name="notification_sim_indicator_bg">false</item>
     <item type="id" name="notification_sim_info">false</item>
     <item type="id" name="notification_sim_indicator_text">false</item>
     <item type="id" name="line3">false</item>
     <item type="id" name="info">false</item>
-    <item type="id" name="line1">false</item>
+    <item type="id" name="big_base_content">false</item>
     <item type="id" name="big_text">false</item>
     <item type="id" name="action_divider">false</item>
     <item type="id" name="big_picture">false</item>
+    <item type="id" name="big_picture_shadow">false</item>
+    <item type="id" name="big_picture_content">false</item>
+    <item type="id" name="big_text_content">false</item>
     <item type="id" name="overflow_divider">false</item>
+    <item type="id" name="inbox">false</item>
     <item type="id" name="inbox_text0">false</item>
     <item type="id" name="inbox_text1">false</item>
     <item type="id" name="inbox_text2">false</item>
