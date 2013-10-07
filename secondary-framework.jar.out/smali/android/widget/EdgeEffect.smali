@@ -150,17 +150,14 @@
 
     .line 137
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x1080455		#[0x1080434]drawable:overscroll_edge
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Landroid/widget/EdgeEffect$Injector;->getOverScrollEdge(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/widget/EdgeEffect;->mEdge:Landroid/graphics/drawable/Drawable;
 
-    const v1, 0x1080456		#[0x1080435]drawable:overscroll_glow
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    .line 158
+    invoke-static {p1}, Landroid/widget/EdgeEffect$Injector;->getOverScrollGlow(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
