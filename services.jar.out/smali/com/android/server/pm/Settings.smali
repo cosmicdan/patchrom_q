@@ -20,9 +20,9 @@
 
 .field private static final ATTR_USER:Ljava/lang/String; = "user"
 
-.field private static final DEBUG_MU:Z = true
+.field private static final DEBUG_MU:Z = false
 
-.field private static final DEBUG_STOPPED:Z = true
+.field private static final DEBUG_STOPPED:Z = false
 
 .field static final FLAG_DUMP_SPEC:[Ljava/lang/Object; = null
 
@@ -1616,43 +1616,6 @@
 
     if-nez v4, :cond_a
 
-    .line 430
-    new-instance v12, Ljava/lang/RuntimeException;
-
-    const-string v4, "here"
-
-    invoke-direct {v12, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    .line 431
-    .local v12, e:Ljava/lang/RuntimeException;
-    invoke-virtual {v12}, Ljava/lang/RuntimeException;->fillInStackTrace()Ljava/lang/Throwable;
-
-    .line 432
-    const-string v4, "PackageManager"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Stopping package "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5, v12}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 434
     invoke-direct/range {p0 .. p0}, Lcom/android/server/pm/Settings;->getAllUsers()Ljava/util/List;
 
     move-result-object v17
