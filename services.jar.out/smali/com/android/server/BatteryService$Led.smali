@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/BatteryService$Led;
 .super Ljava/lang/Object;
 .source "BatteryService.java"
@@ -57,7 +58,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e001f
+    const v1, 0x10e001e		#[0x10e001f]integer:config_notificationsBatteryLowARGB
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -70,7 +71,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0020
+    const v1, 0x10e001f		#[0x10e0020]integer:config_notificationsBatteryMediumARGB
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -83,7 +84,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0021
+    const v1, 0x10e0020		#[0x10e0021]integer:config_notificationsBatteryFullARGB
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -96,7 +97,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0022
+    const v1, 0x10e0021		#[0x10e0022]integer:config_notificationsBatteryLedOn
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -109,7 +110,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0023
+    const v1, 0x10e0022		#[0x10e0023]integer:config_notificationsBatteryLedOff
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

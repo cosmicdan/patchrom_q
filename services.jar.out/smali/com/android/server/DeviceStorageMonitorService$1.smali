@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/DeviceStorageMonitorService$1;
 .super Landroid/os/Handler;
 .source "DeviceStorageMonitorService.java"
@@ -181,7 +182,7 @@
 
     invoke-direct {v4, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x1080027
+    const v5, 0x1080027		#drawable:ic_dialog_alert
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 

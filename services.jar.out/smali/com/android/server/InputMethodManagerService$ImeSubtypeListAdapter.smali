@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
 .super Landroid/widget/ArrayAdapter;
 .source "InputMethodManagerService.java"
@@ -160,7 +161,7 @@
 
     .line 2818
     .local v5, subtypeName:Ljava/lang/CharSequence;
-    const v8, 0x1020014
+    const v8, 0x1020014		#id:text1
 
     invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +171,7 @@
 
     .line 2819
     .local v0, firstTextView:Landroid/widget/TextView;
-    const v8, 0x1020015
+    const v8, 0x1020015		#id:text2
 
     invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +197,7 @@
 
     .line 2828
     :goto_2
-    const v8, 0x1020315
+    const v8, 0x1020317		#[0x1020315]id:radio
 
     invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

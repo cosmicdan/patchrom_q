@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/pm/PackageManagerService;
 .super Landroid/content/pm/IPackageManager$Stub;
 .source "PackageManagerService.java"
@@ -38759,7 +38760,7 @@
 
     move-result-object v5
 
-    const v6, 0x10403e8
+    const v6, 0x10403ec		#[0x10403e8]string:android_upgrading_apk
 
     const/4 v7, 0x2
 

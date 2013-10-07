@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/input/InputManagerService;
 .super Landroid/hardware/input/IInputManager$Stub;
 .source "InputManagerService.java"
@@ -1634,7 +1635,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e002a
+    const v1, 0x10e0029		#[0x10e002a]integer:config_virtualKeyQuietTimeMillis
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1804,7 +1805,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x1040457
+    const v2, 0x104045b		#[0x1040457]string:select_keyboard_layout_notification_title
 
     sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
@@ -2344,7 +2345,7 @@
     .prologue
     const/4 v4, 0x0
 
-    const v8, 0x1040457
+    const v8, 0x104045b		#[0x1040457]string:select_keyboard_layout_notification_title
 
     const/4 v1, 0x0
 
@@ -2409,7 +2410,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040458
+    const v1, 0x104045c		#[0x1040458]string:select_keyboard_layout_notification_message
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2425,7 +2426,7 @@
 
     move-result-object v0
 
-    const v1, 0x108035e
+    const v1, 0x1080378		#[0x108035e]drawable:ic_settings_language
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView;
 .super Landroid/view/View;
 .source "ScreenMagnifier.java"
@@ -38,7 +39,7 @@
 
     move-result-object v0
 
-    const v1, 0x10803ff
+    const v1, 0x108041a		#[0x10803ff]drawable:magnified_region_frame
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/OverlayDisplayWindow;
 .super Ljava/lang/Object;
 .source "OverlayDisplayWindow.java"
@@ -203,7 +204,7 @@
 
     move-result-object v0
 
-    const v1, 0x104051e
+    const v1, 0x1040522		#[0x104051e]string:display_manager_overlay_display_title
 
     const/4 v2, 0x4
 
@@ -455,7 +456,7 @@
 
     .line 176
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x1090097
+    const v1, 0x109009b		#[0x1090097]layout:overlay_display_window
 
     const/4 v3, 0x0
 
@@ -475,7 +476,7 @@
     .line 180
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowContent:Landroid/view/View;
 
-    const v3, 0x1020340
+    const v3, 0x1020347		#[0x1020340]id:overlay_display_window_texture
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -532,7 +533,7 @@
     .line 189
     iget-object v1, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowContent:Landroid/view/View;
 
-    const v3, 0x1020341
+    const v3, 0x1020348		#[0x1020341]id:overlay_display_window_title
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

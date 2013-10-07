@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/wm/ScreenRotationAnimation;
 .super Ljava/lang/Object;
 .source "ScreenRotationAnimation.java"
@@ -1188,7 +1189,7 @@
     .line 365
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a004d
+    const v3, 0x10a004d		#anim:screen_rotate_start_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1199,7 +1200,7 @@
     .line 367
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a004c
+    const v3, 0x10a004c		#anim:screen_rotate_start_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1215,7 +1216,7 @@
     .line 370
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a004e
+    const v3, 0x10a004e		#anim:screen_rotate_start_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1227,7 +1228,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0044
+    const v3, 0x10a0044		#anim:screen_rotate_finish_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1238,7 +1239,7 @@
     .line 375
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0043
+    const v3, 0x10a0043		#anim:screen_rotate_finish_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1254,7 +1255,7 @@
     .line 378
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0045
+    const v3, 0x10a0045		#anim:screen_rotate_finish_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2060,7 +2061,7 @@
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a003e
+    const v3, 0x10a003e		#anim:screen_rotate_0_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2071,7 +2072,7 @@
     .line 398
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a003d
+    const v3, 0x10a003d		#anim:screen_rotate_0_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2087,7 +2088,7 @@
     .line 401
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a003f
+    const v3, 0x10a003f		#anim:screen_rotate_0_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2101,7 +2102,7 @@
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a004a
+    const v3, 0x10a004a		#anim:screen_rotate_plus_90_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2112,7 +2113,7 @@
     .line 408
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0049
+    const v3, 0x10a0049		#anim:screen_rotate_plus_90_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2128,7 +2129,7 @@
     .line 411
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a004b
+    const v3, 0x10a004b		#anim:screen_rotate_plus_90_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2142,7 +2143,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0041
+    const v3, 0x10a0041		#anim:screen_rotate_180_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2153,7 +2154,7 @@
     .line 418
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0040
+    const v3, 0x10a0040		#anim:screen_rotate_180_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2169,7 +2170,7 @@
     .line 421
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0042
+    const v3, 0x10a0042		#anim:screen_rotate_180_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2183,7 +2184,7 @@
     :pswitch_3
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0047
+    const v3, 0x10a0047		#anim:screen_rotate_minus_90_exit
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2194,7 +2195,7 @@
     .line 428
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0046
+    const v3, 0x10a0046		#anim:screen_rotate_minus_90_enter
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -2210,7 +2211,7 @@
     .line 431
     iget-object v2, p0, Lcom/android/server/wm/ScreenRotationAnimation;->mContext:Landroid/content/Context;
 
-    const v3, 0x10a0048
+    const v3, 0x10a0048		#anim:screen_rotate_minus_90_frame
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

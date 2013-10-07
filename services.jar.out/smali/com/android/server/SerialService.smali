@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/SerialService;
 .super Landroid/hardware/ISerialManager$Stub;
 .source "SerialService.java"
@@ -26,7 +27,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070022
+    const v1, 0x1070022		#array:config_serialPorts
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

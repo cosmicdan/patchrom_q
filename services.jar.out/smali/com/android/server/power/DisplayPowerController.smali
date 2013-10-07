@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/power/DisplayPowerController;
 .super Ljava/lang/Object;
 .source "DisplayPowerController.java"
@@ -428,7 +429,7 @@
 
     .line 392
     .local v3, resources:Landroid/content/res/Resources;
-    const v6, 0x10e0028
+    const v6, 0x10e0027		#[0x10e0028]integer:config_screenBrightnessDim
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -441,7 +442,7 @@
     iput v6, p0, Lcom/android/server/power/DisplayPowerController;->mScreenBrightnessDimConfig:I
 
     .line 395
-    const v6, 0x10e0025
+    const v6, 0x10e0024		#[0x10e0025]integer:config_screenBrightnessSettingMinimum
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -469,7 +470,7 @@
     if-eqz v6, :cond_1
 
     .line 402
-    const v6, 0x1070029
+    const v6, 0x1070029		#array:config_autoBrightnessLevels
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -477,7 +478,7 @@
 
     .line 404
     .local v2, lux:[I
-    const v6, 0x107002a
+    const v6, 0x107002a		#array:config_autoBrightnessLcdBacklightValues
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -571,7 +572,7 @@
     .line 422
     :cond_0
     :goto_0
-    const v6, 0x10e0029
+    const v6, 0x10e0028		#[0x10e0029]integer:config_lightSensorWarmupTime
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 

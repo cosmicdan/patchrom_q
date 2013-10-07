@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/HeadlessDisplayAdapter$HeadlessDisplayDevice;
 .super Lcom/android/server/display/DisplayDevice;
 .source "HeadlessDisplayAdapter.java"
@@ -71,7 +72,7 @@
 
     move-result-object v1
 
-    const v2, 0x104051b
+    const v2, 0x104051f		#[0x104051b]string:display_manager_built_in_display_name
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

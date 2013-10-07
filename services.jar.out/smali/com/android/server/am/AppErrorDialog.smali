@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/AppErrorDialog;
 .super Lcom/android/server/am/BaseErrorDialog;
 .source "AppErrorDialog.java"
@@ -173,7 +174,7 @@
     .line 103
     const/4 v8, -0x1
 
-    const v9, 0x10403db
+    const v9, 0x10403df		#[0x10403db]string:force_close
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -199,7 +200,7 @@
     .line 108
     const/4 v8, -0x2
 
-    const v9, 0x10403dc
+    const v9, 0x10403e0		#[0x10403dc]string:report
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -281,7 +282,7 @@
     .line 129
     :cond_1
     :goto_3
-    const v8, 0x10403d3
+    const v8, 0x10403d7		#[0x10403d3]string:aerr_title
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -406,7 +407,7 @@
     .end local v4           #lsh:Lcom/mediatek/common/lowstorage/ILowStorageHandle;
     .end local v5           #message:Ljava/lang/CharSequence;
     :cond_3
-    const v8, 0x10403d4
+    const v8, 0x10403d8		#[0x10403d4]string:aerr_application
 
     const/4 v9, 0x2
 
@@ -531,7 +532,7 @@
 
     .line 94
     :cond_7
-    const v8, 0x10403d5
+    const v8, 0x10403d9		#[0x10403d5]string:aerr_process
 
     const/4 v9, 0x1
 
@@ -613,7 +614,7 @@
 
     move-result-object v2
 
-    const v3, 0x10403dc
+    const v3, 0x10403e0		#[0x10403dc]string:report
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

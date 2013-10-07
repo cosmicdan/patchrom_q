@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/UiModeManagerService;
 .super Landroid/app/IUiModeManager$Stub;
 .source "UiModeManagerService.java"
@@ -239,7 +240,7 @@
 
     move-result-object v0
 
-    const v3, 0x10e0012
+    const v3, 0x10e0012		#integer:config_defaultUiModeType
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -252,7 +253,7 @@
 
     move-result-object v0
 
-    const v3, 0x10e0014
+    const v3, 0x10e0014		#integer:config_carDockKeepsScreenOn
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -270,7 +271,7 @@
 
     move-result-object v0
 
-    const v3, 0x10e0013
+    const v3, 0x10e0013		#integer:config_deskDockKeepsScreenOn
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -413,7 +414,7 @@
     .prologue
     const/4 v4, 0x0
 
-    const v10, 0x1040493
+    const v10, 0x1040497		#[0x1040493]string:car_mode_disable_notification_title
 
     const/4 v1, 0x0
 
@@ -500,7 +501,7 @@
 
     .line 547
     .local v6, n:Landroid/app/Notification;
-    const v0, 0x1080519
+    const v0, 0x108053a		#[0x1080519]drawable:stat_notify_car_mode
 
     iput v0, v6, Landroid/app/Notification;->icon:I
 
@@ -530,7 +531,7 @@
 
     iget-object v0, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040494
+    const v3, 0x1040498		#[0x1040494]string:car_mode_disable_notification_message
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

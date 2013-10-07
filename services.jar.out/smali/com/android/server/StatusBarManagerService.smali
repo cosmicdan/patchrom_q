@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/StatusBarManagerService;
 .super Lcom/android/internal/statusbar/IStatusBarService$Stub;
 .source "StatusBarManagerService.java"
@@ -176,7 +177,7 @@
     .local v0, res:Landroid/content/res/Resources;
     iget-object v1, p0, Lcom/android/server/StatusBarManagerService;->mIcons:Lcom/android/internal/statusbar/StatusBarIconList;
 
-    const v2, 0x1070013
+    const v2, 0x1070013		#array:config_statusBarIcons
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/am/CompatModeDialog;
 .super Landroid/app/Dialog;
 .source "CompatModeDialog.java"
@@ -26,7 +27,7 @@
     const/4 v1, 0x1
 
     .line 41
-    const v0, 0x1030070
+    const v0, 0x1030070		#style:Theme.Holo.Dialog.MinWidth
 
     invoke-direct {p0, p2, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -68,12 +69,12 @@
     iput-object p3, p0, Lcom/android/server/am/CompatModeDialog;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 50
-    const v0, 0x1090028
+    const v0, 0x1090028		#layout:am_compat_mode_dialog
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->setContentView(I)V
 
     .line 51
-    const v0, 0x1020267
+    const v0, 0x1020267		#id:compat_checkbox
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 
@@ -93,7 +94,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 64
-    const v0, 0x1020268
+    const v0, 0x1020268		#id:ask_checkbox
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +114,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 75
-    const v0, 0x1020269
+    const v0, 0x1020269		#id:reask_hint
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/ServerThread;
 .super Ljava/lang/Thread;
 .source "SystemServer.java"
@@ -1351,7 +1352,7 @@
 
     move-result-object v9
 
-    const v11, 0x10403e9
+    const v11, 0x10403ed		#[0x10403e9]string:android_upgrading_starting_apps
 
     invoke-virtual {v9, v11}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

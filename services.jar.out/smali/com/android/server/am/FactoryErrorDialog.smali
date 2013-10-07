@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/FactoryErrorDialog;
 .super Lcom/android/server/am/BaseErrorDialog;
 .source "FactoryErrorDialog.java"
@@ -30,7 +31,7 @@
     invoke-virtual {p0, v4}, Lcom/android/server/am/FactoryErrorDialog;->setCancelable(Z)V
 
     .line 29
-    const v1, 0x104033b
+    const v1, 0x104033f		#[0x104033b]string:factorytest_failed
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -44,7 +45,7 @@
     .line 31
     const/4 v1, -0x1
 
-    const v2, 0x104033e
+    const v2, 0x1040342		#[0x104033e]string:factorytest_reboot
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

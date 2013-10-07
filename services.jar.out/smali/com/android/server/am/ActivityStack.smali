@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/am/ActivityStack;
 .super Ljava/lang/Object;
 .source "ActivityStack.java"
@@ -19037,7 +19038,7 @@
     if-gez v2, :cond_2
 
     .line 990
-    const v4, 0x1050002
+    const v4, 0x1050002		#dimen:thumbnail_width
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -19046,7 +19047,7 @@
     iput v2, p0, Lcom/android/server/am/ActivityStack;->mThumbnailWidth:I
 
     .line 992
-    const v4, 0x1050001
+    const v4, 0x1050001		#dimen:thumbnail_height
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

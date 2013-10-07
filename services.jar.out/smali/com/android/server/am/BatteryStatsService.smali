@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/server/am/BatteryStatsService;
 .super Lcom/android/internal/app/IBatteryStats$Stub;
 .source "BatteryStatsService.java"
@@ -2256,7 +2257,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0008
+    const v2, 0x10e0008		#integer:config_radioScanningTimeout
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

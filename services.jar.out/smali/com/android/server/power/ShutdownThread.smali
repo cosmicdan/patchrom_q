@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/server/power/ShutdownThread;
 .super Ljava/lang/Thread;
 .source "ShutdownThread.java"
@@ -835,7 +836,7 @@
     .line 418
     sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
 
-    const v6, 0x10400d9
+    const v6, 0x10400dd		#[0x10400d9]string:power_off
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -846,7 +847,7 @@
     .line 419
     sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
 
-    const v6, 0x10400dd
+    const v6, 0x10400e1		#[0x10400dd]string:shutdown_progress
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2171,7 +2172,7 @@
 
     move-result-object v3
 
-    const v4, 0x10e0017
+    const v4, 0x10e0017		#integer:config_longPressOnPowerBehavior
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2183,7 +2184,7 @@
 
     if-eqz v3, :cond_5
 
-    const v2, 0x10400e1
+    const v2, 0x10400e5		#[0x10400e1]string:reboot_safemode_confirm
 
     .line 215
     .local v2, resourceId:I
@@ -2252,7 +2253,7 @@
 
     if-eqz v3, :cond_8
 
-    const v3, 0x10400e0
+    const v3, 0x10400e4		#[0x10400e0]string:reboot_safemode_title
 
     :goto_2
     invoke-virtual {v4, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -2263,7 +2264,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040013
+    const v4, 0x1040013		#string:yes
 
     new-instance v5, Lcom/android/server/power/ShutdownThread$2;
 
@@ -2273,7 +2274,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040009
+    const v4, 0x1040009		#string:no
 
     new-instance v5, Lcom/android/server/power/ShutdownThread$1;
 
@@ -2303,7 +2304,7 @@
 
     sget-object v3, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
-    const v4, 0x1010355
+    const v4, 0x1010355		#attr:alertDialogIcon
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog;->setIconAttribute(I)V
 
@@ -2381,19 +2382,19 @@
 
     if-eqz v3, :cond_6
 
-    const v2, 0x104054e
+    const v2, 0x1040553		#[0x104054e]string:reboot_confirm
 
     goto/16 :goto_1
 
     :cond_6
     if-ne v1, v6, :cond_7
 
-    const v2, 0x10400df
+    const v2, 0x10400e3		#[0x10400df]string:shutdown_confirm_question
 
     goto/16 :goto_1
 
     :cond_7
-    const v2, 0x10400de
+    const v2, 0x10400e2		#[0x10400de]string:shutdown_confirm
 
     goto/16 :goto_1
 
@@ -2405,12 +2406,12 @@
 
     if-eqz v3, :cond_9
 
-    const v3, 0x104033e
+    const v3, 0x1040342		#[0x104033e]string:factorytest_reboot
 
     goto/16 :goto_2
 
     :cond_9
-    const v3, 0x10400d9
+    const v3, 0x10400dd		#[0x10400d9]string:power_off
 
     goto/16 :goto_2
 

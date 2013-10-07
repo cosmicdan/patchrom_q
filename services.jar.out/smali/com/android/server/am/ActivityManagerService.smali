@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public final Lcom/android/server/am/ActivityManagerService;
 .super Landroid/app/ActivityManagerNative;
 .source "ActivityManagerService.java"
@@ -67805,7 +67806,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900b3
+    const v3, 0x10900b7		#[0x10900b3]layout:safe_mode
 
     const/4 v4, 0x0
 
@@ -71550,9 +71551,9 @@
 
     iget-object v3, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    const v4, 0x10a0050
+    const v4, 0x10a0050		#anim:screen_user_exit
 
-    const v5, 0x10a004f
+    const v5, 0x10a004f		#anim:screen_user_enter
 
     invoke-virtual {v3, v4, v5}, Lcom/android/server/wm/WindowManagerService;->startFreezingScreen(II)V
 
@@ -72971,7 +72972,7 @@
 
     move-result-object v3
 
-    const v4, 0x104033c
+    const v4, 0x1040340		#[0x104033c]string:factorytest_not_system
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -72990,7 +72991,7 @@
 
     move-result-object v3
 
-    const v4, 0x104033d
+    const v4, 0x1040341		#[0x104033d]string:factorytest_no_action
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

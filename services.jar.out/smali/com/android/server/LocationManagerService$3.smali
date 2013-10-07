@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/LocationManagerService$3;
 .super Landroid/content/BroadcastReceiver;
 .source "LocationManagerService.java"
@@ -157,7 +158,7 @@
 
     .line 284
     .local v3, providerPackageNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const v0, 0x107002d
+    const v0, 0x107002d		#array:config_locationProviderPackageNames
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

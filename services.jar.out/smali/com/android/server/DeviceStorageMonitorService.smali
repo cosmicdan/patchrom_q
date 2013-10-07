@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/DeviceStorageMonitorService;
 .super Landroid/os/Binder;
 .source "DeviceStorageMonitorService.java"
@@ -1687,7 +1688,7 @@
     .local v8, mNotificationMgr:Landroid/app/NotificationManager;
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService;->mContext:Landroid/content/Context;
 
-    const v3, 0x10403c8
+    const v3, 0x10403cc		#[0x10403c8]string:low_internal_storage_view_title
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1697,7 +1698,7 @@
     .local v10, title:Ljava/lang/CharSequence;
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService;->mContext:Landroid/content/Context;
 
-    const v3, 0x10403c9
+    const v3, 0x10403cd		#[0x10403c9]string:low_internal_storage_view_text
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1723,7 +1724,7 @@
 
     .line 544
     .local v9, notification:Landroid/app/Notification;
-    const v0, 0x108051b
+    const v0, 0x108053c		#[0x108051b]drawable:stat_notify_disk_full
 
     iput v0, v9, Landroid/app/Notification;->icon:I
 

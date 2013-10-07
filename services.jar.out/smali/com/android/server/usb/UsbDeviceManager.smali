@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/usb/UsbDeviceManager;
 .super Ljava/lang/Object;
 .source "UsbDeviceManager.java"
@@ -1569,7 +1570,7 @@
 
     move-result-object v7
 
-    const v8, 0x1070031
+    const v8, 0x1070031		#array:config_oemUsbModeOverride
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

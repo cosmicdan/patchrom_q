@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/ActivityManagerService$8$1;
 .super Ljava/lang/Object;
 .source "ActivityManagerService.java"
@@ -82,7 +83,7 @@
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v2, 0x10403ea
+    const v2, 0x10403ee		#[0x10403ea]string:android_upgrading_complete
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

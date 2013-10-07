@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/AppNotRespondingDialog;
 .super Lcom/android/server/am/BaseErrorDialog;
 .source "AppNotRespondingDialog.java"
@@ -106,7 +107,7 @@
     if-eqz v1, :cond_3
 
     .line 60
-    const v4, 0x10403d7
+    const v4, 0x10403db		#[0x10403d7]string:anr_activity_application
 
     .line 76
     .local v4, resid:I
@@ -137,7 +138,7 @@
     .line 80
     const/4 v5, -0x1
 
-    const v6, 0x10403db
+    const v6, 0x10403df		#[0x10403db]string:force_close
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -154,7 +155,7 @@
     .line 83
     const/4 v5, -0x2
 
-    const v6, 0x10403dd
+    const v6, 0x10403e1		#[0x10403dd]string:wait
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -176,7 +177,7 @@
     .line 88
     const/4 v5, -0x3
 
-    const v6, 0x10403dc
+    const v6, 0x10403e0		#[0x10403dc]string:report
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -194,7 +195,7 @@
 
     .line 93
     :cond_0
-    const v5, 0x10403d6
+    const v5, 0x10403da		#[0x10403d6]string:anr_title
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -294,7 +295,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 64
-    const v4, 0x10403d9
+    const v4, 0x10403dd		#[0x10403d9]string:anr_application_process
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -308,7 +309,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 69
-    const v4, 0x10403d8
+    const v4, 0x10403dc		#[0x10403d8]string:anr_activity_process
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -319,7 +320,7 @@
     iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 72
-    const v4, 0x10403da
+    const v4, 0x10403de		#[0x10403da]string:anr_process
 
     .restart local v4       #resid:I
     goto/16 :goto_1

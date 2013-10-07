@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/WifiDisplayController;
 .super Ljava/lang/Object;
 .source "WifiDisplayController.java"
@@ -1460,9 +1461,9 @@
     .parameter "bt"
 
     .prologue
-    const v8, 0x1040447
+    const v8, 0x104044b		#[0x1040447]string:dlg_ok
 
-    const v7, 0x1040413
+    const v7, 0x1040417		#[0x1040413]string:decline
 
     const/16 v6, 0x7d3
 
@@ -4876,7 +4877,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040447
+    const v5, 0x104044b		#[0x1040447]string:dlg_ok
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4890,7 +4891,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040413
+    const v5, 0x1040417		#[0x1040413]string:decline
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

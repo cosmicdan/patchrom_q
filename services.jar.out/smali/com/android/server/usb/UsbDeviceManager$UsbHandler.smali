@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 .super Landroid/os/Handler;
 .source "UsbDeviceManager.java"
@@ -2209,7 +2210,7 @@
     .locals 15
 
     .prologue
-    const v14, 0x1040450
+    const v14, 0x1040454		#[0x1040450]string:adb_active_notification_title
 
     const/4 v1, 0x0
 
@@ -2232,7 +2233,7 @@
 
     .line 1205
     :cond_1
-    const v6, 0x1040450
+    const v6, 0x1040454		#[0x1040450]string:adb_active_notification_title
 
     .line 1207
     .local v6, id:I
@@ -2317,7 +2318,7 @@
 
     .line 1218
     .local v11, title:Ljava/lang/CharSequence;
-    const v0, 0x1040451
+    const v0, 0x1040455		#[0x1040451]string:adb_active_notification_message
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -2331,7 +2332,7 @@
 
     .line 1222
     .local v8, notification:Landroid/app/Notification;
-    const v0, 0x1080523
+    const v0, 0x1080544		#[0x1080523]drawable:stat_sys_adb
 
     iput v0, v8, Landroid/app/Notification;->icon:I
 
@@ -3019,7 +3020,7 @@
     if-eqz v0, :cond_5
 
     .line 1136
-    const v6, 0x1040448
+    const v6, 0x104044c		#[0x1040448]string:usb_mtp_notification_title
 
     .line 1137
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
@@ -3073,7 +3074,7 @@
     if-eqz v6, :cond_0
 
     .line 1176
-    const v0, 0x104044c
+    const v0, 0x1040450		#[0x104044c]string:usb_notification_message
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -3093,7 +3094,7 @@
 
     .line 1181
     .local v8, notification:Landroid/app/Notification;
-    const v0, 0x1080541
+    const v0, 0x1080562		#[0x1080541]drawable:stat_sys_data_usb
 
     iput v0, v8, Landroid/app/Notification;->icon:I
 
@@ -3199,7 +3200,7 @@
     if-eqz v0, :cond_6
 
     .line 1139
-    const v6, 0x1040449
+    const v6, 0x104044d		#[0x1040449]string:usb_ptp_notification_title
 
     .line 1140
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
@@ -3274,7 +3275,7 @@
     if-eqz v0, :cond_7
 
     .line 1144
-    const v6, 0x104044a
+    const v6, 0x104044e		#[0x104044a]string:usb_cd_installer_notification_title
 
     goto/16 :goto_1
 
@@ -3298,7 +3299,7 @@
     if-eqz v0, :cond_9
 
     .line 1149
-    const v6, 0x104044b
+    const v6, 0x104044f		#[0x104044b]string:usb_accessory_notification_title
 
     goto/16 :goto_1
 
@@ -3357,7 +3358,7 @@
     if-eqz v0, :cond_b
 
     .line 1156
-    const v6, 0x104044a
+    const v6, 0x104044e		#[0x104044a]string:usb_cd_installer_notification_title
 
     .line 1157
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;

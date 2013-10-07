@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/wm/WindowManagerService;
 .super Landroid/view/IWindowManager$Stub;
 .source "WindowManagerService.java"
@@ -5953,7 +5954,7 @@
     .line 3631
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10c0003
+    const v4, 0x10c0003		#interpolator:decelerate_cubic
 
     invoke-static {v2, v4}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
@@ -6180,7 +6181,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10c0001
+    const v4, 0x10c0001		#interpolator:decelerate_quad
 
     invoke-static {v2, v4}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
@@ -6233,7 +6234,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10c0001
+    const v4, 0x10c0001		#interpolator:decelerate_quad
 
     invoke-static {v2, v4}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
@@ -11511,7 +11512,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    const v8, 0x10a0070
+    const v8, 0x10a0070		#anim:window_move_from_decor
 
     invoke-static {v2, v8}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

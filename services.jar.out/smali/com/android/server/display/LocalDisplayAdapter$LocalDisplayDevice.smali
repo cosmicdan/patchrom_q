@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 .super Lcom/android/server/display/DisplayDevice;
 .source "LocalDisplayAdapter.java"
@@ -274,7 +275,7 @@
 
     move-result-object v2
 
-    const v3, 0x104051b
+    const v3, 0x104051f		#[0x104051b]string:display_manager_built_in_display_name
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -422,7 +423,7 @@
 
     move-result-object v2
 
-    const v3, 0x104051c
+    const v3, 0x1040520		#[0x104051c]string:display_manager_hdmi_display_name
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

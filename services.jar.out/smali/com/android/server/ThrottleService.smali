@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/ThrottleService;
 .super Landroid/net/IThrottleManager$Stub;
 .source "ThrottleService.java"
@@ -146,7 +147,7 @@
 
     move-result-object v2
 
-    const v3, 0x104001e
+    const v3, 0x1040022		#[0x104001e]string:config_datause_iface
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

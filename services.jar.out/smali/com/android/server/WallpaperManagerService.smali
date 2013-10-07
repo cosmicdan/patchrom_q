@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/WallpaperManagerService;
 .super Landroid/app/IWallpaperManager$Stub;
 .source "WallpaperManagerService.java"
@@ -1636,7 +1637,7 @@
 
     iget-object v3, v0, Lcom/android/server/WallpaperManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x104001d
+    const v4, 0x104001d		#string:default_wallpaper_component
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2066,7 +2067,7 @@
     .line 892
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x1040484
+    const v4, 0x1040488		#[0x1040484]string:wallpaper_binding_label
 
     invoke-virtual {v12, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -2089,7 +2090,7 @@
 
     iget-object v6, v0, Lcom/android/server/WallpaperManagerService;->mContext:Landroid/content/Context;
 
-    const v7, 0x1040485
+    const v7, 0x1040489		#[0x1040485]string:chooser_wallpaper
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

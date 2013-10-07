@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/BaseErrorDialog;
 .super Landroid/app/AlertDialog;
 .source "BaseErrorDialog.java"
@@ -69,7 +70,7 @@
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     .line 39
-    const v1, 0x1010355
+    const v1, 0x1010355		#attr:alertDialogIcon
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->setIconAttribute(I)V
 
@@ -107,7 +108,7 @@
 
     .prologue
     .line 58
-    const v1, 0x1020019
+    const v1, 0x1020019		#id:button1
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +125,7 @@
 
     .line 62
     :cond_0
-    const v1, 0x102001a
+    const v1, 0x102001a		#id:button2
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -142,7 +143,7 @@
 
     .line 66
     :cond_1
-    const v1, 0x102001b
+    const v1, 0x102001b		#id:button3
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 

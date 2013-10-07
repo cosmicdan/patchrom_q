@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/ConnectivityService;
 .super Landroid/net/IConnectivityManager$Stub;
 .source "ConnectivityService.java"
@@ -618,7 +619,7 @@
 
     move-result-object v2
 
-    const v3, 0x104001f
+    const v3, 0x1040023		#[0x104001f]string:config_default_dns_server
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -743,7 +744,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0009
+    const v3, 0x10e0009		#integer:config_networkTransitionTimeout
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -803,7 +804,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070017
+    const v3, 0x1070017		#array:radioAttributes
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1017,7 +1018,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070015
+    const v3, 0x1070015		#array:networkAttributes
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1244,7 +1245,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070016
+    const v3, 0x1070016		#array:config_protectedNetworks
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -8232,7 +8233,7 @@
 
     move-result-object v17
 
-    const v18, 0x1040027
+    const v18, 0x104002b		#[0x1040027]string:config_wimaxServiceJarLocation
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8244,7 +8245,7 @@
 
     move-result-object v17
 
-    const v18, 0x1040028
+    const v18, 0x104002c		#[0x1040028]string:config_wimaxNativeLibLocation
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8256,7 +8257,7 @@
 
     move-result-object v17
 
-    const v18, 0x1040029
+    const v18, 0x104002d		#[0x1040029]string:config_wimaxManagerClassname
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8268,7 +8269,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002a
+    const v18, 0x104002e		#[0x104002a]string:config_wimaxServiceClassname
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8280,7 +8281,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002b
+    const v18, 0x104002f		#[0x104002b]string:config_wimaxStateTrackerClassname
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

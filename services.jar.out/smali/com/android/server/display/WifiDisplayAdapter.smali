@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/WifiDisplayAdapter;
 .super Lcom/android/server/display/DisplayAdapter;
 .source "WifiDisplayAdapter.java"
@@ -644,7 +645,7 @@
 
     const/4 v4, 0x0
 
-    const v11, 0x104051f
+    const v11, 0x1040523		#[0x104051f]string:wifi_display_notification_title
 
     const/4 v1, 0x0
 
@@ -779,7 +780,7 @@
 
     move-result-object v1
 
-    const v3, 0x1040520
+    const v3, 0x1040524		#[0x1040520]string:wifi_display_notification_message
 
     invoke-virtual {v9, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -795,7 +796,7 @@
 
     move-result-object v1
 
-    const v3, 0x1080355
+    const v3, 0x108036f		#[0x1080355]drawable:ic_notify_wifidisplay
 
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -805,9 +806,9 @@
 
     move-result-object v1
 
-    const v3, 0x1080038
+    const v3, 0x1080038		#drawable:ic_menu_close_clear_cancel
 
-    const v5, 0x1040521
+    const v5, 0x1040525		#[0x1040521]string:wifi_display_notification_disconnect
 
     invoke-virtual {v9, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

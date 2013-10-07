@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/WifiService;
 .super Landroid/net/wifi/IWifiManager$Stub;
 .source "WifiService.java"
@@ -29,7 +30,7 @@
 
 .field private static final DEFAULT_IDLE_MS:J = 0xdbba0L
 
-.field private static final ICON_NETWORKS_AVAILABLE:I = 0x1080522
+.field private static final ICON_NETWORKS_AVAILABLE:I = 0x1080543		#[0x1080522]drawable:stat_notify_wifi_in_range
 
 .field private static final IDLE_REQUEST:I = 0x0
 
@@ -3196,7 +3197,7 @@
     .prologue
     const/4 v10, 0x0
 
-    const v9, 0x1080522
+    const v9, 0x1080543		#[0x1080522]drawable:stat_notify_wifi_in_range
 
     const/4 v8, 0x0
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/MountService;
 .super Landroid/os/storage/IMountService$Stub;
 .source "MountService.java"
@@ -5171,7 +5172,7 @@
 
     .line 1688
     .local v24, resources:Landroid/content/res/Resources;
-    const v19, 0x10f000e
+    const v19, 0x10f000e		#xml:storage_list
 
     .line 1689
     .local v19, id:I

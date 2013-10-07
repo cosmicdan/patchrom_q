@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/InputMethodManagerService;
 .super Lcom/android/internal/view/IInputMethodManager$Stub;
 .source "InputMethodManagerService.java"
@@ -442,7 +443,7 @@
     .line 633
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mImeSwitcherNotification:Landroid/app/Notification;
 
-    const v1, 0x1080354
+    const v1, 0x108036e		#[0x1080354]drawable:ic_notification_ime_default
 
     iput v1, v0, Landroid/app/Notification;->icon:I
 
@@ -5360,7 +5361,7 @@
 
     sget-object v24, Lcom/android/internal/R$styleable;->DialogPreference:[I
 
-    const v25, 0x101005d
+    const v25, 0x101005d		#attr:alertDialogStyle
 
     const/16 v26, 0x0
 
@@ -5446,7 +5447,7 @@
 
     .line 2656
     .local v15, inflater:Landroid/view/LayoutInflater;
-    const v22, 0x109004b
+    const v22, 0x109004b		#layout:input_method_switch_dialog_title
 
     const/16 v24, 0x0
 
@@ -5486,7 +5487,7 @@
 
     move-object/from16 v22, v0
 
-    const v24, 0x102029f
+    const v24, 0x102029f		#id:hard_keyboard_section
 
     move-object/from16 v0, v22
 
@@ -5524,7 +5525,7 @@
 
     move-object/from16 v22, v0
 
-    const v24, 0x10202a0
+    const v24, 0x10202a0		#id:hard_keyboard_switch
 
     move-object/from16 v0, v22
 
@@ -5570,7 +5571,7 @@
     .line 2688
     new-instance v6, Lcom/android/server/InputMethodManagerService$ImeSubtypeListAdapter;
 
-    const v22, 0x10900c9
+    const v22, 0x10900cd		#[0x10900c9]layout:simple_list_item_2_single_choice
 
     move/from16 v0, v22
 
@@ -5610,7 +5611,7 @@
 
     move-object/from16 v22, v0
 
-    const v24, 0x1040454
+    const v24, 0x1040458		#[0x1040454]string:configure_input_methods
 
     new-instance v25, Lcom/android/server/InputMethodManagerService$8;
 
@@ -10160,7 +10161,7 @@
 
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x1040457
+    const v1, 0x104045b		#[0x1040457]string:select_keyboard_layout_notification_title
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -10760,7 +10761,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mRes:Landroid/content/res/Resources;
 
-    const v14, 0x1040453
+    const v14, 0x1040457		#[0x1040453]string:select_input_method
 
     invoke-virtual {v12, v14}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -10903,7 +10904,7 @@
 
     const/4 v14, 0x0
 
-    const v15, 0x1040453
+    const v15, 0x1040457		#[0x1040453]string:select_input_method
 
     move-object/from16 v0, p0
 
@@ -11037,7 +11038,7 @@
 
     const/4 v14, 0x0
 
-    const v15, 0x1040453
+    const v15, 0x1040457		#[0x1040453]string:select_input_method
 
     sget-object v16, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
@@ -12607,7 +12608,7 @@
 
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x1040481
+    const v4, 0x1040485		#[0x1040481]string:input_method_binding_label
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

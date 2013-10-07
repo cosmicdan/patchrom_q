@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/InputMethodManagerService$HardKeyboardListener;
 .super Ljava/lang/Object;
 .source "InputMethodManagerService.java"
@@ -142,7 +143,7 @@
 
     move-result-object v0
 
-    const v2, 0x102029f
+    const v2, 0x102029f		#id:hard_keyboard_section
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/connectivity/Vpn;
 .super Landroid/net/BaseNetworkStateTracker;
 .source "Vpn.java"
@@ -440,7 +441,7 @@
     .line 442
     const/4 v2, 0x0
 
-    const v3, 0x108060a
+    const v3, 0x108062b		#[0x108060a]drawable:vpn_connected
 
     :try_start_0
     sget-object v4, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
@@ -493,7 +494,7 @@
     .parameter "icon"
 
     .prologue
-    const v10, 0x108060a
+    const v10, 0x108062b		#[0x108060a]drawable:vpn_connected
 
     const/4 v9, 0x1
 
@@ -539,7 +540,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040487
+    const v5, 0x104048b		#[0x1040487]string:vpn_title
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -554,7 +555,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040489
+    const v5, 0x104048d		#[0x1040489]string:vpn_text
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -627,7 +628,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040488
+    const v5, 0x104048c		#[0x1040488]string:vpn_title_long
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -644,7 +645,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x104048a
+    const v5, 0x104048e		#[0x104048a]string:vpn_text_long
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -1058,7 +1059,7 @@
 
     move-result-object v19
 
-    const v20, 0x1050005
+    const v20, 0x1050005		#dimen:notification_large_icon_width
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1076,7 +1077,7 @@
 
     move-result-object v19
 
-    const v20, 0x1050006
+    const v20, 0x1050006		#dimen:notification_large_icon_height
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

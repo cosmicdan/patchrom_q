@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/usb/UsbHostManager;
 .super Ljava/lang/Object;
 .source "UsbHostManager.java"
@@ -78,7 +79,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070021
+    const v1, 0x1070021		#array:config_usbHostBlacklist
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/accessibility/AccessibilityManagerService$Service;
 .super Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub;
 .source "AccessibilityManagerService.java"
@@ -209,7 +210,7 @@
 
     const-string v2, "android.intent.extra.client_label"
 
-    const v3, 0x1040483
+    const v3, 0x1040487		#[0x1040483]string:accessibility_binding_label
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

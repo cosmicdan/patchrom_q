@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/am/ActivityRecord;
 .super Ljava/lang/Object;
 .source "ActivityRecord.java"
@@ -480,7 +481,7 @@
 
     if-ge v3, v4, :cond_9
 
-    const v3, 0x1030005
+    const v3, 0x1030005		#style:Theme
 
     :goto_2
     iput v3, p0, Lcom/android/server/am/ActivityRecord;->realTheme:I
@@ -770,7 +771,7 @@
 
     .line 402
     :cond_9
-    const v3, 0x103006b
+    const v3, 0x103006b		#style:Theme.Holo
 
     goto/16 :goto_2
 

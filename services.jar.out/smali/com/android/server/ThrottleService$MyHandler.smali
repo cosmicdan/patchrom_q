@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/ThrottleService$MyHandler;
 .super Landroid/os/Handler;
 .source "ThrottleService.java"
@@ -466,16 +467,16 @@
 
     move-result-object v21
 
-    const v22, 0x1080565
+    const v22, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 617
-    const v21, 0x104049c
+    const v21, 0x10404a0		#[0x104049c]string:throttled_notification_title
 
-    const v22, 0x104049d
+    const v22, 0x10404a1		#[0x104049d]string:throttled_notification_message
 
-    const v23, 0x1080565
+    const v23, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     const/16 v24, 0x2
 
@@ -712,16 +713,16 @@
 
     move-result-object v21
 
-    const v22, 0x1080565
+    const v22, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 652
-    const v21, 0x104049a
+    const v21, 0x104049e		#[0x104049a]string:throttle_warning_notification_title
 
-    const v22, 0x104049b
+    const v22, 0x104049f		#[0x104049b]string:throttle_warning_notification_message
 
-    const v23, 0x1080565
+    const v23, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     const/16 v24, 0x0
 
@@ -772,7 +773,7 @@
 
     move-result-object v21
 
-    const v22, 0x1080565
+    const v22, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -883,7 +884,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x1080565
+    const v4, 0x1080586		#[0x1080565]drawable:stat_sys_throttled
 
     sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
@@ -1082,7 +1083,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002b
+    const v14, 0x10e002a		#[0x10e002b]integer:config_datause_polling_period_sec
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1130,7 +1131,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002c
+    const v14, 0x10e002b		#[0x10e002c]integer:config_datause_threshold_bytes
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1153,7 +1154,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002d
+    const v14, 0x10e002c		#[0x10e002d]integer:config_datause_throttle_kbitsps
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1416,7 +1417,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002e
+    const v14, 0x10e002d		#[0x10e002e]integer:config_datause_notification_type
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 

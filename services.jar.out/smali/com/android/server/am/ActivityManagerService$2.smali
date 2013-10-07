@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class Lcom/android/server/am/ActivityManagerService$2;
 .super Landroid/os/Handler;
 .source "ActivityManagerService.java"
@@ -2058,7 +2059,7 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10403eb
+    const v4, 0x10403ef		#[0x10403eb]string:heavy_weight_notification
 
     const/4 v5, 0x1
 
@@ -2092,7 +2093,7 @@
 
     .line 1249
     .local v38, notification:Landroid/app/Notification;
-    const v3, 0x1080523
+    const v3, 0x1080544		#[0x1080523]drawable:stat_sys_adb
 
     move-object/from16 v0, v38
 
@@ -2147,7 +2148,7 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10403ec
+    const v4, 0x10403f0		#[0x10403ec]string:heavy_weight_notification_detail
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2207,7 +2208,7 @@
 
     const/4 v14, 0x0
 
-    const v15, 0x10403eb
+    const v15, 0x10403ef		#[0x10403eb]string:heavy_weight_notification
 
     move-object/from16 v0, v47
 
@@ -2287,7 +2288,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x10403eb
+    const v5, 0x10403ef		#[0x10403eb]string:heavy_weight_notification
 
     move-object/from16 v0, p1
 

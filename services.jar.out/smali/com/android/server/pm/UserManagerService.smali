@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/pm/UserManagerService;
 .super Landroid/os/IUserManager$Stub;
 .source "UserManagerService.java"
@@ -602,7 +603,7 @@
 
     move-result-object v1
 
-    const v2, 0x104054a
+    const v2, 0x104054e		#[0x104054a]string:owner_name
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2208,7 +2209,7 @@
 
     move-result-object v2
 
-    const v3, 0x104054a
+    const v3, 0x104054e		#[0x104054a]string:owner_name
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

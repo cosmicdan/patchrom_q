@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/display/OverlayDisplayAdapter;
 .super Lcom/android/server/display/DisplayAdapter;
 .source "OverlayDisplayAdapter.java"
@@ -474,7 +475,7 @@
 
     move-result-object v2
 
-    const v3, 0x104051d
+    const v3, 0x1040521		#[0x104051d]string:display_manager_overlay_display_name
 
     const/16 v18, 0x1
 

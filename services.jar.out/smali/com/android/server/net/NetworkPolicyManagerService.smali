@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/net/NetworkPolicyManagerService;
 .super Landroid/net/INetworkPolicyManager$Stub;
 .source "NetworkPolicyManagerService.java"
@@ -970,7 +971,7 @@
 
     move-result-object v7
 
-    const v8, 0x10e0037
+    const v8, 0x10e0036		#[0x10e0037]integer:config_networkPolicyDefaultWarning
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1613,7 +1614,7 @@
 
     .line 878
     :pswitch_0
-    const v1, 0x10404e9
+    const v1, 0x10404ed		#[0x10404e9]string:data_usage_warning_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1621,7 +1622,7 @@
 
     .line 879
     .local v15, title:Ljava/lang/CharSequence;
-    const v1, 0x10404ea
+    const v1, 0x10404ee		#[0x10404ea]string:data_usage_warning_body
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1629,7 +1630,7 @@
 
     .line 881
     .local v8, body:Ljava/lang/CharSequence;
-    const v1, 0x1080078
+    const v1, 0x1080078		#drawable:stat_notify_error
 
     invoke-virtual {v9, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -1702,7 +1703,7 @@
     .end local v15           #title:Ljava/lang/CharSequence;
     .end local v16           #viewIntent:Landroid/content/Intent;
     :pswitch_1
-    const v1, 0x10404ef
+    const v1, 0x10404f3		#[0x10404ef]string:data_usage_limit_body
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1727,7 +1728,7 @@
     .restart local v15       #title:Ljava/lang/CharSequence;
     :goto_2
     .line 919
-    const v1, 0x108051a
+    const v1, 0x108053b		#[0x108051a]drawable:stat_notify_disabled
 
     invoke-virtual {v9, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -1771,7 +1772,7 @@
     .end local v10           #intent:Landroid/content/Intent;
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_2
-    const v1, 0x10404eb
+    const v1, 0x10404ef		#[0x10404eb]string:data_usage_3g_limit_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1784,7 +1785,7 @@
     .line 905
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_3
-    const v1, 0x10404ec
+    const v1, 0x10404f0		#[0x10404ec]string:data_usage_4g_limit_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1797,7 +1798,7 @@
     .line 908
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_4
-    const v1, 0x10404ed
+    const v1, 0x10404f1		#[0x10404ed]string:data_usage_mobile_limit_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1810,7 +1811,7 @@
     .line 911
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_5
-    const v1, 0x10404ee
+    const v1, 0x10404f2		#[0x10404ee]string:data_usage_wifi_limit_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1832,7 +1833,7 @@
 
     .line 931
     .local v11, overBytes:J
-    const v1, 0x10404f4
+    const v1, 0x10404f8		#[0x10404f4]string:data_usage_limit_snoozed_body
 
     const/4 v4, 0x1
 
@@ -1870,7 +1871,7 @@
 
     .restart local v15       #title:Ljava/lang/CharSequence;
     :goto_3
-    const v1, 0x1080078
+    const v1, 0x1080078		#drawable:stat_notify_error
 
     invoke-virtual {v9, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -1910,7 +1911,7 @@
     .end local v10           #intent:Landroid/content/Intent;
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_7
-    const v1, 0x10404f0
+    const v1, 0x10404f4		#[0x10404f0]string:data_usage_3g_limit_snoozed_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1923,7 +1924,7 @@
     .line 940
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_8
-    const v1, 0x10404f1
+    const v1, 0x10404f5		#[0x10404f1]string:data_usage_4g_limit_snoozed_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1936,7 +1937,7 @@
     .line 943
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_9
-    const v1, 0x10404f2
+    const v1, 0x10404f6		#[0x10404f2]string:data_usage_mobile_limit_snoozed_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1949,7 +1950,7 @@
     .line 946
     .end local v15           #title:Ljava/lang/CharSequence;
     :pswitch_a
-    const v1, 0x10404f3
+    const v1, 0x10404f7		#[0x10404f3]string:data_usage_wifi_limit_snoozed_title
 
     invoke-virtual {v13, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -2021,7 +2022,7 @@
 
     .line 988
     .local v8, builder:Landroid/app/Notification$Builder;
-    const v0, 0x10404f5
+    const v0, 0x10404f9		#[0x10404f5]string:data_usage_restricted_title
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -2029,7 +2030,7 @@
 
     .line 989
     .local v11, title:Ljava/lang/CharSequence;
-    const v0, 0x10404f6
+    const v0, 0x10404fa		#[0x10404f6]string:data_usage_restricted_body
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2043,7 +2044,7 @@
     invoke-virtual {v8, v2}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
 
     .line 993
-    const v0, 0x1080078
+    const v0, 0x1080078		#drawable:stat_notify_error
 
     invoke-virtual {v8, v0}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

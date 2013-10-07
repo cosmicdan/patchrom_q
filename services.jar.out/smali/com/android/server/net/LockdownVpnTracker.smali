@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class public Lcom/android/server/net/LockdownVpnTracker;
 .super Ljava/lang/Object;
 .source "LockdownVpnTracker.java"
@@ -208,9 +209,9 @@
     .locals 15
 
     .prologue
-    const v14, 0x104048d
+    const v14, 0x1040491		#[0x104048d]string:vpn_lockdown_error
 
-    const v13, 0x108060b
+    const v13, 0x108062c		#[0x108060b]drawable:vpn_disconnected
 
     const/4 v1, 0x0
 
@@ -399,7 +400,7 @@
     invoke-static {v5}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnecting(I)V
 
     .line 138
-    const v10, 0x104048b
+    const v10, 0x104048f		#[0x104048b]string:vpn_lockdown_connecting
 
     invoke-direct {p0, v10, v13}, Lcom/android/server/net/LockdownVpnTracker;->showNotification(II)V
 
@@ -509,9 +510,9 @@
     invoke-static {v5}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnected(I)V
 
     .line 159
-    const v10, 0x104048c
+    const v10, 0x1040490		#[0x104048c]string:vpn_lockdown_connected
 
-    const v11, 0x108060a
+    const v11, 0x108062b		#[0x108060a]drawable:vpn_connected
 
     invoke-direct {p0, v10, v11}, Lcom/android/server/net/LockdownVpnTracker;->showNotification(II)V
 
@@ -798,7 +799,7 @@
     .line 300
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
-    const v2, 0x104048e
+    const v2, 0x1040492		#[0x104048e]string:vpn_lockdown_reset
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -1,3 +1,4 @@
+#--RESOURCEREMAPPER
 .class final Lcom/android/server/accessibility/AccessibilityManagerService$MainHandler;
 .super Landroid/os/Handler;
 .source "AccessibilityManagerService.java"
@@ -103,7 +104,7 @@
 
     move-result-object v4
 
-    const v6, 0x1040549
+    const v6, 0x104054d		#[0x1040549]string:user_switched
 
     const/4 v7, 0x1
 
