@@ -116,8 +116,6 @@
 
 .field private static final WINDOW_TYPES_WHERE_HOME_DOESNT_WORK:[I
 
-.field private static final LONG_PRESS_TIMEOUT:I = 0x190
-
 .field static localLOGV:Z
 
 .field static final mTmpContentFrame:Landroid/graphics/Rect;
@@ -511,10 +509,6 @@
 .field mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
 .field private mfindingTopFullscreenOpaque:Z
-
-.field mIsVolumeAction:Z
-
-.field mIsVolumeBlocking:Z
 
 
 # direct methods
@@ -10998,18 +10992,6 @@
 
     :cond_10
     :goto_6
-    # [XT]
-    move-object/from16 v0, p0
-    iget-boolean v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVolumeBlocking:Z
-    if-eqz v0, :cond_0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->handleVolumeLongPressAbort()V
-    move-object/from16 v0, p0
-    iget-boolean v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVolumeAction:Z
-    if-nez v0, :cond_0
-    move-object/from16 v0, p0
-    const/4 v12, 0x0
-    invoke-virtual {v0, v12, v8}, Lcom/android/internal/policy/impl/PhoneWindowManager;->handleVolumeKey(II)V
-
     if-eqz v3, :cond_0
 
     invoke-static {}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelephonyService()Lcom/android/internal/telephony/ITelephony;
@@ -11100,25 +11082,6 @@
 
     .restart local v12       #telephonyService:Lcom/android/internal/telephony/ITelephony;
     :cond_14
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenOnEarly:Z
-
-    if-nez v0, :cond_xt1
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->isMusicActive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_xt1
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->handleVolumeLongPress(Landroid/view/KeyEvent;)V
-
-    :cond_xt1
     :try_start_4
     invoke-interface {v12}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
 
@@ -17491,102 +17454,3 @@
         :pswitch_1c
     .end packed-switch
 .end method
-
-.method handleVolumeLongPress(Landroid/view/KeyEvent;)V
-    .locals 11
-    .parameter "event"
-
-    .prologue
-    const/4 v7, 0x0
-
-    .line 26
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVolumeBlocking:Z
-
-    .line 27
-    iput-boolean v7, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVolumeAction:Z
-
-    .line 28
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v0
-
-    const/16 v1, 0x18
-
-    if-ne v0, v1, :cond_0
-
-    .line 29
-    const/16 v6, 0x57
-
-    .line 30
-    .local v6, newKeyCode:I
-    :goto_0
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    const/4 v10, 0x6
-
-    .line 31
-    new-instance v0, Landroid/view/KeyEvent;
-
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getDownTime()J
-
-    move-result-wide v1
-
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getEventTime()J
-
-    move-result-wide v3
-
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v5
-
-    invoke-direct/range {v0 .. v7}, Landroid/view/KeyEvent;-><init>(JJIII)V
-
-    .line 30
-    invoke-virtual {v9, v10, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v8
-
-    .line 32
-    .local v8, msg:Landroid/os/Message;
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    sget v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->LONG_PRESS_TIMEOUT:I
-
-    int-to-long v1, v1
-
-    invoke-virtual {v0, v8, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 33
-    return-void
-
-    .line 29
-    .end local v6           #newKeyCode:I
-    .end local v8           #msg:Landroid/os/Message;
-    :cond_0
-    const/16 v6, 0x58
-
-    goto :goto_0
-.end method
-
-.method handleVolumeLongPressAbort()V
-    .locals 2
-
-    .prologue
-    .line 36
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVolumeBlocking:Z
-
-    .line 37
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    const/4 v1, 0x6
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 38
-    return-void
-.end method
-
