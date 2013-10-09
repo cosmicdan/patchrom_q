@@ -52,5 +52,5 @@ cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build
 sed -n -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
 mv -f ./build.prop.new ./system/build.prop
-zip -9mr Xtreamer_Q-MIUI_3.9.27.zip ./system
+zip -9mr ${OUT_ZIP} ./system
 echo "[i] ${OUT_ZIP} is ready"
