@@ -20,6 +20,29 @@ echo "[i] Begin full ZIP build to ${OUT_ZIP}"
 make fullota
 mv -f ./out/fullota.zip ./${OUT_ZIP}
 
+# Patch APK
+mkdir -p ./system/app
+cd ./inject_patch/app
+for d in *; do 
+    if [ -d $d ]; then
+        if [ -f ../../out/target_files/SYSTEM/app/$d ]; then
+            echo "[i] Patching $d..."
+            apktool d -r -t miui ../../out/target_files/SYSTEM/app/$d ./tmp 1>/dev/null 2>/dev/null
+            cd $d
+            patch -i ../$d/patch.diff -d ../tmp -p 0
+            cert=`cat cert`
+            cd ../tmp
+            apktool b . 1>/dev/null 2>/dev/null
+            cd dist
+            java -jar $PORT_ROOT/tools/signapk.jar $PORT_ROOT/build/security/$cert.x509.pem $PORT_ROOT/build/security/$cert.pk8 $d $d.signed
+            cd ../..
+            mv -f ./tmp/dist/$d.signed ../../system/app/$d
+            rm -rf ./tmp
+        fi
+    fi
+done
+cd ../..
+
 # Modify build.prop
 echo "[#] Modifying build.prop..."
 unzip ${OUT_ZIP} system/build.prop
