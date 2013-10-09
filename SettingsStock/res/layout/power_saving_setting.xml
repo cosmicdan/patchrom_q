@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/custom_saving_setting_title" android:key="power_saving_list"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:persistent="false" android:entries="@array/power_saving_entries" android:title="@string/power_level_title" android:key="power_saving_level" android:summary="@string/power_level_summary" android:entryValues="@array/power_saving_values" />
+    <PreferenceCategory android:title="@string/power_saving_setting_title" />
+    <CheckBoxPreference android:title="@string/turn_off_wifi_title" android:key="turn_off_wifi" android:summary="@string/turn_off_wifi_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/turn_off_bluetooth_title" android:key="turn_off_bluetooth" android:summary="@string/turn_off_bluetooth_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/turn_off_gps_title" android:key="turn_off_gps" android:summary="@string/turn_off_gps_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/turn_off_sync_title" android:key="turn_off_sync" android:summary="@string/turn_off_sync_summary" android:defaultValue="false" />
+    <CheckBoxPreference android:title="@string/screen_timeout" android:key="screen_timeout_switch" android:summary="@string/screen_timeout_details" android:defaultValue="false" />
+    <ListPreference android:persistent="false" android:entries="@array/screen_timeout_entries" android:title="@string/screen_timeout" android:key="screen_timeout" android:summary="@string/screen_timeout_summary" android:entryValues="@array/screen_timeout_values" />
+    <CheckBoxPreference android:title="@string/brightness" android:key="brightness_switch" android:summary="@string/brightness_summary" android:defaultValue="false" />
+    <ListPreference android:persistent="false" android:entries="@array/power_brightness_entries" android:title="@string/brightness" android:key="brightness" android:summary="@string/power_brightness_summary" android:entryValues="@array/power_brightness_values" />
+</PreferenceScreen>

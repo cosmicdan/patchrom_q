@@ -12,7 +12,7 @@ local-out-zip-file :=
 local-miui-modified-apps := MiuiHome MiuiSystemUI
 
 # This variable defines those apps from local-zip-file which we modified
-local-modified-apps :=
+local-modified-apps := SettingsStock
 
 # Removed these apps from original ZIP file
 local-remove-apps :=

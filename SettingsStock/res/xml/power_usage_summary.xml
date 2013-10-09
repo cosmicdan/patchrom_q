@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/battery_since_unplugged" android:key="app_list"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:key="battery_status" style="?android:attr/preferenceInformationStyle" />
+    <CheckBoxPreference android:title="@string/power_saving_title" android:key="power_saving" android:summary="@string/power_saving_summary" android:defaultValue="false" />
+    <PreferenceScreen android:title="@string/power_saving_setting_title" android:key="power_saving_setting" />
+    <ListPreference android:persistent="false" android:entries="@array/performance_mode_entries" android:title="@string/performance_mode_title" android:key="performance_mode" android:summary="@string/performance_mode_summary" android:entryValues="@array/performance_mode_values" />
+</PreferenceScreen>
