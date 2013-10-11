@@ -53,4 +53,6 @@ sed -n -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
 mv -f ./build.prop.new ./system/build.prop
 zip -9mr ${OUT_ZIP} ./system
+echo "[#] Adding overlay_zip..."
+zip -9mr ${OUT_ZIP} ./overlay_zip/system
 echo "[i] ${OUT_ZIP} is ready"
