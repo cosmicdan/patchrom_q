@@ -53,6 +53,11 @@ cat ./system/build.prop | sed -e "s/ro\.build\.version\.incremental=.*/ro\.build
 sed -n -e :a -e '/^\n*$/{$d;N;};/\n$/ba' build.prop.new
 echo >> build.prop.new
 mv -f ./build.prop.new ./system/build.prop
+
+echo "[#] Re-signing LBESEC_MIUI.apk..."
+unzip ${OUT_ZIP} system/app/LBESEC_MIUI.apk
+java -jar $PORT_ROOT/tools/signapk.jar $PORT_ROOT/build/security/platform.x509.pem $PORT_ROOT/build/security/platform.pk8 ./system/app/LBESEC_MIUI.apk ./system/app/LBESEC_MIUI.apk.signed
+mv -f ./system/app/LBESEC_MIUI.apk.signed ./system/app/LBESEC_MIUI.apk
 zip -9mr ${OUT_ZIP} ./system
 echo "[#] Adding overlay_zip..."
 cd overlay_zip
