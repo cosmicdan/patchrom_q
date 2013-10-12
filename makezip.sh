@@ -9,8 +9,9 @@ MIUI_THISVER_MINOR=`echo ${MIUI_THISVER_RAW} | sed -e "s/-.*//"`
 MIUI_THISVER_RAW=`echo ${MIUI_THISVER_RAW} | sed -e "s/^${MIUI_THISVER_MINOR}-//"`
 MIUI_THISVER_MINOR=`echo ${MIUI_THISVER_MINOR} | sed -e "s/^[0]//"`
 MIUI_THISVER_REV=`echo ${MIUI_THISVER_RAW} | sed -e "s/^[0]//"`
+MIUI_OURREV=`date +%y%j`
 
-export MIUI_THISVER_PARSED="${MIUI_THISVER_MAJOR}.${MIUI_THISVER_MINOR}.${MIUI_THISVER_REV}"
+export MIUI_THISVER_PARSED="${MIUI_THISVER_MAJOR}.${MIUI_THISVER_MINOR}.${MIUI_THISVER_REV}.${MIUI_OURREV}"
 
 export OUT_ZIP="Xtreamer_Q-MIUI_${MIUI_THISVER_PARSED}.zip"
 
@@ -54,5 +55,6 @@ echo >> build.prop.new
 mv -f ./build.prop.new ./system/build.prop
 zip -9mr ${OUT_ZIP} ./system
 echo "[#] Adding overlay_zip..."
-zip -9r ${OUT_ZIP} ./overlay_zip/system
+cd overlay_zip
+zip -9r ../${OUT_ZIP} ./system
 echo "[i] ${OUT_ZIP} is ready"
