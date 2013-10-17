@@ -18,6 +18,7 @@
     <favorite launcher:className="com.miui.fmradio.FmRadioActivity" launcher:packageName="com.miui.fmradio" launcher:container="1" launcher:x="2" launcher:y="0" />
     <favorite launcher:className="com.android.systemui.TorchActivity" launcher:packageName="com.android.systemui" launcher:container="1" launcher:x="3" launcher:y="0" />
     <favorite launcher:className="com.android.calculator2.Calculator" launcher:packageName="com.android.calculator2" launcher:container="1" launcher:x="4" launcher:y="0" />
+    <favorite launcher:className="com.android.bbkcalculator.Calculator" launcher:packageName="com.android.bbkcalculator" launcher:container="1" launcher:x="4" launcher:y="0" />
     <favorite launcher:className="com.miui.voiceassist.MiuiVoiceAssistActivity" launcher:packageName="com.miui.voiceassist" launcher:container="1" launcher:x="5" launcher:y="0" />
     <favorite launcher:className="com.miui.compass.CompassActivity" launcher:packageName="com.miui.compass" launcher:container="1" launcher:x="6" launcher:y="0" />
     <favorite launcher:className="com.android.quicksearchbox.SearchActivity" launcher:packageName="com.android.quicksearchbox" launcher:container="1" launcher:x="7" launcher:y="0" />
