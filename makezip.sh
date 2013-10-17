@@ -15,6 +15,9 @@ export MIUI_THISVER_PARSED="${MIUI_THISVER_MAJOR}.${MIUI_THISVER_MINOR}.${MIUI_T
 
 export OUT_ZIP="Xtreamer_Q-MIUI_${MIUI_THISVER_PARSED}.zip"
 
+cd ../android
+git rev-parse HEAD > ../q/Xtreamer_Q-MIUI_${MIUI_THISVER_PARSED}.hash
+
 
 cd ${THIS_SCRIPT_HOME}
 echo "[i] Begin full ZIP build to ${OUT_ZIP}"
