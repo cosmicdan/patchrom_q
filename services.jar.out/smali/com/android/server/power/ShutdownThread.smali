@@ -74,7 +74,7 @@
 
 .field private static mWakeAlarmCheckBox:Landroid/widget/CheckBox;
 
-.field private static pd:Landroid/app/ProgressDialog;
+.field private static pd:Landroid/app/Dialog;
 
 .field private static sConfirmDialog:Landroid/app/AlertDialog;
 
@@ -138,7 +138,8 @@
 
     sput-object v1, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
-    sput-object v1, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
+    .line 216
+    sput-object v1, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
 
     new-instance v0, Ljava/lang/Object;
 
@@ -245,53 +246,77 @@
     throw v0
 .end method
 
-.method static synthetic access$000()Ljava/lang/Object;
+.method static synthetic access$002(Landroid/app/Dialog;)Landroid/app/Dialog;
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 88
+    sput-object p0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
+
+    return-object p0
+.end method
+
+.method static synthetic access$100()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 78
+    .line 88
     sget-object v0, Lcom/android/server/power/ShutdownThread;->sIsStartedGuard:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method static synthetic access$102(Z)Z
+.method static synthetic access$1002(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 78
+    .line 88
+    sput-object p0, Lcom/android/server/power/ShutdownThread;->sPreShutdownApi:Lcom/android/server/power/IPreShutdown;
+
+    return-object p0
+.end method
+
+.method static synthetic access$202(Z)Z
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 88
     sput-boolean p0, Lcom/android/server/power/ShutdownThread;->sIsStarted:Z
 
     return p0
 .end method
 
-.method static synthetic access$200()Landroid/app/AlertDialog;
+.method static synthetic access$300()Landroid/app/AlertDialog;
     .locals 1
 
     .prologue
-    .line 78
+    .line 88
     sget-object v0, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
     return-object v0
 .end method
 
-.method static synthetic access$202(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+.method static synthetic access$302(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 78
+    .line 88
     sput-object p0, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
     return-object p0
 .end method
 
-.method static synthetic _disableWakeAlarm()V
+.method static synthetic access$400(Landroid/content/Context;)V
     .locals 0
+    .parameter "x0"
 
     .prologue
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->disableWakeAlarm()V
+    .line 88
+    invoke-static {p0}, Lcom/android/server/power/ShutdownThread;->disableWakeAlarm(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -307,7 +332,7 @@
     return-void
 .end method
 
-.method static synthetic access$400()Lcom/android/server/power/ShutdownThread;
+.method static synthetic access$600()Lcom/android/server/power/ShutdownThread;
     .locals 1
 
     .prologue
@@ -317,7 +342,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$700(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager$WakeLock;
     .locals 1
     .parameter "x0"
 
@@ -328,7 +353,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$502(Lcom/android/server/power/ShutdownThread;Landroid/os/PowerManager$WakeLock;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$702(Lcom/android/server/power/ShutdownThread;Landroid/os/PowerManager$WakeLock;)Landroid/os/PowerManager$WakeLock;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -340,7 +365,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$600(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager;
+.method static synthetic access$800(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager;
     .locals 1
     .parameter "x0"
 
@@ -351,7 +376,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700()I
+.method static synthetic access$900()I
     .locals 1
 
     .prologue
@@ -361,7 +386,7 @@
     return v0
 .end method
 
-.method static synthetic access$702(I)I
+.method static synthetic access$902(I)I
     .locals 0
     .parameter "x0"
 
@@ -370,17 +395,6 @@
     sput p0, Lcom/android/server/power/ShutdownThread;->mShutdownFlow:I
 
     return p0
-.end method
-
-.method static synthetic access$802(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 78
-    sput-object p0, Lcom/android/server/power/ShutdownThread;->sPreShutdownApi:Lcom/android/server/power/IPreShutdown;
-
-    return-object p0
 .end method
 
 .method private static beginShutdownSequence(Landroid/content/Context;)V
@@ -827,75 +841,6 @@
     .line 417
     :cond_7
     :try_start_8
-    new-instance v4, Landroid/app/ProgressDialog;
-
-    invoke-direct {v4, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
-
-    sput-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    .line 418
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    const v6, 0x10400dd		#[0x10400d9]string:power_off
-
-    invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 419
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    const v6, 0x10400e1		#[0x10400dd]string:shutdown_progress
-
-    invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
-
-    .line 420
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
-
-    .line 421
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v4, v6}, Landroid/app/ProgressDialog;->setCancelable(Z)V
-
-    .line 422
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    invoke-virtual {v4}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v4
-
-    const/16 v6, 0x7d9
-
-    invoke-virtual {v4, v6}, Landroid/view/Window;->setType(I)V
-
-    .line 424
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    invoke-virtual {v4}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v4
-
-    const/4 v6, 0x2
-
-    invoke-virtual {v4, v6}, Landroid/view/Window;->addFlags(I)V
-
-    .line 425
-    sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
-
-    #invoke-virtual {v4}, Landroid/app/ProgressDialog;->show()V
-
     invoke-static {p0}, Lcom/android/server/power/ShutdownThread$Injector;->createShutDownDialog(Landroid/content/Context;)V
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
@@ -1015,13 +960,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_0
 
     move v1, v3
 
     .line 488
     :goto_0
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     .line 489
     sget-object v3, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
@@ -1056,7 +1001,6 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 497
-    :cond_0
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1096,13 +1040,32 @@
     .line 506
     return-void
 
-    :cond_1
+    :cond_0
     move v1, v4
 
     .line 486
     goto :goto_0
 
-    .line 494
+    :cond_1
+    :try_start_2
+    sget-object v3, Lcom/android/server/power/ShutdownThread;->sInstance:Lcom/android/server/power/ShutdownThread;
+
+    iget-object v3, v3, Lcom/android/server/power/ShutdownThread;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "accelerometer_rotation_restore"
+
+    const/4 v5, 0x0
+
+    invoke-static {v3, v4, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    :try_end_2
+    .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_1
+
     :catch_0
     move-exception v0
 
@@ -1456,29 +1419,46 @@
     goto :goto_0
 .end method
 
-.method private static disableWakeAlarm()V
+.method private static disableWakeAlarm(Landroid/content/Context;)V
     .locals 2
+    .parameter "context"
 
     .prologue
-    sget-boolean v0, Lcom/android/server/power/ShutdownThread;->mReboot:Z
+    sget-boolean v1, Lcom/android/server/power/ShutdownThread;->mReboot:Z
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    sget-object v0, Lcom/android/server/power/ShutdownThread;->mWakeAlarmCheckBox:Landroid/widget/CheckBox;
+    sget-object v1, Lcom/android/server/power/ShutdownThread;->mWakeAlarmCheckBox:Landroid/widget/CheckBox;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    sget-object v0, Lcom/android/server/power/ShutdownThread;->mWakeAlarmCheckBox:Landroid/widget/CheckBox;
+    sget-object v1, Lcom/android/server/power/ShutdownThread;->mWakeAlarmCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
+    invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const-wide/16 v0, 0x0
+    .line 289
+    sget-boolean v1, Lmiui/os/Build;->IS_HONGMI:Z
 
-    invoke-static {v0, v1}, Lcom/miui/internal/app/ShutdownAlarm;->writeWakeAlarm(J)V
+    if-eqz v1, :cond_0
+
+    .line 290
+    const-string v1, "alarm"
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AlarmManager;
+
+    .line 291
+    .local v0, am:Landroid/app/AlarmManager;
+    const-string v1, "com.android.deskclock"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancelPoweroffAlarm(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -1501,7 +1481,7 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
+    sget-object v2, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1513,17 +1493,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
+    sget-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
+    sget-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
+    sput-object v0, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/Dialog;
 
     :cond_0
     return-void
@@ -2349,6 +2329,8 @@
     sget-object v3, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v3}, Landroid/app/AlertDialog;->show()V
+
+    sget-object v3, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
     invoke-static {v3}, Lcom/android/server/power/ShutdownThread$Injector;->setDialogPositiveButtonText(Landroid/app/AlertDialog;)V
 
