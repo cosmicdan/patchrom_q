@@ -65,4 +65,5 @@ zip -9mr ${OUT_ZIP} ./system
 echo "[#] Adding overlay_zip..."
 cd overlay_zip
 zip -9r ../${OUT_ZIP} ./system
+zip -9r ../${OUT_ZIP} ./data
 echo "[i] ${OUT_ZIP} is ready"
