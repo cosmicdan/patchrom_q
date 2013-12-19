@@ -9,6 +9,8 @@ rm ./out/target_files/SYSTEM/app/QuickSearchBox.apk
 rm ./out/target_files/SYSTEM/app/SuperMarket.apk
 rm ./out/target_files/SYSTEM/app/Updater.apk
 rm ./out/target_files/SYSTEM/app/VoiceAssist.apk
+rm ./out/target_files/SYSTEM/app/Weather.apk
+rm ./out/target_files/SYSTEM/app/WeatherProvider.apk
 rm ./out/target_files/SYSTEM/media/images/boot_logo
 exit 0
 
