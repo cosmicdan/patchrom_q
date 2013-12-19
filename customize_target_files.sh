@@ -8,5 +8,6 @@ rm ./out/target_files/SYSTEM/app/BugReport.apk
 rm ./out/target_files/SYSTEM/app/QuickSearchBox.apk
 rm ./out/target_files/SYSTEM/app/SuperMarket.apk
 rm ./out/target_files/SYSTEM/app/Updater.apk
+rm ./out/target_files/SYSTEM/app/VoiceAssist.apk
 exit 0
 
