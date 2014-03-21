@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1002(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$802(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
 
     const-string v0, "ShutdownThread"
 
@@ -70,7 +70,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1002(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$802(Lcom/android/server/power/IPreShutdown;)Lcom/android/server/power/IPreShutdown;
 
     const-string v0, "ShutdownThread"
 

@@ -19,12 +19,21 @@
 
 <!-- use empty string to specify no proxy or port -->
 <!-- This version must agree with that in apps/common/res/apns.xml -->
-<apns version="7">   
+<apns version="8">   
 
 	<apn carrier="Cosmote Wireless Internet"
       mcc="202"
       mnc="01"
-      apn="internet"
+      apn="Internet"
+      proxy="10.010.010.020"
+      port="8080"
+      type="default,supl"
+  />
+  
+  <apn carrier="Vodafone IN"
+      mcc="404"
+      mnc="20"
+      apn="www"
       type="default,supl"
   />
 
@@ -33,7 +42,7 @@
       mnc="01"
       apn="mms"
       mmsc="http://195.167.65.220:8002"
-      mmsproxy="10.10.10.20"
+      mmsproxy="10.010.010.020"
       mmsport="8080"
       type="mms"
   />
@@ -53,6 +62,8 @@
       apn="internet.vodafone.gr"
       user="user"
       password="pass"
+      proxy="213.249.019.049"
+      port="5080"
       type="default,supl"
   />
 
@@ -63,7 +74,7 @@
       user="user"
       password="pass"
       mmsc="http://mms.vodafone.gr"
-      mmsproxy="213.249.19.49"
+      mmsproxy="213.249.019.049"
       mmsport="5080"
       type="mms"
   />
@@ -91,6 +102,8 @@
       apn="gint.b-online.gr"
       user="wap"
       password="wap"
+      proxy="192.168.200.11"
+      port="9401"
       type="default,supl"
   />
 
@@ -333,6 +346,29 @@
       type="default,supl"
   />
 
+ <apn carrier="MMS Leclerc"
+      mcc="208"
+      mnc="10"
+      apn="mms66"
+      user="blank"
+      password="blank"
+      mmsc="http://mms66"
+      mmsproxy="010.143.156.009"
+      mmsport="8080"
+      type="mms"
+  />
+
+  <apn carrier="WAP Leclerc "
+      mcc="208"
+      mnc="10"
+      apn="wap66"
+      mmsc="http://wap.leclercmobile.fr"
+      user="blank"
+      password="blank"
+      proxy="192.168.021.009"
+      port="8080"
+      type="default,supl"
+  />
   <apn carrier="SFR Illimytics"
       mcc="208"
       mnc="10"
@@ -7555,7 +7591,37 @@
       mnc="932"
       apn="vinternet.com"
       type="default,supl"
-  />    
+  />
+
+  <apn carrier="Etisalat UAE"
+      mcc="424"
+      mnc="02"
+      apn="etisalat.ae"
+      type="default,supl"
+  />
+
+  <apn carrier="Etisalat UAE MMS"
+      mcc="424"
+      mnc="02"
+      apn="mms"
+      user="mms"
+      password="mms"
+      mmsproxy="10.12.0.30"
+      mmsport="9201"
+      mmsc="http://mms/servlets/mms"
+      type="mms"
+  />
+
+  <apn carrier="du"
+      mcc="424"
+      mnc="03"
+      apn="du"
+      mmsproxy="10.19.18.4"
+      mmsport="9201"
+      mmsc="http://mms.du.ae"
+      type="default,supl,mms"
+  />
+    
   <apn carrier="Batelco Internet"
       mcc="426"
       mnc="01"
@@ -8061,7 +8127,7 @@
   /> 
 
   <apn carrier="CTNET" 
-      mcc="460" 
+      mcc="460"
       mnc="03" 
       apn="ctnet" 
       user="ctnet@mycdma.cn" 
@@ -9936,7 +10002,153 @@
       mmsport="8080"
       mmsc="http://mms"
       type="mms"
-  />  	    
+  /> 
+
+  <apn carrier="Orange 3G"
+      mcc="425"
+      mnc="01"
+      apn="uinternet"
+      user=""
+      password=""
+      type="default,supl"
+  />  
+  
+  <apn carrier="Orange MMS"
+      mcc="425"
+      mnc="01"
+      apn="uwap.orange.co.il"
+      user=""
+      password=""
+      mmsproxy="192.118.11.55"
+      mmsport="8080"
+      mmsc="http://192.168.220.15/servlets/mms"
+      type="mms"
+  />  
+  
+  <apn carrier="HOT Mobile 3G"
+      mcc="425"
+      mnc="07"
+      apn="net.hotm"
+      user=""
+      password=""
+      type="default"
+  />  
+  
+  <apn carrier="HOT Mobile MMS"
+      mcc="425"
+      mnc="07"
+      apn="mms.hotm"
+      user=""
+      password=""
+      mmsproxy="80.246.131.99"
+      mmsport="80"
+      mmsc="http://mms.hotmobile.co.il"
+      type="mms"
+  /> 
+  
+  <apn carrier="Cellcom 3G"
+      mcc="425"
+      mnc="02"
+      apn="sphone"
+      user=""
+      password=""
+      type="default,supl"
+  />  
+  
+  <apn carrier="Cellcom MMS"
+      mcc="425"
+      mnc="02"
+      apn="mms"
+      user=""
+      password=""
+      mmsproxy="172.31.29.38"
+      mmsport="8080"
+      mmsc="http://mms.cellcom.co.il"
+      type="mms"
+  />  	
+  
+  <apn carrier="Golan Telecom 3G"
+      mcc="425"
+      mnc="08"
+      apn="internet.golantelecom.net.il"
+      user=""
+      password=""
+      type="default,dun"
+  /> 
+  
+  <apn carrier="Golan Telecom MMS"
+      mcc="425"
+      mnc="08"
+      apn="mms.golantelecom.net.il"
+      user=""
+      password=""
+      mmsproxy="10.224.228.81"
+      mmsport="80"
+      mmsc="http://mmsc.golantelecom.co.il"
+      type="mms"
+  />  	
+  
+  <apn carrier="YouPhone 3G"
+      mcc="425"
+      mnc="14"
+      apn="data.youphone.co.il"
+      user=""
+      password=""
+      type="default,sup"
+  />  
+  
+  <apn carrier="YouPhone MMS"
+      mcc="425"
+      mnc="14"
+      apn="data.youphone.co.il"
+      user=""
+      password=""
+      mmsport="8080"
+      mmsc="http://192.168.220.15/servlets/mms"
+      type="mms"
+  />  
+  
+  <apn carrier="012 3G"
+      mcc="425"
+      mnc="01"
+      apn="uinternet"
+      user=""
+      password=""
+      type="default,supl"
+  />  
+  
+  <apn carrier="012 MMS"
+      mcc="425"
+      mnc="01"
+      user=""
+      password=""
+      mmsproxy="192.118.11.55"
+      mmsport="8080"
+      mmsc="http://192.168.220.15/servlets/mms"
+      type="mms"
+  />  	
+  
+  <apn carrier="Pelephone 3G"
+      mcc="425"
+      mnc="03"
+      apn="sphone.pelephone.net.il"
+      user="pcl@3g"
+      password="pcl"
+      type="default,internet,supl"
+  />  
+  
+  <apn carrier="Pelephone MMS"
+      mcc="425"
+      mnc="03"
+      apn="mms.pelephone.net.il"
+	  server="pelephone"
+      user=""
+      password=""
+      mmsproxy="10.170.9.54"
+      mmsport="9093"
+      mmsc="http://mmsu.pelephone.net.il"
+      type="mms"
+  />  	 
 
   <apn carrier="i-mobile3GX-internet" 
       mcc="520" 
@@ -10153,83 +10365,4 @@
       mmsport="8080"
       type="mms"
   />  
-   
-  <apn carrier="DTAC-MMS"
-      mcc="520"
-      mnc="05"
-      apn="mms"
-      user=""
-      password=""
-      server="" 
-      mmsc="http://mms.dtac.co.th:8002"
-      mmsproxy="203.155.200.133"
-      mmsport="8080"
-      authtype="3" 
-      type="mms"
-  />
-   
-  <apn carrier="DTAC-Internet" 
-      mcc="520" 
-      mnc="05" 
-      apn="www.dtac.co.th" 
-      user="" 
-      password="" 
-      server="" 
-      mmsc="" 
-      authtype="3" 
-      type="default"
-  />
-   
-  <apn carrier="AIS-MMS"
-      mcc="520"
-      mnc="03"
-      apn="multimedia"
-      user=""
-      password=""
-      server="" 
-      mmsc="http://mms.mobilelife.co.th"
-      mmsproxy="203.170.229.34"
-      mmsport="8080"
-      authtype="3" 
-      type="mms"
-  />
-  
-  <apn carrier="AIS-Internet" 
-      mcc="520" 
-      mnc="03" 
-      apn="internet" 
-      user="" 
-      password="" 
-      server="" 
-      mmsc="" 
-      authtype="3" 
-      type="default"
-  />
-   
-  <apn carrier="True-MMS"
-      mcc="520"
-      mnc="04"
-      apn="hmms"
-      user="true"
-      password="true"
-      server="" 
-      mmsc=""
-      mmsproxy="10.4.7.39"
-      mmsport="8080"
-      authtype="3" 
-      type="mms"
-  />
-   
-  <apn carrier="True-GPRS-Internet" 
-      mcc="520" 
-      mnc="04" 
-      apn="internet" 
-      user="true" 
-      password="true" 
-      server="" 
-      mmsc=""
-      authtype="3" 
-      type="default"
-  />
-  </apns>
-
+</apns>

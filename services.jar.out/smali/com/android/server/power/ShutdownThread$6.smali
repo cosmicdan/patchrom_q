@@ -75,7 +75,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$902(I)I
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$702(I)I
 
     :cond_0
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;

@@ -12,16 +12,18 @@ function precmd {
 
 	(( e )) && print -n "$e|"
 }
-PS1='$(precmd)$USER@$HOSTNAME:${PWD:-?} '"$PS1 "
+PS1='$(precmd)Xtreamer:${PWD:-?} '"$PS1 "
 export HOME HOSTNAME MKSH PS1 SHELL TERM USER
 alias l='ls'
 alias la='l -a'
 alias ll='l -l'
 alias lo='l -a -l'
 
-for p in ~/.bin; do
+bb=/data/busybox/busybox
+
+for p in ~/.bin ${bb%/*}; do
 	[[ -d $p/. ]] || continue
-	[[ :$PATH: = *:$p:* ]] || PATH=$p:$PATH
+	[[ :$PATH: = *:$p:* ]] || PATH=$PATH:$p
 done
 
 unset p

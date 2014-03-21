@@ -9883,6 +9883,7 @@
 
     invoke-direct {p0, v3}, Lcom/android/server/MountService;->validatePermission(Ljava/lang/String;)V
 
+    goto :goto_0
     .line 2219
     invoke-direct {p0, p1}, Lcom/android/server/MountService;->isExternalStorage(Ljava/lang/String;)Z
 
@@ -9944,6 +9945,7 @@
     .line 2231
     .end local v2           #volume:Landroid/os/storage/StorageVolume;
     :cond_0
+    :goto_0
     invoke-direct {p0}, Lcom/android/server/MountService;->waitForReady()V
 
     .line 2232
@@ -9951,6 +9953,7 @@
 
     move-result v1
 
+    goto :goto_1
     .line 2235
     .local v1, ret:I
     iget-boolean v3, p0, Lcom/android/server/MountService;->mMountSwap:Z
@@ -9978,7 +9981,7 @@
 
     .line 2251
     :cond_1
-    :goto_0
+    :goto_1
     return v1
 
     .line 2225
@@ -10012,7 +10015,7 @@
     .line 2247
     invoke-direct {p0}, Lcom/android/server/MountService;->sendSDSwapIntent()V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public mountVolumeNotSwap(Ljava/lang/String;)I

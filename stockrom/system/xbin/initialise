@@ -1,0 +1,41 @@
+#!/system/bin/sh
+#
+# This script will take effect once com.android.phone process is started [i.e. boot is probably finished and all Android services are started]
+#
+#
+
+###
+# initialise_proc function contains all the post-boot tasks to perform, the code below of this function doesn't need to be touched
+initialise_proc()
+{
+    ###
+    # Run device specific tweaks (if exists)
+    if [ -f /system/xbin/device_tweaks ]; then
+        device_tweaks
+    fi
+
+    ###
+    # Preinstall any necessary apps (if folder exists)
+    if [ -d /system/preinstall_app ]; then
+        for i in /system/preinstall_app/*.apk; do
+            pm install $i
+        done
+    fi
+
+    ###
+    echo "[XT] initialise_proc has completed post-boot tasks"
+}
+
+###
+# waiting logic
+phonepid=`busybox pidof com.android.phone`
+if [ "$phonepid" != "" ]; then 
+    # process running, continue
+    initialise_proc
+else 
+    # process not running, wait a bit and execute self again
+    sleep 5
+    initialise &
+fi;
+
+exit 0;

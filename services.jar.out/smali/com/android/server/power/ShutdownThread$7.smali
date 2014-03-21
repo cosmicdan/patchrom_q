@@ -184,7 +184,7 @@
 
     .local v6, radioOff:Z
     :goto_4
-    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$900()I
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$700()I
 
     move-result v9
 

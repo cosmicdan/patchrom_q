@@ -1,0 +1,3 @@
+#!/system/bin/sh
+export PATH=/sbin:/data/local/bin:/vendor/bin:/system/sbin:/system/bin:/system/xbin 
+logwrapper busybox run-parts /system/etc/init.d

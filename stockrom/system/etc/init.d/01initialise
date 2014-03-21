@@ -1,0 +1,23 @@
+#!/system/bin/sh
+#
+# Install new sysctl parameters if specified
+#
+if [ -f /etc/sysctl.conf ]; then
+    sysctl -p
+fi
+
+#
+# Recreate /dev/random as urandom device
+#
+busybox rm -f /dev/random
+busybox mknod -m 444 /dev/random c 1 9
+busybox chown root.root /dev/random
+busybox mount -o ro,remount /
+busybox sync
+
+#
+# Delayed execution of tasks that apply to a booted environment
+#
+if [ -f /system/xbin/initialise ]; then
+    /system/bin/logwrapper /system/xbin/initialise &
+fi

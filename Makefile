@@ -9,10 +9,12 @@ local-zip-file     := stockrom.zip
 local-out-zip-file :=
 
 # all the miui apps are listed in the file patchrom/build/miuiapps.mk - this variable defines those miui apps which we modified.
-local-miui-modified-apps := LBESEC_MIUI MiuiHome MiuiSystemUI Provision
+#local-miui-modified-apps := MiuiHome MiuiSystemUI Provision
+# [XT] we do all this in the translation-phase from now on, APKTool 2 allows much cleaner injection
+local-miui-modified-apps := 
 
 # This variable defines those apps from local-zip-file which we modified
-local-modified-apps := SettingsStock
+local-modified-apps := 
 
 # Removed these apps from original ZIP file
 local-remove-apps :=
@@ -30,3 +32,4 @@ include $(PORT_BUILD)/porting.mk
 # To define any local-target
 local-zip-misc:
 	echo "[i] local-zip-misc - nothing to do"
+

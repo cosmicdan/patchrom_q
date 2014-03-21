@@ -16,7 +16,7 @@
   -->
   <epo_conf_para
   	epo_enable="yes"
-  	auto_enable="no"
+  	auto_enable="yes"
   	update_period="21600"
   />
 </epo_profiles>
